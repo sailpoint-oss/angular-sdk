@@ -1,0 +1,46 @@
+{
+  "name": "sailpoint-angular-sdk",
+  "version": "1.0.0",
+  "description": "Official Angular library for using the SailPoint API",
+  "author": "SailPoint Developer Relations",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sailpoint-oss/angular-sdk.git"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "sdk",
+    "sailpoint"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/sailpoint-oss/angular-sdk/issues"
+  },
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@angular/common": ">=9.0.0",
+    "@angular/core": ">=9.0.0",
+    "rxjs": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^22.0.0",
+    "@angular/compiler": "^22.0.0",
+    "@angular/compiler-cli": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "ng-packagr": "^22.0.0",
+    "rxjs": "^7.0.0",
+    "typescript": "~6.0.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json",
+    "test": "echo \"No tests configured\" && exit 0"
+  }
+}

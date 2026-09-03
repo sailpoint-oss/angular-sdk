@@ -1,0 +1,9 @@
+npmName: sailpoint-angular-sdk
+npmRepository: sailpoint.com
+npmVersion: 1.0.0
+ngVersion: 22
+providedIn: root
+useSingleRequestParameter: true
+stringEnums: true
+apiVersion: v2025
+enumNameSuffix: NermV2025
