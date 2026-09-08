@@ -48,6 +48,7 @@ const BUNDLED_DIR = path.join(TEMP_DIR, "bundled");
 const ERROR_DIR   = path.join(SDK_ROOT, "build-errors");
 const JAR         = path.join(SDK_ROOT, "openapi-generator-cli.jar");
 const POSTSCRIPT  = path.join(__dirname, "postscript.js");
+const TEMPLATE_DIR = path.join(__dirname, "resources");
 
 const NPM_NAME    = "sailpoint-angular-sdk";
 const NPM_VERSION = "1.0.0";
@@ -371,7 +372,26 @@ function normalizeSchemaNames(bundledJsonPath, idnRoot) {
 
 function writePartitionConfig(partitionName) {
   const packageDir = partitionName.replaceAll("-", "_");
+  // resources/ holds only the documentation templates. Every other template
+  // falls back to the one built into the generator.
   const config = [
+    `templateDir: ${TEMPLATE_DIR}`,
+    `files:`,
+    `  api_doc.mustache:`,
+    `    templateType: APIDocs`,
+    `    destinationFilename: .md`,
+    `  model_doc.mustache:`,
+    `    templateType: ModelDocs`,
+    `    destinationFilename: .md`,
+    `  developerSite_code_examples.mustache:`,
+    `    templateType: APIDocs`,
+    `    destinationFilename: developerSite_code_examples.yaml`,
+    `  docs_methods_index.mustache:`,
+    `    templateType: SupportingFiles`,
+    `    destinationFilename: docs/Methods/Index.md`,
+    `  docs_models_index.mustache:`,
+    `    templateType: SupportingFiles`,
+    `    destinationFilename: docs/Models/Index.md`,
     `npmName: ${NPM_NAME}`,
     `npmRepository: sailpoint.com`,
     `npmVersion: ${NPM_VERSION}`,
@@ -407,7 +427,7 @@ function generatePartition(partitionName, bundledSpec, configPath) {
       "-i", bundledSpec,
       "-g", "typescript-angular",
       "-o", outputDir,
-      "--global-property", "skipFormModel=false",
+      "--global-property", "skipFormModel=false,apiDocs=true,modelDocs=true",
       "--config", configPath,
     ],
     { encoding: "utf8" }
