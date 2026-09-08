@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReviewableRole', 'certifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReviewableRole } from 'sailpoint-angular-sdk/certifications';
+import { ReviewableRole } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Properties

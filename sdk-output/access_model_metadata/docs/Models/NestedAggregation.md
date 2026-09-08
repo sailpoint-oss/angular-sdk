@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NestedAggregation', 'access_model_met
 Import this model from the entry point of its package:
 
 ```typescript
-import { NestedAggregation } from 'sailpoint-angular-sdk/access_model_metadata';
+import { NestedAggregation } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

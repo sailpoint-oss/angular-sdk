@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestableObjectRequestStatus', 'req
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestableObjectRequestStatus } from 'sailpoint-angular-sdk/requestable_objects';
+import { RequestableObjectRequestStatus } from '@sailpoint/angular-sdk/requestable_objects';
 ```
 
 ## Enum

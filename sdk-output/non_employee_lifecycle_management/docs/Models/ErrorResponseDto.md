@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'non_employee_life
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

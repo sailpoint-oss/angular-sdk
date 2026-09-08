@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntityCreatedByDTO', 'iai_role_mining
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntityCreatedByDTO } from 'sailpoint-angular-sdk/iai_role_mining';
+import { EntityCreatedByDTO } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Properties

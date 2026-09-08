@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#create-data-segment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
-        import { DataSegment } from 'sailpoint-angular-sdk/data_segmentation';
+        import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
+        import { DataSegment } from '@sailpoint/angular-sdk/data_segmentation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -64,7 +64,7 @@
       label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#delete-data-segment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+        import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -87,7 +87,7 @@
       label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#get-data-segment-identity-membership-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+        import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -109,7 +109,7 @@
       label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#get-data-segment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+        import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -131,7 +131,7 @@
       label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#get-data-segmentation-enabled-for-user-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+        import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -153,7 +153,7 @@
       label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#list-data-segments-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+        import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -181,7 +181,7 @@
       label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#patch-data-segment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+        import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -204,7 +204,7 @@
       label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#publish-data-segment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+        import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

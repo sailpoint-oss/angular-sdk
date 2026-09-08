@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Revocability', 'dimensions']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Revocability } from 'sailpoint-angular-sdk/dimensions';
+import { Revocability } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

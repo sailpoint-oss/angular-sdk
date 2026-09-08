@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityAggregationResponse', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityAggregationResponse } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentityAggregationResponse } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelmachinesourcewire', 'intelligenc
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelmachinesourcewire } from 'sailpoint-angular-sdk/intelligence';
+import { Intelmachinesourcewire } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

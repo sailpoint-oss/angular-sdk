@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetRoleAssignmentsV1200ResponseInner'
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetRoleAssignmentsV1200ResponseInner } from 'sailpoint-angular-sdk/identities';
+import { GetRoleAssignmentsV1200ResponseInner } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

@@ -53,8 +53,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
-import { CreateOAuthClientRequest } from 'sailpoint-angular-sdk/oauth_clients';
+import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
+import { CreateOAuthClientRequest } from '@sailpoint/angular-sdk/oauth_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
+import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
+import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
+import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -239,8 +239,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/oauth_clients';
+import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/oauth_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

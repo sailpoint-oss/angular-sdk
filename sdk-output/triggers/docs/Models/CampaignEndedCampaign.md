@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CampaignEndedCampaign', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { CampaignEndedCampaign } from 'sailpoint-angular-sdk/triggers';
+import { CampaignEndedCampaign } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConnectedObject', 'governance_groups'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConnectedObject } from 'sailpoint-angular-sdk/governance_groups';
+import { ConnectedObject } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

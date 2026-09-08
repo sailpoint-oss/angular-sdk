@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'StartInvocationInput', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { StartInvocationInput } from 'sailpoint-angular-sdk/triggers';
+import { StartInvocationInput } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

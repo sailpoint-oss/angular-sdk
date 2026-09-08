@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ViolationContext', 'sod_violations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ViolationContext } from 'sailpoint-angular-sdk/sod_violations';
+import { ViolationContext } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

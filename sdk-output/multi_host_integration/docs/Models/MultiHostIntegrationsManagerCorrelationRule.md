@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MultiHostIntegrationsManagerCorrelati
 Import this model from the entry point of its package:
 
 ```typescript
-import { MultiHostIntegrationsManagerCorrelationRule } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationsManagerCorrelationRule } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

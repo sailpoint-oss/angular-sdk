@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourcePasswordPoliciesInner', 'source
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourcePasswordPoliciesInner } from 'sailpoint-angular-sdk/sources';
+import { SourcePasswordPoliciesInner } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

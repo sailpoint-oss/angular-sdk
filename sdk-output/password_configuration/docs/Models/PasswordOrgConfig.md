@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PasswordOrgConfig', 'password_configu
 Import this model from the entry point of its package:
 
 ```typescript
-import { PasswordOrgConfig } from 'sailpoint-angular-sdk/password_configuration';
+import { PasswordOrgConfig } from '@sailpoint/angular-sdk/password_configuration';
 ```
 
 ## Properties

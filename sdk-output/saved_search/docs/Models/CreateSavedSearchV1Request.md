@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateSavedSearchV1Request', 'saved_s
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateSavedSearchV1Request } from 'sailpoint-angular-sdk/saved_search';
+import { CreateSavedSearchV1Request } from '@sailpoint/angular-sdk/saved_search';
 ```
 
 ## Properties

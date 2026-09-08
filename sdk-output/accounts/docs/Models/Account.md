@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Account', 'accounts']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Account } from 'sailpoint-angular-sdk/accounts';
+import { Account } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Campaign2AllOfSourcesWithOrphanEntitl
 Import this model from the entry point of its package:
 
 ```typescript
-import { Campaign2AllOfSourcesWithOrphanEntitlements } from 'sailpoint-angular-sdk/certification_campaigns';
+import { Campaign2AllOfSourcesWithOrphanEntitlements } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

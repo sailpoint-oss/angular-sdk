@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
-import { ConfigurationItemRequest } from 'sailpoint-angular-sdk/work_reassignment';
+import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
+import { ConfigurationItemRequest } from '@sailpoint/angular-sdk/work_reassignment';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -427,8 +427,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
-import { ConfigurationItemRequest } from 'sailpoint-angular-sdk/work_reassignment';
+import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
+import { ConfigurationItemRequest } from '@sailpoint/angular-sdk/work_reassignment';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -480,8 +480,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
-import { TenantConfigurationRequest } from 'sailpoint-angular-sdk/work_reassignment';
+import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
+import { TenantConfigurationRequest } from '@sailpoint/angular-sdk/work_reassignment';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

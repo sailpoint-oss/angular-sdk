@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListSegmentsV1429Response', 'segments
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListSegmentsV1429Response } from 'sailpoint-angular-sdk/segments';
+import { ListSegmentsV1429Response } from '@sailpoint/angular-sdk/segments';
 ```
 
 ## Properties

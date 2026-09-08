@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
-import { CreatePrivilegeCriteriaRequest } from 'sailpoint-angular-sdk/privilege_criteria';
+import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
+import { CreatePrivilegeCriteriaRequest } from '@sailpoint/angular-sdk/privilege_criteria';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -237,8 +237,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
-import { PrivilegeCriteriaDTO } from 'sailpoint-angular-sdk/privilege_criteria';
+import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
+import { PrivilegeCriteriaDTO } from '@sailpoint/angular-sdk/privilege_criteria';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

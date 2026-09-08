@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CampaignCompleteOptions', 'certificat
 Import this model from the entry point of its package:
 
 ```typescript
-import { CampaignCompleteOptions } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CampaignCompleteOptions } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

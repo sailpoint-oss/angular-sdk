@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'V3CreateConnectorDto', 'connectors']
 Import this model from the entry point of its package:
 
 ```typescript
-import { V3CreateConnectorDto } from 'sailpoint-angular-sdk/connectors';
+import { V3CreateConnectorDto } from '@sailpoint/angular-sdk/connectors';
 ```
 
 ## Properties

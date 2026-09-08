@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PasswordPolicyHoldersDtoAttributesIde
 Import this model from the entry point of its package:
 
 ```typescript
-import { PasswordPolicyHoldersDtoAttributesIdentityAttrInner } from 'sailpoint-angular-sdk/sources';
+import { PasswordPolicyHoldersDtoAttributesIdentityAttrInner } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

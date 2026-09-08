@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SetLifecycleStateV1Request', 'lifecyc
 Import this model from the entry point of its package:
 
 ```typescript
-import { SetLifecycleStateV1Request } from 'sailpoint-angular-sdk/lifecycle_states';
+import { SetLifecycleStateV1Request } from '@sailpoint/angular-sdk/lifecycle_states';
 ```
 
 ## Properties

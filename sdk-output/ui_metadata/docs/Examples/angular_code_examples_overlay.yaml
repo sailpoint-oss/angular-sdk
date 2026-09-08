@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/ui_metadata/methods/ui-metadata#get-tenant-ui-metadata-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { UIMetadataService } from 'sailpoint-angular-sdk/ui_metadata';
+        import { UIMetadataService } from '@sailpoint/angular-sdk/ui_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -26,8 +26,8 @@
       label: SDK_tools/sdk/angular/ui_metadata/methods/ui-metadata#set-tenant-ui-metadata-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { UIMetadataService } from 'sailpoint-angular-sdk/ui_metadata';
-        import { TenantUiMetadataItemUpdateRequest } from 'sailpoint-angular-sdk/ui_metadata';
+        import { UIMetadataService } from '@sailpoint/angular-sdk/ui_metadata';
+        import { TenantUiMetadataItemUpdateRequest } from '@sailpoint/angular-sdk/ui_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

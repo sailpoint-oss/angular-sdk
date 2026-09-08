@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Uncorrelatedaccountsreportarguments',
 Import this model from the entry point of its package:
 
 ```typescript
-import { Uncorrelatedaccountsreportarguments } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { Uncorrelatedaccountsreportarguments } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

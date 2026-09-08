@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'global_ten
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 ```
 
 ## Properties

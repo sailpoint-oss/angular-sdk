@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocalizedMessage', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocalizedMessage } from 'sailpoint-angular-sdk/triggers';
+import { LocalizedMessage } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

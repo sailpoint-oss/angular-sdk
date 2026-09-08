@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SodPolicySecondaryOwnerRefsInner', 's
 Import this model from the entry point of its package:
 
 ```typescript
-import { SodPolicySecondaryOwnerRefsInner } from 'sailpoint-angular-sdk/sod_policies';
+import { SodPolicySecondaryOwnerRefsInner } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Properties

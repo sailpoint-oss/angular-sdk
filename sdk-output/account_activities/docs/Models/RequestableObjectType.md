@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestableObjectType', 'account_acti
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestableObjectType } from 'sailpoint-angular-sdk/account_activities';
+import { RequestableObjectType } from '@sailpoint/angular-sdk/account_activities';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConflictingAccessCriteria', 'sod_poli
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConflictingAccessCriteria } from 'sailpoint-angular-sdk/sod_policies';
+import { ConflictingAccessCriteria } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Properties

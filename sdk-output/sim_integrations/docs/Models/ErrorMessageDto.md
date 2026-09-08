@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'sim_integrations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/sim_integrations';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Properties

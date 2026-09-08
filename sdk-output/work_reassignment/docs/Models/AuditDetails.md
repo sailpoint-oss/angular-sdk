@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AuditDetails', 'work_reassignment']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AuditDetails } from 'sailpoint-angular-sdk/work_reassignment';
+import { AuditDetails } from '@sailpoint/angular-sdk/work_reassignment';
 ```
 
 ## Properties

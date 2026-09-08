@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'auth_users
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/auth_users';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/auth_users';
 ```
 
 ## Properties

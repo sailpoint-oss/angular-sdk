@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityReference2', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityReference2 } from 'sailpoint-angular-sdk/triggers';
+import { IdentityReference2 } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

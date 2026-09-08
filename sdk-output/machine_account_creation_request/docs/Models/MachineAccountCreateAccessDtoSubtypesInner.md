@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineAccountCreateAccessDtoSubtypes
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineAccountCreateAccessDtoSubtypesInner } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { MachineAccountCreateAccessDtoSubtypesInner } from '@sailpoint/angular-sdk/machine_account_creation_request';
 ```
 
 ## Properties

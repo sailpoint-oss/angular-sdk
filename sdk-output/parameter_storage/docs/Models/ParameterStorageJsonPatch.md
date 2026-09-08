@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ParameterStorageJsonPatch', 'paramete
 Import this model from the entry point of its package:
 
 ```typescript
-import { ParameterStorageJsonPatch } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageJsonPatch } from '@sailpoint/angular-sdk/parameter_storage';
 ```
 
 ## Properties

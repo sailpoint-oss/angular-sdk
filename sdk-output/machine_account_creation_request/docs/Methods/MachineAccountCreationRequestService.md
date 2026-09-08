@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountCreationRequestService } from 'sailpoint-angular-sdk/machine_account_creation_request';
-import { MachineAccountCreateRequestInput } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { MachineAccountCreationRequestService } from '@sailpoint/angular-sdk/machine_account_creation_request';
+import { MachineAccountCreateRequestInput } from '@sailpoint/angular-sdk/machine_account_creation_request';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountCreationRequestService } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { MachineAccountCreationRequestService } from '@sailpoint/angular-sdk/machine_account_creation_request';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountCreationRequestService } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { MachineAccountCreationRequestService } from '@sailpoint/angular-sdk/machine_account_creation_request';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'configuration_hub
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/configuration_hub';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

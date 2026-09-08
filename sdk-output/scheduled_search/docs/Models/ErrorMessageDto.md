@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'scheduled_search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/scheduled_search';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/scheduled_search';
 ```
 
 ## Properties

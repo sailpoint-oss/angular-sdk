@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReplaceStreamConfigurationRequest', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReplaceStreamConfigurationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { ReplaceStreamConfigurationRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ProvisioningCompletedRequester', 'tri
 Import this model from the entry point of its package:
 
 ```typescript
-import { ProvisioningCompletedRequester } from 'sailpoint-angular-sdk/triggers';
+import { ProvisioningCompletedRequester } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

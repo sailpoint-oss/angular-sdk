@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#create-source-app-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
-        import { SourceAppCreateDto } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
+        import { SourceAppCreateDto } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -37,7 +37,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#delete-access-profiles-from-source-app-by-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -61,7 +61,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#delete-source-app-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -83,7 +83,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#get-source-app-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -105,7 +105,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#list-access-profiles-for-source-app-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -130,7 +130,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#list-all-source-app-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -156,7 +156,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#list-all-user-apps-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -181,7 +181,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#list-assigned-source-app-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -207,7 +207,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#list-available-accounts-for-user-app-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -231,7 +231,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#list-available-source-apps-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -257,7 +257,7 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#list-owned-user-apps-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -282,8 +282,8 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#patch-source-app-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -310,8 +310,8 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#patch-user-app-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -338,8 +338,8 @@
       label: SDK_tools/sdk/angular/apps/methods/apps#update-source-apps-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AppsService } from 'sailpoint-angular-sdk/apps';
-        import { SourceAppBulkUpdateRequest } from 'sailpoint-angular-sdk/apps';
+        import { AppsService } from '@sailpoint/angular-sdk/apps';
+        import { SourceAppBulkUpdateRequest } from '@sailpoint/angular-sdk/apps';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

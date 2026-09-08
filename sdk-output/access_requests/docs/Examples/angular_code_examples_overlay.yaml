@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#approve-bulk-access-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-        import { BulkApproveAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+        import { BulkApproveAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -30,8 +30,8 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#cancel-access-request-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-        import { BulkCancelAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+        import { BulkCancelAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -55,8 +55,8 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#cancel-access-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-        import { CancelAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+        import { CancelAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -80,8 +80,8 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#close-access-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-        import { CloseAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+        import { CloseAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -107,8 +107,8 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#create-access-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-        import { AccessRequest } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+        import { AccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -296,7 +296,7 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#get-access-request-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -316,7 +316,7 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#get-access-request-config-v2
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -336,7 +336,7 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#get-entitlement-details-for-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -358,7 +358,7 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#list-access-request-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -388,7 +388,7 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#list-administrators-access-request-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -419,8 +419,8 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#load-account-selections-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-        import { AccountsSelectionRequest } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+        import { AccountsSelectionRequest } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -648,8 +648,8 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#set-access-request-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-        import { AccessRequestConfig } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+        import { AccessRequestConfig } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -720,8 +720,8 @@
       label: SDK_tools/sdk/angular/access_requests/methods/access-requests#set-access-request-config-v2
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-        import { AccessRequestConfig2 } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+        import { AccessRequestConfig2 } from '@sailpoint/angular-sdk/access_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

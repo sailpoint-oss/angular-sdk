@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ViolationPrediction', 'sod_violations
 Import this model from the entry point of its package:
 
 ```typescript
-import { ViolationPrediction } from 'sailpoint-angular-sdk/sod_violations';
+import { ViolationPrediction } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

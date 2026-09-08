@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Target', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Target } from 'sailpoint-angular-sdk/identities';
+import { Target } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

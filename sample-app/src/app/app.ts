@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { SailPointConfigService } from 'sailpoint-angular-sdk/sailpoint-config.service';
+import { SailPointConfigService } from '@sailpoint/angular-sdk/sailpoint-config.service';
 
 @Component({
   selector: 'app-root',

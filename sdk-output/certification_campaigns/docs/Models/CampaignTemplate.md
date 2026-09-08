@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CampaignTemplate', 'certification_cam
 Import this model from the entry point of its package:
 
 ```typescript
-import { CampaignTemplate } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CampaignTemplate } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'managed_clusters']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/managed_clusters';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetHistoricalIdentityEventsV1200Respo
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetHistoricalIdentityEventsV1200ResponseInner } from 'sailpoint-angular-sdk/identity_history';
+import { GetHistoricalIdentityEventsV1200ResponseInner } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

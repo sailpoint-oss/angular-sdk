@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CertificationPhase', 'certifications'
 Import this model from the entry point of its package:
 
 ```typescript
-import { CertificationPhase } from 'sailpoint-angular-sdk/certifications';
+import { CertificationPhase } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Enum

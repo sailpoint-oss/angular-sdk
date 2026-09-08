@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountActivity', 'account_activities
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountActivity } from 'sailpoint-angular-sdk/account_activities';
+import { AccountActivity } from '@sailpoint/angular-sdk/account_activities';
 ```
 
 ## Properties

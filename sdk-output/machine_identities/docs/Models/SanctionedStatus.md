@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SanctionedStatus', 'machine_identitie
 Import this model from the entry point of its package:
 
 ```typescript
-import { SanctionedStatus } from 'sailpoint-angular-sdk/machine_identities';
+import { SanctionedStatus } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Enum

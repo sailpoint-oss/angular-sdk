@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'iai_common_access'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/iai_common_access';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/iai_common_access';
 ```
 
 ## Properties

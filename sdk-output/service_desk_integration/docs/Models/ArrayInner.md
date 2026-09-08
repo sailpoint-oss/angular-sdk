@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'service_desk_integratio
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ArrayInner } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Properties

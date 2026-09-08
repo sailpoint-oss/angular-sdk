@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LoadBulkSourceSubtypesV1401Response',
 Import this model from the entry point of its package:
 
 ```typescript
-import { LoadBulkSourceSubtypesV1401Response } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { LoadBulkSourceSubtypesV1401Response } from '@sailpoint/angular-sdk/machine_account_subtypes';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'service_desk_integrat
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/service_desk_integration';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ActivityConfigurationSettings', 'data
 Import this model from the entry point of its package:
 
 ```typescript
-import { ActivityConfigurationSettings } from 'sailpoint-angular-sdk/data_access_security';
+import { ActivityConfigurationSettings } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

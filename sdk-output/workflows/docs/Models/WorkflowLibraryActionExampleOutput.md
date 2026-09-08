@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'WorkflowLibraryActionExampleOutput', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { WorkflowLibraryActionExampleOutput } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowLibraryActionExampleOutput } from '@sailpoint/angular-sdk/workflows';
 ```
 
 ## Properties

@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/saved_search/methods/saved-search#create-saved-search-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
-        import { CreateSavedSearchV1Request } from 'sailpoint-angular-sdk/saved_search';
+        import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
+        import { CreateSavedSearchV1Request } from '@sailpoint/angular-sdk/saved_search';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -27,7 +27,7 @@
       label: SDK_tools/sdk/angular/saved_search/methods/saved-search#delete-saved-search-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+        import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -48,8 +48,8 @@
       label: SDK_tools/sdk/angular/saved_search/methods/saved-search#execute-saved-search-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
-        import { SearchArguments } from 'sailpoint-angular-sdk/saved_search';
+        import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
+        import { SearchArguments } from '@sailpoint/angular-sdk/saved_search';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -81,7 +81,7 @@
       label: SDK_tools/sdk/angular/saved_search/methods/saved-search#get-saved-search-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+        import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -102,7 +102,7 @@
       label: SDK_tools/sdk/angular/saved_search/methods/saved-search#list-saved-searches-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+        import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -126,8 +126,8 @@
       label: SDK_tools/sdk/angular/saved_search/methods/saved-search#put-saved-search-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
-        import { SavedSearch } from 'sailpoint-angular-sdk/saved_search';
+        import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
+        import { SavedSearch } from '@sailpoint/angular-sdk/saved_search';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetPublicIdentitiesV1401Response', 'p
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetPublicIdentitiesV1401Response } from 'sailpoint-angular-sdk/public_identities';
+import { GetPublicIdentitiesV1401Response } from '@sailpoint/angular-sdk/public_identities';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityUpdatedUserEntitlement
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityUpdatedUserEntitlementChanges } from 'sailpoint-angular-sdk/triggers';
+import { MachineIdentityUpdatedUserEntitlementChanges } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

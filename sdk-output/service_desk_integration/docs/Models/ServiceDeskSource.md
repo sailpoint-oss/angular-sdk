@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ServiceDeskSource', 'service_desk_int
 Import this model from the entry point of its package:
 
 ```typescript
-import { ServiceDeskSource } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskSource } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Properties

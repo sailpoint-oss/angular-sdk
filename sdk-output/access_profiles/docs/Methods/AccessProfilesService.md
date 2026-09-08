@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
-import { AccessProfile } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+import { AccessProfile } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -192,8 +192,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
-import { AccessProfileBulkDeleteRequest } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+import { AccessProfileBulkDeleteRequest } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -439,8 +439,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -493,8 +493,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
-import { AccessProfileBulkUpdateRequestInner } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+import { AccessProfileBulkUpdateRequestInner } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

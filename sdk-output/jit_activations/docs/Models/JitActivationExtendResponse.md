@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JitActivationExtendResponse', 'jit_ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { JitActivationExtendResponse } from 'sailpoint-angular-sdk/jit_activations';
+import { JitActivationExtendResponse } from '@sailpoint/angular-sdk/jit_activations';
 ```
 
 ## Properties

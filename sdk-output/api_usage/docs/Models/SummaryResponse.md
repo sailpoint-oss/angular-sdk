@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SummaryResponse', 'api_usage']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SummaryResponse } from 'sailpoint-angular-sdk/api_usage';
+import { SummaryResponse } from '@sailpoint/angular-sdk/api_usage';
 ```
 
 ## Properties

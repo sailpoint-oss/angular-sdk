@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineAccountCreateRequestInput', 'm
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineAccountCreateRequestInput } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { MachineAccountCreateRequestInput } from '@sailpoint/angular-sdk/machine_account_creation_request';
 ```
 
 ## Properties

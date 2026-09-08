@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Target', 'task_management']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Target } from 'sailpoint-angular-sdk/task_management';
+import { Target } from '@sailpoint/angular-sdk/task_management';
 ```
 
 ## Properties

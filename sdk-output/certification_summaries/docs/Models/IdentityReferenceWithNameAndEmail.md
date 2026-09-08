@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityReferenceWithNameAndEmail', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityReferenceWithNameAndEmail } from 'sailpoint-angular-sdk/certification_summaries';
+import { IdentityReferenceWithNameAndEmail } from '@sailpoint/angular-sdk/certification_summaries';
 ```
 
 ## Properties

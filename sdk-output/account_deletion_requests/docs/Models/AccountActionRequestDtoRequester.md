@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountActionRequestDtoRequester', 'a
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountActionRequestDtoRequester } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { AccountActionRequestDtoRequester } from '@sailpoint/angular-sdk/account_deletion_requests';
 ```
 
 ## Properties

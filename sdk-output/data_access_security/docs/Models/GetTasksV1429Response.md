@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetTasksV1429Response', 'data_access_
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetTasksV1429Response } from 'sailpoint-angular-sdk/data_access_security';
+import { GetTasksV1429Response } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

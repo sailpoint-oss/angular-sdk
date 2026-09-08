@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountClassifyService } from 'sailpoint-angular-sdk/machine_account_classify';
+import { MachineAccountClassifyService } from '@sailpoint/angular-sdk/machine_account_classify';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'access_profiles
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/access_profiles';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

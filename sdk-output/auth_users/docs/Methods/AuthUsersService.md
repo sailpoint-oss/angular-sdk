@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AuthUsersService } from 'sailpoint-angular-sdk/auth_users';
+import { AuthUsersService } from '@sailpoint/angular-sdk/auth_users';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -103,8 +103,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AuthUsersService } from 'sailpoint-angular-sdk/auth_users';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/auth_users';
+import { AuthUsersService } from '@sailpoint/angular-sdk/auth_users';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/auth_users';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

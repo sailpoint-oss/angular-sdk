@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'iai_outliers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/iai_outliers';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/iai_outliers';
 ```
 
 ## Properties

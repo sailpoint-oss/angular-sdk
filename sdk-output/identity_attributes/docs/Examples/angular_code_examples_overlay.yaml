@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#create-identity-attribute-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
-        import { IdentityAttribute2 } from 'sailpoint-angular-sdk/identity_attributes';
+        import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
+        import { IdentityAttribute2 } from '@sailpoint/angular-sdk/identity_attributes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -27,7 +27,7 @@
       label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#delete-identity-attribute-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+        import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -48,8 +48,8 @@
       label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#delete-identity-attributes-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
-        import { IdentityAttributeNames } from 'sailpoint-angular-sdk/identity_attributes';
+        import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
+        import { IdentityAttributeNames } from '@sailpoint/angular-sdk/identity_attributes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -72,7 +72,7 @@
       label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#get-identity-attribute-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+        import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -93,7 +93,7 @@
       label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#list-identity-attributes-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+        import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -117,8 +117,8 @@
       label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#put-identity-attribute-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
-        import { IdentityAttribute2 } from 'sailpoint-angular-sdk/identity_attributes';
+        import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
+        import { IdentityAttribute2 } from '@sailpoint/angular-sdk/identity_attributes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

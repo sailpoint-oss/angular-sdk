@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'sim_integrations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/sim_integrations';
+import { ArrayInner } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Reviewer', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Reviewer } from 'sailpoint-angular-sdk/triggers';
+import { Reviewer } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

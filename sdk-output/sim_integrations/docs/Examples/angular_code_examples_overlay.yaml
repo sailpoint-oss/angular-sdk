@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#create-sim-integration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
-        import { SimIntegrationDetails } from 'sailpoint-angular-sdk/sim_integrations';
+        import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
+        import { SimIntegrationDetails } from '@sailpoint/angular-sdk/sim_integrations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -45,7 +45,7 @@
       label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#delete-sim-integration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+        import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -67,7 +67,7 @@
       label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#get-sim-integration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+        import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -89,7 +89,7 @@
       label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#get-sim-integrations-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+        import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -110,8 +110,8 @@
       label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#patch-before-provisioning-rule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
-        import { JsonPatch } from 'sailpoint-angular-sdk/sim_integrations';
+        import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
+        import { JsonPatch } from '@sailpoint/angular-sdk/sim_integrations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -144,8 +144,8 @@
       label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#patch-sim-attributes-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
-        import { JsonPatch } from 'sailpoint-angular-sdk/sim_integrations';
+        import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
+        import { JsonPatch } from '@sailpoint/angular-sdk/sim_integrations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -178,8 +178,8 @@
       label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#put-sim-integration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
-        import { SimIntegrationDetails } from 'sailpoint-angular-sdk/sim_integrations';
+        import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
+        import { SimIntegrationDetails } from '@sailpoint/angular-sdk/sim_integrations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

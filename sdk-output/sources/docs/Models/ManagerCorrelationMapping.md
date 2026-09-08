@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagerCorrelationMapping', 'sources'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagerCorrelationMapping } from 'sailpoint-angular-sdk/sources';
+import { ManagerCorrelationMapping } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

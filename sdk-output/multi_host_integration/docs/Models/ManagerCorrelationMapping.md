@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagerCorrelationMapping', 'multi_ho
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagerCorrelationMapping } from 'sailpoint-angular-sdk/multi_host_integration';
+import { ManagerCorrelationMapping } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

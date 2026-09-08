@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/password_policies/methods/password-policies#create-password-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
-        import { PasswordPolicyV3Dto } from 'sailpoint-angular-sdk/password_policies';
+        import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
+        import { PasswordPolicyV3Dto } from '@sailpoint/angular-sdk/password_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -60,7 +60,7 @@
       label: SDK_tools/sdk/angular/password_policies/methods/password-policies#delete-password-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+        import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -82,7 +82,7 @@
       label: SDK_tools/sdk/angular/password_policies/methods/password-policies#get-password-policy-by-id-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+        import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -104,7 +104,7 @@
       label: SDK_tools/sdk/angular/password_policies/methods/password-policies#list-password-policies-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+        import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -128,8 +128,8 @@
       label: SDK_tools/sdk/angular/password_policies/methods/password-policies#set-password-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
-        import { PasswordPolicyV3Dto } from 'sailpoint-angular-sdk/password_policies';
+        import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
+        import { PasswordPolicyV3Dto } from '@sailpoint/angular-sdk/password_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

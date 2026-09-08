@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
-import { Dimension } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
+import { Dimension } from '@sailpoint/angular-sdk/dimensions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -110,8 +110,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
-import { DimensionBulkDeleteRequest } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
+import { DimensionBulkDeleteRequest } from '@sailpoint/angular-sdk/dimensions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -443,8 +443,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/dimensions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

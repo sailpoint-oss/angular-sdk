@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'WorkgroupDto', 'governance_groups']
 Import this model from the entry point of its package:
 
 ```typescript
-import { WorkgroupDto } from 'sailpoint-angular-sdk/governance_groups';
+import { WorkgroupDto } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

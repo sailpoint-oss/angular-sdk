@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelIdentityAggregate', 'intelligenc
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelIdentityAggregate } from 'sailpoint-angular-sdk/intelligence';
+import { IntelIdentityAggregate } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

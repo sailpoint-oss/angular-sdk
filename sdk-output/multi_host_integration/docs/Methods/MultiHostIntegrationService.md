@@ -64,8 +64,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
-import { MultiHostIntegrationsCreate } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
+import { MultiHostIntegrationsCreate } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -114,8 +114,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
-import { MultiHostIntegrationsCreateSources } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
+import { MultiHostIntegrationsCreateSources } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -516,7 +516,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -568,7 +568,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -621,7 +621,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -670,7 +670,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -720,8 +720,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
-import { UpdateMultiHostSourcesV1RequestInner } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
+import { UpdateMultiHostSourcesV1RequestInner } from '@sailpoint/angular-sdk/multi_host_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

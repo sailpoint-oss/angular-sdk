@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#create-control-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
-        import { Compensatingcontrolcreate } from 'sailpoint-angular-sdk/sod_controls';
+        import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
+        import { Compensatingcontrolcreate } from '@sailpoint/angular-sdk/sod_controls';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -44,7 +44,7 @@
       label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#delete-control-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+        import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -66,7 +66,7 @@
       label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#get-control-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+        import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -88,7 +88,7 @@
       label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#list-controls-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+        import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -114,8 +114,8 @@
       label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#put-control-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
-        import { Compensatingcontrolupdate } from 'sailpoint-angular-sdk/sod_controls';
+        import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
+        import { Compensatingcontrolupdate } from '@sailpoint/angular-sdk/sod_controls';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/password_sync_groups/methods/password-sync-groups#create-password-sync-group-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
-        import { PasswordSyncGroup } from 'sailpoint-angular-sdk/password_sync_groups';
+        import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
+        import { PasswordSyncGroup } from '@sailpoint/angular-sdk/password_sync_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -34,7 +34,7 @@
       label: SDK_tools/sdk/angular/password_sync_groups/methods/password-sync-groups#delete-password-sync-group-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
+        import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -55,7 +55,7 @@
       label: SDK_tools/sdk/angular/password_sync_groups/methods/password-sync-groups#get-password-sync-group-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
+        import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -76,7 +76,7 @@
       label: SDK_tools/sdk/angular/password_sync_groups/methods/password-sync-groups#get-password-sync-groups-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
+        import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -99,8 +99,8 @@
       label: SDK_tools/sdk/angular/password_sync_groups/methods/password-sync-groups#update-password-sync-group-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
-        import { PasswordSyncGroup } from 'sailpoint-angular-sdk/password_sync_groups';
+        import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
+        import { PasswordSyncGroup } from '@sailpoint/angular-sdk/password_sync_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

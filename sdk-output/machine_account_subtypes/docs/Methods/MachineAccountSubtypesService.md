@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
-import { CreateSourceSubtypeV1Request } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+import { CreateSourceSubtypeV1Request } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -430,8 +430,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

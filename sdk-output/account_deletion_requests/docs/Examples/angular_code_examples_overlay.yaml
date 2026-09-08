@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/account_deletion_requests/methods/account-deletion-requests#delete-account-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountDeletionRequestsService } from 'sailpoint-angular-sdk/account_deletion_requests';
-        import { AccountDeleteRequestInput } from 'sailpoint-angular-sdk/account_deletion_requests';
+        import { AccountDeletionRequestsService } from '@sailpoint/angular-sdk/account_deletion_requests';
+        import { AccountDeleteRequestInput } from '@sailpoint/angular-sdk/account_deletion_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -30,7 +30,7 @@
       label: SDK_tools/sdk/angular/account_deletion_requests/methods/account-deletion-requests#get-account-deletion-requests-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountDeletionRequestsService } from 'sailpoint-angular-sdk/account_deletion_requests';
+        import { AccountDeletionRequestsService } from '@sailpoint/angular-sdk/account_deletion_requests';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

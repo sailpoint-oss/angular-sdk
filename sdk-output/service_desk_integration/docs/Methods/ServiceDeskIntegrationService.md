@@ -79,8 +79,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
-import { ServiceDeskIntegrationDto } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationDto } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -215,7 +215,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -357,7 +357,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -403,8 +403,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -452,8 +452,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
-import { ServiceDeskIntegrationDto } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationDto } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -500,8 +500,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
-import { QueuedCheckConfigDetails } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ServiceDeskIntegrationService } from '@sailpoint/angular-sdk/service_desk_integration';
+import { QueuedCheckConfigDetails } from '@sailpoint/angular-sdk/service_desk_integration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RecommenderCalculations', 'iai_recomm
 Import this model from the entry point of its package:
 
 ```typescript
-import { RecommenderCalculations } from 'sailpoint-angular-sdk/iai_recommendations';
+import { RecommenderCalculations } from '@sailpoint/angular-sdk/iai_recommendations';
 ```
 
 ## Properties

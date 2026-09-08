@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'machine_identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/machine_identities';
+import { ArrayInner } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

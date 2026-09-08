@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TemplateSlackCustomFields', 'notifica
 Import this model from the entry point of its package:
 
 ```typescript
-import { TemplateSlackCustomFields } from 'sailpoint-angular-sdk/notifications';
+import { TemplateSlackCustomFields } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

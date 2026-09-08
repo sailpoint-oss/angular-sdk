@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PermissionDTO', 'dimensions']
 Import this model from the entry point of its package:
 
 ```typescript
-import { PermissionDTO } from 'sailpoint-angular-sdk/dimensions';
+import { PermissionDTO } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

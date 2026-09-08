@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DimensionCriteriaKeyType', 'dimension
 Import this model from the entry point of its package:
 
 ```typescript
-import { DimensionCriteriaKeyType } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionCriteriaKeyType } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Enum

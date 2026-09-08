@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountAttributesCreateAttributes', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountAttributesCreateAttributes } from 'sailpoint-angular-sdk/accounts';
+import { AccountAttributesCreateAttributes } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Identityprofileidentityerrorreportarg
 Import this model from the entry point of its package:
 
 ```typescript
-import { Identityprofileidentityerrorreportarguments } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { Identityprofileidentityerrorreportarguments } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

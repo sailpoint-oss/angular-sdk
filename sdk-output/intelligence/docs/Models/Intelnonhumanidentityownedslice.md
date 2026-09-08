@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelnonhumanidentityownedslice', 'in
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelnonhumanidentityownedslice } from 'sailpoint-angular-sdk/intelligence';
+import { Intelnonhumanidentityownedslice } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

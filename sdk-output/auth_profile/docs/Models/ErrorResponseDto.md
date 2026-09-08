@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'auth_profile']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/auth_profile';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/auth_profile';
 ```
 
 ## Properties

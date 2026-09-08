@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'mfa_configuration
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/mfa_configuration';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/mfa_configuration';
 ```
 
 ## Properties

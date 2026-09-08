@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'certification_c
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/certification_campaigns';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

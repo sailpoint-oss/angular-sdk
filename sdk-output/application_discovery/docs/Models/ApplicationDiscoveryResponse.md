@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApplicationDiscoveryResponse', 'appli
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApplicationDiscoveryResponse } from 'sailpoint-angular-sdk/application_discovery';
+import { ApplicationDiscoveryResponse } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

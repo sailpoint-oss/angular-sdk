@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CcBccRecipientType', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { CcBccRecipientType } from 'sailpoint-angular-sdk/notifications';
+import { CcBccRecipientType } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Enum

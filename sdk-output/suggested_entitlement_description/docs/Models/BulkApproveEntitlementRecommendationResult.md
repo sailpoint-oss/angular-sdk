@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BulkApproveEntitlementRecommendationR
 Import this model from the entry point of its package:
 
 ```typescript
-import { BulkApproveEntitlementRecommendationResult } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { BulkApproveEntitlementRecommendationResult } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

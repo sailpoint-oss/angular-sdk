@@ -66,8 +66,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
-import { IdentityProfile } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
+import { IdentityProfile } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -264,8 +264,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
-import { IdentityPreviewRequest } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
+import { IdentityPreviewRequest } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -403,8 +403,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
-import { IdentityProfileExportedObject } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
+import { IdentityProfileExportedObject } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -563,8 +563,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/identity_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

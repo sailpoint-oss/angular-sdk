@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateFormInstanceRequest', 'custom_f
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateFormInstanceRequest } from 'sailpoint-angular-sdk/custom_forms';
+import { CreateFormInstanceRequest } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

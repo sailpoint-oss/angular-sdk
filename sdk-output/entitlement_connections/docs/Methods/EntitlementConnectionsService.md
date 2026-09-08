@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
+import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
+import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -172,8 +172,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/entitlement_connections';
+import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/entitlement_connections';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -225,8 +225,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/entitlement_connections';
+import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/entitlement_connections';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -277,8 +277,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
-import { EntitlementConnectionBulkUpdateItem } from 'sailpoint-angular-sdk/entitlement_connections';
+import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
+import { EntitlementConnectionBulkUpdateItem } from '@sailpoint/angular-sdk/entitlement_connections';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

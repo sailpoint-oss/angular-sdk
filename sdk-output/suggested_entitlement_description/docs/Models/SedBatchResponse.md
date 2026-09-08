@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SedBatchResponse', 'suggested_entitle
 Import this model from the entry point of its package:
 
 ```typescript
-import { SedBatchResponse } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SedBatchResponse } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

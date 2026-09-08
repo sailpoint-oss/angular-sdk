@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SedApproval', 'suggested_entitlement_
 Import this model from the entry point of its package:
 
 ```typescript
-import { SedApproval } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SedApproval } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

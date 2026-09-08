@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Dimension', 'dimensions']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Dimension } from 'sailpoint-angular-sdk/dimensions';
+import { Dimension } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

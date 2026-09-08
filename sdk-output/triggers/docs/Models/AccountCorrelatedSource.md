@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountCorrelatedSource', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountCorrelatedSource } from 'sailpoint-angular-sdk/triggers';
+import { AccountCorrelatedSource } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

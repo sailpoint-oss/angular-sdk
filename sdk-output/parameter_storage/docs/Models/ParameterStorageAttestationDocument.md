@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ParameterStorageAttestationDocument',
 Import this model from the entry point of its package:
 
 ```typescript
-import { ParameterStorageAttestationDocument } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageAttestationDocument } from '@sailpoint/angular-sdk/parameter_storage';
 ```
 
 ## Properties

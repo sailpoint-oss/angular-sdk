@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'account_deletion_requ
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/account_deletion_requests';
 ```
 
 ## Enum

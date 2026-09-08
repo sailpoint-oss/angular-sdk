@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NonEmployeeSource', 'non_employee_lif
 Import this model from the entry point of its package:
 
 ```typescript
-import { NonEmployeeSource } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeSource } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

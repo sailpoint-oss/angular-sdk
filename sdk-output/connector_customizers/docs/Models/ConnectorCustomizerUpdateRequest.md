@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConnectorCustomizerUpdateRequest', 'c
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConnectorCustomizerUpdateRequest } from 'sailpoint-angular-sdk/connector_customizers';
+import { ConnectorCustomizerUpdateRequest } from '@sailpoint/angular-sdk/connector_customizers';
 ```
 
 ## Properties

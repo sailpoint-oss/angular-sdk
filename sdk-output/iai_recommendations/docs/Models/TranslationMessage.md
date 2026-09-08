@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TranslationMessage', 'iai_recommendat
 Import this model from the entry point of its package:
 
 ```typescript
-import { TranslationMessage } from 'sailpoint-angular-sdk/iai_recommendations';
+import { TranslationMessage } from '@sailpoint/angular-sdk/iai_recommendations';
 ```
 
 ## Properties

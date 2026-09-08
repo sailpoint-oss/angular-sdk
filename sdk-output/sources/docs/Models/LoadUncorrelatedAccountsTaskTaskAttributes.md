@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LoadUncorrelatedAccountsTaskTaskAttri
 Import this model from the entry point of its package:
 
 ```typescript
-import { LoadUncorrelatedAccountsTaskTaskAttributes } from 'sailpoint-angular-sdk/sources';
+import { LoadUncorrelatedAccountsTaskTaskAttributes } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

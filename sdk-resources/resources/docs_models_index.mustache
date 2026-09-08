@@ -22,5 +22,5 @@ The Angular SDK uses data models to structure and manage data within the API. Th
 Models are not re-exported from the root of the package. Import them from the entry point of their own package:
 
 ```typescript
-import { {{#models}}{{#model}}{{#-first}}{{classname}}{{/-first}}{{/model}}{{/models}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+import { {{#models}}{{#model}}{{#-first}}{{classname}}{{/-first}}{{/model}}{{/models}} } from '@sailpoint/angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
 ```

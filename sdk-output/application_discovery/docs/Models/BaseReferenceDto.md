@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseReferenceDto', 'application_disco
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseReferenceDto } from 'sailpoint-angular-sdk/application_discovery';
+import { BaseReferenceDto } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

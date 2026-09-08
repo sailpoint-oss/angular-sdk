@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Workflow', 'workflows']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Workflow } from 'sailpoint-angular-sdk/workflows';
+import { Workflow } from '@sailpoint/angular-sdk/workflows';
 ```
 
 ## Properties

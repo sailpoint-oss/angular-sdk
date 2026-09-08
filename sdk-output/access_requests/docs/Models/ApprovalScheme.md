@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalScheme', 'access_requests']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalScheme } from 'sailpoint-angular-sdk/access_requests';
+import { ApprovalScheme } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Enum

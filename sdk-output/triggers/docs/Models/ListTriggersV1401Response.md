@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListTriggersV1401Response', 'triggers
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListTriggersV1401Response } from 'sailpoint-angular-sdk/triggers';
+import { ListTriggersV1401Response } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

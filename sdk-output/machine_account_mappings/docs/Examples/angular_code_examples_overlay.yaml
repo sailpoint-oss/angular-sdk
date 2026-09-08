@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/machine_account_mappings/methods/machine-account-mappings#create-machine-account-mappings-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountMappingsService } from 'sailpoint-angular-sdk/machine_account_mappings';
-        import { AttributeMappings } from 'sailpoint-angular-sdk/machine_account_mappings';
+        import { MachineAccountMappingsService } from '@sailpoint/angular-sdk/machine_account_mappings';
+        import { AttributeMappings } from '@sailpoint/angular-sdk/machine_account_mappings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -49,7 +49,7 @@
       label: SDK_tools/sdk/angular/machine_account_mappings/methods/machine-account-mappings#delete-machine-account-mappings-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountMappingsService } from 'sailpoint-angular-sdk/machine_account_mappings';
+        import { MachineAccountMappingsService } from '@sailpoint/angular-sdk/machine_account_mappings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -71,7 +71,7 @@
       label: SDK_tools/sdk/angular/machine_account_mappings/methods/machine-account-mappings#list-machine-account-mappings-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountMappingsService } from 'sailpoint-angular-sdk/machine_account_mappings';
+        import { MachineAccountMappingsService } from '@sailpoint/angular-sdk/machine_account_mappings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -95,8 +95,8 @@
       label: SDK_tools/sdk/angular/machine_account_mappings/methods/machine-account-mappings#set-machine-account-mappings-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountMappingsService } from 'sailpoint-angular-sdk/machine_account_mappings';
-        import { AttributeMappings } from 'sailpoint-angular-sdk/machine_account_mappings';
+        import { MachineAccountMappingsService } from '@sailpoint/angular-sdk/machine_account_mappings';
+        import { AttributeMappings } from '@sailpoint/angular-sdk/machine_account_mappings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

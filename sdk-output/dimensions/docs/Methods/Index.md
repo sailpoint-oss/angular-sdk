@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
 private readonly api = inject(DimensionsService);
 ```

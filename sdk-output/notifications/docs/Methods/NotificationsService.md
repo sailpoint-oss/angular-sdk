@@ -63,8 +63,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-import { DomainAddress } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+import { DomainAddress } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -113,8 +113,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-import { TemplateDto } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+import { TemplateDto } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -160,8 +160,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-import { EmailStatusDto } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+import { EmailStatusDto } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -207,8 +207,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-import { TemplateBulkDeleteDto } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+import { TemplateBulkDeleteDto } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -539,7 +539,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -794,8 +794,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-import { MailFromAttributesDto } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+import { MailFromAttributesDto } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -841,8 +841,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-import { SendTestNotificationRequestDto } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+import { SendTestNotificationRequestDto } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -889,8 +889,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-import { PreferencesDto } from 'sailpoint-angular-sdk/notifications';
+import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+import { PreferencesDto } from '@sailpoint/angular-sdk/notifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

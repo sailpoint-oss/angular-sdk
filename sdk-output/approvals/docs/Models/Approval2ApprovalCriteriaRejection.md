@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Approval2ApprovalCriteriaRejection', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { Approval2ApprovalCriteriaRejection } from 'sailpoint-angular-sdk/approvals';
+import { Approval2ApprovalCriteriaRejection } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'StartRolePropagationV1401Response', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { StartRolePropagationV1401Response } from 'sailpoint-angular-sdk/role_propagation';
+import { StartRolePropagationV1401Response } from '@sailpoint/angular-sdk/role_propagation';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TransformRead', 'transforms']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TransformRead } from 'sailpoint-angular-sdk/transforms';
+import { TransformRead } from '@sailpoint/angular-sdk/transforms';
 ```
 
 ## Properties

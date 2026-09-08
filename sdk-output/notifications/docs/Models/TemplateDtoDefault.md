@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TemplateDtoDefault', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TemplateDtoDefault } from 'sailpoint-angular-sdk/notifications';
+import { TemplateDtoDefault } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

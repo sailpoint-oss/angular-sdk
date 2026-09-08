@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TenantConfigurationRequest', 'work_re
 Import this model from the entry point of its package:
 
 ```typescript
-import { TenantConfigurationRequest } from 'sailpoint-angular-sdk/work_reassignment';
+import { TenantConfigurationRequest } from '@sailpoint/angular-sdk/work_reassignment';
 ```
 
 ## Properties

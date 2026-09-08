@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'parameter_storage'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/parameter_storage';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/parameter_storage';
 ```
 
 ## Properties

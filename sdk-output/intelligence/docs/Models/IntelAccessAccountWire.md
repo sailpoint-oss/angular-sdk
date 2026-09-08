@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelAccessAccountWire', 'intelligenc
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelAccessAccountWire } from 'sailpoint-angular-sdk/intelligence';
+import { IntelAccessAccountWire } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

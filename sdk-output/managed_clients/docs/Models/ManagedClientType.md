@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClientType', 'managed_clients'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClientType } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientType } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Enum

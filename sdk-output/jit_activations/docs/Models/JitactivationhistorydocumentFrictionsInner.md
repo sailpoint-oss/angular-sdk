@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JitactivationhistorydocumentFrictions
 Import this model from the entry point of its package:
 
 ```typescript
-import { JitactivationhistorydocumentFrictionsInner } from 'sailpoint-angular-sdk/jit_activations';
+import { JitactivationhistorydocumentFrictionsInner } from '@sailpoint/angular-sdk/jit_activations';
 ```
 
 ## Properties

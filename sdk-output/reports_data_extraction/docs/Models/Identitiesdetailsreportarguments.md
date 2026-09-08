@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Identitiesdetailsreportarguments', 'r
 Import this model from the entry point of its package:
 
 ```typescript
-import { Identitiesdetailsreportarguments } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { Identitiesdetailsreportarguments } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

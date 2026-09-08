@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityPreviewResponse', 'identity_p
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityPreviewResponse } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityPreviewResponse } from '@sailpoint/angular-sdk/identity_profiles';
 ```
 
 ## Properties

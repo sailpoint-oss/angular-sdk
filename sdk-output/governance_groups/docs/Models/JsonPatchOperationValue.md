@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'governance
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/governance_groups';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

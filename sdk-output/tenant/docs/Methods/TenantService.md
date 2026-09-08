@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TenantService } from 'sailpoint-angular-sdk/tenant';
+import { TenantService } from '@sailpoint/angular-sdk/tenant';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

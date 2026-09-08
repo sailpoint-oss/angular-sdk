@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/account_usages/methods/account-usages#get-usages-by-account-id-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountUsagesService } from 'sailpoint-angular-sdk/account_usages';
+        import { AccountUsagesService } from '@sailpoint/angular-sdk/account_usages';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

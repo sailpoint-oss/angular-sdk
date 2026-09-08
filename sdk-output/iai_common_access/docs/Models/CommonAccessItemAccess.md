@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CommonAccessItemAccess', 'iai_common_
 Import this model from the entry point of its package:
 
 ```typescript
-import { CommonAccessItemAccess } from 'sailpoint-angular-sdk/iai_common_access';
+import { CommonAccessItemAccess } from '@sailpoint/angular-sdk/iai_common_access';
 ```
 
 ## Properties

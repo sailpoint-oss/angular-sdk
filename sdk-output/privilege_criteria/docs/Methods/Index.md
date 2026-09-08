@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
 
 private readonly api = inject(PrivilegeCriteriaService);
 ```

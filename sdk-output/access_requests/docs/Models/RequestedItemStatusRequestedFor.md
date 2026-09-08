@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestedItemStatusRequestedFor', 'ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestedItemStatusRequestedFor } from 'sailpoint-angular-sdk/access_requests';
+import { RequestedItemStatusRequestedFor } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

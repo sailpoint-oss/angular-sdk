@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/launchers/methods/launchers#create-launcher-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
-        import { LauncherRequest } from 'sailpoint-angular-sdk/launchers';
+        import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
+        import { LauncherRequest } from '@sailpoint/angular-sdk/launchers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -37,7 +37,7 @@
       label: SDK_tools/sdk/angular/launchers/methods/launchers#delete-launcher-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
+        import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -58,7 +58,7 @@
       label: SDK_tools/sdk/angular/launchers/methods/launchers#get-launcher-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
+        import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -79,7 +79,7 @@
       label: SDK_tools/sdk/angular/launchers/methods/launchers#get-launchers-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
+        import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -102,8 +102,8 @@
       label: SDK_tools/sdk/angular/launchers/methods/launchers#put-launcher-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
-        import { LauncherRequest } from 'sailpoint-angular-sdk/launchers';
+        import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
+        import { LauncherRequest } from '@sailpoint/angular-sdk/launchers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -135,7 +135,7 @@
       label: SDK_tools/sdk/angular/launchers/methods/launchers#start-launcher-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
+        import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

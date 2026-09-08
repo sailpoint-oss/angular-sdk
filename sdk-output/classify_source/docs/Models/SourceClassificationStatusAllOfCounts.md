@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceClassificationStatusAllOfCounts
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceClassificationStatusAllOfCounts } from 'sailpoint-angular-sdk/classify_source';
+import { SourceClassificationStatusAllOfCounts } from '@sailpoint/angular-sdk/classify_source';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SearchPostV1401Response', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SearchPostV1401Response } from 'sailpoint-angular-sdk/search';
+import { SearchPostV1401Response } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Properties

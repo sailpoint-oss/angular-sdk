@@ -22,5 +22,5 @@ The Angular SDK uses data models to structure and manage data within the API. Th
 Models are not re-exported from the root of the package. Import them from the entry point of their own package:
 
 ```typescript
-import { ApprovalStatus } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { ApprovalStatus } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'saved_search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/saved_search';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/saved_search';
 ```
 
 ## Properties

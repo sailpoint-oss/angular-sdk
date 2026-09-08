@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'QueryPasswordInfoV1429Response', 'pas
 Import this model from the entry point of its package:
 
 ```typescript
-import { QueryPasswordInfoV1429Response } from 'sailpoint-angular-sdk/password_management';
+import { QueryPasswordInfoV1429Response } from '@sailpoint/angular-sdk/password_management';
 ```
 
 ## Properties

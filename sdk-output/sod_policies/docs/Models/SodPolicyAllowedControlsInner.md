@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SodPolicyAllowedControlsInner', 'sod_
 Import this model from the entry point of its package:
 
 ```typescript
-import { SodPolicyAllowedControlsInner } from 'sailpoint-angular-sdk/sod_policies';
+import { SodPolicyAllowedControlsInner } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Properties

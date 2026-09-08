@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestContext', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestContext } from 'sailpoint-angular-sdk/identities';
+import { AccessRequestContext } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

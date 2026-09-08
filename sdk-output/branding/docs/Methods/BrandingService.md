@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { BrandingService } from 'sailpoint-angular-sdk/branding';
+import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { BrandingService } from 'sailpoint-angular-sdk/branding';
+import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -158,7 +158,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { BrandingService } from 'sailpoint-angular-sdk/branding';
+import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { BrandingService } from 'sailpoint-angular-sdk/branding';
+import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { BrandingService } from 'sailpoint-angular-sdk/branding';
+import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

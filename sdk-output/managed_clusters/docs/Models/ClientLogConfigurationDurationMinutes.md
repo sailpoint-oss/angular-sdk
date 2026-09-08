@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ClientLogConfigurationDurationMinutes
 Import this model from the entry point of its package:
 
 ```typescript
-import { ClientLogConfigurationDurationMinutes } from 'sailpoint-angular-sdk/managed_clusters';
+import { ClientLogConfigurationDurationMinutes } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

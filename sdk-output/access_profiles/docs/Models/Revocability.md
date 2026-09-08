@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Revocability', 'access_profiles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Revocability } from 'sailpoint-angular-sdk/access_profiles';
+import { Revocability } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

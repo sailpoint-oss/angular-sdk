@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleAssignmentSourceType', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleAssignmentSourceType } from 'sailpoint-angular-sdk/roles';
+import { RoleAssignmentSourceType } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Enum

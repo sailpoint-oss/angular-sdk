@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ExceptionCriteriaAccess', 'sod_violat
 Import this model from the entry point of its package:
 
 ```typescript
-import { ExceptionCriteriaAccess } from 'sailpoint-angular-sdk/sod_violations';
+import { ExceptionCriteriaAccess } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListTagsV1429Response', 'tags']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListTagsV1429Response } from 'sailpoint-angular-sdk/tags';
+import { ListTagsV1429Response } from '@sailpoint/angular-sdk/tags';
 ```
 
 ## Properties

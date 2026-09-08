@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'business_applications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/business_applications';
+import { ArrayInner } from '@sailpoint/angular-sdk/business_applications';
 ```
 
 ## Properties

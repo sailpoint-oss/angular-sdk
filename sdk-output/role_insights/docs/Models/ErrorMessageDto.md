@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'role_insights']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/role_insights';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/role_insights';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ParameterStorageUpdateParameter', 'pa
 Import this model from the entry point of its package:
 
 ```typescript
-import { ParameterStorageUpdateParameter } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageUpdateParameter } from '@sailpoint/angular-sdk/parameter_storage';
 ```
 
 ## Properties

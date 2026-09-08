@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceSubtypeWithSource', 'machine_ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceSubtypeWithSource } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { SourceSubtypeWithSource } from '@sailpoint/angular-sdk/machine_account_subtypes';
 ```
 
 ## Properties

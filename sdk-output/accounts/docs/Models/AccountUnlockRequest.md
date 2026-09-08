@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountUnlockRequest', 'accounts']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountUnlockRequest } from 'sailpoint-angular-sdk/accounts';
+import { AccountUnlockRequest } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'OwnerDto', 'service_desk_integration'
 Import this model from the entry point of its package:
 
 ```typescript
-import { OwnerDto } from 'sailpoint-angular-sdk/service_desk_integration';
+import { OwnerDto } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Properties

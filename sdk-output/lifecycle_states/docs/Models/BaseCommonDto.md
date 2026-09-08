@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseCommonDto', 'lifecycle_states']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseCommonDto } from 'sailpoint-angular-sdk/lifecycle_states';
+import { BaseCommonDto } from '@sailpoint/angular-sdk/lifecycle_states';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetSSFConfigurationV1429Response', 's
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetSSFConfigurationV1429Response } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { GetSSFConfigurationV1429Response } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

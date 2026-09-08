@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'ui_metadata']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/ui_metadata';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/ui_metadata';
 ```
 
 ## Properties

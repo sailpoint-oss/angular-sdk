@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListIdentityCertificationsV1429Respon
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListIdentityCertificationsV1429Response } from 'sailpoint-angular-sdk/certifications';
+import { ListIdentityCertificationsV1429Response } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Properties

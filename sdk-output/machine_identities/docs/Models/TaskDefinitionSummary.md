@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskDefinitionSummary', 'machine_iden
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskDefinitionSummary } from 'sailpoint-angular-sdk/machine_identities';
+import { TaskDefinitionSummary } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

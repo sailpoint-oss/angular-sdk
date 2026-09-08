@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReassignmentTrailDTO', 'certification
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReassignmentTrailDTO } from 'sailpoint-angular-sdk/certification_campaigns';
+import { ReassignmentTrailDTO } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

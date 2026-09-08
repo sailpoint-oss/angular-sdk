@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelOutliersSlice', 'intelligence']
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelOutliersSlice } from 'sailpoint-angular-sdk/intelligence';
+import { IntelOutliersSlice } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

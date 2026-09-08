@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttributeDefinitionSchema', 'sources'
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttributeDefinitionSchema } from 'sailpoint-angular-sdk/sources';
+import { AttributeDefinitionSchema } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

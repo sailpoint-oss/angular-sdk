@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JitactivationhistorydocumentSummaryPo
 Import this model from the entry point of its package:
 
 ```typescript
-import { JitactivationhistorydocumentSummaryPolicyMatchesInner } from 'sailpoint-angular-sdk/jit_activations';
+import { JitactivationhistorydocumentSummaryPolicyMatchesInner } from '@sailpoint/angular-sdk/jit_activations';
 ```
 
 ## Properties

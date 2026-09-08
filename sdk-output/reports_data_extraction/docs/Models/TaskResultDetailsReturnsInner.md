@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskResultDetailsReturnsInner', 'repo
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskResultDetailsReturnsInner } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { TaskResultDetailsReturnsInner } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

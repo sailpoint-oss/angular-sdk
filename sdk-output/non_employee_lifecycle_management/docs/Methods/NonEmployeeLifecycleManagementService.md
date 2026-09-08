@@ -109,8 +109,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { NonEmployeeApprovalDecision } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeApprovalDecision } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -158,8 +158,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { NonEmployeeRequestBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeRequestBody } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -205,8 +205,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { NonEmployeeRequestBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeRequestBody } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -254,8 +254,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { NonEmployeeSchemaAttributeBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeSchemaAttributeBody } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -302,8 +302,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { NonEmployeeSourceRequestBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeSourceRequestBody } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -396,8 +396,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { DeleteNonEmployeeRecordsInBulkV1Request } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { DeleteNonEmployeeRecordsInBulkV1Request } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -728,7 +728,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -778,7 +778,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -827,7 +827,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -924,7 +924,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -974,7 +974,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1021,7 +1021,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1069,7 +1069,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1119,7 +1119,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1166,7 +1166,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1222,7 +1222,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1279,7 +1279,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1338,7 +1338,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1396,7 +1396,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1452,8 +1452,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1504,8 +1504,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1554,8 +1554,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1603,8 +1603,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { NonEmployeeRejectApprovalDecision } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeRejectApprovalDecision } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1656,8 +1656,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
-import { NonEmployeeRequestBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeRequestBody } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

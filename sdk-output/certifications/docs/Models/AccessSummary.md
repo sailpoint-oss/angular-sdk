@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessSummary', 'certifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessSummary } from 'sailpoint-angular-sdk/certifications';
+import { AccessSummary } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Properties

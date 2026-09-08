@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'sod_violations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/sod_violations';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

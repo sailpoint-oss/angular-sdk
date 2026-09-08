@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CampaignsDeleteRequest', 'certificati
 Import this model from the entry point of its package:
 
 ```typescript
-import { CampaignsDeleteRequest } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CampaignsDeleteRequest } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

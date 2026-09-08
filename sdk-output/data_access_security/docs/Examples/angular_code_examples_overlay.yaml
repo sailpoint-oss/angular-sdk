@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#cancel-task-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -26,8 +26,8 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#create-application-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-        import { BaseCreateApplicationRequest } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { BaseCreateApplicationRequest } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -94,8 +94,8 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#create-identity-collector-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-        import { Createidentitycollectorrequest } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { Createidentitycollectorrequest } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -119,8 +119,8 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#create-schedule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-        import { CreateScheduleRequest } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { CreateScheduleRequest } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -152,8 +152,8 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-assign-post
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-        import { AssignResourceOwnerRequest } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { AssignResourceOwnerRequest } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -178,7 +178,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-owner-identity-id-resources-get
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -201,8 +201,8 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-reelect-post
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-        import { ReelectRequest } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { ReelectRequest } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -227,7 +227,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-resources-resource-id-get
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -250,7 +250,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-source-identity-id-reassign-destination-identity-id-post
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -272,7 +272,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#delete-application-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -293,7 +293,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#delete-identity-collector-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -314,7 +314,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#delete-schedule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -335,7 +335,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#delete-task-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -356,7 +356,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-application-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -377,7 +377,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-applications-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -401,7 +401,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-owners-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -424,7 +424,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-schedule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -445,7 +445,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-schedules-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -469,7 +469,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-task-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -490,7 +490,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-tasks-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -514,7 +514,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#list-identity-collectors-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -538,8 +538,8 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#put-application-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-        import { BaseCreateApplicationRequest } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { BaseCreateApplicationRequest } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -607,8 +607,8 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#put-identity-collector-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-        import { Updateidentitycollectorrequest } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { Updateidentitycollectorrequest } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -634,8 +634,8 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#put-schedule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-        import { UpdateScheduleRequest } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { UpdateScheduleRequest } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -668,7 +668,7 @@
       label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#start-task-rerun-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

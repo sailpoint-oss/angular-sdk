@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PendingApprovalMaxPermittedAccessDura
 Import this model from the entry point of its package:
 
 ```typescript
-import { PendingApprovalMaxPermittedAccessDuration } from 'sailpoint-angular-sdk/access_request_approvals';
+import { PendingApprovalMaxPermittedAccessDuration } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SetIconV1Request', 'icons']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SetIconV1Request } from 'sailpoint-angular-sdk/icons';
+import { SetIconV1Request } from '@sailpoint/angular-sdk/icons';
 ```
 
 ## Properties

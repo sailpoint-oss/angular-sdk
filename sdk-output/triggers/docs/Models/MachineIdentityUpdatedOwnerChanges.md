@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityUpdatedOwnerChanges', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityUpdatedOwnerChanges } from 'sailpoint-angular-sdk/triggers';
+import { MachineIdentityUpdatedOwnerChanges } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

@@ -119,7 +119,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordDictionaryService } from 'sailpoint-angular-sdk/password_dictionary';
+import { PasswordDictionaryService } from '@sailpoint/angular-sdk/password_dictionary';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordDictionaryService } from 'sailpoint-angular-sdk/password_dictionary';
+import { PasswordDictionaryService } from '@sailpoint/angular-sdk/password_dictionary';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

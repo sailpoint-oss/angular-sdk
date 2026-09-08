@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListOauthClientsV1401Response', 'oaut
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListOauthClientsV1401Response } from 'sailpoint-angular-sdk/oauth_clients';
+import { ListOauthClientsV1401Response } from '@sailpoint/angular-sdk/oauth_clients';
 ```
 
 ## Properties

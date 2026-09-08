@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskResultDetails', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskResultDetails } from 'sailpoint-angular-sdk/sources';
+import { TaskResultDetails } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

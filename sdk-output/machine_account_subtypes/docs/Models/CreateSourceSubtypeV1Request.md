@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateSourceSubtypeV1Request', 'machi
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateSourceSubtypeV1Request } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { CreateSourceSubtypeV1Request } from '@sailpoint/angular-sdk/machine_account_subtypes';
 ```
 
 ## Properties

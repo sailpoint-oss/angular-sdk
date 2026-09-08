@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'org_config
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/org_config';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/org_config';
 ```
 
 ## Properties

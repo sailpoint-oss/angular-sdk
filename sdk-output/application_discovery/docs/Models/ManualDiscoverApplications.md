@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManualDiscoverApplications', 'applica
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManualDiscoverApplications } from 'sailpoint-angular-sdk/application_discovery';
+import { ManualDiscoverApplications } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

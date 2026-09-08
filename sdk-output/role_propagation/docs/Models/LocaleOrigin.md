@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'role_propagation']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/role_propagation';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/role_propagation';
 ```
 
 ## Enum

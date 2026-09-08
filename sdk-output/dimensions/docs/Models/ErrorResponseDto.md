@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'dimensions']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/dimensions';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

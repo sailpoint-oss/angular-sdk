@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PasswordDigitTokenReset', 'password_m
 Import this model from the entry point of its package:
 
 ```typescript
-import { PasswordDigitTokenReset } from 'sailpoint-angular-sdk/password_management';
+import { PasswordDigitTokenReset } from '@sailpoint/angular-sdk/password_management';
 ```
 
 ## Properties

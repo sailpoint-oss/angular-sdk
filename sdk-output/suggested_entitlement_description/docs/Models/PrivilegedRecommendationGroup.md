@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PrivilegedRecommendationGroup', 'sugg
 Import this model from the entry point of its package:
 
 ```typescript
-import { PrivilegedRecommendationGroup } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { PrivilegedRecommendationGroup } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

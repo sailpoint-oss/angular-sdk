@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalInfoResponse', 'identity_hist
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalInfoResponse } from 'sailpoint-angular-sdk/identity_history';
+import { ApprovalInfoResponse } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

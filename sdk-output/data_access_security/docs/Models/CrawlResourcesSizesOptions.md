@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CrawlResourcesSizesOptions', 'data_ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { CrawlResourcesSizesOptions } from 'sailpoint-angular-sdk/data_access_security';
+import { CrawlResourcesSizesOptions } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SpDetails', 'global_tenant_security_s
 Import this model from the entry point of its package:
 
 ```typescript
-import { SpDetails } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { SpDetails } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 ```
 
 ## Properties

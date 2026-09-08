@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalSummary', 'access_request_app
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalSummary } from 'sailpoint-angular-sdk/access_request_approvals';
+import { ApprovalSummary } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

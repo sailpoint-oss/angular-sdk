@@ -56,8 +56,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
-import { ManagedClusterRequest } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
+import { ManagedClusterRequest } from '@sailpoint/angular-sdk/managed_clusters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -296,8 +296,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
-import { PutClientLogConfigurationV1Request } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
+import { PutClientLogConfigurationV1Request } from '@sailpoint/angular-sdk/managed_clusters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -345,8 +345,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/managed_clusters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'connector_customi
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/connector_customizers';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/connector_customizers';
 ```
 
 ## Properties

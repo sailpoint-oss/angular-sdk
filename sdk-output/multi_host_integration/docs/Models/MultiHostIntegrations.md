@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MultiHostIntegrations', 'multi_host_i
 Import this model from the entry point of its package:
 
 ```typescript
-import { MultiHostIntegrations } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrations } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

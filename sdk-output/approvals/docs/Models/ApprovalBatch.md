@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalBatch', 'approvals']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalBatch } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalBatch } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

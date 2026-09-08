@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestedItemStatusRequestState', 'ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestedItemStatusRequestState } from 'sailpoint-angular-sdk/access_requests';
+import { RequestedItemStatusRequestState } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Enum

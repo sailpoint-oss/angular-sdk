@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'HealthEvent', 'managed_clients']
 Import this model from the entry point of its package:
 
 ```typescript
-import { HealthEvent } from 'sailpoint-angular-sdk/managed_clients';
+import { HealthEvent } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Properties

@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#create-identity-profile-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
-        import { IdentityProfile } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
+        import { IdentityProfile } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -75,7 +75,7 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#delete-identity-profile-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -96,7 +96,7 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#delete-identity-profiles-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -117,7 +117,7 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#export-identity-profiles-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -142,8 +142,8 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#generate-identity-preview-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
-        import { IdentityPreviewRequest } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
+        import { IdentityPreviewRequest } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -190,7 +190,7 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#get-default-identity-attribute-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -211,7 +211,7 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#get-identity-profile-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -232,8 +232,8 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#import-identity-profiles-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
-        import { IdentityProfileExportedObject } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
+        import { IdentityProfileExportedObject } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -310,7 +310,7 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#list-identity-profiles-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -335,7 +335,7 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#sync-identity-profile-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -356,8 +356,8 @@
       label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#update-identity-profile-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfilesService } from '@sailpoint/angular-sdk/identity_profiles';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/identity_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

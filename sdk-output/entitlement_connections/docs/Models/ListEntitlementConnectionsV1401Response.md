@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListEntitlementConnectionsV1401Respon
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListEntitlementConnectionsV1401Response } from 'sailpoint-angular-sdk/entitlement_connections';
+import { ListEntitlementConnectionsV1401Response } from '@sailpoint/angular-sdk/entitlement_connections';
 ```
 
 ## Properties

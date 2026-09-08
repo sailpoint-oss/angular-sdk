@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApplicationCrawlerSettings', 'data_ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApplicationCrawlerSettings } from 'sailpoint-angular-sdk/data_access_security';
+import { ApplicationCrawlerSettings } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

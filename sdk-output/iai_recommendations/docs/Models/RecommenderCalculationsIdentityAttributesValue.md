@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RecommenderCalculationsIdentityAttrib
 Import this model from the entry point of its package:
 
 ```typescript
-import { RecommenderCalculationsIdentityAttributesValue } from 'sailpoint-angular-sdk/iai_recommendations';
+import { RecommenderCalculationsIdentityAttributesValue } from '@sailpoint/angular-sdk/iai_recommendations';
 ```
 
 ## Properties

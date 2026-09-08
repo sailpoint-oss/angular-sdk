@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#create-managed-cluster-type-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
-        import { ManagedClusterType } from 'sailpoint-angular-sdk/managed_cluster_types';
+        import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
+        import { ManagedClusterType } from '@sailpoint/angular-sdk/managed_cluster_types';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -33,7 +33,7 @@
       label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#delete-managed-cluster-type-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+        import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -54,7 +54,7 @@
       label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#get-managed-cluster-type-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+        import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -75,7 +75,7 @@
       label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#get-managed-cluster-types-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+        import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -100,8 +100,8 @@
       label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#update-managed-cluster-type-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
-        import { JsonPatch } from 'sailpoint-angular-sdk/managed_cluster_types';
+        import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
+        import { JsonPatch } from '@sailpoint/angular-sdk/managed_cluster_types';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

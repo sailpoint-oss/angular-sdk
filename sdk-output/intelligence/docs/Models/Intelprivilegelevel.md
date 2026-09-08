@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelprivilegelevel', 'intelligence']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelprivilegelevel } from 'sailpoint-angular-sdk/intelligence';
+import { Intelprivilegelevel } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

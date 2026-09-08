@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { IAIPeerGroupStrategiesService } from 'sailpoint-angular-sdk/iai_peer_group_strategies';
+import { IAIPeerGroupStrategiesService } from '@sailpoint/angular-sdk/iai_peer_group_strategies';
 
 private readonly api = inject(IAIPeerGroupStrategiesService);
 ```

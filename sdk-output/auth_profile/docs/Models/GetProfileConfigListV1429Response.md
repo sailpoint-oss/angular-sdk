@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetProfileConfigListV1429Response', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetProfileConfigListV1429Response } from 'sailpoint-angular-sdk/auth_profile';
+import { GetProfileConfigListV1429Response } from '@sailpoint/angular-sdk/auth_profile';
 ```
 
 ## Properties

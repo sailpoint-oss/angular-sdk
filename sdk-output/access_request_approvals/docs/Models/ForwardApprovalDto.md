@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ForwardApprovalDto', 'access_request_
 Import this model from the entry point of its package:
 
 ```typescript
-import { ForwardApprovalDto } from 'sailpoint-angular-sdk/access_request_approvals';
+import { ForwardApprovalDto } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

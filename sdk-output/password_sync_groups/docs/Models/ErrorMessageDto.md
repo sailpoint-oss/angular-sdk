@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'password_sync_grou
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/password_sync_groups';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/password_sync_groups';
 ```
 
 ## Properties

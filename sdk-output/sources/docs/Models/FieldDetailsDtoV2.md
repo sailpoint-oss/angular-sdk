@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FieldDetailsDtoV2', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { FieldDetailsDtoV2 } from 'sailpoint-angular-sdk/sources';
+import { FieldDetailsDtoV2 } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

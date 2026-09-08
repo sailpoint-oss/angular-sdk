@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ValidateFilterInputDto', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ValidateFilterInputDto } from 'sailpoint-angular-sdk/triggers';
+import { ValidateFilterInputDto } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

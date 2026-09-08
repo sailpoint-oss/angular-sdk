@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#list-jit-activation-history-for-current-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
+        import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -31,7 +31,7 @@
       label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#list-jit-activation-history-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
+        import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -57,8 +57,8 @@
       label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#start-activate-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
-        import { JitActivationActivateRequest } from 'sailpoint-angular-sdk/jit_activations';
+        import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+        import { JitActivationActivateRequest } from '@sailpoint/angular-sdk/jit_activations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -83,8 +83,8 @@
       label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#start-deactivate-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
-        import { JitActivationDeactivateRequest } from 'sailpoint-angular-sdk/jit_activations';
+        import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+        import { JitActivationDeactivateRequest } from '@sailpoint/angular-sdk/jit_activations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -108,8 +108,8 @@
       label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#start-extend-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
-        import { JitActivationExtendRequest } from 'sailpoint-angular-sdk/jit_activations';
+        import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+        import { JitActivationExtendRequest } from '@sailpoint/angular-sdk/jit_activations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

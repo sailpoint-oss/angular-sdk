@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LifecyclestateDeleted', 'lifecycle_st
 Import this model from the entry point of its package:
 
 ```typescript
-import { LifecyclestateDeleted } from 'sailpoint-angular-sdk/lifecycle_states';
+import { LifecyclestateDeleted } from '@sailpoint/angular-sdk/lifecycle_states';
 ```
 
 ## Properties

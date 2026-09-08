@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'workflows']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/workflows';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/workflows';
 ```
 
 ## Enum

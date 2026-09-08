@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PreviewDataSourceResponse', 'custom_f
 Import this model from the entry point of its package:
 
 ```typescript
-import { PreviewDataSourceResponse } from 'sailpoint-angular-sdk/custom_forms';
+import { PreviewDataSourceResponse } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

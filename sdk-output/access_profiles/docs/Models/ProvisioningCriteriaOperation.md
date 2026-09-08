@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ProvisioningCriteriaOperation', 'acce
 Import this model from the entry point of its package:
 
 ```typescript
-import { ProvisioningCriteriaOperation } from 'sailpoint-angular-sdk/access_profiles';
+import { ProvisioningCriteriaOperation } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Enum

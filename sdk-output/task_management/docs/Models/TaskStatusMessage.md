@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskStatusMessage', 'task_management'
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskStatusMessage } from 'sailpoint-angular-sdk/task_management';
+import { TaskStatusMessage } from '@sailpoint/angular-sdk/task_management';
 ```
 
 ## Properties

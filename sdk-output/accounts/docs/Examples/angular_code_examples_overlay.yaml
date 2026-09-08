@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#create-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-        import { AccountAttributesCreate } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+        import { AccountAttributesCreate } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -36,7 +36,7 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#delete-account-async-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -57,7 +57,7 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#delete-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -78,7 +78,7 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#disable-account-for-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -99,8 +99,8 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#disable-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-        import { AccountToggleRequest } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+        import { AccountToggleRequest } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -125,8 +125,8 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#disable-accounts-for-identities-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-        import { IdentitiesAccountsBulkRequest } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+        import { IdentitiesAccountsBulkRequest } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -149,7 +149,7 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#enable-account-for-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -170,8 +170,8 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#enable-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-        import { AccountToggleRequest } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+        import { AccountToggleRequest } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -196,8 +196,8 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#enable-accounts-for-identities-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-        import { IdentitiesAccountsBulkRequest } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+        import { IdentitiesAccountsBulkRequest } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -220,7 +220,7 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#get-account-entitlements-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -244,7 +244,7 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#get-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -265,7 +265,7 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#list-accounts-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -291,8 +291,8 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#put-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-        import { AccountAttributes } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+        import { AccountAttributes } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -322,7 +322,7 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#submit-reload-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -343,8 +343,8 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#unlock-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-        import { AccountUnlockRequest } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+        import { AccountUnlockRequest } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -370,7 +370,7 @@
       label: SDK_tools/sdk/angular/accounts/methods/accounts#update-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

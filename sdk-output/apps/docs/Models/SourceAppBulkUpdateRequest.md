@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceAppBulkUpdateRequest', 'apps']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceAppBulkUpdateRequest } from 'sailpoint-angular-sdk/apps';
+import { SourceAppBulkUpdateRequest } from '@sailpoint/angular-sdk/apps';
 ```
 
 ## Properties

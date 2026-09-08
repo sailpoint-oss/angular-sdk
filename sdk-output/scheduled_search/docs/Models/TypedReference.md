@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TypedReference', 'scheduled_search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TypedReference } from 'sailpoint-angular-sdk/scheduled_search';
+import { TypedReference } from '@sailpoint/angular-sdk/scheduled_search';
 ```
 
 ## Properties

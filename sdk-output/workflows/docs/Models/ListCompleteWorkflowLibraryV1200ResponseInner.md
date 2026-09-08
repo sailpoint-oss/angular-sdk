@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListCompleteWorkflowLibraryV1200Respo
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListCompleteWorkflowLibraryV1200ResponseInner } from 'sailpoint-angular-sdk/workflows';
+import { ListCompleteWorkflowLibraryV1200ResponseInner } from '@sailpoint/angular-sdk/workflows';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Range', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Range } from 'sailpoint-angular-sdk/search';
+import { Range } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Properties

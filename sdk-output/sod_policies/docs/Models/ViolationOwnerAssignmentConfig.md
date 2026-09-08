@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ViolationOwnerAssignmentConfig', 'sod
 Import this model from the entry point of its package:
 
 ```typescript
-import { ViolationOwnerAssignmentConfig } from 'sailpoint-angular-sdk/sod_policies';
+import { ViolationOwnerAssignmentConfig } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Properties

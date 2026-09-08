@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetManagedClientsV1429Response', 'man
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetManagedClientsV1429Response } from 'sailpoint-angular-sdk/managed_clients';
+import { GetManagedClientsV1429Response } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Properties

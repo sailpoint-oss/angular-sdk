@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Column', 'saved_search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Column } from 'sailpoint-angular-sdk/saved_search';
+import { Column } from '@sailpoint/angular-sdk/saved_search';
 ```
 
 ## Properties

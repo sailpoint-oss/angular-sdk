@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { JITAccessService } from 'sailpoint-angular-sdk/jit_access';
+import { JITAccessService } from '@sailpoint/angular-sdk/jit_access';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -116,8 +116,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { JITAccessService } from 'sailpoint-angular-sdk/jit_access';
-import { JitAccessOperationRequest } from 'sailpoint-angular-sdk/jit_access';
+import { JITAccessService } from '@sailpoint/angular-sdk/jit_access';
+import { JitAccessOperationRequest } from '@sailpoint/angular-sdk/jit_access';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

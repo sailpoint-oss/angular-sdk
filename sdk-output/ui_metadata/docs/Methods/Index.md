@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { UIMetadataService } from 'sailpoint-angular-sdk/ui_metadata';
+import { UIMetadataService } from '@sailpoint/angular-sdk/ui_metadata';
 
 private readonly api = inject(UIMetadataService);
 ```

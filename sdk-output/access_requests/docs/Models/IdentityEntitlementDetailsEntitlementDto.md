@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityEntitlementDetailsEntitlement
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityEntitlementDetailsEntitlementDto } from 'sailpoint-angular-sdk/access_requests';
+import { IdentityEntitlementDetailsEntitlementDto } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

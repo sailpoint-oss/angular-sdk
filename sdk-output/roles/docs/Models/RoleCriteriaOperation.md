@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleCriteriaOperation', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleCriteriaOperation } from 'sailpoint-angular-sdk/roles';
+import { RoleCriteriaOperation } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Enum

@@ -5,8 +5,8 @@
   "compilerOptions": {
     "types": [],
     "paths": {
-      "sailpoint-angular-sdk": ["../sdk-output/index"],
-      "sailpoint-angular-sdk/*": ["../sdk-output/*"]
+      "@sailpoint/angular-sdk": ["../sdk-output/index"],
+      "@sailpoint/angular-sdk/*": ["../sdk-output/*"]
     }
   },
   "include": [

@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DeclassifySourceService } from 'sailpoint-angular-sdk/declassify_source';
+import { DeclassifySourceService } from '@sailpoint/angular-sdk/declassify_source';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

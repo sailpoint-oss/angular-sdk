@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConditionEffect', 'custom_forms']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConditionEffect } from 'sailpoint-angular-sdk/custom_forms';
+import { ConditionEffect } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

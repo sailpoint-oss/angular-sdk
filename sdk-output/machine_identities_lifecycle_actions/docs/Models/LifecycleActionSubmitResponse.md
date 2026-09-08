@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LifecycleActionSubmitResponse', 'mach
 Import this model from the entry point of its package:
 
 ```typescript
-import { LifecycleActionSubmitResponse } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { LifecycleActionSubmitResponse } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 ```
 
 ## Properties

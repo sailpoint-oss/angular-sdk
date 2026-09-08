@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineidentityV2', 'machine_identiti
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineidentityV2 } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineidentityV2 } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

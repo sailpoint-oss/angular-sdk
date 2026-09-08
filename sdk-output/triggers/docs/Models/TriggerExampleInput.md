@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TriggerExampleInput', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TriggerExampleInput } from 'sailpoint-angular-sdk/triggers';
+import { TriggerExampleInput } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

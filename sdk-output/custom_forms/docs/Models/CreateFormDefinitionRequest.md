@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateFormDefinitionRequest', 'custom
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateFormDefinitionRequest } from 'sailpoint-angular-sdk/custom_forms';
+import { CreateFormDefinitionRequest } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

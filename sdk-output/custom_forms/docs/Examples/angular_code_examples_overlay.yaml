@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#create-form-definition-dynamic-schema-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-        import { FormDefinitionDynamicSchemaRequest } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+        import { FormDefinitionDynamicSchemaRequest } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -35,7 +35,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#create-form-definition-file-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -57,8 +57,8 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#create-form-definition-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-        import { CreateFormDefinitionRequest } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+        import { CreateFormDefinitionRequest } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -189,8 +189,8 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#create-form-instance-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-        import { CreateFormInstanceRequest } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+        import { CreateFormInstanceRequest } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -231,7 +231,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#delete-form-definition-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -252,7 +252,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#export-form-definitions-by-tenant-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -276,7 +276,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#get-file-from-s3-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -298,7 +298,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#get-form-definition-by-key-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -319,7 +319,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#get-form-instance-by-key-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -340,7 +340,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#get-form-instance-file-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -362,8 +362,8 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#import-form-definitions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-        import { ImportFormDefinitionsV1RequestInner } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+        import { ImportFormDefinitionsV1RequestInner } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -384,7 +384,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#patch-form-definition-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -406,7 +406,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#patch-form-instance-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -428,7 +428,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#search-form-definitions-by-tenant-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -452,7 +452,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#search-form-element-data-by-element-idv1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -477,7 +477,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#search-form-instances-by-tenant-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -500,7 +500,7 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#search-pre-defined-select-options-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -520,8 +520,8 @@
       label: SDK_tools/sdk/angular/custom_forms/methods/custom-forms#show-preview-data-source-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-        import { FormElementPreviewRequest } from 'sailpoint-angular-sdk/custom_forms';
+        import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+        import { FormElementPreviewRequest } from '@sailpoint/angular-sdk/custom_forms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

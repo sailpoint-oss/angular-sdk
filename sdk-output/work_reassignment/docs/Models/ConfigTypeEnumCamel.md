@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConfigTypeEnumCamel', 'work_reassignm
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConfigTypeEnumCamel } from 'sailpoint-angular-sdk/work_reassignment';
+import { ConfigTypeEnumCamel } from '@sailpoint/angular-sdk/work_reassignment';
 ```
 
 ## Enum

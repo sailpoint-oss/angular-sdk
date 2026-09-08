@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetSIMIntegrationV1401Response', 'sim
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetSIMIntegrationV1401Response } from 'sailpoint-angular-sdk/sim_integrations';
+import { GetSIMIntegrationV1401Response } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Properties

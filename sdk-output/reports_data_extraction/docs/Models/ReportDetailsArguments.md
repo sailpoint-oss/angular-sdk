@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReportDetailsArguments', 'reports_dat
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReportDetailsArguments } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { ReportDetailsArguments } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

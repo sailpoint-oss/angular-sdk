@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceDeletedActor', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceDeletedActor } from 'sailpoint-angular-sdk/triggers';
+import { SourceDeletedActor } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MfaConfigTestResponse', 'mfa_configur
 Import this model from the entry point of its package:
 
 ```typescript
-import { MfaConfigTestResponse } from 'sailpoint-angular-sdk/mfa_configuration';
+import { MfaConfigTestResponse } from '@sailpoint/angular-sdk/mfa_configuration';
 ```
 
 ## Properties

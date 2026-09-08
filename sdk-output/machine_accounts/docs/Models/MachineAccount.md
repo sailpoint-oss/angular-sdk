@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineAccount', 'machine_accounts']
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineAccount } from 'sailpoint-angular-sdk/machine_accounts';
+import { MachineAccount } from '@sailpoint/angular-sdk/machine_accounts';
 ```
 
 ## Properties

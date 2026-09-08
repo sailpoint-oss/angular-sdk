@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AggregationType', 'access_model_metad
 Import this model from the entry point of its package:
 
 ```typescript
-import { AggregationType } from 'sailpoint-angular-sdk/access_model_metadata';
+import { AggregationType } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'iai_recommendation
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/iai_recommendations';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/iai_recommendations';
 ```
 
 ## Properties

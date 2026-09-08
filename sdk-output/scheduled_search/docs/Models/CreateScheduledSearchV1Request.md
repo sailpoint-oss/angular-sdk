@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateScheduledSearchV1Request', 'sch
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateScheduledSearchV1Request } from 'sailpoint-angular-sdk/scheduled_search';
+import { CreateScheduledSearchV1Request } from '@sailpoint/angular-sdk/scheduled_search';
 ```
 
 ## Properties

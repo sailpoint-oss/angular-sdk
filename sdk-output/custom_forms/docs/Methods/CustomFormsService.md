@@ -71,8 +71,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-import { FormDefinitionDynamicSchemaRequest } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+import { FormDefinitionDynamicSchemaRequest } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -166,8 +166,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-import { CreateFormDefinitionRequest } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+import { CreateFormDefinitionRequest } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -213,8 +213,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-import { CreateFormInstanceRequest } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+import { CreateFormInstanceRequest } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -548,8 +548,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-import { ImportFormDefinitionsV1RequestInner } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+import { ImportFormDefinitionsV1RequestInner } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -847,7 +847,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -896,8 +896,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
-import { FormElementPreviewRequest } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
+import { FormElementPreviewRequest } from '@sailpoint/angular-sdk/custom_forms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

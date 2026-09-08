@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LifecycleRequesterReference', 'machin
 Import this model from the entry point of its package:
 
 ```typescript
-import { LifecycleRequesterReference } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { LifecycleRequesterReference } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 ```
 
 ## Properties

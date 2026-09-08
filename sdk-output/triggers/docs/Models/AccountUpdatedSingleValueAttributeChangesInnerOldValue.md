@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountUpdatedSingleValueAttributeCha
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountUpdatedSingleValueAttributeChangesInnerOldValue } from 'sailpoint-angular-sdk/triggers';
+import { AccountUpdatedSingleValueAttributeChangesInnerOldValue } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/org_config/methods/org-config#get-org-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { OrgConfigService } from 'sailpoint-angular-sdk/org_config';
+        import { OrgConfigService } from '@sailpoint/angular-sdk/org_config';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -25,7 +25,7 @@
       label: SDK_tools/sdk/angular/org_config/methods/org-config#get-valid-time-zones-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { OrgConfigService } from 'sailpoint-angular-sdk/org_config';
+        import { OrgConfigService } from '@sailpoint/angular-sdk/org_config';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -48,8 +48,8 @@
       label: SDK_tools/sdk/angular/org_config/methods/org-config#patch-org-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { OrgConfigService } from 'sailpoint-angular-sdk/org_config';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/org_config';
+        import { OrgConfigService } from '@sailpoint/angular-sdk/org_config';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/org_config';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

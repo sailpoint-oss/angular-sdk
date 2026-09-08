@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'machine_classificatio
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/machine_classification_config';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/machine_classification_config';
 ```
 
 ## Enum

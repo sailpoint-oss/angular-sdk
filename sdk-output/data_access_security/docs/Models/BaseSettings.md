@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseSettings', 'data_access_security'
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseSettings } from 'sailpoint-angular-sdk/data_access_security';
+import { BaseSettings } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BusinessApplicationRef', 'machine_ide
 Import this model from the entry point of its package:
 
 ```typescript
-import { BusinessApplicationRef } from 'sailpoint-angular-sdk/machine_identities';
+import { BusinessApplicationRef } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

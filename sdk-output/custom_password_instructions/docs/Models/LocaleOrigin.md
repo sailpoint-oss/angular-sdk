@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'custom_password_instr
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/custom_password_instructions';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/custom_password_instructions';
 ```
 
 ## Enum

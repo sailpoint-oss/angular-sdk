@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelPrivilegedAccessSlice', 'intelli
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelPrivilegedAccessSlice } from 'sailpoint-angular-sdk/intelligence';
+import { IntelPrivilegedAccessSlice } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

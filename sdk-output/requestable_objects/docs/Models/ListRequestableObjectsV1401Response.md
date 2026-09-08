@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListRequestableObjectsV1401Response',
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListRequestableObjectsV1401Response } from 'sailpoint-angular-sdk/requestable_objects';
+import { ListRequestableObjectsV1401Response } from '@sailpoint/angular-sdk/requestable_objects';
 ```
 
 ## Properties

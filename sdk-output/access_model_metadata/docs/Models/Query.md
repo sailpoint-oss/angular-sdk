@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Query', 'access_model_metadata']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Query } from 'sailpoint-angular-sdk/access_model_metadata';
+import { Query } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

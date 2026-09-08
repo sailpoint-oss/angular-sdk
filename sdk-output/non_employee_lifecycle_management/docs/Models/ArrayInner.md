@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'non_employee_lifecycle_
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { ArrayInner } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'certification_campaig
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/certification_campaigns';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Enum

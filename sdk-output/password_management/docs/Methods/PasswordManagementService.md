@@ -77,8 +77,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
-import { PasswordDigitTokenReset } from 'sailpoint-angular-sdk/password_management';
+import { PasswordManagementService } from '@sailpoint/angular-sdk/password_management';
+import { PasswordDigitTokenReset } from '@sailpoint/angular-sdk/password_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
+import { PasswordManagementService } from '@sailpoint/angular-sdk/password_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -172,8 +172,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
-import { PasswordInfoQueryDTO } from 'sailpoint-angular-sdk/password_management';
+import { PasswordManagementService } from '@sailpoint/angular-sdk/password_management';
+import { PasswordInfoQueryDTO } from '@sailpoint/angular-sdk/password_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -238,8 +238,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
-import { PasswordChangeRequest } from 'sailpoint-angular-sdk/password_management';
+import { PasswordManagementService } from '@sailpoint/angular-sdk/password_management';
+import { PasswordChangeRequest } from '@sailpoint/angular-sdk/password_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

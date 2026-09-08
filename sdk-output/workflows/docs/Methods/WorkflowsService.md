@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -112,8 +112,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-import { CreateExternalExecuteWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+import { CreateExternalExecuteWorkflowV1Request } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -206,8 +206,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-import { CreateWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+import { CreateWorkflowV1Request } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -602,7 +602,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -647,7 +647,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -739,7 +739,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -785,8 +785,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -834,8 +834,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-import { WorkflowBody } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+import { WorkflowBody } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -883,8 +883,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-import { TestExternalExecuteWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+import { TestExternalExecuteWorkflowV1Request } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -943,8 +943,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-import { TestWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+import { TestWorkflowV1Request } from '@sailpoint/angular-sdk/workflows';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

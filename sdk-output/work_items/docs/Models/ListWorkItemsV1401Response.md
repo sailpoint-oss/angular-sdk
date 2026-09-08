@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListWorkItemsV1401Response', 'work_it
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListWorkItemsV1401Response } from 'sailpoint-angular-sdk/work_items';
+import { ListWorkItemsV1401Response } from '@sailpoint/angular-sdk/work_items';
 ```
 
 ## Properties

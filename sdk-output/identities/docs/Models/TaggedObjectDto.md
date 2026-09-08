@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaggedObjectDto', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaggedObjectDto } from 'sailpoint-angular-sdk/identities';
+import { TaggedObjectDto } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

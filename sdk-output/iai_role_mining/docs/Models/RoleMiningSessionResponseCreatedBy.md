@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleMiningSessionResponseCreatedBy', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleMiningSessionResponseCreatedBy } from 'sailpoint-angular-sdk/iai_role_mining';
+import { RoleMiningSessionResponseCreatedBy } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Properties

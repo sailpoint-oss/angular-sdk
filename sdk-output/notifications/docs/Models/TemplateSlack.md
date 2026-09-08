@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TemplateSlack', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TemplateSlack } from 'sailpoint-angular-sdk/notifications';
+import { TemplateSlack } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

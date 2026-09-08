@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'iai_peer_group_st
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/iai_peer_group_strategies';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/iai_peer_group_strategies';
 ```
 
 ## Properties

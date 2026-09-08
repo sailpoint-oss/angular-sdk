@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'iai_recommendations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/iai_recommendations';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/iai_recommendations';
 ```
 
 ## Enum

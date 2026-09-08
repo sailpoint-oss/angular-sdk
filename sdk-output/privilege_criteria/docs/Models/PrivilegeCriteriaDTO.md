@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PrivilegeCriteriaDTO', 'privilege_cri
 Import this model from the entry point of its package:
 
 ```typescript
-import { PrivilegeCriteriaDTO } from 'sailpoint-angular-sdk/privilege_criteria';
+import { PrivilegeCriteriaDTO } from '@sailpoint/angular-sdk/privilege_criteria';
 ```
 
 ## Properties

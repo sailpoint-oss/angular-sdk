@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ContextAttributeDto', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ContextAttributeDto } from 'sailpoint-angular-sdk/identities';
+import { ContextAttributeDto } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

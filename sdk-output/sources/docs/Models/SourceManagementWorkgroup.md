@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceManagementWorkgroup', 'sources'
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceManagementWorkgroup } from 'sailpoint-angular-sdk/sources';
+import { SourceManagementWorkgroup } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

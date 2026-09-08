@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ImportFormDefinitionsV1RequestInner',
 Import this model from the entry point of its package:
 
 ```typescript
-import { ImportFormDefinitionsV1RequestInner } from 'sailpoint-angular-sdk/custom_forms';
+import { ImportFormDefinitionsV1RequestInner } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

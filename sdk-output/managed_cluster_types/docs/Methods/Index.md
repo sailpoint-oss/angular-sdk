@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
 
 private readonly api = inject(ManagedClusterTypesService);
 ```

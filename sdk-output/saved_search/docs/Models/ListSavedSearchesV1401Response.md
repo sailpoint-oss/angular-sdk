@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListSavedSearchesV1401Response', 'sav
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListSavedSearchesV1401Response } from 'sailpoint-angular-sdk/saved_search';
+import { ListSavedSearchesV1401Response } from '@sailpoint/angular-sdk/saved_search';
 ```
 
 ## Properties

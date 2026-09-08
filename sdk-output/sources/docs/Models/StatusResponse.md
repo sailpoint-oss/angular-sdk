@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'StatusResponse', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { StatusResponse } from 'sailpoint-angular-sdk/sources';
+import { StatusResponse } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

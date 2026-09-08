@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UserLevelSummaryDTO', 'custom_user_le
 Import this model from the entry point of its package:
 
 ```typescript
-import { UserLevelSummaryDTO } from 'sailpoint-angular-sdk/custom_user_levels';
+import { UserLevelSummaryDTO } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

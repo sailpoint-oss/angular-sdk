@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessModelMetadata', 'dimensions']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessModelMetadata } from 'sailpoint-angular-sdk/dimensions';
+import { AccessModelMetadata } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

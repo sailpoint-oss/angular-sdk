@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/tenant/methods/tenant#get-tenant-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TenantService } from 'sailpoint-angular-sdk/tenant';
+        import { TenantService } from '@sailpoint/angular-sdk/tenant';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeLifecycleManagementService } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 
 private readonly api = inject(NonEmployeeLifecycleManagementService);
 ```

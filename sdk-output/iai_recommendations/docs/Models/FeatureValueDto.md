@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FeatureValueDto', 'iai_recommendation
 Import this model from the entry point of its package:
 
 ```typescript
-import { FeatureValueDto } from 'sailpoint-angular-sdk/iai_recommendations';
+import { FeatureValueDto } from '@sailpoint/angular-sdk/iai_recommendations';
 ```
 
 ## Properties

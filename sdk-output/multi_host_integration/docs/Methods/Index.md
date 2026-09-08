@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
 private readonly api = inject(MultiHostIntegrationService);
 ```

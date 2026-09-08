@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'sod_controls']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/sod_controls';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/sod_controls';
 ```
 
 ## Enum

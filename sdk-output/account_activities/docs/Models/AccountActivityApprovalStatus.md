@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountActivityApprovalStatus', 'acco
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountActivityApprovalStatus } from 'sailpoint-angular-sdk/account_activities';
+import { AccountActivityApprovalStatus } from '@sailpoint/angular-sdk/account_activities';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormDefinitionDynamicSchemaRequestAtt
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormDefinitionDynamicSchemaRequestAttributes } from 'sailpoint-angular-sdk/custom_forms';
+import { FormDefinitionDynamicSchemaRequestAttributes } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

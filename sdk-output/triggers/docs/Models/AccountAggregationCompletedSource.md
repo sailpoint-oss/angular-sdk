@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountAggregationCompletedSource', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountAggregationCompletedSource } from 'sailpoint-angular-sdk/triggers';
+import { AccountAggregationCompletedSource } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

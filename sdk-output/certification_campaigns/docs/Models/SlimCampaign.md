@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SlimCampaign', 'certification_campaig
 Import this model from the entry point of its package:
 
 ```typescript
-import { SlimCampaign } from 'sailpoint-angular-sdk/certification_campaigns';
+import { SlimCampaign } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

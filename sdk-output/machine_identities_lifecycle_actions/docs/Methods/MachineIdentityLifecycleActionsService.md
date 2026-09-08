@@ -87,8 +87,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentityLifecycleActionsService } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
-import { CancelLifecycleActionRequest } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { MachineIdentityLifecycleActionsService } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
+import { CancelLifecycleActionRequest } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentityLifecycleActionsService } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { MachineIdentityLifecycleActionsService } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentityLifecycleActionsService } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { MachineIdentityLifecycleActionsService } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -288,8 +288,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentityLifecycleActionsService } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
-import { LifecycleActionSubmitRequest } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { MachineIdentityLifecycleActionsService } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
+import { LifecycleActionSubmitRequest } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ProvisioningCriteriaLevel1', 'dimensi
 Import this model from the entry point of its package:
 
 ```typescript
-import { ProvisioningCriteriaLevel1 } from 'sailpoint-angular-sdk/dimensions';
+import { ProvisioningCriteriaLevel1 } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

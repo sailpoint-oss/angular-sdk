@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DataSegment', 'data_segmentation']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DataSegment } from 'sailpoint-angular-sdk/data_segmentation';
+import { DataSegment } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Properties

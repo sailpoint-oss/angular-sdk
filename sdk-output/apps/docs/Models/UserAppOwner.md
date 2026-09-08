@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UserAppOwner', 'apps']
 Import this model from the entry point of its package:
 
 ```typescript
-import { UserAppOwner } from 'sailpoint-angular-sdk/apps';
+import { UserAppOwner } from '@sailpoint/angular-sdk/apps';
 ```
 
 ## Properties

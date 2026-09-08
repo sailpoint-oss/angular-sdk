@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SlimDiscoveredApplications', 'applica
 Import this model from the entry point of its package:
 
 ```typescript
-import { SlimDiscoveredApplications } from 'sailpoint-angular-sdk/application_discovery';
+import { SlimDiscoveredApplications } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

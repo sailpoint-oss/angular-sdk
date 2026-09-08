@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskResultDto', 'dimensions']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskResultDto } from 'sailpoint-angular-sdk/dimensions';
+import { TaskResultDto } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

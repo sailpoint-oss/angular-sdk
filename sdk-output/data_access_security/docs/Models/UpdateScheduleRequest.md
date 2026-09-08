@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UpdateScheduleRequest', 'data_access_
 Import this model from the entry point of its package:
 
 ```typescript
-import { UpdateScheduleRequest } from 'sailpoint-angular-sdk/data_access_security';
+import { UpdateScheduleRequest } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

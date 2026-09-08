@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#approve-approval-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -27,7 +27,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#approve-approval-items-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -48,7 +48,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#complete-work-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -70,8 +70,8 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#forward-work-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
-        import { WorkItemForward } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
+        import { WorkItemForward } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -97,7 +97,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#get-completed-work-items-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -121,7 +121,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#get-count-completed-work-items-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -142,7 +142,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#get-count-work-items-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -163,7 +163,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#get-work-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -184,7 +184,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#get-work-items-summary-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -205,7 +205,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#list-work-items-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -229,7 +229,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#reject-approval-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -251,7 +251,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#reject-approval-items-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -272,7 +272,7 @@
       label: SDK_tools/sdk/angular/work_items/methods/work-items#submit-account-selection-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

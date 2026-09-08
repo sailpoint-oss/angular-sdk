@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'InviteIdentitiesRequest', 'identities
 Import this model from the entry point of its package:
 
 ```typescript
-import { InviteIdentitiesRequest } from 'sailpoint-angular-sdk/identities';
+import { InviteIdentitiesRequest } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

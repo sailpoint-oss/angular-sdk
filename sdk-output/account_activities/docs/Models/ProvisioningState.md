@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ProvisioningState', 'account_activiti
 Import this model from the entry point of its package:
 
 ```typescript
-import { ProvisioningState } from 'sailpoint-angular-sdk/account_activities';
+import { ProvisioningState } from '@sailpoint/angular-sdk/account_activities';
 ```
 
 ## Enum

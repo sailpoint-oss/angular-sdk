@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/password_configuration/methods/password-configuration#create-password-org-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordConfigurationService } from 'sailpoint-angular-sdk/password_configuration';
-        import { PasswordOrgConfig } from 'sailpoint-angular-sdk/password_configuration';
+        import { PasswordConfigurationService } from '@sailpoint/angular-sdk/password_configuration';
+        import { PasswordOrgConfig } from '@sailpoint/angular-sdk/password_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -32,7 +32,7 @@
       label: SDK_tools/sdk/angular/password_configuration/methods/password-configuration#get-password-org-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordConfigurationService } from 'sailpoint-angular-sdk/password_configuration';
+        import { PasswordConfigurationService } from '@sailpoint/angular-sdk/password_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -52,8 +52,8 @@
       label: SDK_tools/sdk/angular/password_configuration/methods/password-configuration#put-password-org-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordConfigurationService } from 'sailpoint-angular-sdk/password_configuration';
-        import { PasswordOrgConfig } from 'sailpoint-angular-sdk/password_configuration';
+        import { PasswordConfigurationService } from '@sailpoint/angular-sdk/password_configuration';
+        import { PasswordOrgConfig } from '@sailpoint/angular-sdk/password_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetPasswordDictionaryV1429Response', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetPasswordDictionaryV1429Response } from 'sailpoint-angular-sdk/password_dictionary';
+import { GetPasswordDictionaryV1429Response } from '@sailpoint/angular-sdk/password_dictionary';
 ```
 
 ## Properties

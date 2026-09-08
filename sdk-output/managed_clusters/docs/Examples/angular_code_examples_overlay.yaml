@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/managed_clusters/methods/managed-clusters#create-managed-cluster-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
-        import { ManagedClusterRequest } from 'sailpoint-angular-sdk/managed_clusters';
+        import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
+        import { ManagedClusterRequest } from '@sailpoint/angular-sdk/managed_clusters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -35,7 +35,7 @@
       label: SDK_tools/sdk/angular/managed_clusters/methods/managed-clusters#delete-managed-cluster-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+        import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -57,7 +57,7 @@
       label: SDK_tools/sdk/angular/managed_clusters/methods/managed-clusters#get-client-log-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+        import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -78,7 +78,7 @@
       label: SDK_tools/sdk/angular/managed_clusters/methods/managed-clusters#get-managed-cluster-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+        import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -99,7 +99,7 @@
       label: SDK_tools/sdk/angular/managed_clusters/methods/managed-clusters#get-managed-clusters-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+        import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -123,8 +123,8 @@
       label: SDK_tools/sdk/angular/managed_clusters/methods/managed-clusters#put-client-log-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
-        import { PutClientLogConfigurationV1Request } from 'sailpoint-angular-sdk/managed_clusters';
+        import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
+        import { PutClientLogConfigurationV1Request } from '@sailpoint/angular-sdk/managed_clusters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -146,8 +146,8 @@
       label: SDK_tools/sdk/angular/managed_clusters/methods/managed-clusters#update-managed-cluster-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/managed_clusters';
+        import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/managed_clusters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -173,7 +173,7 @@
       label: SDK_tools/sdk/angular/managed_clusters/methods/managed-clusters#update-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClustersService } from 'sailpoint-angular-sdk/managed_clusters';
+        import { ManagedClustersService } from '@sailpoint/angular-sdk/managed_clusters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

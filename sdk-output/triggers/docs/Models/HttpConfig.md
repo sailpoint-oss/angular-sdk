@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'HttpConfig', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { HttpConfig } from 'sailpoint-angular-sdk/triggers';
+import { HttpConfig } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

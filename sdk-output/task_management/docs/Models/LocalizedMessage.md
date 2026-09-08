@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocalizedMessage', 'task_management']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocalizedMessage } from 'sailpoint-angular-sdk/task_management';
+import { LocalizedMessage } from '@sailpoint/angular-sdk/task_management';
 ```
 
 ## Properties

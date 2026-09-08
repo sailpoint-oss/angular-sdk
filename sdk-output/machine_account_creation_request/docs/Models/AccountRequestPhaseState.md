@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountRequestPhaseState', 'machine_a
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountRequestPhaseState } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { AccountRequestPhaseState } from '@sailpoint/angular-sdk/machine_account_creation_request';
 ```
 
 ## Enum

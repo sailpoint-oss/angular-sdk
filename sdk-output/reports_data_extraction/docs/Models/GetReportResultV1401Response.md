@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetReportResultV1401Response', 'repor
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetReportResultV1401Response } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { GetReportResultV1401Response } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Query', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Query } from 'sailpoint-angular-sdk/search';
+import { Query } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Properties

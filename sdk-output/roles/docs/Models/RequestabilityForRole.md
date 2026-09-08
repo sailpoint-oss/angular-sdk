@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestabilityForRole', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestabilityForRole } from 'sailpoint-angular-sdk/roles';
+import { RequestabilityForRole } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

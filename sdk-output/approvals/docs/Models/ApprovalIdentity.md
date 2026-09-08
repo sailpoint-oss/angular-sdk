@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalIdentity', 'approvals']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalIdentity } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalIdentity } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

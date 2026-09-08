@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelmachinederived', 'intelligence']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelmachinederived } from 'sailpoint-angular-sdk/intelligence';
+import { Intelmachinederived } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

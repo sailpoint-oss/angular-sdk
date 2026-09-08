@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListCampaignFiltersV1401Response', 'c
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListCampaignFiltersV1401Response } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { ListCampaignFiltersV1401Response } from '@sailpoint/angular-sdk/certification_campaign_filters';
 ```
 
 ## Properties

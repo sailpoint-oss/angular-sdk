@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityReference', 'account_deletion
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityReference } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { IdentityReference } from '@sailpoint/angular-sdk/account_deletion_requests';
 ```
 
 ## Properties

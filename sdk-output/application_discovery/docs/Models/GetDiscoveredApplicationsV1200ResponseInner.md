@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetDiscoveredApplicationsV1200Respons
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetDiscoveredApplicationsV1200ResponseInner } from 'sailpoint-angular-sdk/application_discovery';
+import { GetDiscoveredApplicationsV1200ResponseInner } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

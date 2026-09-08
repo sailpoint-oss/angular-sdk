@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormDetails', 'work_items']
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormDetails } from 'sailpoint-angular-sdk/work_items';
+import { FormDetails } from '@sailpoint/angular-sdk/work_items';
 ```
 
 ## Properties

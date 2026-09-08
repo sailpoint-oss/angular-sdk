@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetManagedClustersV1429Response', 'ma
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetManagedClustersV1429Response } from 'sailpoint-angular-sdk/managed_clusters';
+import { GetManagedClustersV1429Response } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

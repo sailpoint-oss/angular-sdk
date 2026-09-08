@@ -1,4 +1,4 @@
-# sailpoint-angular-sdk@1.0.0
+# @sailpoint/angular-sdk@0.0.1
 
 Use these APIs to submit, list, retrieve, and cancel machine identity lifecycle actions (for example agent activate and deactivate). We encourage you to join the SailPoint Developer Community forum at https://developer.sailpoint.com/discuss to connect with other developers using our APIs.
 
@@ -24,7 +24,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```console
-npm install sailpoint-angular-sdk@1.0.0 --save
+npm install @sailpoint/angular-sdk@0.0.1 --save
 ```
 
 _without publishing (not recommended):_
@@ -46,7 +46,7 @@ npm link
 In your project:
 
 ```console
-npm link sailpoint-angular-sdk
+npm link @sailpoint/angular-sdk
 ```
 
 __Note for Windows users:__ The Angular CLI has troubles to use linked npm packages.
@@ -59,7 +59,7 @@ In your Angular project:
 
 ```typescript
 // without configuring providers
-import { ApiModule } from 'sailpoint-angular-sdk';
+import { ApiModule } from '@sailpoint/angular-sdk';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -78,7 +78,7 @@ export class AppModule {}
 
 ```typescript
 // configuring providers
-import { ApiModule, Configuration, ConfigurationParameters } from 'sailpoint-angular-sdk';
+import { ApiModule, Configuration, ConfigurationParameters } from '@sailpoint/angular-sdk';
 
 export function apiConfigFactory (): Configuration {
   const params: ConfigurationParameters = {
@@ -98,7 +98,7 @@ export class AppModule {}
 
 ```typescript
 // configuring providers with an authentication service that manages your access tokens
-import { ApiModule, Configuration } from 'sailpoint-angular-sdk';
+import { ApiModule, Configuration } from '@sailpoint/angular-sdk';
 
 @NgModule({
     imports: [ ApiModule ],
@@ -122,7 +122,7 @@ export class AppModule {}
 ```
 
 ```typescript
-import { DefaultApi } from 'sailpoint-angular-sdk';
+import { DefaultApi } from '@sailpoint/angular-sdk';
 
 export class AppComponent {
     constructor(private apiGateway: DefaultApi) { }
@@ -162,7 +162,7 @@ export class AppModule {
 If different than the generated base path, during app bootstrap, you can provide the base path to your service.
 
 ```typescript
-import { BASE_PATH } from 'sailpoint-angular-sdk';
+import { BASE_PATH } from '@sailpoint/angular-sdk';
 
 bootstrap(AppComponent, [
     { provide: BASE_PATH, useValue: 'https://your-web-service.com' },
@@ -172,7 +172,7 @@ bootstrap(AppComponent, [
 or
 
 ```typescript
-import { BASE_PATH } from 'sailpoint-angular-sdk';
+import { BASE_PATH } from '@sailpoint/angular-sdk';
 
 @NgModule({
     imports: [],
@@ -197,7 +197,7 @@ export const environment = {
 In the src/app/app.module.ts:
 
 ```typescript
-import { BASE_PATH } from 'sailpoint-angular-sdk';
+import { BASE_PATH } from '@sailpoint/angular-sdk';
 import { environment } from '../environments/environment';
 
 @NgModule({

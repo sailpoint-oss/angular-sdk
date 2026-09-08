@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetSearchAttributeConfigV1401Response
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetSearchAttributeConfigV1401Response } from 'sailpoint-angular-sdk/search_attribute_configuration';
+import { GetSearchAttributeConfigV1401Response } from '@sailpoint/angular-sdk/search_attribute_configuration';
 ```
 
 ## Properties

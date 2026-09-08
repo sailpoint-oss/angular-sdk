@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'managed_clients
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/managed_clients';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Properties

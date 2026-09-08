@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormCondition', 'custom_forms']
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormCondition } from 'sailpoint-angular-sdk/custom_forms';
+import { FormCondition } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

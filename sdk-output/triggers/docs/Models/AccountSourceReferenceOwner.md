@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountSourceReferenceOwner', 'trigge
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountSourceReferenceOwner } from 'sailpoint-angular-sdk/triggers';
+import { AccountSourceReferenceOwner } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

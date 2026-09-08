@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CampaignReference', 'certification_ca
 Import this model from the entry point of its package:
 
 ```typescript
-import { CampaignReference } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CampaignReference } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/segments/methods/segments#create-segment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
-        import { Segment } from 'sailpoint-angular-sdk/segments';
+        import { SegmentsService } from '@sailpoint/angular-sdk/segments';
+        import { Segment } from '@sailpoint/angular-sdk/segments';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -50,7 +50,7 @@
       label: SDK_tools/sdk/angular/segments/methods/segments#delete-segment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+        import { SegmentsService } from '@sailpoint/angular-sdk/segments';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -71,7 +71,7 @@
       label: SDK_tools/sdk/angular/segments/methods/segments#get-segment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+        import { SegmentsService } from '@sailpoint/angular-sdk/segments';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -92,7 +92,7 @@
       label: SDK_tools/sdk/angular/segments/methods/segments#list-segments-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+        import { SegmentsService } from '@sailpoint/angular-sdk/segments';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -115,7 +115,7 @@
       label: SDK_tools/sdk/angular/segments/methods/segments#patch-segment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+        import { SegmentsService } from '@sailpoint/angular-sdk/segments';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

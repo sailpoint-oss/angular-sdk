@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetTotalCountV1429Response', 'api_usa
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetTotalCountV1429Response } from 'sailpoint-angular-sdk/api_usage';
+import { GetTotalCountV1429Response } from '@sailpoint/angular-sdk/api_usage';
 ```
 
 ## Properties

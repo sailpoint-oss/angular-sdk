@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DimensionCriteriaOperation', 'dimensi
 Import this model from the entry point of its package:
 
 ```typescript
-import { DimensionCriteriaOperation } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionCriteriaOperation } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Enum

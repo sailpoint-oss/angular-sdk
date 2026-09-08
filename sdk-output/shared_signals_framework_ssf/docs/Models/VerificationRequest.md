@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'VerificationRequest', 'shared_signals
 Import this model from the entry point of its package:
 
 ```typescript
-import { VerificationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { VerificationRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

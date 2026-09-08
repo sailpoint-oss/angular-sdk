@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetAuthUserV1429Response', 'auth_user
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetAuthUserV1429Response } from 'sailpoint-angular-sdk/auth_users';
+import { GetAuthUserV1429Response } from '@sailpoint/angular-sdk/auth_users';
 ```
 
 ## Properties

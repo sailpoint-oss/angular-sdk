@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-import { BulkApproveAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+import { BulkApproveAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -106,8 +106,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-import { BulkCancelAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+import { BulkCancelAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -154,8 +154,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-import { CancelAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+import { CancelAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -212,8 +212,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-import { CloseAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+import { CloseAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -333,8 +333,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-import { AccessRequest } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+import { AccessRequest } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -382,7 +382,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -426,7 +426,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -684,8 +684,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-import { AccountsSelectionRequest } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+import { AccountsSelectionRequest } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -737,8 +737,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-import { AccessRequestConfig } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+import { AccessRequestConfig } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -786,8 +786,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
-import { AccessRequestConfig2 } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestsService } from '@sailpoint/angular-sdk/access_requests';
+import { AccessRequestConfig2 } from '@sailpoint/angular-sdk/access_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/access_request_identity_metrics/methods/access-request-identity-metrics#get-access-request-identity-metrics-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestIdentityMetricsService } from 'sailpoint-angular-sdk/access_request_identity_metrics';
+        import { AccessRequestIdentityMetricsService } from '@sailpoint/angular-sdk/access_request_identity_metrics';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/dimensions/methods/dimensions#create-dimension-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
-        import { Dimension } from 'sailpoint-angular-sdk/dimensions';
+        import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
+        import { Dimension } from '@sailpoint/angular-sdk/dimensions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -114,8 +114,8 @@
       label: SDK_tools/sdk/angular/dimensions/methods/dimensions#delete-bulk-dimensions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
-        import { DimensionBulkDeleteRequest } from 'sailpoint-angular-sdk/dimensions';
+        import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
+        import { DimensionBulkDeleteRequest } from '@sailpoint/angular-sdk/dimensions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -139,7 +139,7 @@
       label: SDK_tools/sdk/angular/dimensions/methods/dimensions#delete-dimension-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+        import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -161,7 +161,7 @@
       label: SDK_tools/sdk/angular/dimensions/methods/dimensions#get-dimension-entitlements-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+        import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -188,7 +188,7 @@
       label: SDK_tools/sdk/angular/dimensions/methods/dimensions#get-dimension-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+        import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -210,7 +210,7 @@
       label: SDK_tools/sdk/angular/dimensions/methods/dimensions#list-dimension-access-profiles-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+        import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -237,7 +237,7 @@
       label: SDK_tools/sdk/angular/dimensions/methods/dimensions#list-dimensions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+        import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -264,8 +264,8 @@
       label: SDK_tools/sdk/angular/dimensions/methods/dimensions#patch-dimension-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/dimensions';
+        import { DimensionsService } from '@sailpoint/angular-sdk/dimensions';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/dimensions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReassignmentTypeEnum', 'work_reassign
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReassignmentTypeEnum } from 'sailpoint-angular-sdk/work_reassignment';
+import { ReassignmentTypeEnum } from '@sailpoint/angular-sdk/work_reassignment';
 ```
 
 ## Enum

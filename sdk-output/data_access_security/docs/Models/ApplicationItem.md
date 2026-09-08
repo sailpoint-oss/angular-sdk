@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApplicationItem', 'data_access_securi
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApplicationItem } from 'sailpoint-angular-sdk/data_access_security';
+import { ApplicationItem } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

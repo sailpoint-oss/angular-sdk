@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PutPasswordDictionaryV1Request', 'pas
 Import this model from the entry point of its package:
 
 ```typescript
-import { PutPasswordDictionaryV1Request } from 'sailpoint-angular-sdk/password_dictionary';
+import { PutPasswordDictionaryV1Request } from '@sailpoint/angular-sdk/password_dictionary';
 ```
 
 ## Properties

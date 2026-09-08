@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'work_reassignment
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/work_reassignment';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/work_reassignment';
 ```
 
 ## Properties

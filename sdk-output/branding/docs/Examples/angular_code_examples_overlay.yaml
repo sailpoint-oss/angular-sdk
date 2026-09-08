@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/branding/methods/branding#create-branding-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+        import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -33,7 +33,7 @@
       label: SDK_tools/sdk/angular/branding/methods/branding#delete-branding-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+        import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -54,7 +54,7 @@
       label: SDK_tools/sdk/angular/branding/methods/branding#get-branding-list-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+        import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -74,7 +74,7 @@
       label: SDK_tools/sdk/angular/branding/methods/branding#get-branding-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+        import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -95,7 +95,7 @@
       label: SDK_tools/sdk/angular/branding/methods/branding#set-branding-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+        import { BrandingService } from '@sailpoint/angular-sdk/branding';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

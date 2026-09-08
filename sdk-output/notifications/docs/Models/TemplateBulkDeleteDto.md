@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TemplateBulkDeleteDto', 'notification
 Import this model from the entry point of its package:
 
 ```typescript
-import { TemplateBulkDeleteDto } from 'sailpoint-angular-sdk/notifications';
+import { TemplateBulkDeleteDto } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

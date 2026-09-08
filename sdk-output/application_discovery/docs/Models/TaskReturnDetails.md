@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskReturnDetails', 'application_disc
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskReturnDetails } from 'sailpoint-angular-sdk/application_discovery';
+import { TaskReturnDetails } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BucketType', 'access_model_metadata']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BucketType } from 'sailpoint-angular-sdk/access_model_metadata';
+import { BucketType } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Enum

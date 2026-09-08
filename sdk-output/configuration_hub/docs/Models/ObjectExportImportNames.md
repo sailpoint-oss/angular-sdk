@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ObjectExportImportNames', 'configurat
 Import this model from the entry point of its package:
 
 ```typescript
-import { ObjectExportImportNames } from 'sailpoint-angular-sdk/configuration_hub';
+import { ObjectExportImportNames } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListWorkgroupMembersV1200ResponseInne
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListWorkgroupMembersV1200ResponseInner } from 'sailpoint-angular-sdk/governance_groups';
+import { ListWorkgroupMembersV1200ResponseInner } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

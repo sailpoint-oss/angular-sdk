@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BeforeProvisioningRuleDto', 'service_
 Import this model from the entry point of its package:
 
 ```typescript
-import { BeforeProvisioningRuleDto } from 'sailpoint-angular-sdk/service_desk_integration';
+import { BeforeProvisioningRuleDto } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Properties

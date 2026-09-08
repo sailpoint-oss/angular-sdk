@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'machine_classifica
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/machine_classification_config';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/machine_classification_config';
 ```
 
 ## Properties

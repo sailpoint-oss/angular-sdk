@@ -53,8 +53,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SPConfigService } from 'sailpoint-angular-sdk/sp_config';
-import { ExportPayload } from 'sailpoint-angular-sdk/sp_config';
+import { SPConfigService } from '@sailpoint/angular-sdk/sp_config';
+import { ExportPayload } from '@sailpoint/angular-sdk/sp_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SPConfigService } from 'sailpoint-angular-sdk/sp_config';
+import { SPConfigService } from '@sailpoint/angular-sdk/sp_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SPConfigService } from 'sailpoint-angular-sdk/sp_config';
+import { SPConfigService } from '@sailpoint/angular-sdk/sp_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SPConfigService } from 'sailpoint-angular-sdk/sp_config';
+import { SPConfigService } from '@sailpoint/angular-sdk/sp_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SPConfigService } from 'sailpoint-angular-sdk/sp_config';
+import { SPConfigService } from '@sailpoint/angular-sdk/sp_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -306,8 +306,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SPConfigService } from 'sailpoint-angular-sdk/sp_config';
-import { ImportOptions } from 'sailpoint-angular-sdk/sp_config';
+import { SPConfigService } from '@sailpoint/angular-sdk/sp_config';
+import { ImportOptions } from '@sailpoint/angular-sdk/sp_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -352,7 +352,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SPConfigService } from 'sailpoint-angular-sdk/sp_config';
+import { SPConfigService } from '@sailpoint/angular-sdk/sp_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

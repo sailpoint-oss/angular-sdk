@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetMFAOktaConfigV1401Response', 'mfa_
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetMFAOktaConfigV1401Response } from 'sailpoint-angular-sdk/mfa_configuration';
+import { GetMFAOktaConfigV1401Response } from '@sailpoint/angular-sdk/mfa_configuration';
 ```
 
 ## Properties

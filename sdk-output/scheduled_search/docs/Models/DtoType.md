@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'scheduled_search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/scheduled_search';
+import { DtoType } from '@sailpoint/angular-sdk/scheduled_search';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AuthProfile', 'auth_profile']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AuthProfile } from 'sailpoint-angular-sdk/auth_profile';
+import { AuthProfile } from '@sailpoint/angular-sdk/auth_profile';
 ```
 
 ## Properties

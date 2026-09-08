@@ -60,8 +60,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
-import { DataSegment } from 'sailpoint-angular-sdk/data_segmentation';
+import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
+import { DataSegment } from '@sailpoint/angular-sdk/data_segmentation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+import { DataSegmentationService } from '@sailpoint/angular-sdk/data_segmentation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

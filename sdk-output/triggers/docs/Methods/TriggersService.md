@@ -87,8 +87,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-import { CompleteInvocation } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+import { CompleteInvocation } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -137,8 +137,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-import { SubscriptionPostRequest } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+import { SubscriptionPostRequest } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -397,8 +397,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-import { SubscriptionPatchRequestInner } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+import { SubscriptionPatchRequestInner } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -445,8 +445,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-import { TestInvocation } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+import { TestInvocation } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -493,8 +493,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-import { ValidateFilterInputDto } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+import { ValidateFilterInputDto } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -550,8 +550,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-import { SubscriptionPutRequest } from 'sailpoint-angular-sdk/triggers';
+import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+import { SubscriptionPutRequest } from '@sailpoint/angular-sdk/triggers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

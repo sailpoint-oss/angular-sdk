@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'icons']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/icons';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/icons';
 ```
 
 ## Properties

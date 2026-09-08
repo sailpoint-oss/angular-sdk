@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'iai_peer_group_strate
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/iai_peer_group_strategies';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/iai_peer_group_strategies';
 ```
 
 ## Enum

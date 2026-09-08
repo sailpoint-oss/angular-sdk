@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttrSyncSourceConfig', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttrSyncSourceConfig } from 'sailpoint-angular-sdk/sources';
+import { AttrSyncSourceConfig } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

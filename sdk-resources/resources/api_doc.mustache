@@ -56,16 +56,16 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { {{classname}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+import { {{classname}} } from '@sailpoint/angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
 {{#allParams}}
 {{#isModel}}
 {{^isArray}}
-import { {{{dataType}}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+import { {{{dataType}}} } from '@sailpoint/angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
 {{/isArray}}
 {{/isModel}}
 {{#isArray}}
 {{#items.isModel}}
-import { {{#items}}{{{dataType}}}{{/items}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+import { {{#items}}{{{dataType}}}{{/items}} } from '@sailpoint/angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
 {{/items.isModel}}
 {{/isArray}}
 {{/allParams}}

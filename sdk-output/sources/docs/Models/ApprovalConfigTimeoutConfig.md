@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalConfigTimeoutConfig', 'source
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalConfigTimeoutConfig } from 'sailpoint-angular-sdk/sources';
+import { ApprovalConfigTimeoutConfig } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'shared_signals_fr
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

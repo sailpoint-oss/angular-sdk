@@ -104,8 +104,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
-import { Role } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
+import { Role } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -154,8 +154,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
-import { RoleBulkDeleteRequest } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
+import { RoleBulkDeleteRequest } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -344,7 +344,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -557,7 +557,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -632,8 +632,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -688,8 +688,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
-import { RoleListFilterDTO } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
+import { RoleListFilterDTO } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -795,8 +795,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
-import { RoleMetadataBulkUpdateByFilterRequest } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
+import { RoleMetadataBulkUpdateByFilterRequest } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -845,8 +845,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
-import { RoleMetadataBulkUpdateByIdRequest } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
+import { RoleMetadataBulkUpdateByIdRequest } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -895,8 +895,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolesService } from 'sailpoint-angular-sdk/roles';
-import { RoleMetadataBulkUpdateByQueryRequest } from 'sailpoint-angular-sdk/roles';
+import { RolesService } from '@sailpoint/angular-sdk/roles';
+import { RoleMetadataBulkUpdateByQueryRequest } from '@sailpoint/angular-sdk/roles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

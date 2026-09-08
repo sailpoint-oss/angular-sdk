@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'non_employee_lifecycl
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Enum

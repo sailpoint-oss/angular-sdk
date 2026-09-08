@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetPersonalAccessTokenResponse', 'per
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetPersonalAccessTokenResponse } from 'sailpoint-angular-sdk/personal_access_tokens';
+import { GetPersonalAccessTokenResponse } from '@sailpoint/angular-sdk/personal_access_tokens';
 ```
 
 ## Properties

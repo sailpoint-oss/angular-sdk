@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'QueryType', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { QueryType } from 'sailpoint-angular-sdk/search';
+import { QueryType } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Enum

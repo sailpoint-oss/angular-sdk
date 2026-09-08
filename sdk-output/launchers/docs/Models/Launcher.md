@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Launcher', 'launchers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Launcher } from 'sailpoint-angular-sdk/launchers';
+import { Launcher } from '@sailpoint/angular-sdk/launchers';
 ```
 
 ## Properties

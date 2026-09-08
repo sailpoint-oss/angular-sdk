@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SodViolationContextConflictingAccessC
 Import this model from the entry point of its package:
 
 ```typescript
-import { SodViolationContextConflictingAccessCriteriaLeftCriteria } from 'sailpoint-angular-sdk/access_request_approvals';
+import { SodViolationContextConflictingAccessCriteriaLeftCriteria } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

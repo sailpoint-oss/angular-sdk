@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Int64StringKeyValuePair', 'data_acces
 Import this model from the entry point of its package:
 
 ```typescript
-import { Int64StringKeyValuePair } from 'sailpoint-angular-sdk/data_access_security';
+import { Int64StringKeyValuePair } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

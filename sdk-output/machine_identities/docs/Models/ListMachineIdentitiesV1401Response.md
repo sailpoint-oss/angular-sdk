@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListMachineIdentitiesV1401Response', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListMachineIdentitiesV1401Response } from 'sailpoint-angular-sdk/machine_identities';
+import { ListMachineIdentitiesV1401Response } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

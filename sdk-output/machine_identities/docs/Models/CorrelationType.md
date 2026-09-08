@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CorrelationType', 'machine_identities
 Import this model from the entry point of its package:
 
 ```typescript
-import { CorrelationType } from 'sailpoint-angular-sdk/machine_identities';
+import { CorrelationType } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Enum

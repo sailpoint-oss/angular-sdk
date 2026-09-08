@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/certification_campaign_filters/methods/certification-campaign-filters#create-campaign-filter-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
-        import { CampaignFilterDetails } from 'sailpoint-angular-sdk/certification_campaign_filters';
+        import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
+        import { CampaignFilterDetails } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -46,7 +46,7 @@
       label: SDK_tools/sdk/angular/certification_campaign_filters/methods/certification-campaign-filters#delete-campaign-filters-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
+        import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -67,7 +67,7 @@
       label: SDK_tools/sdk/angular/certification_campaign_filters/methods/certification-campaign-filters#get-campaign-filter-by-id-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
+        import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -88,7 +88,7 @@
       label: SDK_tools/sdk/angular/certification_campaign_filters/methods/certification-campaign-filters#list-campaign-filters-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
+        import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -111,8 +111,8 @@
       label: SDK_tools/sdk/angular/certification_campaign_filters/methods/certification-campaign-filters#update-campaign-filter-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
-        import { CampaignFilterDetails } from 'sailpoint-angular-sdk/certification_campaign_filters';
+        import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
+        import { CampaignFilterDetails } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

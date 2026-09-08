@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementSourceResetBaseReferenceDt
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementSourceResetBaseReferenceDto } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementSourceResetBaseReferenceDto } from '@sailpoint/angular-sdk/entitlements';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetAuthOrgNetworkConfigV1401Response'
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetAuthOrgNetworkConfigV1401Response } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GetAuthOrgNetworkConfigV1401Response } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 ```
 
 ## Properties

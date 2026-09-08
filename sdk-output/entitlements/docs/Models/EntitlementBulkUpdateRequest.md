@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementBulkUpdateRequest', 'entit
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementBulkUpdateRequest } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementBulkUpdateRequest } from '@sailpoint/angular-sdk/entitlements';
 ```
 
 ## Properties

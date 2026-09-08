@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalStatusDto', 'access_requests'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalStatusDto } from 'sailpoint-angular-sdk/access_requests';
+import { ApprovalStatusDto } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

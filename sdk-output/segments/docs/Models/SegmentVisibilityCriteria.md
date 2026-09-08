@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SegmentVisibilityCriteria', 'segments
 Import this model from the entry point of its package:
 
 ```typescript
-import { SegmentVisibilityCriteria } from 'sailpoint-angular-sdk/segments';
+import { SegmentVisibilityCriteria } from '@sailpoint/angular-sdk/segments';
 ```
 
 ## Properties

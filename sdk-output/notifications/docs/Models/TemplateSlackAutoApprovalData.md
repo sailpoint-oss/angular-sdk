@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TemplateSlackAutoApprovalData', 'noti
 Import this model from the entry point of its package:
 
 ```typescript
-import { TemplateSlackAutoApprovalData } from 'sailpoint-angular-sdk/notifications';
+import { TemplateSlackAutoApprovalData } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

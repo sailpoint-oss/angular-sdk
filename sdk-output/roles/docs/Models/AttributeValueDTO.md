@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttributeValueDTO', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttributeValueDTO } from 'sailpoint-angular-sdk/roles';
+import { AttributeValueDTO } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

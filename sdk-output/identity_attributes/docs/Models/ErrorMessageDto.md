@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'identity_attribute
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/identity_attributes';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/identity_attributes';
 ```
 
 ## Properties

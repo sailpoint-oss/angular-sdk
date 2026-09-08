@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Accountsexportreportarguments', 'repo
 Import this model from the entry point of its package:
 
 ```typescript
-import { Accountsexportreportarguments } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { Accountsexportreportarguments } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

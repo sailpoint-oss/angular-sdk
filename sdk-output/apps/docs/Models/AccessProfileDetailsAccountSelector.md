@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessProfileDetailsAccountSelector',
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessProfileDetailsAccountSelector } from 'sailpoint-angular-sdk/apps';
+import { AccessProfileDetailsAccountSelector } from '@sailpoint/angular-sdk/apps';
 ```
 
 ## Properties

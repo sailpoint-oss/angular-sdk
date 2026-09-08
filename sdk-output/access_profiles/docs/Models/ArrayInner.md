@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'access_profiles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/access_profiles';
+import { ArrayInner } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

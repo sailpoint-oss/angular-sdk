@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MultiHostIntegrationsAggScheduleUpdat
 Import this model from the entry point of its package:
 
 ```typescript
-import { MultiHostIntegrationsAggScheduleUpdate } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationsAggScheduleUpdate } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

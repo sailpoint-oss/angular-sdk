@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/public_identities_config/methods/public-identities-config#get-public-identity-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PublicIdentitiesConfigService } from 'sailpoint-angular-sdk/public_identities_config';
+        import { PublicIdentitiesConfigService } from '@sailpoint/angular-sdk/public_identities_config';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -25,8 +25,8 @@
       label: SDK_tools/sdk/angular/public_identities_config/methods/public-identities-config#update-public-identity-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PublicIdentitiesConfigService } from 'sailpoint-angular-sdk/public_identities_config';
-        import { PublicIdentityConfig } from 'sailpoint-angular-sdk/public_identities_config';
+        import { PublicIdentitiesConfigService } from '@sailpoint/angular-sdk/public_identities_config';
+        import { PublicIdentityConfig } from '@sailpoint/angular-sdk/public_identities_config';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

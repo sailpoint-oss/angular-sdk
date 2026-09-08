@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CommonAccessType', 'iai_common_access
 Import this model from the entry point of its package:
 
 ```typescript
-import { CommonAccessType } from 'sailpoint-angular-sdk/iai_common_access';
+import { CommonAccessType } from '@sailpoint/angular-sdk/iai_common_access';
 ```
 
 ## Enum

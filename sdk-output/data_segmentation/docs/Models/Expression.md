@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Expression', 'data_segmentation']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Expression } from 'sailpoint-angular-sdk/data_segmentation';
+import { Expression } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Properties

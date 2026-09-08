@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessage', 'custom_forms']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessage } from 'sailpoint-angular-sdk/custom_forms';
+import { ErrorMessage } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

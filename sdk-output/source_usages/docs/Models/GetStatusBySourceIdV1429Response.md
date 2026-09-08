@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetStatusBySourceIdV1429Response', 's
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetStatusBySourceIdV1429Response } from 'sailpoint-angular-sdk/source_usages';
+import { GetStatusBySourceIdV1429Response } from '@sailpoint/angular-sdk/source_usages';
 ```
 
 ## Properties

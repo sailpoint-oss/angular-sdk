@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NonEmployeeSourceRequestBody', 'non_e
 Import this model from the entry point of its package:
 
 ```typescript
-import { NonEmployeeSourceRequestBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeSourceRequestBody } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

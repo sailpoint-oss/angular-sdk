@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/iai_outliers/methods/iai-outliers#export-outliers-zip-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+        import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -27,7 +27,7 @@
       label: SDK_tools/sdk/angular/iai_outliers/methods/iai-outliers#get-identity-outlier-snapshots-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+        import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -53,7 +53,7 @@
       label: SDK_tools/sdk/angular/iai_outliers/methods/iai-outliers#get-identity-outliers-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+        import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -80,7 +80,7 @@
       label: SDK_tools/sdk/angular/iai_outliers/methods/iai-outliers#get-latest-identity-outlier-snapshots-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+        import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -102,7 +102,7 @@
       label: SDK_tools/sdk/angular/iai_outliers/methods/iai-outliers#get-outlier-contributing-feature-summary-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+        import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -124,7 +124,7 @@
       label: SDK_tools/sdk/angular/iai_outliers/methods/iai-outliers#get-peer-group-outliers-contributing-features-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+        import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -151,7 +151,7 @@
       label: SDK_tools/sdk/angular/iai_outliers/methods/iai-outliers#ignore-identity-outliers-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+        import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -173,7 +173,7 @@
       label: SDK_tools/sdk/angular/iai_outliers/methods/iai-outliers#list-outliers-contributing-feature-access-items-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+        import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -201,7 +201,7 @@
       label: SDK_tools/sdk/angular/iai_outliers/methods/iai-outliers#un-ignore-identity-outliers-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+        import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

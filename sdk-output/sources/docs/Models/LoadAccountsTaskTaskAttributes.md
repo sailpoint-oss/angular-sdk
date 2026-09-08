@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LoadAccountsTaskTaskAttributes', 'sou
 Import this model from the entry point of its package:
 
 ```typescript
-import { LoadAccountsTaskTaskAttributes } from 'sailpoint-angular-sdk/sources';
+import { LoadAccountsTaskTaskAttributes } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

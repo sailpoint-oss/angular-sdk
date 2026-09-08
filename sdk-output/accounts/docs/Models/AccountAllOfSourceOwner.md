@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountAllOfSourceOwner', 'accounts']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountAllOfSourceOwner } from 'sailpoint-angular-sdk/accounts';
+import { AccountAllOfSourceOwner } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

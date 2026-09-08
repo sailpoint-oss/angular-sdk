@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IconsService } from 'sailpoint-angular-sdk/icons';
+import { IconsService } from '@sailpoint/angular-sdk/icons';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IconsService } from 'sailpoint-angular-sdk/icons';
+import { IconsService } from '@sailpoint/angular-sdk/icons';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

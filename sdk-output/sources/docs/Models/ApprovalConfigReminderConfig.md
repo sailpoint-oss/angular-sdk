@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalConfigReminderConfig', 'sourc
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalConfigReminderConfig } from 'sailpoint-angular-sdk/sources';
+import { ApprovalConfigReminderConfig } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

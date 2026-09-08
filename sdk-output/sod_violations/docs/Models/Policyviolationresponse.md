@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Policyviolationresponse', 'sod_violat
 Import this model from the entry point of its package:
 
 ```typescript
-import { Policyviolationresponse } from 'sailpoint-angular-sdk/sod_violations';
+import { Policyviolationresponse } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

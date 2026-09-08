@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementAttributeBulkUpdateIdsRequ
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementAttributeBulkUpdateIdsRequest } from 'sailpoint-angular-sdk/access_model_metadata';
+import { EntitlementAttributeBulkUpdateIdsRequest } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

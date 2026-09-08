@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Policyviolationstatus', 'sod_violatio
 Import this model from the entry point of its package:
 
 ```typescript
-import { Policyviolationstatus } from 'sailpoint-angular-sdk/sod_violations';
+import { Policyviolationstatus } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Enum

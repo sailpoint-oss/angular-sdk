@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -456,8 +456,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
-import { ReviewDecision } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
+import { ReviewDecision } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -505,8 +505,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
-import { ReviewReassign } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
+import { ReviewReassign } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -605,8 +605,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
-import { ReviewReassign } from 'sailpoint-angular-sdk/certifications';
+import { CertificationsService } from '@sailpoint/angular-sdk/certifications';
+import { ReviewReassign } from '@sailpoint/angular-sdk/certifications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

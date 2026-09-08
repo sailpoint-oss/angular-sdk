@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseReferenceDto', 'machine_identitie
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseReferenceDto } from 'sailpoint-angular-sdk/machine_identities';
+import { BaseReferenceDto } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

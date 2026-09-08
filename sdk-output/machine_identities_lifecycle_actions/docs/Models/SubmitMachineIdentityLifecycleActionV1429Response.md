@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SubmitMachineIdentityLifecycleActionV
 Import this model from the entry point of its package:
 
 ```typescript
-import { SubmitMachineIdentityLifecycleActionV1429Response } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { SubmitMachineIdentityLifecycleActionV1429Response } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 ```
 
 ## Properties

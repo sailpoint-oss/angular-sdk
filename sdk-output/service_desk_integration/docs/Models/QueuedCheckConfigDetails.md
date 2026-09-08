@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'QueuedCheckConfigDetails', 'service_d
 Import this model from the entry point of its package:
 
 ```typescript
-import { QueuedCheckConfigDetails } from 'sailpoint-angular-sdk/service_desk_integration';
+import { QueuedCheckConfigDetails } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PasswordInfoQueryDTO', 'password_mana
 Import this model from the entry point of its package:
 
 ```typescript
-import { PasswordInfoQueryDTO } from 'sailpoint-angular-sdk/password_management';
+import { PasswordInfoQueryDTO } from '@sailpoint/angular-sdk/password_management';
 ```
 
 ## Properties

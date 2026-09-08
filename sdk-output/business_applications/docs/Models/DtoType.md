@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'business_applications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/business_applications';
+import { DtoType } from '@sailpoint/angular-sdk/business_applications';
 ```
 
 ## Enum

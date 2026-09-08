@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SelectorType', 'scheduled_search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SelectorType } from 'sailpoint-angular-sdk/scheduled_search';
+import { SelectorType } from '@sailpoint/angular-sdk/scheduled_search';
 ```
 
 ## Enum

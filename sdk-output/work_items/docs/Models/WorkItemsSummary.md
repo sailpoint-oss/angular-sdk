@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'WorkItemsSummary', 'work_items']
 Import this model from the entry point of its package:
 
 ```typescript
-import { WorkItemsSummary } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsSummary } from '@sailpoint/angular-sdk/work_items';
 ```
 
 ## Properties

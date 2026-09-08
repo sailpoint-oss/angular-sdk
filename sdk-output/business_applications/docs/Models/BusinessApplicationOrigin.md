@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BusinessApplicationOrigin', 'business
 Import this model from the entry point of its package:
 
 ```typescript
-import { BusinessApplicationOrigin } from 'sailpoint-angular-sdk/business_applications';
+import { BusinessApplicationOrigin } from '@sailpoint/angular-sdk/business_applications';
 ```
 
 ## Enum

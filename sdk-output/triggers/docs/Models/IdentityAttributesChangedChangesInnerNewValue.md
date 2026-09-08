@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityAttributesChangedChangesInner
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityAttributesChangedChangesInnerNewValue } from 'sailpoint-angular-sdk/triggers';
+import { IdentityAttributesChangedChangesInnerNewValue } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

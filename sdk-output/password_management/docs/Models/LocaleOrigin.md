@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'password_management']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/password_management';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/password_management';
 ```
 
 ## Enum

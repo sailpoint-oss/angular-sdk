@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/machine_classification_config/methods/machine-classification-config#delete-machine-classification-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineClassificationConfigService } from 'sailpoint-angular-sdk/machine_classification_config';
+        import { MachineClassificationConfigService } from '@sailpoint/angular-sdk/machine_classification_config';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -27,7 +27,7 @@
       label: SDK_tools/sdk/angular/machine_classification_config/methods/machine-classification-config#get-machine-classification-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineClassificationConfigService } from 'sailpoint-angular-sdk/machine_classification_config';
+        import { MachineClassificationConfigService } from '@sailpoint/angular-sdk/machine_classification_config';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -49,8 +49,8 @@
       label: SDK_tools/sdk/angular/machine_classification_config/methods/machine-classification-config#set-machine-classification-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineClassificationConfigService } from 'sailpoint-angular-sdk/machine_classification_config';
-        import { MachineClassificationConfig } from 'sailpoint-angular-sdk/machine_classification_config';
+        import { MachineClassificationConfigService } from '@sailpoint/angular-sdk/machine_classification_config';
+        import { MachineClassificationConfig } from '@sailpoint/angular-sdk/machine_classification_config';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

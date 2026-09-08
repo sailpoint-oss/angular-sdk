@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JITConfiguration', 'global_tenant_sec
 Import this model from the entry point of its package:
 
 ```typescript
-import { JITConfiguration } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { JITConfiguration } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 ```
 
 ## Properties

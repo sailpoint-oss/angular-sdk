@@ -63,8 +63,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
-import { SimIntegrationDetails } from 'sailpoint-angular-sdk/sim_integrations';
+import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
+import { SimIntegrationDetails } from '@sailpoint/angular-sdk/sim_integrations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -267,8 +267,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
-import { JsonPatch } from 'sailpoint-angular-sdk/sim_integrations';
+import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
+import { JsonPatch } from '@sailpoint/angular-sdk/sim_integrations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -321,8 +321,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
-import { JsonPatch } from 'sailpoint-angular-sdk/sim_integrations';
+import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
+import { JsonPatch } from '@sailpoint/angular-sdk/sim_integrations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -375,8 +375,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
-import { SimIntegrationDetails } from 'sailpoint-angular-sdk/sim_integrations';
+import { SIMIntegrationsService } from '@sailpoint/angular-sdk/sim_integrations';
+import { SimIntegrationDetails } from '@sailpoint/angular-sdk/sim_integrations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

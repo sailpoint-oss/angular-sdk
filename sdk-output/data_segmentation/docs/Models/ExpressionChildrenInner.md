@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ExpressionChildrenInner', 'data_segme
 Import this model from the entry point of its package:
 
 ```typescript
-import { ExpressionChildrenInner } from 'sailpoint-angular-sdk/data_segmentation';
+import { ExpressionChildrenInner } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Properties

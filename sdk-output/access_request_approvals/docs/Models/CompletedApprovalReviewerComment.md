@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CompletedApprovalReviewerComment', 'a
 Import this model from the entry point of its package:
 
 ```typescript
-import { CompletedApprovalReviewerComment } from 'sailpoint-angular-sdk/access_request_approvals';
+import { CompletedApprovalReviewerComment } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

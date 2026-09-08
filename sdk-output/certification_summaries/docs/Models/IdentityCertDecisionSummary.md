@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityCertDecisionSummary', 'certif
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityCertDecisionSummary } from 'sailpoint-angular-sdk/certification_summaries';
+import { IdentityCertDecisionSummary } from '@sailpoint/angular-sdk/certification_summaries';
 ```
 
 ## Properties

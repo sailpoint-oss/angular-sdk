@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Responseactioncontext', 'intelligence
 Import this model from the entry point of its package:
 
 ```typescript
-import { Responseactioncontext } from 'sailpoint-angular-sdk/intelligence';
+import { Responseactioncontext } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

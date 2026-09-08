@@ -54,8 +54,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
-import { ManagedClusterType } from 'sailpoint-angular-sdk/managed_cluster_types';
+import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
+import { ManagedClusterType } from '@sailpoint/angular-sdk/managed_cluster_types';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -248,8 +248,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
-import { JsonPatch } from 'sailpoint-angular-sdk/managed_cluster_types';
+import { ManagedClusterTypesService } from '@sailpoint/angular-sdk/managed_cluster_types';
+import { JsonPatch } from '@sailpoint/angular-sdk/managed_cluster_types';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

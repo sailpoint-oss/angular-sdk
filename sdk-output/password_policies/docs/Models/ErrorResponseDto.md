@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'password_policies
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/password_policies';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/password_policies';
 ```
 
 ## Properties

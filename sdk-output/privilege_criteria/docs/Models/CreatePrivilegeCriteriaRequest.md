@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreatePrivilegeCriteriaRequest', 'pri
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreatePrivilegeCriteriaRequest } from 'sailpoint-angular-sdk/privilege_criteria';
+import { CreatePrivilegeCriteriaRequest } from '@sailpoint/angular-sdk/privilege_criteria';
 ```
 
 ## Properties

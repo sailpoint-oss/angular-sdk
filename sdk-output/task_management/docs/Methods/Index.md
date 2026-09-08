@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
+import { TaskManagementService } from '@sailpoint/angular-sdk/task_management';
 
 private readonly api = inject(TaskManagementService);
 ```

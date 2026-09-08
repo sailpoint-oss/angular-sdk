@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClientHealthIndicatorsBodyHeal
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClientHealthIndicatorsBodyHealthIndicators } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientHealthIndicatorsBodyHealthIndicators } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Properties

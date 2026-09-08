@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-import { MachineIdentityRequest } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+import { MachineIdentityRequest } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -118,8 +118,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-import { MachineidentityV2 } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+import { MachineidentityV2 } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -571,7 +571,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -746,7 +746,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -800,8 +800,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -855,8 +855,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-import { MachineIdentityAggregationRequest } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+import { MachineIdentityAggregationRequest } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -910,7 +910,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -967,8 +967,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

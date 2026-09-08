@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ObjectMappingResponse', 'configuratio
 Import this model from the entry point of its package:
 
 ```typescript
-import { ObjectMappingResponse } from 'sailpoint-angular-sdk/configuration_hub';
+import { ObjectMappingResponse } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

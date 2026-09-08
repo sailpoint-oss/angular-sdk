@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListBusinessApplicationsV1429Response
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListBusinessApplicationsV1429Response } from 'sailpoint-angular-sdk/business_applications';
+import { ListBusinessApplicationsV1429Response } from '@sailpoint/angular-sdk/business_applications';
 ```
 
 ## Properties

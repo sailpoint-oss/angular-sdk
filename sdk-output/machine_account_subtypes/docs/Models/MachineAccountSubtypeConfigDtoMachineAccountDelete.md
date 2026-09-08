@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineAccountSubtypeConfigDtoMachine
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineAccountSubtypeConfigDtoMachineAccountDelete } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { MachineAccountSubtypeConfigDtoMachineAccountDelete } from '@sailpoint/angular-sdk/machine_account_subtypes';
 ```
 
 ## Properties

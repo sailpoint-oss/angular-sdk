@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BucketType', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BucketType } from 'sailpoint-angular-sdk/search';
+import { BucketType } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Enum

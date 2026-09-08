@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskStatusMessageParametersInner', 'i
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskStatusMessageParametersInner } from 'sailpoint-angular-sdk/identities';
+import { TaskStatusMessageParametersInner } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

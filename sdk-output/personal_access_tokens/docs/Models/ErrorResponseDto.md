@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'personal_access_t
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/personal_access_tokens';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/personal_access_tokens';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NonEmployeeRejectApprovalDecision', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { NonEmployeeRejectApprovalDecision } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeRejectApprovalDecision } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

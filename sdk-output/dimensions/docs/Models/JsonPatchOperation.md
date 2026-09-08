@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'dimensions']
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/dimensions';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

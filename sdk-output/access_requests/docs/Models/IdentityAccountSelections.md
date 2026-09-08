@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityAccountSelections', 'access_r
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityAccountSelections } from 'sailpoint-angular-sdk/access_requests';
+import { IdentityAccountSelections } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

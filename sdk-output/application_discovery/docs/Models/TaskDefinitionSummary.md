@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskDefinitionSummary', 'application_
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskDefinitionSummary } from 'sailpoint-angular-sdk/application_discovery';
+import { TaskDefinitionSummary } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

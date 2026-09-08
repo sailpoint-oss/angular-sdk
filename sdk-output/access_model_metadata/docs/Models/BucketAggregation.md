@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BucketAggregation', 'access_model_met
 Import this model from the entry point of its package:
 
 ```typescript
-import { BucketAggregation } from 'sailpoint-angular-sdk/access_model_metadata';
+import { BucketAggregation } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

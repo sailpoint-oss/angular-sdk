@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SubscriptionPutRequest', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SubscriptionPutRequest } from 'sailpoint-angular-sdk/triggers';
+import { SubscriptionPutRequest } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

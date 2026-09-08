@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementAccessRequestConfig', 'ent
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementAccessRequestConfig } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementAccessRequestConfig } from '@sailpoint/angular-sdk/entitlements';
 ```
 
 ## Properties

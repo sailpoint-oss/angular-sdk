@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DataClassificationSettings', 'data_ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { DataClassificationSettings } from 'sailpoint-angular-sdk/data_access_security';
+import { DataClassificationSettings } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

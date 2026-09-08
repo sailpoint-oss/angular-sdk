@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'reports_data_extr
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

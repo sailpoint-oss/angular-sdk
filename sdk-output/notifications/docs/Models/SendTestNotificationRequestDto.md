@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SendTestNotificationRequestDto', 'not
 Import this model from the entry point of its package:
 
 ```typescript
-import { SendTestNotificationRequestDto } from 'sailpoint-angular-sdk/notifications';
+import { SendTestNotificationRequestDto } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

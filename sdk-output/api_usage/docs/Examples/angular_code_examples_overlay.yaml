@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/api_usage/methods/api-usage#get-total-count-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApiUsageService } from 'sailpoint-angular-sdk/api_usage';
+        import { ApiUsageService } from '@sailpoint/angular-sdk/api_usage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -27,7 +27,7 @@
       label: SDK_tools/sdk/angular/api_usage/methods/api-usage#list-api-summary-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApiUsageService } from 'sailpoint-angular-sdk/api_usage';
+        import { ApiUsageService } from '@sailpoint/angular-sdk/api_usage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

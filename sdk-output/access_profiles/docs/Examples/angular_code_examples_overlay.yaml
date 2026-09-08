@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#create-access-profile-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
-        import { AccessProfile } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+        import { AccessProfile } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -143,7 +143,7 @@
       label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#delete-access-profile-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -164,8 +164,8 @@
       label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#delete-access-profiles-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
-        import { AccessProfileBulkDeleteRequest } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+        import { AccessProfileBulkDeleteRequest } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -189,7 +189,7 @@
       label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#get-access-profile-entitlements-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -215,7 +215,7 @@
       label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#get-access-profile-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -236,7 +236,7 @@
       label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#list-access-profiles-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -264,8 +264,8 @@
       label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#patch-access-profile-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -291,8 +291,8 @@
       label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#update-access-profiles-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
-        import { AccessProfileBulkUpdateRequestInner } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+        import { AccessProfileBulkUpdateRequestInner } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

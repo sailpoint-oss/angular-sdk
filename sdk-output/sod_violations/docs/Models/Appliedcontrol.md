@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Appliedcontrol', 'sod_violations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Appliedcontrol } from 'sailpoint-angular-sdk/sod_violations';
+import { Appliedcontrol } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

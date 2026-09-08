@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#approve-approval-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { BulkApproveRequestDTO } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { BulkApproveRequestDTO } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -34,8 +34,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#approve-approval-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { ApprovalApproveRequest } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { ApprovalApproveRequest } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -65,8 +65,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#cancel-approval-by-id-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { ApprovalCancelRequest } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { ApprovalCancelRequest } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -90,8 +90,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#cancel-approval-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { BulkCancelRequestDTO } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { BulkCancelRequestDTO } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -115,7 +115,7 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#delete-approval-config-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -137,7 +137,7 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#get-approval-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -158,7 +158,7 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#get-approvals-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -179,7 +179,7 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#get-approvals-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -212,8 +212,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#move-approval-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { BulkReassignRequestDTO } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { BulkReassignRequestDTO } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -239,8 +239,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#put-approvals-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { ApprovalConfig } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { ApprovalConfig } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -306,8 +306,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#reject-approval-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { BulkRejectRequestDTO } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { BulkRejectRequestDTO } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -331,8 +331,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#reject-approval-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { ApprovalRejectRequest } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { ApprovalRejectRequest } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -357,8 +357,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#update-approvals-attributes-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { ApprovalAttributesRequest } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { ApprovalAttributesRequest } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -388,8 +388,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#update-approvals-comments-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { ApprovalCommentsRequest } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { ApprovalCommentsRequest } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -413,8 +413,8 @@
       label: SDK_tools/sdk/angular/approvals/methods/approvals#update-approvals-reassign-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-        import { ApprovalReassignRequest } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+        import { ApprovalReassignRequest } from '@sailpoint/angular-sdk/approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

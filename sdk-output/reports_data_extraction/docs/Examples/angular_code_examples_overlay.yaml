@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/reports_data_extraction/methods/reports-data-extraction#cancel-report-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ReportsDataExtractionService } from 'sailpoint-angular-sdk/reports_data_extraction';
+        import { ReportsDataExtractionService } from '@sailpoint/angular-sdk/reports_data_extraction';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -26,7 +26,7 @@
       label: SDK_tools/sdk/angular/reports_data_extraction/methods/reports-data-extraction#get-report-result-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ReportsDataExtractionService } from 'sailpoint-angular-sdk/reports_data_extraction';
+        import { ReportsDataExtractionService } from '@sailpoint/angular-sdk/reports_data_extraction';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -48,7 +48,7 @@
       label: SDK_tools/sdk/angular/reports_data_extraction/methods/reports-data-extraction#get-report-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ReportsDataExtractionService } from 'sailpoint-angular-sdk/reports_data_extraction';
+        import { ReportsDataExtractionService } from '@sailpoint/angular-sdk/reports_data_extraction';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -72,8 +72,8 @@
       label: SDK_tools/sdk/angular/reports_data_extraction/methods/reports-data-extraction#start-report-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ReportsDataExtractionService } from 'sailpoint-angular-sdk/reports_data_extraction';
-        import { ReportDetails } from 'sailpoint-angular-sdk/reports_data_extraction';
+        import { ReportsDataExtractionService } from '@sailpoint/angular-sdk/reports_data_extraction';
+        import { ReportDetails } from '@sailpoint/angular-sdk/reports_data_extraction';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

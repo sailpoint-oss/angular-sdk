@@ -59,8 +59,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+import { AccessRequestRecommendationActionItemDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -111,8 +111,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+import { AccessRequestRecommendationActionItemDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -163,8 +163,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+import { AccessRequestRecommendationActionItemDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -215,8 +215,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+import { AccessRequestRecommendationActionItemDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -556,8 +556,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-import { AccessRequestRecommendationConfigDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+import { AccessRequestRecommendationConfigDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

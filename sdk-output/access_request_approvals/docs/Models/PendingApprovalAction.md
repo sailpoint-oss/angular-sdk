@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PendingApprovalAction', 'access_reque
 Import this model from the entry point of its package:
 
 ```typescript
-import { PendingApprovalAction } from 'sailpoint-angular-sdk/access_request_approvals';
+import { PendingApprovalAction } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Enum

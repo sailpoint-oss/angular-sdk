@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CustomPasswordInstruction', 'custom_p
 Import this model from the entry point of its package:
 
 ```typescript
-import { CustomPasswordInstruction } from 'sailpoint-angular-sdk/custom_password_instructions';
+import { CustomPasswordInstruction } from '@sailpoint/angular-sdk/custom_password_instructions';
 ```
 
 ## Properties

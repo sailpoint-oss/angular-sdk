@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PasswordInfo', 'password_management']
 Import this model from the entry point of its package:
 
 ```typescript
-import { PasswordInfo } from 'sailpoint-angular-sdk/password_management';
+import { PasswordInfo } from '@sailpoint/angular-sdk/password_management';
 ```
 
 ## Properties

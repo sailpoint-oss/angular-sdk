@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ImportAccountsSchemaV1Request', 'sour
 Import this model from the entry point of its package:
 
 ```typescript
-import { ImportAccountsSchemaV1Request } from 'sailpoint-angular-sdk/sources';
+import { ImportAccountsSchemaV1Request } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

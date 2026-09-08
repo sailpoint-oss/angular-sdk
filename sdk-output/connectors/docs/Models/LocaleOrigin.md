@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'connectors']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/connectors';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/connectors';
 ```
 
 ## Enum

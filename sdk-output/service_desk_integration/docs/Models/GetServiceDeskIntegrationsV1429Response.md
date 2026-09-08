@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetServiceDeskIntegrationsV1429Respon
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetServiceDeskIntegrationsV1429Response } from 'sailpoint-angular-sdk/service_desk_integration';
+import { GetServiceDeskIntegrationsV1429Response } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Properties

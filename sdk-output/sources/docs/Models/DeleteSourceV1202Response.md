@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DeleteSourceV1202Response', 'sources'
 Import this model from the entry point of its package:
 
 ```typescript
-import { DeleteSourceV1202Response } from 'sailpoint-angular-sdk/sources';
+import { DeleteSourceV1202Response } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

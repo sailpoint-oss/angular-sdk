@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetSourceAppV1429Response', 'apps']
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetSourceAppV1429Response } from 'sailpoint-angular-sdk/apps';
+import { GetSourceAppV1429Response } from '@sailpoint/angular-sdk/apps';
 ```
 
 ## Properties

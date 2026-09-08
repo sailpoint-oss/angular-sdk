@@ -83,8 +83,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomPasswordInstructionsService } from 'sailpoint-angular-sdk/custom_password_instructions';
-import { CustomPasswordInstruction } from 'sailpoint-angular-sdk/custom_password_instructions';
+import { CustomPasswordInstructionsService } from '@sailpoint/angular-sdk/custom_password_instructions';
+import { CustomPasswordInstruction } from '@sailpoint/angular-sdk/custom_password_instructions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomPasswordInstructionsService } from 'sailpoint-angular-sdk/custom_password_instructions';
+import { CustomPasswordInstructionsService } from '@sailpoint/angular-sdk/custom_password_instructions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CustomPasswordInstructionsService } from 'sailpoint-angular-sdk/custom_password_instructions';
+import { CustomPasswordInstructionsService } from '@sailpoint/angular-sdk/custom_password_instructions';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

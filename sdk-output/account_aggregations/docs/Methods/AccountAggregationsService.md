@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountAggregationsService } from 'sailpoint-angular-sdk/account_aggregations';
+import { AccountAggregationsService } from '@sailpoint/angular-sdk/account_aggregations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

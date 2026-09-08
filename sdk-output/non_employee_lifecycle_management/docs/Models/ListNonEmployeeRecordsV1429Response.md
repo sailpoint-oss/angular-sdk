@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListNonEmployeeRecordsV1429Response',
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListNonEmployeeRecordsV1429Response } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { ListNonEmployeeRecordsV1429Response } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

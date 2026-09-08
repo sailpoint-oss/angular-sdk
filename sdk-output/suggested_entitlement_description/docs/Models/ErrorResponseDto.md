@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'suggested_entitle
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

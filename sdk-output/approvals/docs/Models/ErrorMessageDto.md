@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'approvals']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/approvals';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

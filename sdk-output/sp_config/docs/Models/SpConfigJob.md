@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SpConfigJob', 'sp_config']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SpConfigJob } from 'sailpoint-angular-sdk/sp_config';
+import { SpConfigJob } from '@sailpoint/angular-sdk/sp_config';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'data_segmentation']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/data_segmentation';
+import { DtoType } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Enum

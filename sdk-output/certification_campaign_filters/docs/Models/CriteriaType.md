@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CriteriaType', 'certification_campaig
 Import this model from the entry point of its package:
 
 ```typescript
-import { CriteriaType } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { CriteriaType } from '@sailpoint/angular-sdk/certification_campaign_filters';
 ```
 
 ## Enum

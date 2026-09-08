@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ProvisioningCompletedAccountRequestsI
 Import this model from the entry point of its package:
 
 ```typescript
-import { ProvisioningCompletedAccountRequestsInnerAttributeRequestsInner } from 'sailpoint-angular-sdk/triggers';
+import { ProvisioningCompletedAccountRequestsInnerAttributeRequestsInner } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

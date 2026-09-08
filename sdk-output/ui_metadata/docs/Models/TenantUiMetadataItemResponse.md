@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TenantUiMetadataItemResponse', 'ui_me
 Import this model from the entry point of its package:
 
 ```typescript
-import { TenantUiMetadataItemResponse } from 'sailpoint-angular-sdk/ui_metadata';
+import { TenantUiMetadataItemResponse } from '@sailpoint/angular-sdk/ui_metadata';
 ```
 
 ## Properties

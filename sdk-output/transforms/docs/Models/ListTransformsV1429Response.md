@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListTransformsV1429Response', 'transf
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListTransformsV1429Response } from 'sailpoint-angular-sdk/transforms';
+import { ListTransformsV1429Response } from '@sailpoint/angular-sdk/transforms';
 ```
 
 ## Properties

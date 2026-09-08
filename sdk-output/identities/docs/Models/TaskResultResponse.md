@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskResultResponse', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskResultResponse } from 'sailpoint-angular-sdk/identities';
+import { TaskResultResponse } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

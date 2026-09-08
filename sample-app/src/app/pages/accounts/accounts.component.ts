@@ -1,9 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts/api/accounts.service';
-import { Account } from 'sailpoint-angular-sdk/accounts/model/account';
-import { SailPointConfigService } from 'sailpoint-angular-sdk/sailpoint-config.service';
-import { Paginator } from 'sailpoint-angular-sdk/paginator';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts/api/accounts.service';
+import { Account } from '@sailpoint/angular-sdk/accounts/model/account';
+import { SailPointConfigService } from '@sailpoint/angular-sdk/sailpoint-config.service';
+import { Paginator } from '@sailpoint/angular-sdk/paginator';
 
 @Component({
   selector: 'app-accounts',

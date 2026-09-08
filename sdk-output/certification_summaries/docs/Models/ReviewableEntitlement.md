@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReviewableEntitlement', 'certificatio
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReviewableEntitlement } from 'sailpoint-angular-sdk/certification_summaries';
+import { ReviewableEntitlement } from '@sailpoint/angular-sdk/certification_summaries';
 ```
 
 ## Properties

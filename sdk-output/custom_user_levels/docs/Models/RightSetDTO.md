@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RightSetDTO', 'custom_user_levels']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RightSetDTO } from 'sailpoint-angular-sdk/custom_user_levels';
+import { RightSetDTO } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

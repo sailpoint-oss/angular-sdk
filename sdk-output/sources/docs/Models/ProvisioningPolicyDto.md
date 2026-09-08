@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ProvisioningPolicyDto', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ProvisioningPolicyDto } from 'sailpoint-angular-sdk/sources';
+import { ProvisioningPolicyDto } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

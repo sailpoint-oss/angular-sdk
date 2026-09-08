@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListPendingApprovalsV1401Response', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListPendingApprovalsV1401Response } from 'sailpoint-angular-sdk/access_request_approvals';
+import { ListPendingApprovalsV1401Response } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

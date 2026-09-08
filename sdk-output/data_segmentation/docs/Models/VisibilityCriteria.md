@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'VisibilityCriteria', 'data_segmentati
 Import this model from the entry point of its package:
 
 ```typescript
-import { VisibilityCriteria } from 'sailpoint-angular-sdk/data_segmentation';
+import { VisibilityCriteria } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Properties

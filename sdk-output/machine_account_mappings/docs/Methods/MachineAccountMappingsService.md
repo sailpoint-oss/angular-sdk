@@ -55,8 +55,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountMappingsService } from 'sailpoint-angular-sdk/machine_account_mappings';
-import { AttributeMappings } from 'sailpoint-angular-sdk/machine_account_mappings';
+import { MachineAccountMappingsService } from '@sailpoint/angular-sdk/machine_account_mappings';
+import { AttributeMappings } from '@sailpoint/angular-sdk/machine_account_mappings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountMappingsService } from 'sailpoint-angular-sdk/machine_account_mappings';
+import { MachineAccountMappingsService } from '@sailpoint/angular-sdk/machine_account_mappings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountMappingsService } from 'sailpoint-angular-sdk/machine_account_mappings';
+import { MachineAccountMappingsService } from '@sailpoint/angular-sdk/machine_account_mappings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -212,8 +212,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MachineAccountMappingsService } from 'sailpoint-angular-sdk/machine_account_mappings';
-import { AttributeMappings } from 'sailpoint-angular-sdk/machine_account_mappings';
+import { MachineAccountMappingsService } from '@sailpoint/angular-sdk/machine_account_mappings';
+import { AttributeMappings } from '@sailpoint/angular-sdk/machine_account_mappings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

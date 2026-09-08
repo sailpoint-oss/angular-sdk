@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManualWorkItemState', 'access_request
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManualWorkItemState } from 'sailpoint-angular-sdk/access_requests';
+import { ManualWorkItemState } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Enum

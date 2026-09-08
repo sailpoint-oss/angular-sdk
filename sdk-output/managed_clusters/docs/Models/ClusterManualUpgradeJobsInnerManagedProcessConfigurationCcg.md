@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ClusterManualUpgradeJobsInnerManagedP
 Import this model from the entry point of its package:
 
 ```typescript
-import { ClusterManualUpgradeJobsInnerManagedProcessConfigurationCcg } from 'sailpoint-angular-sdk/managed_clusters';
+import { ClusterManualUpgradeJobsInnerManagedProcessConfigurationCcg } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

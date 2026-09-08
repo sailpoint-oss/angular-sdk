@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ObjectMappingBulkPatchResponse', 'con
 Import this model from the entry point of its package:
 
 ```typescript
-import { ObjectMappingBulkPatchResponse } from 'sailpoint-angular-sdk/configuration_hub';
+import { ObjectMappingBulkPatchResponse } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

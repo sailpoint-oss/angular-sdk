@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'mfa_configuration']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/mfa_configuration';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/mfa_configuration';
 ```
 
 ## Enum

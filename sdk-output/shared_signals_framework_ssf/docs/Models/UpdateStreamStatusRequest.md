@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UpdateStreamStatusRequest', 'shared_s
 Import this model from the entry point of its package:
 
 ```typescript
-import { UpdateStreamStatusRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { UpdateStreamStatusRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

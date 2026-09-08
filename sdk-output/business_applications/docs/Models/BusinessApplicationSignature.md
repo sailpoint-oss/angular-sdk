@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BusinessApplicationSignature', 'busin
 Import this model from the entry point of its package:
 
 ```typescript
-import { BusinessApplicationSignature } from 'sailpoint-angular-sdk/business_applications';
+import { BusinessApplicationSignature } from '@sailpoint/angular-sdk/business_applications';
 ```
 
 ## Properties

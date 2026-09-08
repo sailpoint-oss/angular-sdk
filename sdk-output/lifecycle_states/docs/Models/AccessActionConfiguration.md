@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessActionConfiguration', 'lifecycl
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessActionConfiguration } from 'sailpoint-angular-sdk/lifecycle_states';
+import { AccessActionConfiguration } from '@sailpoint/angular-sdk/lifecycle_states';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClusterUpdatePreferences', 'ma
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClusterUpdatePreferences } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClusterUpdatePreferences } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

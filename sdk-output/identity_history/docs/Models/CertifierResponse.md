@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CertifierResponse', 'identity_history
 Import this model from the entry point of its package:
 
 ```typescript
-import { CertifierResponse } from 'sailpoint-angular-sdk/identity_history';
+import { CertifierResponse } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

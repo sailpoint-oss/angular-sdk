@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountRequestAsyncResult', 'machine_
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountRequestAsyncResult } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { AccountRequestAsyncResult } from '@sailpoint/angular-sdk/machine_account_creation_request';
 ```
 
 ## Properties

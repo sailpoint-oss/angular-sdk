@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'access_mod
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/access_model_metadata';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

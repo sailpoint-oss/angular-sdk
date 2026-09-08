@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TemplateVariablesDto', 'notifications
 Import this model from the entry point of its package:
 
 ```typescript
-import { TemplateVariablesDto } from 'sailpoint-angular-sdk/notifications';
+import { TemplateVariablesDto } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

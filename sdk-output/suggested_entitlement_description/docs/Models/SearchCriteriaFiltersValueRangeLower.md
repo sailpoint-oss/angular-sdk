@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SearchCriteriaFiltersValueRangeLower'
 Import this model from the entry point of its package:
 
 ```typescript
-import { SearchCriteriaFiltersValueRangeLower } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SearchCriteriaFiltersValueRangeLower } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

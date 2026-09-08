@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'WorkItemStateManualWorkItems', 'work_
 Import this model from the entry point of its package:
 
 ```typescript
-import { WorkItemStateManualWorkItems } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemStateManualWorkItems } from '@sailpoint/angular-sdk/work_items';
 ```
 
 ## Enum

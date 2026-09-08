@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountInfoDto', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountInfoDto } from 'sailpoint-angular-sdk/identities';
+import { AccountInfoDto } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

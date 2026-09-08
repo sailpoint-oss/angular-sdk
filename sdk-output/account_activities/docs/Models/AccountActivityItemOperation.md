@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountActivityItemOperation', 'accou
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountActivityItemOperation } from 'sailpoint-angular-sdk/account_activities';
+import { AccountActivityItemOperation } from '@sailpoint/angular-sdk/account_activities';
 ```
 
 ## Enum

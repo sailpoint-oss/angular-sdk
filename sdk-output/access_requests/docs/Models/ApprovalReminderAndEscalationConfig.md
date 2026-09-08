@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalReminderAndEscalationConfig',
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalReminderAndEscalationConfig } from 'sailpoint-angular-sdk/access_requests';
+import { ApprovalReminderAndEscalationConfig } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleCriteriaLevel3', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleCriteriaLevel3 } from 'sailpoint-angular-sdk/roles';
+import { RoleCriteriaLevel3 } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

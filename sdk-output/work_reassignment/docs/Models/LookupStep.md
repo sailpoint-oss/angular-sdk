@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LookupStep', 'work_reassignment']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LookupStep } from 'sailpoint-angular-sdk/work_reassignment';
+import { LookupStep } from '@sailpoint/angular-sdk/work_reassignment';
 ```
 
 ## Properties

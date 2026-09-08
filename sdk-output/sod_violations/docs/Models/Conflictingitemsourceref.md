@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Conflictingitemsourceref', 'sod_viola
 Import this model from the entry point of its package:
 
 ```typescript
-import { Conflictingitemsourceref } from 'sailpoint-angular-sdk/sod_violations';
+import { Conflictingitemsourceref } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

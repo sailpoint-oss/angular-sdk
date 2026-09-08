@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BackupResponse', 'configuration_hub']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BackupResponse } from 'sailpoint-angular-sdk/configuration_hub';
+import { BackupResponse } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

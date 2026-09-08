@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AppAccountDetailsSourceAccount', 'app
 Import this model from the entry point of its package:
 
 ```typescript
-import { AppAccountDetailsSourceAccount } from 'sailpoint-angular-sdk/apps';
+import { AppAccountDetailsSourceAccount } from '@sailpoint/angular-sdk/apps';
 ```
 
 ## Properties

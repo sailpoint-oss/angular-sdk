@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceConnectionsDto', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceConnectionsDto } from 'sailpoint-angular-sdk/sources';
+import { SourceConnectionsDto } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

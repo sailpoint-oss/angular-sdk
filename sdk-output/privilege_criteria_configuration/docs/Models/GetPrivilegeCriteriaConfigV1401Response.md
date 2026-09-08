@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetPrivilegeCriteriaConfigV1401Respon
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetPrivilegeCriteriaConfigV1401Response } from 'sailpoint-angular-sdk/privilege_criteria_configuration';
+import { GetPrivilegeCriteriaConfigV1401Response } from '@sailpoint/angular-sdk/privilege_criteria_configuration';
 ```
 
 ## Properties

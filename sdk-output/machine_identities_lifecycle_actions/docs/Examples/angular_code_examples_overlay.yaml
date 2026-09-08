@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/machine_identities_lifecycle_actions/methods/machine-identity-lifecycle-actions#cancel-machine-identity-lifecycle-action-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentityLifecycleActionsService } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
-        import { CancelLifecycleActionRequest } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+        import { MachineIdentityLifecycleActionsService } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
+        import { CancelLifecycleActionRequest } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -31,7 +31,7 @@
       label: SDK_tools/sdk/angular/machine_identities_lifecycle_actions/methods/machine-identity-lifecycle-actions#get-machine-identity-lifecycle-action-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentityLifecycleActionsService } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+        import { MachineIdentityLifecycleActionsService } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -53,7 +53,7 @@
       label: SDK_tools/sdk/angular/machine_identities_lifecycle_actions/methods/machine-identity-lifecycle-actions#list-machine-identity-lifecycle-actions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentityLifecycleActionsService } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+        import { MachineIdentityLifecycleActionsService } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -79,8 +79,8 @@
       label: SDK_tools/sdk/angular/machine_identities_lifecycle_actions/methods/machine-identity-lifecycle-actions#submit-machine-identity-lifecycle-action-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentityLifecycleActionsService } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
-        import { LifecycleActionSubmitRequest } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+        import { MachineIdentityLifecycleActionsService } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
+        import { LifecycleActionSubmitRequest } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

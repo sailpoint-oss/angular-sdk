@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/tags/methods/tags#create-tag-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TagsService } from 'sailpoint-angular-sdk/tags';
-        import { Tag2 } from 'sailpoint-angular-sdk/tags';
+        import { TagsService } from '@sailpoint/angular-sdk/tags';
+        import { Tag2 } from '@sailpoint/angular-sdk/tags';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -27,7 +27,7 @@
       label: SDK_tools/sdk/angular/tags/methods/tags#delete-tag-by-id-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TagsService } from 'sailpoint-angular-sdk/tags';
+        import { TagsService } from '@sailpoint/angular-sdk/tags';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -48,7 +48,7 @@
       label: SDK_tools/sdk/angular/tags/methods/tags#get-tag-by-id-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TagsService } from 'sailpoint-angular-sdk/tags';
+        import { TagsService } from '@sailpoint/angular-sdk/tags';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -69,7 +69,7 @@
       label: SDK_tools/sdk/angular/tags/methods/tags#list-tags-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TagsService } from 'sailpoint-angular-sdk/tags';
+        import { TagsService } from '@sailpoint/angular-sdk/tags';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

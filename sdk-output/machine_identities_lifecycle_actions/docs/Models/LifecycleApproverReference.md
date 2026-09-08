@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LifecycleApproverReference', 'machine
 Import this model from the entry point of its package:
 
 ```typescript
-import { LifecycleApproverReference } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { LifecycleApproverReference } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 ```
 
 ## Properties

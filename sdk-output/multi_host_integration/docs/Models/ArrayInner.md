@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'multi_host_integration'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/multi_host_integration';
+import { ArrayInner } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

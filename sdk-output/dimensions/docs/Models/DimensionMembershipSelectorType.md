@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DimensionMembershipSelectorType', 'di
 Import this model from the entry point of its package:
 
 ```typescript
-import { DimensionMembershipSelectorType } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionMembershipSelectorType } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CertificationSignedOff', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { CertificationSignedOff } from 'sailpoint-angular-sdk/triggers';
+import { CertificationSignedOff } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

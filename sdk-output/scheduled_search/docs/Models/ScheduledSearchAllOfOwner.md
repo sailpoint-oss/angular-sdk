@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ScheduledSearchAllOfOwner', 'schedule
 Import this model from the entry point of its package:
 
 ```typescript
-import { ScheduledSearchAllOfOwner } from 'sailpoint-angular-sdk/scheduled_search';
+import { ScheduledSearchAllOfOwner } from '@sailpoint/angular-sdk/scheduled_search';
 ```
 
 ## Properties

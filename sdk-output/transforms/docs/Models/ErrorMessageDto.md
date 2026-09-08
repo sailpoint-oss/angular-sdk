@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'transforms']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/transforms';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/transforms';
 ```
 
 ## Properties

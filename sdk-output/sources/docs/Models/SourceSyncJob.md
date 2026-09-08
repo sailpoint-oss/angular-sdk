@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceSyncJob', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceSyncJob } from 'sailpoint-angular-sdk/sources';
+import { SourceSyncJob } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

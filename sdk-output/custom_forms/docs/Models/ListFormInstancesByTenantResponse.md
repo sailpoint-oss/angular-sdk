@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListFormInstancesByTenantResponse', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListFormInstancesByTenantResponse } from 'sailpoint-angular-sdk/custom_forms';
+import { ListFormInstancesByTenantResponse } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

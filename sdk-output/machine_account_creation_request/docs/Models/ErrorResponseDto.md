@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'machine_account_c
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/machine_account_creation_request';
 ```
 
 ## Properties

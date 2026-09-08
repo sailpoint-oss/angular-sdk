@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NonEmployeeSourceWithNECount', 'non_e
 Import this model from the entry point of its package:
 
 ```typescript
-import { NonEmployeeSourceWithNECount } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeSourceWithNECount } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

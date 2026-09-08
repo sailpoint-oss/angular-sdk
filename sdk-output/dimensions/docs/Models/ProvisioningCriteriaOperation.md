@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ProvisioningCriteriaOperation', 'dime
 Import this model from the entry point of its package:
 
 ```typescript
-import { ProvisioningCriteriaOperation } from 'sailpoint-angular-sdk/dimensions';
+import { ProvisioningCriteriaOperation } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Enum

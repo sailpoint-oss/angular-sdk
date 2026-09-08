@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'connector_rule_manage
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/connector_rule_management';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/connector_rule_management';
 ```
 
 ## Enum

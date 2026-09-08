@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationRoleMining', 'iai_r
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationRoleMining } from 'sailpoint-angular-sdk/iai_role_mining';
+import { JsonPatchOperationRoleMining } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Properties

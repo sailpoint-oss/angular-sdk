@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DependantAppConnections', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DependantAppConnections } from 'sailpoint-angular-sdk/sources';
+import { DependantAppConnections } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

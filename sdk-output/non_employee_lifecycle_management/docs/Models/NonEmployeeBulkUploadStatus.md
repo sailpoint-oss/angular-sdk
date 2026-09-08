@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NonEmployeeBulkUploadStatus', 'non_em
 Import this model from the entry point of its package:
 
 ```typescript
-import { NonEmployeeBulkUploadStatus } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeBulkUploadStatus } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

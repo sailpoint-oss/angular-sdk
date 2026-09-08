@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'OwnerDto', 'access_request_approvals'
 Import this model from the entry point of its package:
 
 ```typescript
-import { OwnerDto } from 'sailpoint-angular-sdk/access_request_approvals';
+import { OwnerDto } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

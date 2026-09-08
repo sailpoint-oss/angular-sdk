@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Responseactionaccepted', 'intelligenc
 Import this model from the entry point of its package:
 
 ```typescript
-import { Responseactionaccepted } from 'sailpoint-angular-sdk/intelligence';
+import { Responseactionaccepted } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

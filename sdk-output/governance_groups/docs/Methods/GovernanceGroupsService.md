@@ -60,8 +60,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-import { WorkgroupDto } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+import { WorkgroupDto } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -111,8 +111,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-import { BulkWorkgroupMembersRequestInner } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+import { BulkWorkgroupMembersRequestInner } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -216,8 +216,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-import { WorkgroupBulkDeleteRequest } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+import { WorkgroupBulkDeleteRequest } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -475,8 +475,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -528,8 +528,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-import { BulkWorkgroupMembersRequestInner } from 'sailpoint-angular-sdk/governance_groups';
+import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+import { BulkWorkgroupMembersRequestInner } from '@sailpoint/angular-sdk/governance_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

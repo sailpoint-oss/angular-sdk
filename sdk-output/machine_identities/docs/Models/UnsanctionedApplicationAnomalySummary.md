@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UnsanctionedApplicationAnomalySummary
 Import this model from the entry point of its package:
 
 ```typescript
-import { UnsanctionedApplicationAnomalySummary } from 'sailpoint-angular-sdk/machine_identities';
+import { UnsanctionedApplicationAnomalySummary } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SimIntegrationDetailsAllOfBeforeProvi
 Import this model from the entry point of its package:
 
 ```typescript
-import { SimIntegrationDetailsAllOfBeforeProvisioningRule } from 'sailpoint-angular-sdk/sim_integrations';
+import { SimIntegrationDetailsAllOfBeforeProvisioningRule } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Properties

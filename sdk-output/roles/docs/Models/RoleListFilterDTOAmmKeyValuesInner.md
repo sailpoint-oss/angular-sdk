@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleListFilterDTOAmmKeyValuesInner', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleListFilterDTOAmmKeyValuesInner } from 'sailpoint-angular-sdk/roles';
+import { RoleListFilterDTOAmmKeyValuesInner } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

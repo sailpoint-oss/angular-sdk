@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountRequestPhase', 'machine_accoun
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountRequestPhase } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { AccountRequestPhase } from '@sailpoint/angular-sdk/machine_account_creation_request';
 ```
 
 ## Properties

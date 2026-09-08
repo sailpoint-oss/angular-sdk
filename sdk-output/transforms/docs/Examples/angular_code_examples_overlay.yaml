@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/transforms/methods/transforms#create-transform-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TransformsService } from 'sailpoint-angular-sdk/transforms';
-        import { Transform } from 'sailpoint-angular-sdk/transforms';
+        import { TransformsService } from '@sailpoint/angular-sdk/transforms';
+        import { Transform } from '@sailpoint/angular-sdk/transforms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -31,7 +31,7 @@
       label: SDK_tools/sdk/angular/transforms/methods/transforms#delete-transform-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TransformsService } from 'sailpoint-angular-sdk/transforms';
+        import { TransformsService } from '@sailpoint/angular-sdk/transforms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -52,7 +52,7 @@
       label: SDK_tools/sdk/angular/transforms/methods/transforms#get-transform-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TransformsService } from 'sailpoint-angular-sdk/transforms';
+        import { TransformsService } from '@sailpoint/angular-sdk/transforms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -73,7 +73,7 @@
       label: SDK_tools/sdk/angular/transforms/methods/transforms#list-transforms-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TransformsService } from 'sailpoint-angular-sdk/transforms';
+        import { TransformsService } from '@sailpoint/angular-sdk/transforms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -98,8 +98,8 @@
       label: SDK_tools/sdk/angular/transforms/methods/transforms#update-transform-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TransformsService } from 'sailpoint-angular-sdk/transforms';
-        import { Transform } from 'sailpoint-angular-sdk/transforms';
+        import { TransformsService } from '@sailpoint/angular-sdk/transforms';
+        import { Transform } from '@sailpoint/angular-sdk/transforms';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

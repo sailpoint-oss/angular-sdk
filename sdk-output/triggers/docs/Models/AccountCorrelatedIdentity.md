@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountCorrelatedIdentity', 'triggers
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountCorrelatedIdentity } from 'sailpoint-angular-sdk/triggers';
+import { AccountCorrelatedIdentity } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

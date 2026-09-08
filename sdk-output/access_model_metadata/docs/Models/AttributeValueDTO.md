@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttributeValueDTO', 'access_model_met
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttributeValueDTO } from 'sailpoint-angular-sdk/access_model_metadata';
+import { AttributeValueDTO } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

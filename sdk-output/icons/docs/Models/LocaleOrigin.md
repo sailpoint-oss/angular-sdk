@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'icons']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/icons';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/icons';
 ```
 
 ## Enum

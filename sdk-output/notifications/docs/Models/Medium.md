@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Medium', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Medium } from 'sailpoint-angular-sdk/notifications';
+import { Medium } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Enum

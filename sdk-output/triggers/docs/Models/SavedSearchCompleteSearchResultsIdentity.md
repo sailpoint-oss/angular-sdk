@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SavedSearchCompleteSearchResultsIdent
 Import this model from the entry point of its package:
 
 ```typescript
-import { SavedSearchCompleteSearchResultsIdentity } from 'sailpoint-angular-sdk/triggers';
+import { SavedSearchCompleteSearchResultsIdentity } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

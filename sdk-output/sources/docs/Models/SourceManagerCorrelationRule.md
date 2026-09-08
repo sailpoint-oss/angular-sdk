@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceManagerCorrelationRule', 'sourc
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceManagerCorrelationRule } from 'sailpoint-angular-sdk/sources';
+import { SourceManagerCorrelationRule } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

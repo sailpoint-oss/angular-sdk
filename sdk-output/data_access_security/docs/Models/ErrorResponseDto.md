@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'data_access_secur
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/data_access_security';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

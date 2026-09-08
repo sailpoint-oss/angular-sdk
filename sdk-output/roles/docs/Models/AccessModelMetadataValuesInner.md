@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessModelMetadataValuesInner', 'rol
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessModelMetadataValuesInner } from 'sailpoint-angular-sdk/roles';
+import { AccessModelMetadataValuesInner } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

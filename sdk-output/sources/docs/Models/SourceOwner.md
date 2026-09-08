@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceOwner', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceOwner } from 'sailpoint-angular-sdk/sources';
+import { SourceOwner } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

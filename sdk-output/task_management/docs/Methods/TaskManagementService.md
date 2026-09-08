@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
+import { TaskManagementService } from '@sailpoint/angular-sdk/task_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
+import { TaskManagementService } from '@sailpoint/angular-sdk/task_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -150,8 +150,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/task_management';
+import { TaskManagementService } from '@sailpoint/angular-sdk/task_management';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/task_management';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#create-access-model-metadata-for-entitlement-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -28,7 +28,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#delete-access-model-metadata-from-entitlement-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -51,7 +51,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#get-entitlement-request-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -72,7 +72,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#get-entitlement-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -93,7 +93,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#import-entitlements-by-source-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -115,7 +115,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#list-entitlement-children-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -142,7 +142,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#list-entitlement-parents-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -169,7 +169,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#list-entitlements-by-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -195,7 +195,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#list-entitlements-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -224,8 +224,8 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#patch-entitlement-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -251,8 +251,8 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#put-entitlement-request-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
-        import { EntitlementRequestConfig } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+        import { EntitlementRequestConfig } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -302,7 +302,7 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#reset-source-entitlements-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -323,8 +323,8 @@
       label: SDK_tools/sdk/angular/entitlements/methods/entitlements#update-entitlements-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
-        import { EntitlementBulkUpdateRequest } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+        import { EntitlementBulkUpdateRequest } from '@sailpoint/angular-sdk/entitlements';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

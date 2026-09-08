@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SegmentMembership', 'data_segmentatio
 Import this model from the entry point of its package:
 
 ```typescript
-import { SegmentMembership } from 'sailpoint-angular-sdk/data_segmentation';
+import { SegmentMembership } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Properties

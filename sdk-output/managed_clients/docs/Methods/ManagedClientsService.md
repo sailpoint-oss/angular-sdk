@@ -55,8 +55,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
-import { ManagedClientRequest } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
+import { ManagedClientRequest } from '@sailpoint/angular-sdk/managed_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/managed_clients';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

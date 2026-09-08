@@ -82,8 +82,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
-import { PasswordSyncGroup } from 'sailpoint-angular-sdk/password_sync_groups';
+import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
+import { PasswordSyncGroup } from '@sailpoint/angular-sdk/password_sync_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
+import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
+import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
+import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -272,8 +272,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordSyncGroupsService } from 'sailpoint-angular-sdk/password_sync_groups';
-import { PasswordSyncGroup } from 'sailpoint-angular-sdk/password_sync_groups';
+import { PasswordSyncGroupsService } from '@sailpoint/angular-sdk/password_sync_groups';
+import { PasswordSyncGroup } from '@sailpoint/angular-sdk/password_sync_groups';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

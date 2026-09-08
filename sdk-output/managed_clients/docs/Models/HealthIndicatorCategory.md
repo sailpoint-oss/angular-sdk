@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'HealthIndicatorCategory', 'managed_cl
 Import this model from the entry point of its package:
 
 ```typescript
-import { HealthIndicatorCategory } from 'sailpoint-angular-sdk/managed_clients';
+import { HealthIndicatorCategory } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Properties

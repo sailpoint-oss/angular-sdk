@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityAttribute2', 'identity_attrib
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityAttribute2 } from 'sailpoint-angular-sdk/identity_attributes';
+import { IdentityAttribute2 } from '@sailpoint/angular-sdk/identity_attributes';
 ```
 
 ## Properties

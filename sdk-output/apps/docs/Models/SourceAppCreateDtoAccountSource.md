@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceAppCreateDtoAccountSource', 'ap
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceAppCreateDtoAccountSource } from 'sailpoint-angular-sdk/apps';
+import { SourceAppCreateDtoAccountSource } from '@sailpoint/angular-sdk/apps';
 ```
 
 ## Properties

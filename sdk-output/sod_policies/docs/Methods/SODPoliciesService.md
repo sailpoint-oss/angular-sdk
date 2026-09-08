@@ -89,8 +89,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-import { SodPolicy } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+import { SodPolicy } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -322,7 +322,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -557,7 +557,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -610,8 +610,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -659,8 +659,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-import { SodPolicySchedule } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+import { SodPolicySchedule } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -709,8 +709,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-import { SodPolicy } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+import { SodPolicy } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -757,7 +757,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -803,8 +803,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-import { MultiPolicyRequest } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+import { MultiPolicyRequest } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -850,7 +850,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

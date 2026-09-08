@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DependantConnectionsMissingDto', 'sou
 Import this model from the entry point of its package:
 
 ```typescript
-import { DependantConnectionsMissingDto } from 'sailpoint-angular-sdk/sources';
+import { DependantConnectionsMissingDto } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

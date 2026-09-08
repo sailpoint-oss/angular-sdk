@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Orphanidentitiesreportarguments', 're
 Import this model from the entry point of its package:
 
 ```typescript
-import { Orphanidentitiesreportarguments } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { Orphanidentitiesreportarguments } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

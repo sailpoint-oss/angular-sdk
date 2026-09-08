@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityUserEntitlementRespons
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityUserEntitlementResponseEntitlement } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentityUserEntitlementResponseEntitlement } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetAccessRequestConfigV1401Response',
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetAccessRequestConfigV1401Response } from 'sailpoint-angular-sdk/access_requests';
+import { GetAccessRequestConfigV1401Response } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

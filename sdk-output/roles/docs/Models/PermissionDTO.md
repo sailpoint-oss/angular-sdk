@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PermissionDTO', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { PermissionDTO } from 'sailpoint-angular-sdk/roles';
+import { PermissionDTO } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

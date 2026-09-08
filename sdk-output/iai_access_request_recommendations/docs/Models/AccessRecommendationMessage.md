@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRecommendationMessage', 'iai_ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRecommendationMessage } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { AccessRecommendationMessage } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 ```
 
 ## Properties

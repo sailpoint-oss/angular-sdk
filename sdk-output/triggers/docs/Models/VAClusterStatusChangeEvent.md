@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'VAClusterStatusChangeEvent', 'trigger
 Import this model from the entry point of its package:
 
 ```typescript
-import { VAClusterStatusChangeEvent } from 'sailpoint-angular-sdk/triggers';
+import { VAClusterStatusChangeEvent } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

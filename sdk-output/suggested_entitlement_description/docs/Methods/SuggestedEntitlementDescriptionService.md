@@ -67,8 +67,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
-import { BulkApproveEntitlementRecommendationRequest } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
+import { BulkApproveEntitlementRecommendationRequest } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -115,8 +115,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
-import { AutoWriteSetting } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
+import { AutoWriteSetting } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -159,7 +159,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -494,8 +494,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -544,8 +544,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
-import { SedPatch } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
+import { SedPatch } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -596,8 +596,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
-import { EntitlementRecommendationAssignRequest } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
+import { EntitlementRecommendationAssignRequest } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -645,8 +645,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
-import { SedApproval } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
+import { SedApproval } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -693,8 +693,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
-import { SedAssignment } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
+import { SedAssignment } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -741,8 +741,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
-import { SedBatchRequest } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
+import { SedBatchRequest } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -788,8 +788,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
-import { AutoWriteSettingPatch } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SuggestedEntitlementDescriptionService } from '@sailpoint/angular-sdk/suggested_entitlement_description';
+import { AutoWriteSettingPatch } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

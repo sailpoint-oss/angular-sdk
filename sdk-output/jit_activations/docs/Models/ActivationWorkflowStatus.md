@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ActivationWorkflowStatus', 'jit_activ
 Import this model from the entry point of its package:
 
 ```typescript
-import { ActivationWorkflowStatus } from 'sailpoint-angular-sdk/jit_activations';
+import { ActivationWorkflowStatus } from '@sailpoint/angular-sdk/jit_activations';
 ```
 
 ## Enum

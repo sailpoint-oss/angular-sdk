@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'identity_profiles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/identity_profiles';
+import { ArrayInner } from '@sailpoint/angular-sdk/identity_profiles';
 ```
 
 ## Properties

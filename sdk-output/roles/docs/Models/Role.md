@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Role', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Role } from 'sailpoint-angular-sdk/roles';
+import { Role } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

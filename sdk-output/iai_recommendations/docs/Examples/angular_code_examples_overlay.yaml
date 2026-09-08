@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/iai_recommendations/methods/iai-recommendations#get-recommendations-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRecommendationsService } from 'sailpoint-angular-sdk/iai_recommendations';
+        import { IAIRecommendationsService } from '@sailpoint/angular-sdk/iai_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -26,8 +26,8 @@
       label: SDK_tools/sdk/angular/iai_recommendations/methods/iai-recommendations#get-recommendations-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRecommendationsService } from 'sailpoint-angular-sdk/iai_recommendations';
-        import { RecommendationRequestDto } from 'sailpoint-angular-sdk/iai_recommendations';
+        import { IAIRecommendationsService } from '@sailpoint/angular-sdk/iai_recommendations';
+        import { RecommendationRequestDto } from '@sailpoint/angular-sdk/iai_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -67,8 +67,8 @@
       label: SDK_tools/sdk/angular/iai_recommendations/methods/iai-recommendations#update-recommendations-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRecommendationsService } from 'sailpoint-angular-sdk/iai_recommendations';
-        import { RecommendationConfigDto } from 'sailpoint-angular-sdk/iai_recommendations';
+        import { IAIRecommendationsService } from '@sailpoint/angular-sdk/iai_recommendations';
+        import { RecommendationConfigDto } from '@sailpoint/angular-sdk/iai_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

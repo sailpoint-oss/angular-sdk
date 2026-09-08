@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConfigType', 'work_reassignment']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConfigType } from 'sailpoint-angular-sdk/work_reassignment';
+import { ConfigType } from '@sailpoint/angular-sdk/work_reassignment';
 ```
 
 ## Properties

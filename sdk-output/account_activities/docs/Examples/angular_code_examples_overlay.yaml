@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/account_activities/methods/account-activities#get-account-activity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountActivitiesService } from 'sailpoint-angular-sdk/account_activities';
+        import { AccountActivitiesService } from '@sailpoint/angular-sdk/account_activities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -26,7 +26,7 @@
       label: SDK_tools/sdk/angular/account_activities/methods/account-activities#list-account-activities-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountActivitiesService } from 'sailpoint-angular-sdk/account_activities';
+        import { AccountActivitiesService } from '@sailpoint/angular-sdk/account_activities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

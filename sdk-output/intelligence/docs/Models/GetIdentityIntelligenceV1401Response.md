@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetIdentityIntelligenceV1401Response'
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetIdentityIntelligenceV1401Response } from 'sailpoint-angular-sdk/intelligence';
+import { GetIdentityIntelligenceV1401Response } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

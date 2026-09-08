@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementRecommendationAssignee', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementRecommendationAssignee } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { EntitlementRecommendationAssignee } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

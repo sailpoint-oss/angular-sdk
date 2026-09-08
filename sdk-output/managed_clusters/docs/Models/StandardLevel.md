@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'StandardLevel', 'managed_clusters']
 Import this model from the entry point of its package:
 
 ```typescript
-import { StandardLevel } from 'sailpoint-angular-sdk/managed_clusters';
+import { StandardLevel } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Enum

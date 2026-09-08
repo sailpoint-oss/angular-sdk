@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'reports_data_extracti
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Enum

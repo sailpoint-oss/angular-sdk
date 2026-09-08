@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/machine_account_creation_request/methods/machine-account-creation-request#create-machine-account-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountCreationRequestService } from 'sailpoint-angular-sdk/machine_account_creation_request';
-        import { MachineAccountCreateRequestInput } from 'sailpoint-angular-sdk/machine_account_creation_request';
+        import { MachineAccountCreationRequestService } from '@sailpoint/angular-sdk/machine_account_creation_request';
+        import { MachineAccountCreateRequestInput } from '@sailpoint/angular-sdk/machine_account_creation_request';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -40,7 +40,7 @@
       label: SDK_tools/sdk/angular/machine_account_creation_request/methods/machine-account-creation-request#get-create-machine-account-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountCreationRequestService } from 'sailpoint-angular-sdk/machine_account_creation_request';
+        import { MachineAccountCreationRequestService } from '@sailpoint/angular-sdk/machine_account_creation_request';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -62,7 +62,7 @@
       label: SDK_tools/sdk/angular/machine_account_creation_request/methods/machine-account-creation-request#get-machine-account-create-access-info-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountCreationRequestService } from 'sailpoint-angular-sdk/machine_account_creation_request';
+        import { MachineAccountCreationRequestService } from '@sailpoint/angular-sdk/machine_account_creation_request';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

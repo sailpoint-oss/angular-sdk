@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DeliveryRequest', 'shared_signals_fra
 Import this model from the entry point of its package:
 
 ```typescript
-import { DeliveryRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { DeliveryRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

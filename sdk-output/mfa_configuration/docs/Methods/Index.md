@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
 
 private readonly api = inject(MFAConfigurationService);
 ```

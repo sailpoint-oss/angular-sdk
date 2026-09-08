@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'branding']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/branding';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/branding';
 ```
 
 ## Properties

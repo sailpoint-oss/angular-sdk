@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#complete-trigger-invocation-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-        import { CompleteInvocation } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+        import { CompleteInvocation } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -34,8 +34,8 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#create-subscription-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-        import { SubscriptionPostRequest } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+        import { SubscriptionPostRequest } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -80,7 +80,7 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#delete-subscription-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -101,7 +101,7 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#list-subscriptions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -126,7 +126,7 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#list-trigger-invocation-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -151,7 +151,7 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#list-triggers-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -176,8 +176,8 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#patch-subscription-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-        import { SubscriptionPatchRequestInner } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+        import { SubscriptionPatchRequestInner } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -199,8 +199,8 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#start-test-trigger-invocation-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-        import { TestInvocation } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+        import { TestInvocation } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -230,8 +230,8 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#test-subscription-filter-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-        import { ValidateFilterInputDto } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+        import { ValidateFilterInputDto } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -257,8 +257,8 @@
       label: SDK_tools/sdk/angular/triggers/methods/triggers#update-subscription-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
-        import { SubscriptionPutRequest } from 'sailpoint-angular-sdk/triggers';
+        import { TriggersService } from '@sailpoint/angular-sdk/triggers';
+        import { SubscriptionPutRequest } from '@sailpoint/angular-sdk/triggers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

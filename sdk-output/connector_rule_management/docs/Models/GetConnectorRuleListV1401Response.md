@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetConnectorRuleListV1401Response', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetConnectorRuleListV1401Response } from 'sailpoint-angular-sdk/connector_rule_management';
+import { GetConnectorRuleListV1401Response } from '@sailpoint/angular-sdk/connector_rule_management';
 ```
 
 ## Properties

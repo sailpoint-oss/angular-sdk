@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClusterRedis', 'managed_cluste
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClusterRedis } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClusterRedis } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

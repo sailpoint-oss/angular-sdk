@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountAggregationStatus', 'account_a
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountAggregationStatus } from 'sailpoint-angular-sdk/account_aggregations';
+import { AccountAggregationStatus } from '@sailpoint/angular-sdk/account_aggregations';
 ```
 
 ## Properties

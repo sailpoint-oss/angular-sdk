@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormElementValidationsSet', 'custom_f
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormElementValidationsSet } from 'sailpoint-angular-sdk/custom_forms';
+import { FormElementValidationsSet } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

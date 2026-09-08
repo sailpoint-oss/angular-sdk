@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestDynamicApprover2', 'trig
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestDynamicApprover2 } from 'sailpoint-angular-sdk/triggers';
+import { AccessRequestDynamicApprover2 } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

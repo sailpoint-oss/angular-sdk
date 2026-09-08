@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NonEmployeeSourceWithCloudExternalId'
 Import this model from the entry point of its package:
 
 ```typescript
-import { NonEmployeeSourceWithCloudExternalId } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeSourceWithCloudExternalId } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

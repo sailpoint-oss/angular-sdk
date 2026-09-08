@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityOwnersV2Primary', 'mac
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityOwnersV2Primary } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentityOwnersV2Primary } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

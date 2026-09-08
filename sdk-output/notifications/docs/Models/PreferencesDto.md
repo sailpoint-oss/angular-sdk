@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PreferencesDto', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { PreferencesDto } from 'sailpoint-angular-sdk/notifications';
+import { PreferencesDto } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

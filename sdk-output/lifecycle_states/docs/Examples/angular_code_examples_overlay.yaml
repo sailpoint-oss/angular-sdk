@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/lifecycle_states/methods/lifecycle-states#create-lifecycle-state-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LifecycleStatesService } from 'sailpoint-angular-sdk/lifecycle_states';
-        import { LifecycleState } from 'sailpoint-angular-sdk/lifecycle_states';
+        import { LifecycleStatesService } from '@sailpoint/angular-sdk/lifecycle_states';
+        import { LifecycleState } from '@sailpoint/angular-sdk/lifecycle_states';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -60,7 +60,7 @@
       label: SDK_tools/sdk/angular/lifecycle_states/methods/lifecycle-states#delete-lifecycle-state-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LifecycleStatesService } from 'sailpoint-angular-sdk/lifecycle_states';
+        import { LifecycleStatesService } from '@sailpoint/angular-sdk/lifecycle_states';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -82,7 +82,7 @@
       label: SDK_tools/sdk/angular/lifecycle_states/methods/lifecycle-states#get-lifecycle-state-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LifecycleStatesService } from 'sailpoint-angular-sdk/lifecycle_states';
+        import { LifecycleStatesService } from '@sailpoint/angular-sdk/lifecycle_states';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -104,7 +104,7 @@
       label: SDK_tools/sdk/angular/lifecycle_states/methods/lifecycle-states#get-lifecycle-states-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LifecycleStatesService } from 'sailpoint-angular-sdk/lifecycle_states';
+        import { LifecycleStatesService } from '@sailpoint/angular-sdk/lifecycle_states';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -129,8 +129,8 @@
       label: SDK_tools/sdk/angular/lifecycle_states/methods/lifecycle-states#set-lifecycle-state-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LifecycleStatesService } from 'sailpoint-angular-sdk/lifecycle_states';
-        import { SetLifecycleStateV1Request } from 'sailpoint-angular-sdk/lifecycle_states';
+        import { LifecycleStatesService } from '@sailpoint/angular-sdk/lifecycle_states';
+        import { SetLifecycleStateV1Request } from '@sailpoint/angular-sdk/lifecycle_states';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -152,8 +152,8 @@
       label: SDK_tools/sdk/angular/lifecycle_states/methods/lifecycle-states#update-lifecycle-states-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { LifecycleStatesService } from 'sailpoint-angular-sdk/lifecycle_states';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/lifecycle_states';
+        import { LifecycleStatesService } from '@sailpoint/angular-sdk/lifecycle_states';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/lifecycle_states';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

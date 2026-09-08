@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MetricAggregation', 'access_model_met
 Import this model from the entry point of its package:
 
 ```typescript
-import { MetricAggregation } from 'sailpoint-angular-sdk/access_model_metadata';
+import { MetricAggregation } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UsageType', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { UsageType } from 'sailpoint-angular-sdk/sources';
+import { UsageType } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelAccountsSlice', 'intelligence']
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelAccountsSlice } from 'sailpoint-angular-sdk/intelligence';
+import { IntelAccountsSlice } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

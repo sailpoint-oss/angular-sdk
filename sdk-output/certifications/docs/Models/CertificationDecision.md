@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CertificationDecision', 'certificatio
 Import this model from the entry point of its package:
 
 ```typescript
-import { CertificationDecision } from 'sailpoint-angular-sdk/certifications';
+import { CertificationDecision } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SavedSearchDetailFilters', 'saved_sea
 Import this model from the entry point of its package:
 
 ```typescript
-import { SavedSearchDetailFilters } from 'sailpoint-angular-sdk/saved_search';
+import { SavedSearchDetailFilters } from '@sailpoint/angular-sdk/saved_search';
 ```
 
 ## Properties

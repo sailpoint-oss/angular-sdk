@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelPrivilegedAccessItemWire', 'inte
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelPrivilegedAccessItemWire } from 'sailpoint-angular-sdk/intelligence';
+import { IntelPrivilegedAccessItemWire } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

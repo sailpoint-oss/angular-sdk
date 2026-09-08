@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ScheduleInfo', 'data_access_security'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ScheduleInfo } from 'sailpoint-angular-sdk/data_access_security';
+import { ScheduleInfo } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

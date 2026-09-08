@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SendAccountVerificationRequest', 'ide
 Import this model from the entry point of its package:
 
 ```typescript
-import { SendAccountVerificationRequest } from 'sailpoint-angular-sdk/identities';
+import { SendAccountVerificationRequest } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

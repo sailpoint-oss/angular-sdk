@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BusinessServiceType', 'data_access_se
 Import this model from the entry point of its package:
 
 ```typescript
-import { BusinessServiceType } from 'sailpoint-angular-sdk/data_access_security';
+import { BusinessServiceType } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Enum

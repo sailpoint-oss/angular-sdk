@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApplicationType', 'data_access_securi
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApplicationType } from 'sailpoint-angular-sdk/data_access_security';
+import { ApplicationType } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Enum

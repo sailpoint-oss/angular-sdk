@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/task_management/methods/task-management#get-task-status-list-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
+        import { TaskManagementService } from '@sailpoint/angular-sdk/task_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -30,7 +30,7 @@
       label: SDK_tools/sdk/angular/task_management/methods/task-management#get-task-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
+        import { TaskManagementService } from '@sailpoint/angular-sdk/task_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -51,8 +51,8 @@
       label: SDK_tools/sdk/angular/task_management/methods/task-management#update-task-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/task_management';
+        import { TaskManagementService } from '@sailpoint/angular-sdk/task_management';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/task_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { IAIOutliersService } from 'sailpoint-angular-sdk/iai_outliers';
+import { IAIOutliersService } from '@sailpoint/angular-sdk/iai_outliers';
 
 private readonly api = inject(IAIOutliersService);
 ```

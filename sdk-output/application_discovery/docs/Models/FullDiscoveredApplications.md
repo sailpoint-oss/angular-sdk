@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FullDiscoveredApplications', 'applica
 Import this model from the entry point of its package:
 
 ```typescript
-import { FullDiscoveredApplications } from 'sailpoint-angular-sdk/application_discovery';
+import { FullDiscoveredApplications } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

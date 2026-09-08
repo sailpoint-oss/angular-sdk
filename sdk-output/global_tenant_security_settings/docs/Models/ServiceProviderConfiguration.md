@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ServiceProviderConfiguration', 'globa
 Import this model from the entry point of its package:
 
 ```typescript
-import { ServiceProviderConfiguration } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { ServiceProviderConfiguration } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 ```
 
 ## Properties

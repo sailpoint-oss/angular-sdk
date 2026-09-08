@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleMiningSessionScopingMethod', 'iai
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleMiningSessionScopingMethod } from 'sailpoint-angular-sdk/iai_role_mining';
+import { RoleMiningSessionScopingMethod } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Enum

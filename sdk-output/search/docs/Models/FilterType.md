@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FilterType', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { FilterType } from 'sailpoint-angular-sdk/search';
+import { FilterType } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Enum

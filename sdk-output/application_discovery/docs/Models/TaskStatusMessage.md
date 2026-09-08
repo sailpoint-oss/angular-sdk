@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskStatusMessage', 'application_disc
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskStatusMessage } from 'sailpoint-angular-sdk/application_discovery';
+import { TaskStatusMessage } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

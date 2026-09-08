@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'application_discovery']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/application_discovery';
+import { DtoType } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Enum

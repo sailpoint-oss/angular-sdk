@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatch', 'custom_user_levels']
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatch } from 'sailpoint-angular-sdk/custom_user_levels';
+import { JsonPatch } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

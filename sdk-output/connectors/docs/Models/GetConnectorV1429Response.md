@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetConnectorV1429Response', 'connecto
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetConnectorV1429Response } from 'sailpoint-angular-sdk/connectors';
+import { GetConnectorV1429Response } from '@sailpoint/angular-sdk/connectors';
 ```
 
 ## Properties

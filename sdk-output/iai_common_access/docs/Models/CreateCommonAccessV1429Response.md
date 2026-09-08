@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateCommonAccessV1429Response', 'ia
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateCommonAccessV1429Response } from 'sailpoint-angular-sdk/iai_common_access';
+import { CreateCommonAccessV1429Response } from '@sailpoint/angular-sdk/iai_common_access';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessItemDiff', 'identity_history']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessItemDiff } from 'sailpoint-angular-sdk/identity_history';
+import { AccessItemDiff } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

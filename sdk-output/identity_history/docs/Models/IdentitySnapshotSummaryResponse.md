@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentitySnapshotSummaryResponse', 'id
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentitySnapshotSummaryResponse } from 'sailpoint-angular-sdk/identity_history';
+import { IdentitySnapshotSummaryResponse } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

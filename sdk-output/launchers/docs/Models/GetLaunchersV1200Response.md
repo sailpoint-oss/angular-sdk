@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetLaunchersV1200Response', 'launcher
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetLaunchersV1200Response } from 'sailpoint-angular-sdk/launchers';
+import { GetLaunchersV1200Response } from '@sailpoint/angular-sdk/launchers';
 ```
 
 ## Properties

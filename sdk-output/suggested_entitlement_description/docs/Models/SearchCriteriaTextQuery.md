@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SearchCriteriaTextQuery', 'suggested_
 Import this model from the entry point of its package:
 
 ```typescript
-import { SearchCriteriaTextQuery } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { SearchCriteriaTextQuery } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

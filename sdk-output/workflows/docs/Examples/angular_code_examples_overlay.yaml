@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#cancel-workflow-execution-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -26,8 +26,8 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#create-external-execute-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-        import { CreateExternalExecuteWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+        import { CreateExternalExecuteWorkflowV1Request } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -49,7 +49,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#create-workflow-external-trigger-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -70,8 +70,8 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#create-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-        import { CreateWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+        import { CreateWorkflowV1Request } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -92,7 +92,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#delete-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -113,7 +113,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-execution-history-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -136,7 +136,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-execution-history-v2-for-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -157,7 +157,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-execution-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -178,7 +178,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-executions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -202,7 +202,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -223,7 +223,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#list-complete-workflow-library-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -245,7 +245,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#list-workflow-library-actions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -268,7 +268,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#list-workflow-library-operators-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -288,7 +288,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#list-workflow-library-triggers-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -311,7 +311,7 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#list-workflows-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -331,8 +331,8 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#patch-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -358,8 +358,8 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#put-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-        import { WorkflowBody } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+        import { WorkflowBody } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -415,8 +415,8 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#test-external-execute-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-        import { TestExternalExecuteWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+        import { TestExternalExecuteWorkflowV1Request } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -438,8 +438,8 @@
       label: SDK_tools/sdk/angular/workflows/methods/workflows#test-workflow-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
-        import { TestWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowsService } from '@sailpoint/angular-sdk/workflows';
+        import { TestWorkflowV1Request } from '@sailpoint/angular-sdk/workflows';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

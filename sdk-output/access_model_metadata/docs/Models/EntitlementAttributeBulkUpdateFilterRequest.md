@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementAttributeBulkUpdateFilterR
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementAttributeBulkUpdateFilterRequest } from 'sailpoint-angular-sdk/access_model_metadata';
+import { EntitlementAttributeBulkUpdateFilterRequest } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

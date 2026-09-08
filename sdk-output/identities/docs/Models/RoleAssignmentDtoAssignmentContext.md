@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleAssignmentDtoAssignmentContext', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleAssignmentDtoAssignmentContext } from 'sailpoint-angular-sdk/identities';
+import { RoleAssignmentDtoAssignmentContext } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

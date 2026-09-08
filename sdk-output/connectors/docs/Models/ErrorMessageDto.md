@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'connectors']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/connectors';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/connectors';
 ```
 
 ## Properties

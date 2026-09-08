@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SimIntegrationDetails', 'sim_integrat
 Import this model from the entry point of its package:
 
 ```typescript
-import { SimIntegrationDetails } from 'sailpoint-angular-sdk/sim_integrations';
+import { SimIntegrationDetails } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Properties

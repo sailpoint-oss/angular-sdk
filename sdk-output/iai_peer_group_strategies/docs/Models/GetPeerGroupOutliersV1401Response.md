@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetPeerGroupOutliersV1401Response', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetPeerGroupOutliersV1401Response } from 'sailpoint-angular-sdk/iai_peer_group_strategies';
+import { GetPeerGroupOutliersV1401Response } from '@sailpoint/angular-sdk/iai_peer_group_strategies';
 ```
 
 ## Properties

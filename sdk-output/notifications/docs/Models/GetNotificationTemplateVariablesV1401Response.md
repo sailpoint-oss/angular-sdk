@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetNotificationTemplateVariablesV1401
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetNotificationTemplateVariablesV1401Response } from 'sailpoint-angular-sdk/notifications';
+import { GetNotificationTemplateVariablesV1401Response } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

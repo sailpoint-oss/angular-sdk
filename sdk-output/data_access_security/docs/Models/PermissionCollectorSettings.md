@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PermissionCollectorSettings', 'data_a
 Import this model from the entry point of its package:
 
 ```typescript
-import { PermissionCollectorSettings } from 'sailpoint-angular-sdk/data_access_security';
+import { PermissionCollectorSettings } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

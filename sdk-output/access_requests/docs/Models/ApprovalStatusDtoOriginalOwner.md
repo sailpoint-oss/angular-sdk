@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalStatusDtoOriginalOwner', 'acc
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalStatusDtoOriginalOwner } from 'sailpoint-angular-sdk/access_requests';
+import { ApprovalStatusDtoOriginalOwner } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

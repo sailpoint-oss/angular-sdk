@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SodReportResultDto', 'certification_c
 Import this model from the entry point of its package:
 
 ```typescript
-import { SodReportResultDto } from 'sailpoint-angular-sdk/certification_campaigns';
+import { SodReportResultDto } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

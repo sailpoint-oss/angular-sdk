@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'account_aggregati
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/account_aggregations';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/account_aggregations';
 ```
 
 ## Properties

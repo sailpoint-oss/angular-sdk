@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'privilege_criteria
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/privilege_criteria_configuration';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/privilege_criteria_configuration';
 ```
 
 ## Properties

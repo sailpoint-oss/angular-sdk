@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JWK', 'shared_signals_framework_ssf']
 Import this model from the entry point of its package:
 
 ```typescript
-import { JWK } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { JWK } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

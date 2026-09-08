@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+import { ClassifySourceService } from '@sailpoint/angular-sdk/classify_source';
 
 private readonly api = inject(ClassifySourceService);
 ```

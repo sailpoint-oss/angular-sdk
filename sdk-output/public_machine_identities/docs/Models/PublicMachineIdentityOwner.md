@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PublicMachineIdentityOwner', 'public_
 Import this model from the entry point of its package:
 
 ```typescript
-import { PublicMachineIdentityOwner } from 'sailpoint-angular-sdk/public_machine_identities';
+import { PublicMachineIdentityOwner } from '@sailpoint/angular-sdk/public_machine_identities';
 ```
 
 ## Properties

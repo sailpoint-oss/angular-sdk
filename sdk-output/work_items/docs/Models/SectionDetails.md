@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SectionDetails', 'work_items']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SectionDetails } from 'sailpoint-angular-sdk/work_items';
+import { SectionDetails } from '@sailpoint/angular-sdk/work_items';
 ```
 
 ## Properties

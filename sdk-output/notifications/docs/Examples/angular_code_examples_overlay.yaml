@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#create-domain-dkim-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-        import { DomainAddress } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+        import { DomainAddress } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -29,8 +29,8 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#create-notification-template-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-        import { TemplateDto } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+        import { TemplateDto } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -114,8 +114,8 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#create-verified-from-address-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-        import { EmailStatusDto } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+        import { EmailStatusDto } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -142,8 +142,8 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#delete-notification-templates-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-        import { TemplateBulkDeleteDto } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+        import { TemplateBulkDeleteDto } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -168,7 +168,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#delete-verified-from-address-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -189,7 +189,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#get-dkim-attributes-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -211,7 +211,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#get-mail-from-attributes-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -232,7 +232,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#get-notification-preferences-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -254,7 +254,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#get-notification-template-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -275,7 +275,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#get-notification-template-variables-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -298,7 +298,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#get-notifications-template-context-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -318,7 +318,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#list-from-addresses-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -343,7 +343,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#list-notification-preferences-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -368,7 +368,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#list-notification-template-defaults-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -391,7 +391,7 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#list-notification-templates-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -415,8 +415,8 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#put-mail-from-attributes-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-        import { MailFromAttributesDto } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+        import { MailFromAttributesDto } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -440,8 +440,8 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#send-test-notification-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-        import { SendTestNotificationRequestDto } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+        import { SendTestNotificationRequestDto } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -473,8 +473,8 @@
       label: SDK_tools/sdk/angular/notifications/methods/notifications#set-notification-preferences-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { NotificationsService } from 'sailpoint-angular-sdk/notifications';
-        import { PreferencesDto } from 'sailpoint-angular-sdk/notifications';
+        import { NotificationsService } from '@sailpoint/angular-sdk/notifications';
+        import { PreferencesDto } from '@sailpoint/angular-sdk/notifications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

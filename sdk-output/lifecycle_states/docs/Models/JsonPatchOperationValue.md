@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'lifecycle_
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/lifecycle_states';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/lifecycle_states';
 ```
 
 ## Properties

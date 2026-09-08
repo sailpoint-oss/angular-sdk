@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DataAccessCategoriesInner', 'certific
 Import this model from the entry point of its package:
 
 ```typescript
-import { DataAccessCategoriesInner } from 'sailpoint-angular-sdk/certifications';
+import { DataAccessCategoriesInner } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Properties

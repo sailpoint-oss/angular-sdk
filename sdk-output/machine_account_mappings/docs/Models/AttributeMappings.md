@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttributeMappings', 'machine_account_
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttributeMappings } from 'sailpoint-angular-sdk/machine_account_mappings';
+import { AttributeMappings } from '@sailpoint/angular-sdk/machine_account_mappings';
 ```
 
 ## Properties

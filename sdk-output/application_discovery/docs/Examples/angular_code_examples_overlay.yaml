@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/application_discovery/methods/application-discovery#get-discovered-applications-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApplicationDiscoveryService } from 'sailpoint-angular-sdk/application_discovery';
+        import { ApplicationDiscoveryService } from '@sailpoint/angular-sdk/application_discovery';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -30,7 +30,7 @@
       label: SDK_tools/sdk/angular/application_discovery/methods/application-discovery#get-manual-discover-applications-csv-template-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApplicationDiscoveryService } from 'sailpoint-angular-sdk/application_discovery';
+        import { ApplicationDiscoveryService } from '@sailpoint/angular-sdk/application_discovery';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -50,7 +50,7 @@
       label: SDK_tools/sdk/angular/application_discovery/methods/application-discovery#send-manual-discover-applications-csv-template-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApplicationDiscoveryService } from 'sailpoint-angular-sdk/application_discovery';
+        import { ApplicationDiscoveryService } from '@sailpoint/angular-sdk/application_discovery';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -71,8 +71,8 @@
       label: SDK_tools/sdk/angular/application_discovery/methods/application-discovery#start-application-discovery-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ApplicationDiscoveryService } from 'sailpoint-angular-sdk/application_discovery';
-        import { ApplicationDiscoveryRequest } from 'sailpoint-angular-sdk/application_discovery';
+        import { ApplicationDiscoveryService } from '@sailpoint/angular-sdk/application_discovery';
+        import { ApplicationDiscoveryRequest } from '@sailpoint/angular-sdk/application_discovery';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

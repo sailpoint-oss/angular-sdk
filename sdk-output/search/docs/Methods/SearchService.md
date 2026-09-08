@@ -75,8 +75,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SearchService } from 'sailpoint-angular-sdk/search';
-import { Search } from 'sailpoint-angular-sdk/search';
+import { SearchService } from '@sailpoint/angular-sdk/search';
+import { Search } from '@sailpoint/angular-sdk/search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -125,8 +125,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SearchService } from 'sailpoint-angular-sdk/search';
-import { Search } from 'sailpoint-angular-sdk/search';
+import { SearchService } from '@sailpoint/angular-sdk/search';
+import { Search } from '@sailpoint/angular-sdk/search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SearchService } from 'sailpoint-angular-sdk/search';
+import { SearchService } from '@sailpoint/angular-sdk/search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -223,8 +223,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SearchService } from 'sailpoint-angular-sdk/search';
-import { Search } from 'sailpoint-angular-sdk/search';
+import { SearchService } from '@sailpoint/angular-sdk/search';
+import { Search } from '@sailpoint/angular-sdk/search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

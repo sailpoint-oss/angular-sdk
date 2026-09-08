@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManualWorkItemDetailsOriginalOwner', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManualWorkItemDetailsOriginalOwner } from 'sailpoint-angular-sdk/access_requests';
+import { ManualWorkItemDetailsOriginalOwner } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

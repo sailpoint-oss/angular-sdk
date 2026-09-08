@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ResourceModel', 'data_access_security
 Import this model from the entry point of its package:
 
 ```typescript
-import { ResourceModel } from 'sailpoint-angular-sdk/data_access_security';
+import { ResourceModel } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

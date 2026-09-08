@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SendDeclassifyMachineAccountFromSourc
 Import this model from the entry point of its package:
 
 ```typescript
-import { SendDeclassifyMachineAccountFromSourceV1429Response } from 'sailpoint-angular-sdk/declassify_source';
+import { SendDeclassifyMachineAccountFromSourceV1429Response } from '@sailpoint/angular-sdk/declassify_source';
 ```
 
 ## Properties

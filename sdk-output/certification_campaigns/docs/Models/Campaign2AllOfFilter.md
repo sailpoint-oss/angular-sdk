@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Campaign2AllOfFilter', 'certification
 Import this model from the entry point of its package:
 
 ```typescript
-import { Campaign2AllOfFilter } from 'sailpoint-angular-sdk/certification_campaigns';
+import { Campaign2AllOfFilter } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

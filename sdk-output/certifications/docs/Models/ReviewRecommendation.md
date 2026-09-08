@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReviewRecommendation', 'certification
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReviewRecommendation } from 'sailpoint-angular-sdk/certifications';
+import { ReviewRecommendation } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Properties

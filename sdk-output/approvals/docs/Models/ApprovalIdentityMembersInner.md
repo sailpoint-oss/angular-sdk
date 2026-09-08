@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalIdentityMembersInner', 'appro
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalIdentityMembersInner } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalIdentityMembersInner } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

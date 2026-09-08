@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#create-sod-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-        import { SodPolicy } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+        import { SodPolicy } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -93,7 +93,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#delete-sod-policy-schedule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -114,7 +114,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#delete-sod-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -136,7 +136,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-custom-violation-report-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -158,7 +158,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-default-violation-report-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -179,7 +179,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-all-report-run-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -199,7 +199,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-policy-schedule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -220,7 +220,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -241,7 +241,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-violation-report-run-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -262,7 +262,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-violation-report-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -283,7 +283,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#list-sod-policies-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -308,8 +308,8 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#patch-sod-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -335,8 +335,8 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#put-policy-schedule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-        import { SodPolicySchedule } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+        import { SodPolicySchedule } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -395,8 +395,8 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#put-sod-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-        import { SodPolicy } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+        import { SodPolicy } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -484,7 +484,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#start-evaluate-sod-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -505,8 +505,8 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#start-sod-all-policies-for-org-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
-        import { MultiPolicyRequest } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
+        import { MultiPolicyRequest } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -529,7 +529,7 @@
       label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#start-sod-policy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SODPoliciesService } from '@sailpoint/angular-sdk/sod_policies';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SanctionedStatus', 'business_applicat
 Import this model from the entry point of its package:
 
 ```typescript
-import { SanctionedStatus } from 'sailpoint-angular-sdk/business_applications';
+import { SanctionedStatus } from '@sailpoint/angular-sdk/business_applications';
 ```
 
 ## Enum

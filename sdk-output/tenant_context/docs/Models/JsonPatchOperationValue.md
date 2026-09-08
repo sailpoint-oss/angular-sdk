@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'tenant_con
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/tenant_context';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/tenant_context';
 ```
 
 ## Properties

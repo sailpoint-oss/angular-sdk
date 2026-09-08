@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TagsService } from 'sailpoint-angular-sdk/tags';
-import { Tag2 } from 'sailpoint-angular-sdk/tags';
+import { TagsService } from '@sailpoint/angular-sdk/tags';
+import { Tag2 } from '@sailpoint/angular-sdk/tags';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TagsService } from 'sailpoint-angular-sdk/tags';
+import { TagsService } from '@sailpoint/angular-sdk/tags';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TagsService } from 'sailpoint-angular-sdk/tags';
+import { TagsService } from '@sailpoint/angular-sdk/tags';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TagsService } from 'sailpoint-angular-sdk/tags';
+import { TagsService } from '@sailpoint/angular-sdk/tags';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

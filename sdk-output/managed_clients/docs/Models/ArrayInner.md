@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'managed_clients']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/managed_clients';
+import { ArrayInner } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClusterKeyPair', 'managed_clus
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClusterKeyPair } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClusterKeyPair } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

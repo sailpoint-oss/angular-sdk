@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Aggregations', 'access_model_metadata
 Import this model from the entry point of its package:
 
 ```typescript
-import { Aggregations } from 'sailpoint-angular-sdk/access_model_metadata';
+import { Aggregations } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

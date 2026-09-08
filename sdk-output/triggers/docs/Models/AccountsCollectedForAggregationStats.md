@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountsCollectedForAggregationStats'
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountsCollectedForAggregationStats } from 'sailpoint-angular-sdk/triggers';
+import { AccountsCollectedForAggregationStats } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

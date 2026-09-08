@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestPreApproval2', 'triggers
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestPreApproval2 } from 'sailpoint-angular-sdk/triggers';
+import { AccessRequestPreApproval2 } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

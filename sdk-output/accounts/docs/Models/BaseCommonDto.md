@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseCommonDto', 'accounts']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseCommonDto } from 'sailpoint-angular-sdk/accounts';
+import { BaseCommonDto } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

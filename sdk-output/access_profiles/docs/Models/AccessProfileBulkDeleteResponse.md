@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessProfileBulkDeleteResponse', 'ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessProfileBulkDeleteResponse } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfileBulkDeleteResponse } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BulkCancelAccessRequest', 'access_req
 Import this model from the entry point of its package:
 
 ```typescript
-import { BulkCancelAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+import { BulkCancelAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

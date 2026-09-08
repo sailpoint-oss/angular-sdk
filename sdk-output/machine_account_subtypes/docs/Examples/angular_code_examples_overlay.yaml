@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#create-source-subtype-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
-        import { CreateSourceSubtypeV1Request } from 'sailpoint-angular-sdk/machine_account_subtypes';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+        import { CreateSourceSubtypeV1Request } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -28,7 +28,7 @@
       label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#delete-machine-account-subtype-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -50,7 +50,7 @@
       label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#get-machine-account-subtype-approval-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -72,7 +72,7 @@
       label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#get-source-subtype-by-id-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -94,7 +94,7 @@
       label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#list-source-subtypes-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -120,7 +120,7 @@
       label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#load-bulk-source-subtypes-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -142,7 +142,7 @@
       label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#patch-machine-account-subtype-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -165,8 +165,8 @@
       label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#update-machine-account-subtype-approval-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountSubtypesService } from 'sailpoint-angular-sdk/machine_account_subtypes';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_account_subtypes';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

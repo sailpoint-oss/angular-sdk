@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'task_manag
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/task_management';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/task_management';
 ```
 
 ## Properties

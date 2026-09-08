@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'KbaAnswerRequestItem', 'mfa_configura
 Import this model from the entry point of its package:
 
 ```typescript
-import { KbaAnswerRequestItem } from 'sailpoint-angular-sdk/mfa_configuration';
+import { KbaAnswerRequestItem } from '@sailpoint/angular-sdk/mfa_configuration';
 ```
 
 ## Properties

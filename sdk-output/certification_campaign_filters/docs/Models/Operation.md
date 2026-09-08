@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Operation', 'certification_campaign_f
 Import this model from the entry point of its package:
 
 ```typescript
-import { Operation } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { Operation } from '@sailpoint/angular-sdk/certification_campaign_filters';
 ```
 
 ## Enum

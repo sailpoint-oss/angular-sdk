@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleInsightsResponse', 'role_insights
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleInsightsResponse } from 'sailpoint-angular-sdk/role_insights';
+import { RoleInsightsResponse } from '@sailpoint/angular-sdk/role_insights';
 ```
 
 ## Properties

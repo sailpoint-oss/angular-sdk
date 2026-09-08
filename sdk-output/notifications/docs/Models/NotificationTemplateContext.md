@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NotificationTemplateContext', 'notifi
 Import this model from the entry point of its package:
 
 ```typescript
-import { NotificationTemplateContext } from 'sailpoint-angular-sdk/notifications';
+import { NotificationTemplateContext } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

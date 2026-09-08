@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Segment', 'segments']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Segment } from 'sailpoint-angular-sdk/segments';
+import { Segment } from '@sailpoint/angular-sdk/segments';
 ```
 
 ## Properties

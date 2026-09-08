@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Bound', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Bound } from 'sailpoint-angular-sdk/search';
+import { Bound } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Properties

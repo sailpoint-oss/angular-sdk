@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NonEmployeeSchemaAttribute', 'non_emp
 Import this model from the entry point of its package:
 
 ```typescript
-import { NonEmployeeSchemaAttribute } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeSchemaAttribute } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ExportSpConfigV1401Response', 'sp_con
 Import this model from the entry point of its package:
 
 ```typescript
-import { ExportSpConfigV1401Response } from 'sailpoint-angular-sdk/sp_config';
+import { ExportSpConfigV1401Response } from '@sailpoint/angular-sdk/sp_config';
 ```
 
 ## Properties

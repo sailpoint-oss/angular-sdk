@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'account_deletion_r
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/account_deletion_requests';
 ```
 
 ## Properties

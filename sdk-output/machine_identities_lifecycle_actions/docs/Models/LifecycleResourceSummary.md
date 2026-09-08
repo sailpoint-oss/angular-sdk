@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LifecycleResourceSummary', 'machine_i
 Import this model from the entry point of its package:
 
 ```typescript
-import { LifecycleResourceSummary } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { LifecycleResourceSummary } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 ```
 
 ## Properties

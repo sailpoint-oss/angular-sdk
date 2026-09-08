@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BrandingItem', 'branding']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BrandingItem } from 'sailpoint-angular-sdk/branding';
+import { BrandingItem } from '@sailpoint/angular-sdk/branding';
 ```
 
 ## Properties

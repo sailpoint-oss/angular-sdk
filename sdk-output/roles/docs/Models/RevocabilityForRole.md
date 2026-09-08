@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RevocabilityForRole', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RevocabilityForRole } from 'sailpoint-angular-sdk/roles';
+import { RevocabilityForRole } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

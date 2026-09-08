@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TestSourceConnectionMultihostV1200Res
 Import this model from the entry point of its package:
 
 ```typescript
-import { TestSourceConnectionMultihostV1200Response } from 'sailpoint-angular-sdk/multi_host_integration';
+import { TestSourceConnectionMultihostV1200Response } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

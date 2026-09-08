@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'service_desk_in
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/service_desk_integration';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Properties

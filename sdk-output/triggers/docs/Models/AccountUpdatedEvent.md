@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountUpdatedEvent', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountUpdatedEvent } from 'sailpoint-angular-sdk/triggers';
+import { AccountUpdatedEvent } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

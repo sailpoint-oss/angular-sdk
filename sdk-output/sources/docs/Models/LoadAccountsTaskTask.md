@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LoadAccountsTaskTask', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LoadAccountsTaskTask } from 'sailpoint-angular-sdk/sources';
+import { LoadAccountsTaskTask } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

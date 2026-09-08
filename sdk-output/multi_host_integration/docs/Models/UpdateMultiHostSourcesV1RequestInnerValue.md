@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UpdateMultiHostSourcesV1RequestInnerV
 Import this model from the entry point of its package:
 
 ```typescript
-import { UpdateMultiHostSourcesV1RequestInnerValue } from 'sailpoint-angular-sdk/multi_host_integration';
+import { UpdateMultiHostSourcesV1RequestInnerValue } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

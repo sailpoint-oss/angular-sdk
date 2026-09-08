@@ -69,8 +69,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
-import { SearchAttributeConfig } from 'sailpoint-angular-sdk/search_attribute_configuration';
+import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
+import { SearchAttributeConfig } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -259,8 +259,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/search_attribute_configuration';
+import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'multi_host_integr
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/multi_host_integration';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

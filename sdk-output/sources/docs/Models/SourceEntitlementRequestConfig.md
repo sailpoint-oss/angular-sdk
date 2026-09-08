@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceEntitlementRequestConfig', 'sou
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceEntitlementRequestConfig } from 'sailpoint-angular-sdk/sources';
+import { SourceEntitlementRequestConfig } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

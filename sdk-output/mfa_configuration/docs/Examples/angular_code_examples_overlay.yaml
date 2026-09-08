@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#get-mfa-duo-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -25,7 +25,7 @@
       label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#get-mfa-kba-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -46,7 +46,7 @@
       label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#get-mfa-okta-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -66,8 +66,8 @@
       label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#set-mfa-duo-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
-        import { MfaDuoConfig } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+        import { MfaDuoConfig } from '@sailpoint/angular-sdk/mfa_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -98,8 +98,8 @@
       label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#set-mfakba-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
-        import { KbaAnswerRequestItem } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+        import { KbaAnswerRequestItem } from '@sailpoint/angular-sdk/mfa_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -123,8 +123,8 @@
       label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#set-mfa-okta-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
-        import { MfaOktaConfig } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+        import { MfaOktaConfig } from '@sailpoint/angular-sdk/mfa_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -151,7 +151,7 @@
       label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#test-mfa-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

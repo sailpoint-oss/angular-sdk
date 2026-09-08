@@ -143,8 +143,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { CampaignCompleteOptions } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { CampaignCompleteOptions } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -192,8 +192,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { CampaignTemplate } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { CampaignTemplate } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -243,8 +243,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { Campaign2 } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { Campaign2 } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -385,8 +385,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { CampaignsDeleteRequest } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { CampaignsDeleteRequest } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -487,7 +487,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -680,7 +680,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -781,8 +781,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { AdminReviewReassign } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { AdminReviewReassign } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -831,8 +831,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -880,8 +880,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { CampaignReportsConfig } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { CampaignReportsConfig } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -929,8 +929,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { Schedule2 } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { Schedule2 } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -978,7 +978,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1026,7 +1026,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1075,8 +1075,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { ActivateCampaignOptions } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { ActivateCampaignOptions } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1136,7 +1136,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1184,8 +1184,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/certification_campaigns';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/certification_campaigns';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

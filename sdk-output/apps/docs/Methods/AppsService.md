@@ -65,8 +65,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
-import { SourceAppCreateDto } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
+import { SourceAppCreateDto } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -509,7 +509,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -681,8 +681,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -736,8 +736,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -791,8 +791,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AppsService } from 'sailpoint-angular-sdk/apps';
-import { SourceAppBulkUpdateRequest } from 'sailpoint-angular-sdk/apps';
+import { AppsService } from '@sailpoint/angular-sdk/apps';
+import { SourceAppBulkUpdateRequest } from '@sailpoint/angular-sdk/apps';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

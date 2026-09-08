@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CertificationReference', 'certificati
 Import this model from the entry point of its package:
 
 ```typescript
-import { CertificationReference } from 'sailpoint-angular-sdk/certifications';
+import { CertificationReference } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Properties

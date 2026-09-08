@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/public_machine_identities/methods/public-machine-identities#list-public-machine-identities-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PublicMachineIdentitiesService } from 'sailpoint-angular-sdk/public_machine_identities';
+        import { PublicMachineIdentitiesService } from '@sailpoint/angular-sdk/public_machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

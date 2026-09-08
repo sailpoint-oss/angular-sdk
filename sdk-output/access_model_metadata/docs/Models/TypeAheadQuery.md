@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TypeAheadQuery', 'access_model_metada
 Import this model from the entry point of its package:
 
 ```typescript
-import { TypeAheadQuery } from 'sailpoint-angular-sdk/access_model_metadata';
+import { TypeAheadQuery } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

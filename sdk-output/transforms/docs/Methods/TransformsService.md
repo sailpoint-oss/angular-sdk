@@ -55,8 +55,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TransformsService } from 'sailpoint-angular-sdk/transforms';
-import { Transform } from 'sailpoint-angular-sdk/transforms';
+import { TransformsService } from '@sailpoint/angular-sdk/transforms';
+import { Transform } from '@sailpoint/angular-sdk/transforms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TransformsService } from 'sailpoint-angular-sdk/transforms';
+import { TransformsService } from '@sailpoint/angular-sdk/transforms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TransformsService } from 'sailpoint-angular-sdk/transforms';
+import { TransformsService } from '@sailpoint/angular-sdk/transforms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TransformsService } from 'sailpoint-angular-sdk/transforms';
+import { TransformsService } from '@sailpoint/angular-sdk/transforms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -249,8 +249,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TransformsService } from 'sailpoint-angular-sdk/transforms';
-import { Transform } from 'sailpoint-angular-sdk/transforms';
+import { TransformsService } from '@sailpoint/angular-sdk/transforms';
+import { Transform } from '@sailpoint/angular-sdk/transforms';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

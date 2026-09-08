@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DimensionAttribute', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DimensionAttribute } from 'sailpoint-angular-sdk/roles';
+import { DimensionAttribute } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

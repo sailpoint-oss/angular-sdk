@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateExternalExecuteWorkflowV1200Res
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateExternalExecuteWorkflowV1200Response } from 'sailpoint-angular-sdk/workflows';
+import { CreateExternalExecuteWorkflowV1200Response } from '@sailpoint/angular-sdk/workflows';
 ```
 
 ## Properties

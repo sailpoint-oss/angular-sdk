@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Value', 'data_segmentation']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Value } from 'sailpoint-angular-sdk/data_segmentation';
+import { Value } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Properties

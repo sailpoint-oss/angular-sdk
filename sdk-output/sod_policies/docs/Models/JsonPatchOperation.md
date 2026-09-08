@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'sod_policies']
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sod_policies';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Properties

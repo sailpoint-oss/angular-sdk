@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'entitlemen
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/entitlements';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/entitlements';
 ```
 
 ## Properties

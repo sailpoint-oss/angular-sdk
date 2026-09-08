@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AdminReviewReassignReassignTo', 'cert
 Import this model from the entry point of its package:
 
 ```typescript
-import { AdminReviewReassignReassignTo } from 'sailpoint-angular-sdk/certification_campaigns';
+import { AdminReviewReassignReassignTo } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

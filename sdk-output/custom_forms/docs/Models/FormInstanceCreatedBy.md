@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormInstanceCreatedBy', 'custom_forms
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormInstanceCreatedBy } from 'sailpoint-angular-sdk/custom_forms';
+import { FormInstanceCreatedBy } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

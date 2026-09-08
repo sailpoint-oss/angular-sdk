@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BasicAuthConfig', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BasicAuthConfig } from 'sailpoint-angular-sdk/triggers';
+import { BasicAuthConfig } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

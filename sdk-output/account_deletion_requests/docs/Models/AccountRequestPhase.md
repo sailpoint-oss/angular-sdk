@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountRequestPhase', 'account_deleti
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountRequestPhase } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { AccountRequestPhase } from '@sailpoint/angular-sdk/account_deletion_requests';
 ```
 
 ## Properties

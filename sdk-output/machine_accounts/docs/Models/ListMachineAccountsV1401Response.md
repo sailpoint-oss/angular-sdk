@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListMachineAccountsV1401Response', 'm
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListMachineAccountsV1401Response } from 'sailpoint-angular-sdk/machine_accounts';
+import { ListMachineAccountsV1401Response } from '@sailpoint/angular-sdk/machine_accounts';
 ```
 
 ## Properties

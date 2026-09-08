@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#create-connector-customizer-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
-        import { ConnectorCustomizerCreateRequest } from 'sailpoint-angular-sdk/connector_customizers';
+        import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
+        import { ConnectorCustomizerCreateRequest } from '@sailpoint/angular-sdk/connector_customizers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -29,7 +29,7 @@
       label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#create-connector-customizer-version-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+        import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -50,7 +50,7 @@
       label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#delete-connector-customizer-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+        import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -71,7 +71,7 @@
       label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#get-connector-customizer-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+        import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -92,7 +92,7 @@
       label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#list-connector-customizers-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+        import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -114,8 +114,8 @@
       label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#put-connector-customizer-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
-        import { ConnectorCustomizerUpdateRequest } from 'sailpoint-angular-sdk/connector_customizers';
+        import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
+        import { ConnectorCustomizerUpdateRequest } from '@sailpoint/angular-sdk/connector_customizers';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

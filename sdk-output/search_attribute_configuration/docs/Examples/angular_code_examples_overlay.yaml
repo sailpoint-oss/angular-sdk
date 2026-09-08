@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#create-search-attribute-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
-        import { SearchAttributeConfig } from 'sailpoint-angular-sdk/search_attribute_configuration';
+        import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
+        import { SearchAttributeConfig } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -34,7 +34,7 @@
       label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#delete-search-attribute-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+        import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -55,7 +55,7 @@
       label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#get-search-attribute-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+        import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -77,7 +77,7 @@
       label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#get-single-search-attribute-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+        import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -98,8 +98,8 @@
       label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#patch-search-attribute-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/search_attribute_configuration';
+        import { SearchAttributeConfigurationService } from '@sailpoint/angular-sdk/search_attribute_configuration';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/search_attribute_configuration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

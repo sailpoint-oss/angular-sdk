@@ -49,8 +49,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
-import { BusinessApplication } from 'sailpoint-angular-sdk/business_applications';
+import { BusinessApplicationsService } from '@sailpoint/angular-sdk/business_applications';
+import { BusinessApplication } from '@sailpoint/angular-sdk/business_applications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
+import { BusinessApplicationsService } from '@sailpoint/angular-sdk/business_applications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
+import { BusinessApplicationsService } from '@sailpoint/angular-sdk/business_applications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -197,8 +197,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/business_applications';
+import { BusinessApplicationsService } from '@sailpoint/angular-sdk/business_applications';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/business_applications';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

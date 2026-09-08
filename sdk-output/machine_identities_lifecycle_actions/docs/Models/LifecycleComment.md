@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LifecycleComment', 'machine_identitie
 Import this model from the entry point of its package:
 
 ```typescript
-import { LifecycleComment } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { LifecycleComment } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 ```
 
 ## Properties

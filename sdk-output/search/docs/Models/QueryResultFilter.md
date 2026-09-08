@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'QueryResultFilter', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { QueryResultFilter } from 'sailpoint-angular-sdk/search';
+import { QueryResultFilter } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Properties

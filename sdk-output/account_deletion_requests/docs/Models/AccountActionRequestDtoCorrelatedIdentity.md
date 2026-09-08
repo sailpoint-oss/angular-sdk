@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountActionRequestDtoCorrelatedIden
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountActionRequestDtoCorrelatedIdentity } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { AccountActionRequestDtoCorrelatedIdentity } from '@sailpoint/angular-sdk/account_deletion_requests';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestAdminItemStatus', 'acces
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestAdminItemStatus } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestAdminItemStatus } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

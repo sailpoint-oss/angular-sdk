@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessItemRequesterDto', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessItemRequesterDto } from 'sailpoint-angular-sdk/triggers';
+import { AccessItemRequesterDto } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

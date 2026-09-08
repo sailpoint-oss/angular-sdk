@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Source2', 'identity_attributes']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Source2 } from 'sailpoint-angular-sdk/identity_attributes';
+import { Source2 } from '@sailpoint/angular-sdk/identity_attributes';
 ```
 
 ## Properties

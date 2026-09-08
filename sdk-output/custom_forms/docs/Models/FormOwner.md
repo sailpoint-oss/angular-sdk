@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormOwner', 'custom_forms']
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormOwner } from 'sailpoint-angular-sdk/custom_forms';
+import { FormOwner } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

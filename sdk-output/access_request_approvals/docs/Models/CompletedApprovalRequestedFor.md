@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CompletedApprovalRequestedFor', 'acce
 Import this model from the entry point of its package:
 
 ```typescript
-import { CompletedApprovalRequestedFor } from 'sailpoint-angular-sdk/access_request_approvals';
+import { CompletedApprovalRequestedFor } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

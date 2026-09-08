@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NonEmployeeSourceLiteWithSchemaAttrib
 Import this model from the entry point of its package:
 
 ```typescript
-import { NonEmployeeSourceLiteWithSchemaAttributes } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeSourceLiteWithSchemaAttributes } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

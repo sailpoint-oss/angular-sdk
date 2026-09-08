@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessProfileApprovalScheme', 'access
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessProfileApprovalScheme } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfileApprovalScheme } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

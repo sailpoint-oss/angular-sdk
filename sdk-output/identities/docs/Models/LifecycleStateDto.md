@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LifecycleStateDto', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LifecycleStateDto } from 'sailpoint-angular-sdk/identities';
+import { LifecycleStateDto } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

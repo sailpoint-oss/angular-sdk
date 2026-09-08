@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'search_attribute_config
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/search_attribute_configuration';
+import { ArrayInner } from '@sailpoint/angular-sdk/search_attribute_configuration';
 ```
 
 ## Properties

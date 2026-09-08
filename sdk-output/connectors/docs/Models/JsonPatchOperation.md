@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'connectors']
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/connectors';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/connectors';
 ```
 
 ## Properties

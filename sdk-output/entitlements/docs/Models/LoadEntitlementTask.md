@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LoadEntitlementTask', 'entitlements']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LoadEntitlementTask } from 'sailpoint-angular-sdk/entitlements';
+import { LoadEntitlementTask } from '@sailpoint/angular-sdk/entitlements';
 ```
 
 ## Properties

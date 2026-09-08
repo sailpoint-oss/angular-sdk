@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementConnectionSearchHit', 'ent
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementConnectionSearchHit } from 'sailpoint-angular-sdk/entitlement_connections';
+import { EntitlementConnectionSearchHit } from '@sailpoint/angular-sdk/entitlement_connections';
 ```
 
 ## Properties

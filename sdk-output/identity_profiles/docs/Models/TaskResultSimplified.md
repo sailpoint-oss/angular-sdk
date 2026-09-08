@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskResultSimplified', 'identity_prof
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskResultSimplified } from 'sailpoint-angular-sdk/identity_profiles';
+import { TaskResultSimplified } from '@sailpoint/angular-sdk/identity_profiles';
 ```
 
 ## Properties

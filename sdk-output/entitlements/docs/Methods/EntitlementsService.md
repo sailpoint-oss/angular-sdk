@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -545,8 +545,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -595,8 +595,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
-import { EntitlementRequestConfig } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+import { EntitlementRequestConfig } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -702,8 +702,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
-import { EntitlementBulkUpdateRequest } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+import { EntitlementBulkUpdateRequest } from '@sailpoint/angular-sdk/entitlements';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

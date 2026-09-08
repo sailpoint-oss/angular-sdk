@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CancelAccessRequest', 'access_request
 Import this model from the entry point of its package:
 
 ```typescript
-import { CancelAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+import { CancelAccessRequest } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

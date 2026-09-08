@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -263,8 +263,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
-import { Rolepropagationconfiginput } from 'sailpoint-angular-sdk/role_propagation';
+import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
+import { Rolepropagationconfiginput } from '@sailpoint/angular-sdk/role_propagation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

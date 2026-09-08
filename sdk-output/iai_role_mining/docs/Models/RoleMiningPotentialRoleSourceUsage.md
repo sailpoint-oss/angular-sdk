@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleMiningPotentialRoleSourceUsage', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleMiningPotentialRoleSourceUsage } from 'sailpoint-angular-sdk/iai_role_mining';
+import { RoleMiningPotentialRoleSourceUsage } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Properties

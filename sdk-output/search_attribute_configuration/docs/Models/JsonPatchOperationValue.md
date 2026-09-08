@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'search_att
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/search_attribute_configuration';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/search_attribute_configuration';
 ```
 
 ## Properties

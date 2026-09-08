@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AuthUserSlimResponse', 'custom_user_l
 Import this model from the entry point of its package:
 
 ```typescript
-import { AuthUserSlimResponse } from 'sailpoint-angular-sdk/custom_user_levels';
+import { AuthUserSlimResponse } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

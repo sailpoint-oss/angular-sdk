@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
 private readonly api = inject(ParameterStorageService);
 ```

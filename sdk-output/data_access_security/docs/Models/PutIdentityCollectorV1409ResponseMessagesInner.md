@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PutIdentityCollectorV1409ResponseMess
 Import this model from the entry point of its package:
 
 ```typescript
-import { PutIdentityCollectorV1409ResponseMessagesInner } from 'sailpoint-angular-sdk/data_access_security';
+import { PutIdentityCollectorV1409ResponseMessagesInner } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

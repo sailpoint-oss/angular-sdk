@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LockoutConfiguration', 'global_tenant
 Import this model from the entry point of its package:
 
 ```typescript
-import { LockoutConfiguration } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { LockoutConfiguration } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 ```
 
 ## Properties

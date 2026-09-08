@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CompleteInvocationInput', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { CompleteInvocationInput } from 'sailpoint-angular-sdk/triggers';
+import { CompleteInvocationInput } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'account_deletion_requests'
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { DtoType } from '@sailpoint/angular-sdk/account_deletion_requests';
 ```
 
 ## Enum

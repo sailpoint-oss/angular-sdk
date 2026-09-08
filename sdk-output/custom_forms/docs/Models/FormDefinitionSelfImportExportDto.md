@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormDefinitionSelfImportExportDto', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormDefinitionSelfImportExportDto } from 'sailpoint-angular-sdk/custom_forms';
+import { FormDefinitionSelfImportExportDto } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

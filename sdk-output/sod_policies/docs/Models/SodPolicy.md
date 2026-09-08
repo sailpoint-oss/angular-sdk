@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SodPolicy', 'sod_policies']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SodPolicy } from 'sailpoint-angular-sdk/sod_policies';
+import { SodPolicy } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Properties

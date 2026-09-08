@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceUsage', 'source_usages']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceUsage } from 'sailpoint-angular-sdk/source_usages';
+import { SourceUsage } from '@sailpoint/angular-sdk/source_usages';
 ```
 
 ## Properties

@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#add-access-request-recommendations-ignored-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-        import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationActionItemDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -34,8 +34,8 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#add-access-request-recommendations-requested-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-        import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationActionItemDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -63,8 +63,8 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#add-access-request-recommendations-viewed-item-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-        import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationActionItemDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -92,8 +92,8 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#add-access-request-recommendations-viewed-items-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-        import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationActionItemDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -121,7 +121,7 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -142,7 +142,7 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-ignored-items-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -168,7 +168,7 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-requested-items-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -194,7 +194,7 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -222,7 +222,7 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-viewed-items-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -248,8 +248,8 @@
       label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#set-access-request-recommendations-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
-        import { AccessRequestRecommendationConfigDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationConfigDto } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

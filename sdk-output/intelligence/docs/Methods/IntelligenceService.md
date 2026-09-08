@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
-import { Responseactioncreaterequest } from 'sailpoint-angular-sdk/intelligence';
+import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
+import { Responseactioncreaterequest } from '@sailpoint/angular-sdk/intelligence';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

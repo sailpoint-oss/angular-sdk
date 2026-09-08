@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetPasswordSyncGroupsV1429Response', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetPasswordSyncGroupsV1429Response } from 'sailpoint-angular-sdk/password_sync_groups';
+import { GetPasswordSyncGroupsV1429Response } from '@sailpoint/angular-sdk/password_sync_groups';
 ```
 
 ## Properties

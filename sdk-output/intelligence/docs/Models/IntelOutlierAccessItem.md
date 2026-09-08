@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelOutlierAccessItem', 'intelligenc
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelOutlierAccessItem } from 'sailpoint-angular-sdk/intelligence';
+import { IntelOutlierAccessItem } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

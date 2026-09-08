@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#create-multi-host-integration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
-        import { MultiHostIntegrationsCreate } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationsCreate } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -52,8 +52,8 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#create-sources-within-multi-host-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
-        import { MultiHostIntegrationsCreateSources } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationsCreateSources } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -86,7 +86,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#delete-multi-host-sources-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -108,7 +108,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#delete-multi-host-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -129,7 +129,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-acct-aggregation-groups-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -152,7 +152,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-entitlement-aggregation-groups-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -175,7 +175,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-multi-host-integrations-list-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -201,7 +201,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-multi-host-integrations-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -222,7 +222,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-multi-host-source-creation-errors-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -243,7 +243,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-multihost-integration-types-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -263,7 +263,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-sources-within-multi-host-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -289,7 +289,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#test-connection-multi-host-sources-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -310,7 +310,7 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#test-source-connection-multihost-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -332,8 +332,8 @@
       label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#update-multi-host-sources-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
-        import { UpdateMultiHostSourcesV1RequestInner } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationService } from '@sailpoint/angular-sdk/multi_host_integration';
+        import { UpdateMultiHostSourcesV1RequestInner } from '@sailpoint/angular-sdk/multi_host_integration';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

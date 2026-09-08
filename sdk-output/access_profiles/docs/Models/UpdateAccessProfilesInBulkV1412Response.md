@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UpdateAccessProfilesInBulkV1412Respon
 Import this model from the entry point of its package:
 
 ```typescript
-import { UpdateAccessProfilesInBulkV1412Response } from 'sailpoint-angular-sdk/access_profiles';
+import { UpdateAccessProfilesInBulkV1412Response } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

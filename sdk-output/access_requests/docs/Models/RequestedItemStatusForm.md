@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestedItemStatusForm', 'access_req
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestedItemStatusForm } from 'sailpoint-angular-sdk/access_requests';
+import { RequestedItemStatusForm } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

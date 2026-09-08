@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Schema', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Schema } from 'sailpoint-angular-sdk/sources';
+import { Schema } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

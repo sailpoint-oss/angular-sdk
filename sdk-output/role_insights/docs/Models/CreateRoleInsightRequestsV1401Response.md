@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateRoleInsightRequestsV1401Respons
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateRoleInsightRequestsV1401Response } from 'sailpoint-angular-sdk/role_insights';
+import { CreateRoleInsightRequestsV1401Response } from '@sailpoint/angular-sdk/role_insights';
 ```
 
 ## Properties

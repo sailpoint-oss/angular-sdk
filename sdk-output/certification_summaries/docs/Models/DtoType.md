@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'certification_summaries']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/certification_summaries';
+import { DtoType } from '@sailpoint/angular-sdk/certification_summaries';
 ```
 
 ## Enum

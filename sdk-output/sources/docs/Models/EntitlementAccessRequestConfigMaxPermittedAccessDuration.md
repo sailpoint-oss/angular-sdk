@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementAccessRequestConfigMaxPerm
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementAccessRequestConfigMaxPermittedAccessDuration } from 'sailpoint-angular-sdk/sources';
+import { EntitlementAccessRequestConfigMaxPermittedAccessDuration } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

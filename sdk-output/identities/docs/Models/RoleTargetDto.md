@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleTargetDto', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleTargetDto } from 'sailpoint-angular-sdk/identities';
+import { RoleTargetDto } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

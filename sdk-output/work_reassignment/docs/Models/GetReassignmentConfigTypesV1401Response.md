@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetReassignmentConfigTypesV1401Respon
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetReassignmentConfigTypesV1401Response } from 'sailpoint-angular-sdk/work_reassignment';
+import { GetReassignmentConfigTypesV1401Response } from '@sailpoint/angular-sdk/work_reassignment';
 ```
 
 ## Properties

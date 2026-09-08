@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TypeAheadQuery', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TypeAheadQuery } from 'sailpoint-angular-sdk/search';
+import { TypeAheadQuery } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Properties

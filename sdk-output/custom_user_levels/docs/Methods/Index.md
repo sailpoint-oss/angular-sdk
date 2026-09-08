@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+import { CustomUserLevelsService } from '@sailpoint/angular-sdk/custom_user_levels';
 
 private readonly api = inject(CustomUserLevelsService);
 ```

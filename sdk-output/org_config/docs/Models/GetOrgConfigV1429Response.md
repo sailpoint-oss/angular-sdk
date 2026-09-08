@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetOrgConfigV1429Response', 'org_conf
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetOrgConfigV1429Response } from 'sailpoint-angular-sdk/org_config';
+import { GetOrgConfigV1429Response } from '@sailpoint/angular-sdk/org_config';
 ```
 
 ## Properties

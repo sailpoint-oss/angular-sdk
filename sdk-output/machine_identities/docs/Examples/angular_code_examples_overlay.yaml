@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#create-machine-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-        import { MachineIdentityRequest } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+        import { MachineIdentityRequest } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -58,8 +58,8 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#create-machine-identity-v2
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-        import { MachineidentityV2 } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+        import { MachineidentityV2 } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -157,7 +157,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#delete-machine-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -179,7 +179,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#delete-machine-identity-v2
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -200,7 +200,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#delete-ownership-correlation-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -223,7 +223,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#get-machine-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -245,7 +245,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#get-machine-identity-v2
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -266,7 +266,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#get-ownership-correlation-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -289,7 +289,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#get-unsanctioned-anomaly-summary-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -310,7 +310,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-machine-identities-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -336,7 +336,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-machine-identities-v2
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -361,7 +361,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-machine-identity-anomalies-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -387,7 +387,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-machine-identity-user-entitlements-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -413,7 +413,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-ownership-correlation-configs-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -439,8 +439,8 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#patch-ownership-correlation-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -468,8 +468,8 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#start-machine-identity-aggregation-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-        import { MachineIdentityAggregationRequest } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+        import { MachineIdentityAggregationRequest } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -495,7 +495,7 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#update-machine-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -518,8 +518,8 @@
       label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#update-machine-identity-v2
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentitiesService } from '@sailpoint/angular-sdk/machine_identities';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

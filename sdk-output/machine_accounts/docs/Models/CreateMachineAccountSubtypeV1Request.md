@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateMachineAccountSubtypeV1Request'
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateMachineAccountSubtypeV1Request } from 'sailpoint-angular-sdk/machine_accounts';
+import { CreateMachineAccountSubtypeV1Request } from '@sailpoint/angular-sdk/machine_accounts';
 ```
 
 ## Properties

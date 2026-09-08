@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountInfoRef', 'access_requests']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountInfoRef } from 'sailpoint-angular-sdk/access_requests';
+import { AccountInfoRef } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

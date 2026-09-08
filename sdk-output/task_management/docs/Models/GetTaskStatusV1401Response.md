@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetTaskStatusV1401Response', 'task_ma
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetTaskStatusV1401Response } from 'sailpoint-angular-sdk/task_management';
+import { GetTaskStatusV1401Response } from '@sailpoint/angular-sdk/task_management';
 ```
 
 ## Properties

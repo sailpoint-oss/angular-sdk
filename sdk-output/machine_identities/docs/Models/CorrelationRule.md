@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CorrelationRule', 'machine_identities
 Import this model from the entry point of its package:
 
 ```typescript
-import { CorrelationRule } from 'sailpoint-angular-sdk/machine_identities';
+import { CorrelationRule } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

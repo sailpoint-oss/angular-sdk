@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestRecommendationItemDetail
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestRecommendationItemDetailAccess } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { AccessRequestRecommendationItemDetailAccess } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 ```
 
 ## Properties

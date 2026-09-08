@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseReferenceDto', 'machine_account_c
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseReferenceDto } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { BaseReferenceDto } from '@sailpoint/angular-sdk/machine_account_creation_request';
 ```
 
 ## Properties

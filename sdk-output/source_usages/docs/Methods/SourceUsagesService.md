@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourceUsagesService } from 'sailpoint-angular-sdk/source_usages';
+import { SourceUsagesService } from '@sailpoint/angular-sdk/source_usages';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourceUsagesService } from 'sailpoint-angular-sdk/source_usages';
+import { SourceUsagesService } from '@sailpoint/angular-sdk/source_usages';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

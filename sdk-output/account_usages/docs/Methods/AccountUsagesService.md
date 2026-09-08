@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountUsagesService } from 'sailpoint-angular-sdk/account_usages';
+import { AccountUsagesService } from '@sailpoint/angular-sdk/account_usages';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

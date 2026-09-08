@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LoadEntitlementTaskReturnsInner', 'so
 Import this model from the entry point of its package:
 
 ```typescript
-import { LoadEntitlementTaskReturnsInner } from 'sailpoint-angular-sdk/sources';
+import { LoadEntitlementTaskReturnsInner } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

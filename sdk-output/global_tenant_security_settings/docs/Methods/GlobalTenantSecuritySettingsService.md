@@ -57,8 +57,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-import { NetworkConfiguration } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+import { NetworkConfiguration } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -101,7 +101,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -143,7 +143,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -185,7 +185,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -227,7 +227,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -273,8 +273,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -321,8 +321,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -368,8 +368,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -415,8 +415,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

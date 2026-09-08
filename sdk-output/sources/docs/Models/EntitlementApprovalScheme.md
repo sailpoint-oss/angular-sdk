@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementApprovalScheme', 'sources'
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementApprovalScheme } from 'sailpoint-angular-sdk/sources';
+import { EntitlementApprovalScheme } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

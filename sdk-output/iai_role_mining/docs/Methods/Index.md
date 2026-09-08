@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 private readonly api = inject(IAIRoleMiningService);
 ```

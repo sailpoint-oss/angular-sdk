@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'managed_clients']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/managed_clients';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Properties

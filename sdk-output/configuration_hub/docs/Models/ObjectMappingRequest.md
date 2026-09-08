@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ObjectMappingRequest', 'configuration
 Import this model from the entry point of its package:
 
 ```typescript
-import { ObjectMappingRequest } from 'sailpoint-angular-sdk/configuration_hub';
+import { ObjectMappingRequest } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

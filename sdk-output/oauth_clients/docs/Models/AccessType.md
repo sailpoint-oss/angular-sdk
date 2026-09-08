@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessType', 'oauth_clients']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessType } from 'sailpoint-angular-sdk/oauth_clients';
+import { AccessType } from '@sailpoint/angular-sdk/oauth_clients';
 ```
 
 ## Enum

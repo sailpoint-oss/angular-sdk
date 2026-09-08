@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SendClassifyMachineAccountFromSourceV
 Import this model from the entry point of its package:
 
 ```typescript
-import { SendClassifyMachineAccountFromSourceV1200Response } from 'sailpoint-angular-sdk/classify_source';
+import { SendClassifyMachineAccountFromSourceV1200Response } from '@sailpoint/angular-sdk/classify_source';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClientStatusCode', 'managed_cl
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClientStatusCode } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClientStatusCode } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetActiveCampaignsV1200ResponseInner'
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetActiveCampaignsV1200ResponseInner } from 'sailpoint-angular-sdk/certification_campaigns';
+import { GetActiveCampaignsV1200ResponseInner } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

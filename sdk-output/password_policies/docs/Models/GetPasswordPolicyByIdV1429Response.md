@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetPasswordPolicyByIdV1429Response', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetPasswordPolicyByIdV1429Response } from 'sailpoint-angular-sdk/password_policies';
+import { GetPasswordPolicyByIdV1429Response } from '@sailpoint/angular-sdk/password_policies';
 ```
 
 ## Properties

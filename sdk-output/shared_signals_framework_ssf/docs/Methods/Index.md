@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 private readonly api = inject(SharedSignalsFrameworkSSFService);
 ```

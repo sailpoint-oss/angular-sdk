@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Updateidentitycollectorrequest', 'dat
 Import this model from the entry point of its package:
 
 ```typescript
-import { Updateidentitycollectorrequest } from 'sailpoint-angular-sdk/data_access_security';
+import { Updateidentitycollectorrequest } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

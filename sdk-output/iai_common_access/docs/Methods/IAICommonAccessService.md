@@ -52,8 +52,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAICommonAccessService } from 'sailpoint-angular-sdk/iai_common_access';
-import { CommonAccessItemRequest } from 'sailpoint-angular-sdk/iai_common_access';
+import { IAICommonAccessService } from '@sailpoint/angular-sdk/iai_common_access';
+import { CommonAccessItemRequest } from '@sailpoint/angular-sdk/iai_common_access';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAICommonAccessService } from 'sailpoint-angular-sdk/iai_common_access';
+import { IAICommonAccessService } from '@sailpoint/angular-sdk/iai_common_access';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -163,8 +163,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAICommonAccessService } from 'sailpoint-angular-sdk/iai_common_access';
-import { CommonAccessIDStatus } from 'sailpoint-angular-sdk/iai_common_access';
+import { IAICommonAccessService } from '@sailpoint/angular-sdk/iai_common_access';
+import { CommonAccessIDStatus } from '@sailpoint/angular-sdk/iai_common_access';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

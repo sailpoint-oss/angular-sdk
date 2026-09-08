@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { RequestableObjectsService } from 'sailpoint-angular-sdk/requestable_objects';
+import { RequestableObjectsService } from '@sailpoint/angular-sdk/requestable_objects';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

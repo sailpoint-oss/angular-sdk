@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AdditionalOwnerRef', 'entitlements']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AdditionalOwnerRef } from 'sailpoint-angular-sdk/entitlements';
+import { AdditionalOwnerRef } from '@sailpoint/angular-sdk/entitlements';
 ```
 
 ## Properties

@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
+import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
 
 private readonly api = inject(AccessModelMetadataService);
 ```

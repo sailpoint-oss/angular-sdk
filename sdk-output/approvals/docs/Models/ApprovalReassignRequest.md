@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalReassignRequest', 'approvals'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalReassignRequest } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalReassignRequest } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

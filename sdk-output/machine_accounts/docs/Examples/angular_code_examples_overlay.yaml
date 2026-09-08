@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#create-machine-account-subtype-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
-        import { CreateMachineAccountSubtypeV1Request } from 'sailpoint-angular-sdk/machine_accounts';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+        import { CreateMachineAccountSubtypeV1Request } from '@sailpoint/angular-sdk/machine_accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -29,7 +29,7 @@
       label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#delete-machine-account-subtype-by-technical-name-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -52,7 +52,7 @@
       label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#get-machine-account-subtype-by-id-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -74,7 +74,7 @@
       label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#get-machine-account-subtype-by-technical-name-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -97,7 +97,7 @@
       label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#get-machine-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -119,7 +119,7 @@
       label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#list-machine-account-subtypes-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -146,7 +146,7 @@
       label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#list-machine-accounts-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -172,7 +172,7 @@
       label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#patch-machine-account-subtype-by-technical-name-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -196,7 +196,7 @@
       label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#update-machine-account-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#create-reassignment-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
-        import { ConfigurationItemRequest } from 'sailpoint-angular-sdk/work_reassignment';
+        import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
+        import { ConfigurationItemRequest } from '@sailpoint/angular-sdk/work_reassignment';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -34,7 +34,7 @@
       label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#delete-reassignment-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+        import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -57,7 +57,7 @@
       label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#get-evaluate-reassignment-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+        import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -81,7 +81,7 @@
       label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#get-reassignment-config-types-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+        import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -102,7 +102,7 @@
       label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#get-reassignment-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+        import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -124,7 +124,7 @@
       label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#get-tenant-config-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+        import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -145,7 +145,7 @@
       label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#list-reassignment-configurations-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+        import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -166,8 +166,8 @@
       label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#put-reassignment-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
-        import { ConfigurationItemRequest } from 'sailpoint-angular-sdk/work_reassignment';
+        import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
+        import { ConfigurationItemRequest } from '@sailpoint/angular-sdk/work_reassignment';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -196,8 +196,8 @@
       label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#put-tenant-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
-        import { TenantConfigurationRequest } from 'sailpoint-angular-sdk/work_reassignment';
+        import { WorkReassignmentService } from '@sailpoint/angular-sdk/work_reassignment';
+        import { TenantConfigurationRequest } from '@sailpoint/angular-sdk/work_reassignment';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

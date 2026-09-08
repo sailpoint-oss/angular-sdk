@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
-import { LauncherRequest } from 'sailpoint-angular-sdk/launchers';
+import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
+import { LauncherRequest } from '@sailpoint/angular-sdk/launchers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
+import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
+import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
+import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -241,8 +241,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
-import { LauncherRequest } from 'sailpoint-angular-sdk/launchers';
+import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
+import { LauncherRequest } from '@sailpoint/angular-sdk/launchers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { LaunchersService } from 'sailpoint-angular-sdk/launchers';
+import { LaunchersService } from '@sailpoint/angular-sdk/launchers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

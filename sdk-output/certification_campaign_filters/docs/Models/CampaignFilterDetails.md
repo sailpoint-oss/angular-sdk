@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CampaignFilterDetails', 'certificatio
 Import this model from the entry point of its package:
 
 ```typescript
-import { CampaignFilterDetails } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { CampaignFilterDetails } from '@sailpoint/angular-sdk/certification_campaign_filters';
 ```
 
 ## Properties

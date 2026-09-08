@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountDeleted', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountDeleted } from 'sailpoint-angular-sdk/triggers';
+import { AccountDeleted } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityDeletedIdentity', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityDeletedIdentity } from 'sailpoint-angular-sdk/triggers';
+import { IdentityDeletedIdentity } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

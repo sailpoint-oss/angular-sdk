@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetBrandingListV1401Response', 'brand
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetBrandingListV1401Response } from 'sailpoint-angular-sdk/branding';
+import { GetBrandingListV1401Response } from '@sailpoint/angular-sdk/branding';
 ```
 
 ## Properties

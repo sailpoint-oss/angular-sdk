@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateStreamRequest', 'shared_signals
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateStreamRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { CreateStreamRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

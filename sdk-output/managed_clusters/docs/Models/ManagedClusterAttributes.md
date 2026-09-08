@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClusterAttributes', 'managed_c
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClusterAttributes } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClusterAttributes } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

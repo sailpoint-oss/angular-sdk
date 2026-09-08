@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetCampaignV1200Response', 'certifica
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetCampaignV1200Response } from 'sailpoint-angular-sdk/certification_campaigns';
+import { GetCampaignV1200Response } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

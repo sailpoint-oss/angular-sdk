@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalReassignmentHistory', 'approv
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalReassignmentHistory } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalReassignmentHistory } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

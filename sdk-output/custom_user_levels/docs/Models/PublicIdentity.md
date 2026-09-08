@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PublicIdentity', 'custom_user_levels'
 Import this model from the entry point of its package:
 
 ```typescript
-import { PublicIdentity } from 'sailpoint-angular-sdk/custom_user_levels';
+import { PublicIdentity } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

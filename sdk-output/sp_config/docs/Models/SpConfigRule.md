@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SpConfigRule', 'sp_config']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SpConfigRule } from 'sailpoint-angular-sdk/sp_config';
+import { SpConfigRule } from '@sailpoint/angular-sdk/sp_config';
 ```
 
 ## Properties

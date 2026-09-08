@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PublicIdentitiesConfigService } from 'sailpoint-angular-sdk/public_identities_config';
+import { PublicIdentitiesConfigService } from '@sailpoint/angular-sdk/public_identities_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -99,8 +99,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PublicIdentitiesConfigService } from 'sailpoint-angular-sdk/public_identities_config';
-import { PublicIdentityConfig } from 'sailpoint-angular-sdk/public_identities_config';
+import { PublicIdentitiesConfigService } from '@sailpoint/angular-sdk/public_identities_config';
+import { PublicIdentityConfig } from '@sailpoint/angular-sdk/public_identities_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

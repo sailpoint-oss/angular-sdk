@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+import { ClassifySourceService } from '@sailpoint/angular-sdk/classify_source';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+import { ClassifySourceService } from '@sailpoint/angular-sdk/classify_source';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+import { ClassifySourceService } from '@sailpoint/angular-sdk/classify_source';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

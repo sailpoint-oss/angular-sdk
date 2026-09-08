@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountRequestDetailsDtoRequester', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountRequestDetailsDtoRequester } from 'sailpoint-angular-sdk/machine_account_creation_request';
+import { AccountRequestDetailsDtoRequester } from '@sailpoint/angular-sdk/machine_account_creation_request';
 ```
 
 ## Properties

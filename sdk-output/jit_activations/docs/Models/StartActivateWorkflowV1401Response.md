@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'StartActivateWorkflowV1401Response', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { StartActivateWorkflowV1401Response } from 'sailpoint-angular-sdk/jit_activations';
+import { StartActivateWorkflowV1401Response } from '@sailpoint/angular-sdk/jit_activations';
 ```
 
 ## Properties

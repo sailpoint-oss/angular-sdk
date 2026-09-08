@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetAttestationDocumentV1429Response',
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetAttestationDocumentV1429Response } from 'sailpoint-angular-sdk/parameter_storage';
+import { GetAttestationDocumentV1429Response } from '@sailpoint/angular-sdk/parameter_storage';
 ```
 
 ## Properties

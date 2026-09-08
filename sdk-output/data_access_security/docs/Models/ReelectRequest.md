@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReelectRequest', 'data_access_securit
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReelectRequest } from 'sailpoint-angular-sdk/data_access_security';
+import { ReelectRequest } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

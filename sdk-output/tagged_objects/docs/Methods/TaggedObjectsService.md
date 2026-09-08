@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+import { TaggedObjectsService } from '@sailpoint/angular-sdk/tagged_objects';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -154,8 +154,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
-import { BulkRemoveTaggedObject } from 'sailpoint-angular-sdk/tagged_objects';
+import { TaggedObjectsService } from '@sailpoint/angular-sdk/tagged_objects';
+import { BulkRemoveTaggedObject } from '@sailpoint/angular-sdk/tagged_objects';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+import { TaggedObjectsService } from '@sailpoint/angular-sdk/tagged_objects';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+import { TaggedObjectsService } from '@sailpoint/angular-sdk/tagged_objects';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+import { TaggedObjectsService } from '@sailpoint/angular-sdk/tagged_objects';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -357,8 +357,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
-import { TaggedObject } from 'sailpoint-angular-sdk/tagged_objects';
+import { TaggedObjectsService } from '@sailpoint/angular-sdk/tagged_objects';
+import { TaggedObject } from '@sailpoint/angular-sdk/tagged_objects';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -406,8 +406,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
-import { TaggedObject } from 'sailpoint-angular-sdk/tagged_objects';
+import { TaggedObjectsService } from '@sailpoint/angular-sdk/tagged_objects';
+import { TaggedObject } from '@sailpoint/angular-sdk/tagged_objects';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -453,8 +453,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
-import { BulkAddTaggedObject } from 'sailpoint-angular-sdk/tagged_objects';
+import { TaggedObjectsService } from '@sailpoint/angular-sdk/tagged_objects';
+import { BulkAddTaggedObject } from '@sailpoint/angular-sdk/tagged_objects';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

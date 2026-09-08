@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Searchexportreportarguments', 'report
 Import this model from the entry point of its package:
 
 ```typescript
-import { Searchexportreportarguments } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { Searchexportreportarguments } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Properties

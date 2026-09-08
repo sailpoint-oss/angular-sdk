@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityCreated', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityCreated } from 'sailpoint-angular-sdk/triggers';
+import { MachineIdentityCreated } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

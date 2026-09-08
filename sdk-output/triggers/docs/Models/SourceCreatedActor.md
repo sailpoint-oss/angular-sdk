@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceCreatedActor', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceCreatedActor } from 'sailpoint-angular-sdk/triggers';
+import { SourceCreatedActor } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

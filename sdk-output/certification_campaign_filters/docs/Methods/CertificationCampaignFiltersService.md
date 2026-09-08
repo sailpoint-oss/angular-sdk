@@ -77,8 +77,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
-import { CampaignFilterDetails } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
+import { CampaignFilterDetails } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -267,8 +267,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationCampaignFiltersService } from 'sailpoint-angular-sdk/certification_campaign_filters';
-import { CampaignFilterDetails } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { CertificationCampaignFiltersService } from '@sailpoint/angular-sdk/certification_campaign_filters';
+import { CampaignFilterDetails } from '@sailpoint/angular-sdk/certification_campaign_filters';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

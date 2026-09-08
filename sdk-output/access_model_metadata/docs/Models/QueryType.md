@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'QueryType', 'access_model_metadata']
 Import this model from the entry point of its package:
 
 ```typescript
-import { QueryType } from 'sailpoint-angular-sdk/access_model_metadata';
+import { QueryType } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Enum

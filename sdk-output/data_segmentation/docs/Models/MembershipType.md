@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MembershipType', 'data_segmentation']
 Import this model from the entry point of its package:
 
 ```typescript
-import { MembershipType } from 'sailpoint-angular-sdk/data_segmentation';
+import { MembershipType } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Enum

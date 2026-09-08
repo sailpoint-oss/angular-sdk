@@ -70,8 +70,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
-import { ParameterStorageNewParameter } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
+import { ParameterStorageNewParameter } from '@sailpoint/angular-sdk/parameter_storage';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -409,8 +409,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
-import { ParameterStorageUpdateParameter } from 'sailpoint-angular-sdk/parameter_storage';
+import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
+import { ParameterStorageUpdateParameter } from '@sailpoint/angular-sdk/parameter_storage';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

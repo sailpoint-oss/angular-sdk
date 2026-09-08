@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormInstanceRecipient', 'custom_forms
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormInstanceRecipient } from 'sailpoint-angular-sdk/custom_forms';
+import { FormInstanceRecipient } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

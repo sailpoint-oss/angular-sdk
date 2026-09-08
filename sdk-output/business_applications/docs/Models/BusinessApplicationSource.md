@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BusinessApplicationSource', 'business
 Import this model from the entry point of its package:
 
 ```typescript
-import { BusinessApplicationSource } from 'sailpoint-angular-sdk/business_applications';
+import { BusinessApplicationSource } from '@sailpoint/angular-sdk/business_applications';
 ```
 
 ## Properties

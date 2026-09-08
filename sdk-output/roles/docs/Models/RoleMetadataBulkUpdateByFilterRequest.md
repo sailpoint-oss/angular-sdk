@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleMetadataBulkUpdateByFilterRequest
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleMetadataBulkUpdateByFilterRequest } from 'sailpoint-angular-sdk/roles';
+import { RoleMetadataBulkUpdateByFilterRequest } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

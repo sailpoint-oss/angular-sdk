@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'search_attribute_
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/search_attribute_configuration';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/search_attribute_configuration';
 ```
 
 ## Properties

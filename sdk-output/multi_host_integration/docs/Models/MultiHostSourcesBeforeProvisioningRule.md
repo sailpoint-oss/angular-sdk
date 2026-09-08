@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MultiHostSourcesBeforeProvisioningRul
 Import this model from the entry point of its package:
 
 ```typescript
-import { MultiHostSourcesBeforeProvisioningRule } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostSourcesBeforeProvisioningRule } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

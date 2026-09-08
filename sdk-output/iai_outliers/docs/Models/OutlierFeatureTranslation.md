@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'OutlierFeatureTranslation', 'iai_outl
 Import this model from the entry point of its package:
 
 ```typescript
-import { OutlierFeatureTranslation } from 'sailpoint-angular-sdk/iai_outliers';
+import { OutlierFeatureTranslation } from '@sailpoint/angular-sdk/iai_outliers';
 ```
 
 ## Properties

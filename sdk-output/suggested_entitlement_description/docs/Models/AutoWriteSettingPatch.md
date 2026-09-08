@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AutoWriteSettingPatch', 'suggested_en
 Import this model from the entry point of its package:
 
 ```typescript
-import { AutoWriteSettingPatch } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { AutoWriteSettingPatch } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

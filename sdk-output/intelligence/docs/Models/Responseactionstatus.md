@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Responseactionstatus', 'intelligence'
 Import this model from the entry point of its package:
 
 ```typescript
-import { Responseactionstatus } from 'sailpoint-angular-sdk/intelligence';
+import { Responseactionstatus } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

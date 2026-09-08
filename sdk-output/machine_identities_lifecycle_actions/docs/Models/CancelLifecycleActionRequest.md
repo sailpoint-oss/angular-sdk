@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CancelLifecycleActionRequest', 'machi
 Import this model from the entry point of its package:
 
 ```typescript
-import { CancelLifecycleActionRequest } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { CancelLifecycleActionRequest } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 ```
 
 ## Properties

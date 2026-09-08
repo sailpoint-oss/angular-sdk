@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#create-parameter-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
-        import { ParameterStorageNewParameter } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
+        import { ParameterStorageNewParameter } from '@sailpoint/angular-sdk/parameter_storage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -34,7 +34,7 @@
       label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#delete-parameter-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -55,7 +55,7 @@
       label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#get-attestation-document-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -76,7 +76,7 @@
       label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#get-parameter-references-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -100,7 +100,7 @@
       label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#get-parameter-storage-specification-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -121,7 +121,7 @@
       label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#get-parameter-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -142,7 +142,7 @@
       label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#search-parameters-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -166,8 +166,8 @@
       label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#update-parameter-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
-        import { ParameterStorageUpdateParameter } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageService } from '@sailpoint/angular-sdk/parameter_storage';
+        import { ParameterStorageUpdateParameter } from '@sailpoint/angular-sdk/parameter_storage';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'OwnerDto', 'governance_groups']
 Import this model from the entry point of its package:
 
 ```typescript
-import { OwnerDto } from 'sailpoint-angular-sdk/governance_groups';
+import { OwnerDto } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

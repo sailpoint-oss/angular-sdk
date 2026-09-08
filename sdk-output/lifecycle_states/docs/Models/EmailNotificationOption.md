@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EmailNotificationOption', 'lifecycle_
 Import this model from the entry point of its package:
 
 ```typescript
-import { EmailNotificationOption } from 'sailpoint-angular-sdk/lifecycle_states';
+import { EmailNotificationOption } from '@sailpoint/angular-sdk/lifecycle_states';
 ```
 
 ## Properties

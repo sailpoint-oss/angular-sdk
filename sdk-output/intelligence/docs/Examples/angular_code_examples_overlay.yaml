@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/intelligence/methods/intelligence#create-response-action-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
-        import { Responseactioncreaterequest } from 'sailpoint-angular-sdk/intelligence';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
+        import { Responseactioncreaterequest } from '@sailpoint/angular-sdk/intelligence';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -38,7 +38,7 @@
       label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-identity-intelligence-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -59,7 +59,7 @@
       label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-access-item-history-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -83,7 +83,7 @@
       label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-accounts-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -107,7 +107,7 @@
       label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-certification-history-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -131,7 +131,7 @@
       label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-non-human-identity-ownership-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -157,7 +157,7 @@
       label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-rare-access-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -181,7 +181,7 @@
       label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-response-action-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

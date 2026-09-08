@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityReference', 'public_identitie
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityReference } from 'sailpoint-angular-sdk/public_identities';
+import { IdentityReference } from '@sailpoint/angular-sdk/public_identities';
 ```
 
 ## Properties

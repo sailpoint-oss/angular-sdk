@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Scope', 'data_segmentation']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Scope } from 'sailpoint-angular-sdk/data_segmentation';
+import { Scope } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Properties

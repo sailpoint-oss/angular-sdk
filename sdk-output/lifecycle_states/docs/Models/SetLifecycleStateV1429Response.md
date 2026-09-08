@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SetLifecycleStateV1429Response', 'lif
 Import this model from the entry point of its package:
 
 ```typescript
-import { SetLifecycleStateV1429Response } from 'sailpoint-angular-sdk/lifecycle_states';
+import { SetLifecycleStateV1429Response } from '@sailpoint/angular-sdk/lifecycle_states';
 ```
 
 ## Properties

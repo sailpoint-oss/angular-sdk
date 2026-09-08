@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'KbaQuestion', 'mfa_configuration']
 Import this model from the entry point of its package:
 
 ```typescript
-import { KbaQuestion } from 'sailpoint-angular-sdk/mfa_configuration';
+import { KbaQuestion } from '@sailpoint/angular-sdk/mfa_configuration';
 ```
 
 ## Properties

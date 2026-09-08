@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreateDomainDkimV1405Response', 'noti
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreateDomainDkimV1405Response } from 'sailpoint-angular-sdk/notifications';
+import { CreateDomainDkimV1405Response } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

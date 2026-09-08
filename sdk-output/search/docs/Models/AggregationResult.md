@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AggregationResult', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AggregationResult } from 'sailpoint-angular-sdk/search';
+import { AggregationResult } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Properties

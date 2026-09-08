@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ResponseactioncreaterequestOneOf', 'i
 Import this model from the entry point of its package:
 
 ```typescript
-import { ResponseactioncreaterequestOneOf } from 'sailpoint-angular-sdk/intelligence';
+import { ResponseactioncreaterequestOneOf } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

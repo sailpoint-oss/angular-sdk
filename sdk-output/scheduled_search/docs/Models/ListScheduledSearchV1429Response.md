@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListScheduledSearchV1429Response', 's
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListScheduledSearchV1429Response } from 'sailpoint-angular-sdk/scheduled_search';
+import { ListScheduledSearchV1429Response } from '@sailpoint/angular-sdk/scheduled_search';
 ```
 
 ## Properties

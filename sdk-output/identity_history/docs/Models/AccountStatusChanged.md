@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountStatusChanged', 'identity_hist
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountStatusChanged } from 'sailpoint-angular-sdk/identity_history';
+import { AccountStatusChanged } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

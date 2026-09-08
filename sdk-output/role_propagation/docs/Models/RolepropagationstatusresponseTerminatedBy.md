@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RolepropagationstatusresponseTerminat
 Import this model from the entry point of its package:
 
 ```typescript
-import { RolepropagationstatusresponseTerminatedBy } from 'sailpoint-angular-sdk/role_propagation';
+import { RolepropagationstatusresponseTerminatedBy } from '@sailpoint/angular-sdk/role_propagation';
 ```
 
 ## Properties

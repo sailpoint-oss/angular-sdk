@@ -1,6 +1,6 @@
 {
-  "name": "sailpoint-angular-sdk",
-  "version": "1.0.0",
+  "name": "@sailpoint/angular-sdk",
+  "version": "0.0.1",
   "description": "Official Angular library for using the SailPoint API",
   "author": "SailPoint Developer Relations",
   "repository": {

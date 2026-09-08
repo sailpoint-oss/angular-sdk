@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleAssignmentRef', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleAssignmentRef } from 'sailpoint-angular-sdk/identities';
+import { RoleAssignmentRef } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

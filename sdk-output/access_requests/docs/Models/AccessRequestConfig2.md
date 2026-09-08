@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestConfig2', 'access_reques
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestConfig2 } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestConfig2 } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

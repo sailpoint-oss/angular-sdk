@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DomainAddress', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DomainAddress } from 'sailpoint-angular-sdk/notifications';
+import { DomainAddress } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

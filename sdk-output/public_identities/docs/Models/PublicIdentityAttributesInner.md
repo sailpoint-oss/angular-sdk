@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PublicIdentityAttributesInner', 'publ
 Import this model from the entry point of its package:
 
 ```typescript
-import { PublicIdentityAttributesInner } from 'sailpoint-angular-sdk/public_identities';
+import { PublicIdentityAttributesInner } from '@sailpoint/angular-sdk/public_identities';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'sim_integrations'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/sim_integrations';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Properties

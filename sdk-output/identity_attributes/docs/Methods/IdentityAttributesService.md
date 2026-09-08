@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
-import { IdentityAttribute2 } from 'sailpoint-angular-sdk/identity_attributes';
+import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
+import { IdentityAttribute2 } from '@sailpoint/angular-sdk/identity_attributes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -144,8 +144,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
-import { IdentityAttributeNames } from 'sailpoint-angular-sdk/identity_attributes';
+import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
+import { IdentityAttributeNames } from '@sailpoint/angular-sdk/identity_attributes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -290,8 +290,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
-import { IdentityAttribute2 } from 'sailpoint-angular-sdk/identity_attributes';
+import { IdentityAttributesService } from '@sailpoint/angular-sdk/identity_attributes';
+import { IdentityAttribute2 } from '@sailpoint/angular-sdk/identity_attributes';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

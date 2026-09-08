@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentitiesAccountsBulkRequest', 'acco
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentitiesAccountsBulkRequest } from 'sailpoint-angular-sdk/accounts';
+import { IdentitiesAccountsBulkRequest } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

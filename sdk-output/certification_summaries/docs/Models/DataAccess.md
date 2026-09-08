@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DataAccess', 'certification_summaries
 Import this model from the entry point of its package:
 
 ```typescript
-import { DataAccess } from 'sailpoint-angular-sdk/certification_summaries';
+import { DataAccess } from '@sailpoint/angular-sdk/certification_summaries';
 ```
 
 ## Properties

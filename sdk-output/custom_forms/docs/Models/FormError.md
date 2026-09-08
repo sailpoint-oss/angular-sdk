@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormError', 'custom_forms']
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormError } from 'sailpoint-angular-sdk/custom_forms';
+import { FormError } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

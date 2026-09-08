@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetPasswordOrgConfigV1429Response', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetPasswordOrgConfigV1429Response } from 'sailpoint-angular-sdk/password_configuration';
+import { GetPasswordOrgConfigV1429Response } from '@sailpoint/angular-sdk/password_configuration';
 ```
 
 ## Properties

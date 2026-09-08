@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CorrelatedGovernanceEvent', 'identity
 Import this model from the entry point of its package:
 
 ```typescript
-import { CorrelatedGovernanceEvent } from 'sailpoint-angular-sdk/identity_history';
+import { CorrelatedGovernanceEvent } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

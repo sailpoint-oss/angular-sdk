@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LifecycleProvisioning', 'machine_iden
 Import this model from the entry point of its package:
 
 ```typescript
-import { LifecycleProvisioning } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { LifecycleProvisioning } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 ```
 
 ## Properties

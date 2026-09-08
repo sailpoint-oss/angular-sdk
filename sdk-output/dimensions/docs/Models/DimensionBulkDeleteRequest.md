@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DimensionBulkDeleteRequest', 'dimensi
 Import this model from the entry point of its package:
 
 ```typescript
-import { DimensionBulkDeleteRequest } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionBulkDeleteRequest } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

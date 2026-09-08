@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'OutlierFeatureSummaryOutlierFeatureDi
 Import this model from the entry point of its package:
 
 ```typescript
-import { OutlierFeatureSummaryOutlierFeatureDisplayValuesInner } from 'sailpoint-angular-sdk/iai_outliers';
+import { OutlierFeatureSummaryOutlierFeatureDisplayValuesInner } from '@sailpoint/angular-sdk/iai_outliers';
 ```
 
 ## Properties

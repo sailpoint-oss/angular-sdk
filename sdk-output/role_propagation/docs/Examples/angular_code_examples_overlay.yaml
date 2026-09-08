@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#cancel-role-propagation-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+        import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -26,7 +26,7 @@
       label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#get-ongoing-role-propagation-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+        import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -47,7 +47,7 @@
       label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#get-role-propagation-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+        import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -68,7 +68,7 @@
       label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#get-role-propagation-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+        import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -90,8 +90,8 @@
       label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#set-role-propagation-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
-        import { Rolepropagationconfiginput } from 'sailpoint-angular-sdk/role_propagation';
+        import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
+        import { Rolepropagationconfiginput } from '@sailpoint/angular-sdk/role_propagation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -115,7 +115,7 @@
       label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#start-role-propagation-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+        import { RolePropagationService } from '@sailpoint/angular-sdk/role_propagation';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

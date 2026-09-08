@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#create-workgroup-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-        import { WorkgroupDto } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+        import { WorkgroupDto } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -42,8 +42,8 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#delete-workgroup-members-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-        import { BulkWorkgroupMembersRequestInner } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+        import { BulkWorkgroupMembersRequestInner } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -65,7 +65,7 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#delete-workgroup-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -86,8 +86,8 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#delete-workgroups-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-        import { WorkgroupBulkDeleteRequest } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+        import { WorkgroupBulkDeleteRequest } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -110,7 +110,7 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#get-workgroup-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -131,7 +131,7 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#list-connections-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -156,7 +156,7 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#list-workgroup-members-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -181,7 +181,7 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#list-workgroups-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -206,8 +206,8 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#patch-workgroup-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -233,8 +233,8 @@
       label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#update-workgroup-members-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
-        import { BulkWorkgroupMembersRequestInner } from 'sailpoint-angular-sdk/governance_groups';
+        import { GovernanceGroupsService } from '@sailpoint/angular-sdk/governance_groups';
+        import { BulkWorkgroupMembersRequestInner } from '@sailpoint/angular-sdk/governance_groups';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

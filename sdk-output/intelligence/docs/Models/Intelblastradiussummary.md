@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelblastradiussummary', 'intelligen
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelblastradiussummary } from 'sailpoint-angular-sdk/intelligence';
+import { Intelblastradiussummary } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

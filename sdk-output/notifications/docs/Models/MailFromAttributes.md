@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MailFromAttributes', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { MailFromAttributes } from 'sailpoint-angular-sdk/notifications';
+import { MailFromAttributes } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

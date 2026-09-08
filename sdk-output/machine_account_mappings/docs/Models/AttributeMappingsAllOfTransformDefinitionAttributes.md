@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttributeMappingsAllOfTransformDefini
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttributeMappingsAllOfTransformDefinitionAttributes } from 'sailpoint-angular-sdk/machine_account_mappings';
+import { AttributeMappingsAllOfTransformDefinitionAttributes } from '@sailpoint/angular-sdk/machine_account_mappings';
 ```
 
 ## Properties

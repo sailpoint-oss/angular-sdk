@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListPublicMachineIdentitiesV1429Respo
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListPublicMachineIdentitiesV1429Response } from 'sailpoint-angular-sdk/public_machine_identities';
+import { ListPublicMachineIdentitiesV1429Response } from '@sailpoint/angular-sdk/public_machine_identities';
 ```
 
 ## Properties

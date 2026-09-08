@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ClientLogConfiguration', 'managed_clu
 Import this model from the entry point of its package:
 
 ```typescript
-import { ClientLogConfiguration } from 'sailpoint-angular-sdk/managed_clusters';
+import { ClientLogConfiguration } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

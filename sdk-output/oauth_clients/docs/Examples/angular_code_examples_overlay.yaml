@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/oauth_clients/methods/o-auth-clients#create-oauth-client-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
-        import { CreateOAuthClientRequest } from 'sailpoint-angular-sdk/oauth_clients';
+        import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
+        import { CreateOAuthClientRequest } from '@sailpoint/angular-sdk/oauth_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -43,7 +43,7 @@
       label: SDK_tools/sdk/angular/oauth_clients/methods/o-auth-clients#delete-oauth-client-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
+        import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -64,7 +64,7 @@
       label: SDK_tools/sdk/angular/oauth_clients/methods/o-auth-clients#get-oauth-client-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
+        import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -85,7 +85,7 @@
       label: SDK_tools/sdk/angular/oauth_clients/methods/o-auth-clients#list-oauth-clients-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
+        import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -106,8 +106,8 @@
       label: SDK_tools/sdk/angular/oauth_clients/methods/o-auth-clients#patch-oauth-client-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { OAuthClientsService } from 'sailpoint-angular-sdk/oauth_clients';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/oauth_clients';
+        import { OAuthClientsService } from '@sailpoint/angular-sdk/oauth_clients';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/oauth_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

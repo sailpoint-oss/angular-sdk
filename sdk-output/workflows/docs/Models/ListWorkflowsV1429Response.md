@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListWorkflowsV1429Response', 'workflo
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListWorkflowsV1429Response } from 'sailpoint-angular-sdk/workflows';
+import { ListWorkflowsV1429Response } from '@sailpoint/angular-sdk/workflows';
 ```
 
 ## Properties

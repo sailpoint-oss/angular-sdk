@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListIdentityProfilesV1429Response', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListIdentityProfilesV1429Response } from 'sailpoint-angular-sdk/identity_profiles';
+import { ListIdentityProfilesV1429Response } from '@sailpoint/angular-sdk/identity_profiles';
 ```
 
 ## Properties

@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#create-connector-rule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
-        import { ConnectorRuleCreateRequest } from 'sailpoint-angular-sdk/connector_rule_management';
+        import { ConnectorRuleManagementService } from '@sailpoint/angular-sdk/connector_rule_management';
+        import { ConnectorRuleCreateRequest } from '@sailpoint/angular-sdk/connector_rule_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -52,7 +52,7 @@
       label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#delete-connector-rule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
+        import { ConnectorRuleManagementService } from '@sailpoint/angular-sdk/connector_rule_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -73,7 +73,7 @@
       label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#get-connector-rule-list-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
+        import { ConnectorRuleManagementService } from '@sailpoint/angular-sdk/connector_rule_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -96,7 +96,7 @@
       label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#get-connector-rule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
+        import { ConnectorRuleManagementService } from '@sailpoint/angular-sdk/connector_rule_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -117,8 +117,8 @@
       label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#put-connector-rule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
-        import { ConnectorRuleUpdateRequest } from 'sailpoint-angular-sdk/connector_rule_management';
+        import { ConnectorRuleManagementService } from '@sailpoint/angular-sdk/connector_rule_management';
+        import { ConnectorRuleUpdateRequest } from '@sailpoint/angular-sdk/connector_rule_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -166,8 +166,8 @@
       label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#test-connector-rule-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
-        import { SourceCode } from 'sailpoint-angular-sdk/connector_rule_management';
+        import { ConnectorRuleManagementService } from '@sailpoint/angular-sdk/connector_rule_management';
+        import { SourceCode } from '@sailpoint/angular-sdk/connector_rule_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

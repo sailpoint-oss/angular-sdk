@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetOAuthClientResponse', 'oauth_clien
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetOAuthClientResponse } from 'sailpoint-angular-sdk/oauth_clients';
+import { GetOAuthClientResponse } from '@sailpoint/angular-sdk/oauth_clients';
 ```
 
 ## Properties

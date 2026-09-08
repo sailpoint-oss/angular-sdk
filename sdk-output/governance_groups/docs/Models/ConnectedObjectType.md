@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConnectedObjectType', 'governance_gro
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConnectedObjectType } from 'sailpoint-angular-sdk/governance_groups';
+import { ConnectedObjectType } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Enum

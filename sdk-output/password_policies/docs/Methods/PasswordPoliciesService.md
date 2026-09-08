@@ -62,8 +62,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
-import { PasswordPolicyV3Dto } from 'sailpoint-angular-sdk/password_policies';
+import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
+import { PasswordPolicyV3Dto } from '@sailpoint/angular-sdk/password_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -273,8 +273,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
-import { PasswordPolicyV3Dto } from 'sailpoint-angular-sdk/password_policies';
+import { PasswordPoliciesService } from '@sailpoint/angular-sdk/password_policies';
+import { PasswordPolicyV3Dto } from '@sailpoint/angular-sdk/password_policies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

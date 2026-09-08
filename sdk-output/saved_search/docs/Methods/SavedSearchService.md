@@ -62,8 +62,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
-import { CreateSavedSearchV1Request } from 'sailpoint-angular-sdk/saved_search';
+import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
+import { CreateSavedSearchV1Request } from '@sailpoint/angular-sdk/saved_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -158,8 +158,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
-import { SearchArguments } from 'sailpoint-angular-sdk/saved_search';
+import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
+import { SearchArguments } from '@sailpoint/angular-sdk/saved_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -310,8 +310,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
-import { SavedSearch } from 'sailpoint-angular-sdk/saved_search';
+import { SavedSearchService } from '@sailpoint/angular-sdk/saved_search';
+import { SavedSearch } from '@sailpoint/angular-sdk/saved_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Tag2TagCategoryRefsInner', 'tags']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Tag2TagCategoryRefsInner } from 'sailpoint-angular-sdk/tags';
+import { Tag2TagCategoryRefsInner } from '@sailpoint/angular-sdk/tags';
 ```
 
 ## Properties

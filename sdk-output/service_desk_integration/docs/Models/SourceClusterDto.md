@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceClusterDto', 'service_desk_inte
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceClusterDto } from 'sailpoint-angular-sdk/service_desk_integration';
+import { SourceClusterDto } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DraftResponse', 'configuration_hub']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DraftResponse } from 'sailpoint-angular-sdk/configuration_hub';
+import { DraftResponse } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

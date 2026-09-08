@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListFormElementDataByElementIDRespons
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListFormElementDataByElementIDResponse } from 'sailpoint-angular-sdk/custom_forms';
+import { ListFormElementDataByElementIDResponse } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

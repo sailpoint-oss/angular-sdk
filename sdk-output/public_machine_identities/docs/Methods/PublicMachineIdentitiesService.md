@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PublicMachineIdentitiesService } from 'sailpoint-angular-sdk/public_machine_identities';
+import { PublicMachineIdentitiesService } from '@sailpoint/angular-sdk/public_machine_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

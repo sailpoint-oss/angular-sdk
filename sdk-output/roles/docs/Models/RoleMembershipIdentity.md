@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleMembershipIdentity', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleMembershipIdentity } from 'sailpoint-angular-sdk/roles';
+import { RoleMembershipIdentity } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

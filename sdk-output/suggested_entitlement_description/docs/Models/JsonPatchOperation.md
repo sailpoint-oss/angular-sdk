@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'suggested_entit
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

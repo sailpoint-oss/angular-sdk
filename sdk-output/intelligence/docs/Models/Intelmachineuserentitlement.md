@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelmachineuserentitlement', 'intell
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelmachineuserentitlement } from 'sailpoint-angular-sdk/intelligence';
+import { Intelmachineuserentitlement } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

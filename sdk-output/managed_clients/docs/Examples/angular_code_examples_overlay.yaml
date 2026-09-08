@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#create-managed-client-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
-        import { ManagedClientRequest } from 'sailpoint-angular-sdk/managed_clients';
+        import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
+        import { ManagedClientRequest } from '@sailpoint/angular-sdk/managed_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -32,7 +32,7 @@
       label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#delete-managed-client-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+        import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -53,7 +53,7 @@
       label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#get-managed-client-health-indicators-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+        import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -74,7 +74,7 @@
       label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#get-managed-client-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+        import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -96,7 +96,7 @@
       label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#get-managed-client-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+        import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -117,7 +117,7 @@
       label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#get-managed-clients-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+        import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -141,8 +141,8 @@
       label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#update-managed-client-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/managed_clients';
+        import { ManagedClientsService } from '@sailpoint/angular-sdk/managed_clients';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/managed_clients';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

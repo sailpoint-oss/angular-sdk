@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalConfigCronTimezone', 'sources
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalConfigCronTimezone } from 'sailpoint-angular-sdk/sources';
+import { ApprovalConfigCronTimezone } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

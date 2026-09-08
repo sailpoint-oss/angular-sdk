@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'custom_user_levels
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/custom_user_levels';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

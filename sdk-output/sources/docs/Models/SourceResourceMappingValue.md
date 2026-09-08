@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceResourceMappingValue', 'sources
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceResourceMappingValue } from 'sailpoint-angular-sdk/sources';
+import { SourceResourceMappingValue } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

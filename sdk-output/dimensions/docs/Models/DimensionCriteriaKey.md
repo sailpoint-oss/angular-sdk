@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DimensionCriteriaKey', 'dimensions']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DimensionCriteriaKey } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionCriteriaKey } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

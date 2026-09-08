@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListAccessModelMetadataAttributeV1429
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListAccessModelMetadataAttributeV1429Response } from 'sailpoint-angular-sdk/access_model_metadata';
+import { ListAccessModelMetadataAttributeV1429Response } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

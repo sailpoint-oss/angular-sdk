@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ServiceDeskIntegrationDto', 'sim_inte
 Import this model from the entry point of its package:
 
 ```typescript
-import { ServiceDeskIntegrationDto } from 'sailpoint-angular-sdk/sim_integrations';
+import { ServiceDeskIntegrationDto } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Properties

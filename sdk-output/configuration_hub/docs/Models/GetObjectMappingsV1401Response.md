@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetObjectMappingsV1401Response', 'con
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetObjectMappingsV1401Response } from 'sailpoint-angular-sdk/configuration_hub';
+import { GetObjectMappingsV1401Response } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

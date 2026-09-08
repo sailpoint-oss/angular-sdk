@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalConfigFallbackApprover', 'app
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalConfigFallbackApprover } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalConfigFallbackApprover } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

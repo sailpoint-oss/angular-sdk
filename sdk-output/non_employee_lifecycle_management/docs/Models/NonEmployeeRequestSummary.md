@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NonEmployeeRequestSummary', 'non_empl
 Import this model from the entry point of its package:
 
 ```typescript
-import { NonEmployeeRequestSummary } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { NonEmployeeRequestSummary } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

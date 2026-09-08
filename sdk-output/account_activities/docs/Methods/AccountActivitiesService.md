@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountActivitiesService } from 'sailpoint-angular-sdk/account_activities';
+import { AccountActivitiesService } from '@sailpoint/angular-sdk/account_activities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountActivitiesService } from 'sailpoint-angular-sdk/account_activities';
+import { AccountActivitiesService } from '@sailpoint/angular-sdk/account_activities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

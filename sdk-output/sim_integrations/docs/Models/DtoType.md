@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'sim_integrations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/sim_integrations';
+import { DtoType } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Enum

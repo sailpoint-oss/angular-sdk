@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SessionConfiguration', 'global_tenant
 Import this model from the entry point of its package:
 
 ```typescript
-import { SessionConfiguration } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { SessionConfiguration } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 ```
 
 ## Properties

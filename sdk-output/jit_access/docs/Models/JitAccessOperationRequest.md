@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JitAccessOperationRequest', 'jit_acce
 Import this model from the entry point of its package:
 
 ```typescript
-import { JitAccessOperationRequest } from 'sailpoint-angular-sdk/jit_access';
+import { JitAccessOperationRequest } from '@sailpoint/angular-sdk/jit_access';
 ```
 
 ## Properties

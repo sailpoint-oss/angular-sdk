@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PutClientLogConfigurationV1Request', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { PutClientLogConfigurationV1Request } from 'sailpoint-angular-sdk/managed_clusters';
+import { PutClientLogConfigurationV1Request } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

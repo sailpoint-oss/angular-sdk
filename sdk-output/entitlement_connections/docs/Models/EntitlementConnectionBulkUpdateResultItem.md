@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementConnectionBulkUpdateResult
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementConnectionBulkUpdateResultItem } from 'sailpoint-angular-sdk/entitlement_connections';
+import { EntitlementConnectionBulkUpdateResultItem } from '@sailpoint/angular-sdk/entitlement_connections';
 ```
 
 ## Properties

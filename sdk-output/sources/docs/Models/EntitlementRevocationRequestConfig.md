@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementRevocationRequestConfig', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementRevocationRequestConfig } from 'sailpoint-angular-sdk/sources';
+import { EntitlementRevocationRequestConfig } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

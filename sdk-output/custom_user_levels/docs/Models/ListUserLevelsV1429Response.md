@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListUserLevelsV1429Response', 'custom
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListUserLevelsV1429Response } from 'sailpoint-angular-sdk/custom_user_levels';
+import { ListUserLevelsV1429Response } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

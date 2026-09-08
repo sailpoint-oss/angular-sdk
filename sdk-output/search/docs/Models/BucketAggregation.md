@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BucketAggregation', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BucketAggregation } from 'sailpoint-angular-sdk/search';
+import { BucketAggregation } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Properties

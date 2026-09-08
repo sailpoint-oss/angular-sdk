@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TestWorkflowV1200Response', 'workflow
 Import this model from the entry point of its package:
 
 ```typescript
-import { TestWorkflowV1200Response } from 'sailpoint-angular-sdk/workflows';
+import { TestWorkflowV1200Response } from '@sailpoint/angular-sdk/workflows';
 ```
 
 ## Properties

@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
+import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
+import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -187,8 +187,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
-import { JitActivationActivateRequest } from 'sailpoint-angular-sdk/jit_activations';
+import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+import { JitActivationActivateRequest } from '@sailpoint/angular-sdk/jit_activations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -245,8 +245,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
-import { JitActivationDeactivateRequest } from 'sailpoint-angular-sdk/jit_activations';
+import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+import { JitActivationDeactivateRequest } from '@sailpoint/angular-sdk/jit_activations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -304,8 +304,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
-import { JitActivationExtendRequest } from 'sailpoint-angular-sdk/jit_activations';
+import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+import { JitActivationExtendRequest } from '@sailpoint/angular-sdk/jit_activations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

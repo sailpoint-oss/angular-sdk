@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttributeDTOList', 'dimensions']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttributeDTOList } from 'sailpoint-angular-sdk/dimensions';
+import { AttributeDTOList } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

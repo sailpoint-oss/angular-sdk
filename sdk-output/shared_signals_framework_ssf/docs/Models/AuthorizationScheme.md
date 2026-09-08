@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AuthorizationScheme', 'shared_signals
 Import this model from the entry point of its package:
 
 ```typescript
-import { AuthorizationScheme } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { AuthorizationScheme } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+import { SODViolationsService } from '@sailpoint/angular-sdk/sod_violations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+import { SODViolationsService } from '@sailpoint/angular-sdk/sod_violations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+import { SODViolationsService } from '@sailpoint/angular-sdk/sod_violations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -254,8 +254,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
-import { Violationreassigninput } from 'sailpoint-angular-sdk/sod_violations';
+import { SODViolationsService } from '@sailpoint/angular-sdk/sod_violations';
+import { Violationreassigninput } from '@sailpoint/angular-sdk/sod_violations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -308,8 +308,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
-import { Appliedcontrolcreate } from 'sailpoint-angular-sdk/sod_violations';
+import { SODViolationsService } from '@sailpoint/angular-sdk/sod_violations';
+import { Appliedcontrolcreate } from '@sailpoint/angular-sdk/sod_violations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -357,8 +357,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
-import { IdentityWithNewAccess } from 'sailpoint-angular-sdk/sod_violations';
+import { SODViolationsService } from '@sailpoint/angular-sdk/sod_violations';
+import { IdentityWithNewAccess } from '@sailpoint/angular-sdk/sod_violations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -404,8 +404,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
-import { IdentityWithNewAccess } from 'sailpoint-angular-sdk/sod_violations';
+import { SODViolationsService } from '@sailpoint/angular-sdk/sod_violations';
+import { IdentityWithNewAccess } from '@sailpoint/angular-sdk/sod_violations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

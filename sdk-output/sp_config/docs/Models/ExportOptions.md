@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ExportOptions', 'sp_config']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ExportOptions } from 'sailpoint-angular-sdk/sp_config';
+import { ExportOptions } from '@sailpoint/angular-sdk/sp_config';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConnectorDetail', 'connectors']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConnectorDetail } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorDetail } from '@sailpoint/angular-sdk/connectors';
 ```
 
 ## Properties

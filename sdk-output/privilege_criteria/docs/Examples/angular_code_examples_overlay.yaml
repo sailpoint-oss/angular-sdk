@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#create-custom-privilege-criteria-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
-        import { CreatePrivilegeCriteriaRequest } from 'sailpoint-angular-sdk/privilege_criteria';
+        import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
+        import { CreatePrivilegeCriteriaRequest } from '@sailpoint/angular-sdk/privilege_criteria';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -59,7 +59,7 @@
       label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#delete-custom-privilege-criteria-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+        import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -80,7 +80,7 @@
       label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#get-privilege-criteria-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+        import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -101,7 +101,7 @@
       label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#list-privilege-criteria-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+        import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -122,8 +122,8 @@
       label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#put-custom-privilege-criteria-value-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
-        import { PrivilegeCriteriaDTO } from 'sailpoint-angular-sdk/privilege_criteria';
+        import { PrivilegeCriteriaService } from '@sailpoint/angular-sdk/privilege_criteria';
+        import { PrivilegeCriteriaDTO } from '@sailpoint/angular-sdk/privilege_criteria';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

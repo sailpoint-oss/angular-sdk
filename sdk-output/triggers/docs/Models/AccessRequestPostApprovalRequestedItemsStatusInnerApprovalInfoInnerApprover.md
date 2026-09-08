@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestPostApprovalRequestedIte
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestPostApprovalRequestedItemsStatusInnerApprovalInfoInnerApprover } from 'sailpoint-angular-sdk/triggers';
+import { AccessRequestPostApprovalRequestedItemsStatusInnerApprovalInfoInnerApprover } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

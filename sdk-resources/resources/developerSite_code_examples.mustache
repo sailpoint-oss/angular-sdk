@@ -7,16 +7,16 @@
       label: SDK_tools/sdk/angular/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}/methods/{{#lambda.kebabcase}}{{#lambda.titlecase}}{{baseName}}{{/lambda.titlecase}}{{/lambda.kebabcase}}#{{#lambda.kebabcase}}{{#lambda.titlecase}}{{operationId}}{{/lambda.titlecase}}{{/lambda.kebabcase}}
       source: |
         import { Component, inject } from '@angular/core';
-        import { {{classname}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+        import { {{classname}} } from '@sailpoint/angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
 {{#allParams}}
 {{#isModel}}
 {{^isArray}}
-        import { {{{dataType}}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+        import { {{{dataType}}} } from '@sailpoint/angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
 {{/isArray}}
 {{/isModel}}
 {{#isArray}}
 {{#items.isModel}}
-        import { {{#items}}{{{dataType}}}{{/items}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+        import { {{#items}}{{{dataType}}}{{/items}} } from '@sailpoint/angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
 {{/items.isModel}}
 {{/isArray}}
 {{/allParams}}

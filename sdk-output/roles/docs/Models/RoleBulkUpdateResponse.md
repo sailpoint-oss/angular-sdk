@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleBulkUpdateResponse', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleBulkUpdateResponse } from 'sailpoint-angular-sdk/roles';
+import { RoleBulkUpdateResponse } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseCreateApplicationRequest', 'data_
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseCreateApplicationRequest } from 'sailpoint-angular-sdk/data_access_security';
+import { BaseCreateApplicationRequest } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

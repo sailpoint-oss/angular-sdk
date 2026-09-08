@@ -54,8 +54,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
-import { ConnectorCustomizerCreateRequest } from 'sailpoint-angular-sdk/connector_customizers';
+import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
+import { ConnectorCustomizerCreateRequest } from '@sailpoint/angular-sdk/connector_customizers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -288,8 +288,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
-import { ConnectorCustomizerUpdateRequest } from 'sailpoint-angular-sdk/connector_customizers';
+import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
+import { ConnectorCustomizerUpdateRequest } from '@sailpoint/angular-sdk/connector_customizers';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

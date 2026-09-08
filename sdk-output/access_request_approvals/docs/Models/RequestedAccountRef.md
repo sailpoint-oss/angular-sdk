@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestedAccountRef', 'access_request
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestedAccountRef } from 'sailpoint-angular-sdk/access_request_approvals';
+import { RequestedAccountRef } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

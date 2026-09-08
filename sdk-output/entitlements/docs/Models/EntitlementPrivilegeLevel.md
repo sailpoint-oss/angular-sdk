@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementPrivilegeLevel', 'entitlem
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementPrivilegeLevel } from 'sailpoint-angular-sdk/entitlements';
+import { EntitlementPrivilegeLevel } from '@sailpoint/angular-sdk/entitlements';
 ```
 
 ## Properties

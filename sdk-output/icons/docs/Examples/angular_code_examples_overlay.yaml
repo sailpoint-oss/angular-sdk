@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/icons/methods/icons#delete-icon-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IconsService } from 'sailpoint-angular-sdk/icons';
+        import { IconsService } from '@sailpoint/angular-sdk/icons';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -28,7 +28,7 @@
       label: SDK_tools/sdk/angular/icons/methods/icons#set-icon-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IconsService } from 'sailpoint-angular-sdk/icons';
+        import { IconsService } from '@sailpoint/angular-sdk/icons';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

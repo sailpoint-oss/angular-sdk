@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetIdentityOutlierSnapshotsV1401Respo
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetIdentityOutlierSnapshotsV1401Response } from 'sailpoint-angular-sdk/iai_outliers';
+import { GetIdentityOutlierSnapshotsV1401Response } from '@sailpoint/angular-sdk/iai_outliers';
 ```
 
 ## Properties

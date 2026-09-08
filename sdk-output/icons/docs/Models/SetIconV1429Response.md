@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SetIconV1429Response', 'icons']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SetIconV1429Response } from 'sailpoint-angular-sdk/icons';
+import { SetIconV1429Response } from '@sailpoint/angular-sdk/icons';
 ```
 
 ## Properties

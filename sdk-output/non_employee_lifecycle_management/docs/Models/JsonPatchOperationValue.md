@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperationValue', 'non_employ
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperationValue } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+import { JsonPatchOperationValue } from '@sailpoint/angular-sdk/non_employee_lifecycle_management';
 ```
 
 ## Properties

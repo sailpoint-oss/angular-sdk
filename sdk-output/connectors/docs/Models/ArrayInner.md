@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'connectors']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/connectors';
+import { ArrayInner } from '@sailpoint/angular-sdk/connectors';
 ```
 
 ## Properties

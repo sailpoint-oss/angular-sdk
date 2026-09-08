@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'data_segmentation
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/data_segmentation';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ScheduledActionResponseContentBackupO
 Import this model from the entry point of its package:
 
 ```typescript
-import { ScheduledActionResponseContentBackupOptions } from 'sailpoint-angular-sdk/configuration_hub';
+import { ScheduledActionResponseContentBackupOptions } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

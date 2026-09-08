@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetUsagesByAccountIdV1401Response', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetUsagesByAccountIdV1401Response } from 'sailpoint-angular-sdk/account_usages';
+import { GetUsagesByAccountIdV1401Response } from '@sailpoint/angular-sdk/account_usages';
 ```
 
 ## Properties

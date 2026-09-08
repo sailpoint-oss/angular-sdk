@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseReferenceDto', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseReferenceDto } from 'sailpoint-angular-sdk/identities';
+import { BaseReferenceDto } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

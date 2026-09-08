@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DeleteParameterV1409Response', 'param
 Import this model from the entry point of its package:
 
 ```typescript
-import { DeleteParameterV1409Response } from 'sailpoint-angular-sdk/parameter_storage';
+import { DeleteParameterV1409Response } from '@sailpoint/angular-sdk/parameter_storage';
 ```
 
 ## Properties

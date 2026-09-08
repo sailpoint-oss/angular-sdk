@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ExportFormDefinitionsByTenantV1200Res
 Import this model from the entry point of its package:
 
 ```typescript
-import { ExportFormDefinitionsByTenantV1200ResponseInnerSelf } from 'sailpoint-angular-sdk/custom_forms';
+import { ExportFormDefinitionsByTenantV1200ResponseInnerSelf } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

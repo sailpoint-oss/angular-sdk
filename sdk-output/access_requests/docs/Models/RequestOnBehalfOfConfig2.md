@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestOnBehalfOfConfig2', 'access_re
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestOnBehalfOfConfig2 } from 'sailpoint-angular-sdk/access_requests';
+import { RequestOnBehalfOfConfig2 } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

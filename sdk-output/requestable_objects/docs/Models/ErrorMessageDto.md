@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'requestable_object
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/requestable_objects';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/requestable_objects';
 ```
 
 ## Properties

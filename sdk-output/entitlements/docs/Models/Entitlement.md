@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Entitlement', 'entitlements']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Entitlement } from 'sailpoint-angular-sdk/entitlements';
+import { Entitlement } from '@sailpoint/angular-sdk/entitlements';
 ```
 
 ## Properties

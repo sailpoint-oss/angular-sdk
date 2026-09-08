@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'segments']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/segments';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/segments';
 ```
 
 ## Properties

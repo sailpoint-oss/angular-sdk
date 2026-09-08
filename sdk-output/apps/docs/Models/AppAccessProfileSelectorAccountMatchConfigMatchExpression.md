@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AppAccessProfileSelectorAccountMatchC
 Import this model from the entry point of its package:
 
 ```typescript
-import { AppAccessProfileSelectorAccountMatchConfigMatchExpression } from 'sailpoint-angular-sdk/apps';
+import { AppAccessProfileSelectorAccountMatchConfigMatchExpression } from '@sailpoint/angular-sdk/apps';
 ```
 
 ## Properties

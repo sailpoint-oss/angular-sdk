@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityReference', 'custom_user_leve
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityReference } from 'sailpoint-angular-sdk/custom_user_levels';
+import { IdentityReference } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessModelMetadataBulkUpdateResponse
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessModelMetadataBulkUpdateResponse } from 'sailpoint-angular-sdk/access_model_metadata';
+import { AccessModelMetadataBulkUpdateResponse } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

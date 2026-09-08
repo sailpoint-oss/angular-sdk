@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'machine_account_subtype
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { ArrayInner } from '@sailpoint/angular-sdk/machine_account_subtypes';
 ```
 
 ## Properties

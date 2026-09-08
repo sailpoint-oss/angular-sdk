@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UserEntitlementV2Source', 'machine_id
 Import this model from the entry point of its package:
 
 ```typescript
-import { UserEntitlementV2Source } from 'sailpoint-angular-sdk/machine_identities';
+import { UserEntitlementV2Source } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

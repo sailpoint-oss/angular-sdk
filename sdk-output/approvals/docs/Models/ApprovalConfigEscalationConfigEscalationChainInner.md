@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalConfigEscalationConfigEscalat
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalConfigEscalationConfigEscalationChainInner } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalConfigEscalationConfigEscalationChainInner } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

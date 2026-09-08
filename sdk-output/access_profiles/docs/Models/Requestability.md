@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Requestability', 'access_profiles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Requestability } from 'sailpoint-angular-sdk/access_profiles';
+import { Requestability } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestPostApproval', 'triggers
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestPostApproval } from 'sailpoint-angular-sdk/triggers';
+import { AccessRequestPostApproval } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

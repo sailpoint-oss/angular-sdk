@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityProfileAllOfAuthoritativeSour
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityProfileAllOfAuthoritativeSource } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityProfileAllOfAuthoritativeSource } from '@sailpoint/angular-sdk/identity_profiles';
 ```
 
 ## Properties

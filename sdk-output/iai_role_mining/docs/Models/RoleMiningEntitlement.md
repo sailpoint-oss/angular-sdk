@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleMiningEntitlement', 'iai_role_min
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleMiningEntitlement } from 'sailpoint-angular-sdk/iai_role_mining';
+import { RoleMiningEntitlement } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Properties

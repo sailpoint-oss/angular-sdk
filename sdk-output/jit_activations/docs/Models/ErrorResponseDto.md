@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'jit_activations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/jit_activations';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/jit_activations';
 ```
 
 ## Properties

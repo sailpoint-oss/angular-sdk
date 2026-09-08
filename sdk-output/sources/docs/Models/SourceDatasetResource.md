@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceDatasetResource', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceDatasetResource } from 'sailpoint-angular-sdk/sources';
+import { SourceDatasetResource } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

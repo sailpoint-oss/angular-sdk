@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { TenantContextService } from 'sailpoint-angular-sdk/tenant_context';
+import { TenantContextService } from '@sailpoint/angular-sdk/tenant_context';
 
 private readonly api = inject(TenantContextService);
 ```

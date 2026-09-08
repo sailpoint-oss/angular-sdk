@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountToggleRequest', 'accounts']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountToggleRequest } from 'sailpoint-angular-sdk/accounts';
+import { AccountToggleRequest } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

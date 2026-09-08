@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#delete-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -26,7 +26,7 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#get-identity-ownership-details-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -47,7 +47,7 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#get-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -68,7 +68,7 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#get-role-assignment-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -90,7 +90,7 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#get-role-assignments-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -113,7 +113,7 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#list-entitlements-by-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -137,7 +137,7 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#list-identities-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -163,7 +163,7 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#reset-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -184,8 +184,8 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#send-identity-verification-account-token-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
-        import { SendAccountVerificationRequest } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
+        import { SendAccountVerificationRequest } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -211,8 +211,8 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#start-identities-invite-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
-        import { InviteIdentitiesRequest } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
+        import { InviteIdentitiesRequest } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -237,8 +237,8 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#start-identity-processing-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
-        import { ProcessIdentitiesRequest } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
+        import { ProcessIdentitiesRequest } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -262,7 +262,7 @@
       label: SDK_tools/sdk/angular/identities/methods/identities#synchronize-attributes-for-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EventBridgeConfig', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { EventBridgeConfig } from 'sailpoint-angular-sdk/triggers';
+import { EventBridgeConfig } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

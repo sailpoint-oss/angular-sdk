@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FederationProtocolDetails', 'global_t
 Import this model from the entry point of its package:
 
 ```typescript
-import { FederationProtocolDetails } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { FederationProtocolDetails } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 ```
 
 ## Properties

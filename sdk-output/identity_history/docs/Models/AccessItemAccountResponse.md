@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessItemAccountResponse', 'identity
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessItemAccountResponse } from 'sailpoint-angular-sdk/identity_history';
+import { AccessItemAccountResponse } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

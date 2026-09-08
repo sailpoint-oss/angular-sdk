@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PasswordDigitToken', 'password_manage
 Import this model from the entry point of its package:
 
 ```typescript
-import { PasswordDigitToken } from 'sailpoint-angular-sdk/password_management';
+import { PasswordDigitToken } from '@sailpoint/angular-sdk/password_management';
 ```
 
 ## Properties

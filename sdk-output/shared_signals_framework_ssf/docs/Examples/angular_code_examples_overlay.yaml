@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#create-stream-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-        import { CreateStreamRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+        import { CreateStreamRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -35,7 +35,7 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#delete-stream-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -56,7 +56,7 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#get-jwks-data-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -76,7 +76,7 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#get-ssf-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -96,7 +96,7 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#get-stream-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -117,7 +117,7 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#get-stream-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -138,8 +138,8 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#send-stream-verification-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-        import { VerificationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+        import { VerificationRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -163,8 +163,8 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#set-stream-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-        import { ReplaceStreamConfigurationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+        import { ReplaceStreamConfigurationRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -194,8 +194,8 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#update-stream-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-        import { UpdateStreamConfigurationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+        import { UpdateStreamConfigurationRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -225,8 +225,8 @@
       label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#update-stream-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-        import { UpdateStreamStatusRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+        import { UpdateStreamStatusRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

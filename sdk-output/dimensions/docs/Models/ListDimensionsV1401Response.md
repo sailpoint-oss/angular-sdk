@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListDimensionsV1401Response', 'dimens
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListDimensionsV1401Response } from 'sailpoint-angular-sdk/dimensions';
+import { ListDimensionsV1401Response } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

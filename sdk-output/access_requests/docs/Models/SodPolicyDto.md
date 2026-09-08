@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SodPolicyDto', 'access_requests']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SodPolicyDto } from 'sailpoint-angular-sdk/access_requests';
+import { SodPolicyDto } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

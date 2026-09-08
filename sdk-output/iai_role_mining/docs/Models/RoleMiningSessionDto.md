@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleMiningSessionDto', 'iai_role_mini
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleMiningSessionDto } from 'sailpoint-angular-sdk/iai_role_mining';
+import { RoleMiningSessionDto } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Properties

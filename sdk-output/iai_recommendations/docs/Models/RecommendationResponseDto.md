@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RecommendationResponseDto', 'iai_reco
 Import this model from the entry point of its package:
 
 ```typescript
-import { RecommendationResponseDto } from 'sailpoint-angular-sdk/iai_recommendations';
+import { RecommendationResponseDto } from '@sailpoint/angular-sdk/iai_recommendations';
 ```
 
 ## Properties

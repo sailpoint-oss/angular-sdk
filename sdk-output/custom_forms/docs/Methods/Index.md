@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { CustomFormsService } from 'sailpoint-angular-sdk/custom_forms';
+import { CustomFormsService } from '@sailpoint/angular-sdk/custom_forms';
 
 private readonly api = inject(CustomFormsService);
 ```

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'access_request_ide
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/access_request_identity_metrics';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/access_request_identity_metrics';
 ```
 
 ## Properties

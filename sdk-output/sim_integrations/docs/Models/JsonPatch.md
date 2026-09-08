@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatch', 'sim_integrations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatch } from 'sailpoint-angular-sdk/sim_integrations';
+import { JsonPatch } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Properties

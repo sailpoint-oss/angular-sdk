@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -648,7 +648,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityHistoryService } from '@sailpoint/angular-sdk/identity_history';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

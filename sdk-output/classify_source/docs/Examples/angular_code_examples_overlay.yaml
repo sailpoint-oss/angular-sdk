@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/classify_source/methods/classify-source#delete-classify-machine-account-from-source-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+        import { ClassifySourceService } from '@sailpoint/angular-sdk/classify_source';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -27,7 +27,7 @@
       label: SDK_tools/sdk/angular/classify_source/methods/classify-source#get-classify-machine-account-from-source-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+        import { ClassifySourceService } from '@sailpoint/angular-sdk/classify_source';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -49,7 +49,7 @@
       label: SDK_tools/sdk/angular/classify_source/methods/classify-source#send-classify-machine-account-from-source-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+        import { ClassifySourceService } from '@sailpoint/angular-sdk/classify_source';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -215,8 +215,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
-import { WorkItemForward } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
+import { WorkItemForward } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemsService } from '@sailpoint/angular-sdk/work_items';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

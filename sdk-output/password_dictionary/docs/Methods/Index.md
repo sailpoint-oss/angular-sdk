@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { PasswordDictionaryService } from 'sailpoint-angular-sdk/password_dictionary';
+import { PasswordDictionaryService } from '@sailpoint/angular-sdk/password_dictionary';
 
 private readonly api = inject(PasswordDictionaryService);
 ```

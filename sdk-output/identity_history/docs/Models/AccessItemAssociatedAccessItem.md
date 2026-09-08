@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessItemAssociatedAccessItem', 'ide
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessItemAssociatedAccessItem } from 'sailpoint-angular-sdk/identity_history';
+import { AccessItemAssociatedAccessItem } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

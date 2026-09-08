@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityAttributeTransform', 'identit
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityAttributeTransform } from 'sailpoint-angular-sdk/identity_profiles';
+import { IdentityAttributeTransform } from '@sailpoint/angular-sdk/identity_profiles';
 ```
 
 ## Properties

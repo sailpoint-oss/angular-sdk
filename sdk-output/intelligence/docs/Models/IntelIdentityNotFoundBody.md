@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelIdentityNotFoundBody', 'intellig
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelIdentityNotFoundBody } from 'sailpoint-angular-sdk/intelligence';
+import { IntelIdentityNotFoundBody } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AggregationType', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AggregationType } from 'sailpoint-angular-sdk/search';
+import { AggregationType } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Enum

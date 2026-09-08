@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'machine_account
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_account_subtypes';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_account_subtypes';
 ```
 
 ## Properties

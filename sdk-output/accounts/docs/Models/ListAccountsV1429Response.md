@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListAccountsV1429Response', 'accounts
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListAccountsV1429Response } from 'sailpoint-angular-sdk/accounts';
+import { ListAccountsV1429Response } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

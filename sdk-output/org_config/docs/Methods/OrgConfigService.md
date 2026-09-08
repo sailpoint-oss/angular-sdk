@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { OrgConfigService } from 'sailpoint-angular-sdk/org_config';
+import { OrgConfigService } from '@sailpoint/angular-sdk/org_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { OrgConfigService } from 'sailpoint-angular-sdk/org_config';
+import { OrgConfigService } from '@sailpoint/angular-sdk/org_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -142,8 +142,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { OrgConfigService } from 'sailpoint-angular-sdk/org_config';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/org_config';
+import { OrgConfigService } from '@sailpoint/angular-sdk/org_config';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/org_config';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

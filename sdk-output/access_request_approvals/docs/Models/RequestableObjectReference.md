@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestableObjectReference', 'access_
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestableObjectReference } from 'sailpoint-angular-sdk/access_request_approvals';
+import { RequestableObjectReference } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

@@ -78,8 +78,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
-import { CreateScheduledSearchV1Request } from 'sailpoint-angular-sdk/scheduled_search';
+import { ScheduledSearchService } from '@sailpoint/angular-sdk/scheduled_search';
+import { CreateScheduledSearchV1Request } from '@sailpoint/angular-sdk/scheduled_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+import { ScheduledSearchService } from '@sailpoint/angular-sdk/scheduled_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+import { ScheduledSearchService } from '@sailpoint/angular-sdk/scheduled_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+import { ScheduledSearchService } from '@sailpoint/angular-sdk/scheduled_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -273,8 +273,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
-import { TypedReference } from 'sailpoint-angular-sdk/scheduled_search';
+import { ScheduledSearchService } from '@sailpoint/angular-sdk/scheduled_search';
+import { TypedReference } from '@sailpoint/angular-sdk/scheduled_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -323,8 +323,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
-import { ScheduledSearch } from 'sailpoint-angular-sdk/scheduled_search';
+import { ScheduledSearchService } from '@sailpoint/angular-sdk/scheduled_search';
+import { ScheduledSearch } from '@sailpoint/angular-sdk/scheduled_search';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

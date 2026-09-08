@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CampaignFilterDetailsCriteriaListInne
 Import this model from the entry point of its package:
 
 ```typescript
-import { CampaignFilterDetailsCriteriaListInner } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { CampaignFilterDetailsCriteriaListInner } from '@sailpoint/angular-sdk/certification_campaign_filters';
 ```
 
 ## Properties

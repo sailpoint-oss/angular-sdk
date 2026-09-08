@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetAutoWriteSettingsV1429Response', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetAutoWriteSettingsV1429Response } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+import { GetAutoWriteSettingsV1429Response } from '@sailpoint/angular-sdk/suggested_entitlement_description';
 ```
 
 ## Properties

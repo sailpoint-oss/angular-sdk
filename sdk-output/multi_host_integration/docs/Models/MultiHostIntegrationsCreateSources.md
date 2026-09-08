@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MultiHostIntegrationsCreateSources', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { MultiHostIntegrationsCreateSources } from 'sailpoint-angular-sdk/multi_host_integration';
+import { MultiHostIntegrationsCreateSources } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityOwnershipAssociationDetails',
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityOwnershipAssociationDetails } from 'sailpoint-angular-sdk/identities';
+import { IdentityOwnershipAssociationDetails } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

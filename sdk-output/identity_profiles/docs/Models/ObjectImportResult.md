@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ObjectImportResult', 'identity_profil
 Import this model from the entry point of its package:
 
 ```typescript
-import { ObjectImportResult } from 'sailpoint-angular-sdk/identity_profiles';
+import { ObjectImportResult } from '@sailpoint/angular-sdk/identity_profiles';
 ```
 
 ## Properties

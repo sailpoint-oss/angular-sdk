@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatchOperation', 'machine_identit
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_identities';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

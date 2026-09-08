@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'account_activitie
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/account_activities';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/account_activities';
 ```
 
 ## Properties

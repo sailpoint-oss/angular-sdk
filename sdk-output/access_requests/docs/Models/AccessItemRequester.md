@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessItemRequester', 'access_request
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessItemRequester } from 'sailpoint-angular-sdk/access_requests';
+import { AccessItemRequester } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

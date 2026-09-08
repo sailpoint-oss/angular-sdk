@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClusterQueue', 'managed_cluste
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClusterQueue } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClusterQueue } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

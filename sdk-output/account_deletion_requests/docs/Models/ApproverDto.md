@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApproverDto', 'account_deletion_reque
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApproverDto } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { ApproverDto } from '@sailpoint/angular-sdk/account_deletion_requests';
 ```
 
 ## Properties

@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/business_applications/methods/business-applications#create-business-application-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
-        import { BusinessApplication } from 'sailpoint-angular-sdk/business_applications';
+        import { BusinessApplicationsService } from '@sailpoint/angular-sdk/business_applications';
+        import { BusinessApplication } from '@sailpoint/angular-sdk/business_applications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -62,7 +62,7 @@
       label: SDK_tools/sdk/angular/business_applications/methods/business-applications#get-business-application-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
+        import { BusinessApplicationsService } from '@sailpoint/angular-sdk/business_applications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -83,7 +83,7 @@
       label: SDK_tools/sdk/angular/business_applications/methods/business-applications#list-business-applications-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
+        import { BusinessApplicationsService } from '@sailpoint/angular-sdk/business_applications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -108,8 +108,8 @@
       label: SDK_tools/sdk/angular/business_applications/methods/business-applications#update-business-application-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/business_applications';
+        import { BusinessApplicationsService } from '@sailpoint/angular-sdk/business_applications';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/business_applications';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

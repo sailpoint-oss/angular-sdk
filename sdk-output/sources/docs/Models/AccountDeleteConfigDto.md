@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountDeleteConfigDto', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountDeleteConfigDto } from 'sailpoint-angular-sdk/sources';
+import { AccountDeleteConfigDto } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

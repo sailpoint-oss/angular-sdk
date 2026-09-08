@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceCreationErrors', 'multi_host_in
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceCreationErrors } from 'sailpoint-angular-sdk/multi_host_integration';
+import { SourceCreationErrors } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Properties

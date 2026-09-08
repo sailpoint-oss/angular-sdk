@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'iai_access_request_re
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 ```
 
 ## Enum

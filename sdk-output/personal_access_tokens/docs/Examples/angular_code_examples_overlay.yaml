@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/personal_access_tokens/methods/personal-access-tokens#create-personal-access-token-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
-        import { CreatePersonalAccessTokenRequest } from 'sailpoint-angular-sdk/personal_access_tokens';
+        import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
+        import { CreatePersonalAccessTokenRequest } from '@sailpoint/angular-sdk/personal_access_tokens';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -33,7 +33,7 @@
       label: SDK_tools/sdk/angular/personal_access_tokens/methods/personal-access-tokens#delete-personal-access-token-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
+        import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -54,7 +54,7 @@
       label: SDK_tools/sdk/angular/personal_access_tokens/methods/personal-access-tokens#list-personal-access-tokens-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
+        import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -76,8 +76,8 @@
       label: SDK_tools/sdk/angular/personal_access_tokens/methods/personal-access-tokens#patch-personal-access-token-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/personal_access_tokens';
+        import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/personal_access_tokens';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListIdentitySnapshotAccessItemsV1200R
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListIdentitySnapshotAccessItemsV1200ResponseInner } from 'sailpoint-angular-sdk/identity_history';
+import { ListIdentitySnapshotAccessItemsV1200ResponseInner } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

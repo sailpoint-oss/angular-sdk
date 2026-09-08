@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ScheduleDays', 'sod_policies']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ScheduleDays } from 'sailpoint-angular-sdk/sod_policies';
+import { ScheduleDays } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Properties

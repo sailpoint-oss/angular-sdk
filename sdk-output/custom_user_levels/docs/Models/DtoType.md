@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'custom_user_levels']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/custom_user_levels';
+import { DtoType } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Enum

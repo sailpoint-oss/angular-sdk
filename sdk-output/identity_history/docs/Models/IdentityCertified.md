@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityCertified', 'identity_history
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityCertified } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityCertified } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

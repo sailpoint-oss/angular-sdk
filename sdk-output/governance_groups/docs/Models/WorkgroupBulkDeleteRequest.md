@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'WorkgroupBulkDeleteRequest', 'governa
 Import this model from the entry point of its package:
 
 ```typescript
-import { WorkgroupBulkDeleteRequest } from 'sailpoint-angular-sdk/governance_groups';
+import { WorkgroupBulkDeleteRequest } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

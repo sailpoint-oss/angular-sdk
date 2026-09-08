@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'multi_host_integratio
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/multi_host_integration';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/multi_host_integration';
 ```
 
 ## Enum

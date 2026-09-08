@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner1', 'iai_role_mining']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner1 } from 'sailpoint-angular-sdk/iai_role_mining';
+import { ArrayInner1 } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PreApprovalTriggerDetails', 'access_r
 Import this model from the entry point of its package:
 
 ```typescript
-import { PreApprovalTriggerDetails } from 'sailpoint-angular-sdk/access_requests';
+import { PreApprovalTriggerDetails } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

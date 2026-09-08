@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatch', 'managed_cluster_types']
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatch } from 'sailpoint-angular-sdk/managed_cluster_types';
+import { JsonPatch } from '@sailpoint/angular-sdk/managed_cluster_types';
 ```
 
 ## Properties

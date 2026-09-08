@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'global_tenant_security_
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+import { ArrayInner } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 ```
 
 ## Properties

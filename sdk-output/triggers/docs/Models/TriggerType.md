@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TriggerType', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TriggerType } from 'sailpoint-angular-sdk/triggers';
+import { TriggerType } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Enum

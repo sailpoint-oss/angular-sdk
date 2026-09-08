@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'parameter_storage']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/parameter_storage';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/parameter_storage';
 ```
 
 ## Enum

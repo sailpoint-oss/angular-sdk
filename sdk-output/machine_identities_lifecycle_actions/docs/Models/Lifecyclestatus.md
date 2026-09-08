@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Lifecyclestatus', 'machine_identities
 Import this model from the entry point of its package:
 
 ```typescript
-import { Lifecyclestatus } from 'sailpoint-angular-sdk/machine_identities_lifecycle_actions';
+import { Lifecyclestatus } from '@sailpoint/angular-sdk/machine_identities_lifecycle_actions';
 ```
 
 ## Enum

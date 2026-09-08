@@ -182,8 +182,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { ProvisioningPolicyDto } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { ProvisioningPolicyDto } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -240,8 +240,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { ProvisioningPolicyDtoV2 } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { ProvisioningPolicyDtoV2 } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -301,8 +301,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { SourceDataset } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { SourceDataset } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -363,8 +363,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { SourceDatasetResource } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { SourceDatasetResource } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -414,8 +414,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { Schedule3 } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { Schedule3 } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -464,8 +464,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { Schema } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { Schema } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -513,8 +513,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { Source } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { Source } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -613,7 +613,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -712,7 +712,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -767,7 +767,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -882,7 +882,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -931,7 +931,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -979,7 +979,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1027,7 +1027,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1074,7 +1074,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1121,7 +1121,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1167,7 +1167,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1216,7 +1216,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1263,7 +1263,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1309,7 +1309,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1356,7 +1356,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1408,7 +1408,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1460,7 +1460,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1508,7 +1508,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1555,7 +1555,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1607,7 +1607,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1663,7 +1663,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1717,7 +1717,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1763,7 +1763,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1817,7 +1817,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1871,7 +1871,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1927,7 +1927,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1979,7 +1979,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2034,7 +2034,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2082,7 +2082,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2131,7 +2131,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2179,7 +2179,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2232,7 +2232,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2283,7 +2283,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2332,7 +2332,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2387,7 +2387,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2439,7 +2439,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2494,8 +2494,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { DatasetAggregationRequest } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { DatasetAggregationRequest } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2545,7 +2545,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2597,7 +2597,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2648,7 +2648,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2703,7 +2703,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2759,7 +2759,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2811,7 +2811,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2858,8 +2858,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { CorrelationConfig } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { CorrelationConfig } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2907,8 +2907,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { NativeChangeDetectionConfig } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { NativeChangeDetectionConfig } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -2959,8 +2959,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { ProvisioningPolicyDto } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { ProvisioningPolicyDto } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3016,8 +3016,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { ProvisioningPolicyDtoV2 } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { ProvisioningPolicyDtoV2 } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3072,8 +3072,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { AttrSyncSourceConfig } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { AttrSyncSourceConfig } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3133,8 +3133,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { SourceDataset } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { SourceDataset } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3194,8 +3194,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { SourceDatasetResource } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { SourceDatasetResource } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3256,8 +3256,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { Schema } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { Schema } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3318,8 +3318,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { Source } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { Source } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3367,8 +3367,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { ResourceObjectsRequest } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { ResourceObjectsRequest } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3419,7 +3419,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3466,7 +3466,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3512,7 +3512,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3560,8 +3560,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3613,8 +3613,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3664,8 +3664,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { PasswordPolicyHoldersDtoInner } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { PasswordPolicyHoldersDtoInner } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3713,8 +3713,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { ProvisioningPolicyDto } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { ProvisioningPolicyDto } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3765,8 +3765,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3822,8 +3822,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3883,8 +3883,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3938,8 +3938,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { SourceEntitlementRequestConfig } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { SourceEntitlementRequestConfig } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -3997,8 +3997,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -4054,8 +4054,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -4134,8 +4134,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -4199,8 +4199,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SourcesService } from 'sailpoint-angular-sdk/sources';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+import { SourcesService } from '@sailpoint/angular-sdk/sources';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/sources';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

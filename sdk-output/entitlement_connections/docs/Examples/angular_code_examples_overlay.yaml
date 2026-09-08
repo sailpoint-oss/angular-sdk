@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#list-entitlement-connections-for-current-identity-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
+        import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -31,7 +31,7 @@
       label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#list-entitlement-connections-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
+        import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -57,8 +57,8 @@
       label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#patch-entitlement-connection-by-id-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/entitlement_connections';
+        import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/entitlement_connections';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -84,8 +84,8 @@
       label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#patch-entitlement-connection-by-query-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/entitlement_connections';
+        import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/entitlement_connections';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -113,8 +113,8 @@
       label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#update-entitlement-connections-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
-        import { EntitlementConnectionBulkUpdateItem } from 'sailpoint-angular-sdk/entitlement_connections';
+        import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
+        import { EntitlementConnectionBulkUpdateItem } from '@sailpoint/angular-sdk/entitlement_connections';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

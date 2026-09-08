@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityDtoOwners', 'machine_i
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityDtoOwners } from 'sailpoint-angular-sdk/machine_identities';
+import { MachineIdentityDtoOwners } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

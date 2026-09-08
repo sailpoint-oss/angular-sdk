@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'lifecycle_states']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/lifecycle_states';
+import { ArrayInner } from '@sailpoint/angular-sdk/lifecycle_states';
 ```
 
 ## Properties

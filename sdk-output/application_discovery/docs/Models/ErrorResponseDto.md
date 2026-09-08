@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'application_disco
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/application_discovery';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/application_discovery';
 ```
 
 ## Properties

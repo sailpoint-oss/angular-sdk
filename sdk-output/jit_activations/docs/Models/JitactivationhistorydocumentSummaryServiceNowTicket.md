@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JitactivationhistorydocumentSummarySe
 Import this model from the entry point of its package:
 
 ```typescript
-import { JitactivationhistorydocumentSummaryServiceNowTicket } from 'sailpoint-angular-sdk/jit_activations';
+import { JitactivationhistorydocumentSummaryServiceNowTicket } from '@sailpoint/angular-sdk/jit_activations';
 ```
 
 ## Properties

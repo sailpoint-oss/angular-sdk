@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalComment', 'configuration_hub'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalComment } from 'sailpoint-angular-sdk/configuration_hub';
+import { ApprovalComment } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

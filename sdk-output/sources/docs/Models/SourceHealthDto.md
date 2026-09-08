@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceHealthDto', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceHealthDto } from 'sailpoint-angular-sdk/sources';
+import { SourceHealthDto } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

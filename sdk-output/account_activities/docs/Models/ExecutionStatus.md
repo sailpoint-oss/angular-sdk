@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ExecutionStatus', 'account_activities
 Import this model from the entry point of its package:
 
 ```typescript
-import { ExecutionStatus } from 'sailpoint-angular-sdk/account_activities';
+import { ExecutionStatus } from '@sailpoint/angular-sdk/account_activities';
 ```
 
 ## Enum

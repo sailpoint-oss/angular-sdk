@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DependantAppConnectionsAccountSourceP
 Import this model from the entry point of its package:
 
 ```typescript
-import { DependantAppConnectionsAccountSourcePasswordPoliciesInner } from 'sailpoint-angular-sdk/sources';
+import { DependantAppConnectionsAccountSourcePasswordPoliciesInner } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

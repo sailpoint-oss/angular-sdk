@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListHistoricalIdentitiesV1429Response
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListHistoricalIdentitiesV1429Response } from 'sailpoint-angular-sdk/identity_history';
+import { ListHistoricalIdentitiesV1429Response } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

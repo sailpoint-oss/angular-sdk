@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceUsageStatus', 'source_usages']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceUsageStatus } from 'sailpoint-angular-sdk/source_usages';
+import { SourceUsageStatus } from '@sailpoint/angular-sdk/source_usages';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityWithNewAccess', 'sod_violatio
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityWithNewAccess } from 'sailpoint-angular-sdk/sod_violations';
+import { IdentityWithNewAccess } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

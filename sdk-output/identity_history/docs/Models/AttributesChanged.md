@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttributesChanged', 'identity_history
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttributesChanged } from 'sailpoint-angular-sdk/identity_history';
+import { AttributesChanged } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ProvisioningCriteriaLevel2', 'access_
 Import this model from the entry point of its package:
 
 ```typescript
-import { ProvisioningCriteriaLevel2 } from 'sailpoint-angular-sdk/access_profiles';
+import { ProvisioningCriteriaLevel2 } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

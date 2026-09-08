@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'HierarchicalRightSet', 'custom_user_l
 Import this model from the entry point of its package:
 
 ```typescript
-import { HierarchicalRightSet } from 'sailpoint-angular-sdk/custom_user_levels';
+import { HierarchicalRightSet } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

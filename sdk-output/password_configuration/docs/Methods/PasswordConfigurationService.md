@@ -56,8 +56,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordConfigurationService } from 'sailpoint-angular-sdk/password_configuration';
-import { PasswordOrgConfig } from 'sailpoint-angular-sdk/password_configuration';
+import { PasswordConfigurationService } from '@sailpoint/angular-sdk/password_configuration';
+import { PasswordOrgConfig } from '@sailpoint/angular-sdk/password_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -100,7 +100,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordConfigurationService } from 'sailpoint-angular-sdk/password_configuration';
+import { PasswordConfigurationService } from '@sailpoint/angular-sdk/password_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -147,8 +147,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PasswordConfigurationService } from 'sailpoint-angular-sdk/password_configuration';
-import { PasswordOrgConfig } from 'sailpoint-angular-sdk/password_configuration';
+import { PasswordConfigurationService } from '@sailpoint/angular-sdk/password_configuration';
+import { PasswordOrgConfig } from '@sailpoint/angular-sdk/password_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

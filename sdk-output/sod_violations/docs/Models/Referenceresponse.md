@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Referenceresponse', 'sod_violations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Referenceresponse } from 'sailpoint-angular-sdk/sod_violations';
+import { Referenceresponse } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

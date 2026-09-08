@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/password_management/methods/password-management#create-digit-token-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
-        import { PasswordDigitTokenReset } from 'sailpoint-angular-sdk/password_management';
+        import { PasswordManagementService } from '@sailpoint/angular-sdk/password_management';
+        import { PasswordDigitTokenReset } from '@sailpoint/angular-sdk/password_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -32,7 +32,7 @@
       label: SDK_tools/sdk/angular/password_management/methods/password-management#get-password-change-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
+        import { PasswordManagementService } from '@sailpoint/angular-sdk/password_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -53,8 +53,8 @@
       label: SDK_tools/sdk/angular/password_management/methods/password-management#query-password-info-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
-        import { PasswordInfoQueryDTO } from 'sailpoint-angular-sdk/password_management';
+        import { PasswordManagementService } from '@sailpoint/angular-sdk/password_management';
+        import { PasswordInfoQueryDTO } from '@sailpoint/angular-sdk/password_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -78,8 +78,8 @@
       label: SDK_tools/sdk/angular/password_management/methods/password-management#set-password-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
-        import { PasswordChangeRequest } from 'sailpoint-angular-sdk/password_management';
+        import { PasswordManagementService } from '@sailpoint/angular-sdk/password_management';
+        import { PasswordChangeRequest } from '@sailpoint/angular-sdk/password_management';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

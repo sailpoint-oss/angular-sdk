@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BulkRejectRequestDTO', 'approvals']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BulkRejectRequestDTO } from 'sailpoint-angular-sdk/approvals';
+import { BulkRejectRequestDTO } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

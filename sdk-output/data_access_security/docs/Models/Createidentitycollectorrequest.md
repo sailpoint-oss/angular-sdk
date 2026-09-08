@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Createidentitycollectorrequest', 'dat
 Import this model from the entry point of its package:
 
 ```typescript
-import { Createidentitycollectorrequest } from 'sailpoint-angular-sdk/data_access_security';
+import { Createidentitycollectorrequest } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

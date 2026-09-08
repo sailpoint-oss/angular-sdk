@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PublicIdentitiesService } from 'sailpoint-angular-sdk/public_identities';
+import { PublicIdentitiesService } from '@sailpoint/angular-sdk/public_identities';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

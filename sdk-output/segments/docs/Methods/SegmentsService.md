@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SegmentsService } from 'sailpoint-angular-sdk/segments';
-import { Segment } from 'sailpoint-angular-sdk/segments';
+import { SegmentsService } from '@sailpoint/angular-sdk/segments';
+import { Segment } from '@sailpoint/angular-sdk/segments';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+import { SegmentsService } from '@sailpoint/angular-sdk/segments';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+import { SegmentsService } from '@sailpoint/angular-sdk/segments';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+import { SegmentsService } from '@sailpoint/angular-sdk/segments';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+import { SegmentsService } from '@sailpoint/angular-sdk/segments';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

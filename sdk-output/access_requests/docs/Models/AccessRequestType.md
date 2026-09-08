@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestType', 'access_requests'
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestType } from 'sailpoint-angular-sdk/access_requests';
+import { AccessRequestType } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'auth_profile']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/auth_profile';
+import { ArrayInner } from '@sailpoint/angular-sdk/auth_profile';
 ```
 
 ## Properties

@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -118,8 +118,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-import { BaseCreateApplicationRequest } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+import { BaseCreateApplicationRequest } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -165,8 +165,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-import { Createidentitycollectorrequest } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+import { Createidentitycollectorrequest } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -212,8 +212,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-import { CreateScheduleRequest } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+import { CreateScheduleRequest } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -259,8 +259,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-import { AssignResourceOwnerRequest } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+import { AssignResourceOwnerRequest } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -356,8 +356,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-import { ReelectRequest } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+import { ReelectRequest } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -686,7 +686,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -786,7 +786,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -834,7 +834,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -883,7 +883,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -932,7 +932,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -981,7 +981,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1035,7 +1035,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1085,8 +1085,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-import { BaseCreateApplicationRequest } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+import { BaseCreateApplicationRequest } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1134,8 +1134,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-import { Updateidentitycollectorrequest } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+import { Updateidentitycollectorrequest } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1183,8 +1183,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
-import { UpdateScheduleRequest } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+import { UpdateScheduleRequest } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1231,7 +1231,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

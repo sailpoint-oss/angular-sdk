@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LoadAccountsTaskTaskReturnsInner', 's
 Import this model from the entry point of its package:
 
 ```typescript
-import { LoadAccountsTaskTaskReturnsInner } from 'sailpoint-angular-sdk/sources';
+import { LoadAccountsTaskTaskReturnsInner } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ReportsDataExtractionService } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { ReportsDataExtractionService } from '@sailpoint/angular-sdk/reports_data_extraction';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ReportsDataExtractionService } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { ReportsDataExtractionService } from '@sailpoint/angular-sdk/reports_data_extraction';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ReportsDataExtractionService } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { ReportsDataExtractionService } from '@sailpoint/angular-sdk/reports_data_extraction';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -198,8 +198,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ReportsDataExtractionService } from 'sailpoint-angular-sdk/reports_data_extraction';
-import { ReportDetails } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { ReportsDataExtractionService } from '@sailpoint/angular-sdk/reports_data_extraction';
+import { ReportDetails } from '@sailpoint/angular-sdk/reports_data_extraction';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'custom_password_in
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/custom_password_instructions';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/custom_password_instructions';
 ```
 
 ## Properties

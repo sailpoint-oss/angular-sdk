@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseReferenceDto', 'business_applicat
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseReferenceDto } from 'sailpoint-angular-sdk/business_applications';
+import { BaseReferenceDto } from '@sailpoint/angular-sdk/business_applications';
 ```
 
 ## Properties

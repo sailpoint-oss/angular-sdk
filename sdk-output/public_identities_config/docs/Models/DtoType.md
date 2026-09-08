@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'public_identities_config']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/public_identities_config';
+import { DtoType } from '@sailpoint/angular-sdk/public_identities_config';
 ```
 
 ## Enum

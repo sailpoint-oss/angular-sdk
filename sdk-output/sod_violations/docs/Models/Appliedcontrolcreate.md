@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Appliedcontrolcreate', 'sod_violation
 Import this model from the entry point of its package:
 
 ```typescript
-import { Appliedcontrolcreate } from 'sailpoint-angular-sdk/sod_violations';
+import { Appliedcontrolcreate } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

@@ -55,8 +55,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
-import { Compensatingcontrolcreate } from 'sailpoint-angular-sdk/sod_controls';
+import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
+import { Compensatingcontrolcreate } from '@sailpoint/angular-sdk/sod_controls';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -269,8 +269,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
-import { Compensatingcontrolupdate } from 'sailpoint-angular-sdk/sod_controls';
+import { SODControlsService } from '@sailpoint/angular-sdk/sod_controls';
+import { Compensatingcontrolupdate } from '@sailpoint/angular-sdk/sod_controls';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

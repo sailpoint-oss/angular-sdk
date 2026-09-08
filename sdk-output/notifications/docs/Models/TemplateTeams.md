@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TemplateTeams', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TemplateTeams } from 'sailpoint-angular-sdk/notifications';
+import { TemplateTeams } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

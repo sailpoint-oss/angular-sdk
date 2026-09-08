@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'WorkflowOAuthClient', 'workflows']
 Import this model from the entry point of its package:
 
 ```typescript
-import { WorkflowOAuthClient } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowOAuthClient } from '@sailpoint/angular-sdk/workflows';
 ```
 
 ## Properties

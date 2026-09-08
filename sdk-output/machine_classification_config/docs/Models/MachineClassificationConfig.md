@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineClassificationConfig', 'machin
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineClassificationConfig } from 'sailpoint-angular-sdk/machine_classification_config';
+import { MachineClassificationConfig } from '@sailpoint/angular-sdk/machine_classification_config';
 ```
 
 ## Properties

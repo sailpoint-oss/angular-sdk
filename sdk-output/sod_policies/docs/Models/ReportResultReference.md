@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReportResultReference', 'sod_policies
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReportResultReference } from 'sailpoint-angular-sdk/sod_policies';
+import { ReportResultReference } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Properties

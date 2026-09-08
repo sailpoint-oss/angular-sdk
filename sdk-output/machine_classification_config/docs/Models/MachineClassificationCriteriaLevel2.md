@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineClassificationCriteriaLevel2',
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineClassificationCriteriaLevel2 } from 'sailpoint-angular-sdk/machine_classification_config';
+import { MachineClassificationCriteriaLevel2 } from '@sailpoint/angular-sdk/machine_classification_config';
 ```
 
 ## Properties

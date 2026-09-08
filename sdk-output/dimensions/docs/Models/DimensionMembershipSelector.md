@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DimensionMembershipSelector', 'dimens
 Import this model from the entry point of its package:
 
 ```typescript
-import { DimensionMembershipSelector } from 'sailpoint-angular-sdk/dimensions';
+import { DimensionMembershipSelector } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

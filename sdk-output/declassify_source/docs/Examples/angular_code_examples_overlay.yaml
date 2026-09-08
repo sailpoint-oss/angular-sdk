@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/declassify_source/methods/declassify-source#send-declassify-machine-account-from-source-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { DeclassifySourceService } from 'sailpoint-angular-sdk/declassify_source';
+        import { DeclassifySourceService } from '@sailpoint/angular-sdk/declassify_source';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

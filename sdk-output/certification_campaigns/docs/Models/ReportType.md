@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReportType', 'certification_campaigns
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReportType } from 'sailpoint-angular-sdk/certification_campaigns';
+import { ReportType } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Enum

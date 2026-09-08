@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'managed_cluster_types
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/managed_cluster_types';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/managed_cluster_types';
 ```
 
 ## Enum

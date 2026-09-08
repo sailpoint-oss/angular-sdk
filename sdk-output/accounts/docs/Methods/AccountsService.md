@@ -99,8 +99,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-import { AccountAttributesCreate } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+import { AccountAttributesCreate } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -294,8 +294,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-import { AccountToggleRequest } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+import { AccountToggleRequest } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -342,8 +342,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-import { IdentitiesAccountsBulkRequest } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+import { IdentitiesAccountsBulkRequest } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -436,8 +436,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-import { AccountToggleRequest } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+import { AccountToggleRequest } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -484,8 +484,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-import { IdentitiesAccountsBulkRequest } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+import { IdentitiesAccountsBulkRequest } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -583,7 +583,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -691,8 +691,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-import { AccountAttributes } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+import { AccountAttributes } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -787,8 +787,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
-import { AccountUnlockRequest } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+import { AccountUnlockRequest } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+import { AccountsService } from '@sailpoint/angular-sdk/accounts';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JitActivationActivateRequest', 'jit_a
 Import this model from the entry point of its package:
 
 ```typescript
-import { JitActivationActivateRequest } from 'sailpoint-angular-sdk/jit_activations';
+import { JitActivationActivateRequest } from '@sailpoint/angular-sdk/jit_activations';
 ```
 
 ## Properties

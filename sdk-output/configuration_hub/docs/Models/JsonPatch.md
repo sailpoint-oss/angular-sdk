@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'JsonPatch', 'configuration_hub']
 Import this model from the entry point of its package:
 
 ```typescript
-import { JsonPatch } from 'sailpoint-angular-sdk/configuration_hub';
+import { JsonPatch } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

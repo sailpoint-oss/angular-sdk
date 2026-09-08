@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'StreamStatusResponse', 'shared_signal
 Import this model from the entry point of its package:
 
 ```typescript
-import { StreamStatusResponse } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { StreamStatusResponse } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

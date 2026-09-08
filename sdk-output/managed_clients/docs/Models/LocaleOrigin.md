@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'managed_clients']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/managed_clients';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Enum

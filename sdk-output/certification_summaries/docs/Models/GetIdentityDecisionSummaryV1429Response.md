@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetIdentityDecisionSummaryV1429Respon
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetIdentityDecisionSummaryV1429Response } from 'sailpoint-angular-sdk/certification_summaries';
+import { GetIdentityDecisionSummaryV1429Response } from '@sailpoint/angular-sdk/certification_summaries';
 ```
 
 ## Properties

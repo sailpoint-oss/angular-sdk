@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountDeletionRequestsService } from 'sailpoint-angular-sdk/account_deletion_requests';
-import { AccountDeleteRequestInput } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { AccountDeletionRequestsService } from '@sailpoint/angular-sdk/account_deletion_requests';
+import { AccountDeleteRequestInput } from '@sailpoint/angular-sdk/account_deletion_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccountDeletionRequestsService } from 'sailpoint-angular-sdk/account_deletion_requests';
+import { AccountDeletionRequestsService } from '@sailpoint/angular-sdk/account_deletion_requests';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

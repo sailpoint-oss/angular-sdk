@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CompletedApprovalPreApprovalTriggerRe
 Import this model from the entry point of its package:
 
 ```typescript
-import { CompletedApprovalPreApprovalTriggerResult } from 'sailpoint-angular-sdk/access_request_approvals';
+import { CompletedApprovalPreApprovalTriggerResult } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Properties

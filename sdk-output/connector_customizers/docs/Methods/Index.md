@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+import { ConnectorCustomizersService } from '@sailpoint/angular-sdk/connector_customizers';
 
 private readonly api = inject(ConnectorCustomizersService);
 ```

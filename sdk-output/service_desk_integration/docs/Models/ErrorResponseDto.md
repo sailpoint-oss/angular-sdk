@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'service_desk_inte
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/service_desk_integration';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/service_desk_integration';
 ```
 
 ## Properties

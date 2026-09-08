@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessItemRemoved', 'identity_history
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessItemRemoved } from 'sailpoint-angular-sdk/identity_history';
+import { AccessItemRemoved } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

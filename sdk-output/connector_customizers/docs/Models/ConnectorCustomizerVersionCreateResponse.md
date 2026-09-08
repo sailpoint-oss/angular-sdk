@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConnectorCustomizerVersionCreateRespo
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConnectorCustomizerVersionCreateResponse } from 'sailpoint-angular-sdk/connector_customizers';
+import { ConnectorCustomizerVersionCreateResponse } from '@sailpoint/angular-sdk/connector_customizers';
 ```
 
 ## Properties

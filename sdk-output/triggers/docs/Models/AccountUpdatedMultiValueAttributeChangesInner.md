@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccountUpdatedMultiValueAttributeChan
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccountUpdatedMultiValueAttributeChangesInner } from 'sailpoint-angular-sdk/triggers';
+import { AccountUpdatedMultiValueAttributeChangesInner } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

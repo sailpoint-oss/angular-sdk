@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleCriteriaKeyType', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleCriteriaKeyType } from 'sailpoint-angular-sdk/roles';
+import { RoleCriteriaKeyType } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Enum

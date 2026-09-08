@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelidentitygraphlink', 'intelligenc
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelidentitygraphlink } from 'sailpoint-angular-sdk/intelligence';
+import { Intelidentitygraphlink } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

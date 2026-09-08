@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BulkIdentitiesAccountsResponse', 'acc
 Import this model from the entry point of its package:
 
 ```typescript
-import { BulkIdentitiesAccountsResponse } from 'sailpoint-angular-sdk/accounts';
+import { BulkIdentitiesAccountsResponse } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

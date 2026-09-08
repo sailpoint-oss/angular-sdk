@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Referenceinput', 'sod_controls']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Referenceinput } from 'sailpoint-angular-sdk/sod_controls';
+import { Referenceinput } from '@sailpoint/angular-sdk/sod_controls';
 ```
 
 ## Properties

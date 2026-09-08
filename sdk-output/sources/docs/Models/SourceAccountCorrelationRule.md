@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceAccountCorrelationRule', 'sourc
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceAccountCorrelationRule } from 'sailpoint-angular-sdk/sources';
+import { SourceAccountCorrelationRule } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

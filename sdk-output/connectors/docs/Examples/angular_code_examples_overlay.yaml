@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#create-custom-connector-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
-        import { V3CreateConnectorDto } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
+        import { V3CreateConnectorDto } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -33,7 +33,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#delete-custom-connector-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -54,7 +54,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-correlation-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -75,7 +75,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-list-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -100,7 +100,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-source-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -121,7 +121,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-source-template-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -142,7 +142,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-translations-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -164,7 +164,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -186,7 +186,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#put-connector-correlation-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -208,7 +208,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#put-connector-source-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -230,7 +230,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#put-connector-source-template-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -252,7 +252,7 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#put-connector-translations-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -274,8 +274,8 @@
       label: SDK_tools/sdk/angular/connectors/methods/connectors#update-connector-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/connectors';
+        import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/connectors';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

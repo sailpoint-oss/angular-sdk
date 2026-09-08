@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PublicIdentityAttributeConfig', 'publ
 Import this model from the entry point of its package:
 
 ```typescript
-import { PublicIdentityAttributeConfig } from 'sailpoint-angular-sdk/public_identities_config';
+import { PublicIdentityAttributeConfig } from '@sailpoint/angular-sdk/public_identities_config';
 ```
 
 ## Properties

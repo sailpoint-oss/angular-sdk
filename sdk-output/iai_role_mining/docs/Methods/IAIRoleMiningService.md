@@ -78,8 +78,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-import { RoleMiningPotentialRoleProvisionRequest } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+import { RoleMiningPotentialRoleProvisionRequest } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -134,8 +134,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-import { RoleMiningSessionDto } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+import { RoleMiningSessionDto } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -243,8 +243,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-import { RoleMiningPotentialRoleExportRequest } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+import { RoleMiningPotentialRoleExportRequest } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -653,7 +653,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -776,7 +776,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -837,7 +837,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -898,7 +898,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -955,7 +955,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1007,7 +1007,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1058,7 +1058,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1109,7 +1109,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1164,7 +1164,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1222,7 +1222,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1290,8 +1290,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-import { JsonPatchOperationRoleMining } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+import { JsonPatchOperationRoleMining } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1358,8 +1358,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-import { JsonPatchOperationRoleMining } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+import { JsonPatchOperationRoleMining } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1413,8 +1413,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -1468,8 +1468,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-import { RoleMiningPotentialRoleEditEntitlements } from 'sailpoint-angular-sdk/iai_role_mining';
+import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+import { RoleMiningPotentialRoleEditEntitlements } from '@sailpoint/angular-sdk/iai_role_mining';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

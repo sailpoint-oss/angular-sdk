@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#create-auth-org-network-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-        import { NetworkConfiguration } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+        import { NetworkConfiguration } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -31,7 +31,7 @@
       label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#get-auth-org-lockout-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -51,7 +51,7 @@
       label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#get-auth-org-network-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -71,7 +71,7 @@
       label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#get-auth-org-service-provider-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -91,7 +91,7 @@
       label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#get-auth-org-session-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -111,8 +111,8 @@
       label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#patch-auth-org-lockout-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -137,8 +137,8 @@
       label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#patch-auth-org-network-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -163,8 +163,8 @@
       label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#patch-auth-org-service-provider-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -189,8 +189,8 @@
       label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#patch-auth-org-session-config-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { GlobalTenantSecuritySettingsService } from '@sailpoint/angular-sdk/global_tenant_security_settings';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/global_tenant_security_settings';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

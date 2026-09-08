@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestIdentityMetricsService } from 'sailpoint-angular-sdk/access_request_identity_metrics';
+import { AccessRequestIdentityMetricsService } from '@sailpoint/angular-sdk/access_request_identity_metrics';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'certification_sum
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/certification_summaries';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/certification_summaries';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessProfile', 'access_profiles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessProfile } from 'sailpoint-angular-sdk/access_profiles';
+import { AccessProfile } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceCode', 'connector_rule_manageme
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceCode } from 'sailpoint-angular-sdk/connector_rule_management';
+import { SourceCode } from '@sailpoint/angular-sdk/connector_rule_management';
 ```
 
 ## Properties

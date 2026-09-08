@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetDataSegmentIdentityMembershipV1401
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetDataSegmentIdentityMembershipV1401Response } from 'sailpoint-angular-sdk/data_segmentation';
+import { GetDataSegmentIdentityMembershipV1401Response } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Properties

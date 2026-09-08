@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListPersonalAccessTokensV1401Response
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListPersonalAccessTokensV1401Response } from 'sailpoint-angular-sdk/personal_access_tokens';
+import { ListPersonalAccessTokensV1401Response } from '@sailpoint/angular-sdk/personal_access_tokens';
 ```
 
 ## Properties

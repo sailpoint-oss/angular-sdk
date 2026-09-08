@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'apps']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/apps';
+import { ArrayInner } from '@sailpoint/angular-sdk/apps';
 ```
 
 ## Properties

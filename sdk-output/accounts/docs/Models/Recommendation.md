@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Recommendation', 'accounts']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Recommendation } from 'sailpoint-angular-sdk/accounts';
+import { Recommendation } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

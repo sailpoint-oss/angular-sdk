@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ProvisioningConfig', 'sim_integration
 Import this model from the entry point of its package:
 
 ```typescript
-import { ProvisioningConfig } from 'sailpoint-angular-sdk/sim_integrations';
+import { ProvisioningConfig } from '@sailpoint/angular-sdk/sim_integrations';
 ```
 
 ## Properties

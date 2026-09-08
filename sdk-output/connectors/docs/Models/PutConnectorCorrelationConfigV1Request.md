@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PutConnectorCorrelationConfigV1Reques
 Import this model from the entry point of its package:
 
 ```typescript
-import { PutConnectorCorrelationConfigV1Request } from 'sailpoint-angular-sdk/connectors';
+import { PutConnectorCorrelationConfigV1Request } from '@sailpoint/angular-sdk/connectors';
 ```
 
 ## Properties

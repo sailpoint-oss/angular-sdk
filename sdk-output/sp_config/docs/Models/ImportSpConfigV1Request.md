@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ImportSpConfigV1Request', 'sp_config'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ImportSpConfigV1Request } from 'sailpoint-angular-sdk/sp_config';
+import { ImportSpConfigV1Request } from '@sailpoint/angular-sdk/sp_config';
 ```
 
 ## Properties

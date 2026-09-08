@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelAccessHistoryCertificationsSlice
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelAccessHistoryCertificationsSlice } from 'sailpoint-angular-sdk/intelligence';
+import { IntelAccessHistoryCertificationsSlice } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

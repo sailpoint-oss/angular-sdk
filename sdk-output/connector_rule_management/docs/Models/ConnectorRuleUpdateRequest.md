@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ConnectorRuleUpdateRequest', 'connect
 Import this model from the entry point of its package:
 
 ```typescript
-import { ConnectorRuleUpdateRequest } from 'sailpoint-angular-sdk/connector_rule_management';
+import { ConnectorRuleUpdateRequest } from '@sailpoint/angular-sdk/connector_rule_management';
 ```
 
 ## Properties

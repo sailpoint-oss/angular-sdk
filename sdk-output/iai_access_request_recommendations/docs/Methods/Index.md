@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+import { IAIAccessRequestRecommendationsService } from '@sailpoint/angular-sdk/iai_access_request_recommendations';
 
 private readonly api = inject(IAIAccessRequestRecommendationsService);
 ```

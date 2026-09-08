@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DataOwnerModel', 'data_access_securit
 Import this model from the entry point of its package:
 
 ```typescript
-import { DataOwnerModel } from 'sailpoint-angular-sdk/data_access_security';
+import { DataOwnerModel } from '@sailpoint/angular-sdk/data_access_security';
 ```
 
 ## Properties

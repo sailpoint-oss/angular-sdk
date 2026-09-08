@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/account_aggregations/methods/account-aggregations#get-account-aggregation-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccountAggregationsService } from 'sailpoint-angular-sdk/account_aggregations';
+        import { AccountAggregationsService } from '@sailpoint/angular-sdk/account_aggregations';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

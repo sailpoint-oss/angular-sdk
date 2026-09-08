@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#create-potential-role-provision-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-        import { RoleMiningPotentialRoleProvisionRequest } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+        import { RoleMiningPotentialRoleProvisionRequest } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -38,8 +38,8 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#create-role-mining-sessions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-        import { RoleMiningSessionDto } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+        import { RoleMiningSessionDto } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -92,7 +92,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#download-role-mining-potential-role-zip-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -116,8 +116,8 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#export-role-mining-potential-role-async-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-        import { RoleMiningPotentialRoleExportRequest } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+        import { RoleMiningPotentialRoleExportRequest } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -144,7 +144,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#export-role-mining-potential-role-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -168,7 +168,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#export-role-mining-potential-role-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -191,7 +191,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-all-potential-role-summaries-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -217,7 +217,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-entitlement-distribution-potential-role-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -241,7 +241,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-entitlements-potential-role-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -270,7 +270,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-excluded-entitlements-potential-role-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -298,7 +298,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-identities-potential-role-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -326,7 +326,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-applications-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -353,7 +353,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-entitlements-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -380,7 +380,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-source-identity-usage-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -407,7 +407,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-summaries-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -434,7 +434,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -457,7 +457,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-role-mining-potential-role-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -479,7 +479,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-role-mining-session-status-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -501,7 +501,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-role-mining-session-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -523,7 +523,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-role-mining-sessions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -549,7 +549,7 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-saved-potential-roles-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -574,8 +574,8 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#patch-potential-role-session-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-        import { JsonPatchOperationRoleMining } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+        import { JsonPatchOperationRoleMining } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -603,8 +603,8 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#patch-potential-role-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-        import { JsonPatchOperationRoleMining } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+        import { JsonPatchOperationRoleMining } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -632,8 +632,8 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#patch-role-mining-session-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -660,8 +660,8 @@
       label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#update-entitlements-potential-role-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
-        import { RoleMiningPotentialRoleEditEntitlements } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { IAIRoleMiningService } from '@sailpoint/angular-sdk/iai_role_mining';
+        import { RoleMiningPotentialRoleEditEntitlements } from '@sailpoint/angular-sdk/iai_role_mining';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

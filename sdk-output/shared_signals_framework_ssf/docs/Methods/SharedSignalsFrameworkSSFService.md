@@ -66,8 +66,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-import { CreateStreamRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+import { CreateStreamRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -160,7 +160,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -202,7 +202,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -345,8 +345,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-import { VerificationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+import { VerificationRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -395,8 +395,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-import { ReplaceStreamConfigurationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+import { ReplaceStreamConfigurationRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -445,8 +445,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-import { UpdateStreamConfigurationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+import { UpdateStreamConfigurationRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -492,8 +492,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
-import { UpdateStreamStatusRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { SharedSignalsFrameworkSSFService } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
+import { UpdateStreamStatusRequest } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

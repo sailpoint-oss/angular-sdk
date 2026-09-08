@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'iai_peer_group_str
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/iai_peer_group_strategies';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/iai_peer_group_strategies';
 ```
 
 ## Properties

@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
-import { V3CreateConnectorDto } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
+import { V3CreateConnectorDto } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -550,7 +550,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -658,8 +658,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/connectors';
+import { ConnectorsService } from '@sailpoint/angular-sdk/connectors';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/connectors';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

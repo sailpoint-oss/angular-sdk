@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'certification_cam
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/certification_campaign_filters';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/certification_campaign_filters';
 ```
 
 ## Properties

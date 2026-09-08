@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementOwner', 'accounts']
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementOwner } from 'sailpoint-angular-sdk/accounts';
+import { EntitlementOwner } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

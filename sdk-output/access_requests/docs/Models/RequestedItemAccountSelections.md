@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestedItemAccountSelections', 'acc
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestedItemAccountSelections } from 'sailpoint-angular-sdk/access_requests';
+import { RequestedItemAccountSelections } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

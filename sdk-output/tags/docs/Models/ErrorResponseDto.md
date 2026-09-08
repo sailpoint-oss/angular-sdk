@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'tags']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/tags';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/tags';
 ```
 
 ## Properties

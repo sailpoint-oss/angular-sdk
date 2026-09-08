@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestedItemStatusSodViolationContex
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestedItemStatusSodViolationContext } from 'sailpoint-angular-sdk/access_requests';
+import { RequestedItemStatusSodViolationContext } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

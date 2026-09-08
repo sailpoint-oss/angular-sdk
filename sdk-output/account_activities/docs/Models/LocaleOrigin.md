@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'account_activities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/account_activities';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/account_activities';
 ```
 
 ## Enum

@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -137,7 +137,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -182,8 +182,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
-import { MfaDuoConfig } from 'sailpoint-angular-sdk/mfa_configuration';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+import { MfaDuoConfig } from '@sailpoint/angular-sdk/mfa_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -229,8 +229,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
-import { KbaAnswerRequestItem } from 'sailpoint-angular-sdk/mfa_configuration';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+import { KbaAnswerRequestItem } from '@sailpoint/angular-sdk/mfa_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -276,8 +276,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
-import { MfaOktaConfig } from 'sailpoint-angular-sdk/mfa_configuration';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+import { MfaOktaConfig } from '@sailpoint/angular-sdk/mfa_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

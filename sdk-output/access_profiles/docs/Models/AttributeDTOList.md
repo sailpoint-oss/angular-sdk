@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttributeDTOList', 'access_profiles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttributeDTOList } from 'sailpoint-angular-sdk/access_profiles';
+import { AttributeDTOList } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

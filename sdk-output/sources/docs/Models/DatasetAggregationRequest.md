@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DatasetAggregationRequest', 'sources'
 Import this model from the entry point of its package:
 
 ```typescript
-import { DatasetAggregationRequest } from 'sailpoint-angular-sdk/sources';
+import { DatasetAggregationRequest } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

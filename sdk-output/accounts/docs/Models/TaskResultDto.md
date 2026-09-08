@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TaskResultDto', 'accounts']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TaskResultDto } from 'sailpoint-angular-sdk/accounts';
+import { TaskResultDto } from '@sailpoint/angular-sdk/accounts';
 ```
 
 ## Properties

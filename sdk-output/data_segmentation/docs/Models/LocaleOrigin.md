@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'data_segmentation']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/data_segmentation';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Enum

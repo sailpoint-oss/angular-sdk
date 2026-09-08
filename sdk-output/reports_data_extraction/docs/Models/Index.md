@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Index', 'reports_data_extraction']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Index } from 'sailpoint-angular-sdk/reports_data_extraction';
+import { Index } from '@sailpoint/angular-sdk/reports_data_extraction';
 ```
 
 ## Enum

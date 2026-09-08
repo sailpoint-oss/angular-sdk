@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DomainStatusDto', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DomainStatusDto } from 'sailpoint-angular-sdk/notifications';
+import { DomainStatusDto } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

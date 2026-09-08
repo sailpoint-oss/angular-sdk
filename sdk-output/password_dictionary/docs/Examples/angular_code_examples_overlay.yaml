@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/password_dictionary/methods/password-dictionary#get-password-dictionary-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordDictionaryService } from 'sailpoint-angular-sdk/password_dictionary';
+        import { PasswordDictionaryService } from '@sailpoint/angular-sdk/password_dictionary';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -25,7 +25,7 @@
       label: SDK_tools/sdk/angular/password_dictionary/methods/password-dictionary#put-password-dictionary-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PasswordDictionaryService } from 'sailpoint-angular-sdk/password_dictionary';
+        import { PasswordDictionaryService } from '@sailpoint/angular-sdk/password_dictionary';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

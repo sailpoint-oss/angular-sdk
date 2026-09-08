@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'password_sync_groups'
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/password_sync_groups';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/password_sync_groups';
 ```
 
 ## Enum

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestedItemDtoRef', 'access_request
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestedItemDtoRef } from 'sailpoint-angular-sdk/access_requests';
+import { RequestedItemDtoRef } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

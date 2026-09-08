@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationSummariesService } from 'sailpoint-angular-sdk/certification_summaries';
+import { CertificationSummariesService } from '@sailpoint/angular-sdk/certification_summaries';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationSummariesService } from 'sailpoint-angular-sdk/certification_summaries';
+import { CertificationSummariesService } from '@sailpoint/angular-sdk/certification_summaries';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationSummariesService } from 'sailpoint-angular-sdk/certification_summaries';
+import { CertificationSummariesService } from '@sailpoint/angular-sdk/certification_summaries';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { CertificationSummariesService } from 'sailpoint-angular-sdk/certification_summaries';
+import { CertificationSummariesService } from '@sailpoint/angular-sdk/certification_summaries';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

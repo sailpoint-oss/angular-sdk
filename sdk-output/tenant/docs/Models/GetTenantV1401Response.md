@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetTenantV1401Response', 'tenant']
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetTenantV1401Response } from 'sailpoint-angular-sdk/tenant';
+import { GetTenantV1401Response } from '@sailpoint/angular-sdk/tenant';
 ```
 
 ## Properties

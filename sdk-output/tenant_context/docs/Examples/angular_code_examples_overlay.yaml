@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/tenant_context/methods/tenant-context#get-tenant-context-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TenantContextService } from 'sailpoint-angular-sdk/tenant_context';
+        import { TenantContextService } from '@sailpoint/angular-sdk/tenant_context';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -25,8 +25,8 @@
       label: SDK_tools/sdk/angular/tenant_context/methods/tenant-context#patch-tenant-context-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { TenantContextService } from 'sailpoint-angular-sdk/tenant_context';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/tenant_context';
+        import { TenantContextService } from '@sailpoint/angular-sdk/tenant_context';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/tenant_context';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

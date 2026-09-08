@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleMiningPotentialRoleEditEntitlemen
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleMiningPotentialRoleEditEntitlements } from 'sailpoint-angular-sdk/iai_role_mining';
+import { RoleMiningPotentialRoleEditEntitlements } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Properties

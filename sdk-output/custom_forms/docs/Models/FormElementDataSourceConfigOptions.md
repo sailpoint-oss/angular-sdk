@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'FormElementDataSourceConfigOptions', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { FormElementDataSourceConfigOptions } from 'sailpoint-angular-sdk/custom_forms';
+import { FormElementDataSourceConfigOptions } from '@sailpoint/angular-sdk/custom_forms';
 ```
 
 ## Properties

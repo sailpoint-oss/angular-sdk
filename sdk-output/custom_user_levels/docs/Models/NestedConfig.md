@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'NestedConfig', 'custom_user_levels']
 Import this model from the entry point of its package:
 
 ```typescript
-import { NestedConfig } from 'sailpoint-angular-sdk/custom_user_levels';
+import { NestedConfig } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

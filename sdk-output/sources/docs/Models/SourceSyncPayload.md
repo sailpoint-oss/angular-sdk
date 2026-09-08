@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceSyncPayload', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceSyncPayload } from 'sailpoint-angular-sdk/sources';
+import { SourceSyncPayload } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessRequestItemForm', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessRequestItemForm } from 'sailpoint-angular-sdk/triggers';
+import { AccessRequestItemForm } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

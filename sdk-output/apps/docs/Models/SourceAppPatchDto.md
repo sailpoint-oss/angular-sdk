@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SourceAppPatchDto', 'apps']
 Import this model from the entry point of its package:
 
 ```typescript
-import { SourceAppPatchDto } from 'sailpoint-angular-sdk/apps';
+import { SourceAppPatchDto } from '@sailpoint/angular-sdk/apps';
 ```
 
 ## Properties

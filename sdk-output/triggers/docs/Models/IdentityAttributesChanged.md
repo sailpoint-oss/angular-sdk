@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityAttributesChanged', 'triggers
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityAttributesChanged } from 'sailpoint-angular-sdk/triggers';
+import { IdentityAttributesChanged } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

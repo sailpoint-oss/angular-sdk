@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AttributeDefinitionType', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { AttributeDefinitionType } from 'sailpoint-angular-sdk/sources';
+import { AttributeDefinitionType } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Enum

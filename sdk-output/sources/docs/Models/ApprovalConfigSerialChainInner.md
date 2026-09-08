@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalConfigSerialChainInner', 'sou
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalConfigSerialChainInner } from 'sailpoint-angular-sdk/sources';
+import { ApprovalConfigSerialChainInner } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

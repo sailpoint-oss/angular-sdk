@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+import { ScheduledSearchService } from '@sailpoint/angular-sdk/scheduled_search';
 
 private readonly api = inject(ScheduledSearchService);
 ```

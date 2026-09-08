@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Violationreassigninput', 'sod_violati
 Import this model from the entry point of its package:
 
 ```typescript
-import { Violationreassigninput } from 'sailpoint-angular-sdk/sod_violations';
+import { Violationreassigninput } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

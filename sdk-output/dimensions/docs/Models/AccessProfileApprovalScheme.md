@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessProfileApprovalScheme', 'dimens
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessProfileApprovalScheme } from 'sailpoint-angular-sdk/dimensions';
+import { AccessProfileApprovalScheme } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

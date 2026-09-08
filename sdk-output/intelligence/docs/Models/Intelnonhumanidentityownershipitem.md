@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelnonhumanidentityownershipitem', 
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelnonhumanidentityownershipitem } from 'sailpoint-angular-sdk/intelligence';
+import { Intelnonhumanidentityownershipitem } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

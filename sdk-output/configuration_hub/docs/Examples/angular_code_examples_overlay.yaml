@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-deploy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-        import { DeployRequest } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+        import { DeployRequest } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -29,8 +29,8 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-object-mapping-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-        import { ObjectMappingRequest } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+        import { ObjectMappingRequest } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -58,8 +58,8 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-object-mappings-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-        import { ObjectMappingBulkCreateRequest } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+        import { ObjectMappingBulkCreateRequest } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -95,8 +95,8 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-scheduled-action-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-        import { ScheduledActionPayload } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+        import { ScheduledActionPayload } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -139,7 +139,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-uploaded-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -161,7 +161,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-backup-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -182,7 +182,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-draft-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -203,7 +203,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-object-mapping-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -225,7 +225,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-scheduled-action-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -246,7 +246,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-uploaded-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -267,7 +267,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#get-deploy-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -288,7 +288,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#get-object-mappings-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -309,7 +309,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#get-uploaded-configuration-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -330,7 +330,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-backups-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -351,7 +351,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-deploys-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -371,7 +371,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-drafts-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -392,7 +392,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-scheduled-actions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -412,7 +412,7 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-uploaded-configurations-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -433,8 +433,8 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#update-object-mappings-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-        import { ObjectMappingBulkPatchRequest } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+        import { ObjectMappingBulkPatchRequest } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -469,8 +469,8 @@
       label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#update-scheduled-action-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-        import { JsonPatch } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+        import { JsonPatch } from '@sailpoint/angular-sdk/configuration_hub';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ResourceObjectsRequest', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ResourceObjectsRequest } from 'sailpoint-angular-sdk/sources';
+import { ResourceObjectsRequest } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

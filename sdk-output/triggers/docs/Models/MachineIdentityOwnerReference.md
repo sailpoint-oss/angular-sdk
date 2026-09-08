@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityOwnerReference', 'trig
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityOwnerReference } from 'sailpoint-angular-sdk/triggers';
+import { MachineIdentityOwnerReference } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

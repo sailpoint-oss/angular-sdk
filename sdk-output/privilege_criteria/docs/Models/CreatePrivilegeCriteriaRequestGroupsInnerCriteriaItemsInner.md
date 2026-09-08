@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CreatePrivilegeCriteriaRequestGroupsI
 Import this model from the entry point of its package:
 
 ```typescript
-import { CreatePrivilegeCriteriaRequestGroupsInnerCriteriaItemsInner } from 'sailpoint-angular-sdk/privilege_criteria';
+import { CreatePrivilegeCriteriaRequestGroupsInnerCriteriaItemsInner } from '@sailpoint/angular-sdk/privilege_criteria';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListWorkgroupsV1401Response', 'govern
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListWorkgroupsV1401Response } from 'sailpoint-angular-sdk/governance_groups';
+import { ListWorkgroupsV1401Response } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

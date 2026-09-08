@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'UserLevelPublishSummary', 'custom_use
 Import this model from the entry point of its package:
 
 ```typescript
-import { UserLevelPublishSummary } from 'sailpoint-angular-sdk/custom_user_levels';
+import { UserLevelPublishSummary } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Properties

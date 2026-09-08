@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListAccessProfilesV1401Response', 'ac
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListAccessProfilesV1401Response } from 'sailpoint-angular-sdk/access_profiles';
+import { ListAccessProfilesV1401Response } from '@sailpoint/angular-sdk/access_profiles';
 ```
 
 ## Properties

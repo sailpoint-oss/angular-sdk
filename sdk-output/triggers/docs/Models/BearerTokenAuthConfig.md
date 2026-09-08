@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BearerTokenAuthConfig', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BearerTokenAuthConfig } from 'sailpoint-angular-sdk/triggers';
+import { BearerTokenAuthConfig } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'custom_user_levels']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/custom_user_levels';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/custom_user_levels';
 ```
 
 ## Enum

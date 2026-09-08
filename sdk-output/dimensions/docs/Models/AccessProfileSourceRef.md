@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AccessProfileSourceRef', 'dimensions'
 Import this model from the entry point of its package:
 
 ```typescript
-import { AccessProfileSourceRef } from 'sailpoint-angular-sdk/dimensions';
+import { AccessProfileSourceRef } from '@sailpoint/angular-sdk/dimensions';
 ```
 
 ## Properties

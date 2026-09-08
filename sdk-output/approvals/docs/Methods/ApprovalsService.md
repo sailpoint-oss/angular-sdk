@@ -63,8 +63,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { BulkApproveRequestDTO } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { BulkApproveRequestDTO } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -112,8 +112,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { ApprovalApproveRequest } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { ApprovalApproveRequest } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -163,8 +163,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { ApprovalCancelRequest } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { ApprovalCancelRequest } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -213,8 +213,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { BulkCancelRequestDTO } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { BulkCancelRequestDTO } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -481,8 +481,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { BulkReassignRequestDTO } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { BulkReassignRequestDTO } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -531,8 +531,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { ApprovalConfig } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { ApprovalConfig } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -580,8 +580,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { BulkRejectRequestDTO } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { BulkRejectRequestDTO } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -629,8 +629,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { ApprovalRejectRequest } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { ApprovalRejectRequest } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -678,8 +678,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { ApprovalAttributesRequest } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { ApprovalAttributesRequest } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -727,8 +727,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { ApprovalCommentsRequest } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { ApprovalCommentsRequest } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -776,8 +776,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
-import { ApprovalReassignRequest } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalsService } from '@sailpoint/angular-sdk/approvals';
+import { ApprovalReassignRequest } from '@sailpoint/angular-sdk/approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

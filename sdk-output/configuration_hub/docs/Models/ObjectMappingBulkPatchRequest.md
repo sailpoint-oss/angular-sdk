@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ObjectMappingBulkPatchRequest', 'conf
 Import this model from the entry point of its package:
 
 ```typescript
-import { ObjectMappingBulkPatchRequest } from 'sailpoint-angular-sdk/configuration_hub';
+import { ObjectMappingBulkPatchRequest } from '@sailpoint/angular-sdk/configuration_hub';
 ```
 
 ## Properties

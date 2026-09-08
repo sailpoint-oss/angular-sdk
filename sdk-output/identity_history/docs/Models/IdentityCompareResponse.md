@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityCompareResponse', 'identity_h
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityCompareResponse } from 'sailpoint-angular-sdk/identity_history';
+import { IdentityCompareResponse } from '@sailpoint/angular-sdk/identity_history';
 ```
 
 ## Properties

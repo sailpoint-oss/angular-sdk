@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'tenant_context']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/tenant_context';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/tenant_context';
 ```
 
 ## Properties

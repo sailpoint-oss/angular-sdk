@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelidentityambiguouscandidate', 'in
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelidentityambiguouscandidate } from 'sailpoint-angular-sdk/intelligence';
+import { Intelidentityambiguouscandidate } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

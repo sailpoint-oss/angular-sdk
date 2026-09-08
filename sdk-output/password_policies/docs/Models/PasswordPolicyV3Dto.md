@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PasswordPolicyV3Dto', 'password_polic
 Import this model from the entry point of its package:
 
 ```typescript
-import { PasswordPolicyV3Dto } from 'sailpoint-angular-sdk/password_policies';
+import { PasswordPolicyV3Dto } from '@sailpoint/angular-sdk/password_policies';
 ```
 
 ## Properties

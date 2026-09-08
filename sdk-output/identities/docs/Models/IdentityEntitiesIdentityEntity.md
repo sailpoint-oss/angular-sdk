@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IdentityEntitiesIdentityEntity', 'ide
 Import this model from the entry point of its package:
 
 ```typescript
-import { IdentityEntitiesIdentityEntity } from 'sailpoint-angular-sdk/identities';
+import { IdentityEntitiesIdentityEntity } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetAccessRequestIdentityMetricsV1401R
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetAccessRequestIdentityMetricsV1401Response } from 'sailpoint-angular-sdk/access_request_identity_metrics';
+import { GetAccessRequestIdentityMetricsV1401Response } from '@sailpoint/angular-sdk/access_request_identity_metrics';
 ```
 
 ## Properties

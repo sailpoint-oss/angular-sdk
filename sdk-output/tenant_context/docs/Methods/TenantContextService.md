@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TenantContextService } from 'sailpoint-angular-sdk/tenant_context';
+import { TenantContextService } from '@sailpoint/angular-sdk/tenant_context';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -98,8 +98,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { TenantContextService } from 'sailpoint-angular-sdk/tenant_context';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/tenant_context';
+import { TenantContextService } from '@sailpoint/angular-sdk/tenant_context';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/tenant_context';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

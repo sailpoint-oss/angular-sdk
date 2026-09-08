@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/public_identities/methods/public-identities#get-public-identities-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { PublicIdentitiesService } from 'sailpoint-angular-sdk/public_identities';
+        import { PublicIdentitiesService } from '@sailpoint/angular-sdk/public_identities';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

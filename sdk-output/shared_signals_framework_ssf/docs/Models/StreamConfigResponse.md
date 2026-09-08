@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'StreamConfigResponse', 'shared_signal
 Import this model from the entry point of its package:
 
 ```typescript
-import { StreamConfigResponse } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+import { StreamConfigResponse } from '@sailpoint/angular-sdk/shared_signals_framework_ssf';
 ```
 
 ## Properties

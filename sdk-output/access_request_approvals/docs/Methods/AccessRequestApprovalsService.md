@@ -70,8 +70,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
-import { CommentDto } from 'sailpoint-angular-sdk/access_request_approvals';
+import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
+import { CommentDto } from '@sailpoint/angular-sdk/access_request_approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -119,8 +119,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
-import { ForwardApprovalDto } from 'sailpoint-angular-sdk/access_request_approvals';
+import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
+import { ForwardApprovalDto } from '@sailpoint/angular-sdk/access_request_approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -386,8 +386,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
-import { CommentDto } from 'sailpoint-angular-sdk/access_request_approvals';
+import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
+import { CommentDto } from '@sailpoint/angular-sdk/access_request_approvals';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

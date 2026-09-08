@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#create-access-model-metadata-attribute-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
-        import { AttributeDTO } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
+        import { AttributeDTO } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -44,8 +44,8 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#create-access-model-metadata-attribute-value-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
-        import { AttributeValueDTO } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
+        import { AttributeValueDTO } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -71,7 +71,7 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#get-access-model-metadata-attribute-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -92,7 +92,7 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#get-access-model-metadata-attribute-value-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -114,7 +114,7 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#list-access-model-metadata-attribute-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -138,7 +138,7 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#list-access-model-metadata-attribute-value-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -161,8 +161,8 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#update-access-model-metadata-attribute-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -188,8 +188,8 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#update-access-model-metadata-attribute-value-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -216,8 +216,8 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#update-access-model-metadata-by-filter-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
-        import { EntitlementAttributeBulkUpdateFilterRequest } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
+        import { EntitlementAttributeBulkUpdateFilterRequest } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -246,8 +246,8 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#update-access-model-metadata-by-ids-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
-        import { EntitlementAttributeBulkUpdateIdsRequest } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
+        import { EntitlementAttributeBulkUpdateIdsRequest } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -276,8 +276,8 @@
       label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#update-access-model-metadata-by-query-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessModelMetadataService } from 'sailpoint-angular-sdk/access_model_metadata';
-        import { EntitlementAttributeBulkUpdateQueryRequest } from 'sailpoint-angular-sdk/access_model_metadata';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
+        import { EntitlementAttributeBulkUpdateQueryRequest } from '@sailpoint/angular-sdk/access_model_metadata';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

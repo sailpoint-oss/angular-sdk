@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Compensatingcontrolcreate', 'sod_cont
 Import this model from the entry point of its package:
 
 ```typescript
-import { Compensatingcontrolcreate } from 'sailpoint-angular-sdk/sod_controls';
+import { Compensatingcontrolcreate } from '@sailpoint/angular-sdk/sod_controls';
 ```
 
 ## Properties

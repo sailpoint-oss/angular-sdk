@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManualWorkItemDetails', 'access_reque
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManualWorkItemDetails } from 'sailpoint-angular-sdk/access_requests';
+import { ManualWorkItemDetails } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

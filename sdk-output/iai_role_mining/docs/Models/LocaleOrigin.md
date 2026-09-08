@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'iai_role_mining']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/iai_role_mining';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/iai_role_mining';
 ```
 
 ## Enum

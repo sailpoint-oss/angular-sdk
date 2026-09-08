@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SearchAggregationSpecification', 'acc
 Import this model from the entry point of its package:
 
 ```typescript
-import { SearchAggregationSpecification } from 'sailpoint-angular-sdk/access_model_metadata';
+import { SearchAggregationSpecification } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

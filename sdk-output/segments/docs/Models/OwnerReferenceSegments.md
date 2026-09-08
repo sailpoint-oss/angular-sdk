@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'OwnerReferenceSegments', 'segments']
 Import this model from the entry point of its package:
 
 ```typescript
-import { OwnerReferenceSegments } from 'sailpoint-angular-sdk/segments';
+import { OwnerReferenceSegments } from '@sailpoint/angular-sdk/segments';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ReviewReassign', 'certifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ReviewReassign } from 'sailpoint-angular-sdk/certifications';
+import { ReviewReassign } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Properties

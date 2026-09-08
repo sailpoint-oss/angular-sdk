@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'entitlement_connectio
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/entitlement_connections';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/entitlement_connections';
 ```
 
 ## Enum

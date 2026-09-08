@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#approve-access-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
-        import { CommentDto } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
+        import { CommentDto } from '@sailpoint/angular-sdk/access_request_approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -36,8 +36,8 @@
       label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#forward-access-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
-        import { ForwardApprovalDto } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
+        import { ForwardApprovalDto } from '@sailpoint/angular-sdk/access_request_approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -62,7 +62,7 @@
       label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#get-access-request-approval-summary-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -84,7 +84,7 @@
       label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#list-access-request-approvers-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -108,7 +108,7 @@
       label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#list-completed-approvals-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -134,7 +134,7 @@
       label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#list-pending-approvals-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -160,8 +160,8 @@
       label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#reject-access-request-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
-        import { CommentDto } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { AccessRequestApprovalsService } from '@sailpoint/angular-sdk/access_request_approvals';
+        import { CommentDto } from '@sailpoint/angular-sdk/access_request_approvals';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

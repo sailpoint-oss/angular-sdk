@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ArrayInner', 'governance_groups']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ArrayInner } from 'sailpoint-angular-sdk/governance_groups';
+import { ArrayInner } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

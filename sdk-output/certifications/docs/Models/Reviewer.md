@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Reviewer', 'certifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Reviewer } from 'sailpoint-angular-sdk/certifications';
+import { Reviewer } from '@sailpoint/angular-sdk/certifications';
 ```
 
 ## Properties

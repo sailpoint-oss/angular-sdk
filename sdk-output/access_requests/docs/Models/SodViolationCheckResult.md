@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SodViolationCheckResult', 'access_req
 Import this model from the entry point of its package:
 
 ```typescript
-import { SodViolationCheckResult } from 'sailpoint-angular-sdk/access_requests';
+import { SodViolationCheckResult } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

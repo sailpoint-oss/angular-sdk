@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClusterRequest', 'managed_clus
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClusterRequest } from 'sailpoint-angular-sdk/managed_clusters';
+import { ManagedClusterRequest } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

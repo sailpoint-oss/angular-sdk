@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ActivityInsights', 'certification_sum
 Import this model from the entry point of its package:
 
 ```typescript
-import { ActivityInsights } from 'sailpoint-angular-sdk/certification_summaries';
+import { ActivityInsights } from '@sailpoint/angular-sdk/certification_summaries';
 ```
 
 ## Properties

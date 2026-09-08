@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MetricAggregation', 'search']
 Import this model from the entry point of its package:
 
 ```typescript
-import { MetricAggregation } from 'sailpoint-angular-sdk/search';
+import { MetricAggregation } from '@sailpoint/angular-sdk/search';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'WorkItemForward', 'work_items']
 Import this model from the entry point of its package:
 
 ```typescript
-import { WorkItemForward } from 'sailpoint-angular-sdk/work_items';
+import { WorkItemForward } from '@sailpoint/angular-sdk/work_items';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'StartPredictSodViolationsV1401Respons
 Import this model from the entry point of its package:
 
 ```typescript
-import { StartPredictSodViolationsV1401Response } from 'sailpoint-angular-sdk/sod_violations';
+import { StartPredictSodViolationsV1401Response } from '@sailpoint/angular-sdk/sod_violations';
 ```
 
 ## Properties

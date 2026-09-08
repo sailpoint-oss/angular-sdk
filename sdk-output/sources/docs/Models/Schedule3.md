@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Schedule3', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Schedule3 } from 'sailpoint-angular-sdk/sources';
+import { Schedule3 } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

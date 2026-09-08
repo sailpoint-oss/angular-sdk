@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityUserEntitlements', 'tr
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityUserEntitlements } from 'sailpoint-angular-sdk/triggers';
+import { MachineIdentityUserEntitlements } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

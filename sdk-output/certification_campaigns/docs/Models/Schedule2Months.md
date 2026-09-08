@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Schedule2Months', 'certification_camp
 Import this model from the entry point of its package:
 
 ```typescript
-import { Schedule2Months } from 'sailpoint-angular-sdk/certification_campaigns';
+import { Schedule2Months } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'VAClusterStatusChangeEventPreviousHea
 Import this model from the entry point of its package:
 
 ```typescript
-import { VAClusterStatusChangeEventPreviousHealthCheckResult } from 'sailpoint-angular-sdk/triggers';
+import { VAClusterStatusChangeEventPreviousHealthCheckResult } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

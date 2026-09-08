@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RoleMembershipSelectorType', 'roles']
 Import this model from the entry point of its package:
 
 ```typescript
-import { RoleMembershipSelectorType } from 'sailpoint-angular-sdk/roles';
+import { RoleMembershipSelectorType } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Enum

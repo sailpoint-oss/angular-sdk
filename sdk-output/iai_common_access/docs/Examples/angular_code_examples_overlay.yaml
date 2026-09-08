@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/iai_common_access/methods/iai-common-access#create-common-access-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAICommonAccessService } from 'sailpoint-angular-sdk/iai_common_access';
-        import { CommonAccessItemRequest } from 'sailpoint-angular-sdk/iai_common_access';
+        import { IAICommonAccessService } from '@sailpoint/angular-sdk/iai_common_access';
+        import { CommonAccessItemRequest } from '@sailpoint/angular-sdk/iai_common_access';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -38,7 +38,7 @@
       label: SDK_tools/sdk/angular/iai_common_access/methods/iai-common-access#get-common-access-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAICommonAccessService } from 'sailpoint-angular-sdk/iai_common_access';
+        import { IAICommonAccessService } from '@sailpoint/angular-sdk/iai_common_access';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -64,8 +64,8 @@
       label: SDK_tools/sdk/angular/iai_common_access/methods/iai-common-access#update-common-access-status-in-bulk-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { IAICommonAccessService } from 'sailpoint-angular-sdk/iai_common_access';
-        import { CommonAccessIDStatus } from 'sailpoint-angular-sdk/iai_common_access';
+        import { IAICommonAccessService } from '@sailpoint/angular-sdk/iai_common_access';
+        import { CommonAccessIDStatus } from '@sailpoint/angular-sdk/iai_common_access';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

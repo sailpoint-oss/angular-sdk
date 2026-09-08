@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'AnomalyBaseline', 'machine_identities
 Import this model from the entry point of its package:
 
 ```typescript
-import { AnomalyBaseline } from 'sailpoint-angular-sdk/machine_identities';
+import { AnomalyBaseline } from '@sailpoint/angular-sdk/machine_identities';
 ```
 
 ## Properties

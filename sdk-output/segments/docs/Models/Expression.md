@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Expression', 'segments']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Expression } from 'sailpoint-angular-sdk/segments';
+import { Expression } from '@sailpoint/angular-sdk/segments';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'CampaignGeneratedCampaignCampaignOwne
 Import this model from the entry point of its package:
 
 ```typescript
-import { CampaignGeneratedCampaignCampaignOwner } from 'sailpoint-angular-sdk/triggers';
+import { CampaignGeneratedCampaignCampaignOwner } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocalizedMessage', 'identities']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocalizedMessage } from 'sailpoint-angular-sdk/identities';
+import { LocalizedMessage } from '@sailpoint/angular-sdk/identities';
 ```
 
 ## Properties

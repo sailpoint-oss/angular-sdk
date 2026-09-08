@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Range', 'access_model_metadata']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Range } from 'sailpoint-angular-sdk/access_model_metadata';
+import { Range } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Properties

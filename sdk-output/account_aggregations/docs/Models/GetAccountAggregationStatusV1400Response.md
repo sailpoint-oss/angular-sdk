@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetAccountAggregationStatusV1400Respo
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetAccountAggregationStatusV1400Response } from 'sailpoint-angular-sdk/account_aggregations';
+import { GetAccountAggregationStatusV1400Response } from '@sailpoint/angular-sdk/account_aggregations';
 ```
 
 ## Properties

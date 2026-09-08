@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DkimAttributes', 'notifications']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DkimAttributes } from 'sailpoint-angular-sdk/notifications';
+import { DkimAttributes } from '@sailpoint/angular-sdk/notifications';
 ```
 
 ## Properties

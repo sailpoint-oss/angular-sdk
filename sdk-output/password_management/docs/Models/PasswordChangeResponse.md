@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'PasswordChangeResponse', 'password_ma
 Import this model from the entry point of its package:
 
 ```typescript
-import { PasswordChangeResponse } from 'sailpoint-angular-sdk/password_management';
+import { PasswordChangeResponse } from '@sailpoint/angular-sdk/password_management';
 ```
 
 ## Properties

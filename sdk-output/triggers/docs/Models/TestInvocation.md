@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TestInvocation', 'triggers']
 Import this model from the entry point of its package:
 
 ```typescript
-import { TestInvocation } from 'sailpoint-angular-sdk/triggers';
+import { TestInvocation } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

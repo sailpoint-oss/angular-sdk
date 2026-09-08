@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRecommendationsService } from 'sailpoint-angular-sdk/iai_recommendations';
+import { IAIRecommendationsService } from '@sailpoint/angular-sdk/iai_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -101,8 +101,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRecommendationsService } from 'sailpoint-angular-sdk/iai_recommendations';
-import { RecommendationRequestDto } from 'sailpoint-angular-sdk/iai_recommendations';
+import { IAIRecommendationsService } from '@sailpoint/angular-sdk/iai_recommendations';
+import { RecommendationRequestDto } from '@sailpoint/angular-sdk/iai_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -153,8 +153,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIRecommendationsService } from 'sailpoint-angular-sdk/iai_recommendations';
-import { RecommendationConfigDto } from 'sailpoint-angular-sdk/iai_recommendations';
+import { IAIRecommendationsService } from '@sailpoint/angular-sdk/iai_recommendations';
+import { RecommendationConfigDto } from '@sailpoint/angular-sdk/iai_recommendations';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

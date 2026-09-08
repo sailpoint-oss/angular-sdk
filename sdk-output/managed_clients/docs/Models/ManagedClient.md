@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ManagedClient', 'managed_clients']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ManagedClient } from 'sailpoint-angular-sdk/managed_clients';
+import { ManagedClient } from '@sailpoint/angular-sdk/managed_clients';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'identity_profiles'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/identity_profiles';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/identity_profiles';
 ```
 
 ## Properties

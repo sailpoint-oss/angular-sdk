@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelRareAccessSlice', 'intelligence'
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelRareAccessSlice } from 'sailpoint-angular-sdk/intelligence';
+import { IntelRareAccessSlice } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

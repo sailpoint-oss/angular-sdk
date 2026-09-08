@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'RequestableObject', 'requestable_obje
 Import this model from the entry point of its package:
 
 ```typescript
-import { RequestableObject } from 'sailpoint-angular-sdk/requestable_objects';
+import { RequestableObject } from '@sailpoint/angular-sdk/requestable_objects';
 ```
 
 ## Properties

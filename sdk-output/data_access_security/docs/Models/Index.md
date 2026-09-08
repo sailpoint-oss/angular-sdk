@@ -22,5 +22,5 @@ The Angular SDK uses data models to structure and manage data within the API. Th
 Models are not re-exported from the root of the package. Import them from the entry point of their own package:
 
 ```typescript
-import { ActivityConfigurationSettings } from 'sailpoint-angular-sdk/data_access_security';
+import { ActivityConfigurationSettings } from '@sailpoint/angular-sdk/data_access_security';
 ```

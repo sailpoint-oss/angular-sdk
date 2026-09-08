@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ApprovalCommentsRequest', 'approvals'
 Import this model from the entry point of its package:
 
 ```typescript
-import { ApprovalCommentsRequest } from 'sailpoint-angular-sdk/approvals';
+import { ApprovalCommentsRequest } from '@sailpoint/angular-sdk/approvals';
 ```
 
 ## Properties

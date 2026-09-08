@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'IntelCertificationHistoryEvent', 'int
 Import this model from the entry point of its package:
 
 ```typescript
-import { IntelCertificationHistoryEvent } from 'sailpoint-angular-sdk/intelligence';
+import { IntelCertificationHistoryEvent } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

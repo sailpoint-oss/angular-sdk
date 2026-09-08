@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ScopeVisibilityType', 'data_segmentat
 Import this model from the entry point of its package:
 
 ```typescript
-import { ScopeVisibilityType } from 'sailpoint-angular-sdk/data_segmentation';
+import { ScopeVisibilityType } from '@sailpoint/angular-sdk/data_segmentation';
 ```
 
 ## Enum

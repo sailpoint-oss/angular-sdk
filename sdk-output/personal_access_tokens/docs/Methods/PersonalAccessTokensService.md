@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
-import { CreatePersonalAccessTokenRequest } from 'sailpoint-angular-sdk/personal_access_tokens';
+import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
+import { CreatePersonalAccessTokenRequest } from '@sailpoint/angular-sdk/personal_access_tokens';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
+import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
+import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -219,8 +219,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
-import { JsonPatchOperation } from 'sailpoint-angular-sdk/personal_access_tokens';
+import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
+import { JsonPatchOperation } from '@sailpoint/angular-sdk/personal_access_tokens';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

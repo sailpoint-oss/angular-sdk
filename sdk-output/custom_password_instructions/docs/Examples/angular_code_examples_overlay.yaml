@@ -5,8 +5,8 @@
       label: SDK_tools/sdk/angular/custom_password_instructions/methods/custom-password-instructions#create-custom-password-instructions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomPasswordInstructionsService } from 'sailpoint-angular-sdk/custom_password_instructions';
-        import { CustomPasswordInstruction } from 'sailpoint-angular-sdk/custom_password_instructions';
+        import { CustomPasswordInstructionsService } from '@sailpoint/angular-sdk/custom_password_instructions';
+        import { CustomPasswordInstruction } from '@sailpoint/angular-sdk/custom_password_instructions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -32,7 +32,7 @@
       label: SDK_tools/sdk/angular/custom_password_instructions/methods/custom-password-instructions#delete-custom-password-instructions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomPasswordInstructionsService } from 'sailpoint-angular-sdk/custom_password_instructions';
+        import { CustomPasswordInstructionsService } from '@sailpoint/angular-sdk/custom_password_instructions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -55,7 +55,7 @@
       label: SDK_tools/sdk/angular/custom_password_instructions/methods/custom-password-instructions#get-custom-password-instructions-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { CustomPasswordInstructionsService } from 'sailpoint-angular-sdk/custom_password_instructions';
+        import { CustomPasswordInstructionsService } from '@sailpoint/angular-sdk/custom_password_instructions';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {

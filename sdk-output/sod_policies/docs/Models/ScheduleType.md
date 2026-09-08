@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ScheduleType', 'sod_policies']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ScheduleType } from 'sailpoint-angular-sdk/sod_policies';
+import { ScheduleType } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Enum

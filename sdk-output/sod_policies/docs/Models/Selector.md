@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Selector', 'sod_policies']
 Import this model from the entry point of its package:
 
 ```typescript
-import { Selector } from 'sailpoint-angular-sdk/sod_policies';
+import { Selector } from '@sailpoint/angular-sdk/sod_policies';
 ```
 
 ## Properties

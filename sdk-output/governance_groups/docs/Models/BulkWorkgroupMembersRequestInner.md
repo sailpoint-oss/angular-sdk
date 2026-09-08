@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BulkWorkgroupMembersRequestInner', 'g
 Import this model from the entry point of its package:
 
 ```typescript
-import { BulkWorkgroupMembersRequestInner } from 'sailpoint-angular-sdk/governance_groups';
+import { BulkWorkgroupMembersRequestInner } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

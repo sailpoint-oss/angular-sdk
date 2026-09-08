@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'Intelidentityenvelope', 'intelligence
 Import this model from the entry point of its package:
 
 ```typescript
-import { Intelidentityenvelope } from 'sailpoint-angular-sdk/intelligence';
+import { Intelidentityenvelope } from '@sailpoint/angular-sdk/intelligence';
 ```
 
 ## Properties

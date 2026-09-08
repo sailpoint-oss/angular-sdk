@@ -76,8 +76,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-import { DeployRequest } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+import { DeployRequest } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -127,8 +127,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-import { ObjectMappingRequest } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+import { ObjectMappingRequest } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -179,8 +179,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-import { ObjectMappingBulkCreateRequest } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+import { ObjectMappingBulkCreateRequest } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -227,8 +227,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-import { ScheduledActionPayload } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+import { ScheduledActionPayload } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -573,7 +573,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -622,7 +622,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -668,7 +668,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -714,7 +714,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -757,7 +757,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -845,7 +845,7 @@ This endpoint does not need any parameter.
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -890,7 +890,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -940,8 +940,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-import { ObjectMappingBulkPatchRequest } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+import { ObjectMappingBulkPatchRequest } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
@@ -989,8 +989,8 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
-import { JsonPatch } from 'sailpoint-angular-sdk/configuration_hub';
+import { ConfigurationHubService } from '@sailpoint/angular-sdk/configuration_hub';
+import { JsonPatch } from '@sailpoint/angular-sdk/configuration_hub';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

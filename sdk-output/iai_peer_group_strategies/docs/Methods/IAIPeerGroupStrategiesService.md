@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ```typescript
 import { Component, inject } from '@angular/core';
-import { IAIPeerGroupStrategiesService } from 'sailpoint-angular-sdk/iai_peer_group_strategies';
+import { IAIPeerGroupStrategiesService } from '@sailpoint/angular-sdk/iai_peer_group_strategies';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {

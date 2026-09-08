@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'GetActiveCampaignsV1401Response', 'ce
 Import this model from the entry point of its package:
 
 ```typescript
-import { GetActiveCampaignsV1401Response } from 'sailpoint-angular-sdk/certification_campaigns';
+import { GetActiveCampaignsV1401Response } from '@sailpoint/angular-sdk/certification_campaigns';
 ```
 
 ## Properties

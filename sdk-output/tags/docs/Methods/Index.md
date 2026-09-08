@@ -25,7 +25,7 @@ Every service is provided in the root injector, so `inject()` returns one withou
 
 ```typescript
 import { inject } from '@angular/core';
-import { TagsService } from 'sailpoint-angular-sdk/tags';
+import { TagsService } from '@sailpoint/angular-sdk/tags';
 
 private readonly api = inject(TagsService);
 ```

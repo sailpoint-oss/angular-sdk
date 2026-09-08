@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DataAccessImpactScore', 'certificatio
 Import this model from the entry point of its package:
 
 ```typescript
-import { DataAccessImpactScore } from 'sailpoint-angular-sdk/certification_summaries';
+import { DataAccessImpactScore } from '@sailpoint/angular-sdk/certification_summaries';
 ```
 
 ## Properties

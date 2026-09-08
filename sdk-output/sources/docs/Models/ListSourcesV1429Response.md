@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListSourcesV1429Response', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListSourcesV1429Response } from 'sailpoint-angular-sdk/sources';
+import { ListSourcesV1429Response } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

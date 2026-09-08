@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MachineIdentityUpdatedSingleValueAttr
 Import this model from the entry point of its package:
 
 ```typescript
-import { MachineIdentityUpdatedSingleValueAttributeChangesInnerOldValue } from 'sailpoint-angular-sdk/triggers';
+import { MachineIdentityUpdatedSingleValueAttributeChangesInnerOldValue } from '@sailpoint/angular-sdk/triggers';
 ```
 
 ## Properties

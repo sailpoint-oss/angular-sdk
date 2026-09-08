@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'TransformDefinition', 'identity_profi
 Import this model from the entry point of its package:
 
 ```typescript
-import { TransformDefinition } from 'sailpoint-angular-sdk/identity_profiles';
+import { TransformDefinition } from '@sailpoint/angular-sdk/identity_profiles';
 ```
 
 ## Properties

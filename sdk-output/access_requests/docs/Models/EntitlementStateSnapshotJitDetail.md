@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'EntitlementStateSnapshotJitDetail', '
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementStateSnapshotJitDetail } from 'sailpoint-angular-sdk/access_requests';
+import { EntitlementStateSnapshotJitDetail } from '@sailpoint/angular-sdk/access_requests';
 ```
 
 ## Properties

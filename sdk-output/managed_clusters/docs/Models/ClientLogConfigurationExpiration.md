@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ClientLogConfigurationExpiration', 'm
 Import this model from the entry point of its package:
 
 ```typescript
-import { ClientLogConfigurationExpiration } from 'sailpoint-angular-sdk/managed_clusters';
+import { ClientLogConfigurationExpiration } from '@sailpoint/angular-sdk/managed_clusters';
 ```
 
 ## Properties

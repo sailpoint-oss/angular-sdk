@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'WorkflowLibraryFormFields', 'workflow
 Import this model from the entry point of its package:
 
 ```typescript
-import { WorkflowLibraryFormFields } from 'sailpoint-angular-sdk/workflows';
+import { WorkflowLibraryFormFields } from '@sailpoint/angular-sdk/workflows';
 ```
 
 ## Properties

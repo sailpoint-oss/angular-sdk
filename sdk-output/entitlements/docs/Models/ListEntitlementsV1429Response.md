@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ListEntitlementsV1429Response', 'enti
 Import this model from the entry point of its package:
 
 ```typescript
-import { ListEntitlementsV1429Response } from 'sailpoint-angular-sdk/entitlements';
+import { ListEntitlementsV1429Response } from '@sailpoint/angular-sdk/entitlements';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'SearchScheduleRecipientsInner', 'sche
 Import this model from the entry point of its package:
 
 ```typescript
-import { SearchScheduleRecipientsInner } from 'sailpoint-angular-sdk/scheduled_search';
+import { SearchScheduleRecipientsInner } from '@sailpoint/angular-sdk/scheduled_search';
 ```
 
 ## Properties

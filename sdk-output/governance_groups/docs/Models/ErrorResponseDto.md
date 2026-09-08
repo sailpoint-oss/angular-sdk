@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorResponseDto', 'governance_groups
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorResponseDto } from 'sailpoint-angular-sdk/governance_groups';
+import { ErrorResponseDto } from '@sailpoint/angular-sdk/governance_groups';
 ```
 
 ## Properties

@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'ErrorMessageDto', 'jit_activations']
 Import this model from the entry point of its package:
 
 ```typescript
-import { ErrorMessageDto } from 'sailpoint-angular-sdk/jit_activations';
+import { ErrorMessageDto } from '@sailpoint/angular-sdk/jit_activations';
 ```
 
 ## Properties

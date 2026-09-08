@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'declassify_source']
 Import this model from the entry point of its package:
 
 ```typescript
-import { LocaleOrigin } from 'sailpoint-angular-sdk/declassify_source';
+import { LocaleOrigin } from '@sailpoint/angular-sdk/declassify_source';
 ```
 
 ## Enum

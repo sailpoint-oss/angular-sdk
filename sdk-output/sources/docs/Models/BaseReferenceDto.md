@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'BaseReferenceDto', 'sources']
 Import this model from the entry point of its package:
 
 ```typescript
-import { BaseReferenceDto } from 'sailpoint-angular-sdk/sources';
+import { BaseReferenceDto } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

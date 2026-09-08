@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'MetricType', 'access_model_metadata']
 Import this model from the entry point of its package:
 
 ```typescript
-import { MetricType } from 'sailpoint-angular-sdk/access_model_metadata';
+import { MetricType } from '@sailpoint/angular-sdk/access_model_metadata';
 ```
 
 ## Enum

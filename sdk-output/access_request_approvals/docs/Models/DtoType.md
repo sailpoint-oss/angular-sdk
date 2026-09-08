@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'DtoType', 'access_request_approvals']
 Import this model from the entry point of its package:
 
 ```typescript
-import { DtoType } from 'sailpoint-angular-sdk/access_request_approvals';
+import { DtoType } from '@sailpoint/angular-sdk/access_request_approvals';
 ```
 
 ## Enum

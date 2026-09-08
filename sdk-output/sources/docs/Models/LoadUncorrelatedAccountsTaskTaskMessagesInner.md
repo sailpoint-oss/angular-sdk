@@ -14,7 +14,7 @@ tags: ['SDK', 'Software Development Kit', 'LoadUncorrelatedAccountsTaskTaskMessa
 Import this model from the entry point of its package:
 
 ```typescript
-import { LoadUncorrelatedAccountsTaskTaskMessagesInner } from 'sailpoint-angular-sdk/sources';
+import { LoadUncorrelatedAccountsTaskTaskMessagesInner } from '@sailpoint/angular-sdk/sources';
 ```
 
 ## Properties

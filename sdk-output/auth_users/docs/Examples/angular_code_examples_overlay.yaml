@@ -5,7 +5,7 @@
       label: SDK_tools/sdk/angular/auth_users/methods/auth-users#get-auth-user-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AuthUsersService } from 'sailpoint-angular-sdk/auth_users';
+        import { AuthUsersService } from '@sailpoint/angular-sdk/auth_users';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -26,8 +26,8 @@
       label: SDK_tools/sdk/angular/auth_users/methods/auth-users#patch-auth-user-v1
       source: |
         import { Component, inject } from '@angular/core';
-        import { AuthUsersService } from 'sailpoint-angular-sdk/auth_users';
-        import { JsonPatchOperation } from 'sailpoint-angular-sdk/auth_users';
+        import { AuthUsersService } from '@sailpoint/angular-sdk/auth_users';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/auth_users';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
