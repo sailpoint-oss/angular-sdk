@@ -160,13 +160,16 @@ export class SailPointConfigService {
 
   private cachedToken: CachedToken | null = null;
   private tokenStream$: Observable<string> | null = null;
-  private readonly backendHttp: HttpClient;
+  // Use HttpBackend directly so token requests skip the auth interceptor
+  // (avoids infinite loops when the interceptor itself needs a token).
+  //
+  // inject() rather than a constructor parameter: resolving a constructor
+  // parameter by its type needs emitDecoratorMetadata, which esbuild does not
+  // produce, so a constructor parameter breaks under any esbuild-based bundler
+  // or test runner.
+  private readonly backendHttp = new HttpClient(inject(HttpBackend));
 
-  constructor(private readonly httpBackend: HttpBackend) {
-    // Use HttpBackend directly so token requests skip the auth interceptor
-    // (avoids infinite loops when the interceptor itself needs a token).
-    this.backendHttp = new HttpClient(this.httpBackend);
-
+  constructor() {
     const initial = inject(SAILPOINT_CONFIG_PARAMS, { optional: true });
     if (initial) {
       this.configure(initial);

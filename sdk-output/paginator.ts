@@ -64,50 +64,8 @@ export class Paginator {
     params?: Omit<P, 'limit' | 'offset'> & { limit?: number; offset?: number },
     increment = 250
   ): Observable<T[]> {
-    const maxTotal = params?.limit ?? 0;
-    const baseOffset = params?.offset ?? 0;
-
-    let offset = baseOffset;
-    let totalFetched = 0;
-
-    const fetchPage = (): Observable<T[]> => {
-      const pageLimit =
-        maxTotal > 0
-          ? Math.min(increment, maxTotal - totalFetched)
-          : increment;
-
-      return callFn({ ...(params as P), limit: pageLimit, offset });
-    };
-
-    return fetchPage().pipe(
-      expand((page) => {
-        totalFetched += page.length;
-        offset += page.length;
-
-        const done =
-          page.length < increment ||
-          (maxTotal > 0 && totalFetched >= maxTotal);
-
-        return done ? EMPTY : fetchPage();
-      }),
-      // Accumulate all pages
-      reduce<T[], T[]>((all, page) => [...all, ...page], []),
-      // Gracefully handle 4xx on an out-of-bounds page when we already have data
-      catchError((err, caught) => {
-        if (
-          totalFetched > 0 &&
-          err?.status >= 400 &&
-          err?.status < 500
-        ) {
-          // Return what we have so far — happens when total count is an exact
-          // multiple of increment and the API returns 4xx instead of [].
-          return new Observable<T[]>((sub) => {
-            sub.next([]);
-            sub.complete();
-          });
-        }
-        return throwError(() => err);
-      })
+    return pageStream(callFn, params, increment).pipe(
+      reduce<T[], T[]>((all, page) => all.concat(page), [])
     );
   }
 
@@ -124,38 +82,55 @@ export class Paginator {
     params?: Omit<P, 'limit' | 'offset'> & { limit?: number; offset?: number },
     increment = 250
   ): Observable<T[]> {
-    const maxTotal = params?.limit ?? 0;
-    const baseOffset = params?.offset ?? 0;
+    return pageStream(callFn, params, increment);
+  }
+}
 
-    let offset = baseOffset;
-    let totalFetched = 0;
+/**
+ * Request pages until the endpoint runs out of records, and emit each page.
+ *
+ * The 4xx response is handled per page rather than on the whole stream. Handling
+ * it on the whole stream loses every page already collected, because `reduce`
+ * emits on completion and an error is not a completion.
+ */
+function pageStream<T, P extends PaginationParams>(
+  callFn: ListFn<T, P>,
+  params: (Omit<P, 'limit' | 'offset'> & { limit?: number; offset?: number }) | undefined,
+  increment: number
+): Observable<T[]> {
+  const maxTotal = params?.limit ?? 0;
 
-    const fetchPage = (): Observable<T[]> => {
-      const pageLimit =
-        maxTotal > 0
-          ? Math.min(increment, maxTotal - totalFetched)
-          : increment;
+  let offset = params?.offset ?? 0;
+  let totalFetched = 0;
 
-      return callFn({ ...(params as P), limit: pageLimit, offset });
-    };
+  const fetchPage = (): Observable<T[]> => {
+    const pageLimit =
+      maxTotal > 0 ? Math.min(increment, maxTotal - totalFetched) : increment;
 
-    return fetchPage().pipe(
-      expand((page) => {
-        totalFetched += page.length;
-        offset += page.length;
-
-        const done =
-          page.length < increment ||
-          (maxTotal > 0 && totalFetched >= maxTotal);
-
-        return done ? EMPTY : fetchPage();
-      }),
+    return callFn({ ...(params as P), limit: pageLimit, offset }).pipe(
       catchError((err) => {
+        // When the number of records is an exact multiple of the increment, some
+        // endpoints answer 4xx for the page past the end instead of an empty
+        // list. That is the end of the results, so stop and keep what arrived.
+        // A failure on the first page is a real failure, so it is re-thrown.
         if (totalFetched > 0 && err?.status >= 400 && err?.status < 500) {
           return EMPTY;
         }
         return throwError(() => err);
       })
     );
-  }
+  };
+
+  return fetchPage().pipe(
+    expand((page) => {
+      totalFetched += page.length;
+      offset += page.length;
+
+      const done =
+        page.length < increment ||
+        (maxTotal > 0 && totalFetched >= maxTotal);
+
+      return done ? EMPTY : fetchPage();
+    })
+  );
 }
