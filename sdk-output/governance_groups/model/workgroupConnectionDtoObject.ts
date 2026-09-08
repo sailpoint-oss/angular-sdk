@@ -7,7 +7,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ConnectedObjectType &amp; object } from './connectedObjectType  object';
+import { ConnectedObjectType } from './connectedObjectType';
 
 
 export interface WorkgroupConnectionDtoObject { 

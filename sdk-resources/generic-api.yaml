@@ -11,18 +11,11 @@ info:
     url: https://opensource.org/licenses/MIT
   version: v2025
 servers:
-- url: https://{tenant}.api.identitynow.com/v2025
-  description: This is the production API server.
-  variables:
-    tenant:
-      default: sailpoint
-      description: This is the name of your tenant, typically your company's name.
-- url: https://{apiUrl}/v2025
-  description: This is the V2024 API server.
-  variables:
-    apiUrl:
-      default: sailpoint.api.identitynow.com
-      description: This is the api url of your tenant
+- url: /
+  description: >-
+    Relative server URL. The Angular SDK resolves the tenant base URL at runtime
+    through SailPointConfigService, and sailpointInterceptor prepends it to every
+    request, so no absolute URL is generated here.
 
 security:
 - userAuth:
@@ -33,6 +26,8 @@ paths:
     get:
       summary: Generic GET request
       operationId: genericGet
+      tags:
+        - Generic
       parameters:
         - name: path
           in: path
@@ -104,6 +99,8 @@ paths:
     post:
       summary: Generic POST request
       operationId: genericPost
+      tags:
+        - Generic
       parameters:
         - name: path
           in: path
@@ -133,6 +130,8 @@ paths:
     put:
       summary: Generic PUT request
       operationId: genericPut
+      tags:
+        - Generic
       parameters:
         - name: path
           in: path
@@ -162,6 +161,8 @@ paths:
     patch:
       summary: Generic PATCH request
       operationId: genericPatch
+      tags:
+        - Generic
       parameters:
         - name: path
           in: path
@@ -191,6 +192,8 @@ paths:
     delete:
       summary: Generic DELETE request
       operationId: genericDelete
+      tags:
+        - Generic
       parameters:
         - name: path
           in: path

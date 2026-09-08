@@ -53,17 +53,28 @@ const NPM_NAME    = "sailpoint-angular-sdk";
 const NPM_VERSION = "1.0.0";
 const NG_VERSION  = "22";
 
+// The generic API is built from a standalone spec in sdk-resources/, not from a
+// partition under apis/, so it uses a static config file instead of a generated one.
+const GENERIC_SPEC   = path.join(__dirname, "generic-api.yaml");
+const GENERIC_CONFIG = path.join(__dirname, "generic-config.yaml");
+const GENERIC_DIR    = "generic";
+
 // ---------------------------------------------------------------------------
 // CLI args
 // ---------------------------------------------------------------------------
 
 const args = process.argv.slice(2);
-if (args.length === 0 || args[0].startsWith("--")) {
+const genericOnly = args.includes("--generic-only");
+
+// --generic-only builds sdk-output/generic from sdk-resources/generic-api.yaml
+// and needs no apis/ directory, so the positional argument is optional there.
+if (!genericOnly && (args.length === 0 || args[0].startsWith("--"))) {
   console.error("Usage: node sdk-resources/build-versioned-sdk.js <path-to-apis-dir> [--partition <name>] [--keep-tmp]");
+  console.error("       node sdk-resources/build-versioned-sdk.js --generic-only");
   process.exit(1);
 }
 
-const apisDir       = path.resolve(args[0]);
+const apisDir       = args[0] && !args[0].startsWith("--") ? path.resolve(args[0]) : null;
 const keepTmp       = args.includes("--keep-tmp");
 const partitionIdx  = args.indexOf("--partition");
 const onlyPartition = partitionIdx !== -1 ? args[partitionIdx + 1] : null;
@@ -401,6 +412,122 @@ function runPostscript(outputDir) {
 }
 
 // ---------------------------------------------------------------------------
+// Generic API package  (sdk-output/generic)
+//
+// The generic API is one service that can call any Identity Security Cloud
+// endpoint by path, including endpoints this SDK does not model yet. It is built
+// from sdk-resources/generic-api.yaml instead of from a partition under apis/, so
+// it takes no part in partition discovery, version combining or stale cleanup.
+//
+// Two things make it work with the runtime configuration of the Angular SDK:
+//   1. generic-api.yaml declares a relative server ("/"), so the generated
+//      basePath is empty and sailpointInterceptor prepends the tenant base URL.
+//   2. patchGenericPathEncoding() below replaces the generated path encoder,
+//      because the default one destroys multi-segment paths.
+// ---------------------------------------------------------------------------
+
+// The generator encodes every path parameter with encodeURIComponent. For the
+// generic `path` parameter that is wrong: it turns the slashes of a multi-segment
+// path ("v2025/accounts/1234") into %2F and the request fails. This helper encodes
+// each segment on its own, so the slashes between segments survive.
+const GENERIC_PATH_HELPER = `
+/**
+ * Encode the \`path\` parameter of a generic request.
+ *
+ * \`path\` is everything after the tenant base URL, including the API version
+ * segment. For example \`v2025/accounts\` or \`beta/sources/2c918085/schemas\`.
+ * Leading and trailing slashes are optional.
+ */
+function encodeGenericPath(value: string): string {
+    const segments = String(value).split('/').filter((segment) => segment.length > 0);
+    return segments.map((segment) => encodeURIComponent(segment)).join('/');
+}
+`;
+
+function patchGenericPathEncoding(outputDir) {
+  const servicePath = path.join(outputDir, "api", "generic.service.ts");
+  if (!fs.existsSync(servicePath)) {
+    throw new Error(`generic.service.ts not found at ${servicePath}`);
+  }
+
+  let content = fs.readFileSync(servicePath, "utf8");
+
+  // Object literal of the path parameter contains no nested braces, so matching
+  // up to the first closing brace is exact.
+  const encodeCall = /this\.configuration\.encodeParam\(\{name: "path",[^}]*\}\)/g;
+  const found = content.match(encodeCall) || [];
+  if (found.length === 0) {
+    throw new Error("no encodeParam call for the path parameter found in generic.service.ts");
+  }
+  content = content.replace(encodeCall, "encodeGenericPath(path)");
+
+  const importAnchor = "import { BaseService } from '../api.base.service';";
+  if (!content.includes(importAnchor)) {
+    throw new Error("import anchor not found in generic.service.ts");
+  }
+  content = content.replace(importAnchor, importAnchor + "\n" + GENERIC_PATH_HELPER);
+
+  fs.writeFileSync(servicePath, content, "utf8");
+  return { patched: found.length };
+}
+
+function buildGenericPackage() {
+  const outputDir = path.join(SDK_OUTPUT, GENERIC_DIR);
+
+  for (const [label, file] of [["spec", GENERIC_SPEC], ["config", GENERIC_CONFIG]]) {
+    if (!fs.existsSync(file)) {
+      return { ok: false, step: "setup", output: `generic ${label} not found at ${file}` };
+    }
+  }
+
+  if (fs.existsSync(outputDir)) {
+    fs.rmSync(outputDir, { recursive: true, force: true });
+  }
+
+  const gen = spawnSync(
+    "java",
+    [
+      "-jar", JAR,
+      "generate",
+      "-i", GENERIC_SPEC,
+      "-g", "typescript-angular",
+      "-o", outputDir,
+      "--global-property", "skipFormModel=false",
+      "--config", GENERIC_CONFIG,
+    ],
+    { encoding: "utf8" }
+  );
+  if (gen.status !== 0) {
+    return {
+      ok: false,
+      step: "generation",
+      output: [gen.stdout, gen.stderr].filter(Boolean).join("\n"),
+    };
+  }
+
+  const post = runPostscript(outputDir);
+  if (!post.ok) {
+    return {
+      ok: false,
+      step: "postscript",
+      output: [post.stdout, post.stderr].filter(Boolean).join("\n"),
+    };
+  }
+
+  let patched;
+  try {
+    patched = patchGenericPathEncoding(outputDir).patched;
+  } catch (err) {
+    return { ok: false, step: "path-encoding", output: String(err.stack || err) };
+  }
+
+  // Marker file, so the generic package is recognisable without relying on its name.
+  fs.writeFileSync(path.join(outputDir, ".sdk-generic"), GENERIC_DIR, "utf8");
+
+  return { ok: true, outputDir, patched };
+}
+
+// ---------------------------------------------------------------------------
 // Error logging
 // ---------------------------------------------------------------------------
 
@@ -637,24 +764,48 @@ function generateIndexTs() {
     }
   }
 
-  // Collect all partition dirs for re-exporting models
-  const modelExports = partitionDirs
-    .map(d => `export * from "./${d}/index";`)
-    .join("\n");
+  // The generic API is exported by explicit name, never with `export *`. Its
+  // package carries its own copies of the shared runtime files (configuration.ts,
+  // param.ts, variables.ts), which would collide with the partition packages.
+  const hasGeneric = fs.existsSync(path.join(SDK_OUTPUT, GENERIC_DIR, "api", "generic.service.ts"));
+  const genericExports = hasGeneric
+    ? [
+        `export { GenericService } from "./${GENERIC_DIR}/api/generic.service";`,
+        `export type {`,
+        `  GenericGetRequestParams,`,
+        `  GenericPostRequestParams,`,
+        `  GenericPutRequestParams,`,
+        `  GenericPatchRequestParams,`,
+        `  GenericDeleteRequestParams,`,
+        `} from "./${GENERIC_DIR}/api/generic.service";`,
+        `export type { GenericResponse } from "./${GENERIC_DIR}/model/genericResponse";`,
+      ].join("\n")
+    : `// (sdk-output/${GENERIC_DIR}/ not built — run the build to generate the generic API)`;
 
   const fileContent = `/* tslint:disable */
 /* eslint-disable */
 // Code generated by build-versioned-sdk.js; DO NOT EDIT.
 //
 // Named imports — version-explicit service class names:
-//   import { AccountsV1Service, Configuration } from "sailpoint-angular-sdk"
+//   import { AccountsV1Service } from "sailpoint-angular-sdk"
 //
 // Namespace — resource-named, version-agnostic:
-//   import { SailPointAngular, Configuration } from "sailpoint-angular-sdk"
+//   import { SailPointAngular } from "sailpoint-angular-sdk"
 //   const svc = new SailPointAngular.AccountsService(config, basePath, httpClient)
 //
-// Models — re-exported from each partition index:
-//   import type { Account } from "sailpoint-angular-sdk"
+// Generic API — calls any endpoint by path, including endpoints this SDK does
+// not model yet:
+//   import { GenericService } from "sailpoint-angular-sdk"
+//
+// Models and Configuration — import them from the partition sub-path:
+//   import type { Account } from "sailpoint-angular-sdk/accounts/model/account"
+//   import { Configuration } from "sailpoint-angular-sdk/accounts/configuration"
+//
+// Models are not re-exported from this file on purpose. Redocly inlines the
+// shared error models into every partition, and each partition package carries
+// its own copy of the generated runtime files (Configuration, Param,
+// COLLECTION_FORMATS). \`export *\` across more than 100 partitions therefore
+// reports every one of those names as ambiguous (TS2308) and the build fails.
 
 // --- Partition imports (private _ alias) ---
 ${importLines.join("\n")}
@@ -662,14 +813,22 @@ ${importLines.join("\n")}
 // --- Named exports (versioned service class names) ---
 ${exportLines.join("\n")}
 
-// --- Model re-exports (all partition models) ---
-${modelExports}
-
 ${combinedBlocks.length > 0 ? "// --- Combined multi-version service classes ---\n" + combinedBlocks.join("\n") : ""}
 // --- SailPointAngular namespace (resource-named, all versions combined) ---
 export const SailPointAngular = {
 ${nsLines.join("\n")}
 };
+
+// --- Generic API ---
+${genericExports}
+
+// --- SailPoint SDK utilities ---
+export { SailPointConfigService, SAILPOINT_CONFIG_PARAMS } from './sailpoint-config.service';
+export type { SailPointParams, AccessTokenProvider, SailPointWindowConfig, SailPointConfigProvider } from './sailpoint-config.service';
+export { sailpointInterceptor } from './sailpoint.interceptor';
+export { provideSailPoint } from './sailpoint.providers';
+export { Paginator } from './paginator';
+export type { PaginationParams } from './paginator';
 `;
 
   fs.writeFileSync(path.join(SDK_OUTPUT, "index.ts"), fileContent, "utf8");
@@ -681,6 +840,24 @@ ${nsLines.join("\n")}
 // ---------------------------------------------------------------------------
 
 function main() {
+  if (genericOnly) {
+    if (!fs.existsSync(JAR)) {
+      console.error(`Error: openapi-generator-cli.jar not found at ${JAR}`);
+      process.exit(1);
+    }
+    console.log("\n[GENERIC] Building the generic API package ...");
+    const only = buildGenericPackage();
+    if (!only.ok) {
+      console.error(`  ✗ generic API failed at ${only.step}`);
+      console.error(only.output);
+      process.exit(1);
+    }
+    console.log(`  ✓ generic → sdk-output/${GENERIC_DIR}/ (${only.patched} path encoder(s) patched)`);
+    console.log("\n[INDEX] Regenerating sdk-output/index.ts ...");
+    generateIndexTs();
+    return;
+  }
+
   if (!fs.existsSync(apisDir)) {
     console.error(`Error: apis directory not found: ${apisDir}`);
     process.exit(1);
@@ -806,6 +983,28 @@ function main() {
   if (!keepTmp) {
     console.log("\n[CLEANUP] Removing .sdk-build-tmp/ ...");
     fs.rmSync(TEMP_DIR, { recursive: true, force: true });
+  }
+
+  // Build the generic API package (independent of the apis/ partitions)
+  console.log(`\n${"=".repeat(60)}`);
+  console.log("  Building: generic API");
+  console.log(`${"=".repeat(60)}`);
+  const generic = buildGenericPackage();
+  results.total += 1;
+  if (generic.ok) {
+    results.success.push("generic");
+    console.log(`  ✓ generic → sdk-output/${GENERIC_DIR}/ (${generic.patched} path encoder(s) patched)`);
+  } else {
+    // The generic API is not a partition, so its spec is sdk-resources/generic-api.yaml
+    // rather than a directory under apis/. Print the error instead of writing a
+    // partition-shaped report that would point at a path that does not exist.
+    console.error(`  ✗ generic API failed at ${generic.step}`);
+    console.error(generic.output);
+    results.failed.push({
+      partition: "generic",
+      step: generic.step,
+      reportPath: path.relative(SDK_ROOT, GENERIC_SPEC),
+    });
   }
 
   // Regenerate index.ts

@@ -391,7 +391,7 @@ export class SPConfigService extends BaseService {
             throw new Error('Required parameter data was null or undefined when calling importSpConfigV1.');
         }
         const preview = requestParameters?.preview;
-        const options = requestParameters?.options;
+        const requestOptions_ = requestParameters?.options;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
@@ -432,8 +432,8 @@ export class SPConfigService extends BaseService {
         if (data !== undefined) {
             localVarFormParams = localVarFormParams.append('data', <any>data) as any || localVarFormParams;
         }
-        if (options !== undefined) {
-            localVarFormParams = localVarFormParams.append('options', localVarUseForm ? new Blob([JSON.stringify(options)], {type: 'application/json'}) : <any>options) as any || localVarFormParams;
+        if (requestOptions_ !== undefined) {
+            localVarFormParams = localVarFormParams.append('options', localVarUseForm ? new Blob([JSON.stringify(requestOptions_)], {type: 'application/json'}) : <any>requestOptions_) as any || localVarFormParams;
         }
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
