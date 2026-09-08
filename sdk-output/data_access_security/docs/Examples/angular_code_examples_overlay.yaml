@@ -1,0 +1,684 @@
+- path: /das/v1/tasks/cancel/{id}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#cancel-task-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          cancelTaskV1(): void {
+            const id: number = 1001; // number
+            this.api.cancelTaskV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/applications
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#create-application-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { BaseCreateApplicationRequest } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          createApplicationV1(): void {
+            const baseCreateApplicationRequest: BaseCreateApplicationRequest = {
+              "adIdentityCollectorId" : 987654321,
+              "applicationType" : 9,
+              "nisIdentityCollectorId" : 192837465,
+              "executeNow" : false,
+              "name" : "HR File Server",
+              "description" : "Stores HR documents and employee records.",
+              "dataClassificationSettings" : {
+                "isEnabled" : true,
+                "clusterId" : "cluster-001"
+              },
+              "activityConfigurationSettings" : {
+                "excludeFolders" : [ "/tmp", "/archive" ],
+                "excludeFileExtensions" : [ ".log", ".bak" ],
+                "excludeActions" : [ "delete", "move" ],
+                "isEnabled" : true,
+                "retentionTimePeriod" : 30,
+                "retentionTimeType" : "days",
+                "clusterId" : "cluster-001",
+                "excludeUsers" : [ "user1", "user2" ]
+              },
+              "applicationCrawlerSettings" : {
+                "calculateResourceSize" : 2,
+                "excludedResources" : [ "resourceA", "resourceB" ],
+                "crawlPublicFolders" : true,
+                "excludedPathsByRegex" : "^/archive/.*",
+                "isEnabled" : true,
+                "crawlSnapshotsFolder" : true,
+                "crawlMailboxes" : false,
+                "crawlTopLevelShares" : [ "share1", "share2" ],
+                "clusterId" : "cluster-001",
+                "includeResources" : [ "resourceX", "resourceY" ]
+              },
+              "identityCollectorId" : 123456789,
+              "permissionCollectorSettings" : {
+                "analyzeUniquePermissions" : true,
+                "calculateRiskiestPermissions" : false,
+                "isEnabled" : true,
+                "calculateEffectivePermissions" : true,
+                "clusterId" : "cluster-001",
+                "effectivePermissionsSource" : "S3"
+              },
+              "tags" : [ {
+                "key" : 1,
+                "value" : "Confidential"
+              } ]
+            }; // BaseCreateApplicationRequest
+            this.api.createApplicationV1({ baseCreateApplicationRequest: baseCreateApplicationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/identity-collectors/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#create-identity-collector-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { Createidentitycollectorrequest } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          createIdentityCollectorV1(): void {
+            const createidentitycollectorrequest: Createidentitycollectorrequest = {
+              "sourceId" : "2c9180835d2e5168015d32f890ca1581",
+              "name" : "Active Directory Identity Collector"
+            }; // Createidentitycollectorrequest
+            this.api.createIdentityCollectorV1({ createidentitycollectorrequest: createidentitycollectorrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/tasks/schedules
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#create-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { CreateScheduleRequest } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          createScheduleV1(): void {
+            const createScheduleRequest: CreateScheduleRequest = {
+              "scheduleTaskName" : "Daily Data Sync",
+              "scheduleType" : "Daily",
+              "active" : true,
+              "interval" : 1440,
+              "startTime" : 1762237200,
+              "endTime" : 1762240800,
+              "taskTypeName" : "DataSync",
+              "daysOfWeek" : [ "Monday", "Wednesday", "Friday" ],
+              "applicationId" : 2001,
+              "runAfterScheduleTaskId" : 1000
+            }; // CreateScheduleRequest
+            this.api.createScheduleV1({ createScheduleRequest: createScheduleRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/owners/assign
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-assign-post
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { AssignResourceOwnerRequest } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          dasV1OwnersAssignPost(): void {
+            const assignResourceOwnerRequest: AssignResourceOwnerRequest = {
+              "fullPath" : "/shared/hr/documents/employee-records.pdf",
+              "identityId" : "d290f1ee-6c54-4b01-90e6-d701748f0851",
+              "appId" : 12345
+            }; // AssignResourceOwnerRequest
+            this.api.dasV1OwnersAssignPost({ assignResourceOwnerRequest: assignResourceOwnerRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/owners/{ownerIdentityId}/resources
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-owner-identity-id-resources-get
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          dasV1OwnersOwnerIdentityIdResourcesGet(): void {
+            const ownerIdentityId: string = 'a3f1c2d4-5678-4e9b-8c2d-123456789abc'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.dasV1OwnersOwnerIdentityIdResourcesGet({ ownerIdentityId: ownerIdentityId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/owners/reelect
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-reelect-post
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { ReelectRequest } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          dasV1OwnersReelectPost(): void {
+            const reelectRequest: ReelectRequest = {
+              "ownerId" : "c1a2b3d4-e5f6-7890-abcd-1234567890ab",
+              "campaignName" : "Annual Resource Owner Election",
+              "reviewers" : [ "d4e5f6a7-b8c9-0123-4567-89abcdef0123", "e7f8g9h0-i1j2-3456-7890-klmnopqrstuv" ]
+            }; // ReelectRequest
+            this.api.dasV1OwnersReelectPost({ reelectRequest: reelectRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/owners/resources/{resourceId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-resources-resource-id-get
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          dasV1OwnersResourcesResourceIdGet(): void {
+            const resourceId: number = 101; // number
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.dasV1OwnersResourcesResourceIdGet({ resourceId: resourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/owners/{sourceIdentityId}/reassign/{destinationIdentityId}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#das-v1-owners-source-identity-id-reassign-destination-identity-id-post
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          dasV1OwnersSourceIdentityIdReassignDestinationIdentityIdPost(): void {
+            const sourceIdentityId: string = 'a3f1c2d4-5678-4e9b-8c2d-123456789abc'; // string
+            const destinationIdentityId: string = 'b4e2d3c5-6789-4f0a-9d3e-234567890bcd'; // string
+            this.api.dasV1OwnersSourceIdentityIdReassignDestinationIdentityIdPost({ sourceIdentityId: sourceIdentityId, destinationIdentityId: destinationIdentityId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/applications/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#delete-application-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          deleteApplicationV1(): void {
+            const id: number = 12345; // number
+            this.api.deleteApplicationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/identity-collectors/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#delete-identity-collector-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          deleteIdentityCollectorV1(): void {
+            const id: number = 12345; // number
+            this.api.deleteIdentityCollectorV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/tasks/schedules/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#delete-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          deleteScheduleV1(): void {
+            const id: number = 1001; // number
+            this.api.deleteScheduleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/tasks/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#delete-task-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          deleteTaskV1(): void {
+            const id: number = 1001; // number
+            this.api.deleteTaskV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/applications/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-application-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          getApplicationV1(): void {
+            const id: number = 12345; // number
+            this.api.getApplicationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/applications
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-applications-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          getApplicationsV1(): void {
+            const filters: string = 'AppType eq 'ActiveDirectory' and Statuses eq 'Passed''; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getApplicationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/owners/applications/{appId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-owners-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          getOwnersV1(): void {
+            const appId: number = 2001; // number
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.getOwnersV1({ appId: appId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/tasks/schedules/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          getScheduleV1(): void {
+            const id: number = 1001; // number
+            this.api.getScheduleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/tasks/schedules
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-schedules-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          getSchedulesV1(): void {
+            const filters: string = 'ScheduleType eq "Daily" and startTime eq 1762237200'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getSchedulesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/tasks/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-task-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          getTaskV1(): void {
+            const id: number = 1001; // number
+            this.api.getTaskV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/tasks
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-tasks-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          getTasksV1(): void {
+            const filters: string = 'TaskTypeName eq "DataClassification and EndBeforeTime eq 1762240800'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getTasksV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/identity-collectors/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#list-identity-collectors-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          listIdentityCollectorsV1(): void {
+            const filters: string = 'sourceId eq "2c9180835d2e5168015d32f890ca1581"'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.listIdentityCollectorsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/applications/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#put-application-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { BaseCreateApplicationRequest } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          putApplicationV1(): void {
+            const id: number = 12345; // number
+            const baseCreateApplicationRequest: BaseCreateApplicationRequest = {
+              "adIdentityCollectorId" : 987654321,
+              "applicationType" : 9,
+              "nisIdentityCollectorId" : 192837465,
+              "executeNow" : false,
+              "name" : "HR File Server",
+              "description" : "Stores HR documents and employee records.",
+              "dataClassificationSettings" : {
+                "isEnabled" : true,
+                "clusterId" : "cluster-001"
+              },
+              "activityConfigurationSettings" : {
+                "excludeFolders" : [ "/tmp", "/archive" ],
+                "excludeFileExtensions" : [ ".log", ".bak" ],
+                "excludeActions" : [ "delete", "move" ],
+                "isEnabled" : true,
+                "retentionTimePeriod" : 30,
+                "retentionTimeType" : "days",
+                "clusterId" : "cluster-001",
+                "excludeUsers" : [ "user1", "user2" ]
+              },
+              "applicationCrawlerSettings" : {
+                "calculateResourceSize" : 2,
+                "excludedResources" : [ "resourceA", "resourceB" ],
+                "crawlPublicFolders" : true,
+                "excludedPathsByRegex" : "^/archive/.*",
+                "isEnabled" : true,
+                "crawlSnapshotsFolder" : true,
+                "crawlMailboxes" : false,
+                "crawlTopLevelShares" : [ "share1", "share2" ],
+                "clusterId" : "cluster-001",
+                "includeResources" : [ "resourceX", "resourceY" ]
+              },
+              "identityCollectorId" : 123456789,
+              "permissionCollectorSettings" : {
+                "analyzeUniquePermissions" : true,
+                "calculateRiskiestPermissions" : false,
+                "isEnabled" : true,
+                "calculateEffectivePermissions" : true,
+                "clusterId" : "cluster-001",
+                "effectivePermissionsSource" : "S3"
+              },
+              "tags" : [ {
+                "key" : 1,
+                "value" : "Confidential"
+              } ]
+            }; // BaseCreateApplicationRequest
+            this.api.putApplicationV1({ id: id, baseCreateApplicationRequest: baseCreateApplicationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/identity-collectors/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#put-identity-collector-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { Updateidentitycollectorrequest } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          putIdentityCollectorV1(): void {
+            const id: number = 12345; // number
+            const updateidentitycollectorrequest: Updateidentitycollectorrequest = {
+              "sourceId" : "2c9180835d2e5168015d32f890ca1581",
+              "name" : "Active Directory Identity Collector",
+              "type" : "Active Directory"
+            }; // Updateidentitycollectorrequest
+            this.api.putIdentityCollectorV1({ id: id, updateidentitycollectorrequest: updateidentitycollectorrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/tasks/schedules/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#put-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+        import { UpdateScheduleRequest } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          putScheduleV1(): void {
+            const id: number = 1001; // number
+            const updateScheduleRequest: UpdateScheduleRequest = {
+              "scheduleTaskName" : "Daily Data Sync",
+              "scheduleType" : "Daily",
+              "active" : true,
+              "interval" : 1440,
+              "startTime" : 1762237200,
+              "endTime" : 1762240800,
+              "taskTypeName" : "DataSync",
+              "daysOfWeek" : [ "Monday", "Wednesday", "Friday" ],
+              "applicationId" : 2001,
+              "runAfterScheduleTaskId" : 1000
+            }; // UpdateScheduleRequest
+            this.api.putScheduleV1({ id: id, updateScheduleRequest: updateScheduleRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/tasks/rerun/{id}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#start-task-rerun-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from 'sailpoint-angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          startTaskRerunV1(): void {
+            const id: number = 1001; // number
+            this.api.startTaskRerunV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

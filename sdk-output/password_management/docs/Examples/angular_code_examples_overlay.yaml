@@ -1,0 +1,101 @@
+- path: /generate-password-reset-token/v1/digit
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_management/methods/password-management#create-digit-token-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
+        import { PasswordDigitTokenReset } from 'sailpoint-angular-sdk/password_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordManagementService);
+
+          createDigitTokenV1(): void {
+            const passwordDigitTokenReset: PasswordDigitTokenReset = {
+              "durationMinutes" : 5,
+              "length" : 8,
+              "userId" : "Abby.Smith"
+            }; // PasswordDigitTokenReset
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createDigitTokenV1({ passwordDigitTokenReset: passwordDigitTokenReset }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /password-change-status/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_management/methods/password-management#get-password-change-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordManagementService);
+
+          getPasswordChangeStatusV1(): void {
+            const id: string = '089899f13a8f4da7824996191587bab9'; // string
+            this.api.getPasswordChangeStatusV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /query-password-info/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_management/methods/password-management#query-password-info-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
+        import { PasswordInfoQueryDTO } from 'sailpoint-angular-sdk/password_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordManagementService);
+
+          queryPasswordInfoV1(): void {
+            const passwordInfoQueryDTO: PasswordInfoQueryDTO = {
+              "sourceName" : "My-AD",
+              "userName" : "Abby.Smith"
+            }; // PasswordInfoQueryDTO
+            this.api.queryPasswordInfoV1({ passwordInfoQueryDTO: passwordInfoQueryDTO }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /set-password/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_management/methods/password-management#set-password-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordManagementService } from 'sailpoint-angular-sdk/password_management';
+        import { PasswordChangeRequest } from 'sailpoint-angular-sdk/password_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordManagementService);
+
+          setPasswordV1(): void {
+            const passwordChangeRequest: PasswordChangeRequest = {
+              "sourceId" : "8a807d4c73c545510173c545d4b60246",
+              "accountId" : "CN=Abby Smith,OU=Austin,OU=Americas,OU=Demo,DC=seri,DC=acme,DC=com",
+              "identityId" : "8a807d4c73c545510173c545f0a002ff",
+              "publicKeyId" : "YWQ2NjQ4MTItZjY0NC00MWExLWFjMjktOGNmMzU3Y2VlNjk2",
+              "encryptedPassword" : "XzN+YwKgr2C+InkMYFMBG3UtjMEw5ZIql/XFlXo8cJNeslmkplx6vn4kd4/43IF9STBk5RnzR6XmjpEO+FwHDoiBwYZAkAZK/Iswxk4OdybG6Y4MStJCOCiK8osKr35IMMSV/mbO4wAeltoCk7daTWzTGLiI6UaT5tf+F2EgdjJZ7YqM8W8r7aUWsm3p2Xt01Y46ZRx0QaM91QruiIx2rECFT2pUO0wr+7oQ77jypATyGWRtADsu3YcvCk/6U5MqCnXMzKBcRas7NnZdSL/d5H1GglVGz3VLPMaivG4/oL4chOMmFCRl/zVsGxZ9RhN8rxsRGFFKn+rhExTi+bax3A=="
+            }; // PasswordChangeRequest
+            this.api.setPasswordV1({ passwordChangeRequest: passwordChangeRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,27 @@
+---
+id: triggers-model-source-updated-actor
+title: SourceUpdatedActor
+pagination_label: SourceUpdatedActor
+sidebar_label: SourceUpdatedActor
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'SourceUpdatedActor', 'triggers']
+slug: /tools/sdk/angular/triggers/models/source-updated-actor
+tags: ['SDK', 'Software Development Kit', 'SourceUpdatedActor', 'triggers']
+---
+
+# SourceUpdatedActor
+
+Import this model from the entry point of its package:
+
+```typescript
+import { SourceUpdatedActor } from 'sailpoint-angular-sdk/triggers';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**type** | `string` | DTO type of identity who updated the source. | [default to undefined]
+**id** | **(optional)** `string` | ID of identity who updated the source. | [default to undefined]
+**name** | `string` | Display name of identity who updated the source. | [default to undefined]
+

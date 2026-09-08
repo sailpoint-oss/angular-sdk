@@ -1,0 +1,635 @@
+- path: /campaigns/v1/{id}/complete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#complete-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { CampaignCompleteOptions } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          completeCampaignV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const campaignCompleteOptions: CampaignCompleteOptions = {
+              "autoCompleteAction" : "REVOKE"
+            }; // CampaignCompleteOptions
+            this.api.completeCampaignV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaign-templates/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#create-campaign-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { CampaignTemplate } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          createCampaignTemplateV1(): void {
+            const campaignTemplate: CampaignTemplate = {
+              "ownerRef" : {
+                "name" : "Mister Manager",
+                "id" : "2c918086676d3e0601677611dbde220f",
+                "type" : "IDENTITY",
+                "email" : "mr.manager@example.com"
+              },
+              "deadlineDuration" : "P2W",
+              "created" : "2020-03-05T22:44:00.364Z",
+              "scheduled" : false,
+              "name" : "Manager Campaign Template",
+              "description" : "Template for the annual manager campaign.",
+              "modified" : "2020-03-05T22:52:09.969Z",
+              "campaign" : {
+                "totalCertifications" : 100,
+                "sourcesWithOrphanEntitlements" : [ {
+                  "name" : "Source with orphan entitlements",
+                  "id" : "2c90ad2a70ace7d50170acf22ca90010",
+                  "type" : "SOURCE"
+                }, {
+                  "name" : "Source with orphan entitlements",
+                  "id" : "2c90ad2a70ace7d50170acf22ca90010",
+                  "type" : "SOURCE"
+                } ],
+                "recommendationsEnabled" : true,
+                "sunsetCommentsRequired" : true,
+                "created" : "2020-03-03T22:15:13.611Z",
+                "machineAccountCampaignInfo" : {
+                  "reviewerType" : "ACCOUNT_OWNER",
+                  "sourceIds" : [ "0fbe863c063c4c88a35fd7f17e8a3df5" ]
+                },
+                "description" : "Everyone needs to be reviewed by their manager",
+                "type" : "MANAGER",
+                "sourceOwnerCampaignInfo" : {
+                  "sourceIds" : [ "0fbe863c063c4c88a35fd7f17e8a3df5" ]
+                },
+                "emailNotificationEnabled" : false,
+                "alerts" : [ {
+                  "level" : "ERROR",
+                  "localizations" : [ {
+                    "localeOrigin" : "DEFAULT",
+                    "text" : "The request was syntactically correct but its content is semantically invalid.",
+                    "locale" : "en-US"
+                  }, {
+                    "localeOrigin" : "DEFAULT",
+                    "text" : "The request was syntactically correct but its content is semantically invalid.",
+                    "locale" : "en-US"
+                  } ]
+                }, {
+                  "level" : "ERROR",
+                  "localizations" : [ {
+                    "localeOrigin" : "DEFAULT",
+                    "text" : "The request was syntactically correct but its content is semantically invalid.",
+                    "locale" : "en-US"
+                  }, {
+                    "localeOrigin" : "DEFAULT",
+                    "text" : "The request was syntactically correct but its content is semantically invalid.",
+                    "locale" : "en-US"
+                  } ]
+                } ],
+                "filter" : {
+                  "name" : "Test Filter",
+                  "id" : "0fbe863c063c4c88a35fd7f17e8a3df5",
+                  "type" : "CAMPAIGN_FILTER"
+                },
+                "searchCampaignInfo" : {
+                  "identityIds" : [ "0fbe863c063c4c88a35fd7f17e8a3df5" ],
+                  "query" : "Search Campaign query description",
+                  "description" : "Search Campaign description",
+                  "reviewer" : {
+                    "name" : "William Wilson",
+                    "id" : "2c91808568c529c60168cca6f90c1313",
+                    "type" : "IDENTITY"
+                  },
+                  "type" : "ACCESS",
+                  "accessConstraints" : [ {
+                    "ids" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                    "type" : "ENTITLEMENT",
+                    "operator" : "SELECTED"
+                  }, {
+                    "ids" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                    "type" : "ENTITLEMENT",
+                    "operator" : "SELECTED"
+                  }, {
+                    "ids" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                    "type" : "ENTITLEMENT",
+                    "operator" : "SELECTED"
+                  }, {
+                    "ids" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                    "type" : "ENTITLEMENT",
+                    "operator" : "SELECTED"
+                  }, {
+                    "ids" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                    "type" : "ENTITLEMENT",
+                    "operator" : "SELECTED"
+                  } ]
+                },
+                "autoRevokeAllowed" : false,
+                "name" : "Manager Campaign",
+                "mandatoryCommentRequirement" : "NO_DECISIONS",
+                "modified" : "2020-03-03T22:20:12.674Z",
+                "roleCompositionCampaignInfo" : {
+                  "remediatorRef" : {
+                    "name" : "Role Admin",
+                    "id" : "2c90ad2a70ace7d50170acf22ca90010",
+                    "type" : "IDENTITY"
+                  },
+                  "reviewerId" : "2c91808568c529c60168cca6f90c1313",
+                  "roleIds" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                  "query" : "Search Query",
+                  "description" : "Role Composition Description",
+                  "reviewer" : {
+                    "name" : "William Wilson",
+                    "id" : "2c91808568c529c60168cca6f90c1313",
+                    "type" : "IDENTITY"
+                  }
+                },
+                "completedCertifications" : 10,
+                "id" : "2c9079b270a266a60170a2779fcb0007",
+                "deadline" : "2020-03-15T10:00:01.456Z",
+                "status" : "ACTIVE",
+                "correlatedStatus" : "CORRELATED"
+              },
+              "id" : "2c9079b270a266a60170a277bb960008"
+            }; // CampaignTemplate
+            this.api.createCampaignTemplateV1({ campaignTemplate: campaignTemplate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#create-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { Campaign2 } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          createCampaignV1(): void {
+            const campaign2: Campaign2 = ; // Campaign2
+            this.api.createCampaignV1({ campaign2: campaign2 }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaign-templates/v1/{id}/schedule
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#delete-campaign-template-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          deleteCampaignTemplateScheduleV1(): void {
+            const id: string = '04bedce387bd47b2ae1f86eb0bb36dee'; // string
+            this.api.deleteCampaignTemplateScheduleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaign-templates/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#delete-campaign-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          deleteCampaignTemplateV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.deleteCampaignTemplateV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#delete-campaigns-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { CampaignsDeleteRequest } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          deleteCampaignsV1(): void {
+            const campaignsDeleteRequest: CampaignsDeleteRequest = {
+              "ids" : [ "2c9180887335cee10173490db1776c26", "2c9180836a712436016a7125a90c0021" ]
+            }; // CampaignsDeleteRequest
+            this.api.deleteCampaignsV1({ campaignsDeleteRequest: campaignsDeleteRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#get-active-campaigns-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          getActiveCampaignsV1(): void {
+            const detail: string = 'FULL'; // 'SLIM' | 'FULL'
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq "Manager Campaign"'; // string
+            const sorters: string = 'name'; // string
+            this.api.getActiveCampaignsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/reports-configuration
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#get-campaign-reports-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          getCampaignReportsConfigV1(): void {
+            this.api.getCampaignReportsConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/{id}/reports
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#get-campaign-reports-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          getCampaignReportsV1(): void {
+            const id: string = '2c91808571bcfcf80171c23e4b4221fc'; // string
+            this.api.getCampaignReportsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaign-templates/v1/{id}/schedule
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#get-campaign-template-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          getCampaignTemplateScheduleV1(): void {
+            const id: string = '04bedce387bd47b2ae1f86eb0bb36dee'; // string
+            this.api.getCampaignTemplateScheduleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaign-templates/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#get-campaign-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          getCampaignTemplateV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getCampaignTemplateV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaign-templates/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#get-campaign-templates-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          getCampaignTemplatesV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = 'name'; // string
+            const filters: string = 'name eq "manager template"'; // string
+            this.api.getCampaignTemplatesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#get-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          getCampaignV1(): void {
+            const id: string = '2c91808571bcfcf80171c23e4b4221fc'; // string
+            const detail: string = 'FULL'; // 'SLIM' | 'FULL'
+            this.api.getCampaignV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/{id}/reassign
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#move-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { AdminReviewReassign } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          moveV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const adminReviewReassign: AdminReviewReassign = {
+              "certificationIds" : [ "af3859464779471211bb8424a563abc1", "af3859464779471211bb8424a563abc2", "af3859464779471211bb8424a563abc3" ],
+              "reason" : "reassigned for some reason",
+              "reassignTo" : {
+                "id" : "ef38f94347e94562b5bb8424a56397d8",
+                "type" : "IDENTITY"
+              }
+            }; // AdminReviewReassign
+            this.api.moveV1({ id: id, adminReviewReassign: adminReviewReassign }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaign-templates/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#patch-campaign-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          patchCampaignTemplateV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchCampaignTemplateV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/reports-configuration
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#set-campaign-reports-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { CampaignReportsConfig } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          setCampaignReportsConfigV1(): void {
+            const campaignReportsConfig: CampaignReportsConfig = {
+              "identityAttributeColumns" : [ "firstname", "lastname" ]
+            }; // CampaignReportsConfig
+            this.api.setCampaignReportsConfigV1({ campaignReportsConfig: campaignReportsConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaign-templates/v1/{id}/schedule
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#set-campaign-template-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { Schedule2 } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          setCampaignTemplateScheduleV1(): void {
+            const id: string = '04bedce387bd47b2ae1f86eb0bb36dee'; // string
+            const schedule2: Schedule2 = {"type":"MONTHLY","hours":{"type":"LIST","values":["17"]},"days":{"type":"LIST","values":["15"]}}; // Schedule2
+            this.api.setCampaignTemplateScheduleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/{id}/run-remediation-scan
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#start-campaign-remediation-scan-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          startCampaignRemediationScanV1(): void {
+            const id: string = '2c91808571bcfcf80171c23e4b4221fc'; // string
+            this.api.startCampaignRemediationScanV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/{id}/run-report/{type}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#start-campaign-report-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          startCampaignReportV1(): void {
+            const id: string = '2c91808571bcfcf80171c23e4b4221fc'; // string
+            const type: ReportType = ; // ReportType
+            this.api.startCampaignReportV1({ id: id, type: type }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/{id}/activate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#start-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { ActivateCampaignOptions } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          startCampaignV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const activateCampaignOptions: ActivateCampaignOptions = {
+              "timeZone" : "-05:00"
+            }; // ActivateCampaignOptions
+            this.api.startCampaignV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaign-templates/v1/{id}/generate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#start-generate-campaign-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          startGenerateCampaignTemplateV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.startGenerateCampaignTemplateV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /campaigns/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#update-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from 'sailpoint-angular-sdk/certification_campaigns';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          updateCampaignV1(): void {
+            const id: string = '2c91808571bcfcf80171c23e4b4221fc'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateCampaignV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

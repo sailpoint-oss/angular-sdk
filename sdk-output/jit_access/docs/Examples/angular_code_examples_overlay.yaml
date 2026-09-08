@@ -1,0 +1,50 @@
+- path: /jit-activation-config/v1/{configType}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_access/methods/jit-access#get-jit-activation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITAccessService } from 'sailpoint-angular-sdk/jit_access';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITAccessService);
+
+          getJitActivationConfigV1(): void {
+            const configType: string = 'policy'; // 'policy'
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getJitActivationConfigV1({ configType: configType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /jit-activation-config/v1/{configType}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_access/methods/jit-access#patch-jit-activation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITAccessService } from 'sailpoint-angular-sdk/jit_access';
+        import { JitAccessOperationRequest } from 'sailpoint-angular-sdk/jit_access';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITAccessService);
+
+          patchJitActivationConfigV1(): void {
+            const configType: string = 'policy'; // 'policy'
+            const jitAccessOperationRequest: Array<JitAccessOperationRequest> = {
+              "op" : "replace",
+              "path" : "/maxActivationPeriodMins",
+              "value" : 60
+            }; // Array<JitAccessOperationRequest>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchJitActivationConfigV1({ configType: configType, jitAccessOperationRequest: jitAccessOperationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

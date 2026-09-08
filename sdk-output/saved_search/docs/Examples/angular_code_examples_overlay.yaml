@@ -1,0 +1,188 @@
+- path: /saved-searches/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/saved_search/methods/saved-search#create-saved-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+        import { CreateSavedSearchV1Request } from 'sailpoint-angular-sdk/saved_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SavedSearchService);
+
+          createSavedSearchV1(): void {
+            const createSavedSearchV1Request: CreateSavedSearchV1Request = ; // CreateSavedSearchV1Request
+            this.api.createSavedSearchV1({ createSavedSearchV1Request: createSavedSearchV1Request }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /saved-searches/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/saved_search/methods/saved-search#delete-saved-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SavedSearchService);
+
+          deleteSavedSearchV1(): void {
+            const id: string = '2c91808568c529c60168cca6f90c1313'; // string
+            this.api.deleteSavedSearchV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /saved-searches/v1/{id}/execute
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/saved_search/methods/saved-search#execute-saved-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+        import { SearchArguments } from 'sailpoint-angular-sdk/saved_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SavedSearchService);
+
+          executeSavedSearchV1(): void {
+            const id: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const searchArguments: SearchArguments = {
+              "owner" : "",
+              "recipients" : [ {
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              }, {
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              } ],
+              "scheduleId" : "7a724640-0c17-4ce9-a8c3-4a89738459c8"
+            }; // SearchArguments
+            this.api.executeSavedSearchV1({ id: id, searchArguments: searchArguments }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /saved-searches/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/saved_search/methods/saved-search#get-saved-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SavedSearchService);
+
+          getSavedSearchV1(): void {
+            const id: string = '2c91808568c529c60168cca6f90c1313'; // string
+            this.api.getSavedSearchV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /saved-searches/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/saved_search/methods/saved-search#list-saved-searches-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SavedSearchService);
+
+          listSavedSearchesV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'owner.id eq "7a724640-0c17-4ce9-a8c3-4a89738459c8"'; // string
+            this.api.listSavedSearchesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /saved-searches/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/saved_search/methods/saved-search#put-saved-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SavedSearchService } from 'sailpoint-angular-sdk/saved_search';
+        import { SavedSearch } from 'sailpoint-angular-sdk/saved_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SavedSearchService);
+
+          putSavedSearchV1(): void {
+            const id: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const savedSearch: SavedSearch = {
+              "owner" : {
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "created" : "2018-06-25T20:22:28.104Z",
+              "columns" : {
+                "identity" : [ {
+                  "field" : "displayName",
+                  "header" : "Display Name"
+                }, {
+                  "field" : "e-mail",
+                  "header" : "Work Email"
+                } ]
+              },
+              "query" : "@accounts(disabled:true)",
+              "description" : "Disabled accounts",
+              "orderBy" : {
+                "identity" : [ "lastName", "firstName" ],
+                "role" : [ "name" ]
+              },
+              "sort" : [ "displayName" ],
+              "filters" : {
+                "terms" : [ "account_count", "account_count" ],
+                "range" : {
+                  "lower" : {
+                    "inclusive" : false,
+                    "value" : "1"
+                  },
+                  "upper" : {
+                    "inclusive" : false,
+                    "value" : "1"
+                  }
+                },
+                "exclude" : false,
+                "type" : "RANGE"
+              },
+              "ownerId" : "2c91808568c529c60168cca6f90c1313",
+              "indices" : [ "identities" ],
+              "public" : false,
+              "name" : "Disabled accounts",
+              "modified" : "2018-06-25T20:22:28.104Z",
+              "id" : "0de46054-fe90-434a-b84e-c6b3359d0c64",
+              "fields" : [ "disabled" ]
+            }; // SavedSearch
+            this.api.putSavedSearchV1({ id: id, savedSearch: savedSearch }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

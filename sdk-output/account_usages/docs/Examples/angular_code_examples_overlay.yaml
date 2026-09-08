@@ -1,0 +1,25 @@
+- path: /account-usages/v1/{accountId}/summaries
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/account_usages/methods/account-usages#get-usages-by-account-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountUsagesService } from 'sailpoint-angular-sdk/account_usages';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountUsagesService);
+
+          getUsagesByAccountIdV1(): void {
+            const accountId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = '-date'; // string
+            this.api.getUsagesByAccountIdV1({ accountId: accountId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

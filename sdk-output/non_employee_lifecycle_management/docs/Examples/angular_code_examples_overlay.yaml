@@ -1,0 +1,801 @@
+- path: /non-employee-approvals/v1/{id}/approve
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#approve-non-employee-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { NonEmployeeApprovalDecision } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          approveNonEmployeeRequestV1(): void {
+            const id: string = 'e136567de87e4d029e60b3c3c55db56d'; // string
+            const nonEmployeeApprovalDecision: NonEmployeeApprovalDecision = {
+              "comment" : "Approved by manager"
+            }; // NonEmployeeApprovalDecision
+            this.api.approveNonEmployeeRequestV1({ id: id, nonEmployeeApprovalDecision: nonEmployeeApprovalDecision }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-records/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#create-non-employee-record-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { NonEmployeeRequestBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          createNonEmployeeRecordV1(): void {
+            const nonEmployeeRequestBody: NonEmployeeRequestBody = {
+              "sourceId" : "2c91808568c529c60168cca6f90c1313",
+              "firstName" : "William",
+              "lastName" : "Smith",
+              "manager" : "jane.doe",
+              "data" : {
+                "description" : "Auditing"
+              },
+              "accountName" : "william.smith",
+              "phone" : "5125555555",
+              "endDate" : "2021-03-25T00:00:00-05:00",
+              "email" : "william.smith@example.com",
+              "startDate" : "2020-03-24T00:00:00-05:00"
+            }; // NonEmployeeRequestBody
+            this.api.createNonEmployeeRecordV1({ nonEmployeeRequestBody: nonEmployeeRequestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-requests/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#create-non-employee-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { NonEmployeeRequestBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          createNonEmployeeRequestV1(): void {
+            const nonEmployeeRequestBody: NonEmployeeRequestBody = {
+              "sourceId" : "2c91808568c529c60168cca6f90c1313",
+              "firstName" : "William",
+              "lastName" : "Smith",
+              "manager" : "jane.doe",
+              "data" : {
+                "description" : "Auditing"
+              },
+              "accountName" : "william.smith",
+              "phone" : "5125555555",
+              "endDate" : "2021-03-25T00:00:00-05:00",
+              "email" : "william.smith@example.com",
+              "startDate" : "2020-03-24T00:00:00-05:00"
+            }; // NonEmployeeRequestBody
+            this.api.createNonEmployeeRequestV1({ nonEmployeeRequestBody: nonEmployeeRequestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{sourceId}/schema-attributes
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#create-non-employee-source-schema-attributes-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { NonEmployeeSchemaAttributeBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          createNonEmployeeSourceSchemaAttributesV1(): void {
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const nonEmployeeSchemaAttributeBody: NonEmployeeSchemaAttributeBody = {
+              "helpText" : "The unique identifier for the account",
+              "label" : "Account Name",
+              "placeholder" : "Enter a unique user name for this account.",
+              "type" : "TEXT",
+              "technicalName" : "account.name",
+              "required" : true
+            }; // NonEmployeeSchemaAttributeBody
+            this.api.createNonEmployeeSourceSchemaAttributesV1({ sourceId: sourceId, nonEmployeeSchemaAttributeBody: nonEmployeeSchemaAttributeBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#create-non-employee-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { NonEmployeeSourceRequestBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          createNonEmployeeSourceV1(): void {
+            const nonEmployeeSourceRequestBody: NonEmployeeSourceRequestBody = {
+              "owner" : {
+                "id" : "2c91808570313110017040b06f344ec9"
+              },
+              "managementWorkgroup" : "123299",
+              "accountManagers" : [ {
+                "id" : "2c91808570313110017040b06f344ec9"
+              }, {
+                "id" : "2c91808570313110017040b06f344ec9"
+              }, {
+                "id" : "2c91808570313110017040b06f344ec9"
+              }, {
+                "id" : "2c91808570313110017040b06f344ec9"
+              }, {
+                "id" : "2c91808570313110017040b06f344ec9"
+              } ],
+              "name" : "Retail",
+              "description" : "Source description",
+              "approvers" : [ {
+                "id" : "2c91808570313110017040b06f344ec9"
+              }, {
+                "id" : "2c91808570313110017040b06f344ec9"
+              }, {
+                "id" : "2c91808570313110017040b06f344ec9"
+              } ]
+            }; // NonEmployeeSourceRequestBody
+            this.api.createNonEmployeeSourceV1({ nonEmployeeSourceRequestBody: nonEmployeeSourceRequestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-records/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#delete-non-employee-record-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          deleteNonEmployeeRecordV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deleteNonEmployeeRecordV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-records/v1/bulk-delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#delete-non-employee-records-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { DeleteNonEmployeeRecordsInBulkV1Request } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          deleteNonEmployeeRecordsInBulkV1(): void {
+            const deleteNonEmployeeRecordsInBulkV1Request: DeleteNonEmployeeRecordsInBulkV1Request = ; // DeleteNonEmployeeRecordsInBulkV1Request
+            this.api.deleteNonEmployeeRecordsInBulkV1({ deleteNonEmployeeRecordsInBulkV1Request: deleteNonEmployeeRecordsInBulkV1Request }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-requests/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#delete-non-employee-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          deleteNonEmployeeRequestV1(): void {
+            const id: string = 'ac110005-7156-1150-8171-5b292e3e0084'; // string
+            this.api.deleteNonEmployeeRequestV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{sourceId}/schema-attributes/{attributeId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#delete-non-employee-schema-attribute-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          deleteNonEmployeeSchemaAttributeV1(): void {
+            const attributeId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deleteNonEmployeeSchemaAttributeV1({ attributeId: attributeId, sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{sourceId}/schema-attributes
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#delete-non-employee-source-schema-attributes-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          deleteNonEmployeeSourceSchemaAttributesV1(): void {
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deleteNonEmployeeSourceSchemaAttributesV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{sourceId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#delete-non-employee-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          deleteNonEmployeeSourceV1(): void {
+            const sourceId: string = 'e136567de87e4d029e60b3c3c55db56d'; // string
+            this.api.deleteNonEmployeeSourceV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{id}/non-employees/download
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#export-non-employee-records-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          exportNonEmployeeRecordsV1(): void {
+            const id: string = 'e136567de87e4d029e60b3c3c55db56d'; // string
+            this.api.exportNonEmployeeRecordsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{id}/schema-attributes-template/download
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#export-non-employee-source-schema-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          exportNonEmployeeSourceSchemaTemplateV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.exportNonEmployeeSourceSchemaTemplateV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-approvals/v1/summary/{requestedFor}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#get-non-employee-approval-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          getNonEmployeeApprovalSummaryV1(): void {
+            const requestedFor: string = '2c91808280430dfb0180431a59440460'; // string
+            this.api.getNonEmployeeApprovalSummaryV1({ requestedFor: requestedFor }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-approvals/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#get-non-employee-approval-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          getNonEmployeeApprovalV1(): void {
+            const id: string = 'e136567de87e4d029e60b3c3c55db56d'; // string
+            const includeDetail: boolean = true; // boolean
+            this.api.getNonEmployeeApprovalV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{id}/non-employee-bulk-upload/status
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#get-non-employee-bulk-upload-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          getNonEmployeeBulkUploadStatusV1(): void {
+            const id: string = 'e136567de87e4d029e60b3c3c55db56d'; // string
+            this.api.getNonEmployeeBulkUploadStatusV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-records/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#get-non-employee-record-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          getNonEmployeeRecordV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getNonEmployeeRecordV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-requests/v1/summary/{requestedFor}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#get-non-employee-request-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          getNonEmployeeRequestSummaryV1(): void {
+            const requestedFor: string = '2c91808280430dfb0180431a59440460'; // string
+            this.api.getNonEmployeeRequestSummaryV1({ requestedFor: requestedFor }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-requests/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#get-non-employee-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          getNonEmployeeRequestV1(): void {
+            const id: string = 'ac110005-7156-1150-8171-5b292e3e0084'; // string
+            this.api.getNonEmployeeRequestV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{sourceId}/schema-attributes/{attributeId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#get-non-employee-schema-attribute-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          getNonEmployeeSchemaAttributeV1(): void {
+            const attributeId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getNonEmployeeSchemaAttributeV1({ attributeId: attributeId, sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{sourceId}/schema-attributes
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#get-non-employee-source-schema-attributes-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          getNonEmployeeSourceSchemaAttributesV1(): void {
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getNonEmployeeSourceSchemaAttributesV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{sourceId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#get-non-employee-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          getNonEmployeeSourceV1(): void {
+            const sourceId: string = '2c91808b7c28b350017c2a2ec5790aa1'; // string
+            this.api.getNonEmployeeSourceV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{id}/non-employee-bulk-upload
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#import-non-employee-records-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          importNonEmployeeRecordsInBulkV1(): void {
+            const id: string = 'e136567de87e4d029e60b3c3c55db56d'; // string
+            const data: Blob = BINARY_DATA_HERE; // Blob
+            this.api.importNonEmployeeRecordsInBulkV1({ id: id, data: data }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-approvals/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#list-non-employee-approvals-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          listNonEmployeeApprovalsV1(): void {
+            const requestedFor: string = '2c91808280430dfb0180431a59440460'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'approvalStatus eq "Pending"'; // string
+            const sorters: string = 'created'; // string
+            this.api.listNonEmployeeApprovalsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-records/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#list-non-employee-records-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          listNonEmployeeRecordsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = 'accountName,sourceId'; // string
+            const filters: string = 'sourceId eq "2c91808568c529c60168cca6f90c1313"'; // string
+            this.api.listNonEmployeeRecordsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-requests/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#list-non-employee-requests-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          listNonEmployeeRequestsV1(): void {
+            const requestedFor: string = 'e136567de87e4d029e60b3c3c55db56d'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = 'created,approvalStatus'; // string
+            const filters: string = 'sourceId eq "2c91808568c529c60168cca6f90c1313"'; // string
+            this.api.listNonEmployeeRequestsV1({ requestedFor: requestedFor }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#list-non-employee-sources-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          listNonEmployeeSourcesV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const requestedFor: string = 'me'; // string
+            const nonEmployeeCount: boolean = true; // boolean
+            const sorters: string = 'name,created'; // string
+            this.api.listNonEmployeeSourcesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-records/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#patch-non-employee-record-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          patchNonEmployeeRecordV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchNonEmployeeRecordV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{sourceId}/schema-attributes/{attributeId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#patch-non-employee-schema-attribute-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          patchNonEmployeeSchemaAttributeV1(): void {
+            const attributeId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchNonEmployeeSchemaAttributeV1({ attributeId: attributeId, sourceId: sourceId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-sources/v1/{sourceId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#patch-non-employee-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          patchNonEmployeeSourceV1(): void {
+            const sourceId: string = 'e136567de87e4d029e60b3c3c55db56d'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchNonEmployeeSourceV1({ sourceId: sourceId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-approvals/v1/{id}/reject
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#reject-non-employee-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { NonEmployeeRejectApprovalDecision } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          rejectNonEmployeeRequestV1(): void {
+            const id: string = 'e136567de87e4d029e60b3c3c55db56d'; // string
+            const nonEmployeeRejectApprovalDecision: NonEmployeeRejectApprovalDecision = {
+              "comment" : "approved"
+            }; // NonEmployeeRejectApprovalDecision
+            this.api.rejectNonEmployeeRequestV1({ id: id, nonEmployeeRejectApprovalDecision: nonEmployeeRejectApprovalDecision }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /non-employee-records/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/non_employee_lifecycle_management/methods/non-employee-lifecycle-management#update-non-employee-record-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NonEmployeeLifecycleManagementService } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+        import { NonEmployeeRequestBody } from 'sailpoint-angular-sdk/non_employee_lifecycle_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NonEmployeeLifecycleManagementService);
+
+          updateNonEmployeeRecordV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const nonEmployeeRequestBody: NonEmployeeRequestBody = {
+              "sourceId" : "2c91808568c529c60168cca6f90c1313",
+              "firstName" : "William",
+              "lastName" : "Smith",
+              "manager" : "jane.doe",
+              "data" : {
+                "description" : "Auditing"
+              },
+              "accountName" : "william.smith",
+              "phone" : "5125555555",
+              "endDate" : "2021-03-25T00:00:00-05:00",
+              "email" : "william.smith@example.com",
+              "startDate" : "2020-03-24T00:00:00-05:00"
+            }; // NonEmployeeRequestBody
+            this.api.updateNonEmployeeRecordV1({ id: id, nonEmployeeRequestBody: nonEmployeeRequestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

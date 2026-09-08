@@ -1,0 +1,69 @@
+- path: /org-config/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/org_config/methods/org-config#get-org-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { OrgConfigService } from 'sailpoint-angular-sdk/org_config';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(OrgConfigService);
+
+          getOrgConfigV1(): void {
+            this.api.getOrgConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /org-config/v1/valid-time-zones
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/org_config/methods/org-config#get-valid-time-zones-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { OrgConfigService } from 'sailpoint-angular-sdk/org_config';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(OrgConfigService);
+
+          getValidTimeZonesV1(): void {
+            const limit: number = 50; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getValidTimeZonesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /org-config/v1
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/org_config/methods/org-config#patch-org-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { OrgConfigService } from 'sailpoint-angular-sdk/org_config';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/org_config';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(OrgConfigService);
+
+          patchOrgConfigV1(): void {
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchOrgConfigV1({ jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

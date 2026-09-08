@@ -1,0 +1,283 @@
+- path: /historical-identities/v1/{id}/compare/
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#compare-identity-snapshots-access-type-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          compareIdentitySnapshotsAccessTypeV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const accessType: string = 'role'; // 'accessProfile' | 'account' | 'app' | 'entitlement' | 'role'
+            const accessAssociated: boolean = 2007-03-01T13:00:00Z; // boolean
+            const snapshot1: string = '2008-03-01T13:00:00Z'; // string
+            const snapshot2: string = '2009-03-01T13:00:00Z'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.compareIdentitySnapshotsAccessTypeV1({ id: id, accessType: accessType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1/{id}/compare
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#compare-identity-snapshots-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          compareIdentitySnapshotsV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const snapshot1: string = '2007-03-01T13:00:00Z'; // string
+            const snapshot2: string = '2008-03-01T13:00:00Z'; // string
+            const accessItemTypes: Array<string> = ; // Array<string>
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.compareIdentitySnapshotsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1/{id}/events
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#get-historical-identity-events-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          getHistoricalIdentityEventsV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const from: string = '2024-03-01T13:00:00Z'; // string
+            const eventTypes: Array<string> = ["AccessAddedEvent","AccessRemovedEvent"]; // Array<string>
+            const accessItemTypes: Array<string> = ["entitlement","account"]; // Array<string>
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getHistoricalIdentityEventsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#get-historical-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          getHistoricalIdentityV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getHistoricalIdentityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1/{id}/snapshot-summary
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#get-identity-snapshot-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          getIdentitySnapshotSummaryV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const before: string = '2007-03-01T13:00:00Z'; // string
+            const interval: string = 'interval_example'; // 'day' | 'month'
+            const timeZone: string = 'UTC'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getIdentitySnapshotSummaryV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1/{id}/snapshots/{date}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#get-identity-snapshot-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          getIdentitySnapshotV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const date: string = '2007-03-01T13:00:00Z'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getIdentitySnapshotV1({ id: id, date: date }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1/{id}/start-date
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#get-identity-start-date-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          getIdentityStartDateV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getIdentityStartDateV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#list-historical-identities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          listHistoricalIdentitiesV1(): void {
+            const startsWithQuery: string = 'Ada'; // string
+            const isDeleted: boolean = true; // boolean
+            const isActive: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listHistoricalIdentitiesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1/{id}/access-items
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#list-identity-access-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          listIdentityAccessItemsV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const type: string = 'account'; // 'account' | 'entitlement' | 'app' | 'accessProfile' | 'role'
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const offset: number = 0; // number
+            this.api.listIdentityAccessItemsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1/{id}/snapshots/{date}/access-items
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#list-identity-snapshot-access-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          listIdentitySnapshotAccessItemsV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const date: string = '2007-03-01T13:00:00Z'; // string
+            const type: string = 'account'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listIdentitySnapshotAccessItemsV1({ id: id, date: date }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /historical-identities/v1/{id}/snapshots
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_history/methods/identity-history#list-identity-snapshots-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityHistoryService } from 'sailpoint-angular-sdk/identity_history';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityHistoryService);
+
+          listIdentitySnapshotsV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const start: string = '2007-03-01T13:00:00Z'; // string
+            const interval: string = 'interval_example'; // 'day' | 'month'
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listIdentitySnapshotsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

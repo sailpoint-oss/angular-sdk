@@ -1,0 +1,41 @@
+- path: /password-dictionary/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_dictionary/methods/password-dictionary#get-password-dictionary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordDictionaryService } from 'sailpoint-angular-sdk/password_dictionary';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordDictionaryService);
+
+          getPasswordDictionaryV1(): void {
+            this.api.getPasswordDictionaryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /password-dictionary/v1
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_dictionary/methods/password-dictionary#put-password-dictionary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordDictionaryService } from 'sailpoint-angular-sdk/password_dictionary';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordDictionaryService);
+
+          putPasswordDictionaryV1(): void {
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.putPasswordDictionaryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

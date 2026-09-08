@@ -1,0 +1,119 @@
+- path: /brandings/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/branding/methods/branding#create-branding-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(BrandingService);
+
+          createBrandingItemV1(): void {
+            const name: string = 'name_example'; // string
+            const productName: string = 'productName_example'; // string
+            const actionButtonColor: string = 'actionButtonColor_example'; // string
+            const activeLinkColor: string = 'activeLinkColor_example'; // string
+            const navigationColor: string = 'navigationColor_example'; // string
+            const emailFromAddress: string = 'emailFromAddress_example'; // string
+            const loginInformationalMessage: string = 'loginInformationalMessage_example'; // string
+            const fileStandard: Blob = BINARY_DATA_HERE; // Blob
+            this.api.createBrandingItemV1({ name: name, productName: productName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /brandings/v1/{name}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/branding/methods/branding#delete-branding-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(BrandingService);
+
+          deleteBrandingV1(): void {
+            const name: string = 'default'; // string
+            this.api.deleteBrandingV1({ name: name }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /brandings/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/branding/methods/branding#get-branding-list-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(BrandingService);
+
+          getBrandingListV1(): void {
+            this.api.getBrandingListV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /brandings/v1/{name}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/branding/methods/branding#get-branding-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(BrandingService);
+
+          getBrandingV1(): void {
+            const name: string = 'default'; // string
+            this.api.getBrandingV1({ name: name }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /brandings/v1/{name}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/branding/methods/branding#set-branding-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { BrandingService } from 'sailpoint-angular-sdk/branding';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(BrandingService);
+
+          setBrandingItemV1(): void {
+            const name: string = 'default'; // string
+            const name2: string = 'name_example'; // string
+            const productName: string = 'productName_example'; // string
+            const actionButtonColor: string = 'actionButtonColor_example'; // string
+            const activeLinkColor: string = 'activeLinkColor_example'; // string
+            const navigationColor: string = 'navigationColor_example'; // string
+            const emailFromAddress: string = 'emailFromAddress_example'; // string
+            const loginInformationalMessage: string = 'loginInformationalMessage_example'; // string
+            const fileStandard: Blob = BINARY_DATA_HERE; // Blob
+            this.api.setBrandingItemV1({ name: name, name2: name2, productName: productName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,46 @@
+- path: /source-usages/v1/{sourceId}/status
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/source_usages/methods/source-usages#get-status-by-source-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourceUsagesService } from 'sailpoint-angular-sdk/source_usages';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourceUsagesService);
+
+          getStatusBySourceIdV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getStatusBySourceIdV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-usages/v1/{sourceId}/summaries
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/source_usages/methods/source-usages#get-usages-by-source-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourceUsagesService } from 'sailpoint-angular-sdk/source_usages';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourceUsagesService);
+
+          getUsagesBySourceIdV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = '-date'; // string
+            this.api.getUsagesBySourceIdV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

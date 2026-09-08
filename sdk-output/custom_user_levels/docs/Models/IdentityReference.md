@@ -1,0 +1,27 @@
+---
+id: custom_user_levels-model-identity-reference
+title: IdentityReference
+pagination_label: IdentityReference
+sidebar_label: IdentityReference
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'IdentityReference', 'custom_user_levels']
+slug: /tools/sdk/angular/custom_user_levels/models/identity-reference
+tags: ['SDK', 'Software Development Kit', 'IdentityReference', 'custom_user_levels']
+---
+
+# IdentityReference
+
+Import this model from the entry point of its package:
+
+```typescript
+import { IdentityReference } from 'sailpoint-angular-sdk/custom_user_levels';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**type** | **(optional)** `DtoType` |  | [default to undefined]
+**id** | **(optional)** `string` | Identity id | [default to undefined]
+**name** | **(optional)** `string` | Human-readable display name of identity. | [default to undefined]
+

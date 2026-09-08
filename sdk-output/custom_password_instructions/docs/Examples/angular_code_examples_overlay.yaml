@@ -1,0 +1,73 @@
+- path: /custom-password-instructions/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_password_instructions/methods/custom-password-instructions#create-custom-password-instructions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomPasswordInstructionsService } from 'sailpoint-angular-sdk/custom_password_instructions';
+        import { CustomPasswordInstruction } from 'sailpoint-angular-sdk/custom_password_instructions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomPasswordInstructionsService);
+
+          createCustomPasswordInstructionsV1(): void {
+            const customPasswordInstruction: CustomPasswordInstruction = {
+              "pageContent" : "Please enter a new password. Your password must be at least 8 characters long and contain at least one number and one letter.",
+              "pageId" : "change-password:enter-password",
+              "locale" : "en"
+            }; // CustomPasswordInstruction
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createCustomPasswordInstructionsV1({ customPasswordInstruction: customPasswordInstruction }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /custom-password-instructions/v1/{pageId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_password_instructions/methods/custom-password-instructions#delete-custom-password-instructions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomPasswordInstructionsService } from 'sailpoint-angular-sdk/custom_password_instructions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomPasswordInstructionsService);
+
+          deleteCustomPasswordInstructionsV1(): void {
+            const pageId: string = 'mfa:select'; // 'change-password:enter-password' | 'change-password:finish' | 'flow-selection:select' | 'forget-username:user-email' | 'mfa:enter-code' | 'mfa:enter-kba' | 'mfa:select' | 'reset-password:enter-password' | 'reset-password:enter-username' | 'reset-password:finish' | 'unlock-account:enter-username' | 'unlock-account:finish'
+            const locale: string = 'locale_example'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteCustomPasswordInstructionsV1({ pageId: pageId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /custom-password-instructions/v1/{pageId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_password_instructions/methods/custom-password-instructions#get-custom-password-instructions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomPasswordInstructionsService } from 'sailpoint-angular-sdk/custom_password_instructions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomPasswordInstructionsService);
+
+          getCustomPasswordInstructionsV1(): void {
+            const pageId: string = 'mfa:select'; // 'change-password:enter-password' | 'change-password:finish' | 'flow-selection:select' | 'forget-username:user-email' | 'mfa:enter-code' | 'mfa:enter-kba' | 'mfa:select' | 'reset-password:enter-password' | 'reset-password:enter-username' | 'reset-password:finish' | 'unlock-account:enter-username' | 'unlock-account:finish'
+            const locale: string = 'locale_example'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getCustomPasswordInstructionsV1({ pageId: pageId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

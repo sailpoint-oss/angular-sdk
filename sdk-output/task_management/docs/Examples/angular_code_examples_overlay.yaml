@@ -1,0 +1,73 @@
+- path: /task-status/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/task_management/methods/task-management#get-task-status-list-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaskManagementService);
+
+          getTaskStatusListV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'type eq "CLOUD_ACCOUNT_AGGREGATION" and completionStatus isnull'; // string
+            const sorters: string = '-created'; // string
+            this.api.getTaskStatusListV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /task-status/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/task_management/methods/task-management#get-task-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaskManagementService);
+
+          getTaskStatusV1(): void {
+            const id: string = '00eebcf881994e419d72e757fd30dc0e'; // string
+            this.api.getTaskStatusV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /task-status/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/task_management/methods/task-management#update-task-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaskManagementService } from 'sailpoint-angular-sdk/task_management';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/task_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaskManagementService);
+
+          updateTaskStatusV1(): void {
+            const id: string = '00eebcf881994e419d72e757fd30dc0e'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateTaskStatusV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

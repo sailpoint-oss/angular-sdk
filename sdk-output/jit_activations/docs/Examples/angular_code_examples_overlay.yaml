@@ -1,0 +1,129 @@
+- path: /jit-activation-history/v1/current-identity
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#list-jit-activation-history-for-current-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITActivationsService);
+
+          listJitActivationHistoryForCurrentIdentityV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = '-activationInitiated'; // string
+            const searchAfter: string = '2026-07-08T14:33:52.029Z,367fb802-1026-1835-a619-11a56e4c5be3'; // string
+            const filters: string = 'status eq "PROVISIONED"'; // string
+            this.api.listJitActivationHistoryForCurrentIdentityV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /jit-activation-history/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#list-jit-activation-history-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITActivationsService);
+
+          listJitActivationHistoryV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = '-activationInitiated'; // string
+            const searchAfter: string = '2026-07-08T14:33:52.029Z,367fb802-1026-1835-a619-11a56e4c5be3'; // string
+            const filters: string = 'status eq "PROVISIONED"'; // string
+            this.api.listJitActivationHistoryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /jit-activations/v1/activate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#start-activate-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
+        import { JitActivationActivateRequest } from 'sailpoint-angular-sdk/jit_activations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITActivationsService);
+
+          startActivateWorkflowV1(): void {
+            const jitActivationActivateRequest: JitActivationActivateRequest = {
+              "activationPeriodMins" : 120,
+              "connectionId" : "757fb803-9024-5861-e510-83a56e4c5bd3"
+            }; // JitActivationActivateRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startActivateWorkflowV1({ jitActivationActivateRequest: jitActivationActivateRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /jit-activations/v1/deactivate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#start-deactivate-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
+        import { JitActivationDeactivateRequest } from 'sailpoint-angular-sdk/jit_activations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITActivationsService);
+
+          startDeactivateWorkflowV1(): void {
+            const jitActivationDeactivateRequest: JitActivationDeactivateRequest = {
+              "connectionId" : "757fb803-9024-5861-e510-83a56e4c5bd3"
+            }; // JitActivationDeactivateRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startDeactivateWorkflowV1({ jitActivationDeactivateRequest: jitActivationDeactivateRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /jit-activations/v1/extend
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#start-extend-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITActivationsService } from 'sailpoint-angular-sdk/jit_activations';
+        import { JitActivationExtendRequest } from 'sailpoint-angular-sdk/jit_activations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITActivationsService);
+
+          startExtendWorkflowV1(): void {
+            const jitActivationExtendRequest: JitActivationExtendRequest = {
+              "activationPeriodExtensionMins" : 120,
+              "connectionId" : "757fb803-9024-5861-e510-83a56e4c5bd3"
+            }; // JitActivationExtendRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startExtendWorkflowV1({ jitActivationExtendRequest: jitActivationExtendRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

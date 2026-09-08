@@ -1,0 +1,367 @@
+- path: /source-apps/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#create-source-app-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { SourceAppCreateDto } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          createSourceAppV1(): void {
+            const sourceAppCreateDto: SourceAppCreateDto = {
+              "name" : "my app",
+              "description" : "the source app for engineers",
+              "accountSource" : {
+                "name" : "ODS-AD-Source",
+                "id" : "2c9180827ca885d7017ca8ce28a000eb",
+                "type" : "SOURCE"
+              },
+              "matchAllAccounts" : true
+            }; // SourceAppCreateDto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createSourceAppV1({ sourceAppCreateDto: sourceAppCreateDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-apps/v1/{id}/access-profiles/bulk-remove
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#delete-access-profiles-from-source-app-by-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          deleteAccessProfilesFromSourceAppByBulkV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const requestBody: Array<string> = ["c9575abb5e3a4e3db82b2f989a738aa2","c9dc28e148a24d65b3ccb5fb8ca5ddd9"]; // Array<string>
+            const limit: number = 250; // number
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteAccessProfilesFromSourceAppByBulkV1({ id: id, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-apps/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#delete-source-app-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          deleteSourceAppV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteSourceAppV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-apps/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#get-source-app-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          getSourceAppV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceAppV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-apps/v1/{id}/access-profiles
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#list-access-profiles-for-source-app-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          listAccessProfilesForSourceAppV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const filters: string = 'name eq "developer access profile"'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listAccessProfilesForSourceAppV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-apps/v1/all
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#list-all-source-app-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          listAllSourceAppV1(): void {
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const offset: number = 0; // number
+            const sorters: string = 'name,-modified'; // string
+            const filters: string = 'enabled eq true'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listAllSourceAppV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /user-apps/v1/all
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#list-all-user-apps-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          listAllUserAppsV1(): void {
+            const filters: string = 'name eq "user app name"'; // string
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const offset: number = 0; // number
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listAllUserAppsV1({ filters: filters }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-apps/v1/assigned
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#list-assigned-source-app-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          listAssignedSourceAppV1(): void {
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const offset: number = 0; // number
+            const sorters: string = 'name,-modified'; // string
+            const filters: string = 'name eq "source app name"'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listAssignedSourceAppV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /user-apps/v1/{id}/available-accounts
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#list-available-accounts-for-user-app-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          listAvailableAccountsForUserAppV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listAvailableAccountsForUserAppV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-apps/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#list-available-source-apps-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          listAvailableSourceAppsV1(): void {
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const offset: number = 0; // number
+            const sorters: string = 'name,-modified'; // string
+            const filters: string = 'name eq "source app name"'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listAvailableSourceAppsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /user-apps/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#list-owned-user-apps-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          listOwnedUserAppsV1(): void {
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const offset: number = 0; // number
+            const filters: string = 'name eq "user app name"'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listOwnedUserAppsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-apps/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#patch-source-app-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          patchSourceAppV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchSourceAppV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /user-apps/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#patch-user-app-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          patchUserAppV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchUserAppV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-apps/v1/bulk-update
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/apps/methods/apps#update-source-apps-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AppsService } from 'sailpoint-angular-sdk/apps';
+        import { SourceAppBulkUpdateRequest } from 'sailpoint-angular-sdk/apps';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AppsService);
+
+          updateSourceAppsInBulkV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const sourceAppBulkUpdateRequest: SourceAppBulkUpdateRequest = {
+              "appIds" : [ "2c91808a7624751a01762f19d665220d", "2c91808a7624751a01762f19d67c220e", "2c91808a7624751a01762f19d692220f" ],
+              "jsonPatch" : [ {
+                "op" : "replace",
+                "path" : "/enabled",
+                "value" : false
+              }, {
+                "op" : "replace",
+                "path" : "/matchAllAccounts",
+                "value" : false
+              } ]
+            }; // SourceAppBulkUpdateRequest
+            this.api.updateSourceAppsInBulkV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

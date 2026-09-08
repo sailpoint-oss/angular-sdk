@@ -1,0 +1,350 @@
+- path: /multihosts/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#create-multi-host-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationsCreate } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          createMultiHostIntegrationV1(): void {
+            const multiHostIntegrationsCreate: MultiHostIntegrationsCreate = {
+              "owner" : {
+                "name" : "MyName",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "managementWorkgroup" : {
+                "name" : "My Management Workgroup",
+                "id" : "2c91808568c529c60168cca6f90c2222",
+                "type" : "GOVERNANCE_GROUP"
+              },
+              "cluster" : {
+                "name" : "Corporate Cluster",
+                "id" : "2c9180866166b5b0016167c32ef31a66",
+                "type" : "CLUSTER"
+              },
+              "connector" : "multihost-microsoft-sql-server",
+              "connectorAttributes" : {
+                "maxSourcesPerAggGroup" : 10,
+                "maxAllowedSources" : 300
+              },
+              "created" : "2022-02-08T14:50:03.827Z",
+              "name" : "My Multi-Host Integration",
+              "description" : "This is the Multi-Host Integration.",
+              "modified" : "2024-01-23T18:08:50.897Z"
+            }; // MultiHostIntegrationsCreate
+            this.api.createMultiHostIntegrationV1({ multiHostIntegrationsCreate: multiHostIntegrationsCreate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multihostId}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#create-sources-within-multi-host-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { MultiHostIntegrationsCreateSources } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          createSourcesWithinMultiHostV1(): void {
+            const multihostId: string = '2c91808568c529c60168cca6f90c1326'; // string
+            const multiHostIntegrationsCreateSources: Array<MultiHostIntegrationsCreateSources> = {
+              "connectorAttributes" : {
+                "authType" : "SQLAuthentication",
+                "url" : "jdbc:sqlserver://178.18.41.118:1433",
+                "user" : "username",
+                "driverClass" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+                "maxSourcesPerAggGroup" : 10,
+                "maxAllowedSources" : 300
+              },
+              "name" : "My Source",
+              "description" : "This is the corporate directory."
+            }; // Array<MultiHostIntegrationsCreateSources>
+            this.api.createSourcesWithinMultiHostV1({ multihostId: multihostId, multiHostIntegrationsCreateSources: multiHostIntegrationsCreateSources }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multiHostId}/sources/bulk-delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#delete-multi-host-sources-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          deleteMultiHostSourcesV1(): void {
+            const multiHostId: string = '004091cb79b04636b88662afa50a4440'; // string
+            const requestBody: Array<string> = ; // Array<string>
+            this.api.deleteMultiHostSourcesV1({ multiHostId: multiHostId, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multihostId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#delete-multi-host-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          deleteMultiHostV1(): void {
+            const multihostId: string = '2c91808568c529c60168cca6f90c1326'; // string
+            this.api.deleteMultiHostV1({ multihostId: multihostId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multihostId}/acctAggregationGroups
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-acct-aggregation-groups-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          getAcctAggregationGroupsV1(): void {
+            const multihostId: string = 'aMultiHostId'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            this.api.getAcctAggregationGroupsV1({ multihostId: multihostId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multiHostId}/entitlementAggregationGroups
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-entitlement-aggregation-groups-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          getEntitlementAggregationGroupsV1(): void {
+            const multiHostId: string = 'aMultiHostId'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            this.api.getEntitlementAggregationGroupsV1({ multiHostId: multiHostId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-multi-host-integrations-list-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          getMultiHostIntegrationsListV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const sorters: string = 'name'; // string
+            const filters: string = 'id eq 2c91808b6ef1d43e016efba0ce470904'; // string
+            const count: boolean = true; // boolean
+            const forSubadmin: string = '5168015d32f890ca15812c9180835d2e'; // string
+            this.api.getMultiHostIntegrationsListV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multihostId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-multi-host-integrations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          getMultiHostIntegrationsV1(): void {
+            const multihostId: string = '2c91808568c529c60168cca6f90c1326'; // string
+            this.api.getMultiHostIntegrationsV1({ multihostId: multihostId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multiHostId}/sources/errors
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-multi-host-source-creation-errors-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          getMultiHostSourceCreationErrorsV1(): void {
+            const multiHostId: string = '004091cb79b04636b88662afa50a4440'; // string
+            this.api.getMultiHostSourceCreationErrorsV1({ multiHostId: multiHostId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/types
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-multihost-integration-types-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          getMultihostIntegrationTypesV1(): void {
+            this.api.getMultihostIntegrationTypesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multihostId}/sources
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#get-sources-within-multi-host-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          getSourcesWithinMultiHostV1(): void {
+            const multihostId: string = 'aMultiHostId'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const sorters: string = 'name'; // string
+            const filters: string = 'id eq 2c91808b6ef1d43e016efba0ce470904'; // string
+            const count: boolean = true; // boolean
+            this.api.getSourcesWithinMultiHostV1({ multihostId: multihostId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multihostId}/sources/testConnection
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#test-connection-multi-host-sources-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          testConnectionMultiHostSourcesV1(): void {
+            const multihostId: string = '2c91808568c529c60168cca6f90c1324'; // string
+            this.api.testConnectionMultiHostSourcesV1({ multihostId: multihostId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multihostId}/sources/{sourceId}/testConnection
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#test-source-connection-multihost-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          testSourceConnectionMultihostV1(): void {
+            const multihostId: string = '2c91808568c529c60168cca6f90c1326'; // string
+            const sourceId: string = '2c91808568c529f60168cca6f90c1324'; // string
+            this.api.testSourceConnectionMultihostV1({ multihostId: multihostId, sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /multihosts/v1/{multihostId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/multi_host_integration/methods/multi-host-integration#update-multi-host-sources-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MultiHostIntegrationService } from 'sailpoint-angular-sdk/multi_host_integration';
+        import { UpdateMultiHostSourcesV1RequestInner } from 'sailpoint-angular-sdk/multi_host_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MultiHostIntegrationService);
+
+          updateMultiHostSourcesV1(): void {
+            const multihostId: string = 'anId'; // string
+            const updateMultiHostSourcesV1RequestInner: Array<UpdateMultiHostSourcesV1RequestInner> = [{"op":"add","path":"/description","value":"MDK Multi-Host Integration 222 description"}]; // Array<UpdateMultiHostSourcesV1RequestInner>
+            this.api.updateMultiHostSourcesV1({ multihostId: multihostId, updateMultiHostSourcesV1RequestInner: updateMultiHostSourcesV1RequestInner }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

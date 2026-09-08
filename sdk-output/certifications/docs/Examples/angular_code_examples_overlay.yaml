@@ -1,0 +1,295 @@
+- path: /certification-tasks/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#get-certification-task-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          getCertificationTaskV1(): void {
+            const id: string = '63b32151-26c0-42f4-9299-8898dc1c9daa'; // string
+            this.api.getCertificationTaskV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{certificationId}/access-review-items/{itemId}/permissions
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#get-identity-certification-item-permissions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          getIdentityCertificationItemPermissionsV1(): void {
+            const certificationId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const itemId: string = '2c91808671bcbab40171bd945d961227'; // string
+            const filters: string = 'target eq "SYS.OBJAUTH2"'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getIdentityCertificationItemPermissionsV1({ certificationId: certificationId, itemId: itemId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#get-identity-certification-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          getIdentityCertificationV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getIdentityCertificationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-tasks/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#get-pending-certification-tasks-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          getPendingCertificationTasksV1(): void {
+            const reviewerIdentity: string = 'Ada.1de82e55078344'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'type eq "ADMIN_REASSIGN"'; // string
+            this.api.getPendingCertificationTasksV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}/reviewers
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#list-certification-reviewers-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          listCertificationReviewersV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq "Bob"'; // string
+            const sorters: string = 'name'; // string
+            this.api.listCertificationReviewersV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}/access-review-items
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#list-identity-access-review-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          listIdentityAccessReviewItemsV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "ef38f94347e94562b5bb8424a56397d8"'; // string
+            const sorters: string = 'access.name,-accessProfile.sourceName'; // string
+            const entitlements: string = 'identityEntitlement'; // string
+            const accessProfiles: string = 'accessProfile1'; // string
+            const roles: string = 'userRole'; // string
+            this.api.listIdentityAccessReviewItemsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#list-identity-certifications-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          listIdentityCertificationsV1(): void {
+            const reviewerIdentity: string = 'me'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "ef38f94347e94562b5bb8424a56397d8"'; // string
+            const sorters: string = 'name,due'; // string
+            this.api.listIdentityCertificationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}/decide
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#make-identity-decision-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+        import { ReviewDecision } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          makeIdentityDecisionV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const reviewDecision: Array<ReviewDecision> = {
+              "comments" : "This user no longer needs access to this source",
+              "decision" : "APPROVE",
+              "proposedEndDate" : "2017-07-11T18:45:37.098Z",
+              "recommendation" : {
+                "reasons" : [ "Reason 1", "Reason 2" ],
+                "recommendation" : "recommendation",
+                "timestamp" : "2020-06-01T13:49:37.385Z"
+              },
+              "id" : "ef38f94347e94562b5bb8424a56397d8",
+              "bulk" : true
+            }; // Array<ReviewDecision>
+            this.api.makeIdentityDecisionV1({ id: id, reviewDecision: reviewDecision }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}/reassign
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#reassign-identity-certifications-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+        import { ReviewReassign } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          reassignIdentityCertificationsV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const reviewReassign: ReviewReassign = {
+              "reason" : "reassigned for some reason",
+              "reassignTo" : "ef38f94347e94562b5bb8424a56397d8",
+              "reassign" : [ {
+                "id" : "ef38f94347e94562b5bb8424a56397d8",
+                "type" : "ITEM"
+              }, {
+                "id" : "ef38f94347e94562b5bb8424a56397d8",
+                "type" : "ITEM"
+              } ]
+            }; // ReviewReassign
+            this.api.reassignIdentityCertificationsV1({ id: id, reviewReassign: reviewReassign }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}/sign-off
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#sign-off-identity-certification-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          signOffIdentityCertificationV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.signOffIdentityCertificationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}/reassign-async
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certifications/methods/certifications#submit-reassign-certs-async-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationsService } from 'sailpoint-angular-sdk/certifications';
+        import { ReviewReassign } from 'sailpoint-angular-sdk/certifications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationsService);
+
+          submitReassignCertsAsyncV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const reviewReassign: ReviewReassign = {
+              "reason" : "reassigned for some reason",
+              "reassignTo" : "ef38f94347e94562b5bb8424a56397d8",
+              "reassign" : [ {
+                "id" : "ef38f94347e94562b5bb8424a56397d8",
+                "type" : "ITEM"
+              }, {
+                "id" : "ef38f94347e94562b5bb8424a56397d8",
+                "type" : "ITEM"
+              } ]
+            }; // ReviewReassign
+            this.api.submitReassignCertsAsyncV1({ id: id, reviewReassign: reviewReassign }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

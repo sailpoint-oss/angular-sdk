@@ -1,0 +1,46 @@
+- path: /tenant-context/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tenant_context/methods/tenant-context#get-tenant-context-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TenantContextService } from 'sailpoint-angular-sdk/tenant_context';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TenantContextService);
+
+          getTenantContextV1(): void {
+            this.api.getTenantContextV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tenant-context/v1
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tenant_context/methods/tenant-context#patch-tenant-context-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TenantContextService } from 'sailpoint-angular-sdk/tenant_context';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/tenant_context';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TenantContextService);
+
+          patchTenantContextV1(): void {
+            const jsonPatchOperation: JsonPatchOperation = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // JsonPatchOperation
+            this.api.patchTenantContextV1({ jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

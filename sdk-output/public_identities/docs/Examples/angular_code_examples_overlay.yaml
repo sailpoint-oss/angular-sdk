@@ -1,0 +1,26 @@
+- path: /public-identities/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/public_identities/methods/public-identities#get-public-identities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PublicIdentitiesService } from 'sailpoint-angular-sdk/public_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PublicIdentitiesService);
+
+          getPublicIdentitiesV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'firstname eq "John"'; // string
+            const addCoreFilters: boolean = false; // boolean
+            const sorters: string = 'name'; // string
+            this.api.getPublicIdentitiesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

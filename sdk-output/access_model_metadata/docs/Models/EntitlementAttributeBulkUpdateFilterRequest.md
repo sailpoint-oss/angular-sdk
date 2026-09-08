@@ -1,0 +1,28 @@
+---
+id: access_model_metadata-model-entitlement-attribute-bulk-update-filter-request
+title: EntitlementAttributeBulkUpdateFilterRequest
+pagination_label: EntitlementAttributeBulkUpdateFilterRequest
+sidebar_label: EntitlementAttributeBulkUpdateFilterRequest
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'EntitlementAttributeBulkUpdateFilterRequest', 'access_model_metadata']
+slug: /tools/sdk/angular/access_model_metadata/models/entitlement-attribute-bulk-update-filter-request
+tags: ['SDK', 'Software Development Kit', 'EntitlementAttributeBulkUpdateFilterRequest', 'access_model_metadata']
+---
+
+# EntitlementAttributeBulkUpdateFilterRequest
+
+Import this model from the entry point of its package:
+
+```typescript
+import { EntitlementAttributeBulkUpdateFilterRequest } from 'sailpoint-angular-sdk/access_model_metadata';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**filters** | **(optional)** `string` | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results) Filtering is supported for the following fields and operators:  **id**: *eq* | [default to undefined]
+**operation** | **(optional)** `string` | Operation to perform on the attributes in the bulk update request. | [default to undefined]
+**replaceScope** | **(optional)** `string` | The choice of update scope. | [default to undefined]
+**values** | **(optional)** `Array<BulkUpdateAMMKeyValueInner>` | The metadata to be updated, including attribute and values. | [default to undefined]
+

@@ -1,0 +1,120 @@
+- path: /accounts/v1/search-attribute-config
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#create-search-attribute-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+        import { SearchAttributeConfig } from 'sailpoint-angular-sdk/search_attribute_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SearchAttributeConfigurationService);
+
+          createSearchAttributeConfigV1(): void {
+            const searchAttributeConfig: SearchAttributeConfig = {
+              "displayName" : "New Mail Attribute",
+              "name" : "newMailAttribute",
+              "applicationAttributes" : {
+                "2c91808b79fd2422017a0b35d30f3968" : "employeeNumber",
+                "2c91808b79fd2422017a0b36008f396b" : "employeeNumber"
+              }
+            }; // SearchAttributeConfig
+            this.api.createSearchAttributeConfigV1({ searchAttributeConfig: searchAttributeConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/search-attribute-config/{name}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#delete-search-attribute-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SearchAttributeConfigurationService);
+
+          deleteSearchAttributeConfigV1(): void {
+            const name: string = 'newMailAttribute'; // string
+            this.api.deleteSearchAttributeConfigV1({ name: name }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/search-attribute-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#get-search-attribute-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SearchAttributeConfigurationService);
+
+          getSearchAttributeConfigV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.getSearchAttributeConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/search-attribute-config/{name}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#get-single-search-attribute-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SearchAttributeConfigurationService);
+
+          getSingleSearchAttributeConfigV1(): void {
+            const name: string = 'newMailAttribute'; // string
+            this.api.getSingleSearchAttributeConfigV1({ name: name }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/search-attribute-config/{name}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/search_attribute_configuration/methods/search-attribute-configuration#patch-search-attribute-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SearchAttributeConfigurationService } from 'sailpoint-angular-sdk/search_attribute_configuration';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/search_attribute_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SearchAttributeConfigurationService);
+
+          patchSearchAttributeConfigV1(): void {
+            const name: string = 'promotedMailAttribute'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchSearchAttributeConfigV1({ name: name, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

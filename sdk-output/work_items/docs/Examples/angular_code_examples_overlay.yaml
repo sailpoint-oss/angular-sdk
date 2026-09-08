@@ -1,0 +1,289 @@
+- path: /work-items/v1/{id}/approve/{approvalItemId}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#approve-approval-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          approveApprovalItemV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const approvalItemId: string = '1211bcaa32112bcef6122adb21cef1ac'; // string
+            this.api.approveApprovalItemV1({ id: id, approvalItemId: approvalItemId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/bulk-approve/{id}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#approve-approval-items-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          approveApprovalItemsInBulkV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.approveApprovalItemsInBulkV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/{id}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#complete-work-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          completeWorkItemV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const body: string = body_example; // string
+            this.api.completeWorkItemV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/{id}/forward
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#forward-work-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+        import { WorkItemForward } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          forwardWorkItemV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const workItemForward: WorkItemForward = {
+              "targetOwnerId" : "2c9180835d2e5168015d32f890ca1581",
+              "comment" : "I'm going on vacation.",
+              "sendNotifications" : true
+            }; // WorkItemForward
+            this.api.forwardWorkItemV1({ id: id, workItemForward: workItemForward }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/completed
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#get-completed-work-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          getCompletedWorkItemsV1(): void {
+            const ownerId: string = '1211bcaa32112bcef6122adb21cef1ac'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getCompletedWorkItemsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/completed/count
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#get-count-completed-work-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          getCountCompletedWorkItemsV1(): void {
+            const ownerId: string = 'ownerId_example'; // string
+            this.api.getCountCompletedWorkItemsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/count
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#get-count-work-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          getCountWorkItemsV1(): void {
+            const ownerId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getCountWorkItemsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#get-work-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          getWorkItemV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getWorkItemV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/summary
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#get-work-items-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          getWorkItemsSummaryV1(): void {
+            const ownerId: string = '1211bcaa32112bcef6122adb21cef1ac'; // string
+            this.api.getWorkItemsSummaryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#list-work-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          listWorkItemsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const ownerId: string = '1211bcaa32112bcef6122adb21cef1ac'; // string
+            this.api.listWorkItemsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/{id}/reject/{approvalItemId}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#reject-approval-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          rejectApprovalItemV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const approvalItemId: string = '1211bcaa32112bcef6122adb21cef1ac'; // string
+            this.api.rejectApprovalItemV1({ id: id, approvalItemId: approvalItemId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/bulk-reject/{id}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#reject-approval-items-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          rejectApprovalItemsInBulkV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.rejectApprovalItemsInBulkV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /work-items/v1/{id}/submit-account-selection
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_items/methods/work-items#submit-account-selection-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkItemsService } from 'sailpoint-angular-sdk/work_items';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkItemsService);
+
+          submitAccountSelectionV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const requestBody: { [key: string]: any; } = {"fieldName":"fieldValue"}; // { [key: string]: any; }
+            this.api.submitAccountSelectionV1({ id: id, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

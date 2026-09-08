@@ -1,0 +1,186 @@
+- path: /access-request-approvals/v1/{approvalId}/approve
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#approve-access-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { CommentDto } from 'sailpoint-angular-sdk/access_request_approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestApprovalsService);
+
+          approveAccessRequestV1(): void {
+            const approvalId: string = '2c91808b7294bea301729568c68c002e'; // string
+            const commentDto: CommentDto = {
+              "created" : "2017-07-11T18:45:37.098Z",
+              "author" : {
+                "name" : "john.doe",
+                "id" : "2c9180847e25f377017e2ae8cae4650b",
+                "type" : "IDENTITY"
+              },
+              "comment" : "This is a comment."
+            }; // CommentDto
+            this.api.approveAccessRequestV1({ approvalId: approvalId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-approvals/v1/{approvalId}/forward
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#forward-access-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { ForwardApprovalDto } from 'sailpoint-angular-sdk/access_request_approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestApprovalsService);
+
+          forwardAccessRequestV1(): void {
+            const approvalId: string = '2c91808b7294bea301729568c68c002e'; // string
+            const forwardApprovalDto: ForwardApprovalDto = {
+              "newOwnerId" : "2c91808568c529c60168cca6f90c1314",
+              "comment" : "2c91808568c529c60168cca6f90c1313"
+            }; // ForwardApprovalDto
+            this.api.forwardAccessRequestV1({ approvalId: approvalId, forwardApprovalDto: forwardApprovalDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-approvals/v1/approval-summary
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#get-access-request-approval-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestApprovalsService);
+
+          getAccessRequestApprovalSummaryV1(): void {
+            const ownerId: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const fromDate: string = 'from-date=2020-03-19T19:59:11Z'; // string
+            this.api.getAccessRequestApprovalSummaryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-approvals/v1/{accessRequestId}/approvers
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#list-access-request-approvers-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestApprovalsService);
+
+          listAccessRequestApproversV1(): void {
+            const accessRequestId: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const limit: number = 100; // number
+            const offset: number = 10; // number
+            const count: boolean = false; // boolean
+            this.api.listAccessRequestApproversV1({ accessRequestId: accessRequestId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-approvals/v1/completed
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#list-completed-approvals-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestApprovalsService);
+
+          listCompletedApprovalsV1(): void {
+            const ownerId: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "2c91808568c529c60168cca6f90c1313"'; // string
+            const sorters: string = 'modified'; // string
+            this.api.listCompletedApprovalsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-approvals/v1/pending
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#list-pending-approvals-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestApprovalsService);
+
+          listPendingApprovalsV1(): void {
+            const ownerId: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "2c91808568c529c60168cca6f90c1313"'; // string
+            const sorters: string = 'modified'; // string
+            this.api.listPendingApprovalsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-approvals/v1/{approvalId}/reject
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_request_approvals/methods/access-request-approvals#reject-access-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestApprovalsService } from 'sailpoint-angular-sdk/access_request_approvals';
+        import { CommentDto } from 'sailpoint-angular-sdk/access_request_approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestApprovalsService);
+
+          rejectAccessRequestV1(): void {
+            const approvalId: string = '2c91808b7294bea301729568c68c002e'; // string
+            const commentDto: CommentDto = {
+              "created" : "2017-07-11T18:45:37.098Z",
+              "author" : {
+                "name" : "john.doe",
+                "id" : "2c9180847e25f377017e2ae8cae4650b",
+                "type" : "IDENTITY"
+              },
+              "comment" : "This is a comment."
+            }; // CommentDto
+            this.api.rejectAccessRequestV1({ approvalId: approvalId, commentDto: commentDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

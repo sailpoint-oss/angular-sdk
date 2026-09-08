@@ -1,0 +1,31 @@
+---
+id: triggers-model-saved-search-complete
+title: SavedSearchComplete
+pagination_label: SavedSearchComplete
+sidebar_label: SavedSearchComplete
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'SavedSearchComplete', 'triggers']
+slug: /tools/sdk/angular/triggers/models/saved-search-complete
+tags: ['SDK', 'Software Development Kit', 'SavedSearchComplete', 'triggers']
+---
+
+# SavedSearchComplete
+
+Import this model from the entry point of its package:
+
+```typescript
+import { SavedSearchComplete } from 'sailpoint-angular-sdk/triggers';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**fileName** | `string` | A name for the report file. | [default to undefined]
+**ownerEmail** | `string` | The email address of the identity that owns the saved search. | [default to undefined]
+**ownerName** | `string` | The name of the identity that owns the saved search. | [default to undefined]
+**query** | `string` | The search query that was used to generate the report. | [default to undefined]
+**searchName** | `string` | The name of the saved search. | [default to undefined]
+**searchResults** | `SavedSearchCompleteSearchResults` |  | [default to undefined]
+**signedS3Url** | `string` | The Amazon S3 URL to download the report from. | [default to undefined]
+

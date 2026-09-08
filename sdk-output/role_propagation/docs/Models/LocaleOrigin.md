@@ -1,0 +1,27 @@
+---
+id: role_propagation-model-locale-origin
+title: LocaleOrigin
+pagination_label: LocaleOrigin
+sidebar_label: LocaleOrigin
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'LocaleOrigin', 'role_propagation']
+slug: /tools/sdk/angular/role_propagation/models/locale-origin
+tags: ['SDK', 'Software Development Kit', 'LocaleOrigin', 'role_propagation']
+---
+
+# LocaleOrigin
+
+Import this model from the entry point of its package:
+
+```typescript
+import { LocaleOrigin } from 'sailpoint-angular-sdk/role_propagation';
+```
+
+## Enum
+
+
+* `Default` (value: `'DEFAULT'`)
+
+* `Request` (value: `'REQUEST'`)
+
+

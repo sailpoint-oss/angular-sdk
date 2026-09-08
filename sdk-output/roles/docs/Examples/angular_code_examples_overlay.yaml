@@ -1,0 +1,607 @@
+- path: /roles/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#create-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+        import { Role } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          createRoleV1(): void {
+            const role: Role = {
+              "owner" : {
+                "name" : "support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              },
+              "entitlements" : [ {
+                "name" : "CN=entitlement.490efde5,OU=OrgCo,OU=ServiceDept,DC=HQAD,DC=local",
+                "id" : "2c91809773dee32014e13e122092014e",
+                "type" : "ENTITLEMENT"
+              }, {
+                "name" : "CN=entitlement.490efde5,OU=OrgCo,OU=ServiceDept,DC=HQAD,DC=local",
+                "id" : "2c91809773dee32014e13e122092014e",
+                "type" : "ENTITLEMENT"
+              } ],
+              "dimensional" : false,
+              "privilegeLevel" : "High",
+              "created" : "2021-03-01T22:32:58.104Z",
+              "dimensionRefs" : [ {
+                "name" : "Role 2",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "DIMENSION"
+              }, {
+                "name" : "Role 2",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "DIMENSION"
+              } ],
+              "description" : "Urna amet cursus pellentesque nisl orci maximus lorem nisl euismod fusce morbi placerat adipiscing maecenas nisi tristique et metus et lacus sed morbi nunc nisl maximus magna arcu varius sollicitudin elementum enim maecenas nisi id ipsum tempus fusce diam ipsum tortor.",
+              "membership" : {
+                "identities" : [ {
+                  "aliasName" : "t.edison",
+                  "name" : "Thomas Edison",
+                  "id" : "2c9180a46faadee4016fb4e018c20639",
+                  "type" : "IDENTITY"
+                }, {
+                  "aliasName" : "t.edison",
+                  "name" : "Thomas Edison",
+                  "id" : "2c9180a46faadee4016fb4e018c20639",
+                  "type" : "IDENTITY"
+                } ],
+                "criteria" : {
+                  "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                  "children" : [ {
+                    "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                    "children" : [ {
+                      "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                      "operation" : "EQUALS",
+                      "key" : {
+                        "sourceId" : "2c9180867427f3a301745aec18211519",
+                        "property" : "attribute.email",
+                        "type" : "ACCOUNT"
+                      }
+                    }, {
+                      "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                      "operation" : "EQUALS",
+                      "key" : {
+                        "sourceId" : "2c9180867427f3a301745aec18211519",
+                        "property" : "attribute.email",
+                        "type" : "ACCOUNT"
+                      }
+                    } ],
+                    "operation" : "EQUALS",
+                    "key" : {
+                      "sourceId" : "2c9180867427f3a301745aec18211519",
+                      "property" : "attribute.email",
+                      "type" : "ACCOUNT"
+                    }
+                  }, {
+                    "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                    "children" : [ {
+                      "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                      "operation" : "EQUALS",
+                      "key" : {
+                        "sourceId" : "2c9180867427f3a301745aec18211519",
+                        "property" : "attribute.email",
+                        "type" : "ACCOUNT"
+                      }
+                    }, {
+                      "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                      "operation" : "EQUALS",
+                      "key" : {
+                        "sourceId" : "2c9180867427f3a301745aec18211519",
+                        "property" : "attribute.email",
+                        "type" : "ACCOUNT"
+                      }
+                    } ],
+                    "operation" : "EQUALS",
+                    "key" : {
+                      "sourceId" : "2c9180867427f3a301745aec18211519",
+                      "property" : "attribute.email",
+                      "type" : "ACCOUNT"
+                    }
+                  } ],
+                  "operation" : "EQUALS",
+                  "key" : {
+                    "sourceId" : "2c9180867427f3a301745aec18211519",
+                    "property" : "attribute.email",
+                    "type" : "ACCOUNT"
+                  }
+                },
+                "type" : "IDENTITY_LIST"
+              },
+              "additionalOwners" : [ {
+                "name" : "support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              }, {
+                "name" : "support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              } ],
+              "enabled" : true,
+              "revocationRequestConfig" : {
+                "commentsRequired" : false,
+                "approvalSchemes" : [ {
+                  "approverId" : "46c79819-a69f-49a2-becb-12c971ae66c6",
+                  "approverType" : "GOVERNANCE_GROUP"
+                }, {
+                  "approverId" : "46c79819-a69f-49a2-becb-12c971ae66c6",
+                  "approverType" : "GOVERNANCE_GROUP"
+                } ],
+                "denialCommentsRequired" : false
+              },
+              "segments" : [ "f7b1b8a3-5fed-4fd4-ad29-82014e137e19", "29cb6c06-1da8-43ea-8be4-b3125f248f2a" ],
+              "legacyMembershipInfo" : {
+                "type" : "IDENTITY_LIST"
+              },
+              "accessRequestConfig" : {
+                "dimensionSchema" : {
+                  "dimensionAttributes" : [ {
+                    "displayName" : "City",
+                    "name" : "city",
+                    "derived" : true
+                  }, {
+                    "displayName" : "City",
+                    "name" : "city",
+                    "derived" : true
+                  } ]
+                },
+                "commentsRequired" : true,
+                "reauthorizationRequired" : true,
+                "approvalSchemes" : [ {
+                  "approverId" : "46c79819-a69f-49a2-becb-12c971ae66c6",
+                  "approverType" : "GOVERNANCE_GROUP"
+                }, {
+                  "approverId" : "46c79819-a69f-49a2-becb-12c971ae66c6",
+                  "approverType" : "GOVERNANCE_GROUP"
+                } ],
+                "formDefinitionId" : "78258e80-e9e2-4e1a-a11f-ce0b7c62f25d",
+                "denialCommentsRequired" : true,
+                "requireEndDate" : true,
+                "maxPermittedAccessDuration" : {
+                  "value" : 6,
+                  "timeUnit" : "MONTHS"
+                }
+              },
+              "accessProfiles" : [ {
+                "name" : "Access Profile 2567",
+                "id" : "ff808081751e6e129f1518161919ecca",
+                "type" : "ACCESS_PROFILE"
+              }, {
+                "name" : "Access Profile 2567",
+                "id" : "ff808081751e6e129f1518161919ecca",
+                "type" : "ACCESS_PROFILE"
+              } ],
+              "name" : "Role 2567",
+              "modified" : "2021-03-02T20:22:28.104Z",
+              "accessModelMetadata" : {
+                "attributes" : [ {
+                  "key" : "iscPrivacy",
+                  "name" : "Privacy",
+                  "multiselect" : false,
+                  "status" : "active",
+                  "type" : "governance",
+                  "objectTypes" : [ "all" ],
+                  "description" : "Specifies the level of privacy associated with an access item.",
+                  "values" : [ {
+                    "value" : "public",
+                    "name" : "Public",
+                    "status" : "active"
+                  } ]
+                } ]
+              },
+              "id" : "2c918086749d78830174a1a40e121518",
+              "requestable" : true
+            }; // Role
+            this.api.createRoleV1({ role: role }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/bulk-delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#delete-bulk-roles-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+        import { RoleBulkDeleteRequest } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          deleteBulkRolesV1(): void {
+            const roleBulkDeleteRequest: RoleBulkDeleteRequest = {
+              "roleIds" : [ "2c9180847812e0b1017817051919ecca", "2c9180887812e0b201781e129f151816" ]
+            }; // RoleBulkDeleteRequest
+            this.api.deleteBulkRolesV1({ roleBulkDeleteRequest: roleBulkDeleteRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#delete-metadata-from-role-by-key-and-value-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          deleteMetadataFromRoleByKeyAndValueV1(): void {
+            const id: string = '2c91808c74ff913f0175097daa9d59cd'; // string
+            const attributeKey: string = 'iscPrivacy'; // string
+            const attributeValue: string = 'public'; // string
+            this.api.deleteMetadataFromRoleByKeyAndValueV1({ id: id, attributeKey: attributeKey, attributeValue: attributeValue }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#delete-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          deleteRoleV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            this.api.deleteRoleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/access-model-metadata/bulk-update/id
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#get-bulk-update-status-by-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          getBulkUpdateStatusByIdV1(): void {
+            const id: string = 'c24359c389374d0fb8585698a2189e3d'; // string
+            this.api.getBulkUpdateStatusByIdV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/access-model-metadata/bulk-update
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#get-bulk-update-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          getBulkUpdateStatusV1(): void {
+            this.api.getBulkUpdateStatusV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{id}/assigned-identities
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#get-role-assigned-identities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          getRoleAssignedIdentitiesV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name sw Joe'; // string
+            const sorters: string = 'aliasName,name'; // string
+            this.api.getRoleAssignedIdentitiesV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{id}/entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#get-role-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          getRoleEntitlementsV1(): void {
+            const id: string = '2c91808a7813090a017814121919ecca'; // string
+            const limit: number = 50; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'attribute eq "memberOf"'; // string
+            const sorters: string = 'name,-modified'; // string
+            this.api.getRoleEntitlementsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#get-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          getRoleV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            this.api.getRoleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#list-roles-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          listRolesV1(): void {
+            const forSubadmin: string = '5168015d32f890ca15812c9180835d2e'; // string
+            const limit: number = 50; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'requestable eq false'; // string
+            const sorters: string = 'name,-modified'; // string
+            const forSegmentIds: string = '0b5c9f25-83c6-4762-9073-e38f7bb2ae26,2e8d8180-24bc-4d21-91c6-7affdb473b0d'; // string
+            const includeUnsegmented: boolean = false; // boolean
+            this.api.listRolesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#patch-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          patchRoleV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchRoleV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/filter
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#search-roles-by-filter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+        import { RoleListFilterDTO } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          searchRolesByFilterV1(): void {
+            const forSubadmin: string = '5168015d32f890ca15812c9180835d2e'; // string
+            const limit: number = 50; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = 'name,-modified'; // string
+            const forSegmentIds: string = '0b5c9f25-83c6-4762-9073-e38f7bb2ae26,2e8d8180-24bc-4d21-91c6-7affdb473b0d'; // string
+            const includeUnsegmented: boolean = false; // boolean
+            const roleListFilterDTO: RoleListFilterDTO = {
+              "ammKeyValues" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "secret" ]
+              } ],
+              "filters" : "dimensional eq false"
+            }; // RoleListFilterDTO
+            this.api.searchRolesByFilterV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#update-attribute-key-and-value-to-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          updateAttributeKeyAndValueToRoleV1(): void {
+            const id: string = 'c24359c389374d0fb8585698a2189e3d'; // string
+            const attributeKey: string = 'iscPrivacy'; // string
+            const attributeValue: string = 'public'; // string
+            this.api.updateAttributeKeyAndValueToRoleV1({ id: id, attributeKey: attributeKey, attributeValue: attributeValue }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/access-model-metadata/bulk-update/filter
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#update-roles-metadata-by-filter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+        import { RoleMetadataBulkUpdateByFilterRequest } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          updateRolesMetadataByFilterV1(): void {
+            const roleMetadataBulkUpdateByFilterRequest: RoleMetadataBulkUpdateByFilterRequest = {
+              "values" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "topSecret" ]
+              } ],
+              "filters" : " requestable eq false",
+              "replaceScope" : "ALL",
+              "operation" : "REPLACE"
+            }; // RoleMetadataBulkUpdateByFilterRequest
+            this.api.updateRolesMetadataByFilterV1({ roleMetadataBulkUpdateByFilterRequest: roleMetadataBulkUpdateByFilterRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/access-model-metadata/bulk-update/ids
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#update-roles-metadata-by-ids-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+        import { RoleMetadataBulkUpdateByIdRequest } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          updateRolesMetadataByIdsV1(): void {
+            const roleMetadataBulkUpdateByIdRequest: RoleMetadataBulkUpdateByIdRequest = {
+              "roles" : [ "b1db89554cfa431cb8b9921ea38d9367" ],
+              "values" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "topSecret" ]
+              } ],
+              "replaceScope" : "ALL",
+              "operation" : "REPLACE"
+            }; // RoleMetadataBulkUpdateByIdRequest
+            this.api.updateRolesMetadataByIdsV1({ roleMetadataBulkUpdateByIdRequest: roleMetadataBulkUpdateByIdRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/access-model-metadata/bulk-update/query
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/roles/methods/roles#update-roles-metadata-by-query-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolesService } from 'sailpoint-angular-sdk/roles';
+        import { RoleMetadataBulkUpdateByQueryRequest } from 'sailpoint-angular-sdk/roles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolesService);
+
+          updateRolesMetadataByQueryV1(): void {
+            const roleMetadataBulkUpdateByQueryRequest: RoleMetadataBulkUpdateByQueryRequest = {
+              "query" : {
+                "query\"" : {
+                  "indices" : [ "roles" ],
+                  "queryType" : "TEXT",
+                  "textQuery" : {
+                    "terms" : [ "test123" ],
+                    "fields" : [ "id" ],
+                    "matchAny" : false,
+                    "contains" : true
+                  },
+                  "includeNested" : false
+                }
+              },
+              "values" : [ {
+                "attributeValue" : [ "topSecret" ],
+                "attributeKey" : "iscFederalClassifications"
+              }, {
+                "attributeValue" : [ "topSecret" ],
+                "attributeKey" : "iscFederalClassifications"
+              } ],
+              "replaceScope" : "ALL",
+              "operation" : "REPLACE"
+            }; // RoleMetadataBulkUpdateByQueryRequest
+            this.api.updateRolesMetadataByQueryV1({ roleMetadataBulkUpdateByQueryRequest: roleMetadataBulkUpdateByQueryRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

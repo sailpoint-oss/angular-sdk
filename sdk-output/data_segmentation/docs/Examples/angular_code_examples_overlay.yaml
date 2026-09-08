@@ -1,0 +1,223 @@
+- path: /data-segments/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#create-data-segment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+        import { DataSegment } from 'sailpoint-angular-sdk/data_segmentation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataSegmentationService);
+
+          createDataSegmentV1(): void {
+            const dataSegment: DataSegment = {
+              "memberFilter" : {
+                "expression" : {
+                  "children" : [ ],
+                  "attribute" : "location",
+                  "value" : {
+                    "type" : "STRING",
+                    "value" : "Austin"
+                  },
+                  "operator" : "EQUALS"
+                }
+              },
+              "memberSelection" : [ {
+                "type" : "IDENTITY",
+                "id" : "29cb6c061da843ea8be4b3125f248f2a"
+              }, {
+                "type" : "IDENTITY",
+                "id" : "f7b1b8a35fed4fd4ad2982014e137e19"
+              } ],
+              "created" : "2020-01-01T00:00:00Z",
+              "name" : "segment-xyz",
+              "modified" : "2020-01-01T00:00:00Z",
+              "description" : "This segment represents xyz",
+              "id" : "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde",
+              "scopes" : [ {
+                "scope" : "ENTITLEMENT",
+                "visibility" : "SELECTION",
+                "scopeFilter" : null,
+                "scopeSelection" : [ {
+                  "type" : "ENTITLEMENT",
+                  "id" : "34d73f611449463ea4fdcf02cda0c397"
+                } ]
+              } ],
+              "membership" : "ALL",
+              "published" : true,
+              "enabled" : true
+            }; // DataSegment
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createDataSegmentV1({ dataSegment: dataSegment }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /data-segments/v1/{segmentId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#delete-data-segment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataSegmentationService);
+
+          deleteDataSegmentV1(): void {
+            const segmentId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const published: boolean = false; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteDataSegmentV1({ segmentId: segmentId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /data-segments/v1/membership/{identityId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#get-data-segment-identity-membership-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataSegmentationService);
+
+          getDataSegmentIdentityMembershipV1(): void {
+            const identityId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getDataSegmentIdentityMembershipV1({ identityId: identityId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /data-segments/v1/{segmentId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#get-data-segment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataSegmentationService);
+
+          getDataSegmentV1(): void {
+            const segmentId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getDataSegmentV1({ segmentId: segmentId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /data-segments/v1/user-enabled/{identityId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#get-data-segmentation-enabled-for-user-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataSegmentationService);
+
+          getDataSegmentationEnabledForUserV1(): void {
+            const identityId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getDataSegmentationEnabledForUserV1({ identityId: identityId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /data-segments/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#list-data-segments-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataSegmentationService);
+
+          listDataSegmentsV1(): void {
+            const enabled: boolean = true; // boolean
+            const unique: boolean = false; // boolean
+            const published: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq ""'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listDataSegmentsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /data-segments/v1/{segmentId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#patch-data-segment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataSegmentationService);
+
+          patchDataSegmentV1(): void {
+            const segmentId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const requestBody: Array<object> = [{"op":"replace","path":"/memberFilter","value":{"expression":{"operator":"AND","children":[{"operator":"EQUALS","attribute":"location","value":{"type":"STRING","value":"Philadelphia"}},{"operator":"EQUALS","attribute":"department","value":{"type":"STRING","value":"HR"}}]}}}]; // Array<object>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchDataSegmentV1({ segmentId: segmentId, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /data-segments/v1/{segmentId}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_segmentation/methods/data-segmentation#publish-data-segment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataSegmentationService } from 'sailpoint-angular-sdk/data_segmentation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataSegmentationService);
+
+          publishDataSegmentV1(): void {
+            const segmentId: string = 'segmentId_example'; // string
+            const requestBody: Array<string> = ; // Array<string>
+            const publishAll: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.publishDataSegmentV1({ segmentId: segmentId, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

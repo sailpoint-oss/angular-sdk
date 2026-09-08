@@ -1,0 +1,29 @@
+- path: /requestable-objects/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/requestable_objects/methods/requestable-objects#list-requestable-objects-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RequestableObjectsService } from 'sailpoint-angular-sdk/requestable_objects';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RequestableObjectsService);
+
+          listRequestableObjectsV1(): void {
+            const identityId: string = 'e7eab60924f64aa284175b9fa3309599'; // string
+            const types: Array<'ACCESS_PROFILE' | 'ROLE'> = ACCESS_PROFILE,ROLE; // Array<'ACCESS_PROFILE' | 'ROLE'>
+            const term: string = 'Finance Role'; // string
+            const statuses: Array<RequestableObjectRequestStatus> = ["ASSIGNED","PENDING"]; // Array<RequestableObjectRequestStatus>
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name sw "bob"'; // string
+            const sorters: string = 'name'; // string
+            this.api.listRequestableObjectsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

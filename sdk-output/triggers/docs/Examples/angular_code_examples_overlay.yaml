@@ -1,0 +1,298 @@
+- path: /trigger-invocations/v1/{id}/complete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#complete-trigger-invocation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { CompleteInvocation } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          completeTriggerInvocationV1(): void {
+            const id: string = '0f11f2a4-7c94-4bf3-a2bd-742580fe3bde'; // string
+            const completeInvocation: CompleteInvocation = {
+              "output" : {
+                "approved" : false
+              },
+              "secret" : "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde",
+              "error" : "Access request is denied."
+            }; // CompleteInvocation
+            this.api.completeTriggerInvocationV1({ id: id, completeInvocation: completeInvocation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /trigger-subscriptions/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#create-subscription-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { SubscriptionPostRequest } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          createSubscriptionV1(): void {
+            const subscriptionPostRequest: SubscriptionPostRequest = {
+              "filter" : "$[?($.identityId == \"201327fda1c44704ac01181e963d463c\")]",
+              "httpConfig" : {
+                "bearerTokenAuthConfig" : {
+                  "bearerToken" : "bearerToken"
+                },
+                "httpAuthenticationType" : "BASIC_AUTH",
+                "httpDispatchMode" : "SYNC",
+                "basicAuthConfig" : {
+                  "password" : "password",
+                  "userName" : "user@example.com"
+                },
+                "url" : "https://www.example.com"
+              },
+              "triggerId" : "idn:access-requested",
+              "name" : "Access request subscription",
+              "description" : "Access requested to site xyz",
+              "eventBridgeConfig" : {
+                "awsRegion" : "us-west-1",
+                "awsAccount" : "123456789012"
+              },
+              "responseDeadline" : "PT1H",
+              "type" : "HTTP",
+              "enabled" : true
+            }; // SubscriptionPostRequest
+            this.api.createSubscriptionV1({ subscriptionPostRequest: subscriptionPostRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /trigger-subscriptions/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#delete-subscription-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          deleteSubscriptionV1(): void {
+            const id: string = '0f11f2a4-7c94-4bf3-a2bd-742580fe3bde'; // string
+            this.api.deleteSubscriptionV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /trigger-subscriptions/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#list-subscriptions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          listSubscriptionsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "12cff757-c0c0-413b-8ad7-2a47956d1e89"'; // string
+            const sorters: string = 'triggerName'; // string
+            this.api.listSubscriptionsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /trigger-invocations/v1/status
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#list-trigger-invocation-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          listTriggerInvocationStatusV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'triggerId eq "idn:access-request-dynamic-approver"'; // string
+            const sorters: string = 'created'; // string
+            this.api.listTriggerInvocationStatusV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /triggers/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#list-triggers-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          listTriggersV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "idn:access-request-post-approval"'; // string
+            const sorters: string = 'name'; // string
+            this.api.listTriggersV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /trigger-subscriptions/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#patch-subscription-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { SubscriptionPatchRequestInner } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          patchSubscriptionV1(): void {
+            const id: string = '0f11f2a4-7c94-4bf3-a2bd-742580fe3bde'; // string
+            const subscriptionPatchRequestInner: Array<SubscriptionPatchRequestInner> = ; // Array<SubscriptionPatchRequestInner>
+            this.api.patchSubscriptionV1({ id: id, subscriptionPatchRequestInner: subscriptionPatchRequestInner }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /trigger-invocations/v1/test
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#start-test-trigger-invocation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { TestInvocation } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          startTestTriggerInvocationV1(): void {
+            const testInvocation: TestInvocation = {
+              "input" : {
+                "identityId" : "201327fda1c44704ac01181e963d463c"
+              },
+              "subscriptionIds" : [ "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde" ],
+              "triggerId" : "idn:access-request-post-approval",
+              "contentJson" : {
+                "workflowId" : 1234
+              }
+            }; // TestInvocation
+            this.api.startTestTriggerInvocationV1({ testInvocation: testInvocation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /trigger-subscriptions/v1/validate-filter
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#test-subscription-filter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { ValidateFilterInputDto } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          testSubscriptionFilterV1(): void {
+            const validateFilterInputDto: ValidateFilterInputDto = {
+              "filter" : "$[?($.identityId == \"201327fda1c44704ac01181e963d463c\")]",
+              "input" : {
+                "identityId" : "201327fda1c44704ac01181e963d463c"
+              }
+            }; // ValidateFilterInputDto
+            this.api.testSubscriptionFilterV1({ validateFilterInputDto: validateFilterInputDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /trigger-subscriptions/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/triggers/methods/triggers#update-subscription-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TriggersService } from 'sailpoint-angular-sdk/triggers';
+        import { SubscriptionPutRequest } from 'sailpoint-angular-sdk/triggers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TriggersService);
+
+          updateSubscriptionV1(): void {
+            const id: string = '0f11f2a4-7c94-4bf3-a2bd-742580fe3bde'; // string
+            const subscriptionPutRequest: SubscriptionPutRequest = {
+              "filter" : "$[?($.identityId == \"201327fda1c44704ac01181e963d463c\")]",
+              "httpConfig" : {
+                "bearerTokenAuthConfig" : {
+                  "bearerToken" : "bearerToken"
+                },
+                "httpAuthenticationType" : "BASIC_AUTH",
+                "httpDispatchMode" : "SYNC",
+                "basicAuthConfig" : {
+                  "password" : "password",
+                  "userName" : "user@example.com"
+                },
+                "url" : "https://www.example.com"
+              },
+              "name" : "Access request subscription",
+              "description" : "Access requested to site xyz",
+              "eventBridgeConfig" : {
+                "awsRegion" : "us-west-1",
+                "awsAccount" : "123456789012"
+              },
+              "responseDeadline" : "PT1H",
+              "type" : "HTTP",
+              "enabled" : true
+            }; // SubscriptionPutRequest
+            this.api.updateSubscriptionV1({ id: id, subscriptionPutRequest: subscriptionPutRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,167 @@
+- path: /mfa/v1/duo-web/config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#get-mfa-duo-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MFAConfigurationService);
+
+          getMFADuoConfigV1(): void {
+            this.api.getMFADuoConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /mfa/v1/kba/config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#get-mfa-kba-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MFAConfigurationService);
+
+          getMFAKbaConfigV1(): void {
+            const allLanguages: boolean = allLanguages=true; // boolean
+            this.api.getMFAKbaConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /mfa/v1/okta-verify/config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#get-mfa-okta-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MFAConfigurationService);
+
+          getMFAOktaConfigV1(): void {
+            this.api.getMFAOktaConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /mfa/v1/duo-web/config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#set-mfa-duo-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { MfaDuoConfig } from 'sailpoint-angular-sdk/mfa_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MFAConfigurationService);
+
+          setMFADuoConfigV1(): void {
+            const mfaDuoConfig: MfaDuoConfig = {
+              "accessKey" : "qw123Y3QlA5UqocYpdU3rEkzrK2D497y",
+              "host" : "example.com",
+              "configProperties" : {
+                "skey" : "qwERttyZx1CdlQye2Vwtbsjr3HKddy4BAiCXjc5x",
+                "ikey" : "Q123WE45R6TY7890ZXCV"
+              },
+              "mfaMethod" : "duo-web",
+              "enabled" : true,
+              "identityAttribute" : "email"
+            }; // MfaDuoConfig
+            this.api.setMFADuoConfigV1({ mfaDuoConfig: mfaDuoConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /mfa/v1/kba/config/answers
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#set-mfakba-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { KbaAnswerRequestItem } from 'sailpoint-angular-sdk/mfa_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MFAConfigurationService);
+
+          setMFAKBAConfigV1(): void {
+            const kbaAnswerRequestItem: Array<KbaAnswerRequestItem> = {
+              "answer" : "Your answer",
+              "id" : "c54fee53-2d63-4fc5-9259-3e93b9994135"
+            }; // Array<KbaAnswerRequestItem>
+            this.api.setMFAKBAConfigV1({ kbaAnswerRequestItem: kbaAnswerRequestItem }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /mfa/v1/okta-verify/config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#set-mfa-okta-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+        import { MfaOktaConfig } from 'sailpoint-angular-sdk/mfa_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MFAConfigurationService);
+
+          setMFAOktaConfigV1(): void {
+            const mfaOktaConfig: MfaOktaConfig = {
+              "accessKey" : "qw123Y3QlA5UqocYpdU3rEkzrK2D497y",
+              "host" : "example.com",
+              "mfaMethod" : "okta-verify",
+              "enabled" : true,
+              "identityAttribute" : "email"
+            }; // MfaOktaConfig
+            this.api.setMFAOktaConfigV1({ mfaOktaConfig: mfaOktaConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /mfa/v1/{method}/test
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#test-mfa-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MFAConfigurationService } from 'sailpoint-angular-sdk/mfa_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MFAConfigurationService);
+
+          testMFAConfigV1(): void {
+            const method: string = 'okta-verify'; // 'okta-verify' | 'duo-web'
+            this.api.testMFAConfigV1({ method: method }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

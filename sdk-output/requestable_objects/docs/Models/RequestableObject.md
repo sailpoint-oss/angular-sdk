@@ -1,0 +1,34 @@
+---
+id: requestable_objects-model-requestable-object
+title: RequestableObject
+pagination_label: RequestableObject
+sidebar_label: RequestableObject
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'RequestableObject', 'requestable_objects']
+slug: /tools/sdk/angular/requestable_objects/models/requestable-object
+tags: ['SDK', 'Software Development Kit', 'RequestableObject', 'requestable_objects']
+---
+
+# RequestableObject
+
+Import this model from the entry point of its package:
+
+```typescript
+import { RequestableObject } from 'sailpoint-angular-sdk/requestable_objects';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **(optional)** `string` | Id of the requestable object itself | [default to undefined]
+**name** | **(optional)** `string` | Human-readable display name of the requestable object | [default to undefined]
+**created** | **(optional)** `string` | The time when the requestable object was created | [default to undefined]
+**modified** | **(optional)** `string` | The time when the requestable object was last modified | [default to undefined]
+**description** | **(optional)** `string` | Description of the requestable object. | [default to undefined]
+**type** | **(optional)** `RequestableObjectType` |  | [default to undefined]
+**requestStatus** | **(optional)** `RequestableObjectRequestStatus` |  | [default to undefined]
+**identityRequestId** | **(optional)** `string` | If *requestStatus* is *PENDING*, indicates the id of the associated account activity. | [default to undefined]
+**ownerRef** | **(optional)** `IdentityReferenceWithNameAndEmail` |  | [default to undefined]
+**requestCommentsRequired** | **(optional)** `boolean` | Whether the requester must provide comments when requesting the object. | [default to undefined]
+

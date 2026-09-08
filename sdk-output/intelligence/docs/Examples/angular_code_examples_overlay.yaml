@@ -1,0 +1,197 @@
+- path: /intelligence/v1/response-actions
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#create-response-action-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+        import { Responseactioncreaterequest } from 'sailpoint-angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          createResponseActionV1(): void {
+            const responseactioncreaterequest: Responseactioncreaterequest = {
+              "actionType" : "DISABLE_ACCOUNT",
+              "identityType" : "HUMAN",
+              "identityId" : "2c918085842e69ae018428c919680149",
+              "accountIds" : [ "2c918085abc000000000000000000001" ],
+              "context" : {
+                "reason" : "Contain compromised account",
+                "externalAlertId" : "CS-FALCON-12345",
+                "source" : "CROWDSTRIKE",
+                "operator" : "soc-analyst@customer.com"
+              }
+            }; // Responseactioncreaterequest
+            this.api.createResponseActionV1({ responseactioncreaterequest: responseactioncreaterequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /intelligence/v1/identities
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-identity-intelligence-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          getIdentityIntelligenceV1(): void {
+            const filters: string = 'id eq "ef38f94347e94562b5bb8424a56397d8"'; // string
+            this.api.getIdentityIntelligenceV1({ filters: filters }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /intelligence/v1/identities/{id}/access-history/access-items
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-access-item-history-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          getIntelIdentityAccessItemHistoryV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getIntelIdentityAccessItemHistoryV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /intelligence/v1/identities/{id}/accounts
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-accounts-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          getIntelIdentityAccountsV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getIntelIdentityAccountsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /intelligence/v1/identities/{id}/access-history/certifications
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-certification-history-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          getIntelIdentityCertificationHistoryV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getIntelIdentityCertificationHistoryV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /intelligence/v1/identities/{id}/non-human-identity-ownership/{category}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-non-human-identity-ownership-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          getIntelIdentityNonHumanIdentityOwnershipV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const category: string = 'agents'; // 'agents' | 'applications'
+            const ownershipRole: string = 'primary'; // 'primary' | 'secondary'
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getIntelIdentityNonHumanIdentityOwnershipV1({ id: id, category: category }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /intelligence/v1/identities/{id}/outliers/rare-access
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-rare-access-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          getIntelIdentityRareAccessV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getIntelIdentityRareAccessV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /intelligence/v1/response-actions/{id}/status
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-response-action-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from 'sailpoint-angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          getResponseActionStatusV1(): void {
+            const id: string = '3f1e6c9a-8b2d-4e5f-9a1b-2c3d4e5f6a7b'; // string
+            this.api.getResponseActionStatusV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

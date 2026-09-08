@@ -1,0 +1,26 @@
+---
+id: triggers-model-identity-created
+title: IdentityCreated
+pagination_label: IdentityCreated
+sidebar_label: IdentityCreated
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'IdentityCreated', 'triggers']
+slug: /tools/sdk/angular/triggers/models/identity-created
+tags: ['SDK', 'Software Development Kit', 'IdentityCreated', 'triggers']
+---
+
+# IdentityCreated
+
+Import this model from the entry point of its package:
+
+```typescript
+import { IdentityCreated } from 'sailpoint-angular-sdk/triggers';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**identity** | `IdentityCreatedIdentity` |  | [default to undefined]
+**attributes** |  | The attributes assigned to the identity. Attributes are determined by the identity profile. | [default to undefined]
+

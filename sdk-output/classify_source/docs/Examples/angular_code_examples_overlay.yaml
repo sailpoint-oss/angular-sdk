@@ -1,0 +1,66 @@
+- path: /sources/v1/{sourceId}/classify
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/classify_source/methods/classify-source#delete-classify-machine-account-from-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ClassifySourceService);
+
+          deleteClassifyMachineAccountFromSourceV1(): void {
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteClassifyMachineAccountFromSourceV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/classify
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/classify_source/methods/classify-source#get-classify-machine-account-from-source-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ClassifySourceService);
+
+          getClassifyMachineAccountFromSourceStatusV1(): void {
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getClassifyMachineAccountFromSourceStatusV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/classify
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/classify_source/methods/classify-source#send-classify-machine-account-from-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ClassifySourceService } from 'sailpoint-angular-sdk/classify_source';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ClassifySourceService);
+
+          sendClassifyMachineAccountFromSourceV1(): void {
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.sendClassifyMachineAccountFromSourceV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

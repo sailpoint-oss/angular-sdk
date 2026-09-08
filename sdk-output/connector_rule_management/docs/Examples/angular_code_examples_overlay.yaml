@@ -1,0 +1,186 @@
+- path: /connector-rules/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#create-connector-rule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
+        import { ConnectorRuleCreateRequest } from 'sailpoint-angular-sdk/connector_rule_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorRuleManagementService);
+
+          createConnectorRuleV1(): void {
+            const connectorRuleCreateRequest: ConnectorRuleCreateRequest = {
+              "sourceCode" : {
+                "version" : "1.0",
+                "script" : "return \"Mr. \" + firstName;"
+              },
+              "signature" : {
+                "output" : {
+                  "name" : "firstName",
+                  "description" : "the first name of the identity",
+                  "type" : "String"
+                },
+                "input" : [ {
+                  "name" : "firstName",
+                  "description" : "the first name of the identity",
+                  "type" : "String"
+                }, {
+                  "name" : "firstName",
+                  "description" : "the first name of the identity",
+                  "type" : "String"
+                } ]
+              },
+              "name" : "WebServiceBeforeOperationRule",
+              "description" : "This rule does that",
+              "attributes" : { },
+              "type" : "BuildMap"
+            }; // ConnectorRuleCreateRequest
+            this.api.createConnectorRuleV1({ connectorRuleCreateRequest: connectorRuleCreateRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-rules/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#delete-connector-rule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorRuleManagementService);
+
+          deleteConnectorRuleV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            this.api.deleteConnectorRuleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-rules/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#get-connector-rule-list-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorRuleManagementService);
+
+          getConnectorRuleListV1(): void {
+            const limit: number = 50; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getConnectorRuleListV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-rules/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#get-connector-rule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorRuleManagementService);
+
+          getConnectorRuleV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            this.api.getConnectorRuleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-rules/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#put-connector-rule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
+        import { ConnectorRuleUpdateRequest } from 'sailpoint-angular-sdk/connector_rule_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorRuleManagementService);
+
+          putConnectorRuleV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const connectorRuleUpdateRequest: ConnectorRuleUpdateRequest = {
+              "sourceCode" : {
+                "version" : "1.0",
+                "script" : "return \"Mr. \" + firstName;"
+              },
+              "signature" : {
+                "output" : {
+                  "name" : "firstName",
+                  "description" : "the first name of the identity",
+                  "type" : "String"
+                },
+                "input" : [ {
+                  "name" : "firstName",
+                  "description" : "the first name of the identity",
+                  "type" : "String"
+                }, {
+                  "name" : "firstName",
+                  "description" : "the first name of the identity",
+                  "type" : "String"
+                } ]
+              },
+              "name" : "WebServiceBeforeOperationRule",
+              "description" : "This rule does that",
+              "attributes" : { },
+              "id" : "8113d48c0b914f17b4c6072d4dcb9dfe",
+              "type" : "BuildMap"
+            }; // ConnectorRuleUpdateRequest
+            this.api.putConnectorRuleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-rules/v1/validate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_rule_management/methods/connector-rule-management#test-connector-rule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorRuleManagementService } from 'sailpoint-angular-sdk/connector_rule_management';
+        import { SourceCode } from 'sailpoint-angular-sdk/connector_rule_management';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorRuleManagementService);
+
+          testConnectorRuleV1(): void {
+            const sourceCode: SourceCode = {
+              "version" : "1.0",
+              "script" : "return \"Mr. \" + firstName;"
+            }; // SourceCode
+            this.api.testConnectorRuleV1({ sourceCode: sourceCode }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

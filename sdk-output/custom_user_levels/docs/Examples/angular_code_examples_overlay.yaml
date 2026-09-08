@@ -1,0 +1,248 @@
+- path: /authorization/v1/custom-user-levels
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_user_levels/methods/custom-user-levels#create-custom-user-level-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+        import { UserLevelRequest } from 'sailpoint-angular-sdk/custom_user_levels';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomUserLevelsService);
+
+          createCustomUserLevelV1(): void {
+            const userLevelRequest: UserLevelRequest = {
+              "owner" : {
+                "manager" : {
+                  "name" : "Thomas Edison",
+                  "id" : "2c9180a46faadee4016fb4e018c20639",
+                  "type" : "IDENTITY"
+                },
+                "name" : "Alison Ferguso",
+                "alias" : "alison.ferguso",
+                "attributes" : [ {
+                  "name" : "Country",
+                  "value" : "US",
+                  "key" : "country"
+                }, {
+                  "name" : "Country",
+                  "value" : "US",
+                  "key" : "country"
+                } ],
+                "id" : "2c9180857182305e0171993735622948",
+                "identityState" : "ACTIVE",
+                "email" : "alison.ferguso@acme-solar.com",
+                "status" : "Active"
+              },
+              "rightSets" : [ "idn:ui-right-set-list-read-example", "idn:ui-right-set-write-example" ],
+              "name" : "Custom User Level Name",
+              "description" : "This is a description of the custom user level."
+            }; // UserLevelRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createCustomUserLevelV1({ userLevelRequest: userLevelRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /authorization/v1/custom-user-levels/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_user_levels/methods/custom-user-levels#delete-user-level-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomUserLevelsService);
+
+          deleteUserLevelV1(): void {
+            const id: string = '6e110911-5984-491b-be74-2707980a46a7'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteUserLevelV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /authorization/v1/custom-user-levels/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_user_levels/methods/custom-user-levels#get-user-level-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomUserLevelsService);
+
+          getUserLevelV1(): void {
+            const id: string = '6e110911-5984-491b-be74-2707980a46a7'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getUserLevelV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /authorization/v1/authorization-assignable-right-sets
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_user_levels/methods/custom-user-levels#list-all-authorization-right-sets-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomUserLevelsService);
+
+          listAllAuthorizationRightSetsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const filters: string = 'category eq "identity"'; // string
+            const sorters: string = 'name, -id, -category'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listAllAuthorizationRightSetsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /authorization/v1/user-levels/{id}/identities
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_user_levels/methods/custom-user-levels#list-user-level-identities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomUserLevelsService);
+
+          listUserLevelIdentitiesV1(): void {
+            const id: string = 'idn:access-request-administrator'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const count: boolean = true; // boolean
+            const sorters: string = 'displayName'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listUserLevelIdentitiesV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /authorization/v1/custom-user-levels
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_user_levels/methods/custom-user-levels#list-user-levels-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomUserLevelsService);
+
+          listUserLevelsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const detailLevel: string = 'FULL'; // 'FULL' | 'SLIM'
+            const filters: string = 'name co "identity", owner co "john", status eq "active", description co "some description"'; // string
+            const sorters: string = 'name, -created, description, status, owner'; // string
+            const limit: number = 50; // number
+            const offset: number = 0; // number
+            this.api.listUserLevelsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /authorization/v1/custom-user-levels/{id}/publish
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_user_levels/methods/custom-user-levels#publish-custom-user-level-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomUserLevelsService);
+
+          publishCustomUserLevelV1(): void {
+            const id: string = '6e110911-5984-491b-be74-2707980a46a7'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.publishCustomUserLevelV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /authorization/v1/user-levels/get-identity-count
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_user_levels/methods/custom-user-levels#show-user-level-counts-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomUserLevelsService);
+
+          showUserLevelCountsV1(): void {
+            const requestBody: Array<string> = ; // Array<string>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.showUserLevelCountsV1({ requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /authorization/v1/custom-user-levels/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/custom_user_levels/methods/custom-user-levels#update-user-level-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CustomUserLevelsService } from 'sailpoint-angular-sdk/custom_user_levels';
+        import { JsonPatch } from 'sailpoint-angular-sdk/custom_user_levels';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CustomUserLevelsService);
+
+          updateUserLevelV1(): void {
+            const id: string = '6e110911-5984-491b-be74-2707980a46a7'; // string
+            const jsonPatch: JsonPatch = {
+              "operations" : [ {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              }, {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              } ]
+            }; // JsonPatch
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateUserLevelV1({ id: id, jsonPatch: jsonPatch }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

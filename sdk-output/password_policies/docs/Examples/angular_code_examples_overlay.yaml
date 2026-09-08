@@ -1,0 +1,179 @@
+- path: /password-policies/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_policies/methods/password-policies#create-password-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+        import { PasswordPolicyV3Dto } from 'sailpoint-angular-sdk/password_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordPoliciesService);
+
+          createPasswordPolicyV1(): void {
+            const passwordPolicyV3Dto: PasswordPolicyV3Dto = {
+              "validateAgainstAccountName" : true,
+              "minLength" : 8,
+              "description" : "Information about the Password Policy",
+              "requireStrongAuthUntrustedGeographies" : true,
+              "enablePasswdExpiration" : true,
+              "minNumeric" : 8,
+              "lastUpdated" : 1939056206564,
+              "validateAgainstAccountId" : false,
+              "dateCreated" : 1639056206564,
+              "accountNameMinWordLength" : 6,
+              "minUpper" : 8,
+              "firstExpirationReminder" : 45,
+              "modified" : "modified",
+              "id" : "2c91808e7d976f3b017d9f5ceae440c8",
+              "requireStrongAuthn" : true,
+              "useDictionary" : false,
+              "minSpecial" : 8,
+              "sourceIds" : [ "2c91808382ffee0b01830de154f14034", "2f98808382ffee0b01830de154f12134" ],
+              "passwordExpiration" : 8,
+              "maxRepeatedChars" : 3,
+              "minCharacterTypes" : 5,
+              "minAlpha" : 5,
+              "created" : "created",
+              "useAccountAttributes" : false,
+              "accountIdMinWordLength" : 4,
+              "minLower" : 8,
+              "useIdentityAttributes" : false,
+              "defaultPolicy" : true,
+              "requireStrongAuthOffNetwork" : true,
+              "name" : "PasswordPolicy Example",
+              "maxLength" : 25
+            }; // PasswordPolicyV3Dto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createPasswordPolicyV1({ passwordPolicyV3Dto: passwordPolicyV3Dto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /password-policies/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_policies/methods/password-policies#delete-password-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordPoliciesService);
+
+          deletePasswordPolicyV1(): void {
+            const id: string = 'ff808081838d9e9d01838da6a03e0002'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deletePasswordPolicyV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /password-policies/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_policies/methods/password-policies#get-password-policy-by-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordPoliciesService);
+
+          getPasswordPolicyByIdV1(): void {
+            const id: string = 'ff808081838d9e9d01838da6a03e0005'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getPasswordPolicyByIdV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /password-policies/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_policies/methods/password-policies#list-password-policies-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordPoliciesService);
+
+          listPasswordPoliciesV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listPasswordPoliciesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /password-policies/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/password_policies/methods/password-policies#set-password-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PasswordPoliciesService } from 'sailpoint-angular-sdk/password_policies';
+        import { PasswordPolicyV3Dto } from 'sailpoint-angular-sdk/password_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PasswordPoliciesService);
+
+          setPasswordPolicyV1(): void {
+            const id: string = 'ff808081838d9e9d01838da6a03e0007'; // string
+            const passwordPolicyV3Dto: PasswordPolicyV3Dto = {
+              "validateAgainstAccountName" : true,
+              "minLength" : 8,
+              "description" : "Information about the Password Policy",
+              "requireStrongAuthUntrustedGeographies" : true,
+              "enablePasswdExpiration" : true,
+              "minNumeric" : 8,
+              "lastUpdated" : 1939056206564,
+              "validateAgainstAccountId" : false,
+              "dateCreated" : 1639056206564,
+              "accountNameMinWordLength" : 6,
+              "minUpper" : 8,
+              "firstExpirationReminder" : 45,
+              "modified" : "modified",
+              "id" : "2c91808e7d976f3b017d9f5ceae440c8",
+              "requireStrongAuthn" : true,
+              "useDictionary" : false,
+              "minSpecial" : 8,
+              "sourceIds" : [ "2c91808382ffee0b01830de154f14034", "2f98808382ffee0b01830de154f12134" ],
+              "passwordExpiration" : 8,
+              "maxRepeatedChars" : 3,
+              "minCharacterTypes" : 5,
+              "minAlpha" : 5,
+              "created" : "created",
+              "useAccountAttributes" : false,
+              "accountIdMinWordLength" : 4,
+              "minLower" : 8,
+              "useIdentityAttributes" : false,
+              "defaultPolicy" : true,
+              "requireStrongAuthOffNetwork" : true,
+              "name" : "PasswordPolicy Example",
+              "maxLength" : 25
+            }; // PasswordPolicyV3Dto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.setPasswordPolicyV1({ id: id, passwordPolicyV3Dto: passwordPolicyV3Dto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

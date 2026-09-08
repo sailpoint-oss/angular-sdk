@@ -1,0 +1,540 @@
+- path: /machine-identities/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#create-machine-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentityRequest } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          createMachineIdentityV1(): void {
+            const machineIdentityRequest: MachineIdentityRequest = {
+              "sourceId" : "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa",
+              "subtype" : "Application",
+              "created" : "2015-05-28T14:07:17Z",
+              "userEntitlements" : [ {
+                "sourceId" : "5898b7c1-620c-49c6-cccc-cbf81eb4bddd",
+                "entitlementId" : "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa"
+              }, {
+                "sourceId" : "5898b7c1-620c-49c6-cccc-cbf81eb4bddd",
+                "entitlementId" : "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa"
+              } ],
+              "name" : "aName",
+              "modified" : "2015-05-28T14:07:17Z",
+              "description" : "",
+              "attributes" : "{\"Region\":\"EU\"}",
+              "owners" : {
+                "primaryIdentity" : "{}",
+                "secondaryIdentities" : [ {
+                  "name" : "William Wilson",
+                  "id" : "2c91808568c529c60168cca6f90c1313",
+                  "type" : "IDENTITY"
+                }, {
+                  "name" : "William Wilson",
+                  "id" : "2c91808568c529c60168cca6f90c1313",
+                  "type" : "IDENTITY"
+                } ]
+              },
+              "id" : "id12345",
+              "uuid" : "f5dd23fe-3414-42b7-bb1c-869400ad7a10",
+              "nativeIdentity" : "abc:123:dddd"
+            }; // MachineIdentityRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createMachineIdentityV1({ machineIdentityRequest: machineIdentityRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v2
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#create-machine-identity-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineidentityV2 } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          createMachineIdentityV2(): void {
+            const machineidentityv2: MachineidentityV2 = {
+              "sourceId" : "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa",
+              "resource" : {
+                "features" : [ "PROVISIONING", "AUTHENTICATION" ],
+                "name" : "nightly-batch-role",
+                "id" : "8886e5e3-63d0-462f-a195-d98da885b8dc",
+                "type" : "aws:iam-role"
+              },
+              "created" : "2015-05-28T14:07:17Z",
+              "connectorAttributes" : {
+                "objectguid" : "abc-123"
+              },
+              "description" : "Service account for nightly batch jobs",
+              "owners" : {
+                "secondary" : [ {
+                  "id" : "2c9180858082150f0180893dbaf44202",
+                  "name" : "Jane Doe",
+                  "type" : "IDENTITY"
+                } ],
+                "primary" : {
+                  "name" : "William Wilson",
+                  "id" : "2c91808568c529c60168cca6f90c1313",
+                  "type" : "IDENTITY"
+                }
+              },
+              "source" : {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "uuid" : "f5dd23fe-3414-42b7-bb1c-869400ad7a10",
+              "nativeIdentity" : "abc:123:dddd",
+              "effectiveSanctionedStatus" : "SANCTIONED",
+              "environment" : "PRODUCTION",
+              "subtype" : "AI_AGENT",
+              "businessApplicationRefs" : [ {
+                "name" : "Cursor",
+                "correlationType" : "MANUAL",
+                "id" : "2ee5e239-e68c-4d69-93fb-6c7ce4576190",
+                "type" : "BUSINESS_APPLICATION",
+                "sanctionedStatus" : "SANCTIONED"
+              } ],
+              "userEntitlements" : [ {
+                "sourceId" : "5898b7c1-620c-49c6-cccc-cbf81eb4bddd",
+                "displayName" : "Entitlement Name",
+                "entitlementId" : "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa",
+                "source" : {
+                  "name" : "William Wilson",
+                  "id" : "2c91808568c529c60168cca6f90c1313",
+                  "type" : "IDENTITY"
+                }
+              }, {
+                "sourceId" : "5898b7c1-620c-49c6-cccc-cbf81eb4bddd",
+                "displayName" : "Entitlement Name",
+                "entitlementId" : "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa",
+                "source" : {
+                  "name" : "William Wilson",
+                  "id" : "2c91808568c529c60168cca6f90c1313",
+                  "type" : "IDENTITY"
+                }
+              } ],
+              "name" : "aName",
+              "modified" : "2015-05-28T14:07:17Z",
+              "datasetId" : "8886e5e3-63d0-462f-a195-d98da885b8dc",
+              "attributes" : {
+                "privilegeLevel" : "HIGH",
+                "region" : "APAC"
+              },
+              "risk" : {
+                "severity" : "HIGH",
+                "score" : 72.5
+              },
+              "id" : "id12345",
+              "manuallyEdited" : true,
+              "manuallyCreated" : true,
+              "existsOnSource" : "TRUE",
+              "status" : "ACTIVE"
+            }; // MachineidentityV2
+            this.api.createMachineIdentityV2({ machineidentityv2: machineidentityv2 }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#delete-machine-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          deleteMachineIdentityV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteMachineIdentityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v2/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#delete-machine-identity-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          deleteMachineIdentityV2(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deleteMachineIdentityV2({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}/correlation-configs/{configId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#delete-ownership-correlation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          deleteOwnershipCorrelationConfigV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'aws:iam-role'; // string
+            const configId: string = 'f5dd23fe-3414-42b7-bb1c-869400ad7a10'; // string
+            this.api.deleteOwnershipCorrelationConfigV1({ sourceId: sourceId, resourceId: resourceId, configId: configId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#get-machine-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          getMachineIdentityV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getMachineIdentityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v2/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#get-machine-identity-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          getMachineIdentityV2(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getMachineIdentityV2({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}/correlation-configs/{configId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#get-ownership-correlation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          getOwnershipCorrelationConfigV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'aws:iam-role'; // string
+            const configId: string = 'f5dd23fe-3414-42b7-bb1c-869400ad7a10'; // string
+            this.api.getOwnershipCorrelationConfigV1({ sourceId: sourceId, resourceId: resourceId, configId: configId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v1/anomaly-summaries/unsanctioned
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#get-unsanctioned-anomaly-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          getUnsanctionedAnomalySummaryV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getUnsanctionedAnomalySummaryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-machine-identities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          listMachineIdentitiesV1(): void {
+            const filters: string = 'identityId eq "2c9180858082150f0180893dbaf44201"'; // string
+            const sorters: string = 'nativeIdentity'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listMachineIdentitiesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v2
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-machine-identities-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          listMachineIdentitiesV2(): void {
+            const filters: string = 'identityId eq "2c9180858082150f0180893dbaf44201"'; // string
+            const sorters: string = 'nativeIdentity'; // string
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listMachineIdentitiesV2({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v1/{id}/anomalies
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-machine-identity-anomalies-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          listMachineIdentityAnomaliesV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const sorters: string = '-detectedAt'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listMachineIdentityAnomaliesV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identity-user-entitlements/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-machine-identity-user-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          listMachineIdentityUserEntitlementsV1(): void {
+            const filters: string = 'machineIdentityId eq "2c9180858082150f0180893dbaf44201"'; // string
+            const sorters: string = 'machineIdentityName'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listMachineIdentityUserEntitlementsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}/correlation-configs
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#list-ownership-correlation-configs-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          listOwnershipCorrelationConfigsV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'aws:iam-role'; // string
+            const type: string = 'OWNER_PRIMARY'; // 'OWNER_PRIMARY' | 'OWNER_SECONDARY'
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listOwnershipCorrelationConfigsV1({ sourceId: sourceId, resourceId: resourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}/correlation-configs/{configId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#patch-ownership-correlation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          patchOwnershipCorrelationConfigV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'aws:iam-role'; // string
+            const configId: string = 'f5dd23fe-3414-42b7-bb1c-869400ad7a10'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchOwnershipCorrelationConfigV1({ sourceId: sourceId, resourceId: resourceId, configId: configId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/aggregate-agents
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#start-machine-identity-aggregation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { MachineIdentityAggregationRequest } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          startMachineIdentityAggregationV1(): void {
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const machineIdentityAggregationRequest: MachineIdentityAggregationRequest = {
+              "datasetIds" : [ "source:datasetId12345", "source:datasetId12345" ],
+              "disableOptimization" : false
+            }; // MachineIdentityAggregationRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startMachineIdentityAggregationV1({ sourceId: sourceId, machineIdentityAggregationRequest: machineIdentityAggregationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#update-machine-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          updateMachineIdentityV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const requestBody: Array<object> = [{"op":"add","path":"/attributes/securityRisk","value":"medium"}]; // Array<object>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateMachineIdentityV1({ id: id, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-identities/v2/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_identities/methods/machine-identities#update-machine-identity-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineIdentitiesService } from 'sailpoint-angular-sdk/machine_identities';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/machine_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineIdentitiesService);
+
+          updateMachineIdentityV2(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateMachineIdentityV2({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

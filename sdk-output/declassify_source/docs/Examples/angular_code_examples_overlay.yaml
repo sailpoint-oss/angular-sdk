@@ -1,0 +1,22 @@
+- path: /sources/v1/{sourceId}/declassify
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/declassify_source/methods/declassify-source#send-declassify-machine-account-from-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DeclassifySourceService } from 'sailpoint-angular-sdk/declassify_source';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DeclassifySourceService);
+
+          sendDeclassifyMachineAccountFromSourceV1(): void {
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.sendDeclassifyMachineAccountFromSourceV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

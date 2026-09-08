@@ -1,0 +1,35 @@
+---
+id: {{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}-model-{{#lambda.kebabcase}}{{classname}}{{/lambda.kebabcase}}
+title: {{#lambda.titlecase}}{{classname}}{{/lambda.titlecase}}
+pagination_label: {{classname}}
+sidebar_label: {{classname}}
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', '{{classname}}', '{{packageName}}']
+slug: /tools/sdk/angular/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}/models/{{#lambda.kebabcase}}{{#lambda.titlecase}}{{classname}}{{/lambda.titlecase}}{{/lambda.kebabcase}}
+tags: ['SDK', 'Software Development Kit', '{{classname}}', '{{packageName}}']
+---
+
+{{#models}}{{#model}}# {{classname}}
+
+Import this model from the entry point of its package:
+
+```typescript
+import { {{classname}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+```
+
+{{^isEnum}}
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+{{#vars}}**{{name}}** | {{^required}}**(optional)** {{/required}}{{#isContainer}}{{#isArray}}`Array<{{#items}}{{{dataType}}}{{/items}}>`{{/isArray}}{{/isContainer}}{{^isContainer}}`{{{dataType}}}`{{/isContainer}} | {{{description}}} | {{#isReadOnly}}[readonly] {{/isReadOnly}}{{#defaultValue}}[default to {{{.}}}]{{/defaultValue}}
+{{/vars}}
+{{/isEnum}}
+{{#isEnum}}
+## Enum
+
+{{#allowableValues}}{{#enumVars}}
+* `{{name}}` (value: `{{{value}}}`)
+{{/enumVars}}{{/allowableValues}}
+{{/isEnum}}
+{{/model}}{{/models}}

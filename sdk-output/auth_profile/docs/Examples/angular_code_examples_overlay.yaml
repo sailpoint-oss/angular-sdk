@@ -1,0 +1,68 @@
+- path: /auth-profiles/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/auth_profile/methods/auth-profile#get-profile-config-list-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AuthProfileService } from 'sailpoint-angular-sdk/auth_profile';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AuthProfileService);
+
+          getProfileConfigListV1(): void {
+            this.api.getProfileConfigListV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-profiles/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/auth_profile/methods/auth-profile#get-profile-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AuthProfileService } from 'sailpoint-angular-sdk/auth_profile';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AuthProfileService);
+
+          getProfileConfigV1(): void {
+            const id: string = '2c91808a7813090a017814121919ecca'; // string
+            this.api.getProfileConfigV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-profiles/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/auth_profile/methods/auth-profile#patch-profile-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AuthProfileService } from 'sailpoint-angular-sdk/auth_profile';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/auth_profile';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AuthProfileService);
+
+          patchProfileConfigV1(): void {
+            const id: string = '2c91808a7813090a017814121919ecca'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchProfileConfigV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

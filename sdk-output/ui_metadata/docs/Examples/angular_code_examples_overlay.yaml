@@ -1,0 +1,48 @@
+- path: /ui-metadata/v1/tenant
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/ui_metadata/methods/ui-metadata#get-tenant-ui-metadata-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { UIMetadataService } from 'sailpoint-angular-sdk/ui_metadata';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(UIMetadataService);
+
+          getTenantUiMetadataV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getTenantUiMetadataV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ui-metadata/v1/tenant
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/ui_metadata/methods/ui-metadata#set-tenant-ui-metadata-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { UIMetadataService } from 'sailpoint-angular-sdk/ui_metadata';
+        import { TenantUiMetadataItemUpdateRequest } from 'sailpoint-angular-sdk/ui_metadata';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(UIMetadataService);
+
+          setTenantUiMetadataV1(): void {
+            const tenantUiMetadataItemUpdateRequest: TenantUiMetadataItemUpdateRequest = {
+              "usernameEmptyText" : "Please provide your work email address...",
+              "usernameLabel" : "Email",
+              "iframeWhiteList" : "http://example.com http://example2.com"
+            }; // TenantUiMetadataItemUpdateRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.setTenantUiMetadataV1({ tenantUiMetadataItemUpdateRequest: tenantUiMetadataItemUpdateRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,128 @@
+- path: /managed-cluster-types/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#create-managed-cluster-type-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+        import { ManagedClusterType } from 'sailpoint-angular-sdk/managed_cluster_types';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClusterTypesService);
+
+          createManagedClusterTypeV1(): void {
+            const managedClusterType: ManagedClusterType = {
+              "managedProcessIds" : [ "someId", "someId2" ],
+              "pod" : "megapod-useast1",
+              "org" : "denali-cjh",
+              "id" : "aClusterTypeId",
+              "type" : "idn"
+            }; // ManagedClusterType
+            this.api.createManagedClusterTypeV1({ managedClusterType: managedClusterType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-cluster-types/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#delete-managed-cluster-type-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClusterTypesService);
+
+          deleteManagedClusterTypeV1(): void {
+            const id: string = 'aClusterTypeId'; // string
+            this.api.deleteManagedClusterTypeV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-cluster-types/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#get-managed-cluster-type-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClusterTypesService);
+
+          getManagedClusterTypeV1(): void {
+            const id: string = 'aClusterTypeId'; // string
+            this.api.getManagedClusterTypeV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-cluster-types/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#get-managed-cluster-types-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClusterTypesService);
+
+          getManagedClusterTypesV1(): void {
+            const type: string = 'IDN'; // string
+            const pod: string = 'megapod-useast1'; // string
+            const org: string = 'denali-xyz'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            this.api.getManagedClusterTypesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-cluster-types/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_cluster_types/methods/managed-cluster-types#update-managed-cluster-type-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClusterTypesService } from 'sailpoint-angular-sdk/managed_cluster_types';
+        import { JsonPatch } from 'sailpoint-angular-sdk/managed_cluster_types';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClusterTypesService);
+
+          updateManagedClusterTypeV1(): void {
+            const id: string = 'aClusterTypeId'; // string
+            const jsonPatch: JsonPatch = {
+              "operations" : [ {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              }, {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              } ]
+            }; // JsonPatch
+            this.api.updateManagedClusterTypeV1({ id: id, jsonPatch: jsonPatch }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

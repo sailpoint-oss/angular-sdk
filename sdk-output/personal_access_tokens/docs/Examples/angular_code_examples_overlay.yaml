@@ -1,0 +1,98 @@
+- path: /personal-access-tokens/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/personal_access_tokens/methods/personal-access-tokens#create-personal-access-token-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
+        import { CreatePersonalAccessTokenRequest } from 'sailpoint-angular-sdk/personal_access_tokens';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PersonalAccessTokensService);
+
+          createPersonalAccessTokenV1(): void {
+            const createPersonalAccessTokenRequest: CreatePersonalAccessTokenRequest = {
+              "scope" : [ "demo:personal-access-token-scope:first", "demo:personal-access-token-scope:second" ],
+              "accessTokenValiditySeconds" : 36900,
+              "name" : "NodeJS Integration",
+              "userAwareTokenNeverExpires" : false,
+              "expirationDate" : "2026-12-31T23:59:59.999Z"
+            }; // CreatePersonalAccessTokenRequest
+            this.api.createPersonalAccessTokenV1({ createPersonalAccessTokenRequest: createPersonalAccessTokenRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /personal-access-tokens/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/personal_access_tokens/methods/personal-access-tokens#delete-personal-access-token-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PersonalAccessTokensService);
+
+          deletePersonalAccessTokenV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deletePersonalAccessTokenV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /personal-access-tokens/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/personal_access_tokens/methods/personal-access-tokens#list-personal-access-tokens-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PersonalAccessTokensService);
+
+          listPersonalAccessTokensV1(): void {
+            const ownerId: string = '2c9180867b50d088017b554662fb281e'; // string
+            const filters: string = 'lastUsed le 2023-02-05T10:59:27.214Z'; // string
+            this.api.listPersonalAccessTokensV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /personal-access-tokens/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/personal_access_tokens/methods/personal-access-tokens#patch-personal-access-token-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PersonalAccessTokensService } from 'sailpoint-angular-sdk/personal_access_tokens';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/personal_access_tokens';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PersonalAccessTokensService);
+
+          patchPersonalAccessTokenV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchPersonalAccessTokenV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

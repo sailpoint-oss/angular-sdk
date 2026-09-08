@@ -1,0 +1,80 @@
+- path: /account-requests/v1/machine-account-create
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_creation_request/methods/machine-account-creation-request#create-machine-account-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountCreationRequestService } from 'sailpoint-angular-sdk/machine_account_creation_request';
+        import { MachineAccountCreateRequestInput } from 'sailpoint-angular-sdk/machine_account_creation_request';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountCreationRequestService);
+
+          createMachineAccountRequestV1(): void {
+            const machineAccountCreateRequestInput: MachineAccountCreateRequestInput = {
+              "formId" : "f5dd23fe-3414-42b7-bb1c-869400ad7a10",
+              "entitlementIds" : [ "6d28b7c1620c49c6b6d5cbf81eb4b5fa", "2c91808a7624751a01762f19d67c220e" ],
+              "environment" : "Dev",
+              "description" : "Requesting machine account for tracking the inventory.",
+              "machineIdentityId" : "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa",
+              "ownerIdentityId" : "18104e7e499b4e23882d6323344ab6bc",
+              "userInput" : {
+                "target" : "AD Source",
+                "description" : "Inventory tracking"
+              },
+              "subtypeId" : "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa"
+            }; // MachineAccountCreateRequestInput
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createMachineAccountRequestV1({ machineAccountCreateRequestInput: machineAccountCreateRequestInput }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /account-requests/v1/machine-account-create/{accountRequestId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_creation_request/methods/machine-account-creation-request#get-create-machine-account-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountCreationRequestService } from 'sailpoint-angular-sdk/machine_account_creation_request';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountCreationRequestService);
+
+          getCreateMachineAccountRequestV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const accountRequestId: string = 'gt38f94347e94562b5bb8424a56498d8'; // string
+            this.api.getCreateMachineAccountRequestV1({ xSailPointExperimental: xSailPointExperimental, accountRequestId: accountRequestId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-subtypes/v1/machine-account-create-access
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_creation_request/methods/machine-account-creation-request#get-machine-account-create-access-info-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountCreationRequestService } from 'sailpoint-angular-sdk/machine_account_creation_request';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountCreationRequestService);
+
+          getMachineAccountCreateAccessInfoV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            this.api.getMachineAccountCreateAccessInfoV1({ xSailPointExperimental: xSailPointExperimental }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

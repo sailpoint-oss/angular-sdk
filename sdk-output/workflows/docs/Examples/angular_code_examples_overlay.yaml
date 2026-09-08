@@ -1,0 +1,456 @@
+- path: /workflow-executions/v1/{id}/cancel
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#cancel-workflow-execution-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          cancelWorkflowExecutionV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            this.api.cancelWorkflowExecutionV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1/execute/external/{id}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#create-external-execute-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { CreateExternalExecuteWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          createExternalExecuteWorkflowV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            const createExternalExecuteWorkflowV1Request: CreateExternalExecuteWorkflowV1Request = ; // CreateExternalExecuteWorkflowV1Request
+            this.api.createExternalExecuteWorkflowV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1/{id}/external/oauth-clients
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#create-workflow-external-trigger-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          createWorkflowExternalTriggerV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            this.api.createWorkflowExternalTriggerV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#create-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { CreateWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          createWorkflowV1(): void {
+            const createWorkflowV1Request: CreateWorkflowV1Request = {"name":"Send Email","owner":{"type":"IDENTITY","id":"2c91808568c529c60168cca6f90c1313","name":"William Wilson"},"description":"Send an email to the identity who's attributes changed.","definition":{"start":"Send Email Test","steps":{"Send Email":{"actionId":"sp:send-email","attributes":{"body":"This is a test","from":"sailpoint@sailpoint.com","recipientId.$":"$.identity.id","subject":"test"},"nextStep":"success","selectResult":null,"type":"action"},"success":{"type":"success"}}},"enabled":false,"trigger":{"type":"EVENT","attributes":{"id":"idn:identity-attributes-changed","filter":"$.changes[?(@.attribute == 'manager')]"}}}; // CreateWorkflowV1Request
+            this.api.createWorkflowV1({ createWorkflowV1Request: createWorkflowV1Request }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#delete-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          deleteWorkflowV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            this.api.deleteWorkflowV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflow-executions/v1/{id}/history
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-execution-history-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          getWorkflowExecutionHistoryV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.getWorkflowExecutionHistoryV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflow-executions/v1/{id}/history-v2
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-execution-history-v2-for-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          getWorkflowExecutionHistoryV2ForV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            this.api.getWorkflowExecutionHistoryV2ForV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflow-executions/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-execution-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          getWorkflowExecutionV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            this.api.getWorkflowExecutionV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1/{id}/executions
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-executions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          getWorkflowExecutionsV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const filters: string = 'status eq "Failed"'; // string
+            this.api.getWorkflowExecutionsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#get-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          getWorkflowV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            this.api.getWorkflowV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflow-library/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#list-complete-workflow-library-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          listCompleteWorkflowLibraryV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listCompleteWorkflowLibraryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflow-library/v1/actions
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#list-workflow-library-actions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          listWorkflowLibraryActionsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const filters: string = 'id eq "sp:create-campaign"'; // string
+            this.api.listWorkflowLibraryActionsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflow-library/v1/operators
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#list-workflow-library-operators-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          listWorkflowLibraryOperatorsV1(): void {
+            this.api.listWorkflowLibraryOperatorsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflow-library/v1/triggers
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#list-workflow-library-triggers-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          listWorkflowLibraryTriggersV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const filters: string = 'id eq "idn:identity-attributes-changed"'; // string
+            this.api.listWorkflowLibraryTriggersV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#list-workflows-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          listWorkflowsV1(): void {
+            this.api.listWorkflowsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#patch-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          patchWorkflowV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchWorkflowV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#put-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { WorkflowBody } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          putWorkflowV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            const workflowBody: WorkflowBody = {
+              "owner" : {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "name" : "Send Email",
+              "description" : "Send an email to the identity who's attributes changed.",
+              "definition" : {
+                "start" : "Send Email Test",
+                "steps" : {
+                  "Send Email" : {
+                    "actionId" : "sp:send-email",
+                    "attributes" : {
+                      "body" : "This is a test",
+                      "from" : "sailpoint@sailpoint.com",
+                      "recipientId.$" : "$.identity.id",
+                      "subject" : "test"
+                    },
+                    "nextStep" : "success",
+                    "selectResult" : null,
+                    "type" : "ACTION"
+                  },
+                  "success" : {
+                    "type" : "success"
+                  }
+                }
+              },
+              "trigger" : {
+                "displayName" : "displayName",
+                "attributes" : "{}",
+                "type" : "EVENT"
+              },
+              "enabled" : false
+            }; // WorkflowBody
+            this.api.putWorkflowV1({ id: id, workflowBody: workflowBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1/execute/external/{id}/test
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#test-external-execute-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { TestExternalExecuteWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          testExternalExecuteWorkflowV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            const testExternalExecuteWorkflowV1Request: TestExternalExecuteWorkflowV1Request = ; // TestExternalExecuteWorkflowV1Request
+            this.api.testExternalExecuteWorkflowV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workflows/v1/{id}/test
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/workflows/methods/workflows#test-workflow-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkflowsService } from 'sailpoint-angular-sdk/workflows';
+        import { TestWorkflowV1Request } from 'sailpoint-angular-sdk/workflows';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkflowsService);
+
+          testWorkflowV1(): void {
+            const id: string = 'c17bea3a-574d-453c-9e04-4365fbf5af0b'; // string
+            const testWorkflowV1Request: TestWorkflowV1Request = {"input":{"identity":{"id":"ee769173319b41d19ccec6cea52f237b","name":"john.doe","type":"IDENTITY"},"changes":[{"attribute":"department","oldValue":"sales","newValue":"marketing"},{"attribute":"manager","oldValue":{"id":"ee769173319b41d19ccec6c235423237b","name":"nice.guy","type":"IDENTITY"},"newValue":{"id":"ee769173319b41d19ccec6c235423236c","name":"mean.guy","type":"IDENTITY"}},{"attribute":"email","oldValue":"john.doe@hotmail.com","newValue":"john.doe@gmail.com"}]}}; // TestWorkflowV1Request
+            this.api.testWorkflowV1({ id: id, testWorkflowV1Request: testWorkflowV1Request }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

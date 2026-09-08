@@ -1,0 +1,378 @@
+- path: /identity-profiles/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#create-identity-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfile } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          createIdentityProfileV1(): void {
+            const identityProfile: IdentityProfile = {
+              "owner" : {
+                "name" : "William Wilson",
+                "id" : "2c9180835d191a86015d28455b4b232a",
+                "type" : "IDENTITY"
+              },
+              "identityExceptionReportReference" : {
+                "reportName" : "My annual report",
+                "taskResultId" : "2b838de9-db9b-abcf-e646-d4f274ad4238"
+              },
+              "authoritativeSource" : {
+                "name" : "HR Active Directory",
+                "id" : "2c9180835d191a86015d28455b4b232a",
+                "type" : "SOURCE"
+              },
+              "hasTimeBasedAttr" : true,
+              "created" : "2015-05-28T14:07:17Z",
+              "description" : "My custom flat file profile",
+              "identityRefreshRequired" : true,
+              "identityCount" : 8,
+              "priority" : 10,
+              "identityAttributeConfig" : {
+                "attributeTransforms" : [ {
+                  "transformDefinition" : {
+                    "attributes" : {
+                      "attributeName" : "e-mail",
+                      "sourceName" : "MySource",
+                      "sourceId" : "2c9180877a826e68017a8c0b03da1a53"
+                    },
+                    "type" : "accountAttribute"
+                  },
+                  "identityAttributeName" : "email"
+                }, {
+                  "transformDefinition" : {
+                    "attributes" : {
+                      "attributeName" : "e-mail",
+                      "sourceName" : "MySource",
+                      "sourceId" : "2c9180877a826e68017a8c0b03da1a53"
+                    },
+                    "type" : "accountAttribute"
+                  },
+                  "identityAttributeName" : "email"
+                } ],
+                "enabled" : true
+              },
+              "name" : "aName",
+              "modified" : "2015-05-28T14:07:17Z",
+              "id" : "id12345"
+            }; // IdentityProfile
+            this.api.createIdentityProfileV1({ identityProfile: identityProfile }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1/{identityProfileId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#delete-identity-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          deleteIdentityProfileV1(): void {
+            const identityProfileId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deleteIdentityProfileV1({ identityProfileId: identityProfileId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1/bulk-delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#delete-identity-profiles-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          deleteIdentityProfilesV1(): void {
+            const requestBody: Array<string> = ; // Array<string>
+            this.api.deleteIdentityProfilesV1({ requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1/export
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#export-identity-profiles-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          exportIdentityProfilesV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "ef38f94347e94562b5bb8424a56397d8"'; // string
+            const sorters: string = 'id,name'; // string
+            this.api.exportIdentityProfilesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1/identity-preview
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#generate-identity-preview-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityPreviewRequest } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          generateIdentityPreviewV1(): void {
+            const identityPreviewRequest: IdentityPreviewRequest = {
+              "identityId" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "identityAttributeConfig" : {
+                "attributeTransforms" : [ {
+                  "transformDefinition" : {
+                    "attributes" : {
+                      "attributeName" : "e-mail",
+                      "sourceName" : "MySource",
+                      "sourceId" : "2c9180877a826e68017a8c0b03da1a53"
+                    },
+                    "type" : "accountAttribute"
+                  },
+                  "identityAttributeName" : "email"
+                }, {
+                  "transformDefinition" : {
+                    "attributes" : {
+                      "attributeName" : "e-mail",
+                      "sourceName" : "MySource",
+                      "sourceId" : "2c9180877a826e68017a8c0b03da1a53"
+                    },
+                    "type" : "accountAttribute"
+                  },
+                  "identityAttributeName" : "email"
+                } ],
+                "enabled" : true
+              }
+            }; // IdentityPreviewRequest
+            this.api.generateIdentityPreviewV1({ identityPreviewRequest: identityPreviewRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1/{identityProfileId}/default-identity-attribute-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#get-default-identity-attribute-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          getDefaultIdentityAttributeConfigV1(): void {
+            const identityProfileId: string = '2b838de9-db9b-abcf-e646-d4f274ad4238'; // string
+            this.api.getDefaultIdentityAttributeConfigV1({ identityProfileId: identityProfileId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1/{identityProfileId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#get-identity-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          getIdentityProfileV1(): void {
+            const identityProfileId: string = '2b838de9-db9b-abcf-e646-d4f274ad4238'; // string
+            this.api.getIdentityProfileV1({ identityProfileId: identityProfileId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1/import
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#import-identity-profiles-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { IdentityProfileExportedObject } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          importIdentityProfilesV1(): void {
+            const identityProfileExportedObject: Array<IdentityProfileExportedObject> = {
+              "self" : {
+                "name" : "HR Active Directory",
+                "id" : "2c9180835d191a86015d28455b4b232a",
+                "type" : "SOURCE"
+              },
+              "version" : 1,
+              "object" : {
+                "owner" : {
+                  "name" : "William Wilson",
+                  "id" : "2c9180835d191a86015d28455b4b232a",
+                  "type" : "IDENTITY"
+                },
+                "identityExceptionReportReference" : {
+                  "reportName" : "My annual report",
+                  "taskResultId" : "2b838de9-db9b-abcf-e646-d4f274ad4238"
+                },
+                "authoritativeSource" : {
+                  "name" : "HR Active Directory",
+                  "id" : "2c9180835d191a86015d28455b4b232a",
+                  "type" : "SOURCE"
+                },
+                "hasTimeBasedAttr" : true,
+                "created" : "2015-05-28T14:07:17Z",
+                "description" : "My custom flat file profile",
+                "identityRefreshRequired" : true,
+                "identityCount" : 8,
+                "priority" : 10,
+                "identityAttributeConfig" : {
+                  "attributeTransforms" : [ {
+                    "transformDefinition" : {
+                      "attributes" : {
+                        "attributeName" : "e-mail",
+                        "sourceName" : "MySource",
+                        "sourceId" : "2c9180877a826e68017a8c0b03da1a53"
+                      },
+                      "type" : "accountAttribute"
+                    },
+                    "identityAttributeName" : "email"
+                  }, {
+                    "transformDefinition" : {
+                      "attributes" : {
+                        "attributeName" : "e-mail",
+                        "sourceName" : "MySource",
+                        "sourceId" : "2c9180877a826e68017a8c0b03da1a53"
+                      },
+                      "type" : "accountAttribute"
+                    },
+                    "identityAttributeName" : "email"
+                  } ],
+                  "enabled" : true
+                },
+                "name" : "aName",
+                "modified" : "2015-05-28T14:07:17Z",
+                "id" : "id12345"
+              }
+            }; // Array<IdentityProfileExportedObject>
+            this.api.importIdentityProfilesV1({ identityProfileExportedObject: identityProfileExportedObject }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#list-identity-profiles-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          listIdentityProfilesV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "ef38f94347e94562b5bb8424a56397d8"'; // string
+            const sorters: string = 'id,name'; // string
+            this.api.listIdentityProfilesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1/{identityProfileId}/process-identities
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#sync-identity-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          syncIdentityProfileV1(): void {
+            const identityProfileId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.syncIdentityProfileV1({ identityProfileId: identityProfileId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-profiles/v1/{identityProfileId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_profiles/methods/identity-profiles#update-identity-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityProfilesService } from 'sailpoint-angular-sdk/identity_profiles';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/identity_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityProfilesService);
+
+          updateIdentityProfileV1(): void {
+            const identityProfileId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateIdentityProfileV1({ identityProfileId: identityProfileId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

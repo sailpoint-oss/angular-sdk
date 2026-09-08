@@ -1,0 +1,308 @@
+- path: /access-profiles/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#create-access-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfile } from 'sailpoint-angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          createAccessProfileV1(): void {
+            const accessProfile: AccessProfile = {
+              "owner" : {
+                "name" : "support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              },
+              "entitlements" : [ {
+                "name" : "CN=entitlement.490efde5,OU=OrgCo,OU=ServiceDept,DC=HQAD,DC=local",
+                "id" : "2c91809773dee32014e13e122092014e",
+                "type" : "ENTITLEMENT"
+              }, {
+                "name" : "CN=entitlement.490efde5,OU=OrgCo,OU=ServiceDept,DC=HQAD,DC=local",
+                "id" : "2c91809773dee32014e13e122092014e",
+                "type" : "ENTITLEMENT"
+              } ],
+              "created" : "2021-03-01T22:32:58.104Z",
+              "description" : "Collection of entitlements to read/write the employee database",
+              "source" : {
+                "name" : "ODS-AD-SOURCE",
+                "id" : "2c91809773dee3610173fdb0b6061ef4",
+                "type" : "SOURCE"
+              },
+              "enabled" : true,
+              "additionalOwners" : [ {
+                "name" : "support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              }, {
+                "name" : "support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              } ],
+              "revocationRequestConfig" : {
+                "approvalSchemes" : [ {
+                  "approverId" : "46c79819-a69f-49a2-becb-12c971ae66c6",
+                  "approverType" : "GOVERNANCE_GROUP"
+                }, {
+                  "approverId" : "46c79819-a69f-49a2-becb-12c971ae66c6",
+                  "approverType" : "GOVERNANCE_GROUP"
+                } ]
+              },
+              "segments" : [ "f7b1b8a3-5fed-4fd4-ad29-82014e137e19", "29cb6c06-1da8-43ea-8be4-b3125f248f2a" ],
+              "accessRequestConfig" : {
+                "commentsRequired" : true,
+                "reauthorizationRequired" : true,
+                "approvalSchemes" : [ {
+                  "approverId" : "46c79819-a69f-49a2-becb-12c971ae66c6",
+                  "approverType" : "GOVERNANCE_GROUP"
+                }, {
+                  "approverId" : "46c79819-a69f-49a2-becb-12c971ae66c6",
+                  "approverType" : "GOVERNANCE_GROUP"
+                } ],
+                "formDefinitionId" : "78258e80-e9e2-4e1a-a11f-ce0b7c62f25d",
+                "denialCommentsRequired" : true,
+                "requireEndDate" : true,
+                "maxPermittedAccessDuration" : {
+                  "value" : 6,
+                  "timeUnit" : "MONTHS"
+                }
+              },
+              "name" : "Employee-database-read-write",
+              "provisioningCriteria" : {
+                "children" : [ {
+                  "children" : [ {
+                    "children" : "children",
+                    "attribute" : "email",
+                    "operation" : "EQUALS",
+                    "value" : "carlee.cert1c9f9b6fd@mailinator.com"
+                  }, {
+                    "children" : "children",
+                    "attribute" : "email",
+                    "operation" : "EQUALS",
+                    "value" : "carlee.cert1c9f9b6fd@mailinator.com"
+                  } ],
+                  "attribute" : "email",
+                  "operation" : "EQUALS",
+                  "value" : "carlee.cert1c9f9b6fd@mailinator.com"
+                }, {
+                  "children" : [ {
+                    "children" : "children",
+                    "attribute" : "email",
+                    "operation" : "EQUALS",
+                    "value" : "carlee.cert1c9f9b6fd@mailinator.com"
+                  }, {
+                    "children" : "children",
+                    "attribute" : "email",
+                    "operation" : "EQUALS",
+                    "value" : "carlee.cert1c9f9b6fd@mailinator.com"
+                  } ],
+                  "attribute" : "email",
+                  "operation" : "EQUALS",
+                  "value" : "carlee.cert1c9f9b6fd@mailinator.com"
+                } ],
+                "attribute" : "email",
+                "operation" : "EQUALS",
+                "value" : "carlee.cert1c9f9b6fd@mailinator.com"
+              },
+              "modified" : "2021-03-02T20:22:28.104Z",
+              "accessModelMetadata" : {
+                "attributes" : [ {
+                  "key" : "iscPrivacy",
+                  "name" : "Privacy",
+                  "multiselect" : false,
+                  "status" : "active",
+                  "type" : "governance",
+                  "objectTypes" : [ "all" ],
+                  "description" : "Specifies the level of privacy associated with an access item.",
+                  "values" : [ {
+                    "value" : "public",
+                    "name" : "Public",
+                    "status" : "active"
+                  } ]
+                } ]
+              },
+              "id" : "2c91808a7190d06e01719938fcd20792",
+              "requestable" : true
+            }; // AccessProfile
+            this.api.createAccessProfileV1({ accessProfile: accessProfile }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#delete-access-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          deleteAccessProfileV1(): void {
+            const id: string = '2c91808a7813090a017814121919ecca'; // string
+            this.api.deleteAccessProfileV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/bulk-delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#delete-access-profiles-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfileBulkDeleteRequest } from 'sailpoint-angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          deleteAccessProfilesInBulkV1(): void {
+            const accessProfileBulkDeleteRequest: AccessProfileBulkDeleteRequest = {
+              "accessProfileIds" : [ "2c9180847812e0b1017817051919ecca", "2c9180887812e0b201781e129f151816" ],
+              "bestEffortOnly" : true
+            }; // AccessProfileBulkDeleteRequest
+            this.api.deleteAccessProfilesInBulkV1({ accessProfileBulkDeleteRequest: accessProfileBulkDeleteRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/{id}/entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#get-access-profile-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          getAccessProfileEntitlementsV1(): void {
+            const id: string = '2c91808a7813090a017814121919ecca'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'attribute eq "memberOf"'; // string
+            const sorters: string = 'name,-modified'; // string
+            this.api.getAccessProfileEntitlementsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#get-access-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          getAccessProfileV1(): void {
+            const id: string = '2c9180837ca6693d017ca8d097500149'; // string
+            this.api.getAccessProfileV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#list-access-profiles-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          listAccessProfilesV1(): void {
+            const forSubadmin: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq "SailPoint Support"'; // string
+            const sorters: string = 'name,-modified'; // string
+            const forSegmentIds: string = '0b5c9f25-83c6-4762-9073-e38f7bb2ae26,2e8d8180-24bc-4d21-91c6-7affdb473b0d'; // string
+            const includeUnsegmented: boolean = false; // boolean
+            this.api.listAccessProfilesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#patch-access-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          patchAccessProfileV1(): void {
+            const id: string = '2c91808a7813090a017814121919ecca'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchAccessProfileV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/bulk-update-requestable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#update-access-profiles-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from 'sailpoint-angular-sdk/access_profiles';
+        import { AccessProfileBulkUpdateRequestInner } from 'sailpoint-angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          updateAccessProfilesInBulkV1(): void {
+            const accessProfileBulkUpdateRequestInner: Array<AccessProfileBulkUpdateRequestInner> = [{"id":"464ae7bf-791e-49fd-b746-06a2e4a89635","requestable":false}]; // Array<AccessProfileBulkUpdateRequestInner>
+            this.api.updateAccessProfilesInBulkV1({ accessProfileBulkUpdateRequestInner: accessProfileBulkUpdateRequestInner }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

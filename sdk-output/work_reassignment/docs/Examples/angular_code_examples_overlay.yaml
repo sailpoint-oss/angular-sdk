@@ -1,0 +1,218 @@
+- path: /reassignment-configurations/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#create-reassignment-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+        import { ConfigurationItemRequest } from 'sailpoint-angular-sdk/work_reassignment';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkReassignmentService);
+
+          createReassignmentConfigurationV1(): void {
+            const configurationItemRequest: ConfigurationItemRequest = {
+              "endDate" : "2022-07-30T17:00:00Z",
+              "reassignedFromId" : "2c91808781a71ddb0181b9090b5c504e",
+              "configType" : "ACCESS_REQUESTS",
+              "reassignedToId" : "2c91808781a71ddb0181b9090b53504a",
+              "startDate" : "2022-07-21T11:13:12.345Z"
+            }; // ConfigurationItemRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createReassignmentConfigurationV1({ configurationItemRequest: configurationItemRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /reassignment-configurations/v1/{identityId}/{configType}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#delete-reassignment-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkReassignmentService);
+
+          deleteReassignmentConfigurationV1(): void {
+            const identityId: string = '2c91808781a71ddb0181b9090b5c504e'; // string
+            const configType: ConfigTypeEnum = ; // ConfigTypeEnum
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteReassignmentConfigurationV1({ identityId: identityId, configType: configType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /reassignment-configurations/v1/{identityId}/evaluate/{configType}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#get-evaluate-reassignment-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkReassignmentService);
+
+          getEvaluateReassignmentConfigurationV1(): void {
+            const identityId: string = '2c91808781a71ddb0181b9090b5c504e'; // string
+            const configType: ConfigTypeEnum = accessRequests; // ConfigTypeEnum
+            const exclusionFilters: Array<string> = SELF_REVIEW_DELEGATION; // Array<string>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getEvaluateReassignmentConfigurationV1({ identityId: identityId, configType: configType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /reassignment-configurations/v1/types
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#get-reassignment-config-types-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkReassignmentService);
+
+          getReassignmentConfigTypesV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getReassignmentConfigTypesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /reassignment-configurations/v1/{identityId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#get-reassignment-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkReassignmentService);
+
+          getReassignmentConfigurationV1(): void {
+            const identityId: string = '2c91808781a71ddb0181b9090b5c504f'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getReassignmentConfigurationV1({ identityId: identityId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /reassignment-configurations/v1/tenant-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#get-tenant-config-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkReassignmentService);
+
+          getTenantConfigConfigurationV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getTenantConfigConfigurationV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /reassignment-configurations/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#list-reassignment-configurations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkReassignmentService);
+
+          listReassignmentConfigurationsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listReassignmentConfigurationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /reassignment-configurations/v1/{identityId}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#put-reassignment-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+        import { ConfigurationItemRequest } from 'sailpoint-angular-sdk/work_reassignment';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkReassignmentService);
+
+          putReassignmentConfigV1(): void {
+            const identityId: string = '2c91808781a71ddb0181b9090b5c504e'; // string
+            const configurationItemRequest: ConfigurationItemRequest = {
+              "endDate" : "2022-07-30T17:00:00Z",
+              "reassignedFromId" : "2c91808781a71ddb0181b9090b5c504e",
+              "configType" : "ACCESS_REQUESTS",
+              "reassignedToId" : "2c91808781a71ddb0181b9090b53504a",
+              "startDate" : "2022-07-21T11:13:12.345Z"
+            }; // ConfigurationItemRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.putReassignmentConfigV1({ identityId: identityId, configurationItemRequest: configurationItemRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /reassignment-configurations/v1/tenant-config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/work_reassignment/methods/work-reassignment#put-tenant-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { WorkReassignmentService } from 'sailpoint-angular-sdk/work_reassignment';
+        import { TenantConfigurationRequest } from 'sailpoint-angular-sdk/work_reassignment';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(WorkReassignmentService);
+
+          putTenantConfigurationV1(): void {
+            const tenantConfigurationRequest: TenantConfigurationRequest = {
+              "configDetails" : {
+                "disabled" : true
+              }
+            }; // TenantConfigurationRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.putTenantConfigurationV1({ tenantConfigurationRequest: tenantConfigurationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

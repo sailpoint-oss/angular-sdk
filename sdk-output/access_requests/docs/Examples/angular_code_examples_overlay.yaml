@@ -1,0 +1,737 @@
+- path: /access-request-approvals/v1/bulk-approve
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#approve-bulk-access-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { BulkApproveAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          approveBulkAccessRequestV1(): void {
+            const bulkApproveAccessRequest: BulkApproveAccessRequest = {
+              "comment" : "I approve these request items",
+              "approvalIds" : [ "2c9180835d2e5168015d32f890ca1581", "2c9180835d2e5168015d32f890ca1582" ]
+            }; // BulkApproveAccessRequest
+            this.api.approveBulkAccessRequestV1({ bulkApproveAccessRequest: bulkApproveAccessRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-requests/v1/bulk-cancel
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#cancel-access-request-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { BulkCancelAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          cancelAccessRequestInBulkV1(): void {
+            const bulkCancelAccessRequest: BulkCancelAccessRequest = {
+              "accessRequestIds" : [ "2c9180835d2e5168015d32f890ca1581", "2c9180835d2e5168015d32f890ca1582" ],
+              "comment" : "I requested this role by mistake."
+            }; // BulkCancelAccessRequest
+            this.api.cancelAccessRequestInBulkV1({ bulkCancelAccessRequest: bulkCancelAccessRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-requests/v1/cancel
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#cancel-access-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { CancelAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          cancelAccessRequestV1(): void {
+            const cancelAccessRequest: CancelAccessRequest = {
+              "accountActivityId" : "2c9180835d2e5168015d32f890ca1581",
+              "comment" : "I requested this role by mistake."
+            }; // CancelAccessRequest
+            this.api.cancelAccessRequestV1({ cancelAccessRequest: cancelAccessRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-requests/v1/close
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#close-access-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { CloseAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          closeAccessRequestV1(): void {
+            const closeAccessRequest: CloseAccessRequest = {
+              "executionStatus" : "Terminated",
+              "accessRequestIds" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+              "completionStatus" : "Failure",
+              "message" : "The IdentityNow Administrator manually closed this request."
+            }; // CloseAccessRequest
+            this.api.closeAccessRequestV1({ closeAccessRequest: closeAccessRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-requests/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#create-access-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequest } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          createAccessRequestV1(): void {
+            const accessRequest: AccessRequest = {
+              "requestedFor" : "2c918084660f45d6016617daa9210584",
+              "clientMetadata" : {
+                "requestedAppId" : "2c91808f7892918f0178b78da4a305a1",
+                "requestedAppName" : "test-app"
+              },
+              "requestType" : "GRANT_ACCESS",
+              "requestedItems" : [ {
+                "clientMetadata" : {
+                  "requestedAppName" : "test-app",
+                  "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                },
+                "removeDate" : "2020-07-11T21:23:15Z",
+                "comment" : "Requesting access profile for John Doe",
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                "type" : "ACCESS_PROFILE",
+                "assignmentId" : "ee48a191c00d49bf9264eb0a4fc3a9fc",
+                "startDate" : "2020-06-12T21:22:23Z",
+                "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+              }, {
+                "clientMetadata" : {
+                  "requestedAppName" : "test-app",
+                  "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                },
+                "removeDate" : "2020-07-11T21:23:15Z",
+                "comment" : "Requesting access profile for John Doe",
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                "type" : "ACCESS_PROFILE",
+                "assignmentId" : "ee48a191c00d49bf9264eb0a4fc3a9fc",
+                "startDate" : "2020-06-12T21:22:23Z",
+                "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+              } ],
+              "requestedForWithRequestedItems" : [ {
+                "identityType" : "HUMAN",
+                "identityId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                "requestedItems" : [ {
+                  "clientMetadata" : {
+                    "requestedAppName" : "test-app",
+                    "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                  },
+                  "removeDate" : "2020-07-11T21:23:15Z",
+                  "accountSelection" : [ {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  }, {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  } ],
+                  "comment" : "Requesting access profile for John Doe",
+                  "id" : "2c9180835d2e5168015d32f890ca1581",
+                  "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                  "type" : "ACCESS_PROFILE",
+                  "startDate" : "2020-06-12T21:22:23Z",
+                  "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+                }, {
+                  "clientMetadata" : {
+                    "requestedAppName" : "test-app",
+                    "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                  },
+                  "removeDate" : "2020-07-11T21:23:15Z",
+                  "accountSelection" : [ {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  }, {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  } ],
+                  "comment" : "Requesting access profile for John Doe",
+                  "id" : "2c9180835d2e5168015d32f890ca1581",
+                  "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                  "type" : "ACCESS_PROFILE",
+                  "startDate" : "2020-06-12T21:22:23Z",
+                  "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+                } ]
+              }, {
+                "identityType" : "HUMAN",
+                "identityId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                "requestedItems" : [ {
+                  "clientMetadata" : {
+                    "requestedAppName" : "test-app",
+                    "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                  },
+                  "removeDate" : "2020-07-11T21:23:15Z",
+                  "accountSelection" : [ {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  }, {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  } ],
+                  "comment" : "Requesting access profile for John Doe",
+                  "id" : "2c9180835d2e5168015d32f890ca1581",
+                  "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                  "type" : "ACCESS_PROFILE",
+                  "startDate" : "2020-06-12T21:22:23Z",
+                  "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+                }, {
+                  "clientMetadata" : {
+                    "requestedAppName" : "test-app",
+                    "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                  },
+                  "removeDate" : "2020-07-11T21:23:15Z",
+                  "accountSelection" : [ {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  }, {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  } ],
+                  "comment" : "Requesting access profile for John Doe",
+                  "id" : "2c9180835d2e5168015d32f890ca1581",
+                  "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                  "type" : "ACCESS_PROFILE",
+                  "startDate" : "2020-06-12T21:22:23Z",
+                  "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+                } ]
+              } ]
+            }; // AccessRequest
+            this.api.createAccessRequestV1({ accessRequest: accessRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-config/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#get-access-request-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          getAccessRequestConfigV1(): void {
+            this.api.getAccessRequestConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-config/v2
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#get-access-request-config-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          getAccessRequestConfigV2(): void {
+            this.api.getAccessRequestConfigV2({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /revocable-objects/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#get-entitlement-details-for-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          getEntitlementDetailsForIdentityV1(): void {
+            const identityId: string = '7025c863c2704ba6beeaedf3cb091573'; // string
+            const entitlementId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getEntitlementDetailsForIdentityV1({ identityId: identityId, entitlementId: entitlementId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-status/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#list-access-request-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          listAccessRequestStatusV1(): void {
+            const requestedFor: string = '2c9180877b2b6ea4017b2c545f971429'; // string
+            const requestedBy: string = '2c9180877b2b6ea4017b2c545f971429'; // string
+            const regardingIdentity: string = '2c9180877b2b6ea4017b2c545f971429'; // string
+            const assignedTo: string = '2c9180877b2b6ea4017b2c545f971429'; // string
+            const count: boolean = false; // boolean
+            const limit: number = 100; // number
+            const offset: number = 10; // number
+            const filters: string = 'accountActivityItemId eq "2c918086771c86df0177401efcdf54c0"'; // string
+            const sorters: string = 'created'; // string
+            const requestState: string = 'request-state=EXECUTING'; // string
+            this.api.listAccessRequestStatusV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-administration/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#list-administrators-access-request-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          listAdministratorsAccessRequestStatusV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const requestedFor: string = '2c9180877b2b6ea4017b2c545f971429'; // string
+            const requestedBy: string = '2c9180877b2b6ea4017b2c545f971429'; // string
+            const regardingIdentity: string = '2c9180877b2b6ea4017b2c545f971429'; // string
+            const assignedTo: string = '2c9180877b2b6ea4017b2c545f971429'; // string
+            const count: boolean = false; // boolean
+            const limit: number = 100; // number
+            const offset: number = 10; // number
+            const filters: string = 'accountActivityItemId eq "2c918086771c86df0177401efcdf54c0"'; // string
+            const sorters: string = 'created'; // string
+            const requestState: string = 'request-state=EXECUTING'; // string
+            this.api.listAdministratorsAccessRequestStatusV1({ xSailPointExperimental: xSailPointExperimental }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-requests/v1/accounts-selection
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#load-account-selections-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { AccountsSelectionRequest } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          loadAccountSelectionsV1(): void {
+            const accountsSelectionRequest: AccountsSelectionRequest = {
+              "requestedFor" : "2c918084660f45d6016617daa9210584",
+              "clientMetadata" : {
+                "requestedAppId" : "2c91808f7892918f0178b78da4a305a1",
+                "requestedAppName" : "test-app"
+              },
+              "requestType" : "GRANT_ACCESS",
+              "requestedItems" : [ {
+                "clientMetadata" : {
+                  "requestedAppName" : "test-app",
+                  "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                },
+                "removeDate" : "2020-07-11T21:23:15Z",
+                "comment" : "Requesting access profile for John Doe",
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                "type" : "ACCESS_PROFILE",
+                "assignmentId" : "ee48a191c00d49bf9264eb0a4fc3a9fc",
+                "startDate" : "2020-06-12T21:22:23Z",
+                "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+              }, {
+                "clientMetadata" : {
+                  "requestedAppName" : "test-app",
+                  "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                },
+                "removeDate" : "2020-07-11T21:23:15Z",
+                "comment" : "Requesting access profile for John Doe",
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                "type" : "ACCESS_PROFILE",
+                "assignmentId" : "ee48a191c00d49bf9264eb0a4fc3a9fc",
+                "startDate" : "2020-06-12T21:22:23Z",
+                "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+              }, {
+                "clientMetadata" : {
+                  "requestedAppName" : "test-app",
+                  "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                },
+                "removeDate" : "2020-07-11T21:23:15Z",
+                "comment" : "Requesting access profile for John Doe",
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                "type" : "ACCESS_PROFILE",
+                "assignmentId" : "ee48a191c00d49bf9264eb0a4fc3a9fc",
+                "startDate" : "2020-06-12T21:22:23Z",
+                "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+              }, {
+                "clientMetadata" : {
+                  "requestedAppName" : "test-app",
+                  "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                },
+                "removeDate" : "2020-07-11T21:23:15Z",
+                "comment" : "Requesting access profile for John Doe",
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                "type" : "ACCESS_PROFILE",
+                "assignmentId" : "ee48a191c00d49bf9264eb0a4fc3a9fc",
+                "startDate" : "2020-06-12T21:22:23Z",
+                "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+              }, {
+                "clientMetadata" : {
+                  "requestedAppName" : "test-app",
+                  "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                },
+                "removeDate" : "2020-07-11T21:23:15Z",
+                "comment" : "Requesting access profile for John Doe",
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                "type" : "ACCESS_PROFILE",
+                "assignmentId" : "ee48a191c00d49bf9264eb0a4fc3a9fc",
+                "startDate" : "2020-06-12T21:22:23Z",
+                "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+              } ],
+              "requestedForWithRequestedItems" : [ {
+                "identityType" : "HUMAN",
+                "identityId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                "requestedItems" : [ {
+                  "clientMetadata" : {
+                    "requestedAppName" : "test-app",
+                    "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                  },
+                  "removeDate" : "2020-07-11T21:23:15Z",
+                  "accountSelection" : [ {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  }, {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  } ],
+                  "comment" : "Requesting access profile for John Doe",
+                  "id" : "2c9180835d2e5168015d32f890ca1581",
+                  "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                  "type" : "ACCESS_PROFILE",
+                  "startDate" : "2020-06-12T21:22:23Z",
+                  "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+                }, {
+                  "clientMetadata" : {
+                    "requestedAppName" : "test-app",
+                    "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                  },
+                  "removeDate" : "2020-07-11T21:23:15Z",
+                  "accountSelection" : [ {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  }, {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  } ],
+                  "comment" : "Requesting access profile for John Doe",
+                  "id" : "2c9180835d2e5168015d32f890ca1581",
+                  "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                  "type" : "ACCESS_PROFILE",
+                  "startDate" : "2020-06-12T21:22:23Z",
+                  "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+                } ]
+              }, {
+                "identityType" : "HUMAN",
+                "identityId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                "requestedItems" : [ {
+                  "clientMetadata" : {
+                    "requestedAppName" : "test-app",
+                    "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                  },
+                  "removeDate" : "2020-07-11T21:23:15Z",
+                  "accountSelection" : [ {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  }, {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  } ],
+                  "comment" : "Requesting access profile for John Doe",
+                  "id" : "2c9180835d2e5168015d32f890ca1581",
+                  "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                  "type" : "ACCESS_PROFILE",
+                  "startDate" : "2020-06-12T21:22:23Z",
+                  "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+                }, {
+                  "clientMetadata" : {
+                    "requestedAppName" : "test-app",
+                    "requestedAppId" : "2c91808f7892918f0178b78da4a305a1"
+                  },
+                  "removeDate" : "2020-07-11T21:23:15Z",
+                  "accountSelection" : [ {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  }, {
+                    "sourceId" : "cb89bc2f1ee6445fbea12224c526ba3a",
+                    "accounts" : [ {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    }, {
+                      "accountUuid" : "{fab7119e-004f-4822-9c33-b8d570d6c6a6}",
+                      "nativeIdentity" : "CN=Glen 067da3248e914,OU=YOUROU,OU=org-data-service,DC=YOURDC,DC=local"
+                    } ]
+                  } ],
+                  "comment" : "Requesting access profile for John Doe",
+                  "id" : "2c9180835d2e5168015d32f890ca1581",
+                  "formInstanceId" : "9f3a1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+                  "type" : "ACCESS_PROFILE",
+                  "startDate" : "2020-06-12T21:22:23Z",
+                  "nativeIdentity" : "CN=User db3377de14bf,OU=YOURCONTAINER, DC=YOURDOMAIN"
+                } ]
+              } ]
+            }; // AccountsSelectionRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.loadAccountSelectionsV1({ accountsSelectionRequest: accountsSelectionRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-config/v1
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#set-access-request-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestConfig } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          setAccessRequestConfigV1(): void {
+            const accessRequestConfig: AccessRequestConfig = {
+              "requestOnBehalfOfConfig" : {
+                "allowRequestOnBehalfOfEmployeeByManager" : true,
+                "allowRequestOnBehalfOfForMachineIdentity" : true,
+                "allowRequestOnBehalfOfAnyoneByAnyone" : true,
+                "allowRequestForMachineByOwner" : false
+              },
+              "approvalReminderAndEscalationConfig" : {
+                "fallbackApproverRef" : {
+                  "name" : "Alison Ferguso",
+                  "id" : "5168015d32f890ca15812c9180835d2e",
+                  "type" : "IDENTITY",
+                  "email" : "alison.ferguso@identitysoon.com"
+                },
+                "maxReminders" : 1,
+                "daysUntilEscalation" : 0,
+                "daysBetweenReminders" : 0
+              },
+              "autoApprovalEnabled" : true,
+              "entitlementRequestConfig" : {
+                "accessRequestConfig" : {
+                  "denialCommentRequired" : false,
+                  "approvalSchemes" : [ {
+                    "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                    "approverType" : "GOVERNANCE_GROUP"
+                  }, {
+                    "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                    "approverType" : "GOVERNANCE_GROUP"
+                  } ],
+                  "reauthorizationRequired" : false,
+                  "formDefinitionId" : "78258e80-e9e2-4e1a-a11f-ce0b7c62f25d",
+                  "requestCommentRequired" : true,
+                  "requireEndDate" : true,
+                  "maxPermittedAccessDuration" : {
+                    "value" : 5,
+                    "timeUnit" : "DAYS"
+                  }
+                },
+                "revocationRequestConfig" : {
+                  "approvalSchemes" : [ {
+                    "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                    "approverType" : "GOVERNANCE_GROUP"
+                  }, {
+                    "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                    "approverType" : "GOVERNANCE_GROUP"
+                  } ]
+                }
+              },
+              "reauthorizationEnabled" : true,
+              "approvalsMustBeExternal" : true
+            }; // AccessRequestConfig
+            this.api.setAccessRequestConfigV1({ accessRequestConfig: accessRequestConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-request-config/v2
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_requests/methods/access-requests#set-access-request-config-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestsService } from 'sailpoint-angular-sdk/access_requests';
+        import { AccessRequestConfig2 } from 'sailpoint-angular-sdk/access_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestsService);
+
+          setAccessRequestConfigV2(): void {
+            const accessRequestConfig2: AccessRequestConfig2 = ; // AccessRequestConfig2
+            this.api.setAccessRequestConfigV2({ accessRequestConfig2: accessRequestConfig2 }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

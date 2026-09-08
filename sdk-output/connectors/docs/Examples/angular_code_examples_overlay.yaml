@@ -1,0 +1,296 @@
+- path: /connectors/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#create-custom-connector-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { V3CreateConnectorDto } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          createCustomConnectorV1(): void {
+            const v3CreateConnectorDto: V3CreateConnectorDto = {
+              "name" : "custom connector",
+              "directConnect" : true,
+              "className" : "sailpoint.connector.OpenConnectorAdapter",
+              "type" : "custom connector type",
+              "status" : "RELEASED"
+            }; // V3CreateConnectorDto
+            this.api.createCustomConnectorV1({ v3CreateConnectorDto: v3CreateConnectorDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#delete-custom-connector-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          deleteCustomConnectorV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            this.api.deleteCustomConnectorV1({ scriptName: scriptName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}/correlation-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-correlation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          getConnectorCorrelationConfigV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            this.api.getConnectorCorrelationConfigV1({ scriptName: scriptName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-list-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          getConnectorListV1(): void {
+            const filters: string = 'directConnect eq "true"'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const locale: string = 'de'; // 'de' | 'no' | 'fi' | 'sv' | 'ru' | 'pt' | 'ko' | 'zh-TW' | 'en' | 'it' | 'fr' | 'zh-CN' | 'hu' | 'es' | 'cs' | 'ja' | 'pl' | 'da' | 'nl'
+            this.api.getConnectorListV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}/source-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-source-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          getConnectorSourceConfigV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            this.api.getConnectorSourceConfigV1({ scriptName: scriptName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}/source-template
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-source-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          getConnectorSourceTemplateV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            this.api.getConnectorSourceTemplateV1({ scriptName: scriptName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}/translations/{locale}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-translations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          getConnectorTranslationsV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            const locale: string = 'de'; // 'de' | 'no' | 'fi' | 'sv' | 'ru' | 'pt' | 'ko' | 'zh-TW' | 'en' | 'it' | 'fr' | 'zh-CN' | 'hu' | 'es' | 'cs' | 'ja' | 'pl' | 'da' | 'nl'
+            this.api.getConnectorTranslationsV1({ scriptName: scriptName, locale: locale }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#get-connector-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          getConnectorV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            const locale: string = 'de'; // 'de' | 'no' | 'fi' | 'sv' | 'ru' | 'pt' | 'ko' | 'zh-TW' | 'en' | 'it' | 'fr' | 'zh-CN' | 'hu' | 'es' | 'cs' | 'ja' | 'pl' | 'da' | 'nl'
+            this.api.getConnectorV1({ scriptName: scriptName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}/correlation-config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#put-connector-correlation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          putConnectorCorrelationConfigV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.putConnectorCorrelationConfigV1({ scriptName: scriptName, file: file }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}/source-config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#put-connector-source-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          putConnectorSourceConfigV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.putConnectorSourceConfigV1({ scriptName: scriptName, file: file }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}/source-template
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#put-connector-source-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          putConnectorSourceTemplateV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.putConnectorSourceTemplateV1({ scriptName: scriptName, file: file }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}/translations/{locale}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#put-connector-translations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          putConnectorTranslationsV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            const locale: string = 'de'; // 'de' | 'no' | 'fi' | 'sv' | 'ru' | 'pt' | 'ko' | 'zh-TW' | 'en' | 'it' | 'fr' | 'zh-CN' | 'hu' | 'es' | 'cs' | 'ja' | 'pl' | 'da' | 'nl'
+            this.api.putConnectorTranslationsV1({ scriptName: scriptName, locale: locale }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connectors/v1/{scriptName}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connectors/methods/connectors#update-connector-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorsService } from 'sailpoint-angular-sdk/connectors';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/connectors';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorsService);
+
+          updateConnectorV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateConnectorV1({ scriptName: scriptName, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

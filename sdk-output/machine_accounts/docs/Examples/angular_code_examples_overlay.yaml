@@ -1,0 +1,214 @@
+- path: /sources/v1/{sourceId}/subtypes
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#create-machine-account-subtype-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+        import { CreateMachineAccountSubtypeV1Request } from 'sailpoint-angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          createMachineAccountSubtypeV1(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const createMachineAccountSubtypeV1Request: CreateMachineAccountSubtypeV1Request = {"technicalName":"foo","displayName":"Mr Foo","description":"fighters","type":"MACHINE"}; // CreateMachineAccountSubtypeV1Request
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createMachineAccountSubtypeV1({ sourceId: sourceId, createMachineAccountSubtypeV1Request: createMachineAccountSubtypeV1Request }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/subtypes/{technicalName}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#delete-machine-account-subtype-by-technical-name-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          deleteMachineAccountSubtypeByTechnicalNameV1(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const technicalName: string = 'foo'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteMachineAccountSubtypeByTechnicalNameV1({ sourceId: sourceId, technicalName: technicalName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/subtypes/{subtypeId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#get-machine-account-subtype-by-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          getMachineAccountSubtypeByIdV1(): void {
+            const subtypeId: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getMachineAccountSubtypeByIdV1({ subtypeId: subtypeId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/subtypes/{technicalName}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#get-machine-account-subtype-by-technical-name-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          getMachineAccountSubtypeByTechnicalNameV1(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const technicalName: string = 'foo'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getMachineAccountSubtypeByTechnicalNameV1({ sourceId: sourceId, technicalName: technicalName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#get-machine-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          getMachineAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getMachineAccountV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/subtypes
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#list-machine-account-subtypes-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          listMachineAccountSubtypesV1(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const filters: string = 'displayName eq "sail"'; // string
+            const sorters: string = 'displayName'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listMachineAccountSubtypesV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#list-machine-accounts-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          listMachineAccountsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'hasEntitlements eq true'; // string
+            const sorters: string = 'id,name'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listMachineAccountsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/subtypes/{technicalName}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#patch-machine-account-subtype-by-technical-name-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          patchMachineAccountSubtypeByTechnicalNameV1(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const technicalName: string = 'foo'; // string
+            const requestBody: Array<object> = [{"op":"replace","path":"/displayName","value":"Test New DisplayName"}]; // Array<object>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchMachineAccountSubtypeByTechnicalNameV1({ sourceId: sourceId, technicalName: technicalName, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#update-machine-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from 'sailpoint-angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          updateMachineAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const requestBody: Array<object> = [{"op":"add","path":"/environment","value":"test"}]; // Array<object>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateMachineAccountV1({ id: id, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

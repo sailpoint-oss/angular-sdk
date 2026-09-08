@@ -1,0 +1,90 @@
+- path: /recommendations/v1/config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_recommendations/methods/iai-recommendations#get-recommendations-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRecommendationsService } from 'sailpoint-angular-sdk/iai_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRecommendationsService);
+
+          getRecommendationsConfigV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getRecommendationsConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /recommendations/v1/request
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_recommendations/methods/iai-recommendations#get-recommendations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRecommendationsService } from 'sailpoint-angular-sdk/iai_recommendations';
+        import { RecommendationRequestDto } from 'sailpoint-angular-sdk/iai_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRecommendationsService);
+
+          getRecommendationsV1(): void {
+            const recommendationRequestDto: RecommendationRequestDto = {
+              "prescribeMode" : false,
+              "excludeInterpretations" : false,
+              "requests" : [ {
+                "item" : {
+                  "id" : "2c938083633d259901633d2623ec0375",
+                  "type" : "ENTITLEMENT"
+                },
+                "identityId" : "2c938083633d259901633d25c68c00fa"
+              }, {
+                "item" : {
+                  "id" : "2c938083633d259901633d2623ec0375",
+                  "type" : "ENTITLEMENT"
+                },
+                "identityId" : "2c938083633d259901633d25c68c00fa"
+              } ],
+              "includeTranslationMessages" : false,
+              "includeDebugInformation" : true
+            }; // RecommendationRequestDto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getRecommendationsV1({ recommendationRequestDto: recommendationRequestDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /recommendations/v1/config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_recommendations/methods/iai-recommendations#update-recommendations-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRecommendationsService } from 'sailpoint-angular-sdk/iai_recommendations';
+        import { RecommendationConfigDto } from 'sailpoint-angular-sdk/iai_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRecommendationsService);
+
+          updateRecommendationsConfigV1(): void {
+            const recommendationConfigDto: RecommendationConfigDto = {
+              "recommenderFeatures" : [ "jobTitle", "location", "peer_group", "department", "active" ],
+              "peerGroupPercentageThreshold" : 0.5,
+              "runAutoSelectOnce" : false,
+              "onlyTuneThreshold" : false
+            }; // RecommendationConfigDto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateRecommendationsConfigV1({ recommendationConfigDto: recommendationConfigDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,134 @@
+- path: /connector-customizers/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#create-connector-customizer-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+        import { ConnectorCustomizerCreateRequest } from 'sailpoint-angular-sdk/connector_customizers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorCustomizersService);
+
+          createConnectorCustomizerV1(): void {
+            const connectorCustomizerCreateRequest: ConnectorCustomizerCreateRequest = {
+              "name" : "My Custom Connector"
+            }; // ConnectorCustomizerCreateRequest
+            this.api.createConnectorCustomizerV1({ connectorCustomizerCreateRequest: connectorCustomizerCreateRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-customizers/v1/{id}/versions
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#create-connector-customizer-version-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorCustomizersService);
+
+          createConnectorCustomizerVersionV1(): void {
+            const id: string = 'b07dc46a-1498-4de8-bfbb-259a68e70c8a'; // string
+            this.api.createConnectorCustomizerVersionV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-customizers/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#delete-connector-customizer-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorCustomizersService);
+
+          deleteConnectorCustomizerV1(): void {
+            const id: string = 'b07dc46a-1498-4de8-bfbb-259a68e70c8a'; // string
+            this.api.deleteConnectorCustomizerV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-customizers/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#get-connector-customizer-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorCustomizersService);
+
+          getConnectorCustomizerV1(): void {
+            const id: string = 'b07dc46a-1498-4de8-bfbb-259a68e70c8a'; // string
+            this.api.getConnectorCustomizerV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-customizers/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#list-connector-customizers-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorCustomizersService);
+
+          listConnectorCustomizersV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            this.api.listConnectorCustomizersV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /connector-customizers/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/connector_customizers/methods/connector-customizers#put-connector-customizer-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConnectorCustomizersService } from 'sailpoint-angular-sdk/connector_customizers';
+        import { ConnectorCustomizerUpdateRequest } from 'sailpoint-angular-sdk/connector_customizers';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConnectorCustomizersService);
+
+          putConnectorCustomizerV1(): void {
+            const id: string = 'b07dc46a-1498-4de8-bfbb-259a68e70c8a'; // string
+            const connectorCustomizerUpdateRequest: ConnectorCustomizerUpdateRequest = {
+              "name" : "My Custom Connector"
+            }; // ConnectorCustomizerUpdateRequest
+            this.api.putConnectorCustomizerV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

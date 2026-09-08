@@ -1,0 +1,92 @@
+---
+id: {{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}-method-{{#lambda.kebabcase}}{{baseName}}{{/lambda.kebabcase}}
+title: {{#lambda.titlecase}}{{baseName}}{{/lambda.titlecase}}
+pagination_label: {{baseName}}
+sidebar_label: {{baseName}}
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', '{{baseName}}', '{{packageName}}']
+slug: /tools/sdk/angular/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}/methods/{{#lambda.kebabcase}}{{#lambda.titlecase}}{{baseName}}{{/lambda.titlecase}}{{/lambda.kebabcase}}
+tags: ['SDK', 'Software Development Kit', '{{baseName}}', '{{packageName}}']
+---
+
+# {{classname}}
+  {{#operations}}{{#operation}}{{#-first}}{{#tags}}{{description}} {{/tags}}{{/-first}}{{/operation}}{{/operations}}
+Every method returns an `Observable`. All request paths are relative to the `baseUrl` you pass to `provideSailPoint()`.
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+{{#operations}}{{#operation}}[**{{#lambda.kebabcase}}{{operationId}}{{/lambda.kebabcase}}**](#{{#lambda.kebabcase}}{{#lambda.titlecase}}{{operationId}}{{/lambda.titlecase}}{{/lambda.kebabcase}}) | **{{#lambda.uppercase}}{{httpMethod}}{{/lambda.uppercase}}** `{{{path}}}` | {{summary}}
+{{/operation}}{{/operations}}
+
+{{#operations}}
+{{#operation}}
+## {{#lambda.kebabcase}}{{#lambda.titlecase}}{{operationId}}{{/lambda.titlecase}}{{/lambda.kebabcase}}
+{{#isDeprecated}}:::caution deprecated
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+:::
+{{/isDeprecated}}
+{{#headerParams}}:::warning experimental
+This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
+:::
+{{/headerParams}}
+{{{summary}}}
+{{#notes}}{{{unescapedNotes}}}{{/notes}}
+{{{description}}}
+[API Spec](https://developer.sailpoint.com/docs/api/{{#lambda.kebabcase}}{{#lambda.titlecase}}{{operationId}}{{/lambda.titlecase}}{{/lambda.kebabcase}})
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `{{operationIdCamelCase}}RequestParams`.
+
+{{^allParams}}This endpoint does not need any parameter.{{/allParams}}{{#allParams}}{{#-last}}
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------{{/-last}}{{/allParams}}{{#allParams}}
+**{{paramName}}** | {{#isContainer}}{{#isArray}}`Array<{{#items}}{{{dataType}}}{{/items}}>`{{/isArray}}{{/isContainer}}{{^isContainer}}`{{{dataType}}}`{{/isContainer}} | {{description}} | {{^required}}[optional]{{/required}}{{#defaultValue}} [default to {{.}}]{{/defaultValue}}{{/allParams}}
+
+### Return type
+
+{{#returnType}}`Observable<{{{returnType}}}>`{{/returnType}}{{^returnType}}`Observable<void>` (empty response body){{/returnType}}
+
+### HTTP request headers
+
+- **Content-Type**: {{#consumes}}{{{mediaType}}}{{^-last}}, {{/-last}}{{/consumes}}{{^consumes}}Not defined{{/consumes}}
+- **Accept**: {{#produces}}{{{mediaType}}}{{^-last}}, {{/-last}}{{/produces}}{{^produces}}Not defined{{/produces}}
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { {{classname}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+{{#allParams}}
+{{#isModel}}
+{{^isArray}}
+import { {{{dataType}}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+{{/isArray}}
+{{/isModel}}
+{{#isArray}}
+{{#items.isModel}}
+import { {{#items}}{{{dataType}}}{{/items}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+{{/items.isModel}}
+{{/isArray}}
+{{/allParams}}
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject({{classname}});
+
+  {{nickname}}(): void {
+    {{#allParams}}
+    {{^isBodyParam}}const {{paramName}}: {{#isString}}string{{/isString}}{{^isString}}{{{dataType}}}{{/isString}} = {{#lambda.indented_4}}{{{example}}}{{/lambda.indented_4}}; // {{description}}{{^required}} (optional){{/required}}{{/isBodyParam}}{{#isBodyParam}}const {{paramName}}: {{{dataType}}} = {{#lambda.indented_4}}{{#requestBodyExamples}}{{{example}}}{{/requestBodyExamples}}{{^requestBodyExamples}}{}{{/requestBodyExamples}}{{/lambda.indented_4}}; // {{description}}{{^required}} (optional){{/required}}{{/isBodyParam}}
+    {{/allParams}}
+    this.api.{{nickname}}({ {{#requiredParams}}{{paramName}}: {{paramName}}{{^-last}}, {{/-last}}{{/requiredParams}} }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
+
+{{/operation}}
+{{/operations}}

@@ -1,0 +1,28 @@
+---
+id: access_requests-model-close-access-request
+title: CloseAccessRequest
+pagination_label: CloseAccessRequest
+sidebar_label: CloseAccessRequest
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'CloseAccessRequest', 'access_requests']
+slug: /tools/sdk/angular/access_requests/models/close-access-request
+tags: ['SDK', 'Software Development Kit', 'CloseAccessRequest', 'access_requests']
+---
+
+# CloseAccessRequest
+
+Import this model from the entry point of its package:
+
+```typescript
+import { CloseAccessRequest } from 'sailpoint-angular-sdk/access_requests';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**accessRequestIds** | `Array<string>` | Access Request IDs for the requests to be closed. Accepts 1-500 Identity Request IDs per request. | [default to undefined]
+**message** | **(optional)** `string` | Reason for closing the access request. Displayed under Warnings in IdentityNow. | [default to 'The IdentityNow Administrator manually closed this request.']
+**executionStatus** | **(optional)** `string` | The request\'s provisioning status. Displayed as Stage in IdentityNow. | [default to ExecutionStatusEnum_Terminated]
+**completionStatus** | **(optional)** `string` | The request\'s overall status. Displayed as Status in IdentityNow. | [default to CompletionStatusEnum_Failure]
+

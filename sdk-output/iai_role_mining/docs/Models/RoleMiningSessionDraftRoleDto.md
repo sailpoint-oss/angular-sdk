@@ -1,0 +1,34 @@
+---
+id: iai_role_mining-model-role-mining-session-draft-role-dto
+title: RoleMiningSessionDraftRoleDto
+pagination_label: RoleMiningSessionDraftRoleDto
+sidebar_label: RoleMiningSessionDraftRoleDto
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'RoleMiningSessionDraftRoleDto', 'iai_role_mining']
+slug: /tools/sdk/angular/iai_role_mining/models/role-mining-session-draft-role-dto
+tags: ['SDK', 'Software Development Kit', 'RoleMiningSessionDraftRoleDto', 'iai_role_mining']
+---
+
+# RoleMiningSessionDraftRoleDto
+
+Import this model from the entry point of its package:
+
+```typescript
+import { RoleMiningSessionDraftRoleDto } from 'sailpoint-angular-sdk/iai_role_mining';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**name** | **(optional)** `string` | Name of the draft role | [default to undefined]
+**description** | **(optional)** `string` | Draft role description | [default to undefined]
+**identityIds** | **(optional)** `Array<string>` | The list of identities for this role mining session. | [default to undefined]
+**entitlementIds** | **(optional)** `Array<string>` | The list of entitlement ids for this role mining session. | [default to undefined]
+**excludedEntitlements** | **(optional)** `Array<string>` | The list of excluded entitlement ids. | [default to undefined]
+**modified** | **(optional)** `string` | Last modified date | [default to undefined]
+**type** | **(optional)** `RoleMiningRoleType` |  | [default to undefined]
+**id** | **(optional)** `string` | Id of the potential draft role | [default to undefined]
+**createdDate** | **(optional)** `string` | The date-time when this potential draft role was created. | [default to undefined]
+**modifiedDate** | **(optional)** `string` | The date-time when this potential draft role was modified. | [default to undefined]
+

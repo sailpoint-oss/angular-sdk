@@ -1,0 +1,273 @@
+- path: /ai-access-request-recommendations/v1/ignored-items
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#add-access-request-recommendations-ignored-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          addAccessRequestRecommendationsIgnoredItemV1(): void {
+            const accessRequestRecommendationActionItemDto: AccessRequestRecommendationActionItemDto = {
+              "access" : {
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "type" : "ACCESS_PROFILE"
+              },
+              "identityId" : "2c91808570313110017040b06f344ec9"
+            }; // AccessRequestRecommendationActionItemDto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.addAccessRequestRecommendationsIgnoredItemV1({ accessRequestRecommendationActionItemDto: accessRequestRecommendationActionItemDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-access-request-recommendations/v1/requested-items
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#add-access-request-recommendations-requested-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          addAccessRequestRecommendationsRequestedItemV1(): void {
+            const accessRequestRecommendationActionItemDto: AccessRequestRecommendationActionItemDto = {
+              "access" : {
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "type" : "ACCESS_PROFILE"
+              },
+              "identityId" : "2c91808570313110017040b06f344ec9"
+            }; // AccessRequestRecommendationActionItemDto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.addAccessRequestRecommendationsRequestedItemV1({ accessRequestRecommendationActionItemDto: accessRequestRecommendationActionItemDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-access-request-recommendations/v1/viewed-items
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#add-access-request-recommendations-viewed-item-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          addAccessRequestRecommendationsViewedItemV1(): void {
+            const accessRequestRecommendationActionItemDto: AccessRequestRecommendationActionItemDto = {
+              "access" : {
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "type" : "ACCESS_PROFILE"
+              },
+              "identityId" : "2c91808570313110017040b06f344ec9"
+            }; // AccessRequestRecommendationActionItemDto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.addAccessRequestRecommendationsViewedItemV1({ accessRequestRecommendationActionItemDto: accessRequestRecommendationActionItemDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-access-request-recommendations/v1/viewed-items/bulk-create
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#add-access-request-recommendations-viewed-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationActionItemDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          addAccessRequestRecommendationsViewedItemsV1(): void {
+            const accessRequestRecommendationActionItemDto: Array<AccessRequestRecommendationActionItemDto> = {
+              "access" : {
+                "id" : "2c9180835d2e5168015d32f890ca1581",
+                "type" : "ACCESS_PROFILE"
+              },
+              "identityId" : "2c91808570313110017040b06f344ec9"
+            }; // Array<AccessRequestRecommendationActionItemDto>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.addAccessRequestRecommendationsViewedItemsV1({ accessRequestRecommendationActionItemDto: accessRequestRecommendationActionItemDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-access-request-recommendations/v1/config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          getAccessRequestRecommendationsConfigV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getAccessRequestRecommendationsConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-access-request-recommendations/v1/ignored-items
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-ignored-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          getAccessRequestRecommendationsIgnoredItemsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'identityId eq "2c9180846b0a0583016b299f210c1314"'; // string
+            const sorters: string = 'access.id'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getAccessRequestRecommendationsIgnoredItemsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-access-request-recommendations/v1/requested-items
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-requested-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          getAccessRequestRecommendationsRequestedItemsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'access.id eq "2c9180846b0a0583016b299f210c1314"'; // string
+            const sorters: string = 'access.id'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getAccessRequestRecommendationsRequestedItemsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-access-request-recommendations/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          getAccessRequestRecommendationsV1(): void {
+            const identityId: string = '2c91808570313110017040b06f344ec9'; // string
+            const limit: number = 15; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const includeTranslationMessages: boolean = false; // boolean
+            const filters: string = 'access.name co "admin"'; // string
+            const sorters: string = 'access.name'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getAccessRequestRecommendationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-access-request-recommendations/v1/viewed-items
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#get-access-request-recommendations-viewed-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          getAccessRequestRecommendationsViewedItemsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'access.id eq "2c9180846b0a0583016b299f210c1314"'; // string
+            const sorters: string = 'access.id'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getAccessRequestRecommendationsViewedItemsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-access-request-recommendations/v1/config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_access_request_recommendations/methods/iai-access-request-recommendations#set-access-request-recommendations-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIAccessRequestRecommendationsService } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+        import { AccessRequestRecommendationConfigDto } from 'sailpoint-angular-sdk/iai_access_request_recommendations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIAccessRequestRecommendationsService);
+
+          setAccessRequestRecommendationsConfigV1(): void {
+            const accessRequestRecommendationConfigDto: AccessRequestRecommendationConfigDto = {
+              "scoreThreshold" : 0.5,
+              "startDateAttribute" : "startDate",
+              "restrictionAttribute" : "location",
+              "moverAttribute" : "isMover",
+              "joinerAttribute" : "isJoiner",
+              "useRestrictionAttribute" : true
+            }; // AccessRequestRecommendationConfigDto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.setAccessRequestRecommendationsConfigV1({ accessRequestRecommendationConfigDto: accessRequestRecommendationConfigDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

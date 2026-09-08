@@ -1,0 +1,435 @@
+- path: /generic-approvals/v1/bulk-approve
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#approve-approval-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { BulkApproveRequestDTO } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          approveApprovalInBulkV1(): void {
+            const bulkApproveRequestDTO: BulkApproveRequestDTO = {
+              "comment" : "Bulk approved by admin for monthly review",
+              "approvalIds" : [ "38453251-6be2-5f8f-df93-5ce19e295837", "38453251-6be2-5f8f-df93-5ce19e295838" ],
+              "additionalAttributes" : {
+                "source" : "automation",
+                "urgency" : "high"
+              }
+            }; // BulkApproveRequestDTO
+            this.api.approveApprovalInBulkV1({ bulkApproveRequestDTO: bulkApproveRequestDTO }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/{id}/approve
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#approve-approval-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalApproveRequest } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          approveApprovalV1(): void {
+            const id: string = '38453251-6be2-5f8f-df93-5ce19e295837'; // string
+            const approvalApproveRequest: ApprovalApproveRequest = {
+              "overrideApproverID" : "12345678901234567890123456789012",
+              "comment" : "comment",
+              "additionalAttributes" : {
+                "additionalProp1" : "string",
+                "additionalProp2" : "string",
+                "additionalProp3" : "string"
+              }
+            }; // ApprovalApproveRequest
+            this.api.approveApprovalV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/{id}/cancel
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#cancel-approval-by-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalCancelRequest } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          cancelApprovalByIdV1(): void {
+            const id: string = '38453251-6be2-5f8f-df93-5ce19e295837'; // string
+            const approvalCancelRequest: ApprovalCancelRequest = {
+              "comment" : "Cancelled by administrator"
+            }; // ApprovalCancelRequest
+            this.api.cancelApprovalByIdV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/bulk-cancel
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#cancel-approval-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { BulkCancelRequestDTO } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          cancelApprovalV1(): void {
+            const bulkCancelRequestDTO: BulkCancelRequestDTO = {
+              "comment" : "Bulk cancellation by admin",
+              "approvalIds" : [ "38453251-6be2-5f8f-df93-5ce19e295837", "38453251-6be2-5f8f-df93-5ce19e295838" ]
+            }; // BulkCancelRequestDTO
+            this.api.cancelApprovalV1({ bulkCancelRequestDTO: bulkCancelRequestDTO }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/config/{id}/{scope}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#delete-approval-config-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          deleteApprovalConfigRequestV1(): void {
+            const id: string = 'ACCESS_REQUEST_APPROVAL'; // string
+            const scope: string = 'APPROVAL_TYPE'; // 'DOMAIN_OBJECT' | 'ACCOUNT' | 'ROLE' | 'ACCESS_PROFILE' | 'ENTITLEMENT' | 'APPROVAL_TYPE' | 'TENANT'
+            this.api.deleteApprovalConfigRequestV1({ id: id, scope: scope }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#get-approval-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          getApprovalV1(): void {
+            const id: string = '38453251-6be2-5f8f-df93-5ce19e295837'; // string
+            this.api.getApprovalV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/config/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#get-approvals-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          getApprovalsConfigV1(): void {
+            const id: string = 'ACCESS_REQUEST_APPROVAL'; // string
+            this.api.getApprovalsConfigV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#get-approvals-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          getApprovalsV1(): void {
+            const mine: boolean = true; // boolean
+            const requesterId: string = '17e633e7d57e481569df76323169deb6a'; // string
+            const requesteeId: string = '27e6334g757e481569df76323169db9sc'; // string
+            const approverId: string = '37e6334g557e481569df7g2d3169db9sb'; // string
+            const count: boolean = true; // boolean
+            const countOnly: boolean = true; // boolean
+            const includeComments: boolean = true; // boolean
+            const includeApprovers: boolean = true; // boolean
+            const includeReassignmentHistory: boolean = true; // boolean
+            const includeBatchInfo: boolean = true; // boolean
+            const filters: string = 'filters=status eq "PENDING" and type eq "ACCESS_REQUEST_APPROVAL"'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.getApprovalsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/bulk-reassign
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#move-approval-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { BulkReassignRequestDTO } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          moveApprovalV1(): void {
+            const bulkReassignRequestDTO: BulkReassignRequestDTO = {
+              "reassignTo" : "32454251-6ce2-5d8f-df93-5ce19e295238",
+              "comment" : "Bulk reassignment by admin",
+              "reassignFrom" : "12353251-6be2-5f8f-df93-5ce19b6e5837",
+              "approvalIds" : [ "38453251-6be2-5f8f-df93-5ce19e295837", "38453251-6be2-5f8f-df93-5ce19e295838" ]
+            }; // BulkReassignRequestDTO
+            this.api.moveApprovalV1({ bulkReassignRequestDTO: bulkReassignRequestDTO }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/config/{id}/{scope}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#put-approvals-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalConfig } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          putApprovalsConfigV1(): void {
+            const id: string = 'ACCESS_REQUEST_APPROVAL'; // string
+            const scope: string = 'APPROVAL_TYPE'; // 'DOMAIN_OBJECT' | 'ACCOUNT' | 'ROLE' | 'ACCESS_PROFILE' | 'ENTITLEMENT' | 'APPROVAL_TYPE' | 'TENANT'
+            const approvalConfig: ApprovalConfig = {
+              "timeoutConfig" : {
+                "daysUntilTimeout" : 2,
+                "enabled" : true,
+                "timeoutResult" : "EXPIRED"
+              },
+              "requiresComment" : "ALL",
+              "cronTimezone" : {
+                "offset" : "",
+                "location" : "America/New_York"
+              },
+              "fallbackApprover" : {
+                "identityID" : "fdfda352157d4cc79bb749953131b457",
+                "type" : "MANAGER_OF"
+              },
+              "reminderConfig" : {
+                "reminderCronSchedule" : "@every 24h",
+                "daysUntilFirstReminder" : 0,
+                "maxReminders" : 5,
+                "enabled" : false
+              },
+              "circumventApprovalProcess" : false,
+              "escalationConfig" : {
+                "escalationCronSchedule" : "@every 72h",
+                "escalationChain" : [ {
+                  "identityType" : "IDENTITY",
+                  "identityId" : "fdfda352157d4cc79bb749953131b457"
+                }, {
+                  "identityType" : "IDENTITY",
+                  "identityId" : "fdfda352157d4cc79bb749953131b457"
+                } ],
+                "daysUntilFirstEscalation" : 2,
+                "enabled" : true
+              },
+              "serialChain" : [ {
+                "identityType" : "IDENTITY",
+                "identityId" : "2c9180858090ea8801809a0465e829da"
+              }, {
+                "identityType" : "IDENTITY",
+                "identityId" : "2c9180858090ea8801809a0465e829da"
+              } ],
+              "machineIdentityManagerAssignment" : "MACHINE_IDENTITY_OWNER",
+              "autoApprove" : "OFF"
+            }; // ApprovalConfig
+            this.api.putApprovalsConfigV1({ id: id, scope: scope, approvalConfig: approvalConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/bulk-reject
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#reject-approval-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { BulkRejectRequestDTO } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          rejectApprovalInBulkV1(): void {
+            const bulkRejectRequestDTO: BulkRejectRequestDTO = {
+              "comment" : "Bulk reject by admin",
+              "approvalIds" : [ "38453251-6be2-5f8f-df93-5ce19e295837", "38453251-6be2-5f8f-df93-5ce19e295838" ]
+            }; // BulkRejectRequestDTO
+            this.api.rejectApprovalInBulkV1({ bulkRejectRequestDTO: bulkRejectRequestDTO }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/{id}/reject
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#reject-approval-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalRejectRequest } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          rejectApprovalV1(): void {
+            const id: string = '38453251-6be2-5f8f-df93-5ce19e295837'; // string
+            const approvalRejectRequest: ApprovalRejectRequest = {
+              "overrideApproverID" : "12345678901234567890123456789012",
+              "comment" : "string"
+            }; // ApprovalRejectRequest
+            this.api.rejectApprovalV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/{id}/attributes
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#update-approvals-attributes-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalAttributesRequest } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          updateApprovalsAttributesV1(): void {
+            const id: string = '38453251-6be2-5f8f-df93-5ce19e295837'; // string
+            const approvalAttributesRequest: ApprovalAttributesRequest = {
+              "removeAttributeKeys" : [ "string" ],
+              "comment" : "comment",
+              "additionalAttributes" : {
+                "additionalProp1" : "string",
+                "additionalProp2" : "string",
+                "additionalProp3" : "string"
+              }
+            }; // ApprovalAttributesRequest
+            this.api.updateApprovalsAttributesV1({ id: id, approvalAttributesRequest: approvalAttributesRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/{id}/comments
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#update-approvals-comments-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalCommentsRequest } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          updateApprovalsCommentsV1(): void {
+            const id: string = '38453251-6be2-5f8f-df93-5ce19e295837'; // string
+            const approvalCommentsRequest: ApprovalCommentsRequest = {
+              "comment" : "Approval comment."
+            }; // ApprovalCommentsRequest
+            this.api.updateApprovalsCommentsV1({ id: id, approvalCommentsRequest: approvalCommentsRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-approvals/v1/{id}/reassign
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/approvals/methods/approvals#update-approvals-reassign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApprovalsService } from 'sailpoint-angular-sdk/approvals';
+        import { ApprovalReassignRequest } from 'sailpoint-angular-sdk/approvals';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApprovalsService);
+
+          updateApprovalsReassignV1(): void {
+            const id: string = '38453251-6be2-5f8f-df93-5ce19e295837'; // string
+            const approvalReassignRequest: ApprovalReassignRequest = {
+              "reassignTo" : "152354832eb6f8f539fd738592e19ec5",
+              "comment" : "comment",
+              "reassignFrom" : "384532516be25f8fdf935ce19e295837"
+            }; // ApprovalReassignRequest
+            this.api.updateApprovalsReassignV1({ id: id, approvalReassignRequest: approvalReassignRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

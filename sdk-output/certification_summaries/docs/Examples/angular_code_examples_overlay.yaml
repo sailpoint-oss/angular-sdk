@@ -1,0 +1,97 @@
+- path: /certifications/v1/{id}/access-summaries/{type}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_summaries/methods/certification-summaries#get-identity-access-summaries-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationSummariesService } from 'sailpoint-angular-sdk/certification_summaries';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationSummariesService);
+
+          getIdentityAccessSummariesV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const type: string = 'ACCESS_PROFILE'; // 'ROLE' | 'ACCESS_PROFILE' | 'ENTITLEMENT'
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'access.id eq "ef38f94347e94562b5bb8424a56397d8"'; // string
+            const sorters: string = 'access.name'; // string
+            this.api.getIdentityAccessSummariesV1({ id: id, type: type }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}/decision-summary
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_summaries/methods/certification-summaries#get-identity-decision-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationSummariesService } from 'sailpoint-angular-sdk/certification_summaries';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationSummariesService);
+
+          getIdentityDecisionSummaryV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const filters: string = 'identitySummary.id eq "ef38f94347e94562b5bb8424a56397d8"'; // string
+            this.api.getIdentityDecisionSummaryV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}/identity-summaries
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_summaries/methods/certification-summaries#get-identity-summaries-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationSummariesService } from 'sailpoint-angular-sdk/certification_summaries';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationSummariesService);
+
+          getIdentitySummariesV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "ef38f94347e94562b5bb8424a56397d8"'; // string
+            const sorters: string = 'name'; // string
+            this.api.getIdentitySummariesV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certifications/v1/{id}/identity-summaries/{identitySummaryId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_summaries/methods/certification-summaries#get-identity-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationSummariesService } from 'sailpoint-angular-sdk/certification_summaries';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationSummariesService);
+
+          getIdentitySummaryV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const identitySummaryId: string = '2c91808772a504f50172a9540e501ba8'; // string
+            this.api.getIdentitySummaryV1({ id: id, identitySummaryId: identitySummaryId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

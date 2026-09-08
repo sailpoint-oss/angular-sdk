@@ -1,0 +1,21 @@
+- path: /account-aggregations/v1/{id}/status
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/account_aggregations/methods/account-aggregations#get-account-aggregation-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountAggregationsService } from 'sailpoint-angular-sdk/account_aggregations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountAggregationsService);
+
+          getAccountAggregationStatusV1(): void {
+            const id: string = '2c91808477a6b0c60177a81146b8110b'; // string
+            this.api.getAccountAggregationStatusV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,20 @@
+- path: /tenant/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tenant/methods/tenant#get-tenant-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TenantService } from 'sailpoint-angular-sdk/tenant';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TenantService);
+
+          getTenantV1(): void {
+            this.api.getTenantV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

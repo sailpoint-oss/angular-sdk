@@ -1,0 +1,133 @@
+- path: /entitlement-connections/v1/current-identity
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#list-entitlement-connections-for-current-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementConnectionsService);
+
+          listEntitlementConnectionsForCurrentIdentityV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const searchAfter: string = 'Account Payable,2c91808375d8e80a0175e1f88a575221'; // string
+            const filters: string = 'state.value co "Available"'; // string
+            const sorters: string = 'id'; // string
+            this.api.listEntitlementConnectionsForCurrentIdentityV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlement-connections/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#list-entitlement-connections-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementConnectionsService);
+
+          listEntitlementConnectionsV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const searchAfter: string = 'Account Payable,2c91808375d8e80a0175e1f88a575221'; // string
+            const filters: string = 'type eq "JIT"'; // string
+            const sorters: string = '-type,id'; // string
+            this.api.listEntitlementConnectionsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlement-connections/v1/{connectionId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#patch-entitlement-connection-by-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/entitlement_connections';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementConnectionsService);
+
+          patchEntitlementConnectionByIdV1(): void {
+            const connectionId: string = '6c692d9972f8400ca4560a68f62c4c5f'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchEntitlementConnectionByIdV1({ connectionId: connectionId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlement-connections/v1
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#patch-entitlement-connection-by-query-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/entitlement_connections';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementConnectionsService);
+
+          patchEntitlementConnectionByQueryV1(): void {
+            const entitlementId: string = 'dcfd09e551644ad5aa162ce977862031'; // string
+            const identityId: string = '5470d8d4817a4207a8020bf533187da9'; // string
+            const accountId: string = '323bfddfb3dd4197b8f10f7735307d27'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchEntitlementConnectionByQueryV1({ entitlementId: entitlementId, identityId: identityId, accountId: accountId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlement-connections/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlement_connections/methods/entitlement-connections#update-entitlement-connections-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementConnectionsService } from 'sailpoint-angular-sdk/entitlement_connections';
+        import { EntitlementConnectionBulkUpdateItem } from 'sailpoint-angular-sdk/entitlement_connections';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementConnectionsService);
+
+          updateEntitlementConnectionsBulkV1(): void {
+            const entitlementConnectionBulkUpdateItem: Array<EntitlementConnectionBulkUpdateItem> = {
+              "connectionId" : "d532fa5cb15748e2873c6a01e5923ec4",
+              "type" : "JIT"
+            }; // Array<EntitlementConnectionBulkUpdateItem>
+            this.api.updateEntitlementConnectionsBulkV1({ entitlementConnectionBulkUpdateItem: entitlementConnectionBulkUpdateItem }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

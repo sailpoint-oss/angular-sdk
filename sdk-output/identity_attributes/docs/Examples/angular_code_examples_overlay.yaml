@@ -1,0 +1,135 @@
+- path: /identity-attributes/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#create-identity-attribute-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+        import { IdentityAttribute2 } from 'sailpoint-angular-sdk/identity_attributes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityAttributesService);
+
+          createIdentityAttributeV1(): void {
+            const identityAttribute2: IdentityAttribute2 = ; // IdentityAttribute2
+            this.api.createIdentityAttributeV1({ identityAttribute2: identityAttribute2 }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-attributes/v1/{name}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#delete-identity-attribute-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityAttributesService);
+
+          deleteIdentityAttributeV1(): void {
+            const name: string = 'displayName'; // string
+            this.api.deleteIdentityAttributeV1({ name: name }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-attributes/v1/bulk-delete
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#delete-identity-attributes-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+        import { IdentityAttributeNames } from 'sailpoint-angular-sdk/identity_attributes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityAttributesService);
+
+          deleteIdentityAttributesInBulkV1(): void {
+            const identityAttributeNames: IdentityAttributeNames = {
+              "ids" : [ "name", "displayName" ]
+            }; // IdentityAttributeNames
+            this.api.deleteIdentityAttributesInBulkV1({ identityAttributeNames: identityAttributeNames }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-attributes/v1/{name}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#get-identity-attribute-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityAttributesService);
+
+          getIdentityAttributeV1(): void {
+            const name: string = 'displayName'; // string
+            this.api.getIdentityAttributeV1({ name: name }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-attributes/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#list-identity-attributes-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityAttributesService);
+
+          listIdentityAttributesV1(): void {
+            const includeSystem: boolean = false; // boolean
+            const includeSilent: boolean = false; // boolean
+            const searchableOnly: boolean = false; // boolean
+            const count: boolean = true; // boolean
+            this.api.listIdentityAttributesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identity-attributes/v1/{name}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identity_attributes/methods/identity-attributes#put-identity-attribute-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentityAttributesService } from 'sailpoint-angular-sdk/identity_attributes';
+        import { IdentityAttribute2 } from 'sailpoint-angular-sdk/identity_attributes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentityAttributesService);
+
+          putIdentityAttributeV1(): void {
+            const name: string = 'displayName'; // string
+            const identityAttribute2: IdentityAttribute2 = ; // IdentityAttribute2
+            this.api.putIdentityAttributeV1({ name: name, identityAttribute2: identityAttribute2 }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

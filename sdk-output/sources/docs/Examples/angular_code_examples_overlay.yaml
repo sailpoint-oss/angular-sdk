@@ -1,0 +1,2411 @@
+- path: /sources/v1/{sourceId}/provisioning-policies
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#create-provisioning-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { ProvisioningPolicyDto } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          createProvisioningPolicyV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const provisioningPolicyDto: ProvisioningPolicyDto = {
+              "name" : "example provisioning policy for inactive identities",
+              "description" : "this provisioning policy creates access based on an identity going inactive",
+              "fields" : [ {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "${firstname}.${lastname}${uniqueCounter}",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              }, {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "${firstname}.${lastname}${uniqueCounter}",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              } ],
+              "usageType" : "CREATE"
+            }; // ProvisioningPolicyDto
+            this.api.createProvisioningPolicyV1({ sourceId: sourceId, provisioningPolicyDto: provisioningPolicyDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v2/{sourceId}/provisioning-policies
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#create-provisioning-policy-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { ProvisioningPolicyDtoV2 } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          createProvisioningPolicyV2(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const provisioningPolicyDtoV2: ProvisioningPolicyDtoV2 = {
+              "name" : "example provisioning policy for inactive identities",
+              "description" : "this provisioning policy creates access based on an identity going inactive",
+              "id" : "d7ae9ea3-507f-4d00-9d4f-b4464b344b88",
+              "subtypeId" : "d7ae9ea3-507f-4d00-9d4f-b4464b344b88",
+              "fields" : [ {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "firstname.lastname.uniqueCounter",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              }, {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "firstname.lastname.uniqueCounter",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              } ],
+              "usageType" : "CREATE"
+            }; // ProvisioningPolicyDtoV2
+            const useDefaultFields: boolean = false; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createProvisioningPolicyV2({ sourceId: sourceId, provisioningPolicyDtoV2: provisioningPolicyDtoV2 }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/datasets
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#create-source-dataset-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { SourceDataset } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          createSourceDatasetV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const sourceDataset: SourceDataset = {
+              "name" : "Applications",
+              "description" : "CMDB application records for this source.",
+              "resources" : [ {
+                "name" : "Role",
+                "id" : "aws:iam-role",
+                "type" : "std:resource"
+              }, {
+                "name" : "Role",
+                "id" : "aws:iam-role",
+                "type" : "std:resource"
+              } ],
+              "id" : "cmdb-servicenow:applications",
+              "aggregationEnabled" : true
+            }; // SourceDataset
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createSourceDatasetV1({ sourceId: sourceId, sourceDataset: sourceDataset }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#create-source-resource-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { SourceDatasetResource } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          createSourceResourceV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const sourceDatasetResource: SourceDatasetResource = {
+              "schema" : {
+                "features" : [ "PROVISIONING", "NO_PERMISSIONS_PROVISIONING", "GROUPS_HAVE_MEMBERS" ],
+                "nativeObjectType" : "User",
+                "configuration" : {
+                  "groupMemberAttribute" : "member"
+                },
+                "created" : "2019-12-24T22:32:58.104Z",
+                "includePermissions" : false,
+                "name" : "account",
+                "hierarchyAttribute" : "memberOf",
+                "modified" : "2019-12-31T20:22:28.104Z",
+                "attributes" : [ {
+                  "name" : "sAMAccountName",
+                  "type" : "STRING",
+                  "isMultiValued" : false,
+                  "isEntitlement" : false,
+                  "isGroup" : false
+                }, {
+                  "name" : "memberOf",
+                  "type" : "STRING",
+                  "schema" : {
+                    "type" : "CONNECTOR_SCHEMA",
+                    "id" : "2c9180887671ff8c01767b4671fc7d60",
+                    "name" : "group"
+                  },
+                  "description" : "Group membership",
+                  "isMultiValued" : true,
+                  "isEntitlement" : true,
+                  "isGroup" : true
+                } ],
+                "id" : "2c9180835d191a86015d28455b4a2329",
+                "displayAttribute" : "distinguishedName",
+                "identityAttribute" : "sAMAccountName"
+              },
+              "features" : [ "Create", "Delete" ],
+              "name" : "Account",
+              "datasetId" : "cmdb-servicenow:applications",
+              "id" : "aws:iam-role",
+              "type" : "std:resource"
+            }; // SourceDatasetResource
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createSourceResourceV1({ sourceId: sourceId, sourceDatasetResource: sourceDatasetResource }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schedules
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#create-source-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { Schedule3 } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          createSourceScheduleV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const schedule3: Schedule3 = ; // Schedule3
+            this.api.createSourceScheduleV1({ sourceId: sourceId, schedule3: schedule3 }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schemas
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#create-source-schema-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { Schema } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          createSourceSchemaV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const schema: Schema = {
+              "features" : [ "PROVISIONING", "NO_PERMISSIONS_PROVISIONING", "GROUPS_HAVE_MEMBERS" ],
+              "nativeObjectType" : "User",
+              "configuration" : {
+                "groupMemberAttribute" : "member"
+              },
+              "created" : "2019-12-24T22:32:58.104Z",
+              "includePermissions" : false,
+              "name" : "account",
+              "hierarchyAttribute" : "memberOf",
+              "modified" : "2019-12-31T20:22:28.104Z",
+              "attributes" : [ {
+                "name" : "sAMAccountName",
+                "type" : "STRING",
+                "isMultiValued" : false,
+                "isEntitlement" : false,
+                "isGroup" : false
+              }, {
+                "name" : "memberOf",
+                "type" : "STRING",
+                "schema" : {
+                  "type" : "CONNECTOR_SCHEMA",
+                  "id" : "2c9180887671ff8c01767b4671fc7d60",
+                  "name" : "group"
+                },
+                "description" : "Group membership",
+                "isMultiValued" : true,
+                "isEntitlement" : true,
+                "isGroup" : true
+              } ],
+              "id" : "2c9180835d191a86015d28455b4a2329",
+              "displayAttribute" : "distinguishedName",
+              "identityAttribute" : "sAMAccountName"
+            }; // Schema
+            this.api.createSourceSchemaV1({ sourceId: sourceId, schema: schema }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#create-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { Source } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          createSourceV1(): void {
+            const source: Source = {
+              "cluster" : {
+                "name" : "Corporate Cluster",
+                "id" : "2c9180866166b5b0016167c32ef31a66",
+                "type" : "CLUSTER"
+              },
+              "deleteThreshold" : 10,
+              "connectorId" : "active-directory",
+              "description" : "This is the corporate directory.",
+              "type" : "OpenLDAP - Direct",
+              "connectorClass" : "sailpoint.connector.LDAPConnector",
+              "connectionType" : "file",
+              "features" : [ "PROVISIONING", "NO_PERMISSIONS_PROVISIONING", "GROUPS_HAVE_MEMBERS" ],
+              "passwordPolicies" : [ {
+                "type" : "PASSWORD_POLICY",
+                "id" : "2c9180855d191c59015d291ceb053980",
+                "name" : "Corporate Password Policy"
+              }, {
+                "type" : "PASSWORD_POLICY",
+                "id" : "2c9180855d191c59015d291ceb057777",
+                "name" : "Vendor Password Policy"
+              } ],
+              "modified" : "2024-01-23T18:08:50.897Z",
+              "id" : "2c91808568c529c60168cca6f90c1324",
+              "connectorImplementationId" : "delimited-file",
+              "managerCorrelationRule" : {
+                "name" : "Example Rule",
+                "id" : "2c918085708c274401708c2a8a760001",
+                "type" : "RULE"
+              },
+              "owner" : {
+                "name" : "MyName",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "managementWorkgroup" : {
+                "name" : "My Management Workgroup",
+                "id" : "2c91808568c529c60168cca6f90c2222",
+                "type" : "GOVERNANCE_GROUP"
+              },
+              "accountCorrelationRule" : {
+                "name" : "Example Rule",
+                "id" : "2c918085708c274401708c2a8a760001",
+                "type" : "RULE"
+              },
+              "authoritative" : false,
+              "connectorAttributes" : {
+                "healthCheckTimeout" : 30,
+                "authSearchAttributes" : [ "cn", "uid", "mail" ]
+              },
+              "created" : "2022-02-08T14:50:03.827Z",
+              "managerCorrelationMapping" : {
+                "accountAttributeName" : "manager",
+                "identityAttributeName" : "manager"
+              },
+              "credentialProviderEnabled" : false,
+              "accountCorrelationConfig" : {
+                "name" : "Directory [source-62867] Account Correlation",
+                "id" : "2c9180855d191c59015d28583727245a",
+                "type" : "ACCOUNT_CORRELATION_CONFIG"
+              },
+              "connector" : "active-directory",
+              "healthy" : true,
+              "schemas" : [ {
+                "type" : "CONNECTOR_SCHEMA",
+                "id" : "2c9180835d191a86015d28455b4b232a",
+                "name" : "account"
+              }, {
+                "type" : "CONNECTOR_SCHEMA",
+                "id" : "2c9180835d191a86015d28455b4b232b",
+                "name" : "group"
+              } ],
+              "name" : "My Source",
+              "connectorName" : "Active Directory",
+              "category" : "CredentialProvider",
+              "beforeProvisioningRule" : {
+                "name" : "Example Rule",
+                "id" : "2c918085708c274401708c2a8a760001",
+                "type" : "RULE"
+              },
+              "status" : "SOURCE_STATE_HEALTHY",
+              "since" : "2021-09-28T15:48:29.3801666300Z"
+            }; // Source
+            const provisionAsCsv: boolean = false; // boolean
+            this.api.createSourceV1({ source: source }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/remove-accounts
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-accounts-async-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteAccountsAsyncV1(): void {
+            const id: string = 'ebbf35756e1140699ce52b233121384a'; // string
+            this.api.deleteAccountsAsyncV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/native-change-detection-config
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-native-change-detection-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteNativeChangeDetectionConfigV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.deleteNativeChangeDetectionConfigV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/provisioning-policies/{usageType}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-provisioning-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteProvisioningPolicyV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const usageType: UsageType = CREATE; // UsageType
+            this.api.deleteProvisioningPolicyV1({ sourceId: sourceId, usageType: usageType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v2/{sourceId}/provisioning-policies/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-provisioning-policy-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteProvisioningPolicyV2(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const id: string = 'f5dd23fe-3414-42b7-bb1c-869400ad7a10'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteProvisioningPolicyV2({ sourceId: sourceId, id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/datasets/{datasetId}/delete-objects
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-source-dataset-objects-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteSourceDatasetObjectsV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const datasetId: string = 'cmdb-servicenow:applications'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteSourceDatasetObjectsV1({ sourceId: sourceId, datasetId: datasetId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/datasets/{datasetId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-source-dataset-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteSourceDatasetV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const datasetId: string = 'cmdb-servicenow:applications'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteSourceDatasetV1({ sourceId: sourceId, datasetId: datasetId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-source-resource-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteSourceResourceV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'account'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteSourceResourceV1({ sourceId: sourceId, resourceId: resourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schedules/{scheduleType}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-source-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteSourceScheduleV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const scheduleType: string = 'ACCOUNT_AGGREGATION'; // 'ACCOUNT_AGGREGATION' | 'GROUP_AGGREGATION'
+            this.api.deleteSourceScheduleV1({ sourceId: sourceId, scheduleType: scheduleType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schemas/{schemaId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-source-schema-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteSourceSchemaV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const schemaId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.deleteSourceSchemaV1({ sourceId: sourceId, schemaId: schemaId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteSourceV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.deleteSourceV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/approval-config/account-delete
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-account-delete-approval-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getAccountDeleteApprovalConfigV1(): void {
+            const sourceId: string = 'ha38f94347e94562b5bb8424a56498d8'; // string
+            this.api.getAccountDeleteApprovalConfigV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/schemas/accounts
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-accounts-schema-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getAccountsSchemaV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            this.api.getAccountsSchemaV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/correlation-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-correlation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getCorrelationConfigV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getCorrelationConfigV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/schemas/entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-entitlements-schema-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getEntitlementsSchemaV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const schemaName: string = '?schemaName=group'; // string
+            this.api.getEntitlementsSchemaV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/approval-config/machine-account-delete
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-machine-account-deletion-approval-config-by-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getMachineAccountDeletionApprovalConfigBySourceV1(): void {
+            const sourceId: string = 'gt38f94347e94562b5bb8424a56498d8'; // string
+            this.api.getMachineAccountDeletionApprovalConfigBySourceV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/native-change-detection-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-native-change-detection-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getNativeChangeDetectionConfigV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getNativeChangeDetectionConfigV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/provisioning-policies/{usageType}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-provisioning-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getProvisioningPolicyV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const usageType: UsageType = CREATE; // UsageType
+            this.api.getProvisioningPolicyV1({ sourceId: sourceId, usageType: usageType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v2/{sourceId}/provisioning-policies/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-provisioning-policy-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getProvisioningPolicyV2(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const id: string = 'f5dd23fe-3414-42b7-bb1c-869400ad7a10'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getProvisioningPolicyV2({ sourceId: sourceId, id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/attribute-sync-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-attr-sync-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceAttrSyncConfigV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceAttrSyncConfigV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/connectors/source-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceConfigV1(): void {
+            const id: string = 'cef3ee201db947c5912551015ba0c679'; // string
+            const locale: string = 'en'; // 'de' | 'false' | 'fi' | 'sv' | 'ru' | 'pt' | 'ko' | 'zh-TW' | 'en' | 'it' | 'fr' | 'zh-CN' | 'hu' | 'es' | 'cs' | 'ja' | 'pl' | 'da' | 'nl'
+            this.api.getSourceConfigV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/connections
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-connections-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceConnectionsV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getSourceConnectionsV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/datasets/{datasetId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-dataset-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceDatasetV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const datasetId: string = 'cmdb-servicenow:applications'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceDatasetV1({ sourceId: sourceId, datasetId: datasetId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/datasets
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-datasets-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceDatasetsV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceDatasetsV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/entitlement-request-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-entitlement-request-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceEntitlementRequestConfigV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            this.api.getSourceEntitlementRequestConfigV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/source-health
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-health-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceHealthV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getSourceHealthV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/mappings
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-resource-mappings-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceResourceMappingsV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceResourceMappingsV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-resource-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceResourceV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'account'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceResourceV1({ sourceId: sourceId, resourceId: resourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-resources-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceResourcesV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceResourcesV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schedules/{scheduleType}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceScheduleV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const scheduleType: string = 'ACCOUNT_AGGREGATION'; // 'ACCOUNT_AGGREGATION' | 'GROUP_AGGREGATION'
+            this.api.getSourceScheduleV1({ sourceId: sourceId, scheduleType: scheduleType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schedules
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-schedules-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceSchedulesV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getSourceSchedulesV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schemas/{schemaId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-schema-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceSchemaV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const schemaId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getSourceSchemaV1({ sourceId: sourceId, schemaId: schemaId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schemas
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-schemas-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceSchemasV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const includeTypes: string = 'group'; // 'group' | 'user'
+            const includeNames: string = 'account'; // string
+            this.api.getSourceSchemasV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getSourceV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/schemas/accounts
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#import-accounts-schema-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          importAccountsSchemaV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.importAccountsSchemaV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/load-accounts
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#import-accounts-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          importAccountsV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            const disableOptimization: string = 'disableOptimization_example'; // string
+            this.api.importAccountsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/upload-connector-file
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#import-connector-file-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          importConnectorFileV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.importConnectorFileV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/schemas/entitlements
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#import-entitlements-schema-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          importEntitlementsSchemaV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const schemaName: string = '?schemaName=group'; // string
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.importEntitlementsSchemaV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/load-entitlements
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#import-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          importEntitlementsV1(): void {
+            const sourceId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.importEntitlementsV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/datasets/{datasetId}/aggregate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#import-source-dataset-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { DatasetAggregationRequest } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          importSourceDatasetV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const datasetId: string = 'cmdb-servicenow:applications'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const datasetAggregationRequest: DatasetAggregationRequest = {
+              "config" : {
+                "region" : "us-east-1"
+              }
+            }; // DatasetAggregationRequest
+            this.api.importSourceDatasetV1({ sourceId: sourceId, datasetId: datasetId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/load-uncorrelated-accounts
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#import-uncorrelated-accounts-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          importUncorrelatedAccountsV1(): void {
+            const id: string = '75dbec1ebe154d5785da27b95e1dd5d7'; // string
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.importUncorrelatedAccountsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/password-policies
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#list-password-policy-holders-on-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          listPasswordPolicyHoldersOnSourceV1(): void {
+            const sourceId: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            this.api.listPasswordPolicyHoldersOnSourceV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/provisioning-policies
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#list-provisioning-policies-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          listProvisioningPoliciesV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            this.api.listProvisioningPoliciesV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v2/{sourceId}/provisioning-policies
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#list-provisioning-policies-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          listProvisioningPoliciesV2(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const filters: string = 'subtypeId eq "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa"'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listProvisioningPoliciesV2({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#list-sources-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          listSourcesV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq "Employees"'; // string
+            const sorters: string = 'name'; // string
+            const forSubadmin: string = 'name'; // string
+            const includeIDNSource: boolean = true; // boolean
+            this.api.listSourcesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/connector/ping-cluster
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#ping-cluster-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          pingClusterV1(): void {
+            const sourceId: string = 'cef3ee201db947c5912551015ba0c679'; // string
+            this.api.pingClusterV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/correlation-config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#put-correlation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { CorrelationConfig } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          putCorrelationConfigV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const correlationConfig: CorrelationConfig = {
+              "attributeAssignments" : [ {
+                "filterString" : "first_name == \"John\"",
+                "ignoreCase" : false,
+                "complex" : false,
+                "property" : "first_name",
+                "value" : "firstName",
+                "operation" : "EQ",
+                "matchMode" : "ANYWHERE"
+              }, {
+                "filterString" : "first_name == \"John\"",
+                "ignoreCase" : false,
+                "complex" : false,
+                "property" : "first_name",
+                "value" : "firstName",
+                "operation" : "EQ",
+                "matchMode" : "ANYWHERE"
+              } ],
+              "name" : "Source [source] Account Correlation",
+              "id" : "2c9180835d191a86015d28455b4a2329"
+            }; // CorrelationConfig
+            this.api.putCorrelationConfigV1({ id: id, correlationConfig: correlationConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/native-change-detection-config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#put-native-change-detection-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { NativeChangeDetectionConfig } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          putNativeChangeDetectionConfigV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const nativeChangeDetectionConfig: NativeChangeDetectionConfig = {
+              "selectedEntitlements" : [ "memberOf", "memberOfSharedMailbox" ],
+              "operations" : [ "ACCOUNT_UPDATED", "ACCOUNT_DELETED" ],
+              "selectedNonEntitlementAttributes" : [ "lastName", "phoneNumber", "objectType", "servicePrincipalName" ],
+              "allNonEntitlementAttributes" : false,
+              "allEntitlements" : false,
+              "enabled" : true
+            }; // NativeChangeDetectionConfig
+            this.api.putNativeChangeDetectionConfigV1({ sourceId: sourceId, nativeChangeDetectionConfig: nativeChangeDetectionConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/provisioning-policies/{usageType}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#put-provisioning-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { ProvisioningPolicyDto } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          putProvisioningPolicyV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const usageType: UsageType = CREATE; // UsageType
+            const provisioningPolicyDto: ProvisioningPolicyDto = {
+              "name" : "example provisioning policy for inactive identities",
+              "description" : "this provisioning policy creates access based on an identity going inactive",
+              "fields" : [ {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "${firstname}.${lastname}${uniqueCounter}",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              }, {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "${firstname}.${lastname}${uniqueCounter}",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              } ],
+              "usageType" : "CREATE"
+            }; // ProvisioningPolicyDto
+            this.api.putProvisioningPolicyV1({ sourceId: sourceId, usageType: usageType, provisioningPolicyDto: provisioningPolicyDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v2/{sourceId}/provisioning-policies/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#put-provisioning-policy-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { ProvisioningPolicyDtoV2 } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          putProvisioningPolicyV2(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const id: string = 'f5dd23fe-3414-42b7-bb1c-869400ad7a10'; // string
+            const provisioningPolicyDtoV2: ProvisioningPolicyDtoV2 = {
+              "name" : "example provisioning policy for inactive identities",
+              "description" : "this provisioning policy creates access based on an identity going inactive",
+              "id" : "d7ae9ea3-507f-4d00-9d4f-b4464b344b88",
+              "subtypeId" : "d7ae9ea3-507f-4d00-9d4f-b4464b344b88",
+              "fields" : [ {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "firstname.lastname.uniqueCounter",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              }, {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "firstname.lastname.uniqueCounter",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              } ],
+              "usageType" : "CREATE"
+            }; // ProvisioningPolicyDtoV2
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.putProvisioningPolicyV2({ sourceId: sourceId, id: id, provisioningPolicyDtoV2: provisioningPolicyDtoV2 }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/attribute-sync-config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#put-source-attr-sync-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { AttrSyncSourceConfig } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          putSourceAttrSyncConfigV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const attrSyncSourceConfig: AttrSyncSourceConfig = {
+              "attributes" : [ {
+                "name" : "email",
+                "displayName" : "Email",
+                "enabled" : true,
+                "target" : "mail"
+              }, {
+                "name" : "firstname",
+                "displayName" : "First Name",
+                "enabled" : false,
+                "target" : "givenName"
+              } ],
+              "source" : {
+                "name" : "HR Active Directory",
+                "id" : "2c9180835d191a86015d28455b4b232a",
+                "type" : "SOURCE"
+              }
+            }; // AttrSyncSourceConfig
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.putSourceAttrSyncConfigV1({ id: id, attrSyncSourceConfig: attrSyncSourceConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/datasets/{datasetId}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#put-source-dataset-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { SourceDataset } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          putSourceDatasetV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const datasetId: string = 'cmdb-servicenow:applications'; // string
+            const sourceDataset: SourceDataset = {
+              "name" : "Applications",
+              "description" : "CMDB application records for this source.",
+              "resources" : [ {
+                "name" : "Role",
+                "id" : "aws:iam-role",
+                "type" : "std:resource"
+              }, {
+                "name" : "Role",
+                "id" : "aws:iam-role",
+                "type" : "std:resource"
+              } ],
+              "id" : "cmdb-servicenow:applications",
+              "aggregationEnabled" : true
+            }; // SourceDataset
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.putSourceDatasetV1({ sourceId: sourceId, datasetId: datasetId, sourceDataset: sourceDataset }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#put-source-resource-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { SourceDatasetResource } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          putSourceResourceV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'account'; // string
+            const sourceDatasetResource: SourceDatasetResource = {
+              "schema" : {
+                "features" : [ "PROVISIONING", "NO_PERMISSIONS_PROVISIONING", "GROUPS_HAVE_MEMBERS" ],
+                "nativeObjectType" : "User",
+                "configuration" : {
+                  "groupMemberAttribute" : "member"
+                },
+                "created" : "2019-12-24T22:32:58.104Z",
+                "includePermissions" : false,
+                "name" : "account",
+                "hierarchyAttribute" : "memberOf",
+                "modified" : "2019-12-31T20:22:28.104Z",
+                "attributes" : [ {
+                  "name" : "sAMAccountName",
+                  "type" : "STRING",
+                  "isMultiValued" : false,
+                  "isEntitlement" : false,
+                  "isGroup" : false
+                }, {
+                  "name" : "memberOf",
+                  "type" : "STRING",
+                  "schema" : {
+                    "type" : "CONNECTOR_SCHEMA",
+                    "id" : "2c9180887671ff8c01767b4671fc7d60",
+                    "name" : "group"
+                  },
+                  "description" : "Group membership",
+                  "isMultiValued" : true,
+                  "isEntitlement" : true,
+                  "isGroup" : true
+                } ],
+                "id" : "2c9180835d191a86015d28455b4a2329",
+                "displayAttribute" : "distinguishedName",
+                "identityAttribute" : "sAMAccountName"
+              },
+              "features" : [ "Create", "Delete" ],
+              "name" : "Account",
+              "datasetId" : "cmdb-servicenow:applications",
+              "id" : "aws:iam-role",
+              "type" : "std:resource"
+            }; // SourceDatasetResource
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.putSourceResourceV1({ sourceId: sourceId, resourceId: resourceId, sourceDatasetResource: sourceDatasetResource }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schemas/{schemaId}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#put-source-schema-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { Schema } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          putSourceSchemaV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const schemaId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const schema: Schema = {
+              "features" : [ "PROVISIONING", "NO_PERMISSIONS_PROVISIONING", "GROUPS_HAVE_MEMBERS" ],
+              "nativeObjectType" : "User",
+              "configuration" : {
+                "groupMemberAttribute" : "member"
+              },
+              "created" : "2019-12-24T22:32:58.104Z",
+              "includePermissions" : false,
+              "name" : "account",
+              "hierarchyAttribute" : "memberOf",
+              "modified" : "2019-12-31T20:22:28.104Z",
+              "attributes" : [ {
+                "name" : "sAMAccountName",
+                "type" : "STRING",
+                "isMultiValued" : false,
+                "isEntitlement" : false,
+                "isGroup" : false
+              }, {
+                "name" : "memberOf",
+                "type" : "STRING",
+                "schema" : {
+                  "type" : "CONNECTOR_SCHEMA",
+                  "id" : "2c9180887671ff8c01767b4671fc7d60",
+                  "name" : "group"
+                },
+                "description" : "Group membership",
+                "isMultiValued" : true,
+                "isEntitlement" : true,
+                "isGroup" : true
+              } ],
+              "id" : "2c9180835d191a86015d28455b4a2329",
+              "displayAttribute" : "distinguishedName",
+              "identityAttribute" : "sAMAccountName"
+            }; // Schema
+            this.api.putSourceSchemaV1({ sourceId: sourceId, schemaId: schemaId, schema: schema }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#put-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { Source } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          putSourceV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const source: Source = {
+              "cluster" : {
+                "name" : "Corporate Cluster",
+                "id" : "2c9180866166b5b0016167c32ef31a66",
+                "type" : "CLUSTER"
+              },
+              "deleteThreshold" : 10,
+              "connectorId" : "active-directory",
+              "description" : "This is the corporate directory.",
+              "type" : "OpenLDAP - Direct",
+              "connectorClass" : "sailpoint.connector.LDAPConnector",
+              "connectionType" : "file",
+              "features" : [ "PROVISIONING", "NO_PERMISSIONS_PROVISIONING", "GROUPS_HAVE_MEMBERS" ],
+              "passwordPolicies" : [ {
+                "type" : "PASSWORD_POLICY",
+                "id" : "2c9180855d191c59015d291ceb053980",
+                "name" : "Corporate Password Policy"
+              }, {
+                "type" : "PASSWORD_POLICY",
+                "id" : "2c9180855d191c59015d291ceb057777",
+                "name" : "Vendor Password Policy"
+              } ],
+              "modified" : "2024-01-23T18:08:50.897Z",
+              "id" : "2c91808568c529c60168cca6f90c1324",
+              "connectorImplementationId" : "delimited-file",
+              "managerCorrelationRule" : {
+                "name" : "Example Rule",
+                "id" : "2c918085708c274401708c2a8a760001",
+                "type" : "RULE"
+              },
+              "owner" : {
+                "name" : "MyName",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "managementWorkgroup" : {
+                "name" : "My Management Workgroup",
+                "id" : "2c91808568c529c60168cca6f90c2222",
+                "type" : "GOVERNANCE_GROUP"
+              },
+              "accountCorrelationRule" : {
+                "name" : "Example Rule",
+                "id" : "2c918085708c274401708c2a8a760001",
+                "type" : "RULE"
+              },
+              "authoritative" : false,
+              "connectorAttributes" : {
+                "healthCheckTimeout" : 30,
+                "authSearchAttributes" : [ "cn", "uid", "mail" ]
+              },
+              "created" : "2022-02-08T14:50:03.827Z",
+              "managerCorrelationMapping" : {
+                "accountAttributeName" : "manager",
+                "identityAttributeName" : "manager"
+              },
+              "credentialProviderEnabled" : false,
+              "accountCorrelationConfig" : {
+                "name" : "Directory [source-62867] Account Correlation",
+                "id" : "2c9180855d191c59015d28583727245a",
+                "type" : "ACCOUNT_CORRELATION_CONFIG"
+              },
+              "connector" : "active-directory",
+              "healthy" : true,
+              "schemas" : [ {
+                "type" : "CONNECTOR_SCHEMA",
+                "id" : "2c9180835d191a86015d28455b4b232a",
+                "name" : "account"
+              }, {
+                "type" : "CONNECTOR_SCHEMA",
+                "id" : "2c9180835d191a86015d28455b4b232b",
+                "name" : "group"
+              } ],
+              "name" : "My Source",
+              "connectorName" : "Active Directory",
+              "category" : "CredentialProvider",
+              "beforeProvisioningRule" : {
+                "name" : "Example Rule",
+                "id" : "2c918085708c274401708c2a8a760001",
+                "type" : "RULE"
+              },
+              "status" : "SOURCE_STATE_HEALTHY",
+              "since" : "2021-09-28T15:48:29.3801666300Z"
+            }; // Source
+            this.api.putSourceV1({ id: id, source: source }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/connector/peek-resource-objects
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#search-resource-objects-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { ResourceObjectsRequest } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          searchResourceObjectsV1(): void {
+            const sourceId: string = 'cef3ee201db947c5912551015ba0c679'; // string
+            const resourceObjectsRequest: ResourceObjectsRequest = {
+              "maxCount" : 100,
+              "objectType" : "group"
+            }; // ResourceObjectsRequest
+            this.api.searchResourceObjectsV1({ sourceId: sourceId, resourceObjectsRequest: resourceObjectsRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/synchronize-attributes
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#sync-attributes-for-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          syncAttributesForSourceV1(): void {
+            const id: string = 'id_example'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.syncAttributesForSourceV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/connector/test-configuration
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#test-source-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          testSourceConfigurationV1(): void {
+            const sourceId: string = 'cef3ee201db947c5912551015ba0c679'; // string
+            this.api.testSourceConfigurationV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/connector/check-connection
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#test-source-connection-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          testSourceConnectionV1(): void {
+            const sourceId: string = 'cef3ee201db947c5912551015ba0c679'; // string
+            this.api.testSourceConnectionV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/approval-config/account-delete
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-account-deletion-approval-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateAccountDeletionApprovalConfigV1(): void {
+            const sourceId: string = '00eebcf881994e419d72e757fd30dc0e'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateAccountDeletionApprovalConfigV1({ sourceId: sourceId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/approval-config/machine-account-delete
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-machine-account-deletion-approval-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateMachineAccountDeletionApprovalConfigV1(): void {
+            const sourceId: string = '00eebcf881994e419d72e757fd30dc0e'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateMachineAccountDeletionApprovalConfigV1({ sourceId: sourceId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/password-policies
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-password-policy-holders-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { PasswordPolicyHoldersDtoInner } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updatePasswordPolicyHoldersV1(): void {
+            const sourceId: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const passwordPolicyHoldersDtoInner: Array<PasswordPolicyHoldersDtoInner> = ; // Array<PasswordPolicyHoldersDtoInner>
+            this.api.updatePasswordPolicyHoldersV1({ sourceId: sourceId, passwordPolicyHoldersDtoInner: passwordPolicyHoldersDtoInner }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/provisioning-policies/bulk-update
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-provisioning-policies-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { ProvisioningPolicyDto } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateProvisioningPoliciesInBulkV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const provisioningPolicyDto: Array<ProvisioningPolicyDto> = {
+              "name" : "example provisioning policy for inactive identities",
+              "description" : "this provisioning policy creates access based on an identity going inactive",
+              "fields" : [ {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "${firstname}.${lastname}${uniqueCounter}",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              }, {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "${firstname}.${lastname}${uniqueCounter}",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              } ],
+              "usageType" : "CREATE"
+            }; // Array<ProvisioningPolicyDto>
+            this.api.updateProvisioningPoliciesInBulkV1({ sourceId: sourceId, provisioningPolicyDto: provisioningPolicyDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/provisioning-policies/{usageType}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-provisioning-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateProvisioningPolicyV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const usageType: UsageType = CREATE; // UsageType
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateProvisioningPolicyV1({ sourceId: sourceId, usageType: usageType, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v2/{sourceId}/provisioning-policies/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-provisioning-policy-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateProvisioningPolicyV2(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const id: string = 'f5dd23fe-3414-42b7-bb1c-869400ad7a10'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateProvisioningPolicyV2({ sourceId: sourceId, id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/datasets/{datasetId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-source-dataset-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateSourceDatasetV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const datasetId: string = 'cmdb-servicenow:applications'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateSourceDatasetV1({ sourceId: sourceId, datasetId: datasetId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}/entitlement-request-config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-source-entitlement-request-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { SourceEntitlementRequestConfig } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateSourceEntitlementRequestConfigV1(): void {
+            const id: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const sourceEntitlementRequestConfig: SourceEntitlementRequestConfig = {
+              "accessRequestConfig" : {
+                "denialCommentRequired" : false,
+                "approvalSchemes" : [ {
+                  "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                  "approverType" : "GOVERNANCE_GROUP"
+                }, {
+                  "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                  "approverType" : "GOVERNANCE_GROUP"
+                } ],
+                "reauthorizationRequired" : false,
+                "formDefinitionId" : "78258e80-e9e2-4e1a-a11f-ce0b7c62f25d",
+                "requestCommentRequired" : true,
+                "requireEndDate" : true,
+                "maxPermittedAccessDuration" : {
+                  "value" : 5,
+                  "timeUnit" : "DAYS"
+                }
+              },
+              "revocationRequestConfig" : {
+                "approvalSchemes" : [ {
+                  "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                  "approverType" : "GOVERNANCE_GROUP"
+                }, {
+                  "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                  "approverType" : "GOVERNANCE_GROUP"
+                } ]
+              }
+            }; // SourceEntitlementRequestConfig
+            this.api.updateSourceEntitlementRequestConfigV1({ id: id, sourceEntitlementRequestConfig: sourceEntitlementRequestConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-source-resource-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateSourceResourceV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'account'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateSourceResourceV1({ sourceId: sourceId, resourceId: resourceId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schedules/{scheduleType}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-source-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateSourceScheduleV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const scheduleType: string = 'ACCOUNT_AGGREGATION'; // 'ACCOUNT_AGGREGATION' | 'GROUP_AGGREGATION'
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateSourceScheduleV1({ sourceId: sourceId, scheduleType: scheduleType, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/schemas/{schemaId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-source-schema-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateSourceSchemaV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const schemaId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateSourceSchemaV1({ sourceId: sourceId, schemaId: schemaId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#update-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from 'sailpoint-angular-sdk/sources';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          updateSourceV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateSourceV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

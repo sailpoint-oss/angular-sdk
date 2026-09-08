@@ -1,0 +1,193 @@
+- path: /violations/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_violations/methods/sod-violations#get-violation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODViolationsService);
+
+          getViolationV1(): void {
+            const id: string = '3e078865-55ed-43cf-b83c-85c58d2016e6'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getViolationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /my-violations/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_violations/methods/sod-violations#list-my-violations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODViolationsService);
+
+          listMyViolationsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'status in ("Open","Mitigated") and level eq "High"'; // string
+            const sorters: string = '-level'; // string
+            this.api.listMyViolationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /violations/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_violations/methods/sod-violations#list-violations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODViolationsService);
+
+          listViolationsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'status in ("Open","Mitigated") and level eq "High" and policyId eq "bc693f07-e7b6-4553-9626-c25954c58554" and ownerId eq "de305d54-75b4-431b-adb2-eb6b9e546014"'; // string
+            const sorters: string = '-level'; // string
+            this.api.listViolationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /violations/v1/{id}/reassign
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_violations/methods/sod-violations#move-violation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+        import { Violationreassigninput } from 'sailpoint-angular-sdk/sod_violations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODViolationsService);
+
+          moveViolationV1(): void {
+            const id: string = '3e078865-55ed-43cf-b83c-85c58d2016e6'; // string
+            const violationreassigninput: Violationreassigninput = {
+              "comments" : "some comments about the reassignment",
+              "reassignTo" : {
+                "assigneeType" : "IDENTITY",
+                "assigneeId" : "3e07886555ed43cfb83c85c58d2016e6"
+              }
+            }; // Violationreassigninput
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.moveViolationV1({ id: id, violationreassigninput: violationreassigninput }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /violations/v1/{id}/controls
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_violations/methods/sod-violations#start-apply-control-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+        import { Appliedcontrolcreate } from 'sailpoint-angular-sdk/sod_violations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODViolationsService);
+
+          startApplyControlV1(): void {
+            const id: string = '3e078865-55ed-43cf-b83c-85c58d2016e6'; // string
+            const appliedcontrolcreate: Appliedcontrolcreate = {
+              "comments" : "Some comments about the applied control",
+              "control" : "3e07886555ed43cfb83c85c58d2016e6"
+            }; // Appliedcontrolcreate
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startApplyControlV1({ id: id, appliedcontrolcreate: appliedcontrolcreate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-violations/v1/predict
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_violations/methods/sod-violations#start-predict-sod-violations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+        import { IdentityWithNewAccess } from 'sailpoint-angular-sdk/sod_violations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODViolationsService);
+
+          startPredictSodViolationsV1(): void {
+            const identityWithNewAccess: IdentityWithNewAccess = {
+              "identityId" : "2c91808568c529c60168cca6f90c1313",
+              "accessRefs" : [ {
+                "type" : "ENTITLEMENT",
+                "id" : "2c918087682f9a86016839c050861ab1"
+              }, {
+                "type" : "ENTITLEMENT",
+                "id" : "2c918087682f9a86016839c0509c1ab2"
+              } ]
+            }; // IdentityWithNewAccess
+            this.api.startPredictSodViolationsV1({ identityWithNewAccess: identityWithNewAccess }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-violations/v1/check
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_violations/methods/sod-violations#start-violation-check-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODViolationsService } from 'sailpoint-angular-sdk/sod_violations';
+        import { IdentityWithNewAccess } from 'sailpoint-angular-sdk/sod_violations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODViolationsService);
+
+          startViolationCheckV1(): void {
+            const identityWithNewAccess: IdentityWithNewAccess = {
+              "identityId" : "2c91808568c529c60168cca6f90c1313",
+              "accessRefs" : [ {
+                "type" : "ENTITLEMENT",
+                "id" : "2c918087682f9a86016839c050861ab1"
+              }, {
+                "type" : "ENTITLEMENT",
+                "id" : "2c918087682f9a86016839c0509c1ab2"
+              } ]
+            }; // IdentityWithNewAccess
+            this.api.startViolationCheckV1({ identityWithNewAccess: identityWithNewAccess }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

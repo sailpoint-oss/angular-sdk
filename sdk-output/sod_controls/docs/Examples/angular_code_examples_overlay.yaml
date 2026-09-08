@@ -1,0 +1,149 @@
+- path: /controls/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#create-control-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+        import { Compensatingcontrolcreate } from 'sailpoint-angular-sdk/sod_controls';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODControlsService);
+
+          createControlV1(): void {
+            const compensatingcontrolcreate: Compensatingcontrolcreate = {
+              "owner" : {
+                "id" : "3e07886555ed43cfb83c85c58d2016e6",
+                "type" : "IDENTITY"
+              },
+              "name" : "a name",
+              "description" : "a description",
+              "secondaryOwners" : [ {
+                "id" : "943a7c57da334d07ba2454bf7fcf144f",
+                "type" : "GOVERNANCE_GROUP"
+              } ],
+              "action" : "Workflow",
+              "expiration" : "20d",
+              "type" : "Mitigation",
+              "justificationRequired" : true,
+              "workflowID" : "3e07886555ed43cfb83c85c58d2016e6"
+            }; // Compensatingcontrolcreate
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createControlV1({ compensatingcontrolcreate: compensatingcontrolcreate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /controls/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#delete-control-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODControlsService);
+
+          deleteControlV1(): void {
+            const id: string = '3e078865-55ed-43cf-b83c-85c58d2016e6'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteControlV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /controls/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#get-control-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODControlsService);
+
+          getControlV1(): void {
+            const id: string = '3e078865-55ed-43cf-b83c-85c58d2016e6'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getControlV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /controls/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#list-controls-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODControlsService);
+
+          listControlsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'type eq "Mitigation" and name co "payroll"'; // string
+            const sort: string = '-name'; // string
+            this.api.listControlsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /controls/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_controls/methods/sod-controls#put-control-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODControlsService } from 'sailpoint-angular-sdk/sod_controls';
+        import { Compensatingcontrolupdate } from 'sailpoint-angular-sdk/sod_controls';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODControlsService);
+
+          putControlV1(): void {
+            const id: string = '3e078865-55ed-43cf-b83c-85c58d2016e6'; // string
+            const compensatingcontrolupdate: Compensatingcontrolupdate = {
+              "owner" : {
+                "id" : "3e07886555ed43cfb83c85c58d2016e6",
+                "type" : "IDENTITY"
+              },
+              "name" : "a name",
+              "description" : "a description",
+              "secondaryOwners" : [ {
+                "id" : "943a7c57da334d07ba2454bf7fcf144f",
+                "type" : "GOVERNANCE_GROUP"
+              } ],
+              "action" : "Workflow",
+              "expiration" : "20d",
+              "type" : "Mitigation",
+              "justificationRequired" : true,
+              "workflowID" : "3e07886555ed43cfb83c85c58d2016e6"
+            }; // Compensatingcontrolupdate
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.putControlV1({ id: id, compensatingcontrolupdate: compensatingcontrolupdate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

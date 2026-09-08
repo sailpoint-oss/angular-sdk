@@ -1,0 +1,134 @@
+- path: /business-applications/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/business_applications/methods/business-applications#create-business-application-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
+        import { BusinessApplication } from 'sailpoint-angular-sdk/business_applications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(BusinessApplicationsService);
+
+          createBusinessApplicationV1(): void {
+            const businessApplication: BusinessApplication = {
+              "owner" : {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "vendor" : "Cursor",
+              "created" : "2026-01-15T13:45:12.312Z",
+              "origin" : "",
+              "name" : "Cursor",
+              "description" : "AI coding assistant used by the platform engineering team.",
+              "modified" : "2026-02-20T09:31:47.882Z",
+              "id" : "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+              "source" : {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "signatures" : [ {
+                "name" : "cursor",
+                "type" : "AI Agent"
+              }, {
+                "name" : "cursor",
+                "type" : "AI Agent"
+              } ],
+              "additionalOwners" : [ {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              }, {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              } ],
+              "sanctionedStatus" : ""
+            }; // BusinessApplication
+            this.api.createBusinessApplicationV1({ businessApplication: businessApplication }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /business-applications/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/business_applications/methods/business-applications#get-business-application-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(BusinessApplicationsService);
+
+          getBusinessApplicationV1(): void {
+            const id: string = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890'; // string
+            this.api.getBusinessApplicationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /business-applications/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/business_applications/methods/business-applications#list-business-applications-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(BusinessApplicationsService);
+
+          listBusinessApplicationsV1(): void {
+            const filters: string = 'sanctionedStatus eq "SANCTIONED"'; // string
+            const sorters: string = 'name'; // string
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listBusinessApplicationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /business-applications/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/business_applications/methods/business-applications#update-business-application-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { BusinessApplicationsService } from 'sailpoint-angular-sdk/business_applications';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/business_applications';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(BusinessApplicationsService);
+
+          updateBusinessApplicationV1(): void {
+            const id: string = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }{
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateBusinessApplicationV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

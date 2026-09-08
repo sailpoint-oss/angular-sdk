@@ -1,0 +1,291 @@
+- path: /service-desk-integrations/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#create-service-desk-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+        import { ServiceDeskIntegrationDto } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          createServiceDeskIntegrationV1(): void {
+            const serviceDeskIntegrationDto: ServiceDeskIntegrationDto = {
+              "ownerRef" : "",
+              "cluster" : "xyzzy999",
+              "created" : "2024-01-17T18:45:25.994Z",
+              "description" : "A very nice Service Desk integration",
+              "clusterRef" : "",
+              "type" : "ServiceNowSDIM",
+              "managedSources" : [ "2c9180835d191a86015d28455b4a2329", "2c5680835d191a85765d28455b4a9823" ],
+              "provisioningConfig" : {
+                "managedResourceRefs" : [ {
+                  "type" : "SOURCE",
+                  "id" : "2c9180855d191c59015d291ceb051111",
+                  "name" : "My Source 1"
+                }, {
+                  "type" : "SOURCE",
+                  "id" : "2c9180855d191c59015d291ceb052222",
+                  "name" : "My Source 2"
+                } ],
+                "provisioningRequestExpiration" : 7,
+                "noProvisioningRequests" : true,
+                "universalManager" : true,
+                "planInitializerScript" : {
+                  "source" : "<?xml version='1.0' encoding='UTF-8'?>\\r\\n<!DOCTYPE Rule PUBLIC \\\"sailpoint.dtd\\\" \\\"sailpoint.dtd\\\">\\r\\n<Rule name=\\\"Example Rule\\\" type=\\\"BeforeProvisioning\\\">\\r\\n  <Description>Before Provisioning Rule which changes disables and enables to a modify.</Description>\\r\\n  <Source><![CDATA[\\r\\nimport sailpoint.object.*;\\r\\nimport sailpoint.object.ProvisioningPlan.AccountRequest;\\r\\nimport sailpoint.object.ProvisioningPlan.AccountRequest.Operation;\\r\\nimport sailpoint.object.ProvisioningPlan.AttributeRequest;\\r\\nimport sailpoint.object.ProvisioningPlan;\\r\\nimport sailpoint.object.ProvisioningPlan.Operation;\\r\\n\\r\\nfor ( AccountRequest accountRequest : plan.getAccountRequests() ) {\\r\\n  if ( accountRequest.getOp().equals( ProvisioningPlan.ObjectOperation.Disable ) ) {\\r\\n    accountRequest.setOp( ProvisioningPlan.ObjectOperation.Modify );\\r\\n  }\\r\\n  if ( accountRequest.getOp().equals( ProvisioningPlan.ObjectOperation.Enable ) ) {\\r\\n    accountRequest.setOp( ProvisioningPlan.ObjectOperation.Modify );\\r\\n  }\\r\\n}\\r\\n\\r\\n  ]]></Source>\n"
+                }
+              },
+              "name" : "Service Desk Integration Name",
+              "modified" : "2024-02-18T18:45:25.994Z",
+              "attributes" : {
+                "property" : "value",
+                "key" : "value"
+              },
+              "id" : "62945a496ef440189b1f03e3623411c8",
+              "beforeProvisioningRule" : ""
+            }; // ServiceDeskIntegrationDto
+            this.api.createServiceDeskIntegrationV1({ serviceDeskIntegrationDto: serviceDeskIntegrationDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /service-desk-integrations/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#delete-service-desk-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          deleteServiceDeskIntegrationV1(): void {
+            const id: string = 'anId'; // string
+            this.api.deleteServiceDeskIntegrationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /service-desk-integrations/v1/templates/{scriptName}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#get-service-desk-integration-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          getServiceDeskIntegrationTemplateV1(): void {
+            const scriptName: string = 'aScriptName'; // string
+            this.api.getServiceDeskIntegrationTemplateV1({ scriptName: scriptName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /service-desk-integrations/v1/types
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#get-service-desk-integration-types-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          getServiceDeskIntegrationTypesV1(): void {
+            this.api.getServiceDeskIntegrationTypesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /service-desk-integrations/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#get-service-desk-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          getServiceDeskIntegrationV1(): void {
+            const id: string = 'anId'; // string
+            this.api.getServiceDeskIntegrationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /service-desk-integrations/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#get-service-desk-integrations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          getServiceDeskIntegrationsV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const sorters: string = 'name'; // string
+            const filters: string = 'name eq "John Doe"'; // string
+            const count: boolean = true; // boolean
+            this.api.getServiceDeskIntegrationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /service-desk-integrations/v1/status-check-configuration
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#get-status-check-details-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          getStatusCheckDetailsV1(): void {
+            this.api.getStatusCheckDetailsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /service-desk-integrations/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#patch-service-desk-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          patchServiceDeskIntegrationV1(): void {
+            const id: string = 'anId'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchServiceDeskIntegrationV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /service-desk-integrations/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#put-service-desk-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+        import { ServiceDeskIntegrationDto } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          putServiceDeskIntegrationV1(): void {
+            const id: string = 'anId'; // string
+            const serviceDeskIntegrationDto: ServiceDeskIntegrationDto = {
+              "ownerRef" : "",
+              "cluster" : "xyzzy999",
+              "created" : "2024-01-17T18:45:25.994Z",
+              "description" : "A very nice Service Desk integration",
+              "clusterRef" : "",
+              "type" : "ServiceNowSDIM",
+              "managedSources" : [ "2c9180835d191a86015d28455b4a2329", "2c5680835d191a85765d28455b4a9823" ],
+              "provisioningConfig" : {
+                "managedResourceRefs" : [ {
+                  "type" : "SOURCE",
+                  "id" : "2c9180855d191c59015d291ceb051111",
+                  "name" : "My Source 1"
+                }, {
+                  "type" : "SOURCE",
+                  "id" : "2c9180855d191c59015d291ceb052222",
+                  "name" : "My Source 2"
+                } ],
+                "provisioningRequestExpiration" : 7,
+                "noProvisioningRequests" : true,
+                "universalManager" : true,
+                "planInitializerScript" : {
+                  "source" : "<?xml version='1.0' encoding='UTF-8'?>\\r\\n<!DOCTYPE Rule PUBLIC \\\"sailpoint.dtd\\\" \\\"sailpoint.dtd\\\">\\r\\n<Rule name=\\\"Example Rule\\\" type=\\\"BeforeProvisioning\\\">\\r\\n  <Description>Before Provisioning Rule which changes disables and enables to a modify.</Description>\\r\\n  <Source><![CDATA[\\r\\nimport sailpoint.object.*;\\r\\nimport sailpoint.object.ProvisioningPlan.AccountRequest;\\r\\nimport sailpoint.object.ProvisioningPlan.AccountRequest.Operation;\\r\\nimport sailpoint.object.ProvisioningPlan.AttributeRequest;\\r\\nimport sailpoint.object.ProvisioningPlan;\\r\\nimport sailpoint.object.ProvisioningPlan.Operation;\\r\\n\\r\\nfor ( AccountRequest accountRequest : plan.getAccountRequests() ) {\\r\\n  if ( accountRequest.getOp().equals( ProvisioningPlan.ObjectOperation.Disable ) ) {\\r\\n    accountRequest.setOp( ProvisioningPlan.ObjectOperation.Modify );\\r\\n  }\\r\\n  if ( accountRequest.getOp().equals( ProvisioningPlan.ObjectOperation.Enable ) ) {\\r\\n    accountRequest.setOp( ProvisioningPlan.ObjectOperation.Modify );\\r\\n  }\\r\\n}\\r\\n\\r\\n  ]]></Source>\n"
+                }
+              },
+              "name" : "Service Desk Integration Name",
+              "modified" : "2024-02-18T18:45:25.994Z",
+              "attributes" : {
+                "property" : "value",
+                "key" : "value"
+              },
+              "id" : "62945a496ef440189b1f03e3623411c8",
+              "beforeProvisioningRule" : ""
+            }; // ServiceDeskIntegrationDto
+            this.api.putServiceDeskIntegrationV1({ id: id, serviceDeskIntegrationDto: serviceDeskIntegrationDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /service-desk-integrations/v1/status-check-configuration
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/service_desk_integration/methods/service-desk-integration#update-status-check-details-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ServiceDeskIntegrationService } from 'sailpoint-angular-sdk/service_desk_integration';
+        import { QueuedCheckConfigDetails } from 'sailpoint-angular-sdk/service_desk_integration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ServiceDeskIntegrationService);
+
+          updateStatusCheckDetailsV1(): void {
+            const queuedCheckConfigDetails: QueuedCheckConfigDetails = {
+              "provisioningStatusCheckIntervalMinutes" : "30",
+              "provisioningMaxStatusCheckDays" : "2"
+            }; // QueuedCheckConfigDetails
+            this.api.updateStatusCheckDetailsV1({ queuedCheckConfigDetails: queuedCheckConfigDetails }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

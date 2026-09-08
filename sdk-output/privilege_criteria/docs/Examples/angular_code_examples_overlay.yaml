@@ -1,0 +1,177 @@
+- path: /criteria/v1/privilege
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#create-custom-privilege-criteria-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+        import { CreatePrivilegeCriteriaRequest } from 'sailpoint-angular-sdk/privilege_criteria';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PrivilegeCriteriaService);
+
+          createCustomPrivilegeCriteriaV1(): void {
+            const createPrivilegeCriteriaRequest: CreatePrivilegeCriteriaRequest = {
+              "sourceId" : "c42c45d8d7c04d2da64d215cd8c32f21",
+              "privilegeLevel" : "HIGH",
+              "groups" : [ {
+                "criteriaItems" : [ {
+                  "ignoreCase" : true,
+                  "values" : [ "admin", "superuser" ],
+                  "targetType" : "group",
+                  "operator" : "displayName"
+                }, {
+                  "ignoreCase" : true,
+                  "values" : [ "admin", "superuser" ],
+                  "targetType" : "group",
+                  "operator" : "displayName"
+                } ],
+                "operator" : "AND"
+              }, {
+                "criteriaItems" : [ {
+                  "ignoreCase" : true,
+                  "values" : [ "admin", "superuser" ],
+                  "targetType" : "group",
+                  "operator" : "displayName"
+                }, {
+                  "ignoreCase" : true,
+                  "values" : [ "admin", "superuser" ],
+                  "targetType" : "group",
+                  "operator" : "displayName"
+                } ],
+                "operator" : "AND"
+              } ],
+              "type" : "CUSTOM",
+              "operator" : "AND"
+            }; // CreatePrivilegeCriteriaRequest
+            this.api.createCustomPrivilegeCriteriaV1({ createPrivilegeCriteriaRequest: createPrivilegeCriteriaRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /criteria/v1/privilege/{criteriaId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#delete-custom-privilege-criteria-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PrivilegeCriteriaService);
+
+          deleteCustomPrivilegeCriteriaV1(): void {
+            const criteriaId: string = '6d123044-5834-4e8d-a49f-9c70089b0de1'; // string
+            this.api.deleteCustomPrivilegeCriteriaV1({ criteriaId: criteriaId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /criteria/v1/privilege/{criteriaId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#get-privilege-criteria-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PrivilegeCriteriaService);
+
+          getPrivilegeCriteriaV1(): void {
+            const criteriaId: string = '6d123044-5834-4e8d-a49f-9c70089b0de1'; // string
+            this.api.getPrivilegeCriteriaV1({ criteriaId: criteriaId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /criteria/v1/privilege
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#list-privilege-criteria-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PrivilegeCriteriaService);
+
+          listPrivilegeCriteriaV1(): void {
+            const filters: string = 'type eq "CUSTOM" and sourceId eq "c42c45d8d7c04d2da64d215cd8c32f21"'; // string
+            this.api.listPrivilegeCriteriaV1({ filters: filters }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /criteria/v1/privilege/{criteriaId}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/privilege_criteria/methods/privilege-criteria#put-custom-privilege-criteria-value-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PrivilegeCriteriaService } from 'sailpoint-angular-sdk/privilege_criteria';
+        import { PrivilegeCriteriaDTO } from 'sailpoint-angular-sdk/privilege_criteria';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PrivilegeCriteriaService);
+
+          putCustomPrivilegeCriteriaValueV1(): void {
+            const criteriaId: string = '6d123044-5834-4e8d-a49f-9c70089b0de1'; // string
+            const privilegeCriteriaDTO: PrivilegeCriteriaDTO = {
+              "sourceId" : "c42c45d8d7c04d2da64d215cd8c32f21",
+              "privilegeLevel" : "HIGH",
+              "groups" : [ {
+                "criteriaItems" : [ {
+                  "ignoreCase" : true,
+                  "values" : [ "admin", "superuser" ],
+                  "property" : "displayName",
+                  "targetType" : "group",
+                  "operator" : "IN"
+                }, {
+                  "ignoreCase" : true,
+                  "values" : [ "admin", "superuser" ],
+                  "property" : "displayName",
+                  "targetType" : "group",
+                  "operator" : "IN"
+                } ],
+                "operator" : "AND"
+              }, {
+                "criteriaItems" : [ {
+                  "ignoreCase" : true,
+                  "values" : [ "admin", "superuser" ],
+                  "property" : "displayName",
+                  "targetType" : "group",
+                  "operator" : "IN"
+                }, {
+                  "ignoreCase" : true,
+                  "values" : [ "admin", "superuser" ],
+                  "property" : "displayName",
+                  "targetType" : "group",
+                  "operator" : "IN"
+                } ],
+                "operator" : "AND"
+              } ],
+              "id" : "2c9180867817ac4d017817c491119a20",
+              "type" : "CUSTOM",
+              "operator" : "AND"
+            }; // PrivilegeCriteriaDTO
+            this.api.putCustomPrivilegeCriteriaValueV1({ criteriaId: criteriaId, privilegeCriteriaDTO: privilegeCriteriaDTO }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

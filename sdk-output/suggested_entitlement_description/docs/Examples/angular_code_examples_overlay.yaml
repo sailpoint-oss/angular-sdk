@@ -1,0 +1,409 @@
+- path: /entitlement-recommendations/v1/bulk-approve
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#approve-bulk-entitlement-recommendations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+        import { BulkApproveEntitlementRecommendationRequest } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          approveBulkEntitlementRecommendationsV1(): void {
+            const bulkApproveEntitlementRecommendationRequest: BulkApproveEntitlementRecommendationRequest = {
+              "items" : [ {
+                "id" : "79db50d4-723c-4aa0-a824-83c2205d82d1",
+                "recordType" : "SED",
+                "description" : "Provides access and permissions related to the Delinea Secret Server Cloud system."
+              }, {
+                "id" : "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                "recordType" : "privilege",
+                "privilegeLevel" : "high"
+              } ]
+            }; // BulkApproveEntitlementRecommendationRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.approveBulkEntitlementRecommendationsV1({ bulkApproveEntitlementRecommendationRequest: bulkApproveEntitlementRecommendationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-descriptions/v1/auto-write-settings
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#create-auto-write-settings-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+        import { AutoWriteSetting } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          createAutoWriteSettingsV1(): void {
+            const autoWriteSetting: AutoWriteSetting = {
+              "excludedSourceIds" : [ "2c91808a7813090a017814552e526350" ],
+              "includedSourceIds" : [ "2c91808a7813090a017814552e526349", "2c91808a7813090a017814552e52634a" ],
+              "enabled" : true
+            }; // AutoWriteSetting
+            this.api.createAutoWriteSettingsV1({ autoWriteSetting: autoWriteSetting }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-descriptions/v1/auto-write-settings
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#get-auto-write-settings-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          getAutoWriteSettingsV1(): void {
+            this.api.getAutoWriteSettingsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-description-batches/v1/{batchId}/stats
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#get-sed-batch-stats-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          getSedBatchStatsV1(): void {
+            const batchId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            this.api.getSedBatchStatsV1({ batchId: batchId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-description-batches/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#get-sed-batches-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          getSedBatchesV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const countOnly: boolean = true; // boolean
+            const status: string = 'completed, failed, submitted, materialized, failed'; // string
+            this.api.getSedBatchesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlement-recommendations/v1/pending-approvals
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#list-pending-entitlement-recommendation-approvals-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          listPendingEntitlementRecommendationApprovalsV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listPendingEntitlementRecommendationApprovalsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /privileged-recommendations/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#list-privileged-entitlement-recommendations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          listPrivilegedEntitlementRecommendationsV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listPrivilegedEntitlementRecommendationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-descriptions/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#list-seds-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          listSedsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'displayName co "Read and Write"'; // string
+            const sorters: string = 'sorters=displayName'; // string
+            const countOnly: boolean = count-only=true; // boolean
+            const requestedByAnyone: boolean = requested-by-anyone=true; // boolean
+            const showPendingStatusOnly: boolean = show-pending-status-only=true; // boolean
+            this.api.listSedsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlement-recommendations/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#patch-entitlement-recommendation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          patchEntitlementRecommendationV1(): void {
+            const id: string = '79db50d4-723c-4aa0-a824-83c2205d82d1'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchEntitlementRecommendationV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-descriptions/v1
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#patch-sed-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+        import { SedPatch } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          patchSedV1(): void {
+            const id: string = 'ebab396f-0af1-4050-89b7-dafc63ec70e7'; // string
+            const sedPatch: Array<SedPatch> = {
+              "op" : "replace",
+              "path" : "status",
+              "value" : "approved"
+            }; // Array<SedPatch>
+            this.api.patchSedV1({ id: id, sedPatch: sedPatch }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlement-recommendations/v1/assign
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#submit-entitlement-recommendations-assignment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+        import { EntitlementRecommendationAssignRequest } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          submitEntitlementRecommendationsAssignmentV1(): void {
+            const entitlementRecommendationAssignRequest: EntitlementRecommendationAssignRequest = {
+              "assignee" : {
+                "type" : "IDENTITY",
+                "value" : "2c91808a7f3b2e8a017f3c3e5f6d0099"
+              },
+              "items" : [ "79db50d4-723c-4aa0-a824-83c2205d82d1", "a1b2c3d4-e5f6-7890-abcd-ef1234567890" ]
+            }; // EntitlementRecommendationAssignRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.submitEntitlementRecommendationsAssignmentV1({ entitlementRecommendationAssignRequest: entitlementRecommendationAssignRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-description-approvals/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#submit-sed-approval-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+        import { SedApproval } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          submitSedApprovalV1(): void {
+            const sedApproval: Array<SedApproval> = {
+              "items" : "016629d1-1d25-463f-97f3-c6686846650"
+            }; // Array<SedApproval>
+            this.api.submitSedApprovalV1({ sedApproval: sedApproval }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-description-assignments/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#submit-sed-assignment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+        import { SedAssignment } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          submitSedAssignmentV1(): void {
+            const sedAssignment: SedAssignment = {
+              "assignee" : {
+                "type" : "SOURCE_OWNER",
+                "value" : "016629d1-1d25-463f-97f3-c6686846650"
+              },
+              "items" : [ "016629d1-1d25-463f-97f3-0c6686846650", "016629d1-1d25-463f-97f3-0c6686846650" ]
+            }; // SedAssignment
+            this.api.submitSedAssignmentV1({ sedAssignment: sedAssignment }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-description-batches/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#submit-sed-batch-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+        import { SedBatchRequest } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          submitSedBatchRequestV1(): void {
+            const sedBatchRequest: SedBatchRequest = {
+              "entitlements" : [ "016629d1-1d25-463f-97f3-c6686846650", "016629d1-1d25-463f-97f3-c6686846650" ],
+              "seds" : [ "016629d1-1d25-463f-97f3-c6686846650", "016629d1-1d25-463f-97f3-c6686846650" ],
+              "searchCriteria" : {
+                "key" : {
+                  "indices" : [ "entitlements" ],
+                  "query" : {
+                    "query" : "status:active"
+                  },
+                  "textQuery" : {
+                    "terms" : [ "admin", "user" ],
+                    "matchAny" : true,
+                    "fields" : [ "role", "name" ]
+                  },
+                  "searchAfter" : [ "12345", "67890" ],
+                  "filters" : {
+                    "status" : {
+                      "type" : "TERMS",
+                      "terms" : [ "active", "inactive" ]
+                    }
+                  },
+                  "sort" : [ "name:asc", "createdAt:desc" ],
+                  "queryType" : "TEXT",
+                  "includeNested" : true
+                }
+              }
+            }; // SedBatchRequest
+            this.api.submitSedBatchRequestV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /suggested-entitlement-descriptions/v1/auto-write-settings
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/suggested_entitlement_description/methods/suggested-entitlement-description#update-auto-write-settings-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SuggestedEntitlementDescriptionService } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+        import { AutoWriteSettingPatch } from 'sailpoint-angular-sdk/suggested_entitlement_description';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SuggestedEntitlementDescriptionService);
+
+          updateAutoWriteSettingsV1(): void {
+            const autoWriteSettingPatch: Array<AutoWriteSettingPatch> = {
+              "op" : "replace",
+              "path" : "/enabled",
+              "value" : true
+            }; // Array<AutoWriteSettingPatch>
+            this.api.updateAutoWriteSettingsV1({ autoWriteSettingPatch: autoWriteSettingPatch }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,196 @@
+- path: /parameter-storage/v1/parameters
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#create-parameter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageNewParameter } from 'sailpoint-angular-sdk/parameter_storage';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ParameterStorageService);
+
+          createParameterV1(): void {
+            const parameterStorageNewParameter: ParameterStorageNewParameter = {
+              "privateFields" : "ZW5jcnlwdGVkIHBhc3N3b3JkIGhlcmUu",
+              "name" : "Credentials for server.",
+              "description" : "Credentials for server.",
+              "publicFields" : "{\"username\": \"username\"}",
+              "ownerId" : "c0b4568a4fe7458c434ee77d1fbt156b",
+              "type" : "1.1"
+            }; // ParameterStorageNewParameter
+            this.api.createParameterV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /parameter-storage/v1/parameters/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#delete-parameter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ParameterStorageService);
+
+          deleteParameterV1(): void {
+            const id: string = '58de858b-83d9-4563-9e15-7393594c684a'; // string
+            this.api.deleteParameterV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /parameter-storage/v1/attestation
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#get-attestation-document-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ParameterStorageService);
+
+          getAttestationDocumentV1(): void {
+            const key: string = 'BLdV-KA7nSRXx2XkksQX7bmOAShARsB3CCVWodKr4dOJj_puru76wy6drBTVlSytW_rDheLwepm9xdrRuqUI7p81wMP576frFBbsjndBKyRm3eouPbDcW8MAz0XRH1BB3w=='; // string
+            this.api.getAttestationDocumentV1({ key: key }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /parameter-storage/v1/parameters/{id}/references
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#get-parameter-references-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ParameterStorageService);
+
+          getParameterReferencesV1(): void {
+            const id: string = '58de858b-83d9-4563-9e15-7393594c684a'; // string
+            const sorters: string = 'consumerId,name'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.getParameterReferencesV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /parameter-storage/v1/specifications
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#get-parameter-storage-specification-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ParameterStorageService);
+
+          getParameterStorageSpecificationV1(): void {
+            const acceptLanguage: string = 'en'; // string
+            this.api.getParameterStorageSpecificationV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /parameter-storage/v1/parameters/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#get-parameter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ParameterStorageService);
+
+          getParameterV1(): void {
+            const id: string = '58de858b-83d9-4563-9e15-7393594c684a'; // string
+            this.api.getParameterV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /parameter-storage/v1/parameters
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#search-parameters-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ParameterStorageService);
+
+          searchParametersV1(): void {
+            const filters: string = 'id eq 550e8400-e29b-41d4-a716-446655440000'; // string
+            const sorters: string = 'type,name'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            this.api.searchParametersV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /parameter-storage/v1/parameters/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/parameter_storage/methods/parameter-storage#update-parameter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ParameterStorageService } from 'sailpoint-angular-sdk/parameter_storage';
+        import { ParameterStorageUpdateParameter } from 'sailpoint-angular-sdk/parameter_storage';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ParameterStorageService);
+
+          updateParameterV1(): void {
+            const id: string = '58de858b-83d9-4563-9e15-7393594c684a'; // string
+            const parameterStorageUpdateParameter: ParameterStorageUpdateParameter = {
+              "privateFields" : "ZW5jcnlwdGVkIHBhc3N3b3JkIGhlcmUu",
+              "name" : "Credentials for server.",
+              "description" : "Credentials for server.",
+              "publicFields" : "{\"username\": \"username\"}",
+              "ownerId" : "c0b4568a4fe7458c434ee77d1fbt156b"
+            }{
+              "privateFields" : "ZW5jcnlwdGVkIHBhc3N3b3JkIGhlcmUu",
+              "name" : "Credentials for server.",
+              "description" : "Credentials for server.",
+              "publicFields" : "{\"username\": \"username\"}",
+              "ownerId" : "c0b4568a4fe7458c434ee77d1fbt156b"
+            }; // ParameterStorageUpdateParameter
+            this.api.updateParameterV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

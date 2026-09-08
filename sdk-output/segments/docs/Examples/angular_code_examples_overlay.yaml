@@ -1,0 +1,132 @@
+- path: /segments/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/segments/methods/segments#create-segment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+        import { Segment } from 'sailpoint-angular-sdk/segments';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SegmentsService);
+
+          createSegmentV1(): void {
+            const segment: Segment = {
+              "owner" : {
+                "name" : "support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              },
+              "created" : "2020-01-01T00:00:00Z",
+              "visibilityCriteria" : {
+                "expression" : {
+                  "children" : [ ],
+                  "attribute" : "location",
+                  "value" : {
+                    "type" : "STRING",
+                    "value" : "Austin"
+                  },
+                  "operator" : "EQUALS"
+                }
+              },
+              "name" : "segment-xyz",
+              "modified" : "2020-01-01T00:00:00Z",
+              "description" : "This segment represents xyz",
+              "active" : true,
+              "id" : "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde"
+            }; // Segment
+            this.api.createSegmentV1({ segment: segment }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /segments/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/segments/methods/segments#delete-segment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SegmentsService);
+
+          deleteSegmentV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deleteSegmentV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /segments/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/segments/methods/segments#get-segment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SegmentsService);
+
+          getSegmentV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getSegmentV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /segments/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/segments/methods/segments#list-segments-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SegmentsService);
+
+          listSegmentsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.listSegmentsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /segments/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/segments/methods/segments#patch-segment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SegmentsService } from 'sailpoint-angular-sdk/segments';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SegmentsService);
+
+          patchSegmentV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const requestBody: Array<object> = [{"op":"replace","path":"/visibilityCriteria","value":{"expression":{"operator":"AND","children":[{"operator":"EQUALS","attribute":"location","value":{"type":"STRING","value":"Philadelphia"}},{"operator":"EQUALS","attribute":"department","value":{"type":"STRING","value":"HR"}}]}}}]; // Array<object>
+            this.api.patchSegmentV1({ id: id, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

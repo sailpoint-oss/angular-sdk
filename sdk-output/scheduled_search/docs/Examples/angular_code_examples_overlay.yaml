@@ -1,0 +1,179 @@
+- path: /scheduled-searches/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/scheduled_search/methods/scheduled-search#create-scheduled-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+        import { CreateScheduledSearchV1Request } from 'sailpoint-angular-sdk/scheduled_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ScheduledSearchService);
+
+          createScheduledSearchV1(): void {
+            const createScheduledSearchV1Request: CreateScheduledSearchV1Request = {"savedSearchId":"9c620e13-cd33-4804-a13d-403bd7bcdbad","schedule":{"type":"DAILY","hours":{"type":"LIST","values":["9"]}},"recipients":[{"type":"IDENTITY","id":"2c9180867624cbd7017642d8c8c81f67"}]}; // CreateScheduledSearchV1Request
+            this.api.createScheduledSearchV1({ createScheduledSearchV1Request: createScheduledSearchV1Request }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /scheduled-searches/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/scheduled_search/methods/scheduled-search#delete-scheduled-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ScheduledSearchService);
+
+          deleteScheduledSearchV1(): void {
+            const id: string = '2c91808568c529c60168cca6f90c1313'; // string
+            this.api.deleteScheduledSearchV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /scheduled-searches/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/scheduled_search/methods/scheduled-search#get-scheduled-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ScheduledSearchService);
+
+          getScheduledSearchV1(): void {
+            const id: string = '2c91808568c529c60168cca6f90c1313'; // string
+            this.api.getScheduledSearchV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /scheduled-searches/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/scheduled_search/methods/scheduled-search#list-scheduled-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ScheduledSearchService);
+
+          listScheduledSearchV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'savedSearchId eq "6cc0945d-9eeb-4948-9033-72d066e1153e"'; // string
+            this.api.listScheduledSearchV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /scheduled-searches/v1/{id}/unsubscribe
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/scheduled_search/methods/scheduled-search#unsubscribe-scheduled-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+        import { TypedReference } from 'sailpoint-angular-sdk/scheduled_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ScheduledSearchService);
+
+          unsubscribeScheduledSearchV1(): void {
+            const id: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const typedReference: TypedReference = {
+              "id" : "2c91808568c529c60168cca6f90c1313",
+              "type" : "IDENTITY"
+            }; // TypedReference
+            this.api.unsubscribeScheduledSearchV1({ id: id, typedReference: typedReference }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /scheduled-searches/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/scheduled_search/methods/scheduled-search#update-scheduled-search-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ScheduledSearchService } from 'sailpoint-angular-sdk/scheduled_search';
+        import { ScheduledSearch } from 'sailpoint-angular-sdk/scheduled_search';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ScheduledSearchService);
+
+          updateScheduledSearchV1(): void {
+            const id: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const scheduledSearch: ScheduledSearch = {
+              "owner" : {
+                "id" : "2c9180867624cbd7017642d8c8c81f67",
+                "type" : "IDENTITY"
+              },
+              "displayQueryDetails" : false,
+              "created" : "",
+              "description" : "Daily disabled accounts",
+              "ownerId" : "2c9180867624cbd7017642d8c8c81f67",
+              "enabled" : false,
+              "schedule" : {
+                "hours" : {
+                  "values" : [ "MON", "WED" ],
+                  "interval" : 3,
+                  "type" : "LIST"
+                },
+                "months" : {
+                  "values" : [ "MON", "WED" ],
+                  "interval" : 3,
+                  "type" : "LIST"
+                },
+                "timeZoneId" : "America/Chicago",
+                "days" : {
+                  "values" : [ "MON", "WED" ],
+                  "interval" : 3,
+                  "type" : "LIST"
+                },
+                "expiration" : "2018-06-25T20:22:28.104Z",
+                "type" : "WEEKLY"
+              },
+              "recipients" : [ {
+                "id" : "2c9180867624cbd7017642d8c8c81f67",
+                "type" : "IDENTITY"
+              }, {
+                "id" : "2c9180867624cbd7017642d8c8c81f67",
+                "type" : "IDENTITY"
+              } ],
+              "savedSearchId" : "554f1511-f0a1-4744-ab14-599514d3e57c",
+              "name" : "Daily disabled accounts",
+              "modified" : "",
+              "id" : "0de46054-fe90-434a-b84e-c6b3359d0c64",
+              "emailEmptyResults" : false
+            }; // ScheduledSearch
+            this.api.updateScheduledSearchV1({ id: id, scheduledSearch: scheduledSearch }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

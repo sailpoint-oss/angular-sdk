@@ -1,0 +1,214 @@
+- path: /sim-integrations/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#create-sim-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+        import { SimIntegrationDetails } from 'sailpoint-angular-sdk/sim_integrations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SIMIntegrationsService);
+
+          createSIMIntegrationV1(): void {
+            const simIntegrationDetails: SimIntegrationDetails = {
+              "cluster" : "xyzzy999",
+              "statusMap" : "{\"closed_cancelled\":\"Failed\",\"closed_complete\":\"Committed\",\"closed_incomplete\":\"Failed\",\"closed_rejected\":\"Failed\",\"in_process\":\"Queued\",\"requested\":\"Queued\"}",
+              "request" : "{\"description\":\"SailPoint Access Request,\",\"req_description\":\"The Service Request created by SailPoint ServiceNow Service Integration Module (SIM).,\",\"req_short_description\":\"SailPoint New Access Request Created from IdentityNow,\",\"short_description\":\"SailPoint Access Request $!plan.arguments.identityRequestId\"}",
+              "sources" : [ "2c9180835d191a86015d28455b4a2329", "2c5680835d191a85765d28455b4a9823" ],
+              "created" : "2015-05-28T14:07:17Z",
+              "name" : "aName",
+              "modified" : "2015-05-28T14:07:17Z",
+              "description" : "Integration description",
+              "attributes" : "{\"uid\":\"Walter White\",\"firstname\":\"walter\",\"cloudStatus\":\"UNREGISTERED\",\"displayName\":\"Walter White\",\"identificationNumber\":\"942\",\"lastSyncDate\":1470348809380,\"email\":\"walter@gmail.com\",\"lastname\":\"white\"}",
+              "id" : "id12345",
+              "type" : "ServiceNow Service Desk",
+              "beforeProvisioningRule" : {
+                "name" : "Example Rule",
+                "id" : "2c918085708c274401708c2a8a760001",
+                "type" : "IDENTITY"
+              }
+            }; // SimIntegrationDetails
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createSIMIntegrationV1({ simIntegrationDetails: simIntegrationDetails }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sim-integrations/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#delete-sim-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SIMIntegrationsService);
+
+          deleteSIMIntegrationV1(): void {
+            const id: string = '12345'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteSIMIntegrationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sim-integrations/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#get-sim-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SIMIntegrationsService);
+
+          getSIMIntegrationV1(): void {
+            const id: string = '12345'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSIMIntegrationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sim-integrations/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#get-sim-integrations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SIMIntegrationsService);
+
+          getSIMIntegrationsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSIMIntegrationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sim-integrations/v1/{id}/beforeProvisioningRule
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#patch-before-provisioning-rule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+        import { JsonPatch } from 'sailpoint-angular-sdk/sim_integrations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SIMIntegrationsService);
+
+          patchBeforeProvisioningRuleV1(): void {
+            const id: string = '12345'; // string
+            const jsonPatch: JsonPatch = {
+              "operations" : [ {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              }, {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              } ]
+            }; // JsonPatch
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchBeforeProvisioningRuleV1({ id: id, jsonPatch: jsonPatch }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sim-integrations/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#patch-sim-attributes-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+        import { JsonPatch } from 'sailpoint-angular-sdk/sim_integrations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SIMIntegrationsService);
+
+          patchSIMAttributesV1(): void {
+            const id: string = '12345'; // string
+            const jsonPatch: JsonPatch = {
+              "operations" : [ {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              }, {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              } ]
+            }; // JsonPatch
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchSIMAttributesV1({ id: id, jsonPatch: jsonPatch }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sim-integrations/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sim_integrations/methods/sim-integrations#put-sim-integration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SIMIntegrationsService } from 'sailpoint-angular-sdk/sim_integrations';
+        import { SimIntegrationDetails } from 'sailpoint-angular-sdk/sim_integrations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SIMIntegrationsService);
+
+          putSIMIntegrationV1(): void {
+            const id: string = '12345'; // string
+            const simIntegrationDetails: SimIntegrationDetails = {
+              "cluster" : "xyzzy999",
+              "statusMap" : "{\"closed_cancelled\":\"Failed\",\"closed_complete\":\"Committed\",\"closed_incomplete\":\"Failed\",\"closed_rejected\":\"Failed\",\"in_process\":\"Queued\",\"requested\":\"Queued\"}",
+              "request" : "{\"description\":\"SailPoint Access Request,\",\"req_description\":\"The Service Request created by SailPoint ServiceNow Service Integration Module (SIM).,\",\"req_short_description\":\"SailPoint New Access Request Created from IdentityNow,\",\"short_description\":\"SailPoint Access Request $!plan.arguments.identityRequestId\"}",
+              "sources" : [ "2c9180835d191a86015d28455b4a2329", "2c5680835d191a85765d28455b4a9823" ],
+              "created" : "2015-05-28T14:07:17Z",
+              "name" : "aName",
+              "modified" : "2015-05-28T14:07:17Z",
+              "description" : "Integration description",
+              "attributes" : "{\"uid\":\"Walter White\",\"firstname\":\"walter\",\"cloudStatus\":\"UNREGISTERED\",\"displayName\":\"Walter White\",\"identificationNumber\":\"942\",\"lastSyncDate\":1470348809380,\"email\":\"walter@gmail.com\",\"lastname\":\"white\"}",
+              "id" : "id12345",
+              "type" : "ServiceNow Service Desk",
+              "beforeProvisioningRule" : {
+                "name" : "Example Rule",
+                "id" : "2c918085708c274401708c2a8a760001",
+                "type" : "IDENTITY"
+              }
+            }; // SimIntegrationDetails
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.putSIMIntegrationV1({ id: id, simIntegrationDetails: simIntegrationDetails }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

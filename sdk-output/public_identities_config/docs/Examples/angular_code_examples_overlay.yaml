@@ -1,0 +1,56 @@
+- path: /public-identities-config/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/public_identities_config/methods/public-identities-config#get-public-identity-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PublicIdentitiesConfigService } from 'sailpoint-angular-sdk/public_identities_config';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PublicIdentitiesConfigService);
+
+          getPublicIdentityConfigV1(): void {
+            this.api.getPublicIdentityConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /public-identities-config/v1
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/public_identities_config/methods/public-identities-config#update-public-identity-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PublicIdentitiesConfigService } from 'sailpoint-angular-sdk/public_identities_config';
+        import { PublicIdentityConfig } from 'sailpoint-angular-sdk/public_identities_config';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PublicIdentitiesConfigService);
+
+          updatePublicIdentityConfigV1(): void {
+            const publicIdentityConfig: PublicIdentityConfig = {
+              "modified" : "2018-06-25T20:22:28.104Z",
+              "attributes" : [ {
+                "name" : "Country",
+                "key" : "country"
+              }, {
+                "name" : "Country",
+                "key" : "country"
+              } ],
+              "modifiedBy" : {
+                "name" : "Thomas Edison",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              }
+            }; // PublicIdentityConfig
+            this.api.updatePublicIdentityConfigV1({ publicIdentityConfig: publicIdentityConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

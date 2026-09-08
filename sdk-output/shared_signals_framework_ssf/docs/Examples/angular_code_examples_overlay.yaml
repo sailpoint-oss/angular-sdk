@@ -1,0 +1,246 @@
+- path: /ssf/v1/streams
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#create-stream-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { CreateStreamRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          createStreamV1(): void {
+            const createStreamRequest: CreateStreamRequest = {
+              "delivery" : {
+                "method" : "urn:ietf:rfc:8935",
+                "endpoint_url" : "https://receiver.example.com/ssf/events",
+                "authorization_header" : "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."
+              },
+              "description" : "Production event stream",
+              "events_requested" : [ "https://schemas.openid.net/secevent/caep/event-type/session-revoked" ]
+            }; // CreateStreamRequest
+            this.api.createStreamV1({ createStreamRequest: createStreamRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ssf/v1/streams
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#delete-stream-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          deleteStreamV1(): void {
+            const streamId: string = '550e8400-e29b-41d4-a716-446655440000'; // string
+            this.api.deleteStreamV1({ streamId: streamId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ssf/v1/jwks
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#get-jwks-data-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          getJWKSDataV1(): void {
+            this.api.getJWKSDataV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /.well-known/v1/ssf-configuration
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#get-ssf-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          getSSFConfigurationV1(): void {
+            this.api.getSSFConfigurationV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ssf/v1/streams/status
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#get-stream-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          getStreamStatusV1(): void {
+            const streamId: string = '550e8400-e29b-41d4-a716-446655440000'; // string
+            this.api.getStreamStatusV1({ streamId: streamId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ssf/v1/streams
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#get-stream-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          getStreamV1(): void {
+            const streamId: string = '550e8400-e29b-41d4-a716-446655440000'; // string
+            this.api.getStreamV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ssf/v1/streams/verify
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#send-stream-verification-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { VerificationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          sendStreamVerificationV1(): void {
+            const verificationRequest: VerificationRequest = {
+              "stream_id" : "550e8400-e29b-41d4-a716-446655440000",
+              "state" : "verification-challenge-state-123"
+            }; // VerificationRequest
+            this.api.sendStreamVerificationV1({ verificationRequest: verificationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ssf/v1/streams
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#set-stream-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { ReplaceStreamConfigurationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          setStreamConfigurationV1(): void {
+            const replaceStreamConfigurationRequest: ReplaceStreamConfigurationRequest = {
+              "delivery" : {
+                "method" : "urn:ietf:rfc:8935",
+                "endpoint_url" : "https://receiver.example.com/ssf/events",
+                "authorization_header" : "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."
+              },
+              "stream_id" : "550e8400-e29b-41d4-a716-446655440000",
+              "description" : "Production event stream",
+              "events_requested" : [ "https://schemas.openid.net/secevent/caep/event-type/session-revoked" ]
+            }; // ReplaceStreamConfigurationRequest
+            this.api.setStreamConfigurationV1({ replaceStreamConfigurationRequest: replaceStreamConfigurationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ssf/v1/streams
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#update-stream-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { UpdateStreamConfigurationRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          updateStreamConfigurationV1(): void {
+            const updateStreamConfigurationRequest: UpdateStreamConfigurationRequest = {
+              "delivery" : {
+                "method" : "urn:ietf:rfc:8935",
+                "endpoint_url" : "https://receiver.example.com/ssf/events",
+                "authorization_header" : "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."
+              },
+              "stream_id" : "550e8400-e29b-41d4-a716-446655440000",
+              "description" : "Updated production event stream configuration",
+              "events_requested" : [ "https://schemas.openid.net/secevent/caep/event-type/session-revoked" ]
+            }; // UpdateStreamConfigurationRequest
+            this.api.updateStreamConfigurationV1({ updateStreamConfigurationRequest: updateStreamConfigurationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ssf/v1/streams/status
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/shared_signals_framework_ssf/methods/shared-signals-framework-ssf#update-stream-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SharedSignalsFrameworkSSFService } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+        import { UpdateStreamStatusRequest } from 'sailpoint-angular-sdk/shared_signals_framework_ssf';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SharedSignalsFrameworkSSFService);
+
+          updateStreamStatusV1(): void {
+            const updateStreamStatusRequest: UpdateStreamStatusRequest = {
+              "reason" : "manually paused",
+              "stream_id" : "550e8400-e29b-41d4-a716-446655440000",
+              "status" : "paused"
+            }; // UpdateStreamStatusRequest
+            this.api.updateStreamStatusV1({ updateStreamStatusRequest: updateStreamStatusRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

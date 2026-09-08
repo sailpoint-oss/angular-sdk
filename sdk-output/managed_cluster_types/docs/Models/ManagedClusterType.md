@@ -1,0 +1,29 @@
+---
+id: managed_cluster_types-model-managed-cluster-type
+title: ManagedClusterType
+pagination_label: ManagedClusterType
+sidebar_label: ManagedClusterType
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'ManagedClusterType', 'managed_cluster_types']
+slug: /tools/sdk/angular/managed_cluster_types/models/managed-cluster-type
+tags: ['SDK', 'Software Development Kit', 'ManagedClusterType', 'managed_cluster_types']
+---
+
+# ManagedClusterType
+
+Import this model from the entry point of its package:
+
+```typescript
+import { ManagedClusterType } from 'sailpoint-angular-sdk/managed_cluster_types';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **(optional)** `string` | ManagedClusterType ID | [readonly] [default to undefined]
+**type** | `string` | ManagedClusterType type name | [default to undefined]
+**pod** | `string` | ManagedClusterType pod | [default to undefined]
+**org** | `string` | ManagedClusterType org | [default to undefined]
+**managedProcessIds** | **(optional)** `Array<string>` | List of processes for the cluster type | [default to undefined]
+

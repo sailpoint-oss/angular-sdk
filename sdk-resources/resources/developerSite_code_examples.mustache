@@ -1,0 +1,39 @@
+{{#operations}}
+{{#operation}}
+- path: {{{path}}}
+  method: {{httpMethod}}
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}/methods/{{#lambda.kebabcase}}{{#lambda.titlecase}}{{baseName}}{{/lambda.titlecase}}{{/lambda.kebabcase}}#{{#lambda.kebabcase}}{{#lambda.titlecase}}{{operationId}}{{/lambda.titlecase}}{{/lambda.kebabcase}}
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { {{classname}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+{{#allParams}}
+{{#isModel}}
+{{^isArray}}
+        import { {{{dataType}}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+{{/isArray}}
+{{/isModel}}
+{{#isArray}}
+{{#items.isModel}}
+        import { {{#items}}{{{dataType}}}{{/items}} } from 'sailpoint-angular-sdk/{{#lambda.lowercase}}{{packageName}}{{/lambda.lowercase}}';
+{{/items.isModel}}
+{{/isArray}}
+{{/allParams}}
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject({{classname}});
+
+          {{nickname}}(): void {
+            {{#allParams}}
+            {{^isBodyParam}}const {{paramName}}: {{#isString}}string{{/isString}}{{^isString}}{{{dataType}}}{{/isString}} = {{#isString}}'{{/isString}}{{#lambda.indented_12}}{{{example}}}{{/lambda.indented_12}}{{#isString}}'{{/isString}}; // {{{dataType}}}{{/isBodyParam}}{{#isBodyParam}}const {{paramName}}: {{{dataType}}} = {{#lambda.indented_12}}{{#requestBodyExamples}}{{{example}}}{{/requestBodyExamples}}{{^requestBodyExamples}}{}{{/requestBodyExamples}}{{/lambda.indented_12}}; // {{{dataType}}}{{/isBodyParam}}
+            {{/allParams}}
+            this.api.{{nickname}}({ {{#requiredParams}}{{paramName}}: {{paramName}}{{^-last}}, {{/-last}}{{/requiredParams}} }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+  {{/operation}}
+{{/operations}}

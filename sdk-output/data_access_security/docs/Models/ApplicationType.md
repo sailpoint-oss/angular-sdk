@@ -1,0 +1,53 @@
+---
+id: data_access_security-model-application-type
+title: ApplicationType
+pagination_label: ApplicationType
+sidebar_label: ApplicationType
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'ApplicationType', 'data_access_security']
+slug: /tools/sdk/angular/data_access_security/models/application-type
+tags: ['SDK', 'Software Development Kit', 'ApplicationType', 'data_access_security']
+---
+
+# ApplicationType
+
+Import this model from the entry point of its package:
+
+```typescript
+import { ApplicationType } from 'sailpoint-angular-sdk/data_access_security';
+```
+
+## Enum
+
+
+* `NUMBER_1` (value: `1`)
+
+* `NUMBER_8` (value: `8`)
+
+* `NUMBER_9` (value: `9`)
+
+* `NUMBER_11` (value: `11`)
+
+* `NUMBER_15` (value: `15`)
+
+* `NUMBER_20` (value: `20`)
+
+* `NUMBER_21` (value: `21`)
+
+* `NUMBER_24` (value: `24`)
+
+* `NUMBER_25` (value: `25`)
+
+* `NUMBER_27` (value: `27`)
+
+* `NUMBER_28` (value: `28`)
+
+* `NUMBER_29` (value: `29`)
+
+* `NUMBER_33` (value: `33`)
+
+* `NUMBER_35` (value: `35`)
+
+* `NUMBER_37` (value: `37`)
+
+

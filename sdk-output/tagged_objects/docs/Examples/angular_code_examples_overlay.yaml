@@ -1,0 +1,220 @@
+- path: /tagged-objects/v1/{type}/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tagged_objects/methods/tagged-objects#delete-tagged-object-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaggedObjectsService);
+
+          deleteTaggedObjectV1(): void {
+            const type: string = 'ROLE'; // 'ACCESS_PROFILE' | 'APPLICATION' | 'CAMPAIGN' | 'ENTITLEMENT' | 'IDENTITY' | 'ROLE' | 'SOD_POLICY' | 'SOURCE'
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deleteTaggedObjectV1({ type: type, id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tagged-objects/v1/bulk-remove
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tagged_objects/methods/tagged-objects#delete-tags-to-many-object-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+        import { BulkRemoveTaggedObject } from 'sailpoint-angular-sdk/tagged_objects';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaggedObjectsService);
+
+          deleteTagsToManyObjectV1(): void {
+            const bulkRemoveTaggedObject: BulkRemoveTaggedObject = {
+              "objectRefs" : [ {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              }, {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              } ],
+              "tags" : [ "BU_FINANCE", "PCI" ]
+            }; // BulkRemoveTaggedObject
+            this.api.deleteTagsToManyObjectV1({ bulkRemoveTaggedObject: bulkRemoveTaggedObject }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tagged-objects/v1/{type}/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tagged_objects/methods/tagged-objects#get-tagged-object-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaggedObjectsService);
+
+          getTaggedObjectV1(): void {
+            const type: string = 'ROLE'; // 'ACCESS_PROFILE' | 'APPLICATION' | 'CAMPAIGN' | 'ENTITLEMENT' | 'IDENTITY' | 'ROLE' | 'SOD_POLICY' | 'SOURCE'
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getTaggedObjectV1({ type: type, id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tagged-objects/v1/{type}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tagged_objects/methods/tagged-objects#list-tagged-objects-by-type-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaggedObjectsService);
+
+          listTaggedObjectsByTypeV1(): void {
+            const type: string = 'ROLE'; // 'ACCESS_PROFILE' | 'APPLICATION' | 'CAMPAIGN' | 'ENTITLEMENT' | 'IDENTITY' | 'ROLE' | 'SOD_POLICY' | 'SOURCE'
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'objectRef.id eq "2c91808568c529c60168cca6f90c1313"'; // string
+            this.api.listTaggedObjectsByTypeV1({ type: type }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tagged-objects/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tagged_objects/methods/tagged-objects#list-tagged-objects-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaggedObjectsService);
+
+          listTaggedObjectsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'tagName eq "BU_FINANCE"'; // string
+            this.api.listTaggedObjectsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tagged-objects/v1/{type}/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tagged_objects/methods/tagged-objects#put-tagged-object-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+        import { TaggedObject } from 'sailpoint-angular-sdk/tagged_objects';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaggedObjectsService);
+
+          putTaggedObjectV1(): void {
+            const type: string = 'ROLE'; // 'ACCESS_PROFILE' | 'APPLICATION' | 'CAMPAIGN' | 'ENTITLEMENT' | 'IDENTITY' | 'ROLE' | 'SOD_POLICY' | 'SOURCE'
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const taggedObject: TaggedObject = {
+              "objectRef" : {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "tags" : [ "BU_FINANCE", "PCI" ]
+            }; // TaggedObject
+            this.api.putTaggedObjectV1({ type: type, id: id, taggedObject: taggedObject }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tagged-objects/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tagged_objects/methods/tagged-objects#set-tag-to-object-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+        import { TaggedObject } from 'sailpoint-angular-sdk/tagged_objects';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaggedObjectsService);
+
+          setTagToObjectV1(): void {
+            const taggedObject: TaggedObject = {
+              "objectRef" : {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              },
+              "tags" : [ "BU_FINANCE", "PCI" ]
+            }; // TaggedObject
+            this.api.setTagToObjectV1({ taggedObject: taggedObject }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tagged-objects/v1/bulk-add
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tagged_objects/methods/tagged-objects#set-tags-to-many-objects-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TaggedObjectsService } from 'sailpoint-angular-sdk/tagged_objects';
+        import { BulkAddTaggedObject } from 'sailpoint-angular-sdk/tagged_objects';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TaggedObjectsService);
+
+          setTagsToManyObjectsV1(): void {
+            const bulkAddTaggedObject: BulkAddTaggedObject = {
+              "objectRefs" : [ {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              }, {
+                "name" : "William Wilson",
+                "id" : "2c91808568c529c60168cca6f90c1313",
+                "type" : "IDENTITY"
+              } ],
+              "operation" : "MERGE",
+              "tags" : [ "BU_FINANCE", "PCI" ]
+            }; // BulkAddTaggedObject
+            this.api.setTagsToManyObjectsV1({ bulkAddTaggedObject: bulkAddTaggedObject }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

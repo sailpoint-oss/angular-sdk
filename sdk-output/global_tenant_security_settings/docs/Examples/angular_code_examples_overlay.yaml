@@ -1,0 +1,210 @@
+- path: /auth-org/v1/network-config
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#create-auth-org-network-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { NetworkConfiguration } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GlobalTenantSecuritySettingsService);
+
+          createAuthOrgNetworkConfigV1(): void {
+            const networkConfiguration: NetworkConfiguration = {
+              "range" : [ "1.3.7.2", "255.255.255.252/30" ],
+              "whitelisted" : true,
+              "geolocation" : [ "CA", "FR", "HT" ]
+            }; // NetworkConfiguration
+            this.api.createAuthOrgNetworkConfigV1({ networkConfiguration: networkConfiguration }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-org/v1/lockout-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#get-auth-org-lockout-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GlobalTenantSecuritySettingsService);
+
+          getAuthOrgLockoutConfigV1(): void {
+            this.api.getAuthOrgLockoutConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-org/v1/network-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#get-auth-org-network-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GlobalTenantSecuritySettingsService);
+
+          getAuthOrgNetworkConfigV1(): void {
+            this.api.getAuthOrgNetworkConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-org/v1/service-provider-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#get-auth-org-service-provider-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GlobalTenantSecuritySettingsService);
+
+          getAuthOrgServiceProviderConfigV1(): void {
+            this.api.getAuthOrgServiceProviderConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-org/v1/session-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#get-auth-org-session-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GlobalTenantSecuritySettingsService);
+
+          getAuthOrgSessionConfigV1(): void {
+            this.api.getAuthOrgSessionConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-org/v1/lockout-config
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#patch-auth-org-lockout-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GlobalTenantSecuritySettingsService);
+
+          patchAuthOrgLockoutConfigV1(): void {
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchAuthOrgLockoutConfigV1({ jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-org/v1/network-config
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#patch-auth-org-network-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GlobalTenantSecuritySettingsService);
+
+          patchAuthOrgNetworkConfigV1(): void {
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchAuthOrgNetworkConfigV1({ jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-org/v1/service-provider-config
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#patch-auth-org-service-provider-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GlobalTenantSecuritySettingsService);
+
+          patchAuthOrgServiceProviderConfigV1(): void {
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchAuthOrgServiceProviderConfigV1({ jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /auth-org/v1/session-config
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/global_tenant_security_settings/methods/global-tenant-security-settings#patch-auth-org-session-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GlobalTenantSecuritySettingsService } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/global_tenant_security_settings';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GlobalTenantSecuritySettingsService);
+
+          patchAuthOrgSessionConfigV1(): void {
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchAuthOrgSessionConfigV1({ jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,279 @@
+- path: /identities/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#delete-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          deleteIdentityV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deleteIdentityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1/{identityId}/ownership
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#get-identity-ownership-details-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          getIdentityOwnershipDetailsV1(): void {
+            const identityId: string = 'ff8081814d2a8036014d701f3fbf53fa'; // string
+            this.api.getIdentityOwnershipDetailsV1({ identityId: identityId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#get-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          getIdentityV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getIdentityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1/{identityId}/role-assignments/{assignmentId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#get-role-assignment-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          getRoleAssignmentV1(): void {
+            const identityId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const assignmentId: string = '1cbb0705b38c4226b1334eadd8874086'; // string
+            this.api.getRoleAssignmentV1({ identityId: identityId, assignmentId: assignmentId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1/{identityId}/role-assignments
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#get-role-assignments-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          getRoleAssignmentsV1(): void {
+            const identityId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const roleId: string = 'e7697a1e96d04db1ac7b0f4544915d2c'; // string
+            const roleName: string = 'Engineer'; // string
+            this.api.getRoleAssignmentsV1({ identityId: identityId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/identities/{id}/entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#list-entitlements-by-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          listEntitlementsByIdentityV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.listEntitlementsByIdentityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#list-identities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          listIdentitiesV1(): void {
+            const filters: string = 'id eq "6c9079b270a266a60170a2779fcb0006" or correlated eq false'; // string
+            const sorters: string = 'name,-cloudStatus'; // string
+            const defaultFilter: string = 'NONE'; // 'CORRELATED_ONLY' | 'NONE'
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.listIdentitiesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1/{id}/reset
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#reset-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          resetIdentityV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.resetIdentityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1/{id}/verification/account/send
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#send-identity-verification-account-token-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { SendAccountVerificationRequest } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          sendIdentityVerificationAccountTokenV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const sendAccountVerificationRequest: SendAccountVerificationRequest = {
+              "sourceName" : "Active Directory Source",
+              "via" : "EMAIL_WORK"
+            }; // SendAccountVerificationRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.sendIdentityVerificationAccountTokenV1({ id: id, sendAccountVerificationRequest: sendAccountVerificationRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1/invite
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#start-identities-invite-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { InviteIdentitiesRequest } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          startIdentitiesInviteV1(): void {
+            const inviteIdentitiesRequest: InviteIdentitiesRequest = {
+              "ids" : [ "2b568c65bc3c4c57a43bd97e3a8e55", "2c9180867769897d01776ed5f125512f" ],
+              "uninvited" : false
+            }; // InviteIdentitiesRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startIdentitiesInviteV1({ inviteIdentitiesRequest: inviteIdentitiesRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1/process
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#start-identity-processing-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+        import { ProcessIdentitiesRequest } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          startIdentityProcessingV1(): void {
+            const processIdentitiesRequest: ProcessIdentitiesRequest = {
+              "identityIds" : [ "ef38f94347e94562b5bb8424a56397d8", "ef38f94347e94562b5bb8424a56397d8", "ef38f94347e94562b5bb8424a56397d8", "ef38f94347e94562b5bb8424a56397d8", "ef38f94347e94562b5bb8424a56397d8" ]
+            }; // ProcessIdentitiesRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startIdentityProcessingV1({ processIdentitiesRequest: processIdentitiesRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v1/{identityId}/synchronize-attributes
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#synchronize-attributes-for-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from 'sailpoint-angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          synchronizeAttributesForIdentityV1(): void {
+            const identityId: string = 'identityId_example'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.synchronizeAttributesForIdentityV1({ identityId: identityId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

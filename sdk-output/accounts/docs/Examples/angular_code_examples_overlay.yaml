@@ -1,0 +1,387 @@
+- path: /accounts/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#create-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountAttributesCreate } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          createAccountV1(): void {
+            const accountAttributesCreate: AccountAttributesCreate = {
+              "attributes" : {
+                "sourceId" : "34bfcbe116c9407464af37acbaf7a4dc",
+                "city" : "Austin",
+                "displayName" : "John Doe",
+                "userName" : "jdoe",
+                "sAMAccountName" : "jDoe",
+                "mail" : "john.doe@sailpoint.com"
+              }
+            }; // AccountAttributesCreate
+            this.api.createAccountV1({ accountAttributesCreate: accountAttributesCreate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}/remove
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#delete-account-async-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          deleteAccountAsyncV1(): void {
+            const id: string = 'c350d6aa4f104c61b062cb632421ad10'; // string
+            this.api.deleteAccountAsyncV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#delete-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          deleteAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.deleteAccountV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities-accounts/v1/{id}/disable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#disable-account-for-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          disableAccountForIdentityV1(): void {
+            const id: string = '2c91808384203c2d018437e631158309'; // string
+            this.api.disableAccountForIdentityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}/disable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#disable-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountToggleRequest } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          disableAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const accountToggleRequest: AccountToggleRequest = {
+              "forceProvisioning" : false,
+              "externalVerificationId" : "3f9180835d2e5168015d32f890ca1581"
+            }; // AccountToggleRequest
+            this.api.disableAccountV1({ id: id, accountToggleRequest: accountToggleRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities-accounts/v1/disable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#disable-accounts-for-identities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { IdentitiesAccountsBulkRequest } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          disableAccountsForIdentitiesV1(): void {
+            const identitiesAccountsBulkRequest: IdentitiesAccountsBulkRequest = {
+              "identityIds" : [ "2c91808384203c2d018437e631158308", "2c9180858082150f0180893dbaf553fe" ]
+            }; // IdentitiesAccountsBulkRequest
+            this.api.disableAccountsForIdentitiesV1({ identitiesAccountsBulkRequest: identitiesAccountsBulkRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities-accounts/v1/{id}/enable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#enable-account-for-identity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          enableAccountForIdentityV1(): void {
+            const id: string = '2c91808384203c2d018437e631158309'; // string
+            this.api.enableAccountForIdentityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}/enable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#enable-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountToggleRequest } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          enableAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const accountToggleRequest: AccountToggleRequest = {
+              "forceProvisioning" : false,
+              "externalVerificationId" : "3f9180835d2e5168015d32f890ca1581"
+            }; // AccountToggleRequest
+            this.api.enableAccountV1({ id: id, accountToggleRequest: accountToggleRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities-accounts/v1/enable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#enable-accounts-for-identities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { IdentitiesAccountsBulkRequest } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          enableAccountsForIdentitiesV1(): void {
+            const identitiesAccountsBulkRequest: IdentitiesAccountsBulkRequest = {
+              "identityIds" : [ "2c91808384203c2d018437e631158308", "2c9180858082150f0180893dbaf553fe" ]
+            }; // IdentitiesAccountsBulkRequest
+            this.api.enableAccountsForIdentitiesV1({ identitiesAccountsBulkRequest: identitiesAccountsBulkRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}/entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#get-account-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          getAccountEntitlementsV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getAccountEntitlementsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#get-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          getAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getAccountV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#list-accounts-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          listAccountsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const detailLevel: string = 'FULL'; // 'SLIM' | 'FULL'
+            const filters: string = 'identityId eq "2c9180858082150f0180893dbaf44201"'; // string
+            const sorters: string = 'id,name'; // string
+            this.api.listAccountsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#put-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountAttributes } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          putAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const accountAttributes: AccountAttributes = {
+              "attributes" : {
+                "city" : "Austin",
+                "displayName" : "John Doe",
+                "userName" : "jdoe",
+                "sAMAccountName" : "jDoe",
+                "mail" : "john.doe@sailpoint.com"
+              }
+            }; // AccountAttributes
+            this.api.putAccountV1({ id: id, accountAttributes: accountAttributes }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}/reload
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#submit-reload-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          submitReloadAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.submitReloadAccountV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}/unlock
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#unlock-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+        import { AccountUnlockRequest } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          unlockAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const accountUnlockRequest: AccountUnlockRequest = {
+              "forceProvisioning" : false,
+              "externalVerificationId" : "3f9180835d2e5168015d32f890ca1581",
+              "unlockIDNAccount" : false
+            }; // AccountUnlockRequest
+            this.api.unlockAccountV1({ id: id, accountUnlockRequest: accountUnlockRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#update-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from 'sailpoint-angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          updateAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const requestBody: Array<object> = [{"op":"remove","path":"/identityId"}]; // Array<object>
+            this.api.updateAccountV1({ id: id, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

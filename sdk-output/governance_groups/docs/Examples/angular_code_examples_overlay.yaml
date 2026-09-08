@@ -1,0 +1,251 @@
+- path: /workgroups/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#create-workgroup-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { WorkgroupDto } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          createWorkgroupV1(): void {
+            const workgroupDto: WorkgroupDto = {
+              "owner" : {
+                "emailAddress" : "support@sailpoint.com",
+                "displayName" : "Support",
+                "name" : "Support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              },
+              "connectionCount" : 1641498673000,
+              "created" : "2022-01-06T19:51:13Z",
+              "memberCount" : 1641498673000,
+              "name" : "DB Access Governance Group",
+              "description" : "Description of the Governance Group",
+              "modified" : "2022-01-06T19:51:13Z",
+              "id" : "2c91808568c529c60168cca6f90c1313"
+            }; // WorkgroupDto
+            this.api.createWorkgroupV1({ workgroupDto: workgroupDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workgroups/v1/{workgroupId}/members/bulk-delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#delete-workgroup-members-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { BulkWorkgroupMembersRequestInner } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          deleteWorkgroupMembersV1(): void {
+            const workgroupId: string = '2c91808a7813090a017814121919ecca'; // string
+            const bulkWorkgroupMembersRequestInner: Array<BulkWorkgroupMembersRequestInner> = ; // Array<BulkWorkgroupMembersRequestInner>
+            this.api.deleteWorkgroupMembersV1({ workgroupId: workgroupId, bulkWorkgroupMembersRequestInner: bulkWorkgroupMembersRequestInner }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workgroups/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#delete-workgroup-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          deleteWorkgroupV1(): void {
+            const id: string = '2c9180837ca6693d017ca8d097500149'; // string
+            this.api.deleteWorkgroupV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workgroups/v1/bulk-delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#delete-workgroups-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { WorkgroupBulkDeleteRequest } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          deleteWorkgroupsInBulkV1(): void {
+            const workgroupBulkDeleteRequest: WorkgroupBulkDeleteRequest = {
+              "ids" : [ "567a697e-885b-495a-afc5-d55e1c23a302", "c7b0f7b2-1e78-4063-b294-a555333dacd2" ]
+            }; // WorkgroupBulkDeleteRequest
+            this.api.deleteWorkgroupsInBulkV1({ workgroupBulkDeleteRequest: workgroupBulkDeleteRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workgroups/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#get-workgroup-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          getWorkgroupV1(): void {
+            const id: string = '2c9180837ca6693d017ca8d097500149'; // string
+            this.api.getWorkgroupV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workgroups/v1/{workgroupId}/connections
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#list-connections-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          listConnectionsV1(): void {
+            const workgroupId: string = '2c91808a7813090a017814121919ecca'; // string
+            const offset: number = 0; // number
+            const limit: number = 50; // number
+            const count: boolean = true; // boolean
+            const sorters: string = 'name,-modified'; // string
+            this.api.listConnectionsV1({ workgroupId: workgroupId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workgroups/v1/{workgroupId}/members
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#list-workgroup-members-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          listWorkgroupMembersV1(): void {
+            const workgroupId: string = '2c91808a7813090a017814121919ecca'; // string
+            const offset: number = 0; // number
+            const limit: number = 50; // number
+            const count: boolean = true; // boolean
+            const sorters: string = 'name,-modified'; // string
+            this.api.listWorkgroupMembersV1({ workgroupId: workgroupId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workgroups/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#list-workgroups-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          listWorkgroupsV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name sw "Test"'; // string
+            const sorters: string = 'name,-modified'; // string
+            this.api.listWorkgroupsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workgroups/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#patch-workgroup-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          patchWorkgroupV1(): void {
+            const id: string = '2c9180837ca6693d017ca8d097500149'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchWorkgroupV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /workgroups/v1/{workgroupId}/members/bulk-add
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/governance_groups/methods/governance-groups#update-workgroup-members-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GovernanceGroupsService } from 'sailpoint-angular-sdk/governance_groups';
+        import { BulkWorkgroupMembersRequestInner } from 'sailpoint-angular-sdk/governance_groups';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GovernanceGroupsService);
+
+          updateWorkgroupMembersV1(): void {
+            const workgroupId: string = '2c91808a7813090a017814121919ecca'; // string
+            const bulkWorkgroupMembersRequestInner: Array<BulkWorkgroupMembersRequestInner> = ; // Array<BulkWorkgroupMembersRequestInner>
+            this.api.updateWorkgroupMembersV1({ workgroupId: workgroupId, bulkWorkgroupMembersRequestInner: bulkWorkgroupMembersRequestInner }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

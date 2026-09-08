@@ -1,0 +1,351 @@
+- path: /entitlements/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#create-access-model-metadata-for-entitlement-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          createAccessModelMetadataForEntitlementV1(): void {
+            const id: string = '2c91808c74ff913f0175097daa9d59cd'; // string
+            const attributeKey: string = 'iscPrivacy'; // string
+            const attributeValue: string = 'public'; // string
+            this.api.createAccessModelMetadataForEntitlementV1({ id: id, attributeKey: attributeKey, attributeValue: attributeValue }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#delete-access-model-metadata-from-entitlement-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          deleteAccessModelMetadataFromEntitlementV1(): void {
+            const id: string = '2c91808c74ff913f0175097daa9d59cd'; // string
+            const attributeKey: string = 'iscPrivacy'; // string
+            const attributeValue: string = 'public'; // string
+            this.api.deleteAccessModelMetadataFromEntitlementV1({ id: id, attributeKey: attributeKey, attributeValue: attributeValue }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/{id}/entitlement-request-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#get-entitlement-request-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          getEntitlementRequestConfigV1(): void {
+            const id: string = '2c91808874ff91550175097daaec161c'; // string
+            this.api.getEntitlementRequestConfigV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#get-entitlement-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          getEntitlementV1(): void {
+            const id: string = '2c91808874ff91550175097daaec161c'; // string
+            this.api.getEntitlementV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/aggregate/sources/{id}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#import-entitlements-by-source-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          importEntitlementsBySourceV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const csvFile: Blob = BINARY_DATA_HERE; // Blob
+            this.api.importEntitlementsBySourceV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/{id}/children
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#list-entitlement-children-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          listEntitlementChildrenV1(): void {
+            const id: string = '2c91808874ff91550175097daaec161c'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const searchAfter: string = 'Account Payable,2c91808375d8e80a0175e1f88a575221'; // string
+            const sorters: string = 'name,id'; // string
+            const filters: string = 'attribute eq "memberOf"'; // string
+            this.api.listEntitlementChildrenV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/{id}/parents
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#list-entitlement-parents-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          listEntitlementParentsV1(): void {
+            const id: string = '2c91808c74ff913f0175097daa9d59cd'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const searchAfter: string = 'Account Payable,2c91808375d8e80a0175e1f88a575221'; // string
+            const sorters: string = 'name,id'; // string
+            const filters: string = 'attribute eq "memberOf"'; // string
+            this.api.listEntitlementParentsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/account/{accountId}/entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#list-entitlements-by-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          listEntitlementsByAccountV1(): void {
+            const accountId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const searchAfter: string = 'Account Payable,2c91808375d8e80a0175e1f88a575221'; // string
+            const sorters: string = 'name,id'; // string
+            this.api.listEntitlementsByAccountV1({ accountId: accountId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#list-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          listEntitlementsV1(): void {
+            const segmentedForIdentity: string = 'e554098913544630b5985e9042f5e44b'; // string
+            const forSegmentIds: string = '041727d4-7d95-4779-b891-93cf41e98249,a378c9fa-bae5-494c-804e-a1e30f69f649'; // string
+            const includeUnsegmented: boolean = true; // boolean
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const searchAfter: string = 'Account Payable,2c91808375d8e80a0175e1f88a575221'; // string
+            const sorters: string = 'name,id'; // string
+            const filters: string = 'attribute eq "memberOf"'; // string
+            this.api.listEntitlementsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#patch-entitlement-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          patchEntitlementV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchEntitlementV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/{id}/entitlement-request-config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#put-entitlement-request-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementRequestConfig } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          putEntitlementRequestConfigV1(): void {
+            const id: string = '2c91808a7813090a017814121e121518'; // string
+            const entitlementRequestConfig: EntitlementRequestConfig = {
+              "accessRequestConfig" : {
+                "denialCommentRequired" : false,
+                "approvalSchemes" : [ {
+                  "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                  "approverType" : "GOVERNANCE_GROUP"
+                }, {
+                  "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                  "approverType" : "GOVERNANCE_GROUP"
+                } ],
+                "reauthorizationRequired" : false,
+                "formDefinitionId" : "78258e80-e9e2-4e1a-a11f-ce0b7c62f25d",
+                "requestCommentRequired" : true,
+                "requireEndDate" : true,
+                "maxPermittedAccessDuration" : {
+                  "value" : 5,
+                  "timeUnit" : "DAYS"
+                }
+              },
+              "revocationRequestConfig" : {
+                "approvalSchemes" : [ {
+                  "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                  "approverType" : "GOVERNANCE_GROUP"
+                }, {
+                  "approverId" : "e3eab852-8315-467f-9de7-70eda97f63c8",
+                  "approverType" : "GOVERNANCE_GROUP"
+                } ]
+              }
+            }; // EntitlementRequestConfig
+            this.api.putEntitlementRequestConfigV1({ id: id, entitlementRequestConfig: entitlementRequestConfig }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/reset/sources/{id}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#reset-source-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          resetSourceEntitlementsV1(): void {
+            const id: string = '2c91808a7813090a017814121919ecca'; // string
+            this.api.resetSourceEntitlementsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/bulk-update
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#update-entitlements-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from 'sailpoint-angular-sdk/entitlements';
+        import { EntitlementBulkUpdateRequest } from 'sailpoint-angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          updateEntitlementsInBulkV1(): void {
+            const entitlementBulkUpdateRequest: EntitlementBulkUpdateRequest = {
+              "entitlementIds" : [ "2c91808a7624751a01762f19d665220d", "2c91808a7624751a01762f19d67c220e", "2c91808a7624751a01762f19d692220f" ],
+              "jsonPatch" : [ {
+                "op" : "replace",
+                "path" : "/requestable",
+                "value" : false
+              }, {
+                "op" : "replace",
+                "path" : "/privilegeOverride/level",
+                "value" : "HIGH"
+              } ]
+            }; // EntitlementBulkUpdateRequest
+            this.api.updateEntitlementsInBulkV1({ entitlementBulkUpdateRequest: entitlementBulkUpdateRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

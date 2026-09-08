@@ -1,0 +1,92 @@
+- path: /discovered-applications/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/application_discovery/methods/application-discovery#get-discovered-applications-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApplicationDiscoveryService } from 'sailpoint-angular-sdk/application_discovery';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApplicationDiscoveryService);
+
+          getDiscoveredApplicationsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const detail: string = 'FULL'; // 'SLIM' | 'FULL'
+            const filter: string = 'name eq "Okta" and description co "Okta" and discoverySource in ("csv", "Okta Saas")'; // string
+            const sorters: string = 'name'; // string
+            this.api.getDiscoveredApplicationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /manual-discover-applications-template/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/application_discovery/methods/application-discovery#get-manual-discover-applications-csv-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApplicationDiscoveryService } from 'sailpoint-angular-sdk/application_discovery';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApplicationDiscoveryService);
+
+          getManualDiscoverApplicationsCsvTemplateV1(): void {
+            this.api.getManualDiscoverApplicationsCsvTemplateV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /manual-discover-applications/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/application_discovery/methods/application-discovery#send-manual-discover-applications-csv-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApplicationDiscoveryService } from 'sailpoint-angular-sdk/application_discovery';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApplicationDiscoveryService);
+
+          sendManualDiscoverApplicationsCsvTemplateV1(): void {
+            const file: Blob = BINARY_DATA_HERE; // Blob
+            this.api.sendManualDiscoverApplicationsCsvTemplateV1({ file: file }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/discover-applications
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/application_discovery/methods/application-discovery#start-application-discovery-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ApplicationDiscoveryService } from 'sailpoint-angular-sdk/application_discovery';
+        import { ApplicationDiscoveryRequest } from 'sailpoint-angular-sdk/application_discovery';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ApplicationDiscoveryService);
+
+          startApplicationDiscoveryV1(): void {
+            const sourceId: string = 'sourceId_example'; // string
+            const applicationDiscoveryRequest: ApplicationDiscoveryRequest = {
+              "datasetIds" : [ "source:datasetId12345", "source:datasetId12345" ]
+            }; // ApplicationDiscoveryRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startApplicationDiscoveryV1({ sourceId: sourceId, applicationDiscoveryRequest: applicationDiscoveryRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

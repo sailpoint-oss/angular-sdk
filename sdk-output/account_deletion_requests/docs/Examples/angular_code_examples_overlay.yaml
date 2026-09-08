@@ -1,0 +1,49 @@
+- path: /account-requests/v1/account/{accountId}/delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/account_deletion_requests/methods/account-deletion-requests#delete-account-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountDeletionRequestsService } from 'sailpoint-angular-sdk/account_deletion_requests';
+        import { AccountDeleteRequestInput } from 'sailpoint-angular-sdk/account_deletion_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountDeletionRequestsService);
+
+          deleteAccountRequestV1(): void {
+            const accountId: string = 'ef38f94347e94562b5bb8424a56498d8'; // string
+            const accountDeleteRequestInput: AccountDeleteRequestInput = {
+              "comments" : "Requesting account deletion request"
+            }; // AccountDeleteRequestInput
+            this.api.deleteAccountRequestV1({ accountId: accountId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /account-requests/v1/deletion
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/account_deletion_requests/methods/account-deletion-requests#get-account-deletion-requests-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountDeletionRequestsService } from 'sailpoint-angular-sdk/account_deletion_requests';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountDeletionRequestsService);
+
+          getAccountDeletionRequestsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const mine: boolean = true; // boolean
+            this.api.getAccountDeletionRequestsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

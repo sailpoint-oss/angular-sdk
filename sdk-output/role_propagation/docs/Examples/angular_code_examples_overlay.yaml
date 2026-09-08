@@ -1,0 +1,132 @@
+- path: /role-propagation/v1/terminate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#cancel-role-propagation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolePropagationService);
+
+          cancelRolePropagationV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.cancelRolePropagationV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-propagation/v1/is-running
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#get-ongoing-role-propagation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolePropagationService);
+
+          getOngoingRolePropagationV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getOngoingRolePropagationV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-propagation-config/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#get-role-propagation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolePropagationService);
+
+          getRolePropagationConfigV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getRolePropagationConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-propagation/v1/{rolePropagationId}/status
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#get-role-propagation-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolePropagationService);
+
+          getRolePropagationStatusV1(): void {
+            const rolePropagationId: string = '47b9fb02-e12e-42ba-8bfe-1860d78c88eb'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getRolePropagationStatusV1({ rolePropagationId: rolePropagationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-propagation-config/v1
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#set-role-propagation-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+        import { Rolepropagationconfiginput } from 'sailpoint-angular-sdk/role_propagation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolePropagationService);
+
+          setRolePropagationConfigV1(): void {
+            const rolepropagationconfiginput: Rolepropagationconfiginput = {
+              "enabled" : true
+            }; // Rolepropagationconfiginput
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.setRolePropagationConfigV1({ rolepropagationconfiginput: rolepropagationconfiginput }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-propagation/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/role_propagation/methods/role-propagation#start-role-propagation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { RolePropagationService } from 'sailpoint-angular-sdk/role_propagation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(RolePropagationService);
+
+          startRolePropagationV1(): void {
+            const skipRoleRefresh: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startRolePropagationV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,64 @@
+- path: /criteria-config/v1/privilege/{criteriaConfigId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/privilege_criteria_configuration/methods/privilege-criteria-configuration#get-privilege-criteria-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PrivilegeCriteriaConfigurationService } from 'sailpoint-angular-sdk/privilege_criteria_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PrivilegeCriteriaConfigurationService);
+
+          getPrivilegeCriteriaConfigV1(): void {
+            const criteriaConfigId: string = '6d123044-5834-4e8d-a49f-9c70089b0de1'; // string
+            this.api.getPrivilegeCriteriaConfigV1({ criteriaConfigId: criteriaConfigId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /criteria-config/v1/privilege
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/privilege_criteria_configuration/methods/privilege-criteria-configuration#list-privilege-criteria-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PrivilegeCriteriaConfigurationService } from 'sailpoint-angular-sdk/privilege_criteria_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PrivilegeCriteriaConfigurationService);
+
+          listPrivilegeCriteriaConfigV1(): void {
+            const filters: string = 'sourceId eq "c42c45d8d7c04d2da64d215cd8c32f21"'; // string
+            this.api.listPrivilegeCriteriaConfigV1({ filters: filters }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /criteria-config/v1/privilege/{criteriaConfigId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/privilege_criteria_configuration/methods/privilege-criteria-configuration#patch-privilege-criteria-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PrivilegeCriteriaConfigurationService } from 'sailpoint-angular-sdk/privilege_criteria_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PrivilegeCriteriaConfigurationService);
+
+          patchPrivilegeCriteriaConfigV1(): void {
+            const criteriaConfigId: string = '6d123044-5834-4e8d-a49f-9c70089b0de1'; // string
+            const requestBody: Array<object> = [{"op":"replace","path":"/config/privilegeClassificationMode","value":"SINGLE_PRIVILEGE_LEVEL"},{"op":"replace","path":"/config/criteriaPrivilegeLevel/connectorMediumEnabled","value":true}]; // Array<object>
+            this.api.patchPrivilegeCriteriaConfigV1({ criteriaConfigId: criteriaConfigId, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

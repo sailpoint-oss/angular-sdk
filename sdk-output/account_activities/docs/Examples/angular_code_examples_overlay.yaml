@@ -1,0 +1,49 @@
+- path: /account-activities/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/account_activities/methods/account-activities#get-account-activity-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountActivitiesService } from 'sailpoint-angular-sdk/account_activities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountActivitiesService);
+
+          getAccountActivityV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getAccountActivityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /account-activities/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/account_activities/methods/account-activities#list-account-activities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountActivitiesService } from 'sailpoint-angular-sdk/account_activities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountActivitiesService);
+
+          listAccountActivitiesV1(): void {
+            const requestedFor: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const requestedBy: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const regardingIdentity: string = '2c91808568c529c60168cca6f90c1313'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'type eq "Identity Refresh"'; // string
+            const sorters: string = 'created'; // string
+            this.api.listAccountActivitiesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

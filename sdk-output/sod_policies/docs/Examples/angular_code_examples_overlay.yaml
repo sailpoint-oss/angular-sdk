@@ -1,0 +1,545 @@
+- path: /sod-policies/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#create-sod-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SodPolicy } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          createSodPolicyV1(): void {
+            const sodPolicy: SodPolicy = {
+              "conflictingAccessCriteria" : {
+                "leftCriteria" : {
+                  "name" : "money-in",
+                  "criteriaList" : [ {
+                    "type" : "ENTITLEMENT",
+                    "id" : "2c9180866166b5b0016167c32ef31a66",
+                    "name" : "Administrator"
+                  }, {
+                    "type" : "ENTITLEMENT",
+                    "id" : "2c9180866166b5b0016167c32ef31a67",
+                    "name" : "Administrator"
+                  } ]
+                },
+                "rightCriteria" : {
+                  "name" : "money-in",
+                  "criteriaList" : [ {
+                    "type" : "ENTITLEMENT",
+                    "id" : "2c9180866166b5b0016167c32ef31a66",
+                    "name" : "Administrator"
+                  }, {
+                    "type" : "ENTITLEMENT",
+                    "id" : "2c9180866166b5b0016167c32ef31a67",
+                    "name" : "Administrator"
+                  } ]
+                }
+              },
+              "ownerRef" : {
+                "name" : "Support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              },
+              "level" : "HIGH",
+              "created" : "2020-01-01T00:00:00Z",
+              "scheduled" : true,
+              "creatorId" : "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde",
+              "modifierId" : "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde",
+              "description" : "This policy ensures compliance of xyz",
+              "violationOwnerAssignmentConfig" : {
+                "assignmentRule" : "MANAGER",
+                "ownerRef" : {
+                  "name" : "Support",
+                  "id" : "2c9180a46faadee4016fb4e018c20639",
+                  "type" : "IDENTITY"
+                }
+              },
+              "correctionAdvice" : "Based on the role of the employee, managers should remove access that is not required for their job function.",
+              "allowedControls" : [ {
+                "type" : "COMPENSATING_CONTROL",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "name" : "Mitigating Control 1"
+              } ],
+              "type" : "GENERAL",
+              "secondaryOwnerRefs" : [ {
+                "type" : "IDENTITY",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "name" : "Support"
+              } ],
+              "tags" : [ "TAG1", "TAG2" ],
+              "name" : "policy-xyz",
+              "modified" : "2020-01-01T00:00:00Z",
+              "policyQuery" : "@access(id:0f11f2a4-7c94-4bf3-a2bd-742580fe3bdg) AND @access(id:0f11f2a4-7c94-4bf3-a2bd-742580fe3bdf)",
+              "compensatingControls" : "Have a manager review the transaction decisions for their \"out of compliance\" employee",
+              "id" : "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde",
+              "state" : "ENFORCED",
+              "externalPolicyReference" : "XYZ policy"
+            }; // SodPolicy
+            this.api.createSodPolicyV1({ sodPolicy: sodPolicy }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}/schedule
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#delete-sod-policy-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          deleteSodPolicyScheduleV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            this.api.deleteSodPolicyScheduleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#delete-sod-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          deleteSodPolicyV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const logical: boolean = true; // boolean
+            this.api.deleteSodPolicyV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-violation-report/v1/{reportResultId}/download/{fileName}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-custom-violation-report-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          getCustomViolationReportV1(): void {
+            const reportResultId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const fileName: string = 'custom-name'; // string
+            this.api.getCustomViolationReportV1({ reportResultId: reportResultId, fileName: fileName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-violation-report/v1/{reportResultId}/download
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-default-violation-report-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          getDefaultViolationReportV1(): void {
+            const reportResultId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            this.api.getDefaultViolationReportV1({ reportResultId: reportResultId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-violation-report/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-all-report-run-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          getSodAllReportRunStatusV1(): void {
+            this.api.getSodAllReportRunStatusV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}/schedule
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-policy-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          getSodPolicyScheduleV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            this.api.getSodPolicyScheduleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          getSodPolicyV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            this.api.getSodPolicyV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/sod-violation-report-status/{reportResultId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-violation-report-run-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          getSodViolationReportRunStatusV1(): void {
+            const reportResultId: string = '2e8d8180-24bc-4d21-91c6-7affdb473b0d'; // string
+            this.api.getSodViolationReportRunStatusV1({ reportResultId: reportResultId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}/violation-report
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#get-sod-violation-report-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          getSodViolationReportStatusV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            this.api.getSodViolationReportStatusV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#list-sod-policies-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          listSodPoliciesV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "bc693f07e7b645539626c25954c58554"'; // string
+            const sorters: string = 'id,name'; // string
+            this.api.listSodPoliciesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#patch-sod-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          patchSodPolicyV1(): void {
+            const id: string = '2c918083-5d19-1a86-015d-28455b4a2329'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchSodPolicyV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}/schedule
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#put-policy-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SodPolicySchedule } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          putPolicyScheduleV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const sodPolicySchedule: SodPolicySchedule = {
+              "schedule" : {
+                "hours" : {
+                  "values" : [ "MON", "WED" ],
+                  "interval" : 3,
+                  "type" : "LIST"
+                },
+                "months" : {
+                  "values" : [ "MON", "WED" ],
+                  "interval" : 3,
+                  "type" : "LIST"
+                },
+                "timeZoneId" : "America/Chicago",
+                "days" : {
+                  "values" : [ "MON", "WED" ],
+                  "interval" : 3,
+                  "type" : "LIST"
+                },
+                "expiration" : "2018-06-25T20:22:28.104Z",
+                "type" : "WEEKLY"
+              },
+              "created" : "2020-01-01T00:00:00Z",
+              "recipients" : [ {
+                "name" : "Michael Michaels",
+                "id" : "2c7180a46faadee4016fb4e018c20642",
+                "type" : "IDENTITY"
+              }, {
+                "name" : "Michael Michaels",
+                "id" : "2c7180a46faadee4016fb4e018c20642",
+                "type" : "IDENTITY"
+              } ],
+              "name" : "SCH-1584312283015",
+              "creatorId" : "0f11f2a47c944bf3a2bd742580fe3bde",
+              "modifierId" : "0f11f2a47c944bf3a2bd742580fe3bde",
+              "modified" : "2020-01-01T00:00:00Z",
+              "description" : "Schedule for policy xyz",
+              "emailEmptyResults" : false
+            }; // SodPolicySchedule
+            this.api.putPolicyScheduleV1({ id: id, sodPolicySchedule: sodPolicySchedule }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#put-sod-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { SodPolicy } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          putSodPolicyV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const sodPolicy: SodPolicy = {
+              "conflictingAccessCriteria" : {
+                "leftCriteria" : {
+                  "name" : "money-in",
+                  "criteriaList" : [ {
+                    "type" : "ENTITLEMENT",
+                    "id" : "2c9180866166b5b0016167c32ef31a66",
+                    "name" : "Administrator"
+                  }, {
+                    "type" : "ENTITLEMENT",
+                    "id" : "2c9180866166b5b0016167c32ef31a67",
+                    "name" : "Administrator"
+                  } ]
+                },
+                "rightCriteria" : {
+                  "name" : "money-in",
+                  "criteriaList" : [ {
+                    "type" : "ENTITLEMENT",
+                    "id" : "2c9180866166b5b0016167c32ef31a66",
+                    "name" : "Administrator"
+                  }, {
+                    "type" : "ENTITLEMENT",
+                    "id" : "2c9180866166b5b0016167c32ef31a67",
+                    "name" : "Administrator"
+                  } ]
+                }
+              },
+              "ownerRef" : {
+                "name" : "Support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              },
+              "level" : "HIGH",
+              "created" : "2020-01-01T00:00:00Z",
+              "scheduled" : true,
+              "creatorId" : "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde",
+              "modifierId" : "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde",
+              "description" : "This policy ensures compliance of xyz",
+              "violationOwnerAssignmentConfig" : {
+                "assignmentRule" : "MANAGER",
+                "ownerRef" : {
+                  "name" : "Support",
+                  "id" : "2c9180a46faadee4016fb4e018c20639",
+                  "type" : "IDENTITY"
+                }
+              },
+              "correctionAdvice" : "Based on the role of the employee, managers should remove access that is not required for their job function.",
+              "allowedControls" : [ {
+                "type" : "COMPENSATING_CONTROL",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "name" : "Mitigating Control 1"
+              } ],
+              "type" : "GENERAL",
+              "secondaryOwnerRefs" : [ {
+                "type" : "IDENTITY",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "name" : "Support"
+              } ],
+              "tags" : [ "TAG1", "TAG2" ],
+              "name" : "policy-xyz",
+              "modified" : "2020-01-01T00:00:00Z",
+              "policyQuery" : "@access(id:0f11f2a4-7c94-4bf3-a2bd-742580fe3bdg) AND @access(id:0f11f2a4-7c94-4bf3-a2bd-742580fe3bdf)",
+              "compensatingControls" : "Have a manager review the transaction decisions for their \"out of compliance\" employee",
+              "id" : "0f11f2a4-7c94-4bf3-a2bd-742580fe3bde",
+              "state" : "ENFORCED",
+              "externalPolicyReference" : "XYZ policy"
+            }; // SodPolicy
+            this.api.putSodPolicyV1({ id: id, sodPolicy: sodPolicy }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}/evaluate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#start-evaluate-sod-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          startEvaluateSodPolicyV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            this.api.startEvaluateSodPolicyV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-violation-report/v1/run
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#start-sod-all-policies-for-org-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+        import { MultiPolicyRequest } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          startSodAllPoliciesForOrgV1(): void {
+            const multiPolicyRequest: MultiPolicyRequest = {
+              "filteredPolicyList" : [ "[\"b868cd40-ffa4-4337-9c07-1a51846cfa94\",\"63a07a7b-39a4-48aa-956d-50c827deba2a\"]", "[\"b868cd40-ffa4-4337-9c07-1a51846cfa94\",\"63a07a7b-39a4-48aa-956d-50c827deba2a\"]" ]
+            }; // MultiPolicyRequest
+            this.api.startSodAllPoliciesForOrgV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sod-policies/v1/{id}/violation-report/run
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sod_policies/methods/sod-policies#start-sod-policy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SODPoliciesService } from 'sailpoint-angular-sdk/sod_policies';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SODPoliciesService);
+
+          startSodPolicyV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            this.api.startSodPolicyV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

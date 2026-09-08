@@ -1,0 +1,683 @@
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/provision
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#create-potential-role-provision-request-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { RoleMiningPotentialRoleProvisionRequest } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          createPotentialRoleProvisionRequestV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const minEntitlementPopularity: number = 56; // number
+            const includeCommonAccess: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            const roleMiningPotentialRoleProvisionRequest: RoleMiningPotentialRoleProvisionRequest = {
+              "includeIdentities" : true,
+              "roleName" : "Finance - Accounting",
+              "ownerId" : "2b568c65bc3c4c57a43bd97e3a8e41",
+              "roleDescription" : "General access for accounting department",
+              "directlyAssignedEntitlements" : false
+            }; // RoleMiningPotentialRoleProvisionRequest
+            this.api.createPotentialRoleProvisionRequestV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#create-role-mining-sessions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { RoleMiningSessionDto } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          createRoleMiningSessionsV1(): void {
+            const roleMiningSessionDto: RoleMiningSessionDto = {
+              "emailRecipientId" : "2c918090761a5aac0176215c46a62d58",
+              "prescribedPruneThreshold" : 10,
+              "pruneThreshold" : 50,
+              "saved" : true,
+              "potentialRolesReadyCount" : 0,
+              "scope" : {
+                "identityIds" : [ "2c918090761a5aac0176215c46a62d58", "2c918090761a5aac01722015c46a62d42" ],
+                "attributeFilterCriteria" : {
+                  "displayName" : {
+                    "untranslated" : "Location: Miami"
+                  },
+                  "ariaLabel" : {
+                    "untranslated" : "Location: Miami"
+                  },
+                  "data" : {
+                    "displayName" : {
+                      "translateKey" : "IDN.IDENTITY_ATTRIBUTES.LOCATION"
+                    },
+                    "name" : "location",
+                    "operator" : "EQUALS",
+                    "values" : [ "Miami" ]
+                  }
+                },
+                "criteria" : "source.name:DataScienceDataset"
+              },
+              "potentialRoleCount" : 0,
+              "name" : "Saved RM Session - 07/10",
+              "minNumIdentitiesInPotentialRole" : 20,
+              "identityCount" : 0,
+              "type" : "SPECIALIZED"
+            }; // RoleMiningSessionDto
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createRoleMiningSessionsV1({ roleMiningSessionDto: roleMiningSessionDto }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/export-async/{exportId}/download
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#download-role-mining-potential-role-zip-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          downloadRoleMiningPotentialRoleZipV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '278359a6-04b7-4669-9468-924cf580964a'; // string
+            const exportId: string = '4940ffd4-836f-48a3-b2b0-6d498c3fdf40'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.downloadRoleMiningPotentialRoleZipV1({ sessionId: sessionId, potentialRoleId: potentialRoleId, exportId: exportId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/export-async
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#export-role-mining-potential-role-async-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { RoleMiningPotentialRoleExportRequest } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          exportRoleMiningPotentialRoleAsyncV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '278359a6-04b7-4669-9468-924cf580964a'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const roleMiningPotentialRoleExportRequest: RoleMiningPotentialRoleExportRequest = {
+              "minEntitlementPopularity" : 0,
+              "includeCommonAccess" : true
+            }; // RoleMiningPotentialRoleExportRequest
+            this.api.exportRoleMiningPotentialRoleAsyncV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/export-async/{exportId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#export-role-mining-potential-role-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          exportRoleMiningPotentialRoleStatusV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '278359a6-04b7-4669-9468-924cf580964a'; // string
+            const exportId: string = '4940ffd4-836f-48a3-b2b0-6d498c3fdf40'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.exportRoleMiningPotentialRoleStatusV1({ sessionId: sessionId, potentialRoleId: potentialRoleId, exportId: exportId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/export
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#export-role-mining-potential-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          exportRoleMiningPotentialRoleV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.exportRoleMiningPotentialRoleV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-potential-roles/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-all-potential-role-summaries-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getAllPotentialRoleSummariesV1(): void {
+            const sorters: string = 'createdDate'; // string
+            const filters: string = '(createdByName co "int") and (createdById sw "2c9180907") and (type eq "COMMON") and ((name co "entt") or (saved eq true))'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getAllPotentialRoleSummariesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/entitlement-popularity-distribution
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-entitlement-distribution-potential-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getEntitlementDistributionPotentialRoleV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const includeCommonAccess: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getEntitlementDistributionPotentialRoleV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/entitlement-popularities
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-entitlements-potential-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getEntitlementsPotentialRoleV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const includeCommonAccess: boolean = true; // boolean
+            const sorters: string = 'popularity'; // string
+            const filters: string = 'applicationName sw "AD"'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getEntitlementsPotentialRoleV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/excluded-entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-excluded-entitlements-potential-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getExcludedEntitlementsPotentialRoleV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const sorters: string = 'populariity'; // string
+            const filters: string = 'applicationName sw "AD"'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getExcludedEntitlementsPotentialRoleV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/identities
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-identities-potential-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getIdentitiesPotentialRoleV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const sorters: string = 'name'; // string
+            const filters: string = 'filters_example'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getIdentitiesPotentialRoleV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-role-summaries/{potentialRoleId}/applications
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-applications-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getPotentialRoleApplicationsV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '62f28d91-7d9f-4d17-be15-666d5b41d77f'; // string
+            const filters: string = 'applicationName sw "test"'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getPotentialRoleApplicationsV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-role-summaries/{potentialRoleId}/entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getPotentialRoleEntitlementsV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '62f28d91-7d9f-4d17-be15-666d5b41d77f'; // string
+            const filters: string = 'entitlementRef.name sw "test"'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getPotentialRoleEntitlementsV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-potential-roles/v1/{potentialRoleId}/sources/{sourceId}/identityUsage
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-source-identity-usage-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getPotentialRoleSourceIdentityUsageV1(): void {
+            const potentialRoleId: string = 'e0cc5d7d-bf7f-4f81-b2af-8885b09d9923'; // string
+            const sourceId: string = '2c9180877620c1460176267f336a106f'; // string
+            const sorters: string = '-usageCount'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getPotentialRoleSourceIdentityUsageV1({ potentialRoleId: potentialRoleId, sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-role-summaries
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-summaries-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getPotentialRoleSummariesV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const sorters: string = 'createdDate'; // string
+            const filters: string = '(createdByName co "int")and (createdById sw "2c9180907")and (type eq "COMMON")and ((name co "entt")or (saved eq true))'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getPotentialRoleSummariesV1({ sessionId: sessionId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-role-summaries/{potentialRoleId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-potential-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getPotentialRoleV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getPotentialRoleV1({ sessionId: sessionId, potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-potential-roles/v1/{potentialRoleId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-role-mining-potential-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getRoleMiningPotentialRoleV1(): void {
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getRoleMiningPotentialRoleV1({ potentialRoleId: potentialRoleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/status
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-role-mining-session-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getRoleMiningSessionStatusV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getRoleMiningSessionStatusV1({ sessionId: sessionId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-role-mining-session-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getRoleMiningSessionV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getRoleMiningSessionV1({ sessionId: sessionId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-role-mining-sessions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getRoleMiningSessionsV1(): void {
+            const filters: string = 'saved eq "true" and name sw "RM Session"'; // string
+            const sorters: string = 'createdBy,createdDate'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getRoleMiningSessionsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-potential-roles/v1/saved
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#get-saved-potential-roles-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          getSavedPotentialRolesV1(): void {
+            const sorters: string = 'modified'; // string
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSavedPotentialRolesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-role-summaries/{potentialRoleId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#patch-potential-role-session-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { JsonPatchOperationRoleMining } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          patchPotentialRoleSessionV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const jsonPatchOperationRoleMining: Array<JsonPatchOperationRoleMining> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperationRoleMining>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchPotentialRoleSessionV1({ sessionId: sessionId, potentialRoleId: potentialRoleId, jsonPatchOperationRoleMining: jsonPatchOperationRoleMining }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-potential-roles/v1/{potentialRoleId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#patch-potential-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { JsonPatchOperationRoleMining } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          patchPotentialRoleV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const jsonPatchOperationRoleMining: Array<JsonPatchOperationRoleMining> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperationRoleMining>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchPotentialRoleV1({ sessionId: sessionId, potentialRoleId: potentialRoleId, jsonPatchOperationRoleMining: jsonPatchOperationRoleMining }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#patch-role-mining-session-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          patchRoleMiningSessionV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchRoleMiningSessionV1({ sessionId: sessionId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/edit-entitlements
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/iai_role_mining/methods/iai-role-mining#update-entitlements-potential-role-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IAIRoleMiningService } from 'sailpoint-angular-sdk/iai_role_mining';
+        import { RoleMiningPotentialRoleEditEntitlements } from 'sailpoint-angular-sdk/iai_role_mining';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IAIRoleMiningService);
+
+          updateEntitlementsPotentialRoleV1(): void {
+            const sessionId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const potentialRoleId: string = '8c190e67-87aa-4ed9-a90b-d9d5344523fb'; // string
+            const roleMiningPotentialRoleEditEntitlements: RoleMiningPotentialRoleEditEntitlements = {
+              "ids" : [ "entId1", "entId2" ],
+              "exclude" : true
+            }; // RoleMiningPotentialRoleEditEntitlements
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateEntitlementsPotentialRoleV1({ sessionId: sessionId, potentialRoleId: potentialRoleId, roleMiningPotentialRoleEditEntitlements: roleMiningPotentialRoleEditEntitlements }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

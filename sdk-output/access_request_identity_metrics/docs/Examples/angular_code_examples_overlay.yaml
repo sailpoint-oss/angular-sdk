@@ -1,0 +1,23 @@
+- path: /access-request-identity-metrics/v1/{identityId}/requested-objects/{requestedObjectId}/type/{type}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_request_identity_metrics/methods/access-request-identity-metrics#get-access-request-identity-metrics-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessRequestIdentityMetricsService } from 'sailpoint-angular-sdk/access_request_identity_metrics';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessRequestIdentityMetricsService);
+
+          getAccessRequestIdentityMetricsV1(): void {
+            const identityId: string = '7025c863-c270-4ba6-beea-edf3cb091573'; // string
+            const requestedObjectId: string = '2db501be-f0fb-4cc5-a695-334133c52891'; // string
+            const type: string = 'ENTITLEMENT'; // 'ENTITLEMENT' | 'ROLE' | 'ACCESS_PROFILE'
+            this.api.getAccessRequestIdentityMetricsV1({ identityId: identityId, requestedObjectId: requestedObjectId, type: type }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

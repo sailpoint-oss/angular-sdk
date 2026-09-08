@@ -1,0 +1,89 @@
+- path: /tags/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tags/methods/tags#create-tag-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TagsService } from 'sailpoint-angular-sdk/tags';
+        import { Tag2 } from 'sailpoint-angular-sdk/tags';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TagsService);
+
+          createTagV1(): void {
+            const tag2: Tag2 = ; // Tag2
+            this.api.createTagV1({ tag2: tag2 }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tags/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tags/methods/tags#delete-tag-by-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TagsService } from 'sailpoint-angular-sdk/tags';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TagsService);
+
+          deleteTagByIdV1(): void {
+            const id: string = '329d96cf-3bdb-40a9-988a-b5037ab89022'; // string
+            this.api.deleteTagByIdV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tags/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tags/methods/tags#get-tag-by-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TagsService } from 'sailpoint-angular-sdk/tags';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TagsService);
+
+          getTagByIdV1(): void {
+            const id: string = '329d96cf-3bdb-40a9-988a-b5037ab89022'; // string
+            this.api.getTagByIdV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /tags/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/tags/methods/tags#list-tags-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { TagsService } from 'sailpoint-angular-sdk/tags';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(TagsService);
+
+          listTagsV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "27462f54-61c7-4140-b5da-d5dbe27fc6db"'; // string
+            const sorters: string = 'name,-modified'; // string
+            this.api.listTagsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

@@ -1,0 +1,163 @@
+- path: /managed-clients/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#create-managed-client-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+        import { ManagedClientRequest } from 'sailpoint-angular-sdk/managed_clients';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClientsService);
+
+          createManagedClientV1(): void {
+            const managedClientRequest: ManagedClientRequest = {
+              "name" : "aName",
+              "description" : "A short description of the ManagedClient",
+              "clusterId" : "aClusterId",
+              "type" : "VA"
+            }; // ManagedClientRequest
+            this.api.createManagedClientV1({ managedClientRequest: managedClientRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-clients/v1/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#delete-managed-client-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClientsService);
+
+          deleteManagedClientV1(): void {
+            const id: string = '4440278c-0ce2-41ee-a0a9-f5cfd5e8d3b7'; // string
+            this.api.deleteManagedClientV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-clients/v1/{id}/health-indicators
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#get-managed-client-health-indicators-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClientsService);
+
+          getManagedClientHealthIndicatorsV1(): void {
+            const id: string = '4440278c-0ce2-41ee-a0a9-f5cfd5e8d3b7'; // string
+            this.api.getManagedClientHealthIndicatorsV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-clients/v1/{id}/status
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#get-managed-client-status-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClientsService);
+
+          getManagedClientStatusV1(): void {
+            const id: string = 'aClientId'; // string
+            const type: ManagedClientType = ; // ManagedClientType
+            this.api.getManagedClientStatusV1({ id: id, type: type }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-clients/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#get-managed-client-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClientsService);
+
+          getManagedClientV1(): void {
+            const id: string = '4440278c-0ce2-41ee-a0a9-f5cfd5e8d3b7'; // string
+            this.api.getManagedClientV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-clients/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#get-managed-clients-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClientsService);
+
+          getManagedClientsV1(): void {
+            const offset: number = 0; // number
+            const limit: number = 250; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq "client name"'; // string
+            this.api.getManagedClientsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /managed-clients/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/managed_clients/methods/managed-clients#update-managed-client-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ManagedClientsService } from 'sailpoint-angular-sdk/managed_clients';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/managed_clients';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ManagedClientsService);
+
+          updateManagedClientV1(): void {
+            const id: string = '4440278c-0ce2-41ee-a0a9-f5cfd5e8d3b7'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.updateManagedClientV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

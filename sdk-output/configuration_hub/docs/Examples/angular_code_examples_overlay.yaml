@@ -1,0 +1,497 @@
+- path: /configuration-hub/v1/deploys
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-deploy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { DeployRequest } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          createDeployV1(): void {
+            const deployRequest: DeployRequest = {
+              "draftId" : "3d0fe04b-57df-4a46-a83b-8f04b0f9d10b"
+            }; // DeployRequest
+            this.api.createDeployV1({ deployRequest: deployRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/object-mappings/{sourceOrg}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-object-mapping-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ObjectMappingRequest } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          createObjectMappingV1(): void {
+            const sourceOrg: string = 'source-org'; // string
+            const objectMappingRequest: ObjectMappingRequest = {
+              "targetValue" : "My New Governance Group Name",
+              "jsonPath" : "$.name",
+              "sourceValue" : "My Governance Group Name",
+              "enabled" : false,
+              "objectType" : "IDENTITY"
+            }; // ObjectMappingRequest
+            this.api.createObjectMappingV1({ sourceOrg: sourceOrg, objectMappingRequest: objectMappingRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/object-mappings/{sourceOrg}/bulk-create
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-object-mappings-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ObjectMappingBulkCreateRequest } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          createObjectMappingsV1(): void {
+            const sourceOrg: string = 'source-org'; // string
+            const objectMappingBulkCreateRequest: ObjectMappingBulkCreateRequest = {
+              "newObjectsMappings" : [ {
+                "targetValue" : "My New Governance Group Name",
+                "jsonPath" : "$.name",
+                "sourceValue" : "My Governance Group Name",
+                "enabled" : false,
+                "objectType" : "IDENTITY"
+              }, {
+                "targetValue" : "My New Governance Group Name",
+                "jsonPath" : "$.name",
+                "sourceValue" : "My Governance Group Name",
+                "enabled" : false,
+                "objectType" : "IDENTITY"
+              } ]
+            }; // ObjectMappingBulkCreateRequest
+            this.api.createObjectMappingsV1({ sourceOrg: sourceOrg, objectMappingBulkCreateRequest: objectMappingBulkCreateRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/scheduled-actions
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-scheduled-action-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ScheduledActionPayload } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          createScheduledActionV1(): void {
+            const scheduledActionPayload: ScheduledActionPayload = {
+              "cronString" : "0 0 * * * *",
+              "timeZoneId" : "America/Chicago",
+              "startTime" : "2024-08-16T14:16:58.389Z",
+              "jobType" : "BACKUP",
+              "content" : {
+                "sourceTenant" : "tenant-name",
+                "draftId" : "9012b87d-48ca-439a-868f-2160001da8c3",
+                "name" : "Daily Backup",
+                "backupOptions" : {
+                  "includeTypes" : [ "ROLE", "IDENTITY_PROFILE" ],
+                  "objectOptions" : {
+                    "SOURCE" : {
+                      "includedNames" : [ "Source1", "Source2" ]
+                    },
+                    "ROLE" : {
+                      "includedNames" : [ "Admin Role", "User Role" ]
+                    }
+                  }
+                },
+                "sourceBackupId" : "5678b87d-48ca-439a-868f-2160001da8c2"
+              }
+            }; // ScheduledActionPayload
+            this.api.createScheduledActionV1({ scheduledActionPayload: scheduledActionPayload }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/backups/uploads
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#create-uploaded-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          createUploadedConfigurationV1(): void {
+            const data: Blob = BINARY_DATA_HERE; // Blob
+            const name: string = 'name_example'; // string
+            this.api.createUploadedConfigurationV1({ data: data, name: name }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/backups/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-backup-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          deleteBackupV1(): void {
+            const id: string = '07659d7d-2cce-47c0-9e49-185787ee565a'; // string
+            this.api.deleteBackupV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/drafts/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-draft-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          deleteDraftV1(): void {
+            const id: string = '07659d7d-2cce-47c0-9e49-185787ee565a'; // string
+            this.api.deleteDraftV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/object-mappings/{sourceOrg}/{objectMappingId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-object-mapping-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          deleteObjectMappingV1(): void {
+            const sourceOrg: string = 'source-org'; // string
+            const objectMappingId: string = '3d6e0144-963f-4bd6-8d8d-d77b4e507ce4'; // string
+            this.api.deleteObjectMappingV1({ sourceOrg: sourceOrg, objectMappingId: objectMappingId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/scheduled-actions/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-scheduled-action-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          deleteScheduledActionV1(): void {
+            const id: string = '0f11f2a4-7c94-4bf3-a2bd-742580fe3bde'; // string
+            this.api.deleteScheduledActionV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/backups/uploads/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#delete-uploaded-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          deleteUploadedConfigurationV1(): void {
+            const id: string = '3d0fe04b-57df-4a46-a83b-8f04b0f9d10b'; // string
+            this.api.deleteUploadedConfigurationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/deploys/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#get-deploy-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          getDeployV1(): void {
+            const id: string = '3d0fe04b-57df-4a46-a83b-8f04b0f9d10b'; // string
+            this.api.getDeployV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/object-mappings/{sourceOrg}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#get-object-mappings-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          getObjectMappingsV1(): void {
+            const sourceOrg: string = 'source-org'; // string
+            this.api.getObjectMappingsV1({ sourceOrg: sourceOrg }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/backups/uploads/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#get-uploaded-configuration-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          getUploadedConfigurationV1(): void {
+            const id: string = '3d0fe04b-57df-4a46-a83b-8f04b0f9d10b'; // string
+            this.api.getUploadedConfigurationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/backups
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-backups-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          listBackupsV1(): void {
+            const filters: string = 'status eq "COMPLETE"'; // string
+            this.api.listBackupsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/deploys
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-deploys-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          listDeploysV1(): void {
+            this.api.listDeploysV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/drafts
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-drafts-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          listDraftsV1(): void {
+            const filters: string = 'status eq "COMPLETE"'; // string
+            this.api.listDraftsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/scheduled-actions
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-scheduled-actions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          listScheduledActionsV1(): void {
+            this.api.listScheduledActionsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/backups/uploads
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#list-uploaded-configurations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          listUploadedConfigurationsV1(): void {
+            const filters: string = 'status eq "COMPLETE"'; // string
+            this.api.listUploadedConfigurationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/object-mappings/{sourceOrg}/bulk-patch
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#update-object-mappings-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { ObjectMappingBulkPatchRequest } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          updateObjectMappingsV1(): void {
+            const sourceOrg: string = 'source-org'; // string
+            const objectMappingBulkPatchRequest: ObjectMappingBulkPatchRequest = {
+              "patches" : {
+                "603b1a61-d03d-4ed1-864f-a508fbd1995d" : [ {
+                  "op" : "replace",
+                  "path" : "/enabled",
+                  "value" : true
+                } ],
+                "00bece34-f50d-4227-8878-76f620b5a971" : [ {
+                  "op" : "replace",
+                  "path" : "/targetValue",
+                  "value" : "New Target Value"
+                } ]
+              }
+            }; // ObjectMappingBulkPatchRequest
+            this.api.updateObjectMappingsV1({ sourceOrg: sourceOrg, objectMappingBulkPatchRequest: objectMappingBulkPatchRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /configuration-hub/v1/scheduled-actions/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/configuration_hub/methods/configuration-hub#update-scheduled-action-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { ConfigurationHubService } from 'sailpoint-angular-sdk/configuration_hub';
+        import { JsonPatch } from 'sailpoint-angular-sdk/configuration_hub';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(ConfigurationHubService);
+
+          updateScheduledActionV1(): void {
+            const id: string = '0f11f2a4-7c94-4bf3-a2bd-742580fe3bde'; // string
+            const jsonPatch: JsonPatch = {
+              "operations" : [ {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              }, {
+                "op" : "replace",
+                "path" : "/description",
+                "value" : "New description"
+              } ]
+            }; // JsonPatch
+            this.api.updateScheduledActionV1({ id: id, jsonPatch: jsonPatch }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

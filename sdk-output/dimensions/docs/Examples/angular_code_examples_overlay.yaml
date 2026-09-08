@@ -1,0 +1,287 @@
+- path: /roles/v1/{roleId}/dimensions
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/dimensions/methods/dimensions#create-dimension-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+        import { Dimension } from 'sailpoint-angular-sdk/dimensions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DimensionsService);
+
+          createDimensionV1(): void {
+            const roleId: string = '6603fba3004f43c687610a29195252ce'; // string
+            const dimension: Dimension = {
+              "owner" : {
+                "name" : "support",
+                "id" : "2c9180a46faadee4016fb4e018c20639",
+                "type" : "IDENTITY"
+              },
+              "entitlements" : [ {
+                "name" : "CN=entitlement.490efde5,OU=OrgCo,OU=ServiceDept,DC=HQAD,DC=local",
+                "id" : "2c91809773dee32014e13e122092014e",
+                "type" : "ENTITLEMENT"
+              }, {
+                "name" : "CN=entitlement.490efde5,OU=OrgCo,OU=ServiceDept,DC=HQAD,DC=local",
+                "id" : "2c91809773dee32014e13e122092014e",
+                "type" : "ENTITLEMENT"
+              } ],
+              "accessProfiles" : [ {
+                "name" : "Access Profile 2567",
+                "id" : "ff808081751e6e129f1518161919ecca",
+                "type" : "ACCESS_PROFILE"
+              }, {
+                "name" : "Access Profile 2567",
+                "id" : "ff808081751e6e129f1518161919ecca",
+                "type" : "ACCESS_PROFILE"
+              } ],
+              "created" : "2021-03-01T22:32:58.104Z",
+              "name" : "Dimension 2567",
+              "modified" : "2021-03-02T20:22:28.104Z",
+              "description" : "Urna amet cursus pellentesque nisl orci maximus lorem nisl euismod fusce morbi placerat adipiscing maecenas nisi tristique et metus et lacus sed morbi nunc nisl maximus magna arcu varius sollicitudin elementum enim maecenas nisi id ipsum tempus fusce diam ipsum tortor.",
+              "id" : "2c918086749d78830174a1a40e121518",
+              "membership" : {
+                "criteria" : {
+                  "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                  "children" : [ {
+                    "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                    "children" : [ {
+                      "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                      "operation" : "EQUALS",
+                      "key" : {
+                        "property" : "attribute.email",
+                        "type" : "IDENTITY"
+                      }
+                    }, {
+                      "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                      "operation" : "EQUALS",
+                      "key" : {
+                        "property" : "attribute.email",
+                        "type" : "IDENTITY"
+                      }
+                    } ],
+                    "operation" : "EQUALS",
+                    "key" : {
+                      "property" : "attribute.email",
+                      "type" : "IDENTITY"
+                    }
+                  }, {
+                    "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                    "children" : [ {
+                      "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                      "operation" : "EQUALS",
+                      "key" : {
+                        "property" : "attribute.email",
+                        "type" : "IDENTITY"
+                      }
+                    }, {
+                      "stringValue" : "carlee.cert1c9f9b6fd@mailinator.com",
+                      "operation" : "EQUALS",
+                      "key" : {
+                        "property" : "attribute.email",
+                        "type" : "IDENTITY"
+                      }
+                    } ],
+                    "operation" : "EQUALS",
+                    "key" : {
+                      "property" : "attribute.email",
+                      "type" : "IDENTITY"
+                    }
+                  } ],
+                  "operation" : "EQUALS",
+                  "key" : {
+                    "property" : "attribute.email",
+                    "type" : "IDENTITY"
+                  }
+                },
+                "type" : "STANDARD"
+              },
+              "parentId" : "2c918086749d78830174a1a40e121518"
+            }; // Dimension
+            this.api.createDimensionV1({ roleId: roleId, dimension: dimension }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{roleId}/dimensions/bulk-delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/dimensions/methods/dimensions#delete-bulk-dimensions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+        import { DimensionBulkDeleteRequest } from 'sailpoint-angular-sdk/dimensions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DimensionsService);
+
+          deleteBulkDimensionsV1(): void {
+            const roleId: string = '6603fba3004f43c687610a29195252ce'; // string
+            const dimensionBulkDeleteRequest: DimensionBulkDeleteRequest = {
+              "dimensionIds" : [ "2c9180847812e0b1017817051919ecca", "2c9180887812e0b201781e129f151816" ]
+            }; // DimensionBulkDeleteRequest
+            this.api.deleteBulkDimensionsV1({ roleId: roleId, dimensionBulkDeleteRequest: dimensionBulkDeleteRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{roleId}/dimensions/{dimensionId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/dimensions/methods/dimensions#delete-dimension-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DimensionsService);
+
+          deleteDimensionV1(): void {
+            const roleId: string = '6603fba3004f43c687610a29195252ce'; // string
+            const dimensionId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.deleteDimensionV1({ roleId: roleId, dimensionId: dimensionId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{roleId}/dimensions/{dimensionId}/entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/dimensions/methods/dimensions#get-dimension-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DimensionsService);
+
+          getDimensionEntitlementsV1(): void {
+            const roleId: string = '6603fba3004f43c687610a29195252ce'; // string
+            const dimensionId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'attribute eq "memberOf"'; // string
+            const sorters: string = 'name,-modified'; // string
+            this.api.getDimensionEntitlementsV1({ roleId: roleId, dimensionId: dimensionId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{roleId}/dimensions/{dimensionId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/dimensions/methods/dimensions#get-dimension-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DimensionsService);
+
+          getDimensionV1(): void {
+            const roleId: string = '6603fba3004f43c687610a29195252ce'; // string
+            const dimensionId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            this.api.getDimensionV1({ roleId: roleId, dimensionId: dimensionId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{roleId}/dimensions/{dimensionId}/access-profiles
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/dimensions/methods/dimensions#list-dimension-access-profiles-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DimensionsService);
+
+          listDimensionAccessProfilesV1(): void {
+            const roleId: string = '6603fba3004f43c687610a29195252ce'; // string
+            const dimensionId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'source.id eq "2c91808982f979270182f99e386d00fa"'; // string
+            const sorters: string = 'name,-modified'; // string
+            this.api.listDimensionAccessProfilesV1({ roleId: roleId, dimensionId: dimensionId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{roleId}/dimensions
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/dimensions/methods/dimensions#list-dimensions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DimensionsService);
+
+          listDimensionsV1(): void {
+            const roleId: string = '6603fba3004f43c687610a29195252ce'; // string
+            const forSubadmin: string = '5168015d32f890ca15812c9180835d2e'; // string
+            const limit: number = 50; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq '2c918086749d78830174a1a40e121518''; // string
+            const sorters: string = 'name,-modified'; // string
+            this.api.listDimensionsV1({ roleId: roleId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /roles/v1/{roleId}/dimensions/{dimensionId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/dimensions/methods/dimensions#patch-dimension-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DimensionsService } from 'sailpoint-angular-sdk/dimensions';
+        import { JsonPatchOperation } from 'sailpoint-angular-sdk/dimensions';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DimensionsService);
+
+          patchDimensionV1(): void {
+            const roleId: string = '6603fba3004f43c687610a29195252ce'; // string
+            const dimensionId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            this.api.patchDimensionV1({ roleId: roleId, dimensionId: dimensionId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
