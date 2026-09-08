@@ -11,7 +11,7 @@ import {
   timer,
 } from 'rxjs';
 import { catchError, switchMap, mergeMap, retryWhen } from 'rxjs/operators';
-import { SailPointConfigService } from './sailpoint-config.service';
+import { NERM_URL_PREFIX, SailPointConfigService } from './sailpoint-config.service';
 
 /**
  * Functional HTTP interceptor for the SailPoint Angular SDK.
@@ -21,7 +21,9 @@ import { SailPointConfigService } from './sailpoint-config.service';
  *
  * For each such request the interceptor:
  *  1. Resolves the current access token via `SailPointConfigService.getToken()`.
- *  2. Prepends `SailPointConfigService.basePath` to produce an absolute URL.
+ *  2. Prepends the base URL for the target product to produce an absolute URL.
+ *     Identity Security Cloud requests use `baseUrl`. NERM requests carry the
+ *     `/nerm` prefix, which is stripped and replaced with `nermBaseUrl`.
  *  3. Attaches `Authorization: Bearer <token>`.
  *  4. On **401**: invalidates the cached token, fetches a fresh one, and retries once.
  *  5. On **429** or **5xx**: retries with exponential back-off.
@@ -41,7 +43,7 @@ export function sailpointInterceptor(
 
   return configSvc.getToken().pipe(
     switchMap((token) => {
-      const prepared = buildRequest(req, configSvc.basePath, token);
+      const prepared = buildRequest(req, configSvc, token);
       return executeWithRetry(prepared, next, req, configSvc);
     })
   );
@@ -49,13 +51,36 @@ export function sailpointInterceptor(
 
 // ---------------------------------------------------------------------------
 
+/**
+ * Turn the relative URL of an SDK request into an absolute one.
+ *
+ * The generated NERM packages prefix every path with `/nerm`, so the prefix
+ * selects the base URL and is then removed. Everything else is an Identity
+ * Security Cloud request.
+ */
+function resolveUrl(url: string, configSvc: SailPointConfigService): string {
+  if (url === NERM_URL_PREFIX || url.startsWith(`${NERM_URL_PREFIX}/`)) {
+    const nermBasePath = configSvc.nermBasePath;
+    if (!nermBasePath) {
+      throw new Error(
+        'SailPoint SDK: this is a NERM request, but no nermBaseUrl is configured. ' +
+        'Pass nermBaseUrl to provideSailPoint() or SailPointConfigService.configure(), ' +
+        'for example nermBaseUrl: "https://acme.nonemployee.com".'
+      );
+    }
+    return nermBasePath + url.slice(NERM_URL_PREFIX.length);
+  }
+
+  return configSvc.basePath + url;
+}
+
 function buildRequest(
   req: HttpRequest<unknown>,
-  basePath: string,
+  configSvc: SailPointConfigService,
   token: string
 ): HttpRequest<unknown> {
   return req.clone({
-    url: basePath + req.url,
+    url: resolveUrl(req.url, configSvc),
     setHeaders: { Authorization: `Bearer ${token}` },
   });
 }
@@ -75,7 +100,7 @@ function executeWithRetry(
         configSvc.invalidateToken();
         return configSvc.getToken().pipe(
           switchMap((freshToken) =>
-            next(buildRequest(original, configSvc.basePath, freshToken))
+            next(buildRequest(original, configSvc, freshToken))
           )
         );
       }

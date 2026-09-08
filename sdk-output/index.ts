@@ -13,6 +13,10 @@
 // not model yet:
 //   import { GenericService } from "sailpoint-angular-sdk"
 //
+// NERM — a separate product on a separate host. Set nermBaseUrl in
+// provideSailPoint() and the interceptor routes these services for you:
+//   import { AttributesNERMService } from "sailpoint-angular-sdk"
+//
 // Models and Configuration — import them from the partition sub-path:
 //   import type { Account } from "sailpoint-angular-sdk/accounts/model/account"
 //   import { Configuration } from "sailpoint-angular-sdk/accounts/configuration"
@@ -385,8 +389,53 @@ export type {
 } from "./generic/api/generic.service";
 export type { GenericResponse } from "./generic/model/genericResponse";
 
+// --- NERM (Non-Employee Risk Management) ---
+// nerm — 35 service(s)
+export { AdvancedSearchNERMService } from "./nerm/api/api";
+export { AttributeOptionsNERMService } from "./nerm/api/api";
+export { AttributesNERMService } from "./nerm/api/api";
+export { AuditsNERMService } from "./nerm/api/api";
+export { ConsolidationNERMService } from "./nerm/api/api";
+export { DelegationsNERMService } from "./nerm/api/api";
+export { FormAttributesNERMService } from "./nerm/api/api";
+export { FormsNERMService } from "./nerm/api/api";
+export { IdentityProofingResultsNERMService } from "./nerm/api/api";
+export { IscAccountsNERMService } from "./nerm/api/api";
+export { JobStatusNERMService } from "./nerm/api/api";
+export { LanguagesNERMService } from "./nerm/api/api";
+export { PageContentTranslationsNERMService } from "./nerm/api/api";
+export { PageContentsNERMService } from "./nerm/api/api";
+export { PageElementsNERMService } from "./nerm/api/api";
+export { PagesNERMService } from "./nerm/api/api";
+export { PermissionsNERMService } from "./nerm/api/api";
+export { ProfileTypeRolesNERMService } from "./nerm/api/api";
+export { ProfileTypesNERMService } from "./nerm/api/api";
+export { ProfilesNERMService } from "./nerm/api/api";
+export { RiskLevelsNERMService } from "./nerm/api/api";
+export { RiskScoresNERMService } from "./nerm/api/api";
+export { RoleProfilesNERMService } from "./nerm/api/api";
+export { RolesNERMService } from "./nerm/api/api";
+export { SyncedAttributesNERMService } from "./nerm/api/api";
+export { SystemRolePermissionsNERMService } from "./nerm/api/api";
+export { SystemRolesNERMService } from "./nerm/api/api";
+export { UserManagersNERMService } from "./nerm/api/api";
+export { UserProfilesNERMService } from "./nerm/api/api";
+export { UserRolesNERMService } from "./nerm/api/api";
+export { UsersNERMService } from "./nerm/api/api";
+export { WorkflowActionPerformerNERMService } from "./nerm/api/api";
+export { WorkflowActionsNERMService } from "./nerm/api/api";
+export { WorkflowSessionsNERMService } from "./nerm/api/api";
+export { WorkflowsNERMService } from "./nerm/api/api";
+export { Configuration as ConfigurationNerm } from "./nerm/configuration";
+export type { ConfigurationParameters as ConfigurationParametersNerm } from "./nerm/configuration";
+
+// nermv2025 — 1 service(s)
+export { DelegationsNERMV2025Service } from "./nermv2025/api/api";
+export { Configuration as ConfigurationNermV2025 } from "./nermv2025/configuration";
+export type { ConfigurationParameters as ConfigurationParametersNermV2025 } from "./nermv2025/configuration";
+
 // --- SailPoint SDK utilities ---
-export { SailPointConfigService, SAILPOINT_CONFIG_PARAMS } from './sailpoint-config.service';
+export { SailPointConfigService, SAILPOINT_CONFIG_PARAMS, NERM_URL_PREFIX } from './sailpoint-config.service';
 export type { SailPointParams, AccessTokenProvider, SailPointWindowConfig, SailPointConfigProvider } from './sailpoint-config.service';
 export { sailpointInterceptor } from './sailpoint.interceptor';
 export { provideSailPoint } from './sailpoint.providers';

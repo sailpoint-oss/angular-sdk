@@ -59,18 +59,49 @@ const GENERIC_SPEC   = path.join(__dirname, "generic-api.yaml");
 const GENERIC_CONFIG = path.join(__dirname, "generic-config.yaml");
 const GENERIC_DIR    = "generic";
 
+// NERM (Non-Employee Risk Management) is a separate product with its own host,
+// https://{tenant}.nonemployee.com/api, so it is not a partition either. Its
+// specification lives in the api-specs checkout next to idn/.
+//
+// Every NERM request carries the NERM_URL_PREFIX, which sailpointInterceptor
+// strips before it prepends the NERM base URL. Without the prefix a NERM path
+// such as /ne_attributes is indistinguishable from an ISC path, and the
+// interceptor would send it to the ISC host.
+const NERM_URL_PREFIX = "/nerm";
+
+const NERM_VARIANTS = [
+  {
+    name:       "nerm",
+    packageDir: "nerm",
+    specPath:   ["openapi.yaml"],
+    config:     path.join(__dirname, "nerm-config.yaml"),
+    modelSuffix: "NERM",
+    basePath:   `${NERM_URL_PREFIX}/api`,
+  },
+  {
+    name:       "nerm v2025",
+    packageDir: "nermv2025",
+    specPath:   ["v2025", "v2025.yaml"],
+    config:     path.join(__dirname, "nerm-v2025-config.yaml"),
+    modelSuffix: "NERMV2025",
+    basePath:   `${NERM_URL_PREFIX}/api/v2025`,
+  },
+];
+
 // ---------------------------------------------------------------------------
 // CLI args
 // ---------------------------------------------------------------------------
 
 const args = process.argv.slice(2);
 const genericOnly = args.includes("--generic-only");
+const nermOnly    = args.includes("--nerm-only");
 
-// --generic-only builds sdk-output/generic from sdk-resources/generic-api.yaml
-// and needs no apis/ directory, so the positional argument is optional there.
-if (!genericOnly && (args.length === 0 || args[0].startsWith("--"))) {
+// --generic-only and --nerm-only build a single shared package and need no
+// apis/ directory, so the positional argument is optional for them.
+if (!genericOnly && !nermOnly && (args.length === 0 || args[0].startsWith("--"))) {
   console.error("Usage: node sdk-resources/build-versioned-sdk.js <path-to-apis-dir> [--partition <name>] [--keep-tmp]");
   console.error("       node sdk-resources/build-versioned-sdk.js --generic-only");
+  console.error("       node sdk-resources/build-versioned-sdk.js --nerm-only [--nerm-specs <path-to-api-specs>/nerm]");
   process.exit(1);
 }
 
@@ -78,6 +109,8 @@ const apisDir       = args[0] && !args[0].startsWith("--") ? path.resolve(args[0
 const keepTmp       = args.includes("--keep-tmp");
 const partitionIdx  = args.indexOf("--partition");
 const onlyPartition = partitionIdx !== -1 ? args[partitionIdx + 1] : null;
+const nermSpecsIdx  = args.indexOf("--nerm-specs");
+const nermSpecsDir  = nermSpecsIdx !== -1 ? args[nermSpecsIdx + 1] : null;
 
 // ---------------------------------------------------------------------------
 // Utility: copy directory recursively
@@ -528,6 +561,132 @@ function buildGenericPackage() {
 }
 
 // ---------------------------------------------------------------------------
+// NERM packages  (sdk-output/nerm, sdk-output/nermv2025)
+// ---------------------------------------------------------------------------
+
+// Locate the nerm/ directory of the api-specs checkout. The partition build
+// receives api-specs/idn/apis, and nerm/ is a sibling of idn/.
+function resolveNermSpecsDir() {
+  if (nermSpecsDir) return path.resolve(nermSpecsDir);
+  if (apisDir) {
+    const sibling = path.resolve(apisDir, "..", "..", "nerm");
+    if (fs.existsSync(sibling)) return sibling;
+  }
+  return path.join(SDK_ROOT, "api-specs", "nerm");
+}
+
+// The NERM specification declares an absolute server URL with a tenant variable,
+// which the generator reduces to an empty basePath. Write the sentinel prefix in
+// its place, so every request from the package is routed to the NERM host.
+function patchNermBasePath(outputDir, basePath) {
+  const baseServicePath = path.join(outputDir, "api.base.service.ts");
+  if (!fs.existsSync(baseServicePath)) {
+    throw new Error(`api.base.service.ts not found at ${baseServicePath}`);
+  }
+
+  const content = fs.readFileSync(baseServicePath, "utf8");
+  const emptyBasePath = "protected basePath = '';";
+  if (!content.includes(emptyBasePath)) {
+    throw new Error(`expected \`${emptyBasePath}\` in ${baseServicePath}`);
+  }
+
+  fs.writeFileSync(
+    baseServicePath,
+    content.replace(emptyBasePath, `protected basePath = '${basePath}';`),
+    "utf8"
+  );
+}
+
+function buildNermPackage(variant) {
+  const specsDir  = resolveNermSpecsDir();
+  const spec      = path.join(specsDir, ...variant.specPath);
+  const outputDir = path.join(SDK_OUTPUT, variant.packageDir);
+
+  if (!fs.existsSync(spec)) {
+    return {
+      ok: false,
+      step: "setup",
+      output: `NERM specification not found at ${spec}\n\n` +
+              `Clone the specifications with \`make specs\`, or point at an existing\n` +
+              `checkout with --nerm-specs <path-to-api-specs>/nerm.`,
+    };
+  }
+
+  if (fs.existsSync(outputDir)) {
+    fs.rmSync(outputDir, { recursive: true, force: true });
+  }
+
+  // The NERM specification is fed to the generator directly, not through
+  // redocly. Redocly renames the duplicated schemas (RiskRule-2, RiskRule-3),
+  // and the generator then rejects the bundle as invalid.
+  const gen = spawnSync(
+    "java",
+    [
+      "-jar", JAR,
+      "generate",
+      "-i", spec,
+      "-g", "typescript-angular",
+      "-o", outputDir,
+      "--global-property", "skipFormModel=false",
+      "--config", variant.config,
+      "--model-name-suffix", variant.modelSuffix,
+    ],
+    { encoding: "utf8" }
+  );
+  if (gen.status !== 0) {
+    return {
+      ok: false,
+      step: "generation",
+      output: [gen.stdout, gen.stderr].filter(Boolean).join("\n"),
+    };
+  }
+
+  const post = runPostscript(outputDir);
+  if (!post.ok) {
+    return {
+      ok: false,
+      step: "postscript",
+      output: [post.stdout, post.stderr].filter(Boolean).join("\n"),
+    };
+  }
+
+  try {
+    patchNermBasePath(outputDir, variant.basePath);
+  } catch (err) {
+    return { ok: false, step: "base-path", output: String(err.stack || err) };
+  }
+
+  fs.writeFileSync(path.join(outputDir, ".sdk-nerm"), variant.packageDir, "utf8");
+
+  return { ok: true, outputDir, packageDir: variant.packageDir };
+}
+
+// Build every NERM variant and report each one through `results`.
+function buildNermPackages(results) {
+  for (const variant of NERM_VARIANTS) {
+    console.log(`\n${"=".repeat(60)}`);
+    console.log(`  Building: ${variant.name}`);
+    console.log(`${"=".repeat(60)}`);
+
+    const built = buildNermPackage(variant);
+    results.total += 1;
+
+    if (built.ok) {
+      results.success.push(variant.name);
+      console.log(`  ✓ ${variant.name} → sdk-output/${built.packageDir}/ (basePath ${variant.basePath})`);
+    } else {
+      console.error(`  ✗ ${variant.name} failed at ${built.step}`);
+      console.error(built.output);
+      results.failed.push({
+        partition: variant.name,
+        step: built.step,
+        reportPath: path.relative(SDK_ROOT, variant.config),
+      });
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Error logging
 // ---------------------------------------------------------------------------
 
@@ -767,6 +926,34 @@ function generateIndexTs() {
   // The generic API is exported by explicit name, never with `export *`. Its
   // package carries its own copies of the shared runtime files (configuration.ts,
   // param.ts, variables.ts), which would collide with the partition packages.
+  // NERM services are exported by name for the same reason as the generic API:
+  // each NERM package carries its own copy of the shared runtime files. The
+  // service class names already end in NERMService or NERMV2025Service, so they
+  // never collide with the Identity Security Cloud services.
+  const nermBlocks = [];
+  for (const variant of NERM_VARIANTS) {
+    const dir = path.join(SDK_OUTPUT, variant.packageDir);
+    if (!fs.existsSync(path.join(dir, ".sdk-nerm"))) continue;
+
+    const classes = collectServiceClasses(dir).sort();
+    if (classes.length === 0) continue;
+
+    const lines = classes.map(
+      c => `export { ${c} } from "./${variant.packageDir}/api/api";`
+    );
+    // Alias the Configuration of the package, so callers can build one without
+    // reaching into the sub-path. Mirrors the TypeScript SDK.
+    const alias = variant.modelSuffix === "NERM" ? "Nerm" : "NermV2025";
+    lines.push(
+      `export { Configuration as Configuration${alias} } from "./${variant.packageDir}/configuration";`,
+      `export type { ConfigurationParameters as ConfigurationParameters${alias} } from "./${variant.packageDir}/configuration";`
+    );
+    nermBlocks.push(`// ${variant.packageDir} — ${classes.length} service(s)\n` + lines.join("\n"));
+  }
+  const nermExports = nermBlocks.length > 0
+    ? nermBlocks.join("\n\n")
+    : "// (no NERM packages built — run the build with the api-specs checkout available)";
+
   const hasGeneric = fs.existsSync(path.join(SDK_OUTPUT, GENERIC_DIR, "api", "generic.service.ts"));
   const genericExports = hasGeneric
     ? [
@@ -797,6 +984,10 @@ function generateIndexTs() {
 // not model yet:
 //   import { GenericService } from "sailpoint-angular-sdk"
 //
+// NERM — a separate product on a separate host. Set nermBaseUrl in
+// provideSailPoint() and the interceptor routes these services for you:
+//   import { AttributesNERMService } from "sailpoint-angular-sdk"
+//
 // Models and Configuration — import them from the partition sub-path:
 //   import type { Account } from "sailpoint-angular-sdk/accounts/model/account"
 //   import { Configuration } from "sailpoint-angular-sdk/accounts/configuration"
@@ -822,8 +1013,11 @@ ${nsLines.join("\n")}
 // --- Generic API ---
 ${genericExports}
 
+// --- NERM (Non-Employee Risk Management) ---
+${nermExports}
+
 // --- SailPoint SDK utilities ---
-export { SailPointConfigService, SAILPOINT_CONFIG_PARAMS } from './sailpoint-config.service';
+export { SailPointConfigService, SAILPOINT_CONFIG_PARAMS, NERM_URL_PREFIX } from './sailpoint-config.service';
 export type { SailPointParams, AccessTokenProvider, SailPointWindowConfig, SailPointConfigProvider } from './sailpoint-config.service';
 export { sailpointInterceptor } from './sailpoint.interceptor';
 export { provideSailPoint } from './sailpoint.providers';
@@ -840,21 +1034,36 @@ export type { PaginationParams } from './paginator';
 // ---------------------------------------------------------------------------
 
 function main() {
-  if (genericOnly) {
+  if (genericOnly || nermOnly) {
     if (!fs.existsSync(JAR)) {
       console.error(`Error: openapi-generator-cli.jar not found at ${JAR}`);
       process.exit(1);
     }
-    console.log("\n[GENERIC] Building the generic API package ...");
-    const only = buildGenericPackage();
-    if (!only.ok) {
-      console.error(`  ✗ generic API failed at ${only.step}`);
-      console.error(only.output);
-      process.exit(1);
+
+    const results = { total: 0, success: [], failed: [] };
+
+    if (genericOnly) {
+      console.log("\n[GENERIC] Building the generic API package ...");
+      const built = buildGenericPackage();
+      results.total += 1;
+      if (built.ok) {
+        results.success.push("generic");
+        console.log(`  ✓ generic → sdk-output/${GENERIC_DIR}/ (${built.patched} path encoder(s) patched)`);
+      } else {
+        console.error(`  ✗ generic API failed at ${built.step}`);
+        console.error(built.output);
+        results.failed.push({ partition: "generic", step: built.step });
+      }
     }
-    console.log(`  ✓ generic → sdk-output/${GENERIC_DIR}/ (${only.patched} path encoder(s) patched)`);
+
+    if (nermOnly) {
+      buildNermPackages(results);
+    }
+
     console.log("\n[INDEX] Regenerating sdk-output/index.ts ...");
     generateIndexTs();
+
+    if (results.failed.length > 0) process.exit(1);
     return;
   }
 
@@ -1006,6 +1215,9 @@ function main() {
       reportPath: path.relative(SDK_ROOT, GENERIC_SPEC),
     });
   }
+
+  // Build the NERM packages (separate product, separate host)
+  buildNermPackages(results);
 
   // Regenerate index.ts
   console.log("\n[INDEX] Regenerating sdk-output/index.ts ...");

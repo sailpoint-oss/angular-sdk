@@ -40,6 +40,16 @@ import { sailpointInterceptor } from './sailpoint.interceptor';
  * | Dynamic token function | `baseUrl` + `accessToken: () => fetchToken()` |
  * | Plugin auto-config | *(no params)* — detects `window.sailpointConfig()` |
  *
+ * ### NERM
+ * NERM is a separate product on a separate host. Add `nermBaseUrl` to reach it:
+ * ```typescript
+ * provideSailPoint({
+ *   baseUrl: 'https://acme.api.identitynow.com',
+ *   nermBaseUrl: 'https://acme.nonemployee.com',
+ *   accessToken: 'eyJ...',
+ * })
+ * ```
+ *
  * ### Runtime updates
  * ```typescript
  * inject(SailPointConfigService).configure({ baseUrl: '...', accessToken: '...' });

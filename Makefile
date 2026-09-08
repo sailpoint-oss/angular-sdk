@@ -22,6 +22,14 @@ build-partition:
 build-generic:
 	node sdk-resources/build-versioned-sdk.js --generic-only
 
+# Builds only sdk-output/nerm and sdk-output/nermv2025.
+# Override the specification location with NERM_SPECS=<path-to-api-specs>/nerm.
+NERM_SPECS ?= api-specs/nerm
+
+.PHONY: build-nerm
+build-nerm:
+	node sdk-resources/build-versioned-sdk.js --nerm-only --nerm-specs $(NERM_SPECS)
+
 .PHONY: test
 test:
 	cd sdk-output; \

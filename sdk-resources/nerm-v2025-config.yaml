@@ -3,7 +3,10 @@ npmRepository: sailpoint.com
 npmVersion: 1.0.0
 ngVersion: 22
 providedIn: root
+packageName: nermv2025
 useSingleRequestParameter: true
 stringEnums: true
 apiVersion: v2025
 enumNameSuffix: NermV2025
+# See the comment in nerm-config.yaml.
+serviceSuffix: NERMV2025Service

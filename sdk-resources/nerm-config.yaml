@@ -3,6 +3,11 @@ npmRepository: sailpoint.com
 npmVersion: 1.0.0
 ngVersion: 22
 providedIn: root
+packageName: nerm
 useSingleRequestParameter: true
 stringEnums: true
 enumNameSuffix: Nerm
+# Suffix every generated service class, so the 35 NERM services do not collide
+# with the Identity Security Cloud services. NERM has its own RolesService,
+# UsersService and WorkflowsService.
+serviceSuffix: NERMService

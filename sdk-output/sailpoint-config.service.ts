@@ -60,6 +60,12 @@ export interface SailPointParams {
    *  The SDK services append their own versioned paths (e.g. `/accounts/v1`).
    */
   baseUrl?: string;
+  /** Root NERM base URL — no trailing slash, no `/api` segment.
+   *  e.g. `https://acme.nonemployee.com`
+   *  Required only when you call a NERM service. The NERM services append their
+   *  own `/api` and `/api/v2025` paths.
+   */
+  nermBaseUrl?: string;
   /** OAuth2 client ID — used with `clientSecret` to exchange for a token. */
   clientId?: string;
   /** OAuth2 client secret. */
@@ -79,6 +85,18 @@ export interface SailPointParams {
   /** Base delay in ms for exponential back-off. Default: 1000 */
   retryDelay?: number;
 }
+
+/**
+ * URL prefix that marks a request as a NERM request.
+ *
+ * NERM is a separate product on a separate host, and a NERM path such as
+ * `/ne_attributes` is indistinguishable from an Identity Security Cloud path. The
+ * build writes this prefix into the basePath of every generated NERM package, and
+ * `sailpointInterceptor` strips it again and prepends `nermBaseUrl`.
+ *
+ * Paired with NERM_URL_PREFIX in sdk-resources/build-versioned-sdk.js. Change both.
+ */
+export const NERM_URL_PREFIX = '/nerm';
 
 /** DI token used internally to pass `SailPointParams` into the service. */
 export const SAILPOINT_CONFIG_PARAMS = new InjectionToken<SailPointParams>(
@@ -132,7 +150,12 @@ export class SailPointConfigService {
 
   /** Current base URL (no trailing slash, no version segment). */
   get basePath(): string {
-    return (this.params().baseUrl ?? '').replace(/\/$/, '');
+    return normalizeBaseUrl(this.params().baseUrl);
+  }
+
+  /** Current NERM base URL (no trailing slash, no `/api` segment). */
+  get nermBasePath(): string {
+    return normalizeBaseUrl(this.params().nermBaseUrl);
   }
 
   private cachedToken: CachedToken | null = null;
@@ -186,6 +209,9 @@ export class SailPointConfigService {
           // Update basePath eagerly so URL construction works for the current request.
           if (cfg.baseurl) {
             this.params.update((p) => ({ ...p, baseUrl: cfg.baseurl }));
+          }
+          if (cfg.nermBaseurl) {
+            this.params.update((p) => ({ ...p, nermBaseUrl: cfg.nermBaseurl }));
           }
           if (!cfg.accessToken) {
             throw new Error('window.sailpointConfig() did not return an accessToken.');
@@ -281,6 +307,19 @@ export class SailPointConfigService {
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+
+/**
+ * Strip a trailing slash, and a trailing `/api` segment.
+ *
+ * The NERM services already carry `/api` in their paths. The plugin host supplies
+ * `nermBaseurl` and is free to include `/api` in it, so remove it here rather than
+ * send a request to `/api/api/ne_attributes`.
+ */
+function normalizeBaseUrl(url: string | undefined): string {
+  return (url ?? '')
+    .replace(/\/+$/, '')
+    .replace(/\/api$/, '');
+}
 
 function getWindowConfigProvider(): SailPointConfigProvider | undefined {
   if (
