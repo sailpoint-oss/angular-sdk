@@ -20,11 +20,6 @@
   "bugs": {
     "url": "https://github.com/sailpoint-oss/angular-sdk/issues"
   },
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "peerDependencies": {
     "@angular/common": ">=9.0.0",
     "@angular/core": ">=9.0.0",
