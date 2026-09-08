@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SailPointConfigService } from '@sailpoint/angular-sdk/sailpoint-config.service';
+import { SailPointConfigService } from '@sailpoint/angular-sdk';
 
 type AuthMode = 'pat' | 'client_credentials';
 

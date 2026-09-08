@@ -1,9 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IdentitiesService } from '@sailpoint/angular-sdk/identities/api/identities.service';
-import { Identity } from '@sailpoint/angular-sdk/identities/model/identity';
-import { SailPointConfigService } from '@sailpoint/angular-sdk/sailpoint-config.service';
-import { Paginator } from '@sailpoint/angular-sdk/paginator';
+import { Identity, IdentitiesService } from '@sailpoint/angular-sdk/identities';
+import { Paginator, SailPointConfigService } from '@sailpoint/angular-sdk';
 
 @Component({
   selector: 'app-identities',

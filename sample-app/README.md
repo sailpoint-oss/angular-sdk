@@ -1,59 +1,80 @@
-# SampleApp
+# SailPoint Angular SDK sample app
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.6.
+A small Angular app that calls Identity Security Cloud through
+`@sailpoint/angular-sdk`. It shows how to:
 
-## Development server
+- Configure the SDK.
+- Inject a generated service.
+- Page through a list endpoint.
+- Change credentials at runtime.
 
-To start a local development server, run:
+## Setup
 
-```bash
-ng serve
+The app depends on the built SDK, not on the SDK sources:
+
+```json
+"@sailpoint/angular-sdk": "file:../sdk-output/dist"
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This is deliberate. Imports resolve through the `exports` map of the real
+package. The app can therefore use only the entry points that npm also serves to
+a consumer.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Build the SDK first, because the install has nothing to link to otherwise:
 
 ```bash
-ng generate --help
+cd ../sdk-output && npm install && npm run build
+cd ../sample-app && npm install
 ```
 
-## Building
+Rebuild the SDK after you change it. The link points at the build output, so the
+app picks the change up on its next build.
 
-To build the project run:
+## Running
 
 ```bash
-ng build
+npm start          # dev server on http://localhost:4200
+npm run build      # production build into dist/
+npm test           # unit tests
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Open **Configuration** in the sidebar. Enter a tenant base URL. Add either a
+personal access token, or a client ID and a client secret. The app keeps the
+configuration in `localStorage` and restores it on the next load.
 
-## Running unit tests
+## What each page shows
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+| Page | SDK usage |
+|------|-----------|
+| Configuration | `SailPointConfigService.configure()` at runtime |
+| Identities | `IdentitiesService.listIdentitiesV1()` |
+| Accounts | `AccountsService.listAccountsV1()`, and `Paginator.paginate()` for every page |
+| Sources | `SourcesService.listSourcesV1()` |
 
-```bash
-ng test
+## Import paths
+
+The package publishes one entry point per API partition. It also publishes a
+root entry point for the shared parts:
+
+```typescript
+// services and models of one partition
+import { Account, AccountsService } from '@sailpoint/angular-sdk/accounts';
+
+// configuration, provider function, paginator
+import { Paginator, provideSailPoint, SailPointConfigService } from '@sailpoint/angular-sdk';
 ```
 
-## Running end-to-end tests
+Deeper paths such as `@sailpoint/angular-sdk/accounts/api/accounts.service` are
+not published, and they do not resolve.
 
-For end-to-end (e2e) testing, run:
+An import from the root entry point does not pull the whole SDK into the bundle.
+Each partition stays in its own chunk. The bundler drops every partition that
+the app never imports.
 
-```bash
-ng e2e
-```
+## A note on the test setup
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[`vitest.config.mts`](vitest.config.mts) lists the Angular packages under
+`resolve.dedupe`. The SDK is linked from a sibling directory with its own
+`node_modules`. Without `dedupe`, the test run loads two copies of
+`@angular/core`, and every `inject()` call inside the SDK then fails with
+`NG0203`.

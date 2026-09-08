@@ -3,11 +3,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "types": [],
-    "paths": {
-      "@sailpoint/angular-sdk": ["../sdk-output/index"],
-      "@sailpoint/angular-sdk/*": ["../sdk-output/*"]
-    }
+    "types": []
   },
   "include": [
     "src/**/*.ts"

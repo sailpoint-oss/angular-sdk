@@ -1,8 +1,7 @@
 import { ApplicationConfig, APP_INITIALIZER, inject, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-import { provideSailPoint } from '@sailpoint/angular-sdk/sailpoint.providers';
-import { SailPointConfigService } from '@sailpoint/angular-sdk/sailpoint-config.service';
+import { provideSailPoint, SailPointConfigService } from '@sailpoint/angular-sdk';
 
 function restoreConfig() {
   return () => {
