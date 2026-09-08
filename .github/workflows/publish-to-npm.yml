@@ -1,0 +1,57 @@
+name: Publish SDK package to npmjs
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: publish-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    # No `id-token: write` on purpose.
+    #
+    # Trusted publishing is turned off until it is configured on npmjs. Without
+    # the id-token permission npm cannot mint an OIDC token, so it falls back to
+    # NODE_AUTH_TOKEN. To turn trusted publishing on later:
+    #   1. Configure this repository as a trusted publisher for the package on npmjs.
+    #   2. Add `permissions: id-token: write` to this job.
+    #   3. Publish with `npm publish --provenance` and drop NPM_CONFIG_PROVENANCE.
+    #   4. Remove NODE_AUTH_TOKEN and the NPM_TOKEN secret.
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          # Node 24 bundles npm 11. Do not upgrade npm here. npm 12 denies package
+          # install scripts by default, which breaks the ng-packagr build, and it
+          # attempts trusted publishing before falling back to the token.
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        working-directory: sdk-output
+        run: npm ci
+
+      # sdk-output/dist is not committed, so the publishable package is built here.
+      # The generated sources under sdk-output are committed, so this step needs
+      # neither the API specifications nor Java.
+      - name: Build the Angular package
+        working-directory: sdk-output
+        run: npm run build
+
+      # ng-packagr writes the real package manifest to sdk-output/dist/package.json,
+      # including the `exports` map for all secondary entry points. Publish from
+      # there, not from sdk-output.
+      - name: Publish to npmjs
+        working-directory: sdk-output/dist
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: false

@@ -1,0 +1,61 @@
+name: "Build Angular SDK"
+description: "Build every partition, the generic API and the NERM packages of the Angular SDK from the OpenAPI specifications"
+
+inputs:
+  api-specs-path:
+    description: "Path to the checked-out api-specs repository"
+    required: false
+    default: "api-specs"
+  skip-tests:
+    description: "Skip running tests after building"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Node
+      uses: actions/setup-node@v6
+      with:
+        # Node 24 bundles npm 11. Do not upgrade npm here. npm 12 denies package
+        # install scripts by default, and ng-packagr needs the install scripts of
+        # esbuild and @parcel/watcher to fetch their platform binaries.
+        node-version: "24"
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: "temurin"
+        java-version: "17"
+
+    - name: Install Node dependencies
+      shell: bash
+      run: npm install
+
+    - name: Download OpenAPI Generator
+      shell: bash
+      run: |
+        wget -q https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.12.0/openapi-generator-cli-7.12.0.jar -O openapi-generator-cli.jar
+
+    # One command builds all three groups of packages:
+    #   - one package per partition under idn/apis
+    #   - sdk-output/generic  from sdk-resources/generic-api.yaml
+    #   - sdk-output/nerm and sdk-output/nermv2025 from nerm/
+    # The NERM specification directory is passed explicitly, so the build does not
+    # depend on nerm/ being a sibling of idn/.
+    - name: Build SDK
+      shell: bash
+      run: |
+        node sdk-resources/build-versioned-sdk.js \
+          ${{ inputs.api-specs-path }}/idn/apis \
+          --nerm-specs ${{ inputs.api-specs-path }}/nerm
+
+    - name: Build and Test
+      shell: bash
+      run: |
+        cd sdk-output
+        npm install
+        npm run build
+        if [ "${{ inputs.skip-tests }}" != "true" ]; then
+          npm run test
+        fi
