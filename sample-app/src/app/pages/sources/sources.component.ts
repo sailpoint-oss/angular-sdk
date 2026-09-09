@@ -17,7 +17,7 @@ import { Paginator, SailPointConfigService } from '@sailpoint/angular-sdk';
     @if (!configSvc.basePath) {
       <div class="not-configured card">
         <span class="icon">&#128274;</span>
-        <p>No credentials configured. <a routerLink="/config">Set up your connection</a> first.</p>
+        <p>No credentials configured. <a routerLink="/auth">Choose an authentication mode</a> first.</p>
       </div>
     } @else {
       <div class="toolbar">

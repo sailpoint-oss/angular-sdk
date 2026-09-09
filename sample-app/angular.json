@@ -32,7 +32,8 @@
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
@@ -54,6 +55,12 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "test": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "preserveSymlinks": false
             }
           },
           "defaultConfiguration": "production"
@@ -73,7 +80,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "runnerConfig": "vitest.config.mts"
+            "runnerConfig": "vitest.config.mts",
+            "buildTarget": "sample-app:build:test"
           }
         }
       }

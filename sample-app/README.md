@@ -38,18 +38,42 @@ npm run build      # production build into dist/
 npm test           # unit tests
 ```
 
-Open **Configuration** in the sidebar. Enter a tenant base URL. Add either a
-personal access token, or a client ID and a client secret. The app keeps the
-configuration in `localStorage` and restores it on the next load.
+Open **Authentication** in the sidebar and pick a mode. Enter the credentials
+for it. Press **Connect and test**.
 
-## What each page shows
+## Authentication modes
+
+Each authentication mode has its own page. Every page holds a form, a code
+sample, and a test button. The button applies the parameters, then calls one real
+endpoint. The result tells you whether the mode works.
+
+| Page | Mode | Parameters |
+|------|------|------------|
+| Overview | current state, and a reset button | |
+| Personal access token | a token you already hold | `baseUrl`, `accessToken` |
+| Client credentials | the SDK exchanges an ID and secret, then caches the token | `baseUrl`, `clientId`, `clientSecret`, `tokenUrl` |
+| Token function | your code returns the token per request | `baseUrl`, `accessToken: () => …` |
+| Plugin auto-config | the host page supplies everything | none |
+
+The token function page covers all three return types: a string, a promise, and
+an observable. It counts the calls, which shows that the SDK asks for a token on
+every request. The plugin page installs `window.sailpointConfig()` for you, so
+you can try that mode outside a plugin.
+
+The SDK resolves a token in one order: the host function first, then
+`accessToken`, then `clientId` with `clientSecret`. The host function therefore
+overrides the other three while it is installed, and the plugin page says so.
+
+These pages call the API with whatever is configured:
 
 | Page | SDK usage |
 |------|-----------|
-| Configuration | `SailPointConfigService.configure()` at runtime |
 | Identities | `IdentitiesService.listIdentitiesV1()` |
 | Accounts | `AccountsService.listAccountsV1()`, and `Paginator.paginate()` for every page |
 | Sources | `SourcesService.listSourcesV1()` |
+
+Only plain values are written to `localStorage`. A token function and a host
+function cannot be stored, so those two modes end at a reload.
 
 ## Import paths
 

@@ -18,9 +18,24 @@ import { SailPointConfigService } from '@sailpoint/angular-sdk';
         </div>
 
         <nav>
-          <a routerLink="/config" routerLinkActive="active" class="nav-item">
-            <span class="nav-icon">&#9881;&#65039;</span> Configuration
+          <div class="nav-section">Authentication</div>
+          <a routerLink="/auth" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
+            <span class="nav-icon">&#9881;&#65039;</span> Overview
           </a>
+          <a routerLink="/auth/pat" routerLinkActive="active" class="nav-item">
+            <span class="nav-icon">&#128273;</span> Personal access token
+          </a>
+          <a routerLink="/auth/client-credentials" routerLinkActive="active" class="nav-item">
+            <span class="nav-icon">&#129309;</span> Client credentials
+          </a>
+          <a routerLink="/auth/token-function" routerLinkActive="active" class="nav-item">
+            <span class="nav-icon">&#955;</span> Token function
+          </a>
+          <a routerLink="/auth/plugin" routerLinkActive="active" class="nav-item">
+            <span class="nav-icon">&#129513;</span> Plugin auto-config
+          </a>
+
+          <div class="nav-section">API calls</div>
           <a routerLink="/identities" routerLinkActive="active" class="nav-item">
             <span class="nav-icon">&#128100;</span> Identities
           </a>
@@ -79,13 +94,18 @@ import { SailPointConfigService } from '@sailpoint/angular-sdk';
     }
     .brand-name { font-weight: 700; font-size: 0.95rem; }
     .brand-sub { font-size: 0.72rem; color: var(--text-muted); }
-    nav { flex: 1; padding: 0.75rem 0; }
+    nav { flex: 1; padding: 0.75rem 0; overflow-y: auto; }
+    .nav-section {
+      padding: 0.75rem 1.25rem 0.35rem;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--text-muted);
+    }
     .nav-item {
       display: flex; align-items: center; gap: 0.6rem;
       padding: 0.6rem 1.25rem;
       color: var(--text-secondary);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.86rem;
       border-radius: 0;
       transition: background 0.15s, color 0.15s;
     }

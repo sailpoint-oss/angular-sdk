@@ -1,33 +1,24 @@
-import { ApplicationConfig, APP_INITIALIZER, inject, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, provideAppInitializer, inject, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideSailPoint, SailPointConfigService } from '@sailpoint/angular-sdk';
-
-function restoreConfig() {
-  return () => {
-    const svc = inject(SailPointConfigService);
-    try {
-      const raw = localStorage.getItem('sailpoint_sample_config');
-      if (raw) {
-        const saved = JSON.parse(raw);
-        svc.configure(saved);
-      }
-    } catch {
-      // ignore parse errors
-    }
-  };
-}
+import { readConfig } from './pages/auth/persist';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    // provideSailPoint() includes provideHttpClient() + the auth interceptor internally.
+    // provideSailPoint() includes provideHttpClient() and the auth interceptor.
+    // It is called with no parameters, so every mode is set on an auth page.
     provideSailPoint(),
-    {
-      provide: APP_INITIALIZER,
-      useFactory: restoreConfig,
-      multi: true,
-    }
+    // Bring back whatever the last authentication page stored, so the API pages
+    // still work after a reload. Only plain values survive, which means the
+    // token function and the host function are not restored.
+    provideAppInitializer(() => {
+      const saved = readConfig();
+      if (saved) {
+        inject(SailPointConfigService).configure(saved);
+      }
+    }),
   ]
 };

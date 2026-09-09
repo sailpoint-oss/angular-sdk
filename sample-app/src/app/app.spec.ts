@@ -44,7 +44,16 @@ describe('App', () => {
     const routes = Array.from(element.querySelectorAll('.nav-item'))
       .map((a) => a.getAttribute('href'));
 
-    expect(routes).toStrictEqual(['/config', '/identities', '/accounts', '/sources']);
+    expect(routes).toStrictEqual([
+      '/auth',
+      '/auth/pat',
+      '/auth/client-credentials',
+      '/auth/token-function',
+      '/auth/plugin',
+      '/identities',
+      '/accounts',
+      '/sources',
+    ]);
   });
 
   it('reports that it is not configured when no base URL is set', () => {

@@ -136,3 +136,41 @@ code {
 }
 
 a { color: var(--accent); }
+
+/* ── Forms, shared by the authentication pages ───────────────────────────── */
+.field { margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.field label { font-weight: 600; font-size: 0.9rem; color: var(--text-secondary); }
+.field input, .field select {
+  padding: 0.65rem 0.9rem; border: 1.5px solid var(--border);
+  border-radius: 8px; font-size: 1rem; background: var(--surface);
+  color: var(--text); transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.hint { font-size: 0.8rem; color: var(--text-muted); }
+.actions { display: flex; gap: 0.75rem; margin-top: 0.5rem; flex-wrap: wrap; align-items: center; }
+
+/* ── Outcome of a connection test ────────────────────────────────────────── */
+.result { margin-top: 1.25rem; padding: 0.8rem 1rem; border-radius: 8px; font-size: 0.9rem; }
+.result.ok { background: #e6f9f0; color: #1a7a4a; border: 1px solid #a3dfc0; }
+.result.failed { background: #fdecec; color: #a33; border: 1px solid #f0b4b4; }
+.result.running { background: var(--surface-alt); color: var(--text-secondary); border: 1px solid var(--border); }
+.result code { word-break: break-all; }
+
+/* ── Code sample shown next to each form ─────────────────────────────────── */
+.snippet {
+  background: var(--surface-alt); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.9rem 1rem; overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem; line-height: 1.55; color: var(--text);
+  white-space: pre; margin: 0;
+}
+
+/* ── Authentication mode index ───────────────────────────────────────────── */
+.mode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.mode-card { display: block; text-decoration: none; color: inherit; }
+.mode-card:hover { border-color: var(--accent); }
+.mode-card h2 { font-size: 1rem; margin-bottom: 0.35rem; }
+.mode-card p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
+.mode-card .keys { margin-top: 0.6rem; font-size: 0.78rem; color: var(--text-muted); }
+.two-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
