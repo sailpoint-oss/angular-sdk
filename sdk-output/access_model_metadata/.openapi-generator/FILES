@@ -40,6 +40,8 @@ SearchAggregationSpecification.md
 SearchFilterType.md
 SubSearchAggregationSpecification.md
 TextQuery.md
+TrackerKeyDTO.md
+TrackerValueDTO.md
 TypeAheadQuery.md
 api.base.service.ts
 api.module.ts
@@ -89,6 +91,8 @@ model/searchAggregationSpecification.ts
 model/searchFilterType.ts
 model/subSearchAggregationSpecification.ts
 model/textQuery.ts
+model/trackerKeyDTO.ts
+model/trackerValueDTO.ts
 model/typeAheadQuery.ts
 ng-package.json
 package.json

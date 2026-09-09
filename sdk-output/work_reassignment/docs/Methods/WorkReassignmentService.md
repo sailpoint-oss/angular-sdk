@@ -350,7 +350,7 @@ export class ExampleComponent {
 This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
 :::
 List reassignment configurations
-Gets all Reassignment configuration for the current org.
+Gets a paginated list of Reassignment configurations for the current org.
 
 [API Spec](https://developer.sailpoint.com/docs/api/list-reassignment-configurations-v-1)
 
@@ -361,6 +361,8 @@ The service takes one object that holds every parameter. Its type is `ListReassi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+**limit** | `number` | Max number of results to return. | [optional] [default to 20]
+**offset** | `number` | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to 0]
 **xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 
 ### Return type
@@ -383,6 +385,8 @@ export class ExampleComponent {
   private readonly api = inject(WorkReassignmentService);
 
   listReassignmentConfigurationsV1(): void {
+    const limit: number = ; // Max number of results to return. (optional)
+    const offset: number = ; // Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
     const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.listReassignmentConfigurationsV1({  }).subscribe({
       next: (result) => console.log(result),

@@ -15,12 +15,15 @@
           createAccessModelMetadataAttributeV1(): void {
             const attributeDTO: AttributeDTO = {
               "multiselect" : false,
+              "isAdhoc" : false,
               "values" : [ {
                 "name" : "Public",
+                "type" : "static",
                 "value" : "public",
                 "status" : "active"
               }, {
                 "name" : "Public",
+                "type" : "static",
                 "value" : "public",
                 "status" : "active"
               } ],
@@ -55,10 +58,54 @@
             const key: string = 'iscPrivacy'; // string
             const attributeValueDTO: AttributeValueDTO = {
               "name" : "Public",
+              "type" : "static",
               "value" : "public",
               "status" : "active"
             }; // AttributeValueDTO
             this.api.createAccessModelMetadataAttributeValueV1({ key: key, attributeValueDTO: attributeValueDTO }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-model-metadata/v1/attributes/{key}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#delete-access-model-metadata-attribute-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessModelMetadataService);
+
+          deleteAccessModelMetadataAttributeV1(): void {
+            const key: string = 'iscPrivacy'; // string
+            this.api.deleteAccessModelMetadataAttributeV1({ key: key }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-model-metadata/v1/attributes/{key}/values/{value}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_model_metadata/methods/access-model-metadata#delete-access-model-metadata-attribute-value-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessModelMetadataService } from '@sailpoint/angular-sdk/access_model_metadata';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessModelMetadataService);
+
+          deleteAccessModelMetadataAttributeValueV1(): void {
+            const key: string = 'iscPrivacy'; // string
+            const value: string = 'public'; // string
+            this.api.deleteAccessModelMetadataAttributeValueV1({ key: key, value: value }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -124,6 +171,7 @@
             const filters: string = 'name eq "Privacy"'; // string
             const sorters: string = 'name,-key'; // string
             const limit: number = 250; // number
+            const offset: number = 0; // number
             const count: boolean = true; // boolean
             this.api.listAccessModelMetadataAttributeV1({  }).subscribe({
               next: (result) => console.log(result),
@@ -146,7 +194,10 @@
 
           listAccessModelMetadataAttributeValueV1(): void {
             const key: string = 'iscPrivacy'; // string
+            const filters: string = 'name eq "Public"'; // string
+            const sorters: string = 'name,-value'; // string
             const limit: number = 250; // number
+            const offset: number = 0; // number
             const count: boolean = true; // boolean
             this.api.listAccessModelMetadataAttributeValueV1({ key: key }).subscribe({
               next: (result) => console.log(result),

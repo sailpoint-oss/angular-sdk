@@ -96,3 +96,32 @@
             });
           }
         }
+- path: /personal-access-tokens/v1/bulk-update
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/personal_access_tokens/methods/personal-access-tokens#update-bulk-personal-access-tokens-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
+        import { BulkUpdatePersonalAccessTokensRequest } from '@sailpoint/angular-sdk/personal_access_tokens';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PersonalAccessTokensService);
+
+          updateBulkPersonalAccessTokensV1(): void {
+            const bulkUpdatePersonalAccessTokensRequest: BulkUpdatePersonalAccessTokensRequest = {
+              "patch" : [ {
+                "op" : "replace",
+                "path" : "/expirationDate",
+                "value" : "2026-08-01T00:00:00.000Z"
+              } ],
+              "ids" : [ "695dab70d33d466b81d958dc9fb392db", "abc123def456abc123def456abc12345" ]
+            }; // BulkUpdatePersonalAccessTokensRequest
+            this.api.updateBulkPersonalAccessTokensV1({ bulkUpdatePersonalAccessTokensRequest: bulkUpdatePersonalAccessTokensRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

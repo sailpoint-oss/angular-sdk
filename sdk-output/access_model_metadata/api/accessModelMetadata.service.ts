@@ -36,6 +36,10 @@ import { JsonPatchOperation } from '../model/jsonPatchOperation';
 import { ListAccessModelMetadataAttributeV1401Response } from '../model/listAccessModelMetadataAttributeV1401Response';
 // @ts-ignore
 import { ListAccessModelMetadataAttributeV1429Response } from '../model/listAccessModelMetadataAttributeV1429Response';
+// @ts-ignore
+import { TrackerKeyDTO } from '../model/trackerKeyDTO';
+// @ts-ignore
+import { TrackerValueDTO } from '../model/trackerValueDTO';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -55,6 +59,18 @@ export interface CreateAccessModelMetadataAttributeValueV1RequestParams {
     attributeValueDTO: AttributeValueDTO;
 }
 
+export interface DeleteAccessModelMetadataAttributeV1RequestParams {
+    /** Technical name of the Attribute. */
+    key: string;
+}
+
+export interface DeleteAccessModelMetadataAttributeValueV1RequestParams {
+    /** Technical name of the Attribute. */
+    key: string;
+    /** Technical name of the Attribute value. */
+    value: string;
+}
+
 export interface GetAccessModelMetadataAttributeV1RequestParams {
     /** Technical name of the Attribute. */
     key: string;
@@ -68,12 +84,14 @@ export interface GetAccessModelMetadataAttributeValueV1RequestParams {
 }
 
 export interface ListAccessModelMetadataAttributeV1RequestParams {
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **key**: *eq*  **name**: *eq*  **type**: *eq*  **status**: *eq*  **objectTypes**: *eq*  Supported composite operators are *and, or* */
+    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **key**: *eq, co*  **name**: *eq, co*  **type**: *eq*  **status**: *eq*  **objectTypes**: *eq*  Supported composite operators are *and, or* */
     filters?: string;
-    /** Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **name, key** */
+    /** Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **key, name, type, status** */
     sorters?: string;
     /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    offset?: number;
     /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     count?: boolean;
 }
@@ -81,8 +99,14 @@ export interface ListAccessModelMetadataAttributeV1RequestParams {
 export interface ListAccessModelMetadataAttributeValueV1RequestParams {
     /** Technical name of the Attribute. */
     key: string;
+    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **value**: *eq, co*  **name**: *eq, co*  **status**: *eq*  **type**: *eq*  Supported composite operators are *and, or* */
+    filters?: string;
+    /** Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **value, name, status, type** */
+    sorters?: string;
     /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    offset?: number;
     /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     count?: boolean;
 }
@@ -130,7 +154,7 @@ export class AccessModelMetadataService extends BaseService {
 
     /**
      * Create access model metadata attribute
-     * Create a new Access Model Metadata Attribute. 
+     * Create a new Access Model Metadata Attribute.  The **isAdhoc** field can be set on creation to indicate whether the Attribute supports ad-hoc (dynamically created) values in addition to static values; if omitted, it defaults to *false*.  Any **values** provided at creation time must each have a *type* of *static* (or omit/leave *type* blank); *adhoc* is not an allowed value on this public API and results in a *400* error. Ad-hoc values are created dynamically through an internal service-to-service flow, not through this API. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -195,7 +219,7 @@ export class AccessModelMetadataService extends BaseService {
 
     /**
      * Create access model metadata value
-     * Create a new value for an existing Access Model Metadata Attribute.     
+     * Create a new value for an existing Access Model Metadata Attribute.  The **type** field must be omitted, blank, or *static* (case-insensitive); *adhoc* is not an allowed value on this public API and results in a *400* error. Ad-hoc values are created dynamically through an internal service-to-service flow when the parent Attribute has *isAdhoc* set to *true*, not through this API. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -252,6 +276,120 @@ export class AccessModelMetadataService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: attributeValueDTO,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Delete access model metadata attribute
+     * Delete an existing Access Model Metadata Attribute and all of its values. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public deleteAccessModelMetadataAttributeV1(requestParameters: DeleteAccessModelMetadataAttributeV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<TrackerKeyDTO>;
+    public deleteAccessModelMetadataAttributeV1(requestParameters: DeleteAccessModelMetadataAttributeV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<TrackerKeyDTO>>;
+    public deleteAccessModelMetadataAttributeV1(requestParameters: DeleteAccessModelMetadataAttributeV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<TrackerKeyDTO>>;
+    public deleteAccessModelMetadataAttributeV1(requestParameters: DeleteAccessModelMetadataAttributeV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const key = requestParameters?.key;
+        if (key === null || key === undefined) {
+            throw new Error('Required parameter key was null or undefined when calling deleteAccessModelMetadataAttributeV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-model-metadata/v1/attributes/${this.configuration.encodeParam({name: "key", value: key, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<TrackerKeyDTO>('delete', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Delete access model metadata value
+     * Delete an existing Access Model Metadata Attribute Value. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public deleteAccessModelMetadataAttributeValueV1(requestParameters: DeleteAccessModelMetadataAttributeValueV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<TrackerValueDTO>;
+    public deleteAccessModelMetadataAttributeValueV1(requestParameters: DeleteAccessModelMetadataAttributeValueV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<TrackerValueDTO>>;
+    public deleteAccessModelMetadataAttributeValueV1(requestParameters: DeleteAccessModelMetadataAttributeValueV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<TrackerValueDTO>>;
+    public deleteAccessModelMetadataAttributeValueV1(requestParameters: DeleteAccessModelMetadataAttributeValueV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const key = requestParameters?.key;
+        if (key === null || key === undefined) {
+            throw new Error('Required parameter key was null or undefined when calling deleteAccessModelMetadataAttributeValueV1.');
+        }
+        const value = requestParameters?.value;
+        if (value === null || value === undefined) {
+            throw new Error('Required parameter value was null or undefined when calling deleteAccessModelMetadataAttributeValueV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-model-metadata/v1/attributes/${this.configuration.encodeParam({name: "key", value: key, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/values/${this.configuration.encodeParam({name: "value", value: value, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<TrackerValueDTO>('delete', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
@@ -378,7 +516,7 @@ export class AccessModelMetadataService extends BaseService {
 
     /**
      * List access model metadata attributes
-     * Get a list of Access Model Metadata Attributes
+     * Get a list of Access Model Metadata Attributes. Supports pagination through limit and offset parameters.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -390,6 +528,7 @@ export class AccessModelMetadataService extends BaseService {
         const filters = requestParameters?.filters;
         const sorters = requestParameters?.sorters;
         const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
         const count = requestParameters?.count;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
@@ -399,6 +538,8 @@ export class AccessModelMetadataService extends BaseService {
           <any>sorters, 'sorters');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>count, 'count');
 
@@ -444,7 +585,7 @@ export class AccessModelMetadataService extends BaseService {
 
     /**
      * List access model metadata values
-     * Get a list of Access Model Metadata Attribute Values
+     * Get a list of Access Model Metadata Attribute Values. Supports pagination through limit and offset parameters.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -457,12 +598,21 @@ export class AccessModelMetadataService extends BaseService {
         if (key === null || key === undefined) {
             throw new Error('Required parameter key was null or undefined when calling listAccessModelMetadataAttributeValueV1.');
         }
+        const filters = requestParameters?.filters;
+        const sorters = requestParameters?.sorters;
         const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
         const count = requestParameters?.count;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>filters, 'filters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>count, 'count');
 
@@ -508,7 +658,7 @@ export class AccessModelMetadataService extends BaseService {
 
     /**
      * Update access model metadata attribute
-     * Update an existing Access Model Metadata Attribute.   The following fields are patchable: **name**, **description**, **multiselect**, **values** 
+     * Update an existing Access Model Metadata Attribute.   The following fields are patchable: **name**, **description**, **multiselect**, **isAdhoc**, **values** 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

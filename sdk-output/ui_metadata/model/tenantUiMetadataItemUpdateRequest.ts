@@ -22,5 +22,17 @@ export interface TenantUiMetadataItemUpdateRequest {
      * Placeholder text displayed in the username input field. If you would like to reset the value use \"null\".
      */
     usernameEmptyText?: string | null;
+    /**
+     * Display name for the instance badge. Optional. Omit this property to leave the stored value unchanged. Use null to clear it.
+     */
+    instanceBadgeDisplayName?: string | null;
+    /**
+     * Hex value of color for the instance badge. Optional. Omit this property to leave the stored value unchanged. Use null to clear it.
+     */
+    instanceBadgeColor?: string | null;
+    /**
+     * Visibility toggle for the instance badge. Optional. Omit this property to leave the stored value unchanged. Null is stored as false.
+     */
+    instanceBadgeVisible?: boolean | null;
 }
 

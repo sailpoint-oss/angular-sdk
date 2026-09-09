@@ -27,6 +27,14 @@ import { AccessProfileBulkUpdateRequestInner } from '../model/accessProfileBulkU
 // @ts-ignore
 import { AccessProfileUpdateItem } from '../model/accessProfileUpdateItem';
 // @ts-ignore
+import { Accessprofilemetadatabulkupdatebyfilterrequest } from '../model/accessprofilemetadatabulkupdatebyfilterrequest';
+// @ts-ignore
+import { Accessprofilemetadatabulkupdatebyidrequest } from '../model/accessprofilemetadatabulkupdatebyidrequest';
+// @ts-ignore
+import { Accessprofilemetadatabulkupdatebyqueryrequest } from '../model/accessprofilemetadatabulkupdatebyqueryrequest';
+// @ts-ignore
+import { Accessprofilemetadatabulkupdateresponse } from '../model/accessprofilemetadatabulkupdateresponse';
+// @ts-ignore
 import { Entitlement } from '../model/entitlement';
 // @ts-ignore
 import { ErrorResponseDto } from '../model/errorResponseDto';
@@ -56,6 +64,15 @@ export interface DeleteAccessProfileV1RequestParams {
 
 export interface DeleteAccessProfilesInBulkV1RequestParams {
     accessProfileBulkDeleteRequest: AccessProfileBulkDeleteRequest;
+}
+
+export interface DeleteMetadataFromAccessProfileByKeyAndValueV1RequestParams {
+    /** The access profile\&#39;s ID. */
+    id: string;
+    /** Technical name of the Attribute. */
+    attributeKey: string;
+    /** Technical name of the Attribute Value. */
+    attributeValue: string;
 }
 
 export interface GetAccessProfileEntitlementsV1RequestParams {
@@ -105,6 +122,27 @@ export interface PatchAccessProfileV1RequestParams {
 
 export interface UpdateAccessProfilesInBulkV1RequestParams {
     accessProfileBulkUpdateRequestInner: Array<AccessProfileBulkUpdateRequestInner>;
+}
+
+export interface UpdateAccessProfilesMetadataByFilterV1RequestParams {
+    accessprofilemetadatabulkupdatebyfilterrequest: Accessprofilemetadatabulkupdatebyfilterrequest;
+}
+
+export interface UpdateAccessProfilesMetadataByIdsV1RequestParams {
+    accessprofilemetadatabulkupdatebyidrequest: Accessprofilemetadatabulkupdatebyidrequest;
+}
+
+export interface UpdateAccessProfilesMetadataByQueryV1RequestParams {
+    accessprofilemetadatabulkupdatebyqueryrequest: Accessprofilemetadatabulkupdatebyqueryrequest;
+}
+
+export interface UpdateAttributeKeyAndValueToAccessProfileV1RequestParams {
+    /** The access profile\&#39;s ID. */
+    id: string;
+    /** Technical name of the Attribute. */
+    attributeKey: string;
+    /** Technical name of the Attribute Value. */
+    attributeValue: string;
 }
 
 
@@ -292,6 +330,69 @@ export class AccessProfilesService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: accessProfileBulkDeleteRequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Remove metadata from access profile
+     * This API removes a single Access Model Metadata value from an access profile by attribute key and attribute value.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public deleteMetadataFromAccessProfileByKeyAndValueV1(requestParameters: DeleteMetadataFromAccessProfileByKeyAndValueV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
+    public deleteMetadataFromAccessProfileByKeyAndValueV1(requestParameters: DeleteMetadataFromAccessProfileByKeyAndValueV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
+    public deleteMetadataFromAccessProfileByKeyAndValueV1(requestParameters: DeleteMetadataFromAccessProfileByKeyAndValueV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
+    public deleteMetadataFromAccessProfileByKeyAndValueV1(requestParameters: DeleteMetadataFromAccessProfileByKeyAndValueV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling deleteMetadataFromAccessProfileByKeyAndValueV1.');
+        }
+        const attributeKey = requestParameters?.attributeKey;
+        if (attributeKey === null || attributeKey === undefined) {
+            throw new Error('Required parameter attributeKey was null or undefined when calling deleteMetadataFromAccessProfileByKeyAndValueV1.');
+        }
+        const attributeValue = requestParameters?.attributeValue;
+        if (attributeValue === null || attributeValue === undefined) {
+            throw new Error('Required parameter attributeValue was null or undefined when calling deleteMetadataFromAccessProfileByKeyAndValueV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/access-model-metadata/${this.configuration.encodeParam({name: "attributeKey", value: attributeKey, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/values/${this.configuration.encodeParam({name: "attributeValue", value: attributeValue, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
@@ -632,6 +733,264 @@ export class AccessProfilesService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: accessProfileBulkUpdateRequestInner,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Bulk-update metadata by filter
+     * This API initiates a bulk update of Access Model Metadata for every access profile matching the supplied filter expression.  The update is processed asynchronously. The response returns the ID of the task performing the update.  A single access profile cannot be assigned more than 25 metadata values. Adding or replacing custom metadata requires a suite license.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateAccessProfilesMetadataByFilterV1(requestParameters: UpdateAccessProfilesMetadataByFilterV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Accessprofilemetadatabulkupdateresponse>;
+    public updateAccessProfilesMetadataByFilterV1(requestParameters: UpdateAccessProfilesMetadataByFilterV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Accessprofilemetadatabulkupdateresponse>>;
+    public updateAccessProfilesMetadataByFilterV1(requestParameters: UpdateAccessProfilesMetadataByFilterV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Accessprofilemetadatabulkupdateresponse>>;
+    public updateAccessProfilesMetadataByFilterV1(requestParameters: UpdateAccessProfilesMetadataByFilterV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const accessprofilemetadatabulkupdatebyfilterrequest = requestParameters?.accessprofilemetadatabulkupdatebyfilterrequest;
+        if (accessprofilemetadatabulkupdatebyfilterrequest === null || accessprofilemetadatabulkupdatebyfilterrequest === undefined) {
+            throw new Error('Required parameter accessprofilemetadatabulkupdatebyfilterrequest was null or undefined when calling updateAccessProfilesMetadataByFilterV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v1/access-model-metadata/bulk-update/filter`;
+        return this.httpClient.request<Accessprofilemetadatabulkupdateresponse>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: accessprofilemetadatabulkupdatebyfilterrequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Bulk-update metadata by ids
+     * This API initiates a bulk update of Access Model Metadata for one or more access profiles by a list of access profile IDs.  The update is processed asynchronously. The response returns the ID of the task performing the update.  The maximum access profile count in a single request is 3000. A single access profile cannot be assigned more than 25 metadata values. Adding or replacing custom metadata requires a suite license.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateAccessProfilesMetadataByIdsV1(requestParameters: UpdateAccessProfilesMetadataByIdsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Accessprofilemetadatabulkupdateresponse>;
+    public updateAccessProfilesMetadataByIdsV1(requestParameters: UpdateAccessProfilesMetadataByIdsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Accessprofilemetadatabulkupdateresponse>>;
+    public updateAccessProfilesMetadataByIdsV1(requestParameters: UpdateAccessProfilesMetadataByIdsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Accessprofilemetadatabulkupdateresponse>>;
+    public updateAccessProfilesMetadataByIdsV1(requestParameters: UpdateAccessProfilesMetadataByIdsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const accessprofilemetadatabulkupdatebyidrequest = requestParameters?.accessprofilemetadatabulkupdatebyidrequest;
+        if (accessprofilemetadatabulkupdatebyidrequest === null || accessprofilemetadatabulkupdatebyidrequest === undefined) {
+            throw new Error('Required parameter accessprofilemetadatabulkupdatebyidrequest was null or undefined when calling updateAccessProfilesMetadataByIdsV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v1/access-model-metadata/bulk-update/ids`;
+        return this.httpClient.request<Accessprofilemetadatabulkupdateresponse>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: accessprofilemetadatabulkupdatebyidrequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Bulk-update metadata by query
+     * This API initiates a bulk update of Access Model Metadata for every access profile matching the supplied search query.  The update is processed asynchronously. The response returns the ID of the task performing the update.  A single access profile cannot be assigned more than 25 metadata values. Adding or replacing custom metadata requires a suite license.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateAccessProfilesMetadataByQueryV1(requestParameters: UpdateAccessProfilesMetadataByQueryV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Accessprofilemetadatabulkupdateresponse>;
+    public updateAccessProfilesMetadataByQueryV1(requestParameters: UpdateAccessProfilesMetadataByQueryV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Accessprofilemetadatabulkupdateresponse>>;
+    public updateAccessProfilesMetadataByQueryV1(requestParameters: UpdateAccessProfilesMetadataByQueryV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Accessprofilemetadatabulkupdateresponse>>;
+    public updateAccessProfilesMetadataByQueryV1(requestParameters: UpdateAccessProfilesMetadataByQueryV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const accessprofilemetadatabulkupdatebyqueryrequest = requestParameters?.accessprofilemetadatabulkupdatebyqueryrequest;
+        if (accessprofilemetadatabulkupdatebyqueryrequest === null || accessprofilemetadatabulkupdatebyqueryrequest === undefined) {
+            throw new Error('Required parameter accessprofilemetadatabulkupdatebyqueryrequest was null or undefined when calling updateAccessProfilesMetadataByQueryV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v1/access-model-metadata/bulk-update/query`;
+        return this.httpClient.request<Accessprofilemetadatabulkupdateresponse>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: accessprofilemetadatabulkupdatebyqueryrequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Add metadata to access profile
+     * This API adds a single Access Model Metadata value to an access profile by attribute key and attribute value. A single access profile cannot be assigned more than 25 metadata values. Adding custom metadata requires a suite license.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateAttributeKeyAndValueToAccessProfileV1(requestParameters: UpdateAttributeKeyAndValueToAccessProfileV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AccessProfile>;
+    public updateAttributeKeyAndValueToAccessProfileV1(requestParameters: UpdateAttributeKeyAndValueToAccessProfileV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AccessProfile>>;
+    public updateAttributeKeyAndValueToAccessProfileV1(requestParameters: UpdateAttributeKeyAndValueToAccessProfileV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AccessProfile>>;
+    public updateAttributeKeyAndValueToAccessProfileV1(requestParameters: UpdateAttributeKeyAndValueToAccessProfileV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling updateAttributeKeyAndValueToAccessProfileV1.');
+        }
+        const attributeKey = requestParameters?.attributeKey;
+        if (attributeKey === null || attributeKey === undefined) {
+            throw new Error('Required parameter attributeKey was null or undefined when calling updateAttributeKeyAndValueToAccessProfileV1.');
+        }
+        const attributeValue = requestParameters?.attributeValue;
+        if (attributeValue === null || attributeValue === undefined) {
+            throw new Error('Required parameter attributeValue was null or undefined when calling updateAttributeKeyAndValueToAccessProfileV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/access-model-metadata/${this.configuration.encodeParam({name: "attributeKey", value: attributeKey, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/values/${this.configuration.encodeParam({name: "attributeValue", value: attributeValue, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<AccessProfile>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

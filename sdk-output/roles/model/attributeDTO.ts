@@ -12,17 +12,21 @@ import { AttributeValueDTO } from './attributeValueDTO';
 
 export interface AttributeDTO { 
     /**
-     * Technical name of the Attribute. This is unique and cannot be changed after creation.
+     * Technical name of the Attribute. This is unique and cannot be changed after creation. Allowed characters are letters, numbers, dashes (-), and underscores (_); the value cannot start or end with a dash or underscore.
      */
     key?: string;
     /**
-     * The display name of the key.
+     * The display name of the key. Allowed characters are letters, numbers, whitespace, and the following special characters: . / | , ( ) & _ -
      */
     name?: string;
     /**
      * Indicates whether the attribute can have multiple values.
      */
     multiselect?: boolean;
+    /**
+     * Indicates whether this Attribute supports ad-hoc (dynamically created) values, in addition to pre-defined static values. Ad-hoc values are created dynamically through an internal service-to-service flow rather than through the public create-value API. This field can be set when creating an Attribute; if omitted, it defaults to false.
+     */
+    isAdhoc?: boolean | null;
     /**
      * The status of the Attribute.
      */
@@ -36,7 +40,7 @@ export interface AttributeDTO {
      */
     objectTypes?: Array<string> | null;
     /**
-     * The description of the Attribute.
+     * The description of the Attribute. Allowed characters are letters, numbers, whitespace, and the following special characters: . / | , ( ) & _ : -
      */
     description?: string;
     values?: Array<AttributeValueDTO> | null;

@@ -349,3 +349,103 @@
             });
           }
         }
+- path: /entitlements/v1/access-model-metadata/bulk-update/filter
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#update-entitlements-metadata-by-filter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+        import { Entitlementmetadatabulkupdatebyfilterrequest } from '@sailpoint/angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          updateEntitlementsMetadataByFilterV1(): void {
+            const entitlementmetadatabulkupdatebyfilterrequest: Entitlementmetadatabulkupdatebyfilterrequest = {
+              "values" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "topSecret" ]
+              } ],
+              "filters" : "id eq 2c9180867817ac4d017817c491119a20",
+              "replaceScope" : "ATTRIBUTE",
+              "operation" : "REPLACE"
+            }; // Entitlementmetadatabulkupdatebyfilterrequest
+            this.api.updateEntitlementsMetadataByFilterV1({ entitlementmetadatabulkupdatebyfilterrequest: entitlementmetadatabulkupdatebyfilterrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/access-model-metadata/bulk-update/ids
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#update-entitlements-metadata-by-ids-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+        import { Entitlementmetadatabulkupdatebyidrequest } from '@sailpoint/angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          updateEntitlementsMetadataByIdsV1(): void {
+            const entitlementmetadatabulkupdatebyidrequest: Entitlementmetadatabulkupdatebyidrequest = {
+              "entitlements" : [ "2c9180867817ac4d017817c491119a20", "2c9180867817ac4d017817c491119a21" ],
+              "values" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "topSecret" ]
+              } ],
+              "replaceScope" : "ATTRIBUTE",
+              "operation" : "REPLACE"
+            }; // Entitlementmetadatabulkupdatebyidrequest
+            this.api.updateEntitlementsMetadataByIdsV1({ entitlementmetadatabulkupdatebyidrequest: entitlementmetadatabulkupdatebyidrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /entitlements/v1/access-model-metadata/bulk-update/query
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/entitlements/methods/entitlements#update-entitlements-metadata-by-query-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+        import { Entitlementmetadatabulkupdatebyqueryrequest } from '@sailpoint/angular-sdk/entitlements';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(EntitlementsService);
+
+          updateEntitlementsMetadataByQueryV1(): void {
+            const entitlementmetadatabulkupdatebyqueryrequest: Entitlementmetadatabulkupdatebyqueryrequest = {
+              "query" : {
+                "indices" : [ "entitlements" ],
+                "queryType" : "TEXT",
+                "textQuery" : {
+                  "terms" : [ "test123" ],
+                  "fields" : [ "id" ],
+                  "matchAny" : false,
+                  "contains" : true
+                },
+                "includeNested" : false
+              },
+              "values" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "topSecret" ]
+              } ],
+              "replaceScope" : "ATTRIBUTE",
+              "operation" : "REPLACE"
+            }; // Entitlementmetadatabulkupdatebyqueryrequest
+            this.api.updateEntitlementsMetadataByQueryV1({ entitlementmetadatabulkupdatebyqueryrequest: entitlementmetadatabulkupdatebyqueryrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

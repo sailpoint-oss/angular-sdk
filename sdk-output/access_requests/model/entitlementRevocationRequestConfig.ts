@@ -12,7 +12,7 @@ import { EntitlementApprovalScheme } from './entitlementApprovalScheme';
 
 export interface EntitlementRevocationRequestConfig { 
     /**
-     * Ordered list of approval steps for the access request. Empty when no approval is required.
+     * Ordered list of approval steps for the revocation request. Empty when no approval is required.
      */
     approvalSchemes?: Array<EntitlementApprovalScheme>;
 }

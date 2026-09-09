@@ -3,6 +3,7 @@
 AccessItemApproverDto.md
 AccessItemRequestedForDto.md
 AccessItemRequesterDto.md
+AccessRequestDynamicApprovalResponse.md
 AccessRequestDynamicApprover.md
 AccessRequestDynamicApprover2.md
 AccessRequestDynamicApproverRequestedItemsInner.md
@@ -15,6 +16,7 @@ AccessRequestPostApprovalRequestedItemsStatusInnerApprovalInfoInnerApprover.md
 AccessRequestPreApproval.md
 AccessRequestPreApproval2.md
 AccessRequestPreApprovalRequestedItemsInner.md
+AccessRequestSubmittedResponse.md
 AccountAggregationCompleted.md
 AccountAggregationCompletedSource.md
 AccountAggregationCompletedStats.md
@@ -75,6 +77,9 @@ CompleteInvocationInput.md
 ErrorMessageDto.md
 ErrorResponseDto.md
 EventBridgeConfig.md
+FormSubmitted.md
+FormSubmittedCreatedBy.md
+FormSubmittedSubmittedBy.md
 HttpAuthenticationType.md
 HttpConfig.md
 HttpDispatchMode.md
@@ -110,6 +115,8 @@ MachineIdentityUpdatedSingleValueAttributeChangesInnerNewValue.md
 MachineIdentityUpdatedSingleValueAttributeChangesInnerOldValue.md
 MachineIdentityUpdatedUserEntitlementChanges.md
 MachineIdentityUserEntitlements.md
+OutlierDetected.md
+OutlierDetectedIdentity.md
 ProvisioningCompleted.md
 ProvisioningCompletedAccountRequestsInner.md
 ProvisioningCompletedAccountRequestsInnerAttributeRequestsInner.md
@@ -119,6 +126,20 @@ ProvisioningCompletedRequester.md
 README.md
 Reassignment.md
 Reviewer.md
+SODViolationClosedPayload.md
+SODViolationClosedPayloadOwner.md
+SODViolationClosedPayloadPolicy.md
+SODViolationClosedPayloadTarget.md
+SODViolationCreatedPayload.md
+SODViolationCreatedPayloadOwner.md
+SODViolationCreatedPayloadPolicy.md
+SODViolationCreatedPayloadTarget.md
+SODViolationMitigatedPayload.md
+SODViolationMitigatedPayloadAppliedControlsInner.md
+SODViolationMitigatedPayloadAppliedControlsInnerApplier.md
+SODViolationMitigatedPayloadAppliedControlsInnerControl.md
+SODViolationMitigatedPayloadOwner.md
+SODViolationReopenedPayload.md
 SavedSearchComplete.md
 SavedSearchCompleteSearchResults.md
 SavedSearchCompleteSearchResultsAccount.md
@@ -154,6 +175,7 @@ VAClusterStatusChangeEventHealthCheckResult.md
 VAClusterStatusChangeEventPreviousHealthCheckResult.md
 ValidateFilterInputDto.md
 ValidateFilterOutputDto.md
+ViolationAppliedControlStatus.md
 api.base.service.ts
 api.module.ts
 api/api.ts
@@ -167,6 +189,7 @@ index.ts
 model/accessItemApproverDto.ts
 model/accessItemRequestedForDto.ts
 model/accessItemRequesterDto.ts
+model/accessRequestDynamicApprovalResponse.ts
 model/accessRequestDynamicApprover.ts
 model/accessRequestDynamicApprover2.ts
 model/accessRequestDynamicApproverRequestedItemsInner.ts
@@ -179,6 +202,7 @@ model/accessRequestPostApprovalRequestedItemsStatusInnerApprovalInfoInnerApprove
 model/accessRequestPreApproval.ts
 model/accessRequestPreApproval2.ts
 model/accessRequestPreApprovalRequestedItemsInner.ts
+model/accessRequestSubmittedResponse.ts
 model/accountAggregationCompleted.ts
 model/accountAggregationCompletedSource.ts
 model/accountAggregationCompletedStats.ts
@@ -239,6 +263,9 @@ model/completeInvocationInput.ts
 model/errorMessageDto.ts
 model/errorResponseDto.ts
 model/eventBridgeConfig.ts
+model/formSubmitted.ts
+model/formSubmittedCreatedBy.ts
+model/formSubmittedSubmittedBy.ts
 model/httpAuthenticationType.ts
 model/httpConfig.ts
 model/httpDispatchMode.ts
@@ -275,6 +302,8 @@ model/machineIdentityUpdatedSingleValueAttributeChangesInnerOldValue.ts
 model/machineIdentityUpdatedUserEntitlementChanges.ts
 model/machineIdentityUserEntitlements.ts
 model/models.ts
+model/outlierDetected.ts
+model/outlierDetectedIdentity.ts
 model/provisioningCompleted.ts
 model/provisioningCompletedAccountRequestsInner.ts
 model/provisioningCompletedAccountRequestsInnerAttributeRequestsInner.ts
@@ -283,6 +312,20 @@ model/provisioningCompletedRecipient.ts
 model/provisioningCompletedRequester.ts
 model/reassignment.ts
 model/reviewer.ts
+model/sODViolationClosedPayload.ts
+model/sODViolationClosedPayloadOwner.ts
+model/sODViolationClosedPayloadPolicy.ts
+model/sODViolationClosedPayloadTarget.ts
+model/sODViolationCreatedPayload.ts
+model/sODViolationCreatedPayloadOwner.ts
+model/sODViolationCreatedPayloadPolicy.ts
+model/sODViolationCreatedPayloadTarget.ts
+model/sODViolationMitigatedPayload.ts
+model/sODViolationMitigatedPayloadAppliedControlsInner.ts
+model/sODViolationMitigatedPayloadAppliedControlsInnerApplier.ts
+model/sODViolationMitigatedPayloadAppliedControlsInnerControl.ts
+model/sODViolationMitigatedPayloadOwner.ts
+model/sODViolationReopenedPayload.ts
 model/savedSearchComplete.ts
 model/savedSearchCompleteSearchResults.ts
 model/savedSearchCompleteSearchResultsAccount.ts
@@ -316,6 +359,7 @@ model/vAClusterStatusChangeEventHealthCheckResult.ts
 model/vAClusterStatusChangeEventPreviousHealthCheckResult.ts
 model/validateFilterInputDto.ts
 model/validateFilterOutputDto.ts
+model/violationAppliedControlStatus.ts
 ng-package.json
 package.json
 param.ts

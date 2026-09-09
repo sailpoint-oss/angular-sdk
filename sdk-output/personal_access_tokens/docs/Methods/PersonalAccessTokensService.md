@@ -30,6 +30,7 @@ Method | HTTP request | Description
 [**delete-personal-access-token-v1**](#delete-personal-access-token-v1) | **DELETE** `/personal-access-tokens/v1/{id}` | Delete personal access token
 [**list-personal-access-tokens-v1**](#list-personal-access-tokens-v1) | **GET** `/personal-access-tokens/v1` | List personal access tokens
 [**patch-personal-access-token-v1**](#patch-personal-access-token-v1) | **PATCH** `/personal-access-tokens/v1/{id}` | Patch personal access token
+[**update-bulk-personal-access-tokens-v1**](#update-bulk-personal-access-tokens-v1) | **PATCH** `/personal-access-tokens/v1/bulk-update` | Bulk update personal access tokens
 
 
 ## create-personal-access-token-v1
@@ -230,6 +231,63 @@ export class ExampleComponent {
     const id: string = ; // The Personal Access Token id
     const jsonPatchOperation: Array<JsonPatchOperation> = ; // A list of OAuth client update operations according to the [JSON Patch](https://tools.ietf.org/html/rfc6902) standard.  The following fields are patchable: * name * scope * expirationDate * userAwareTokenNeverExpires  **Important:** See the endpoint description for validation rules regarding the relationship between &#x60;expirationDate&#x60; and &#x60;userAwareTokenNeverExpires&#x60;. 
     this.api.patchPersonalAccessTokenV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
+
+## update-bulk-personal-access-tokens-v1
+Bulk update personal access tokens
+This applies a single [JSON Patch](https://tools.ietf.org/html/rfc6902) document to multiple personal access tokens (PATs) in the current tenant in one request.
+The same `patch` is applied to every token referenced in `ids`. Up to **25** tokens can be updated per request.
+This is an administrative operation intended for org admins managing PATs across their tenant. The caller must have the `idn:all-personal-access-tokens:update` right. API OAuth client credentials are not permitted to call this endpoint.
+Note: This operation is also accessible via `POST` to the same path; both methods behave identically. Unlike the single-token patch endpoint, the request body uses `Content-Type: application/json` (not `application/json-patch+json`).
+**Allowed patch paths**
+Only expiration-related paths may be modified in bulk:
+* `/expirationDate` - Set or clear the token's expiration date. Any other path (for example `/name` or `/scope`) results in a `400` response.
+* `/userAwareTokenNeverExpires` - Explicit acknowledgment that the token will never expire.
+**expirationDate and userAwareTokenNeverExpires Relationship:**
+When clearing `expirationDate` (either by removing it or replacing it with `null`), `userAwareTokenNeverExpires` must also be set to `true` in the same patch. This serves as an explicit acknowledgment that the caller is aware of the security implications of creating a token that will never expire. When `expirationDate` is set to a valid future date-time, `userAwareTokenNeverExpires` can be omitted.
+**Note:** `userAwareTokenNeverExpires` is stored internally and is not returned in the response.
+
+[API Spec](https://developer.sailpoint.com/docs/api/update-bulk-personal-access-tokens-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `UpdateBulkPersonalAccessTokensV1RequestParams`.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**bulkUpdatePersonalAccessTokensRequest** | `BulkUpdatePersonalAccessTokensRequest` | The IDs of the personal access tokens to update, along with a single JSON Patch document to apply to each of them. | 
+
+### Return type
+
+`Observable<Array<GetPersonalAccessTokenResponse>>`
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { PersonalAccessTokensService } from '@sailpoint/angular-sdk/personal_access_tokens';
+import { BulkUpdatePersonalAccessTokensRequest } from '@sailpoint/angular-sdk/personal_access_tokens';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(PersonalAccessTokensService);
+
+  updateBulkPersonalAccessTokensV1(): void {
+    const bulkUpdatePersonalAccessTokensRequest: BulkUpdatePersonalAccessTokensRequest = ; // The IDs of the personal access tokens to update, along with a single JSON Patch document to apply to each of them.
+    this.api.updateBulkPersonalAccessTokensV1({ bulkUpdatePersonalAccessTokensRequest: bulkUpdatePersonalAccessTokensRequest }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });

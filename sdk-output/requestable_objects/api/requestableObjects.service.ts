@@ -24,8 +24,6 @@ import { ListRequestableObjectsV1401Response } from '../model/listRequestableObj
 import { ListRequestableObjectsV1429Response } from '../model/listRequestableObjectsV1429Response';
 // @ts-ignore
 import { RequestableObject } from '../model/requestableObject';
-// @ts-ignore
-import { RequestableObjectRequestStatus } from '../model/requestableObjectRequestStatus';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -37,11 +35,11 @@ export interface ListRequestableObjectsV1RequestParams {
     /** If present, the value returns only requestable objects for the specified identity.  * Admin users can call this with any identity ID value.  * Non-admin users can only specify *me* or pass their own identity ID value.  * If absent, returns a list of all requestable objects for the tenant. Only admin users can make such a call. In this case, the available, pending, assigned accesses will not be annotated in the result. */
     identityId?: string;
     /** Filters the results to the specified type/types, where each type is one of &#x60;ROLE&#x60; or &#x60;ACCESS_PROFILE&#x60;. If absent, all types are returned. SailPoint may add support for additional types in the future without notice. */
-    types?: Array<'ACCESS_PROFILE' | 'ROLE'>;
+    types?: string;
     /** Allows searching requestable access items with a partial match on the name or description. If &#x60;term&#x60; is provided, then the API will ignore the &#x60;filter&#x60; query parameter. */
     term?: string;
     /** Filters the result to the specified status/statuses, where each status is one of &#x60;AVAILABLE&#x60;, &#x60;ASSIGNED&#x60;, or &#x60;PENDING&#x60;. Specifying this parameter without also specifying an &#x60;identity-id&#x60; parameter results in an error.  SailPoint may add additional statuses in the future without notice. */
-    statuses?: Array<RequestableObjectRequestStatus>;
+    statuses?: string;
     /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     limit?: number;
     /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
@@ -88,16 +86,12 @@ export class RequestableObjectsService extends BaseService {
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>identityId, 'identity-id');
-        if (types) {
-            localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-                [...types].join(COLLECTION_FORMATS['csv']), 'types');
-        }
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>types, 'types');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>term, 'term');
-        if (statuses) {
-            localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-                [...statuses].join(COLLECTION_FORMATS['csv']), 'statuses');
-        }
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>statuses, 'statuses');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>limit, 'limit');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
