@@ -182,6 +182,29 @@
             });
           }
         }
+- path: /access-profiles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#delete-metadata-from-access-profile-by-key-and-value-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          deleteMetadataFromAccessProfileByKeyAndValueV1(): void {
+            const id: string = '2c91808c74ff913f0175097daa9d59cd'; // string
+            const attributeKey: string = 'iscPrivacy'; // string
+            const attributeValue: string = 'public'; // string
+            this.api.deleteMetadataFromAccessProfileByKeyAndValueV1({ id: id, attributeKey: attributeKey, attributeValue: attributeValue }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /access-profiles/v1/{id}/entitlements
   method: get
   xCodeSample:
@@ -301,6 +324,129 @@
           updateAccessProfilesInBulkV1(): void {
             const accessProfileBulkUpdateRequestInner: Array<AccessProfileBulkUpdateRequestInner> = [{"id":"464ae7bf-791e-49fd-b746-06a2e4a89635","requestable":false}]; // Array<AccessProfileBulkUpdateRequestInner>
             this.api.updateAccessProfilesInBulkV1({ accessProfileBulkUpdateRequestInner: accessProfileBulkUpdateRequestInner }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/access-model-metadata/bulk-update/filter
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#update-access-profiles-metadata-by-filter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+        import { Accessprofilemetadatabulkupdatebyfilterrequest } from '@sailpoint/angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          updateAccessProfilesMetadataByFilterV1(): void {
+            const accessprofilemetadatabulkupdatebyfilterrequest: Accessprofilemetadatabulkupdatebyfilterrequest = {
+              "values" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "topSecret" ]
+              } ],
+              "filters" : "requestable eq false",
+              "replaceScope" : "ATTRIBUTE",
+              "operation" : "REPLACE"
+            }; // Accessprofilemetadatabulkupdatebyfilterrequest
+            this.api.updateAccessProfilesMetadataByFilterV1({ accessprofilemetadatabulkupdatebyfilterrequest: accessprofilemetadatabulkupdatebyfilterrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/access-model-metadata/bulk-update/ids
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#update-access-profiles-metadata-by-ids-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+        import { Accessprofilemetadatabulkupdatebyidrequest } from '@sailpoint/angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          updateAccessProfilesMetadataByIdsV1(): void {
+            const accessprofilemetadatabulkupdatebyidrequest: Accessprofilemetadatabulkupdatebyidrequest = {
+              "accessProfiles" : [ "b1db89554cfa431cb8b9921ea38d9367" ],
+              "values" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "topSecret" ]
+              } ],
+              "replaceScope" : "ATTRIBUTE",
+              "operation" : "REPLACE"
+            }; // Accessprofilemetadatabulkupdatebyidrequest
+            this.api.updateAccessProfilesMetadataByIdsV1({ accessprofilemetadatabulkupdatebyidrequest: accessprofilemetadatabulkupdatebyidrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/access-model-metadata/bulk-update/query
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#update-access-profiles-metadata-by-query-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+        import { Accessprofilemetadatabulkupdatebyqueryrequest } from '@sailpoint/angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          updateAccessProfilesMetadataByQueryV1(): void {
+            const accessprofilemetadatabulkupdatebyqueryrequest: Accessprofilemetadatabulkupdatebyqueryrequest = {
+              "query" : {
+                "indices" : [ "accessprofiles" ],
+                "queryType" : "TEXT",
+                "textQuery" : {
+                  "terms" : [ "test123" ],
+                  "fields" : [ "id" ],
+                  "matchAny" : false,
+                  "contains" : true
+                },
+                "includeNested" : false
+              },
+              "values" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "topSecret" ]
+              } ],
+              "replaceScope" : "ATTRIBUTE",
+              "operation" : "REPLACE"
+            }; // Accessprofilemetadatabulkupdatebyqueryrequest
+            this.api.updateAccessProfilesMetadataByQueryV1({ accessprofilemetadatabulkupdatebyqueryrequest: accessprofilemetadatabulkupdatebyqueryrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /access-profiles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#update-attribute-key-and-value-to-access-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          updateAttributeKeyAndValueToAccessProfileV1(): void {
+            const id: string = 'c24359c389374d0fb8585698a2189e3d'; // string
+            const attributeKey: string = 'iscPrivacy'; // string
+            const attributeValue: string = 'public'; // string
+            this.api.updateAttributeKeyAndValueToAccessProfileV1({ id: id, attributeKey: attributeKey, attributeValue: attributeValue }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });

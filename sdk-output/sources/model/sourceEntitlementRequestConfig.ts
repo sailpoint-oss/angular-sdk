@@ -7,15 +7,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EntitlementRevocationRequestConfig } from './entitlementRevocationRequestConfig';
-import { EntitlementAccessRequestConfig } from './entitlementAccessRequestConfig';
+import { SourceEntitlementAccessRequestConfig } from './sourceEntitlementAccessRequestConfig';
+import { SourceEntitlementRevocationRequestConfig } from './sourceEntitlementRevocationRequestConfig';
 
 
 /**
  * Entitlement Request Configuration
  */
 export interface SourceEntitlementRequestConfig { 
-    accessRequestConfig?: EntitlementAccessRequestConfig;
-    revocationRequestConfig?: EntitlementRevocationRequestConfig;
+    accessRequestConfig?: SourceEntitlementAccessRequestConfig;
+    revocationRequestConfig?: SourceEntitlementRevocationRequestConfig;
 }
 

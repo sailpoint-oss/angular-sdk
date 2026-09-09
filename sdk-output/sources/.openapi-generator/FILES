@@ -27,10 +27,6 @@ DependantAppConnectionsAccountSource.md
 DependantAppConnectionsAccountSourcePasswordPoliciesInner.md
 DependantConnectionsMissingDto.md
 DtoType.md
-EntitlementAccessRequestConfig.md
-EntitlementAccessRequestConfigMaxPermittedAccessDuration.md
-EntitlementApprovalScheme.md
-EntitlementRevocationRequestConfig.md
 ErrorMessageDto.md
 ErrorResponseDto.md
 FieldDetailsDto.md
@@ -77,7 +73,11 @@ SourceConnectionsDto.md
 SourceDataset.md
 SourceDatasetResource.md
 SourceDatasetResourceReference.md
+SourceEntitlementAccessRequestConfig.md
+SourceEntitlementAccessRequestConfigMaxPermittedAccessDuration.md
+SourceEntitlementApprovalScheme.md
 SourceEntitlementRequestConfig.md
+SourceEntitlementRevocationRequestConfig.md
 SourceHealthDto.md
 SourceManagementWorkgroup.md
 SourceManagerCorrelationMapping.md
@@ -134,10 +134,6 @@ model/dependantAppConnectionsAccountSource.ts
 model/dependantAppConnectionsAccountSourcePasswordPoliciesInner.ts
 model/dependantConnectionsMissingDto.ts
 model/dtoType.ts
-model/entitlementAccessRequestConfig.ts
-model/entitlementAccessRequestConfigMaxPermittedAccessDuration.ts
-model/entitlementApprovalScheme.ts
-model/entitlementRevocationRequestConfig.ts
 model/errorMessageDto.ts
 model/errorResponseDto.ts
 model/fieldDetailsDto.ts
@@ -184,7 +180,11 @@ model/sourceConnectionsDto.ts
 model/sourceDataset.ts
 model/sourceDatasetResource.ts
 model/sourceDatasetResourceReference.ts
+model/sourceEntitlementAccessRequestConfig.ts
+model/sourceEntitlementAccessRequestConfigMaxPermittedAccessDuration.ts
+model/sourceEntitlementApprovalScheme.ts
 model/sourceEntitlementRequestConfig.ts
+model/sourceEntitlementRevocationRequestConfig.ts
 model/sourceHealthDto.ts
 model/sourceManagementWorkgroup.ts
 model/sourceManagerCorrelationMapping.ts

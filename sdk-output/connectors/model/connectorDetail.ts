@@ -7,6 +7,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ProvisioningPolicyDto } from './provisioningPolicyDto';
 
 
 export interface ConnectorDetail { 
@@ -30,6 +31,10 @@ export interface ConnectorDetail {
      * The connector application xml
      */
     applicationXml?: string;
+    /**
+     * Default provisioning policies parsed from the connector application XML templates. Always an array; empty when the connector ships no templates.
+     */
+    provisioningPolicies?: Array<ProvisioningPolicyDto>;
     /**
      * The connector correlation config xml
      */

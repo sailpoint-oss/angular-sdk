@@ -14,6 +14,11 @@ AccessProfileUsage.md
 AccessProfileUsageUsedByInner.md
 AccessProfilesService.md
 AccessProfilesServicedeveloperSite_code_examples.yaml
+Accessprofilemetadatabulkupdatebyfilterrequest.md
+Accessprofilemetadatabulkupdatebyidrequest.md
+AccessprofilemetadatabulkupdatebyidrequestValuesInner.md
+Accessprofilemetadatabulkupdatebyqueryrequest.md
+Accessprofilemetadatabulkupdateresponse.md
 AdditionalOwnerRef.md
 ArrayInner.md
 AttributeDTO.md
@@ -63,6 +68,11 @@ model/accessProfileSourceRef.ts
 model/accessProfileUpdateItem.ts
 model/accessProfileUsage.ts
 model/accessProfileUsageUsedByInner.ts
+model/accessprofilemetadatabulkupdatebyfilterrequest.ts
+model/accessprofilemetadatabulkupdatebyidrequest.ts
+model/accessprofilemetadatabulkupdatebyidrequestValuesInner.ts
+model/accessprofilemetadatabulkupdatebyqueryrequest.ts
+model/accessprofilemetadatabulkupdateresponse.ts
 model/additionalOwnerRef.ts
 model/arrayInner.ts
 model/attributeDTO.ts

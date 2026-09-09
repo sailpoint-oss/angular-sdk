@@ -152,6 +152,8 @@
           private readonly api = inject(WorkReassignmentService);
 
           listReassignmentConfigurationsV1(): void {
+            const limit: number = 20; // number
+            const offset: number = 0; // number
             const xSailPointExperimental: string = 'true'; // string
             this.api.listReassignmentConfigurationsV1({  }).subscribe({
               next: (result) => console.log(result),

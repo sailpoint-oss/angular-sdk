@@ -17,6 +17,8 @@ import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
 // @ts-ignore
+import { BulkUpdatePersonalAccessTokensRequest } from '../model/bulkUpdatePersonalAccessTokensRequest';
+// @ts-ignore
 import { CreatePersonalAccessTokenRequest } from '../model/createPersonalAccessTokenRequest';
 // @ts-ignore
 import { CreatePersonalAccessTokenResponse } from '../model/createPersonalAccessTokenResponse';
@@ -59,6 +61,11 @@ export interface PatchPersonalAccessTokenV1RequestParams {
     id: string;
     /** A list of OAuth client update operations according to the [JSON Patch](https://tools.ietf.org/html/rfc6902) standard.  The following fields are patchable: * name * scope * expirationDate * userAwareTokenNeverExpires  **Important:** See the endpoint description for validation rules regarding the relationship between &#x60;expirationDate&#x60; and &#x60;userAwareTokenNeverExpires&#x60;.  */
     jsonPatchOperation: Array<JsonPatchOperation>;
+}
+
+export interface UpdateBulkPersonalAccessTokensV1RequestParams {
+    /** The IDs of the personal access tokens to update, along with a single JSON Patch document to apply to each of them. */
+    bulkUpdatePersonalAccessTokensRequest: BulkUpdatePersonalAccessTokensRequest;
 }
 
 
@@ -310,6 +317,71 @@ export class PersonalAccessTokensService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: jsonPatchOperation,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Bulk update personal access tokens
+     * This applies a single [JSON Patch](https://tools.ietf.org/html/rfc6902) document to multiple personal access tokens (PATs) in the current tenant in one request. The same &#x60;patch&#x60; is applied to every token referenced in &#x60;ids&#x60;. Up to **25** tokens can be updated per request. This is an administrative operation intended for org admins managing PATs across their tenant. The caller must have the &#x60;idn:all-personal-access-tokens:update&#x60; right. API OAuth client credentials are not permitted to call this endpoint. Note: This operation is also accessible via &#x60;POST&#x60; to the same path; both methods behave identically. Unlike the single-token patch endpoint, the request body uses &#x60;Content-Type: application/json&#x60; (not &#x60;application/json-patch+json&#x60;). **Allowed patch paths** Only expiration-related paths may be modified in bulk: * &#x60;/expirationDate&#x60; - Set or clear the token\&#39;s expiration date. Any other path (for example &#x60;/name&#x60; or &#x60;/scope&#x60;) results in a &#x60;400&#x60; response. * &#x60;/userAwareTokenNeverExpires&#x60; - Explicit acknowledgment that the token will never expire. **expirationDate and userAwareTokenNeverExpires Relationship:** When clearing &#x60;expirationDate&#x60; (either by removing it or replacing it with &#x60;null&#x60;), &#x60;userAwareTokenNeverExpires&#x60; must also be set to &#x60;true&#x60; in the same patch. This serves as an explicit acknowledgment that the caller is aware of the security implications of creating a token that will never expire. When &#x60;expirationDate&#x60; is set to a valid future date-time, &#x60;userAwareTokenNeverExpires&#x60; can be omitted. **Note:** &#x60;userAwareTokenNeverExpires&#x60; is stored internally and is not returned in the response.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateBulkPersonalAccessTokensV1(requestParameters: UpdateBulkPersonalAccessTokensV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<GetPersonalAccessTokenResponse>>;
+    public updateBulkPersonalAccessTokensV1(requestParameters: UpdateBulkPersonalAccessTokensV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<GetPersonalAccessTokenResponse>>>;
+    public updateBulkPersonalAccessTokensV1(requestParameters: UpdateBulkPersonalAccessTokensV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<GetPersonalAccessTokenResponse>>>;
+    public updateBulkPersonalAccessTokensV1(requestParameters: UpdateBulkPersonalAccessTokensV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const bulkUpdatePersonalAccessTokensRequest = requestParameters?.bulkUpdatePersonalAccessTokensRequest;
+        if (bulkUpdatePersonalAccessTokensRequest === null || bulkUpdatePersonalAccessTokensRequest === undefined) {
+            throw new Error('Required parameter bulkUpdatePersonalAccessTokensRequest was null or undefined when calling updateBulkPersonalAccessTokensV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/personal-access-tokens/v1/bulk-update`;
+        return this.httpClient.request<Array<GetPersonalAccessTokenResponse>>('patch', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: bulkUpdatePersonalAccessTokensRequest,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

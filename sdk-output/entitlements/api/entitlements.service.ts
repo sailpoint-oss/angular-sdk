@@ -27,6 +27,14 @@ import { EntitlementSourceResetBaseReferenceDto } from '../model/entitlementSour
 // @ts-ignore
 import { EntitlementV2 } from '../model/entitlementV2';
 // @ts-ignore
+import { Entitlementmetadatabulkupdatebyfilterrequest } from '../model/entitlementmetadatabulkupdatebyfilterrequest';
+// @ts-ignore
+import { Entitlementmetadatabulkupdatebyidrequest } from '../model/entitlementmetadatabulkupdatebyidrequest';
+// @ts-ignore
+import { Entitlementmetadatabulkupdatebyqueryrequest } from '../model/entitlementmetadatabulkupdatebyqueryrequest';
+// @ts-ignore
+import { Entitlementmetadatabulkupdateresponse } from '../model/entitlementmetadatabulkupdateresponse';
+// @ts-ignore
 import { ErrorResponseDto } from '../model/errorResponseDto';
 // @ts-ignore
 import { JsonPatchOperation } from '../model/jsonPatchOperation';
@@ -167,6 +175,21 @@ export interface ResetSourceEntitlementsV1RequestParams {
 
 export interface UpdateEntitlementsInBulkV1RequestParams {
     entitlementBulkUpdateRequest: EntitlementBulkUpdateRequest;
+}
+
+export interface UpdateEntitlementsMetadataByFilterV1RequestParams {
+    /** Attribute metadata bulk update request body. */
+    entitlementmetadatabulkupdatebyfilterrequest: Entitlementmetadatabulkupdatebyfilterrequest;
+}
+
+export interface UpdateEntitlementsMetadataByIdsV1RequestParams {
+    /** Attribute metadata bulk update request body. */
+    entitlementmetadatabulkupdatebyidrequest: Entitlementmetadatabulkupdatebyidrequest;
+}
+
+export interface UpdateEntitlementsMetadataByQueryV1RequestParams {
+    /** Attribute metadata bulk update request body. */
+    entitlementmetadatabulkupdatebyqueryrequest: Entitlementmetadatabulkupdatebyqueryrequest;
 }
 
 
@@ -803,7 +826,7 @@ export class EntitlementsService extends BaseService {
 
     /**
      * Patch an entitlement
-     * This API updates an existing entitlement using [JSON Patch](https://tools.ietf.org/html/rfc6902) syntax.  The following fields are patchable: **requestable**, **segments**, **privilegeOverride/level**, **owner**, **name**, **description**, and **manuallyUpdatedFields**  When you\&#39;re patching owner, only owner type and owner id must be provided. Owner name is optional, and it won\&#39;t be modified. If the owner name is provided, it should correspond to the real name. The only owner type currently supported is IDENTITY.
+     * This API updates an existing entitlement using [JSON Patch](https://tools.ietf.org/html/rfc6902) syntax.  The following fields are patchable: **requestable**, **segments**, **privilegeOverride/level**, **owner**, **name**, **description**, **manuallyUpdatedFields**, and **accessModelMetadata**  When you\&#39;re patching owner, only owner type and owner id must be provided. Owner name is optional, and it won\&#39;t be modified. If the owner name is provided, it should correspond to the real name. The only owner type currently supported is IDENTITY.  When you\&#39;re patching **accessModelMetadata**, each attribute\&#39;s **key** must match the key of an existing access model metadata attribute, and each **value** must be one of the values configured for that key. Use [List access model metadata attributes](https://developer.sailpoint.com/docs/api/list-access-model-metadata-attribute-v-1) to look up the available keys and values.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1046,6 +1069,201 @@ export class EntitlementsService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: entitlementBulkUpdateRequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Bulk-update metadata by filter
+     * This API initiates a bulk update of Access Model Metadata for every entitlement matching the supplied filter expression.  The update is processed asynchronously. The response returns the ID of the task performing the update.  Adding or replacing custom metadata requires a suite license.  This API replaces the deprecated &#x60;updateAccessModelMetadataByFilterV1&#x60; operation.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateEntitlementsMetadataByFilterV1(requestParameters: UpdateEntitlementsMetadataByFilterV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Entitlementmetadatabulkupdateresponse>;
+    public updateEntitlementsMetadataByFilterV1(requestParameters: UpdateEntitlementsMetadataByFilterV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Entitlementmetadatabulkupdateresponse>>;
+    public updateEntitlementsMetadataByFilterV1(requestParameters: UpdateEntitlementsMetadataByFilterV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Entitlementmetadatabulkupdateresponse>>;
+    public updateEntitlementsMetadataByFilterV1(requestParameters: UpdateEntitlementsMetadataByFilterV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const entitlementmetadatabulkupdatebyfilterrequest = requestParameters?.entitlementmetadatabulkupdatebyfilterrequest;
+        if (entitlementmetadatabulkupdatebyfilterrequest === null || entitlementmetadatabulkupdatebyfilterrequest === undefined) {
+            throw new Error('Required parameter entitlementmetadatabulkupdatebyfilterrequest was null or undefined when calling updateEntitlementsMetadataByFilterV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/entitlements/v1/access-model-metadata/bulk-update/filter`;
+        return this.httpClient.request<Entitlementmetadatabulkupdateresponse>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: entitlementmetadatabulkupdatebyfilterrequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Bulk-update metadata by ids
+     * This API initiates a bulk update of Access Model Metadata for one or more entitlements by a list of entitlement IDs.  The update is processed asynchronously. The response returns the ID of the task performing the update.  The maximum entitlement count in a single request is 3000. Adding or replacing custom metadata requires a suite license.  This API replaces the deprecated &#x60;updateAccessModelMetadataByIdsV1&#x60; operation.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateEntitlementsMetadataByIdsV1(requestParameters: UpdateEntitlementsMetadataByIdsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Entitlementmetadatabulkupdateresponse>;
+    public updateEntitlementsMetadataByIdsV1(requestParameters: UpdateEntitlementsMetadataByIdsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Entitlementmetadatabulkupdateresponse>>;
+    public updateEntitlementsMetadataByIdsV1(requestParameters: UpdateEntitlementsMetadataByIdsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Entitlementmetadatabulkupdateresponse>>;
+    public updateEntitlementsMetadataByIdsV1(requestParameters: UpdateEntitlementsMetadataByIdsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const entitlementmetadatabulkupdatebyidrequest = requestParameters?.entitlementmetadatabulkupdatebyidrequest;
+        if (entitlementmetadatabulkupdatebyidrequest === null || entitlementmetadatabulkupdatebyidrequest === undefined) {
+            throw new Error('Required parameter entitlementmetadatabulkupdatebyidrequest was null or undefined when calling updateEntitlementsMetadataByIdsV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/entitlements/v1/access-model-metadata/bulk-update/ids`;
+        return this.httpClient.request<Entitlementmetadatabulkupdateresponse>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: entitlementmetadatabulkupdatebyidrequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Bulk-update metadata by query
+     * This API initiates a bulk update of Access Model Metadata for every entitlement matching the supplied search query.  The update is processed asynchronously. The response returns the ID of the task performing the update.  Adding or replacing custom metadata requires a suite license.  This API replaces the deprecated &#x60;updateAccessModelMetadataByQueryV1&#x60; operation.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateEntitlementsMetadataByQueryV1(requestParameters: UpdateEntitlementsMetadataByQueryV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Entitlementmetadatabulkupdateresponse>;
+    public updateEntitlementsMetadataByQueryV1(requestParameters: UpdateEntitlementsMetadataByQueryV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Entitlementmetadatabulkupdateresponse>>;
+    public updateEntitlementsMetadataByQueryV1(requestParameters: UpdateEntitlementsMetadataByQueryV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Entitlementmetadatabulkupdateresponse>>;
+    public updateEntitlementsMetadataByQueryV1(requestParameters: UpdateEntitlementsMetadataByQueryV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const entitlementmetadatabulkupdatebyqueryrequest = requestParameters?.entitlementmetadatabulkupdatebyqueryrequest;
+        if (entitlementmetadatabulkupdatebyqueryrequest === null || entitlementmetadatabulkupdatebyqueryrequest === undefined) {
+            throw new Error('Required parameter entitlementmetadatabulkupdatebyqueryrequest was null or undefined when calling updateEntitlementsMetadataByQueryV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/entitlements/v1/access-model-metadata/bulk-update/query`;
+        return this.httpClient.request<Entitlementmetadatabulkupdateresponse>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: entitlementmetadatabulkupdatebyqueryrequest,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

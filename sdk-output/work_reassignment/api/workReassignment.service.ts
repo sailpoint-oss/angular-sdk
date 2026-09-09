@@ -88,6 +88,10 @@ export interface GetTenantConfigConfigurationV1RequestParams {
 }
 
 export interface ListReassignmentConfigurationsV1RequestParams {
+    /** Max number of results to return. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    offset?: number;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -492,7 +496,7 @@ export class WorkReassignmentService extends BaseService {
 
     /**
      * List reassignment configurations
-     * Gets all Reassignment configuration for the current org.
+     * Gets a paginated list of Reassignment configurations for the current org.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -501,7 +505,15 @@ export class WorkReassignmentService extends BaseService {
     public listReassignmentConfigurationsV1(requestParameters?: ListReassignmentConfigurationsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<ConfigurationResponse>>>;
     public listReassignmentConfigurationsV1(requestParameters?: ListReassignmentConfigurationsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<ConfigurationResponse>>>;
     public listReassignmentConfigurationsV1(requestParameters?: ListReassignmentConfigurationsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
         const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
 
         let localVarHeaders = this.defaultHeaders;
         if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
@@ -535,6 +547,7 @@ export class WorkReassignmentService extends BaseService {
         return this.httpClient.request<Array<ConfigurationResponse>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                params: localVarQueryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

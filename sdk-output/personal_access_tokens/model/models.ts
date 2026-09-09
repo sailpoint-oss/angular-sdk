@@ -1,4 +1,5 @@
 export * from './arrayInner';
+export * from './bulkUpdatePersonalAccessTokensRequest';
 export * from './createPersonalAccessTokenRequest';
 export * from './createPersonalAccessTokenResponse';
 export * from './errorMessageDto';

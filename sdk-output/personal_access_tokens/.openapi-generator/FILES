@@ -1,6 +1,7 @@
 .gitignore
 .openapi-generator-ignore
 ArrayInner.md
+BulkUpdatePersonalAccessTokensRequest.md
 CreatePersonalAccessTokenRequest.md
 CreatePersonalAccessTokenResponse.md
 ErrorMessageDto.md
@@ -26,6 +27,7 @@ encoder.ts
 git_push.sh
 index.ts
 model/arrayInner.ts
+model/bulkUpdatePersonalAccessTokensRequest.ts
 model/createPersonalAccessTokenRequest.ts
 model/createPersonalAccessTokenResponse.ts
 model/errorMessageDto.ts

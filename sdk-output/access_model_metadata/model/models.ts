@@ -35,4 +35,6 @@ export * from './searchAggregationSpecification';
 export * from './searchFilterType';
 export * from './subSearchAggregationSpecification';
 export * from './textQuery';
+export * from './trackerKeyDTO';
+export * from './trackerValueDTO';
 export * from './typeAheadQuery';

@@ -28,6 +28,9 @@ Method | HTTP request | Description
 [**put-entitlement-request-config-v1**](#put-entitlement-request-config-v1) | **PUT** `/entitlements/v1/{id}/entitlement-request-config` | Replace entitlement request config
 [**reset-source-entitlements-v1**](#reset-source-entitlements-v1) | **POST** `/entitlements/v1/reset/sources/{id}` | Reset source entitlements
 [**update-entitlements-in-bulk-v1**](#update-entitlements-in-bulk-v1) | **POST** `/entitlements/v1/bulk-update` | Bulk update an entitlement list
+[**update-entitlements-metadata-by-filter-v1**](#update-entitlements-metadata-by-filter-v1) | **POST** `/entitlements/v1/access-model-metadata/bulk-update/filter` | Bulk-update metadata by filter
+[**update-entitlements-metadata-by-ids-v1**](#update-entitlements-metadata-by-ids-v1) | **POST** `/entitlements/v1/access-model-metadata/bulk-update/ids` | Bulk-update metadata by ids
+[**update-entitlements-metadata-by-query-v1**](#update-entitlements-metadata-by-query-v1) | **POST** `/entitlements/v1/access-model-metadata/bulk-update/query` | Bulk-update metadata by query
 
 
 ## create-access-model-metadata-for-entitlement-v1
@@ -516,9 +519,11 @@ export class ExampleComponent {
 Patch an entitlement
 This API updates an existing entitlement using [JSON Patch](https://tools.ietf.org/html/rfc6902) syntax.
 
-The following fields are patchable: **requestable**, **segments**, **privilegeOverride/level**, **owner**, **name**, **description**, and **manuallyUpdatedFields**
+The following fields are patchable: **requestable**, **segments**, **privilegeOverride/level**, **owner**, **name**, **description**, **manuallyUpdatedFields**, and **accessModelMetadata**
 
 When you're patching owner, only owner type and owner id must be provided. Owner name is optional, and it won't be modified. If the owner name is provided, it should correspond to the real name. The only owner type currently supported is IDENTITY.
+
+When you're patching **accessModelMetadata**, each attribute's **key** must match the key of an existing access model metadata attribute, and each **value** must be one of the values configured for that key. Use [List access model metadata attributes](https://developer.sailpoint.com/docs/api/list-access-model-metadata-attribute-v-1) to look up the available keys and values.
 
 [API Spec](https://developer.sailpoint.com/docs/api/patch-entitlement-v-1)
 
@@ -712,6 +717,165 @@ export class ExampleComponent {
   updateEntitlementsInBulkV1(): void {
     const entitlementBulkUpdateRequest: EntitlementBulkUpdateRequest = ; // 
     this.api.updateEntitlementsInBulkV1({ entitlementBulkUpdateRequest: entitlementBulkUpdateRequest }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
+
+## update-entitlements-metadata-by-filter-v1
+Bulk-update metadata by filter
+This API initiates a bulk update of Access Model Metadata for every entitlement matching the supplied filter expression.
+
+The update is processed asynchronously. The response returns the ID of the task performing the update.
+
+Adding or replacing custom metadata requires a suite license.
+
+This API replaces the deprecated `updateAccessModelMetadataByFilterV1` operation.
+
+[API Spec](https://developer.sailpoint.com/docs/api/update-entitlements-metadata-by-filter-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `UpdateEntitlementsMetadataByFilterV1RequestParams`.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**entitlementmetadatabulkupdatebyfilterrequest** | `Entitlementmetadatabulkupdatebyfilterrequest` | Attribute metadata bulk update request body. | 
+
+### Return type
+
+`Observable<Entitlementmetadatabulkupdateresponse>`
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+import { Entitlementmetadatabulkupdatebyfilterrequest } from '@sailpoint/angular-sdk/entitlements';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(EntitlementsService);
+
+  updateEntitlementsMetadataByFilterV1(): void {
+    const entitlementmetadatabulkupdatebyfilterrequest: Entitlementmetadatabulkupdatebyfilterrequest = ; // Attribute metadata bulk update request body.
+    this.api.updateEntitlementsMetadataByFilterV1({ entitlementmetadatabulkupdatebyfilterrequest: entitlementmetadatabulkupdatebyfilterrequest }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
+
+## update-entitlements-metadata-by-ids-v1
+Bulk-update metadata by ids
+This API initiates a bulk update of Access Model Metadata for one or more entitlements by a list of entitlement IDs.
+
+The update is processed asynchronously. The response returns the ID of the task performing the update.
+
+The maximum entitlement count in a single request is 3000. Adding or replacing custom metadata requires a suite license.
+
+This API replaces the deprecated `updateAccessModelMetadataByIdsV1` operation.
+
+[API Spec](https://developer.sailpoint.com/docs/api/update-entitlements-metadata-by-ids-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `UpdateEntitlementsMetadataByIdsV1RequestParams`.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**entitlementmetadatabulkupdatebyidrequest** | `Entitlementmetadatabulkupdatebyidrequest` | Attribute metadata bulk update request body. | 
+
+### Return type
+
+`Observable<Entitlementmetadatabulkupdateresponse>`
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+import { Entitlementmetadatabulkupdatebyidrequest } from '@sailpoint/angular-sdk/entitlements';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(EntitlementsService);
+
+  updateEntitlementsMetadataByIdsV1(): void {
+    const entitlementmetadatabulkupdatebyidrequest: Entitlementmetadatabulkupdatebyidrequest = ; // Attribute metadata bulk update request body.
+    this.api.updateEntitlementsMetadataByIdsV1({ entitlementmetadatabulkupdatebyidrequest: entitlementmetadatabulkupdatebyidrequest }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
+
+## update-entitlements-metadata-by-query-v1
+Bulk-update metadata by query
+This API initiates a bulk update of Access Model Metadata for every entitlement matching the supplied search query.
+
+The update is processed asynchronously. The response returns the ID of the task performing the update.
+
+Adding or replacing custom metadata requires a suite license.
+
+This API replaces the deprecated `updateAccessModelMetadataByQueryV1` operation.
+
+[API Spec](https://developer.sailpoint.com/docs/api/update-entitlements-metadata-by-query-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `UpdateEntitlementsMetadataByQueryV1RequestParams`.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**entitlementmetadatabulkupdatebyqueryrequest** | `Entitlementmetadatabulkupdatebyqueryrequest` | Attribute metadata bulk update request body. | 
+
+### Return type
+
+`Observable<Entitlementmetadatabulkupdateresponse>`
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { EntitlementsService } from '@sailpoint/angular-sdk/entitlements';
+import { Entitlementmetadatabulkupdatebyqueryrequest } from '@sailpoint/angular-sdk/entitlements';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(EntitlementsService);
+
+  updateEntitlementsMetadataByQueryV1(): void {
+    const entitlementmetadatabulkupdatebyqueryrequest: Entitlementmetadatabulkupdatebyqueryrequest = ; // Attribute metadata bulk update request body.
+    this.api.updateEntitlementsMetadataByQueryV1({ entitlementmetadatabulkupdatebyqueryrequest: entitlementmetadatabulkupdatebyqueryrequest }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });

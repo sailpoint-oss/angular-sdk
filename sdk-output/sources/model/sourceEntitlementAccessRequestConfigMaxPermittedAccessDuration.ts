@@ -12,7 +12,7 @@
 /**
  * The maximum duration for which the access is permitted.
  */
-export interface EntitlementAccessRequestConfigMaxPermittedAccessDuration { 
+export interface SourceEntitlementAccessRequestConfigMaxPermittedAccessDuration { 
     /**
      * The numeric value of the duration.
      */
@@ -20,9 +20,9 @@ export interface EntitlementAccessRequestConfigMaxPermittedAccessDuration {
     /**
      * The time unit for the duration.
      */
-    timeUnit?: EntitlementAccessRequestConfigMaxPermittedAccessDurationTimeUnitEnum;
+    timeUnit?: SourceEntitlementAccessRequestConfigMaxPermittedAccessDurationTimeUnitEnum;
 }
-export enum EntitlementAccessRequestConfigMaxPermittedAccessDurationTimeUnitEnum {
+export enum SourceEntitlementAccessRequestConfigMaxPermittedAccessDurationTimeUnitEnum {
     Hours = 'HOURS',
     Days = 'DAYS',
     Weeks = 'WEEKS',

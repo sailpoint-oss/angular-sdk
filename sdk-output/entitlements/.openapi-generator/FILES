@@ -19,6 +19,11 @@ EntitlementV2AccessModelMetadata.md
 EntitlementV2Owner.md
 EntitlementV2PrivilegeLevel.md
 EntitlementV2Source.md
+Entitlementmetadatabulkupdatebyfilterrequest.md
+Entitlementmetadatabulkupdatebyidrequest.md
+EntitlementmetadatabulkupdatebyidrequestValuesInner.md
+Entitlementmetadatabulkupdatebyqueryrequest.md
+Entitlementmetadatabulkupdateresponse.md
 EntitlementsService.md
 EntitlementsServicedeveloperSite_code_examples.yaml
 ErrorMessageDto.md
@@ -62,6 +67,11 @@ model/entitlementV2AccessModelMetadata.ts
 model/entitlementV2Owner.ts
 model/entitlementV2PrivilegeLevel.ts
 model/entitlementV2Source.ts
+model/entitlementmetadatabulkupdatebyfilterrequest.ts
+model/entitlementmetadatabulkupdatebyidrequest.ts
+model/entitlementmetadatabulkupdatebyidrequestValuesInner.ts
+model/entitlementmetadatabulkupdatebyqueryrequest.ts
+model/entitlementmetadatabulkupdateresponse.ts
 model/errorMessageDto.ts
 model/errorResponseDto.ts
 model/importEntitlementsBySourceV1Request.ts

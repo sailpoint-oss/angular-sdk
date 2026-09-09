@@ -13,9 +13,9 @@
 
           listRequestableObjectsV1(): void {
             const identityId: string = 'e7eab60924f64aa284175b9fa3309599'; // string
-            const types: Array<'ACCESS_PROFILE' | 'ROLE'> = ACCESS_PROFILE,ROLE; // Array<'ACCESS_PROFILE' | 'ROLE'>
+            const types: string = 'ACCESS_PROFILE,ROLE'; // string
             const term: string = 'Finance Role'; // string
-            const statuses: Array<RequestableObjectRequestStatus> = ["ASSIGNED","PENDING"]; // Array<RequestableObjectRequestStatus>
+            const statuses: string = 'ASSIGNED,PENDING'; // string
             const limit: number = 250; // number
             const offset: number = 0; // number
             const count: boolean = true; // boolean

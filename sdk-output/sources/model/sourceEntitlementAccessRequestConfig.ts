@@ -7,15 +7,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EntitlementApprovalScheme } from './entitlementApprovalScheme';
-import { EntitlementAccessRequestConfigMaxPermittedAccessDuration } from './entitlementAccessRequestConfigMaxPermittedAccessDuration';
+import { SourceEntitlementApprovalScheme } from './sourceEntitlementApprovalScheme';
+import { SourceEntitlementAccessRequestConfigMaxPermittedAccessDuration } from './sourceEntitlementAccessRequestConfigMaxPermittedAccessDuration';
 
 
-export interface EntitlementAccessRequestConfig { 
+export interface SourceEntitlementAccessRequestConfig { 
     /**
      * Ordered list of approval steps for the access request. Empty when no approval is required.
      */
-    approvalSchemes?: Array<EntitlementApprovalScheme>;
+    approvalSchemes?: Array<SourceEntitlementApprovalScheme>;
     /**
      * If the requester must provide a comment during access request.
      */
@@ -32,7 +32,7 @@ export interface EntitlementAccessRequestConfig {
      * If true, then remove date or sunset date is required in access request of the entitlement.
      */
     requireEndDate?: boolean;
-    maxPermittedAccessDuration?: EntitlementAccessRequestConfigMaxPermittedAccessDuration | null;
+    maxPermittedAccessDuration?: SourceEntitlementAccessRequestConfigMaxPermittedAccessDuration | null;
     /**
      * The ID of the form definition used for the access request. If specified, the form is presented to the requester during the access request process.
      */
