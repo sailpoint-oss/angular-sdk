@@ -5,7 +5,7 @@
   "author": "SailPoint Developer Relations",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sailpoint-oss/angular-sdk.git"
+    "url": "git+https://github.com/sailpoint-oss/angular-sdk.git"
   },
   "keywords": [
     "angular",
