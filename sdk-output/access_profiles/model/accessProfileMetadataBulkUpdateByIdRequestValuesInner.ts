@@ -9,7 +9,7 @@
  */
 
 
-export interface AccessprofilemetadatabulkupdatebyidrequestValuesInner { 
+export interface AccessProfileMetadataBulkUpdateByIdRequestValuesInner { 
     /**
      * The technical name of the metadata attribute.
      */

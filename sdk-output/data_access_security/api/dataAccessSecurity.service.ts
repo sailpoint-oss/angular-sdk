@@ -27,15 +27,21 @@ import { CreateIdentityCollectorV1200Response } from '../model/createIdentityCol
 // @ts-ignore
 import { CreateScheduleRequest } from '../model/createScheduleRequest';
 // @ts-ignore
+import { Createdatadictionaryfieldrequest } from '../model/createdatadictionaryfieldrequest';
+// @ts-ignore
 import { Createidentitycollectorrequest } from '../model/createidentitycollectorrequest';
 // @ts-ignore
 import { DataOwnerModel } from '../model/dataOwnerModel';
+// @ts-ignore
+import { Datadictionaryfieldlistitem } from '../model/datadictionaryfieldlistitem';
 // @ts-ignore
 import { ErrorResponseDto } from '../model/errorResponseDto';
 // @ts-ignore
 import { GetTasksV1401Response } from '../model/getTasksV1401Response';
 // @ts-ignore
 import { GetTasksV1429Response } from '../model/getTasksV1429Response';
+// @ts-ignore
+import { Identitycollectorbuiltinpropertiesresponse } from '../model/identitycollectorbuiltinpropertiesresponse';
 // @ts-ignore
 import { Identitycollectorlistitem } from '../model/identitycollectorlistitem';
 // @ts-ignore
@@ -50,6 +56,8 @@ import { ScheduleInfo } from '../model/scheduleInfo';
 import { TaskInfo } from '../model/taskInfo';
 // @ts-ignore
 import { UpdateScheduleRequest } from '../model/updateScheduleRequest';
+// @ts-ignore
+import { Updatedatadictionaryfieldrequest } from '../model/updatedatadictionaryfieldrequest';
 // @ts-ignore
 import { Updateidentitycollectorrequest } from '../model/updateidentitycollectorrequest';
 
@@ -67,6 +75,11 @@ export interface CancelTaskV1RequestParams {
 export interface CreateApplicationV1RequestParams {
     /** Request body containing the details required to create a new application. */
     baseCreateApplicationRequest: BaseCreateApplicationRequest;
+}
+
+export interface CreateDataDictionaryFieldV1RequestParams {
+    /** Custom data dictionary field to create. */
+    createdatadictionaryfieldrequest: Createdatadictionaryfieldrequest;
 }
 
 export interface CreateIdentityCollectorV1RequestParams {
@@ -118,6 +131,11 @@ export interface DeleteApplicationV1RequestParams {
     id: number;
 }
 
+export interface DeleteDataDictionaryFieldV1RequestParams {
+    /** The field name to delete. */
+    name: string;
+}
+
 export interface DeleteIdentityCollectorV1RequestParams {
     /** The unique identifier of the identity collector to delete. */
     id: number;
@@ -147,6 +165,18 @@ export interface GetApplicationsV1RequestParams {
     offset?: number;
     /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     count?: boolean;
+}
+
+export interface GetIdentityCollectorBuiltinPropertiesV1RequestParams {
+    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **type**: *eq* */
+    filters?: string;
+}
+
+export interface GetIdentityCollectorTypesV1RequestParams {
+    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    offset?: number;
 }
 
 export interface GetOwnersV1RequestParams {
@@ -190,6 +220,17 @@ export interface GetTasksV1RequestParams {
     count?: boolean;
 }
 
+export interface ListDataDictionaryFieldsV1RequestParams {
+    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **dataDictionaryType**: *eq*  **name**: *eq*  Supported composite operators are *and* */
+    filters?: string;
+    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+}
+
 export interface ListIdentityCollectorsV1RequestParams {
     /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **sourceId**: *eq*  **type**: *eq, in*  **id**: *eq, in*  Supported composite operators are *and, or* */
     filters?: string;
@@ -208,10 +249,17 @@ export interface PutApplicationV1RequestParams {
     baseCreateApplicationRequest: BaseCreateApplicationRequest;
 }
 
+export interface PutDataDictionaryFieldV1RequestParams {
+    /** The current field name. */
+    name: string;
+    /** Complete data dictionary field representation used to fully replace the existing field. */
+    updatedatadictionaryfieldrequest: Updatedatadictionaryfieldrequest;
+}
+
 export interface PutIdentityCollectorV1RequestParams {
-    /** The unique identifier of the identity collector to update. */
+    /** The unique identifier of the identity collector to replace. */
     id: number;
-    /** Request body containing the updated details for the identity collector. */
+    /** Complete identity collector representation used to fully replace the existing resource. Partial updates are not supported. */
     updateidentitycollectorrequest: Updateidentitycollectorrequest;
 }
 
@@ -357,8 +405,73 @@ export class DataAccessSecurityService extends BaseService {
     }
 
     /**
+     * Create data dictionary field
+     * Creates a custom data dictionary field. The server assigns fieldType String and required false; callers do not supply those values.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public createDataDictionaryFieldV1(requestParameters: CreateDataDictionaryFieldV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Datadictionaryfieldlistitem>;
+    public createDataDictionaryFieldV1(requestParameters: CreateDataDictionaryFieldV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Datadictionaryfieldlistitem>>;
+    public createDataDictionaryFieldV1(requestParameters: CreateDataDictionaryFieldV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Datadictionaryfieldlistitem>>;
+    public createDataDictionaryFieldV1(requestParameters: CreateDataDictionaryFieldV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const createdatadictionaryfieldrequest = requestParameters?.createdatadictionaryfieldrequest;
+        if (createdatadictionaryfieldrequest === null || createdatadictionaryfieldrequest === undefined) {
+            throw new Error('Required parameter createdatadictionaryfieldrequest was null or undefined when calling createDataDictionaryFieldV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/das/v1/permissions/fields`;
+        return this.httpClient.request<Datadictionaryfieldlistitem>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: createdatadictionaryfieldrequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Create identity collector
-     * This endpoint creates a new identity collector in Data Access Security for the specified source. The identity collector type is derived from the source.
+     * This endpoint creates a new identity collector in Data Access Security for the specified source. The identity collector type is derived from the source.  Optionally configure &#x60;users&#x60; and &#x60;groups&#x60; to register source attributes (&#x60;properties&#x60;) and map them to data dictionary fields by name (&#x60;fieldMappings.fieldDictionaryName&#x60;). When omitted, both collections are created with fixed columns only.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -406,7 +519,7 @@ export class DataAccessSecurityService extends BaseService {
             }
         }
 
-        let localVarPath = `/das/identity-collectors/v1`;
+        let localVarPath = `/das/v1/identity-collectors`;
         return this.httpClient.request<CreateIdentityCollectorV1200Response>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
@@ -853,6 +966,61 @@ export class DataAccessSecurityService extends BaseService {
     }
 
     /**
+     * Delete data dictionary field
+     * Deletes a custom data dictionary field. Built-in fields where required is true cannot be deleted.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public deleteDataDictionaryFieldV1(requestParameters: DeleteDataDictionaryFieldV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
+    public deleteDataDictionaryFieldV1(requestParameters: DeleteDataDictionaryFieldV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
+    public deleteDataDictionaryFieldV1(requestParameters: DeleteDataDictionaryFieldV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
+    public deleteDataDictionaryFieldV1(requestParameters: DeleteDataDictionaryFieldV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const name = requestParameters?.name;
+        if (name === null || name === undefined) {
+            throw new Error('Required parameter name was null or undefined when calling deleteDataDictionaryFieldV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/das/v1/permissions/fields/${this.configuration.encodeParam({name: "name", value: name, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Delete identity collector by identifier
      * This endpoint deletes an identity collector from Data Access Security by its unique identifier.
      * @param requestParameters
@@ -893,7 +1061,7 @@ export class DataAccessSecurityService extends BaseService {
             }
         }
 
-        let localVarPath = `/das/identity-collectors/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "number", dataFormat: "int64"})}`;
+        let localVarPath = `/das/v1/identity-collectors/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "number", dataFormat: "int64"})}`;
         return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
@@ -1125,6 +1293,123 @@ export class DataAccessSecurityService extends BaseService {
 
         let localVarPath = `/das/v1/applications`;
         return this.httpClient.request<Array<ApplicationItem>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * List built-in identity collector properties
+     * Returns the built-in source attribute names for users and groups collections. When no filter is provided, built-in properties for all public identity collector types are returned (the same base types listed by [List Identity Collector Types](https://developer.sailpoint.com/docs/api/get-identity-collector-types-v-1)). When filtered by &#x60;type&#x60;, only the matching type is returned; the filter accepts any supported type display name, including SaaS variants such as &#x60;Box SaaS&#x60; or &#x60;AWS SaaS&#x60;.  These attributes are always available for field mapping without being listed in &#x60;properties&#x60;.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getIdentityCollectorBuiltinPropertiesV1(requestParameters?: GetIdentityCollectorBuiltinPropertiesV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Identitycollectorbuiltinpropertiesresponse>;
+    public getIdentityCollectorBuiltinPropertiesV1(requestParameters?: GetIdentityCollectorBuiltinPropertiesV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Identitycollectorbuiltinpropertiesresponse>>;
+    public getIdentityCollectorBuiltinPropertiesV1(requestParameters?: GetIdentityCollectorBuiltinPropertiesV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Identitycollectorbuiltinpropertiesresponse>>;
+    public getIdentityCollectorBuiltinPropertiesV1(requestParameters?: GetIdentityCollectorBuiltinPropertiesV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const filters = requestParameters?.filters;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>filters, 'filters');
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/das/v1/identity-collectors/properties`;
+        return this.httpClient.request<Identitycollectorbuiltinpropertiesresponse>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * List identity collector types
+     * Returns the public identity collector type display names exposed for metadata and UI discovery. This endpoint lists base types only (for example, &#x60;Box&#x60; rather than &#x60;Box SaaS&#x60;). SaaS variants are not listed here; the identity collector type is derived from &#x60;sourceId&#x60; when creating an identity collector. Existing identity collectors may still report SaaS variant types in list and update responses.  Pagination is not supported for this endpoint; the full set of public types is always returned.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<string>>;
+    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<string>>>;
+    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<string>>>;
+    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/das/v1/identity-collectors/types`;
+        return this.httpClient.request<Array<string>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -1444,6 +1729,72 @@ export class DataAccessSecurityService extends BaseService {
     }
 
     /**
+     * List data dictionary fields
+     * Returns custom data dictionary fields that can be used when configuring identity collector field mappings and other permission-related settings. Built-in fields are not included in list responses; only custom fields created via [Create Data Dictionary Field](https://developer.sailpoint.com/docs/api/create-data-dictionary-field-v-1) are returned. All listed fields have &#x60;required: false&#x60;.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public listDataDictionaryFieldsV1(requestParameters?: ListDataDictionaryFieldsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Datadictionaryfieldlistitem>>;
+    public listDataDictionaryFieldsV1(requestParameters?: ListDataDictionaryFieldsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Datadictionaryfieldlistitem>>>;
+    public listDataDictionaryFieldsV1(requestParameters?: ListDataDictionaryFieldsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Datadictionaryfieldlistitem>>>;
+    public listDataDictionaryFieldsV1(requestParameters?: ListDataDictionaryFieldsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const filters = requestParameters?.filters;
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>filters, 'filters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/das/v1/permissions/fields`;
+        return this.httpClient.request<Array<Datadictionaryfieldlistitem>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * List identity collectors
      * This endpoint lists the identity collectors in Data Access Security with optional filtering and pagination.  Sorting is not supported for this endpoint; supplying the &#x60;sorters&#x60; query parameter results in a validation error.
      * @param requestParameters
@@ -1494,7 +1845,7 @@ export class DataAccessSecurityService extends BaseService {
             }
         }
 
-        let localVarPath = `/das/identity-collectors/v1`;
+        let localVarPath = `/das/v1/identity-collectors`;
         return this.httpClient.request<Array<Identitycollectorlistitem>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
@@ -1579,8 +1930,77 @@ export class DataAccessSecurityService extends BaseService {
     }
 
     /**
-     * Update identity collector by identifier
-     * This endpoint updates the name of an existing identity collector in Data Access Security. The &#x60;sourceId&#x60; and &#x60;type&#x60; cannot be changed and must match the current values.
+     * Replace data dictionary field
+     * Fully replaces a custom data dictionary field. This is a PUT operation, not a partial update: the request body must contain the complete resource representation. Omitted properties are rejected. For custom fields, &#x60;fieldType&#x60;, &#x60;dataDictionaryType&#x60;, and &#x60;required&#x60; must match the current values; only &#x60;name&#x60; may change. Built-in fields where &#x60;required&#x60; is true cannot be updated.  List the field first with [List Data Dictionary Fields](https://developer.sailpoint.com/docs/api/list-data-dictionary-fields-v-1) to obtain the current representation before replacing it.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public putDataDictionaryFieldV1(requestParameters: PutDataDictionaryFieldV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Datadictionaryfieldlistitem>;
+    public putDataDictionaryFieldV1(requestParameters: PutDataDictionaryFieldV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Datadictionaryfieldlistitem>>;
+    public putDataDictionaryFieldV1(requestParameters: PutDataDictionaryFieldV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Datadictionaryfieldlistitem>>;
+    public putDataDictionaryFieldV1(requestParameters: PutDataDictionaryFieldV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const name = requestParameters?.name;
+        if (name === null || name === undefined) {
+            throw new Error('Required parameter name was null or undefined when calling putDataDictionaryFieldV1.');
+        }
+        const updatedatadictionaryfieldrequest = requestParameters?.updatedatadictionaryfieldrequest;
+        if (updatedatadictionaryfieldrequest === null || updatedatadictionaryfieldrequest === undefined) {
+            throw new Error('Required parameter updatedatadictionaryfieldrequest was null or undefined when calling putDataDictionaryFieldV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/das/v1/permissions/fields/${this.configuration.encodeParam({name: "name", value: name, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<Datadictionaryfieldlistitem>('put', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: updatedatadictionaryfieldrequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Replace identity collector
+     * Fully replaces an existing identity collector in Data Access Security. This is a PUT operation, not a partial update: the request body must contain the complete resource representation. Omitted or null top-level properties are rejected. After a successful request, a subsequent list request returns exactly the configuration that was sent.  Retrieve the current configuration with [List Identity Collectors](https://developer.sailpoint.com/docs/api/list-identity-collectors-v-1) before replacing it. The &#x60;sourceId&#x60; and &#x60;type&#x60; cannot be changed and must match the current values.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1632,7 +2052,7 @@ export class DataAccessSecurityService extends BaseService {
             }
         }
 
-        let localVarPath = `/das/identity-collectors/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "number", dataFormat: "int64"})}`;
+        let localVarPath = `/das/v1/identity-collectors/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "number", dataFormat: "int64"})}`;
         return this.httpClient.request<any>('put', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,

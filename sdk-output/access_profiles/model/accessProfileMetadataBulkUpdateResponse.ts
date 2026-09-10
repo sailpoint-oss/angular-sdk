@@ -9,7 +9,7 @@
  */
 
 
-export interface Accessprofilemetadatabulkupdateresponse { 
+export interface AccessProfileMetadataBulkUpdateResponse { 
     /**
      * ID of the task that is processing the bulk update.
      */
@@ -21,13 +21,13 @@ export interface Accessprofilemetadatabulkupdateresponse {
     /**
      * The status of the bulk update request.
      */
-    status?: AccessprofilemetadatabulkupdateresponseStatusEnum;
+    status?: AccessProfileMetadataBulkUpdateResponseStatusEnum;
     /**
      * Time when the bulk update request was created
      */
     created?: string;
 }
-export enum AccessprofilemetadatabulkupdateresponseStatusEnum {
+export enum AccessProfileMetadataBulkUpdateResponseStatusEnum {
     Created = 'CREATED',
     PreProcess = 'PRE_PROCESS',
     PreProcessCompleted = 'PRE_PROCESS_COMPLETED',

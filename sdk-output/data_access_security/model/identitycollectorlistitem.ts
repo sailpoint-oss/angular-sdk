@@ -7,6 +7,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { Identitycollectorcollectionsettings } from './identitycollectorcollectionsettings';
 
 
 export interface Identitycollectorlistitem { 
@@ -19,12 +20,14 @@ export interface Identitycollectorlistitem {
      */
     name?: string;
     /**
-     * The identity collector type, derived from its underlying source. Possible values include \"Active Directory\", \"Azure Active Directory\", \"Google Drive\", \"Dropbox\", \"Box\", \"Microsoft Entra SaaS\", \"Snowflake\", and \"Databricks\".
+     * The identity collector type, derived from its underlying source.
      */
     type?: string;
     /**
      * The identifier of the source the identity collector is associated with, represented as a UUID. Both hyphenated and non-hyphenated formats are accepted.
      */
     sourceId?: string;
+    users?: Identitycollectorcollectionsettings;
+    groups?: Identitycollectorcollectionsettings;
 }
 

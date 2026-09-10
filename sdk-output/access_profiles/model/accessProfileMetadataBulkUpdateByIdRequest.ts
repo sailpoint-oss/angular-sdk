@@ -7,13 +7,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AccessprofilemetadatabulkupdatebyidrequestValuesInner } from './accessprofilemetadatabulkupdatebyidrequestValuesInner';
+import { AccessProfileMetadataBulkUpdateByIdRequestValuesInner } from './accessProfileMetadataBulkUpdateByIdRequestValuesInner';
 
 
 /**
  * Request to bulk update Access Model Metadata on a list of access profiles identified by ID. The maximum access profile count in a single request is 3000. A single access profile cannot be assigned more than 25 metadata values. Adding or replacing custom metadata requires a suite license.
  */
-export interface Accessprofilemetadatabulkupdatebyidrequest { 
+export interface AccessProfileMetadataBulkUpdateByIdRequest { 
     /**
      * The IDs of the access profiles to update.
      */
@@ -21,22 +21,22 @@ export interface Accessprofilemetadatabulkupdatebyidrequest {
     /**
      * The operation to be performed
      */
-    operation: AccessprofilemetadatabulkupdatebyidrequestOperationEnum;
+    operation: AccessProfileMetadataBulkUpdateByIdRequestOperationEnum;
     /**
      * The choice of update scope. **ATTRIBUTE** replaces only the values of the attributes named in `values`, and **ALL** replaces every metadata attribute on the access profile.
      */
-    replaceScope: AccessprofilemetadatabulkupdatebyidrequestReplaceScopeEnum;
+    replaceScope: AccessProfileMetadataBulkUpdateByIdRequestReplaceScopeEnum;
     /**
      * The metadata to be updated, including attribute key and value.
      */
-    values: Array<AccessprofilemetadatabulkupdatebyidrequestValuesInner>;
+    values: Array<AccessProfileMetadataBulkUpdateByIdRequestValuesInner>;
 }
-export enum AccessprofilemetadatabulkupdatebyidrequestOperationEnum {
+export enum AccessProfileMetadataBulkUpdateByIdRequestOperationEnum {
     Add = 'ADD',
     Remove = 'REMOVE',
     Replace = 'REPLACE'
 };
-export enum AccessprofilemetadatabulkupdatebyidrequestReplaceScopeEnum {
+export enum AccessProfileMetadataBulkUpdateByIdRequestReplaceScopeEnum {
     All = 'ALL',
     Attribute = 'ATTRIBUTE'
 };

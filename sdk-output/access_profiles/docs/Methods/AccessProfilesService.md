@@ -57,6 +57,7 @@ Method | HTTP request | Description
 [**get-access-profile-v1**](#get-access-profile-v1) | **GET** `/access-profiles/v1/{id}` | Get an access profile
 [**list-access-profiles-v1**](#list-access-profiles-v1) | **GET** `/access-profiles/v1` | List access profiles
 [**patch-access-profile-v1**](#patch-access-profile-v1) | **PATCH** `/access-profiles/v1/{id}` | Patch a specified access profile
+[**search-access-profiles-by-filter-v1**](#search-access-profiles-by-filter-v1) | **POST** `/access-profiles/v1/filter` | Filter access profiles by metadata
 [**update-access-profiles-in-bulk-v1**](#update-access-profiles-in-bulk-v1) | **POST** `/access-profiles/v1/bulk-update-requestable` | Update access profile(s) requestable field.
 [**update-access-profiles-metadata-by-filter-v1**](#update-access-profiles-metadata-by-filter-v1) | **POST** `/access-profiles/v1/access-model-metadata/bulk-update/filter` | Bulk-update metadata by filter
 [**update-access-profiles-metadata-by-ids-v1**](#update-access-profiles-metadata-by-ids-v1) | **POST** `/access-profiles/v1/access-model-metadata/bulk-update/ids` | Bulk-update metadata by ids
@@ -514,6 +515,67 @@ export class ExampleComponent {
 
 [[Back to top]](#)
 
+## search-access-profiles-by-filter-v1
+Filter access profiles by metadata
+Get a list of access profiles filtered by Access Model Metadata and by filter expression. Filtering is supported by filter expression, by metadata attribute key and values, or by both together.
+
+[API Spec](https://developer.sailpoint.com/docs/api/search-access-profiles-by-filter-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `SearchAccessProfilesByFilterV1RequestParams`.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**accessProfileListFilterDTO** | `AccessProfileListFilterDTO` |  | 
+**forSubadmin** | `string` | Filters the returned list according to what is visible to the indicated ROLE_SUBADMIN or SOURCE_SUBADMIN identity. The value of the parameter is either an identity ID or the special value **me**, which is shorthand for the calling identity\&#39;s ID.  If you specify an identity that isn\&#39;t a subadmin, the API returns a 400 Bad Request error. | [optional] [default to undefined]
+**limit** | `number` | Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to 50]
+**offset** | `number` | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to 0]
+**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to false]
+**sorters** | `string` | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **name, created, modified** | [optional] [default to undefined]
+**forSegmentIds** | `string` | Filters the returned list to those access profiles assigned to the specified segment IDs. | [optional] [default to undefined]
+**includeUnsegmented** | `boolean` | Whether the returned list includes unsegmented access profiles. | [optional] [default to true]
+
+### Return type
+
+`Observable<Array<AccessProfile>>`
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+import { AccessProfileListFilterDTO } from '@sailpoint/angular-sdk/access_profiles';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(AccessProfilesService);
+
+  searchAccessProfilesByFilterV1(): void {
+    const accessProfileListFilterDTO: AccessProfileListFilterDTO = ; // 
+    const forSubadmin: string = ; // Filters the returned list according to what is visible to the indicated ROLE_SUBADMIN or SOURCE_SUBADMIN identity. The value of the parameter is either an identity ID or the special value **me**, which is shorthand for the calling identity\&#39;s ID.  If you specify an identity that isn\&#39;t a subadmin, the API returns a 400 Bad Request error. (optional)
+    const limit: number = ; // Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
+    const offset: number = ; // Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
+    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
+    const sorters: string = ; // Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **name, created, modified** (optional)
+    const forSegmentIds: string = ; // Filters the returned list to those access profiles assigned to the specified segment IDs. (optional)
+    const includeUnsegmented: boolean = ; // Whether the returned list includes unsegmented access profiles. (optional)
+    this.api.searchAccessProfilesByFilterV1({ accessProfileListFilterDTO: accessProfileListFilterDTO }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
+
 ## update-access-profiles-in-bulk-v1
 Update access profile(s) requestable field.
 This API initiates a bulk update of field requestable for one or more Access Profiles.
@@ -584,11 +646,11 @@ The service takes one object that holds every parameter. Its type is `UpdateAcce
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**accessprofilemetadatabulkupdatebyfilterrequest** | `Accessprofilemetadatabulkupdatebyfilterrequest` |  | 
+**accessProfileMetadataBulkUpdateByFilterRequest** | `AccessProfileMetadataBulkUpdateByFilterRequest` |  | 
 
 ### Return type
 
-`Observable<Accessprofilemetadatabulkupdateresponse>`
+`Observable<AccessProfileMetadataBulkUpdateResponse>`
 
 ### HTTP request headers
 
@@ -600,15 +662,15 @@ Name | Type | Description  | Notes
 ```typescript
 import { Component, inject } from '@angular/core';
 import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
-import { Accessprofilemetadatabulkupdatebyfilterrequest } from '@sailpoint/angular-sdk/access_profiles';
+import { AccessProfileMetadataBulkUpdateByFilterRequest } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
   private readonly api = inject(AccessProfilesService);
 
   updateAccessProfilesMetadataByFilterV1(): void {
-    const accessprofilemetadatabulkupdatebyfilterrequest: Accessprofilemetadatabulkupdatebyfilterrequest = ; // 
-    this.api.updateAccessProfilesMetadataByFilterV1({ accessprofilemetadatabulkupdatebyfilterrequest: accessprofilemetadatabulkupdatebyfilterrequest }).subscribe({
+    const accessProfileMetadataBulkUpdateByFilterRequest: AccessProfileMetadataBulkUpdateByFilterRequest = ; // 
+    this.api.updateAccessProfilesMetadataByFilterV1({ accessProfileMetadataBulkUpdateByFilterRequest: accessProfileMetadataBulkUpdateByFilterRequest }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });
@@ -635,11 +697,11 @@ The service takes one object that holds every parameter. Its type is `UpdateAcce
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**accessprofilemetadatabulkupdatebyidrequest** | `Accessprofilemetadatabulkupdatebyidrequest` |  | 
+**accessProfileMetadataBulkUpdateByIdRequest** | `AccessProfileMetadataBulkUpdateByIdRequest` |  | 
 
 ### Return type
 
-`Observable<Accessprofilemetadatabulkupdateresponse>`
+`Observable<AccessProfileMetadataBulkUpdateResponse>`
 
 ### HTTP request headers
 
@@ -651,15 +713,15 @@ Name | Type | Description  | Notes
 ```typescript
 import { Component, inject } from '@angular/core';
 import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
-import { Accessprofilemetadatabulkupdatebyidrequest } from '@sailpoint/angular-sdk/access_profiles';
+import { AccessProfileMetadataBulkUpdateByIdRequest } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
   private readonly api = inject(AccessProfilesService);
 
   updateAccessProfilesMetadataByIdsV1(): void {
-    const accessprofilemetadatabulkupdatebyidrequest: Accessprofilemetadatabulkupdatebyidrequest = ; // 
-    this.api.updateAccessProfilesMetadataByIdsV1({ accessprofilemetadatabulkupdatebyidrequest: accessprofilemetadatabulkupdatebyidrequest }).subscribe({
+    const accessProfileMetadataBulkUpdateByIdRequest: AccessProfileMetadataBulkUpdateByIdRequest = ; // 
+    this.api.updateAccessProfilesMetadataByIdsV1({ accessProfileMetadataBulkUpdateByIdRequest: accessProfileMetadataBulkUpdateByIdRequest }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });
@@ -686,11 +748,11 @@ The service takes one object that holds every parameter. Its type is `UpdateAcce
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**accessprofilemetadatabulkupdatebyqueryrequest** | `Accessprofilemetadatabulkupdatebyqueryrequest` |  | 
+**accessProfileMetadataBulkUpdateByQueryRequest** | `AccessProfileMetadataBulkUpdateByQueryRequest` |  | 
 
 ### Return type
 
-`Observable<Accessprofilemetadatabulkupdateresponse>`
+`Observable<AccessProfileMetadataBulkUpdateResponse>`
 
 ### HTTP request headers
 
@@ -702,15 +764,15 @@ Name | Type | Description  | Notes
 ```typescript
 import { Component, inject } from '@angular/core';
 import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
-import { Accessprofilemetadatabulkupdatebyqueryrequest } from '@sailpoint/angular-sdk/access_profiles';
+import { AccessProfileMetadataBulkUpdateByQueryRequest } from '@sailpoint/angular-sdk/access_profiles';
 
 @Component({ selector: 'app-example', template: '' })
 export class ExampleComponent {
   private readonly api = inject(AccessProfilesService);
 
   updateAccessProfilesMetadataByQueryV1(): void {
-    const accessprofilemetadatabulkupdatebyqueryrequest: Accessprofilemetadatabulkupdatebyqueryrequest = ; // 
-    this.api.updateAccessProfilesMetadataByQueryV1({ accessprofilemetadatabulkupdatebyqueryrequest: accessprofilemetadatabulkupdatebyqueryrequest }).subscribe({
+    const accessProfileMetadataBulkUpdateByQueryRequest: AccessProfileMetadataBulkUpdateByQueryRequest = ; // 
+    this.api.updateAccessProfilesMetadataByQueryV1({ accessProfileMetadataBulkUpdateByQueryRequest: accessProfileMetadataBulkUpdateByQueryRequest }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });

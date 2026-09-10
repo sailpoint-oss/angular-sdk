@@ -87,7 +87,32 @@
             });
           }
         }
-- path: /das/identity-collectors/v1
+- path: /das/v1/permissions/fields
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#create-data-dictionary-field-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { Createdatadictionaryfieldrequest } from '@sailpoint/angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          createDataDictionaryFieldV1(): void {
+            const createdatadictionaryfieldrequest: Createdatadictionaryfieldrequest = {
+              "name" : "Department",
+              "dataDictionaryType" : "Users"
+            }; // Createdatadictionaryfieldrequest
+            this.api.createDataDictionaryFieldV1({ createdatadictionaryfieldrequest: createdatadictionaryfieldrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/identity-collectors
   method: post
   xCodeSample:
     - lang: Angular
@@ -104,7 +129,27 @@
           createIdentityCollectorV1(): void {
             const createidentitycollectorrequest: Createidentitycollectorrequest = {
               "sourceId" : "2c9180835d2e5168015d32f890ca1581",
-              "name" : "Active Directory Identity Collector"
+              "name" : "Active Directory Identity Collector",
+              "groups" : {
+                "fieldMappings" : [ {
+                  "sourceAttributeName" : "department",
+                  "fieldDictionaryName" : "UPTF-1"
+                }, {
+                  "sourceAttributeName" : "department",
+                  "fieldDictionaryName" : "UPTF-1"
+                } ],
+                "properties" : [ "UserAddress", "department" ]
+              },
+              "users" : {
+                "fieldMappings" : [ {
+                  "sourceAttributeName" : "department",
+                  "fieldDictionaryName" : "UPTF-1"
+                }, {
+                  "sourceAttributeName" : "department",
+                  "fieldDictionaryName" : "UPTF-1"
+                } ],
+                "properties" : [ "UserAddress", "department" ]
+              }
             }; // Createidentitycollectorrequest
             this.api.createIdentityCollectorV1({ createidentitycollectorrequest: createidentitycollectorrequest }).subscribe({
               next: (result) => console.log(result),
@@ -286,7 +331,28 @@
             });
           }
         }
-- path: /das/identity-collectors/v1/{id}
+- path: /das/v1/permissions/fields/{name}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#delete-data-dictionary-field-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          deleteDataDictionaryFieldV1(): void {
+            const name: string = 'Department'; // string
+            this.api.deleteDataDictionaryFieldV1({ name: name }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/identity-collectors/{id}
   method: delete
   xCodeSample:
     - lang: Angular
@@ -389,6 +455,49 @@
             const offset: number = 0; // number
             const count: boolean = true; // boolean
             this.api.getApplicationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/identity-collectors/properties
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-identity-collector-builtin-properties-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          getIdentityCollectorBuiltinPropertiesV1(): void {
+            const filters: string = 'type eq "Azure Active Directory"'; // string
+            this.api.getIdentityCollectorBuiltinPropertiesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/identity-collectors/types
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#get-identity-collector-types-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          getIdentityCollectorTypesV1(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.getIdentityCollectorTypesV1({  }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -507,7 +616,31 @@
             });
           }
         }
-- path: /das/identity-collectors/v1
+- path: /das/v1/permissions/fields
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#list-data-dictionary-fields-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          listDataDictionaryFieldsV1(): void {
+            const filters: string = 'dataDictionaryType eq "Users" and name eq "Department"'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.listDataDictionaryFieldsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/identity-collectors
   method: get
   xCodeSample:
     - lang: Angular
@@ -600,7 +733,35 @@
             });
           }
         }
-- path: /das/identity-collectors/v1/{id}
+- path: /das/v1/permissions/fields/{name}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/data_access_security/methods/data-access-security#put-data-dictionary-field-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DataAccessSecurityService } from '@sailpoint/angular-sdk/data_access_security';
+        import { Updatedatadictionaryfieldrequest } from '@sailpoint/angular-sdk/data_access_security';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DataAccessSecurityService);
+
+          putDataDictionaryFieldV1(): void {
+            const name: string = 'Department'; // string
+            const updatedatadictionaryfieldrequest: Updatedatadictionaryfieldrequest = {
+              "name" : "Cost Center",
+              "dataDictionaryType" : "Users",
+              "fieldType" : "String",
+              "required" : false
+            }; // Updatedatadictionaryfieldrequest
+            this.api.putDataDictionaryFieldV1({ name: name, updatedatadictionaryfieldrequest: updatedatadictionaryfieldrequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /das/v1/identity-collectors/{id}
   method: put
   xCodeSample:
     - lang: Angular
@@ -619,7 +780,27 @@
             const updateidentitycollectorrequest: Updateidentitycollectorrequest = {
               "sourceId" : "2c9180835d2e5168015d32f890ca1581",
               "name" : "Active Directory Identity Collector",
-              "type" : "Active Directory"
+              "groups" : {
+                "fieldMappings" : [ {
+                  "sourceAttributeName" : "department",
+                  "fieldDictionaryName" : "UPTF-1"
+                }, {
+                  "sourceAttributeName" : "department",
+                  "fieldDictionaryName" : "UPTF-1"
+                } ],
+                "properties" : [ "UserAddress", "department" ]
+              },
+              "type" : "Active Directory",
+              "users" : {
+                "fieldMappings" : [ {
+                  "sourceAttributeName" : "department",
+                  "fieldDictionaryName" : "UPTF-1"
+                }, {
+                  "sourceAttributeName" : "department",
+                  "fieldDictionaryName" : "UPTF-1"
+                } ],
+                "properties" : [ "UserAddress", "department" ]
+              }
             }; // Updateidentitycollectorrequest
             this.api.putIdentityCollectorV1({ id: id, updateidentitycollectorrequest: updateidentitycollectorrequest }).subscribe({
               next: (result) => console.log(result),

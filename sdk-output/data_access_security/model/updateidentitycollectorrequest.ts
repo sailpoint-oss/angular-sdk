@@ -7,8 +7,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { Identitycollectorcollectionsettings } from './identitycollectorcollectionsettings';
 
 
+/**
+ * Complete identity collector representation for [Replace Identity Collector](https://developer.sailpoint.com/docs/api/put-identity-collector-v-1). The server fully replaces the existing resource with this payload. Partial updates are not supported; `users` and `groups` must always be supplied and replace the current collection settings in their entirety.
+ */
 export interface Updateidentitycollectorrequest { 
     /**
      * The display name of the identity collector. Must be unique within the tenant.
@@ -22,5 +26,7 @@ export interface Updateidentitycollectorrequest {
      * The identity collector type. This value cannot be modified for an existing identity collector and must match the current value.
      */
     type: string;
+    users: Identitycollectorcollectionsettings;
+    groups: Identitycollectorcollectionsettings;
 }
 

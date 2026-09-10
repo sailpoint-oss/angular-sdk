@@ -7,13 +7,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AccessprofilemetadatabulkupdatebyidrequestValuesInner } from './accessprofilemetadatabulkupdatebyidrequestValuesInner';
+import { AccessProfileMetadataBulkUpdateByIdRequestValuesInner } from './accessProfileMetadataBulkUpdateByIdRequestValuesInner';
 
 
 /**
  * Request to bulk update Access Model Metadata on every access profile matching a search query. A single access profile cannot be assigned more than 25 metadata values. Adding or replacing custom metadata requires a suite license.  For more information about the query object, refer to [V3 API Perform Search](https://developer.sailpoint.com/docs/api/v3/search-post).
  */
-export interface Accessprofilemetadatabulkupdatebyqueryrequest { 
+export interface AccessProfileMetadataBulkUpdateByQueryRequest { 
     /**
      * The search query selecting the access profiles to update.
      */
@@ -21,22 +21,22 @@ export interface Accessprofilemetadatabulkupdatebyqueryrequest {
     /**
      * The operation to be performed
      */
-    operation: AccessprofilemetadatabulkupdatebyqueryrequestOperationEnum;
+    operation: AccessProfileMetadataBulkUpdateByQueryRequestOperationEnum;
     /**
      * The choice of update scope. **ATTRIBUTE** replaces only the values of the attributes named in `values`, and **ALL** replaces every metadata attribute on the access profile.
      */
-    replaceScope: AccessprofilemetadatabulkupdatebyqueryrequestReplaceScopeEnum;
+    replaceScope: AccessProfileMetadataBulkUpdateByQueryRequestReplaceScopeEnum;
     /**
      * The metadata to be updated, including attribute key and value.
      */
-    values: Array<AccessprofilemetadatabulkupdatebyidrequestValuesInner>;
+    values: Array<AccessProfileMetadataBulkUpdateByIdRequestValuesInner>;
 }
-export enum AccessprofilemetadatabulkupdatebyqueryrequestOperationEnum {
+export enum AccessProfileMetadataBulkUpdateByQueryRequestOperationEnum {
     Add = 'ADD',
     Remove = 'REMOVE',
     Replace = 'REPLACE'
 };
-export enum AccessprofilemetadatabulkupdatebyqueryrequestReplaceScopeEnum {
+export enum AccessProfileMetadataBulkUpdateByQueryRequestReplaceScopeEnum {
     All = 'ALL',
     Attribute = 'ATTRIBUTE'
 };

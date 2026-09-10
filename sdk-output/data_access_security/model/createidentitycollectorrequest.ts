@@ -7,6 +7,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { Identitycollectorcollectionsettings } from './identitycollectorcollectionsettings';
 
 
 export interface Createidentitycollectorrequest { 
@@ -18,5 +19,7 @@ export interface Createidentitycollectorrequest {
      * The identifier of the source to create the identity collector for, represented as a UUID. Both hyphenated and non-hyphenated formats are accepted. The identity collector type is derived from this source.
      */
     sourceId: string;
+    users?: Identitycollectorcollectionsettings;
+    groups?: Identitycollectorcollectionsettings;
 }
 

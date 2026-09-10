@@ -1,0 +1,26 @@
+---
+id: data_access_security-model-identitycollectorcollectionsettings
+title: Identitycollectorcollectionsettings
+pagination_label: Identitycollectorcollectionsettings
+sidebar_label: Identitycollectorcollectionsettings
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'Identitycollectorcollectionsettings', 'data_access_security']
+slug: /tools/sdk/angular/data_access_security/models/identitycollectorcollectionsettings
+tags: ['SDK', 'Software Development Kit', 'Identitycollectorcollectionsettings', 'data_access_security']
+---
+
+# Identitycollectorcollectionsettings
+
+Import this model from the entry point of its package:
+
+```typescript
+import { Identitycollectorcollectionsettings } from '@sailpoint/angular-sdk/data_access_security';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**properties** | `Array<string>` | Source attribute names to register as datasource columns for this collection. These names must match the attributes sent by Identity Security Cloud. Use an empty array when no custom attributes are required. | [default to undefined]
+**fieldMappings** | `Array<Identitycollectorfieldmapping>` | Maps source attributes to data dictionary fields and DAS custom field slots. Each `sourceAttributeName` must be either a built-in attribute for the identity collector type or listed in `properties`. Use an empty array when no dynamic field mappings are configured. | [default to undefined]
+

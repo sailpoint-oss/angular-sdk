@@ -307,6 +307,41 @@
             });
           }
         }
+- path: /access-profiles/v1/filter
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/access_profiles/methods/access-profiles#search-access-profiles-by-filter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
+        import { AccessProfileListFilterDTO } from '@sailpoint/angular-sdk/access_profiles';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccessProfilesService);
+
+          searchAccessProfilesByFilterV1(): void {
+            const accessProfileListFilterDTO: AccessProfileListFilterDTO = {
+              "ammKeyValues" : [ {
+                "attribute" : "iscFederalClassifications",
+                "values" : [ "secret" ]
+              } ],
+              "filters" : "requestable eq false"
+            }; // AccessProfileListFilterDTO
+            const forSubadmin: string = '8c190e6787aa4ed9a90bd9d5344523fb'; // string
+            const limit: number = 50; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = 'name'; // string
+            const forSegmentIds: string = '0b5c9f2d-1e1b-4b2f-9b1a-0e7f4a6c2d3e'; // string
+            const includeUnsegmented: boolean = true; // boolean
+            this.api.searchAccessProfilesByFilterV1({ accessProfileListFilterDTO: accessProfileListFilterDTO }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /access-profiles/v1/bulk-update-requestable
   method: post
   xCodeSample:
@@ -337,14 +372,14 @@
       source: |
         import { Component, inject } from '@angular/core';
         import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
-        import { Accessprofilemetadatabulkupdatebyfilterrequest } from '@sailpoint/angular-sdk/access_profiles';
+        import { AccessProfileMetadataBulkUpdateByFilterRequest } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
           private readonly api = inject(AccessProfilesService);
 
           updateAccessProfilesMetadataByFilterV1(): void {
-            const accessprofilemetadatabulkupdatebyfilterrequest: Accessprofilemetadatabulkupdatebyfilterrequest = {
+            const accessProfileMetadataBulkUpdateByFilterRequest: AccessProfileMetadataBulkUpdateByFilterRequest = {
               "values" : [ {
                 "attribute" : "iscFederalClassifications",
                 "values" : [ "topSecret" ]
@@ -352,8 +387,8 @@
               "filters" : "requestable eq false",
               "replaceScope" : "ATTRIBUTE",
               "operation" : "REPLACE"
-            }; // Accessprofilemetadatabulkupdatebyfilterrequest
-            this.api.updateAccessProfilesMetadataByFilterV1({ accessprofilemetadatabulkupdatebyfilterrequest: accessprofilemetadatabulkupdatebyfilterrequest }).subscribe({
+            }; // AccessProfileMetadataBulkUpdateByFilterRequest
+            this.api.updateAccessProfilesMetadataByFilterV1({ accessProfileMetadataBulkUpdateByFilterRequest: accessProfileMetadataBulkUpdateByFilterRequest }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -367,14 +402,14 @@
       source: |
         import { Component, inject } from '@angular/core';
         import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
-        import { Accessprofilemetadatabulkupdatebyidrequest } from '@sailpoint/angular-sdk/access_profiles';
+        import { AccessProfileMetadataBulkUpdateByIdRequest } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
           private readonly api = inject(AccessProfilesService);
 
           updateAccessProfilesMetadataByIdsV1(): void {
-            const accessprofilemetadatabulkupdatebyidrequest: Accessprofilemetadatabulkupdatebyidrequest = {
+            const accessProfileMetadataBulkUpdateByIdRequest: AccessProfileMetadataBulkUpdateByIdRequest = {
               "accessProfiles" : [ "b1db89554cfa431cb8b9921ea38d9367" ],
               "values" : [ {
                 "attribute" : "iscFederalClassifications",
@@ -382,8 +417,8 @@
               } ],
               "replaceScope" : "ATTRIBUTE",
               "operation" : "REPLACE"
-            }; // Accessprofilemetadatabulkupdatebyidrequest
-            this.api.updateAccessProfilesMetadataByIdsV1({ accessprofilemetadatabulkupdatebyidrequest: accessprofilemetadatabulkupdatebyidrequest }).subscribe({
+            }; // AccessProfileMetadataBulkUpdateByIdRequest
+            this.api.updateAccessProfilesMetadataByIdsV1({ accessProfileMetadataBulkUpdateByIdRequest: accessProfileMetadataBulkUpdateByIdRequest }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -397,14 +432,14 @@
       source: |
         import { Component, inject } from '@angular/core';
         import { AccessProfilesService } from '@sailpoint/angular-sdk/access_profiles';
-        import { Accessprofilemetadatabulkupdatebyqueryrequest } from '@sailpoint/angular-sdk/access_profiles';
+        import { AccessProfileMetadataBulkUpdateByQueryRequest } from '@sailpoint/angular-sdk/access_profiles';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
           private readonly api = inject(AccessProfilesService);
 
           updateAccessProfilesMetadataByQueryV1(): void {
-            const accessprofilemetadatabulkupdatebyqueryrequest: Accessprofilemetadatabulkupdatebyqueryrequest = {
+            const accessProfileMetadataBulkUpdateByQueryRequest: AccessProfileMetadataBulkUpdateByQueryRequest = {
               "query" : {
                 "indices" : [ "accessprofiles" ],
                 "queryType" : "TEXT",
@@ -422,8 +457,8 @@
               } ],
               "replaceScope" : "ATTRIBUTE",
               "operation" : "REPLACE"
-            }; // Accessprofilemetadatabulkupdatebyqueryrequest
-            this.api.updateAccessProfilesMetadataByQueryV1({ accessprofilemetadatabulkupdatebyqueryrequest: accessprofilemetadatabulkupdatebyqueryrequest }).subscribe({
+            }; // AccessProfileMetadataBulkUpdateByQueryRequest
+            this.api.updateAccessProfilesMetadataByQueryV1({ accessProfileMetadataBulkUpdateByQueryRequest: accessProfileMetadataBulkUpdateByQueryRequest }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
