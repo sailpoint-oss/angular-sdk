@@ -1,4 +1,4 @@
-# @sailpoint/angular-sdk@0.0.3
+# @sailpoint/angular-sdk@0.0.4
 
 Use these APIs to interact with the Identity Security Cloud platform to achieve repeatable, automated processes with greater scalability. We encourage you to join the SailPoint Developer Community forum at https://developer.sailpoint.com/discuss to connect with other developers using our APIs.
 
@@ -24,7 +24,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```console
-npm install @sailpoint/angular-sdk@0.0.3 --save
+npm install @sailpoint/angular-sdk@0.0.4 --save
 ```
 
 _without publishing (not recommended):_
