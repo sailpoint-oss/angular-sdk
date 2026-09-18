@@ -25,6 +25,8 @@ import { BaseCreateApplicationRequest } from '../model/baseCreateApplicationRequ
 // @ts-ignore
 import { CreateIdentityCollectorV1200Response } from '../model/createIdentityCollectorV1200Response';
 // @ts-ignore
+import { CreateIdentityCollectorV1409Response } from '../model/createIdentityCollectorV1409Response';
+// @ts-ignore
 import { CreateScheduleRequest } from '../model/createScheduleRequest';
 // @ts-ignore
 import { Createdatadictionaryfieldrequest } from '../model/createdatadictionaryfieldrequest';
@@ -43,9 +45,9 @@ import { GetTasksV1429Response } from '../model/getTasksV1429Response';
 // @ts-ignore
 import { Identitycollectorbuiltinpropertiesresponse } from '../model/identitycollectorbuiltinpropertiesresponse';
 // @ts-ignore
-import { Identitycollectorlistitem } from '../model/identitycollectorlistitem';
+import { Identitycollectordependenciesconflicterror } from '../model/identitycollectordependenciesconflicterror';
 // @ts-ignore
-import { PutIdentityCollectorV1409Response } from '../model/putIdentityCollectorV1409Response';
+import { Identitycollectorlistitem } from '../model/identitycollectorlistitem';
 // @ts-ignore
 import { ReelectRequest } from '../model/reelectRequest';
 // @ts-ignore
@@ -232,7 +234,7 @@ export interface ListDataDictionaryFieldsV1RequestParams {
 }
 
 export interface ListIdentityCollectorsV1RequestParams {
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **sourceId**: *eq*  **type**: *eq, in*  **id**: *eq, in*  Supported composite operators are *and, or* */
+    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **sourceId**: *eq*  **type**: *eq, in*  **id**: *eq, in*  **name**: *eq, co*  For &#x60;name&#x60;, &#x60;eq&#x60; performs an exact match and &#x60;co&#x60; performs a contains (substring) match. Use public type display names from [List Identity Collector Types](https://developer.sailpoint.com/docs/api/get-identity-collector-types-v-1) with &#x60;type&#x60; filters (for example, &#x60;AWS&#x60;, not &#x60;AWS SaaS&#x60;).  Supported composite operators are *and, or* */
     filters?: string;
     /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     limit?: number;

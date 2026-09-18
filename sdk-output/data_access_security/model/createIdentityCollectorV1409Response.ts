@@ -7,10 +7,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PutIdentityCollectorV1409ResponseMessagesInner } from './putIdentityCollectorV1409ResponseMessagesInner';
+import { CreateIdentityCollectorV1409ResponseMessagesInner } from './createIdentityCollectorV1409ResponseMessagesInner';
 
 
-export interface PutIdentityCollectorV1409Response { 
+export interface CreateIdentityCollectorV1409Response { 
     /**
      * Fine-grained error code providing more detail of the error.
      */
@@ -22,6 +22,6 @@ export interface PutIdentityCollectorV1409Response {
     /**
      * Generic localized reason for error.
      */
-    messages?: Array<PutIdentityCollectorV1409ResponseMessagesInner>;
+    messages?: Array<CreateIdentityCollectorV1409ResponseMessagesInner>;
 }
 

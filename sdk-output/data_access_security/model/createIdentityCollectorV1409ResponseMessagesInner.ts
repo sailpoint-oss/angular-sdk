@@ -9,7 +9,7 @@
  */
 
 
-export interface PutIdentityCollectorV1409ResponseMessagesInner { 
+export interface CreateIdentityCollectorV1409ResponseMessagesInner { 
     /**
      * The locale for the message text, a BCP 47 language tag.
      */

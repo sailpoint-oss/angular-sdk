@@ -654,7 +654,7 @@
           private readonly api = inject(DataAccessSecurityService);
 
           listIdentityCollectorsV1(): void {
-            const filters: string = 'sourceId eq "2c9180835d2e5168015d32f890ca1581"'; // string
+            const filters: string = 'name co "Finance" and type eq "AWS"'; // string
             const limit: number = 250; // number
             const offset: number = 0; // number
             const count: boolean = true; // boolean
