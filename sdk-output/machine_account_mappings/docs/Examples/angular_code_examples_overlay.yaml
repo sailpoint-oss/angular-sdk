@@ -88,7 +88,7 @@
             });
           }
         }
-- path: /sources/v1/{sourceId}/machine-mappings
+- path: /sources/v1/{sourceId}/machine-account-mappings
   method: put
   xCodeSample:
     - lang: Angular

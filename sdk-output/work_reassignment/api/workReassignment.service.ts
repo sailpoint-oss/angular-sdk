@@ -94,6 +94,8 @@ export interface ListReassignmentConfigurationsV1RequestParams {
     offset?: number;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    count?: boolean;
 }
 
 export interface PutReassignmentConfigV1RequestParams {
@@ -508,12 +510,15 @@ export class WorkReassignmentService extends BaseService {
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
         const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+        const count = requestParameters?.count;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>limit, 'limit');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
 
         let localVarHeaders = this.defaultHeaders;
         if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {

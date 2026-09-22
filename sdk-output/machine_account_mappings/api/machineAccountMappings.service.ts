@@ -327,7 +327,7 @@ export class MachineAccountMappingsService extends BaseService {
             }
         }
 
-        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/machine-mappings`;
+        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/machine-account-mappings`;
         return this.httpClient.request<Array<AttributeMappings>>('put', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
