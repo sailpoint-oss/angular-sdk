@@ -94,6 +94,7 @@
             const limit: number = 250; // number
             const offset: number = 0; // number
             const count: boolean = true; // boolean
+            const isNHI: boolean = false; // boolean
             this.api.getIntelIdentityAccountsV1({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),

@@ -2,6 +2,7 @@ export * from './errorMessageDto';
 export * from './errorResponseDto';
 export * from './getIdentityIntelligenceV1401Response';
 export * from './getIdentityIntelligenceV1429Response';
+export * from './getIntelIdentityAccountsV1200Response';
 export * from './intelAccessAccountWire';
 export * from './intelAccessHistory';
 export * from './intelAccessHistoryAccessItemsSlice';

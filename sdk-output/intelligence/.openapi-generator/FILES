@@ -4,6 +4,7 @@ ErrorMessageDto.md
 ErrorResponseDto.md
 GetIdentityIntelligenceV1401Response.md
 GetIdentityIntelligenceV1429Response.md
+GetIntelIdentityAccountsV1200Response.md
 IntelAccessAccountWire.md
 IntelAccessHistory.md
 IntelAccessHistoryAccessItemsSlice.md
@@ -62,6 +63,7 @@ model/errorMessageDto.ts
 model/errorResponseDto.ts
 model/getIdentityIntelligenceV1401Response.ts
 model/getIdentityIntelligenceV1429Response.ts
+model/getIntelIdentityAccountsV1200Response.ts
 model/intelAccessAccountWire.ts
 model/intelAccessHistory.ts
 model/intelAccessHistoryAccessItemsSlice.ts

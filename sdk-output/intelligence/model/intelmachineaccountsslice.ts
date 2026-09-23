@@ -11,12 +11,20 @@ import { Intelmachineaccountwire } from './intelmachineaccountwire';
 
 
 /**
- * Correlated machine accounts embedded on the non-human identity aggregate. Returns the correlated account set on the wire today (account paging via child routes is not yet released). 
+ * Machine accounts embedded on the non-human identity aggregate (first page).
  */
 export interface Intelmachineaccountsslice { 
     /**
-     * Machine account rows correlated to the non-human identity.
+     * Machine accounts correlated to the non-human identity.
      */
     items: Array<Intelmachineaccountwire>;
+    /**
+     * Correlated machine account count from aggregation; omitted when items is empty.
+     */
+    totalCount?: number;
+    /**
+     * Next page URL when totalCount exceeds items returned. Includes isNHI=true.
+     */
+    next?: string;
 }
 

@@ -23,7 +23,7 @@ import { GetIdentityIntelligenceV1401Response } from '../model/getIdentityIntell
 // @ts-ignore
 import { GetIdentityIntelligenceV1429Response } from '../model/getIdentityIntelligenceV1429Response';
 // @ts-ignore
-import { IntelAccessAccountWire } from '../model/intelAccessAccountWire';
+import { GetIntelIdentityAccountsV1200Response } from '../model/getIntelIdentityAccountsV1200Response';
 // @ts-ignore
 import { IntelAccessItemHistoryEvent } from '../model/intelAccessItemHistoryEvent';
 // @ts-ignore
@@ -80,6 +80,8 @@ export interface GetIntelIdentityAccountsV1RequestParams {
     offset?: number;
     /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     count?: boolean;
+    /** NHI accounts when &#x60;true&#x60; (bare array). Human accounts when omitted or &#x60;false&#x60; (slice object).  */
+    isNHI?: boolean;
 }
 
 export interface GetIntelIdentityCertificationHistoryV1RequestParams {
@@ -201,7 +203,7 @@ export class IntelligenceService extends BaseService {
 
     /**
      * Get identity by filter
-     * Requires tenant license idn:response-and-remediation.  **Authentication and data segmentation**  Intelligence forwards the caller JWT to downstream identity and search services (context client). Enriched results, including non-human identity resolution, are filtered to the caller\&#39;s Data Segmentation visibility.  **Caution:** Generic API Management API keys are not tied to a user identity. When Data Segmentation is enabled, API key authentication may fail or return incomplete data because downstream calls require a user context. Use a [personal access token](https://developer.sailpoint.com/docs/api/authentication/#generate-a-personal-access-token) or other user-scoped OAuth token. See [API keys](https://documentation.sailpoint.com/saas/help/common/api_keys.html) and [Data Segmentation](https://documentation.sailpoint.com/saas/help/segmentation/index.html).  Resolves exactly one identity using a single SCIM-style filters expression.  **Supported filters**  | Filter field | Lookup mode | Notes | |---|---|---| | id eq | Human (+ optional non-human identity when feature-flagged) | Resolves human identities by id; when non-human resolution is enabled, a parallel non-human lookup runs. If both match different identities, returns HTTP 409. | | email eq | Human only | Human identity lookup by email only. | | opaqueIdentifier eq | Non-human identity only | Parallel nativeIdentity eq on machine-identities and machine-accounts, then name-prefix fallback on machine-accounts. Requires feature flag ISCRR-1905_NHI_TYPE_MACHINE_FILTER_ENABLED; when disabled, returns HTTP 400. |  Single-clause filters only; composite and or expressions are rejected with HTTP 400.  **identityGraph deep link**  When the tenant has the idg:base license, Human and NHI aggregate responses may include &#x60;identityGraph.href&#x60;, a deep link into the Identity Graph UI for the resolved identity. Opening the link requires the **Identity Graph Read Only** user level. The link is omitted when the tenant lacks idg:base.  **Human envelope (type Human)**  Embeds the first page (10 items) of each enrichment slice. Each paged slice includes totalCount from upstream X-Total-Count when items is non-empty, and carries a next continuation URL when totalCount exceeds the items returned on this page. Slices are always present (empty uses items [] with no totalCount). privilegedAccess returns the full privileged-access result and never carries next or totalCount. When the tenant has idn:machine-identity-security, nonHumanIdentityOwnership is included with agents and applications categories; each category is a flat object with independently paged primaryOwned and secondaryOwned buckets, and optional message/reason when upstream ownership fetch fails for that category (reason UPSTREAM_UNAVAILABLE). When the tenant lacks that license, nonHumanIdentityOwnership is omitted. Continue ownership paging with GET .../non-human-identity-ownership/{category} and optional ownershipRole&#x3D;primary|secondary (defaults to primary). If any enrichment upstream fails, the whole request fails with HTTP 500, except outliers (omitted when the tenant lacks the IDA-outliers license) and nonHumanIdentityOwnership category-level degrade (aggregate still returns HTTP 200).  **Non-human identity envelope (type NHI)**  Returns flat non-human identity fields at the top level plus correlated machine accounts on the aggregate and a derived block (isOrphaned, authorizedHumanIdentities, blastRadiusSummary). Omits Human-only slices (privilegedAccess, outliers, accessHistory, nonHumanIdentityOwnership). Account paging via child routes is not yet released. Opaque prefix resolution that deduplicates to one parent identity returns HTTP 200 with matchConfidence partial; multiple distinct parent identities return HTTP 409 with IDC_IDENTITY_AMBIGUOUS and candidate id and displayName values. 
+     * Requires tenant license idn:response-and-remediation.  **Caution:** When Data Segmentation is enabled, generic API Management API keys are not tied to a user identity and may fail or return incomplete data. Use a [personal access token](https://developer.sailpoint.com/docs/api/authentication/#generate-a-personal-access-token) or other user-scoped OAuth token. See [API keys](https://documentation.sailpoint.com/saas/help/common/api_keys.html) and [Data Segmentation](https://documentation.sailpoint.com/saas/help/segmentation/index.html).  Resolves exactly one identity using a single SCIM-style filters expression. Returns an enriched Human or non-human identity (NHI) envelope. Single-clause filters only; unsupported fields or operators return HTTP 400. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -328,14 +330,14 @@ export class IntelligenceService extends BaseService {
 
     /**
      * List identity accounts
-     * Continuation endpoint for a Human identity\&#39;s &#x60;accounts.next&#x60; link. Returns one page of account rows for the supplied limit and offset values. Pass &#x60;count&#x3D;true&#x60; to receive &#x60;X-Total-Count&#x60; (including &#x60;0&#x60; on empty pages). Not applicable to non-human identities (NHI accounts are returned on the NHI aggregate only). Requires tenant license idn:response-and-remediation. 
+     * Continuation endpoint for &#x60;accounts.next&#x60;. Pass &#x60;count&#x3D;true&#x60; for &#x60;X-Total-Count&#x60;.  - Human (default): omit &#x60;isNHI&#x60; or set it to &#x60;false&#x60;. Slice object (&#x60;items&#x60;). - Non-human identity (NHI): set &#x60;isNHI&#x3D;true&#x60; (required for NHI aggregate &#x60;accounts.next&#x60; links). Bare JSON array. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getIntelIdentityAccountsV1(requestParameters: GetIntelIdentityAccountsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IntelAccessAccountWire>>;
-    public getIntelIdentityAccountsV1(requestParameters: GetIntelIdentityAccountsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IntelAccessAccountWire>>>;
-    public getIntelIdentityAccountsV1(requestParameters: GetIntelIdentityAccountsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IntelAccessAccountWire>>>;
+    public getIntelIdentityAccountsV1(requestParameters: GetIntelIdentityAccountsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GetIntelIdentityAccountsV1200Response>;
+    public getIntelIdentityAccountsV1(requestParameters: GetIntelIdentityAccountsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GetIntelIdentityAccountsV1200Response>>;
+    public getIntelIdentityAccountsV1(requestParameters: GetIntelIdentityAccountsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GetIntelIdentityAccountsV1200Response>>;
     public getIntelIdentityAccountsV1(requestParameters: GetIntelIdentityAccountsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const id = requestParameters?.id;
         if (id === null || id === undefined) {
@@ -344,6 +346,7 @@ export class IntelligenceService extends BaseService {
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
         const count = requestParameters?.count;
+        const isNHI = requestParameters?.isNHI;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
@@ -352,6 +355,8 @@ export class IntelligenceService extends BaseService {
           <any>offset, 'offset');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>isNHI, 'isNHI');
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -379,7 +384,7 @@ export class IntelligenceService extends BaseService {
         }
 
         let localVarPath = `/intelligence/v1/identities/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/accounts`;
-        return this.httpClient.request<Array<IntelAccessAccountWire>>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<GetIntelIdentityAccountsV1200Response>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
