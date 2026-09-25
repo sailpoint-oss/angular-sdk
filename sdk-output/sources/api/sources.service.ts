@@ -1116,8 +1116,8 @@ export class SourcesService extends BaseService {
     }
 
     /**
-     * Creates a source in identitynow.
-     * This creates a specific source with a full source JSON representation. Any passwords are submitted as plain-text and encrypted upon receipt in IdentityNow.
+     * Create source
+     * This creates a specific source with a full source JSON representation. Any passwords are submitted as plain-text and encrypted upon receipt.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3903,8 +3903,8 @@ export class SourcesService extends BaseService {
     }
 
     /**
-     * Lists all sources in identitynow.
-     * This end-point lists all the sources in IdentityNow.
+     * List sources
+     * This end-point lists all the sources.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
