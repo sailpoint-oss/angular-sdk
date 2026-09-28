@@ -1,4 +1,4 @@
-# @sailpoint/angular-sdk@0.0.14
+# @sailpoint/angular-sdk@0.0.15
 
 Generic API specification for the Identity Security Cloud platform
 
@@ -24,7 +24,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```console
-npm install @sailpoint/angular-sdk@0.0.14 --save
+npm install @sailpoint/angular-sdk@0.0.15 --save
 ```
 
 _without publishing (not recommended):_

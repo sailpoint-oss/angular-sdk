@@ -22,6 +22,28 @@
             });
           }
         }
+- path: /machine-accounts/v1/{id}/remove
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#delete-machine-account-async-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          deleteMachineAccountAsyncV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteMachineAccountAsyncV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /sources/v1/{sourceId}/subtypes/{technicalName}
   method: delete
   xCodeSample:
@@ -40,6 +62,50 @@
             const technicalName: string = 'foo'; // string
             const xSailPointExperimental: string = 'true'; // string
             this.api.deleteMachineAccountSubtypeByTechnicalNameV1({ sourceId: sourceId, technicalName: technicalName }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/{id}/disable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#disable-machine-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          disableMachineAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.disableMachineAccountV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/{id}/enable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#enable-machine-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          enableMachineAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.enableMachineAccountV1({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -184,6 +250,50 @@
             const requestBody: Array<object> = [{"op":"replace","path":"/displayName","value":"Test New DisplayName"}]; // Array<object>
             const xSailPointExperimental: string = 'true'; // string
             this.api.patchMachineAccountSubtypeByTechnicalNameV1({ sourceId: sourceId, technicalName: technicalName, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/{id}/reload
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#reload-machine-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          reloadMachineAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.reloadMachineAccountV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/{id}/unlock
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#unlock-machine-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          unlockMachineAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.unlockMachineAccountV1({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });

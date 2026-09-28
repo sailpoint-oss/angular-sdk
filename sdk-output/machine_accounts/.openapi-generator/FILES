@@ -8,6 +8,7 @@ ListMachineAccountsV1401Response.md
 ListMachineAccountsV1429Response.md
 LocaleOrigin.md
 MachineAccount.md
+MachineAccountsAsyncResult.md
 MachineAccountsService.md
 MachineAccountsServicedeveloperSite_code_examples.yaml
 README.md
@@ -30,6 +31,7 @@ model/listMachineAccountsV1401Response.ts
 model/listMachineAccountsV1429Response.ts
 model/localeOrigin.ts
 model/machineAccount.ts
+model/machineAccountsAsyncResult.ts
 model/models.ts
 model/sourceSubtype.ts
 ng-package.json

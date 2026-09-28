@@ -27,6 +27,8 @@ import { ListMachineAccountsV1429Response } from '../model/listMachineAccountsV1
 // @ts-ignore
 import { MachineAccount } from '../model/machineAccount';
 // @ts-ignore
+import { MachineAccountsAsyncResult } from '../model/machineAccountsAsyncResult';
+// @ts-ignore
 import { SourceSubtype } from '../model/sourceSubtype';
 
 // @ts-ignore
@@ -43,11 +45,32 @@ export interface CreateMachineAccountSubtypeV1RequestParams {
     xSailPointExperimental?: string;
 }
 
+export interface DeleteMachineAccountAsyncV1RequestParams {
+    /** Machine Account ID. */
+    id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
 export interface DeleteMachineAccountSubtypeByTechnicalNameV1RequestParams {
     /** The ID of the source. */
     sourceId: string;
     /** The technical name of the subtype. */
     technicalName: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
+export interface DisableMachineAccountV1RequestParams {
+    /** Machine Account ID. */
+    id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
+export interface EnableMachineAccountV1RequestParams {
+    /** Machine Account ID. */
+    id: string;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -114,6 +137,20 @@ export interface PatchMachineAccountSubtypeByTechnicalNameV1RequestParams {
     technicalName: string;
     /** A JSON of updated values [JSON Patch](https://tools.ietf.org/html/rfc6902) standard. */
     requestBody: Array<object>;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
+export interface ReloadMachineAccountV1RequestParams {
+    /** Machine Account ID. */
+    id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
+export interface UnlockMachineAccountV1RequestParams {
+    /** Machine Account ID. */
+    id: string;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -212,6 +249,65 @@ export class MachineAccountsService extends BaseService {
     }
 
     /**
+     * Remove machine account
+     * Use this API to remove a machine account from Identity Security Cloud. The source account is left unchanged, and a removed machine account can be re-created during the next aggregation. The response returns the task ID.  This endpoint is intended for:  * Removing machine accounts that no longer exist on the source.  * Removing machine accounts that will not be aggregated after a source configuration change.  * Forcing machine accounts to be re-created on the next aggregation so account processing can run again.  A caller who owns the machine account can remove it. Other callers need the **idn:mis-account:remove** right. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public deleteMachineAccountAsyncV1(requestParameters: DeleteMachineAccountAsyncV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<MachineAccountsAsyncResult>;
+    public deleteMachineAccountAsyncV1(requestParameters: DeleteMachineAccountAsyncV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<MachineAccountsAsyncResult>>;
+    public deleteMachineAccountAsyncV1(requestParameters: DeleteMachineAccountAsyncV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<MachineAccountsAsyncResult>>;
+    public deleteMachineAccountAsyncV1(requestParameters: DeleteMachineAccountAsyncV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling deleteMachineAccountAsyncV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/machine-accounts/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/remove`;
+        return this.httpClient.request<MachineAccountsAsyncResult>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Delete subtype
      * Delete a machine account subtype by source ID and technical name.
      * @param requestParameters
@@ -263,6 +359,124 @@ export class MachineAccountsService extends BaseService {
 
         let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/subtypes/${this.configuration.encodeParam({name: "technicalName", value: technicalName, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Disable machine account
+     * This API submits a task to disable a machine account and returns the task ID.  A caller who owns the machine account can disable it. Other callers need the **idn:mis-account:disable** right. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public disableMachineAccountV1(requestParameters: DisableMachineAccountV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<MachineAccountsAsyncResult>;
+    public disableMachineAccountV1(requestParameters: DisableMachineAccountV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<MachineAccountsAsyncResult>>;
+    public disableMachineAccountV1(requestParameters: DisableMachineAccountV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<MachineAccountsAsyncResult>>;
+    public disableMachineAccountV1(requestParameters: DisableMachineAccountV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling disableMachineAccountV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/machine-accounts/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/disable`;
+        return this.httpClient.request<MachineAccountsAsyncResult>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Enable machine account
+     * This API submits a task to enable a machine account and returns the task ID.  A caller who owns the machine account can enable it. Other callers need the **idn:mis-account:enable** right. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public enableMachineAccountV1(requestParameters: EnableMachineAccountV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<MachineAccountsAsyncResult>;
+    public enableMachineAccountV1(requestParameters: EnableMachineAccountV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<MachineAccountsAsyncResult>>;
+    public enableMachineAccountV1(requestParameters: EnableMachineAccountV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<MachineAccountsAsyncResult>>;
+    public enableMachineAccountV1(requestParameters: EnableMachineAccountV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling enableMachineAccountV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/machine-accounts/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/enable`;
+        return this.httpClient.request<MachineAccountsAsyncResult>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -677,6 +891,124 @@ export class MachineAccountsService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: requestBody,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Reload machine account
+     * This API asynchronously reloads the machine account directly from the connector and performs a one-time aggregation. It returns the task ID.  A caller who owns the machine account can reload it. Other callers need the **idn:mis-account:reload** right. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public reloadMachineAccountV1(requestParameters: ReloadMachineAccountV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<MachineAccountsAsyncResult>;
+    public reloadMachineAccountV1(requestParameters: ReloadMachineAccountV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<MachineAccountsAsyncResult>>;
+    public reloadMachineAccountV1(requestParameters: ReloadMachineAccountV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<MachineAccountsAsyncResult>>;
+    public reloadMachineAccountV1(requestParameters: ReloadMachineAccountV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling reloadMachineAccountV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/machine-accounts/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/reload`;
+        return this.httpClient.request<MachineAccountsAsyncResult>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Unlock machine account
+     * This API submits a task to unlock a machine account and returns the task ID.  A caller who owns the machine account can unlock it. Other callers need the **idn:mis-account:unlock** right. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public unlockMachineAccountV1(requestParameters: UnlockMachineAccountV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<MachineAccountsAsyncResult>;
+    public unlockMachineAccountV1(requestParameters: UnlockMachineAccountV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<MachineAccountsAsyncResult>>;
+    public unlockMachineAccountV1(requestParameters: UnlockMachineAccountV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<MachineAccountsAsyncResult>>;
+    public unlockMachineAccountV1(requestParameters: UnlockMachineAccountV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling unlockMachineAccountV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/machine-accounts/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/unlock`;
+        return this.httpClient.request<MachineAccountsAsyncResult>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
