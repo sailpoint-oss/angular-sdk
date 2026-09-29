@@ -57,6 +57,8 @@ export interface CreateMachineIdentityV1RequestParams {
 
 export interface CreateMachineIdentityV2RequestParams {
     machineidentityv2: MachineidentityV2;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface DeleteMachineIdentityV1RequestParams {
@@ -69,6 +71,8 @@ export interface DeleteMachineIdentityV1RequestParams {
 export interface DeleteMachineIdentityV2RequestParams {
     /** Machine Identity ID. */
     id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface DeleteOwnershipCorrelationConfigV1RequestParams {
@@ -78,6 +82,8 @@ export interface DeleteOwnershipCorrelationConfigV1RequestParams {
     resourceId: string;
     /** The correlation config ID. */
     configId: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface GetMachineIdentityV1RequestParams {
@@ -90,6 +96,8 @@ export interface GetMachineIdentityV1RequestParams {
 export interface GetMachineIdentityV2RequestParams {
     /** Machine Identity ID. */
     id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface GetOwnershipCorrelationConfigV1RequestParams {
@@ -99,6 +107,8 @@ export interface GetOwnershipCorrelationConfigV1RequestParams {
     resourceId: string;
     /** The correlation config ID. */
     configId: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface GetUnsanctionedAnomalySummaryV1RequestParams {
@@ -132,6 +142,8 @@ export interface ListMachineIdentitiesV2RequestParams {
     limit?: number;
     /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     offset?: number;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface ListMachineIdentityAnomaliesV1RequestParams {
@@ -177,6 +189,8 @@ export interface ListOwnershipCorrelationConfigsV1RequestParams {
     limit?: number;
     /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     offset?: number;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface PatchOwnershipCorrelationConfigV1RequestParams {
@@ -188,6 +202,8 @@ export interface PatchOwnershipCorrelationConfigV1RequestParams {
     configId: string;
     /** The JSONPatch payload used to update the correlation config. */
     jsonPatchOperation: Array<JsonPatchOperation>;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface StartMachineIdentityAggregationV1RequestParams {
@@ -212,6 +228,8 @@ export interface UpdateMachineIdentityV2RequestParams {
     id: string;
     /** A JSON of updated values [JSON Patch](https://tools.ietf.org/html/rfc6902) standard. */
     jsonPatchOperation: Array<JsonPatchOperation>;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 
@@ -308,8 +326,12 @@ export class MachineIdentitiesService extends BaseService {
         if (machineidentityv2 === null || machineidentityv2 === undefined) {
             throw new Error('Required parameter machineidentityv2 was null or undefined when calling createMachineIdentityV2.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -432,8 +454,12 @@ export class MachineIdentitiesService extends BaseService {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling deleteMachineIdentityV2.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -495,8 +521,12 @@ export class MachineIdentitiesService extends BaseService {
         if (configId === null || configId === undefined) {
             throw new Error('Required parameter configId was null or undefined when calling deleteOwnershipCorrelationConfigV1.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -609,8 +639,12 @@ export class MachineIdentitiesService extends BaseService {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling getMachineIdentityV2.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -672,8 +706,12 @@ export class MachineIdentitiesService extends BaseService {
         if (configId === null || configId === undefined) {
             throw new Error('Required parameter configId was null or undefined when calling getOwnershipCorrelationConfigV1.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -856,6 +894,7 @@ export class MachineIdentitiesService extends BaseService {
         const count = requestParameters?.count;
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
@@ -870,6 +909,9 @@ export class MachineIdentitiesService extends BaseService {
           <any>offset, 'offset');
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -1079,6 +1121,7 @@ export class MachineIdentitiesService extends BaseService {
         const count = requestParameters?.count;
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
@@ -1091,6 +1134,9 @@ export class MachineIdentitiesService extends BaseService {
           <any>offset, 'offset');
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -1157,8 +1203,12 @@ export class MachineIdentitiesService extends BaseService {
         if (jsonPatchOperation === null || jsonPatchOperation === undefined) {
             throw new Error('Required parameter jsonPatchOperation was null or undefined when calling patchOwnershipCorrelationConfigV1.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -1372,8 +1422,12 @@ export class MachineIdentitiesService extends BaseService {
         if (jsonPatchOperation === null || jsonPatchOperation === undefined) {
             throw new Error('Required parameter jsonPatchOperation was null or undefined when calling updateMachineIdentityV2.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'

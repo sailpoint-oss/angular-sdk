@@ -49,6 +49,7 @@
               } ],
               "sanctionedStatus" : ""
             }; // BusinessApplication
+            const xSailPointExperimental: string = 'true'; // string
             this.api.createBusinessApplicationV1({ businessApplication: businessApplication }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -70,6 +71,7 @@
 
           getBusinessApplicationV1(): void {
             const id: string = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890'; // string
+            const xSailPointExperimental: string = 'true'; // string
             this.api.getBusinessApplicationV1({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -95,6 +97,7 @@
             const count: boolean = true; // boolean
             const limit: number = 250; // number
             const offset: number = 0; // number
+            const xSailPointExperimental: string = 'true'; // string
             this.api.listBusinessApplicationsV1({  }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -126,6 +129,7 @@
               "path" : "/description",
               "value" : "New description"
             }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
             this.api.updateBusinessApplicationV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),

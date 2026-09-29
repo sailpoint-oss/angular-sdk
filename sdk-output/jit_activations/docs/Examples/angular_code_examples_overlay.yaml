@@ -18,6 +18,7 @@
             const sorters: string = '-activationInitiated'; // string
             const searchAfter: string = '2026-07-08T14:33:52.029Z,367fb802-1026-1835-a619-11a56e4c5be3'; // string
             const filters: string = 'status eq "PROVISIONED"'; // string
+            const xSailPointExperimental: string = 'true'; // string
             this.api.listJitActivationHistoryForCurrentIdentityV1({  }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -44,6 +45,7 @@
             const sorters: string = '-activationInitiated'; // string
             const searchAfter: string = '2026-07-08T14:33:52.029Z,367fb802-1026-1835-a619-11a56e4c5be3'; // string
             const filters: string = 'status eq "PROVISIONED"'; // string
+            const xSailPointExperimental: string = 'true'; // string
             this.api.listJitActivationHistoryV1({  }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),

@@ -184,6 +184,9 @@ export class ExampleComponent {
 [[Back to top]](#)
 
 ## set-machine-account-mappings-v1
+:::warning experimental
+This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
+:::
 Update source\'s machine account mappings
 Use this API to update Machine Account Attribute Mapping for a Source. A token with ORG_ADMIN, SOURCE_ADMIN, or SOURCE_SUBADMIN authority is required to call this API.
 
@@ -198,6 +201,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **sourceId** | `string` | Source ID. |  [default to undefined]
 **attributeMappings** | `AttributeMappings` |  | 
+**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 
 ### Return type
 
@@ -222,6 +226,7 @@ export class ExampleComponent {
   setMachineAccountMappingsV1(): void {
     const sourceId: string = ; // Source ID.
     const attributeMappings: AttributeMappings = ; // 
+    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.setMachineAccountMappingsV1({ sourceId: sourceId, attributeMappings: attributeMappings }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),

@@ -323,6 +323,7 @@
           private readonly api = inject(AccessRequestsService);
 
           getAccessRequestConfigV2(): void {
+            const xSailPointExperimental: string = 'true'; // string
             this.api.getAccessRequestConfigV2({  }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -729,6 +730,7 @@
 
           setAccessRequestConfigV2(): void {
             const accessRequestConfig2: AccessRequestConfig2 = ; // AccessRequestConfig2
+            const xSailPointExperimental: string = 'true'; // string
             this.api.setAccessRequestConfigV2({ accessRequestConfig2: accessRequestConfig2 }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),

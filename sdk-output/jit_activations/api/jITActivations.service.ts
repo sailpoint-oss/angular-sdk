@@ -56,6 +56,8 @@ export interface ListJitActivationHistoryForCurrentIdentityV1RequestParams {
     searchAfter?: string;
     /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **entitlementId**: *eq, in*  **sourceId**: *eq*  **connectionId**: *eq*  **status**: *eq, in*  **activationInitiated**: *gt, lt, ge, le*  **policyFrictionOutcome**: *eq, in* */
     filters?: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface ListJitActivationHistoryV1RequestParams {
@@ -71,6 +73,8 @@ export interface ListJitActivationHistoryV1RequestParams {
     searchAfter?: string;
     /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **identityId**: *eq, in*  **entitlementId**: *eq, in*  **sourceId**: *eq*  **connectionId**: *eq*  **status**: *eq, in*  **activationInitiated**: *gt, lt, ge, le*  **policyFrictionOutcome**: *eq, in* */
     filters?: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface StartActivateWorkflowV1RequestParams {
@@ -118,6 +122,7 @@ export class JITActivationsService extends BaseService {
         const sorters = requestParameters?.sorters;
         const searchAfter = requestParameters?.searchAfter;
         const filters = requestParameters?.filters;
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
@@ -134,6 +139,9 @@ export class JITActivationsService extends BaseService {
           <any>filters, 'filters');
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -190,6 +198,7 @@ export class JITActivationsService extends BaseService {
         const sorters = requestParameters?.sorters;
         const searchAfter = requestParameters?.searchAfter;
         const filters = requestParameters?.filters;
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
@@ -206,6 +215,9 @@ export class JITActivationsService extends BaseService {
           <any>filters, 'filters');
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'

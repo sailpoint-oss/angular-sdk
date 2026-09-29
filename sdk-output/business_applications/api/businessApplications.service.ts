@@ -35,11 +35,15 @@ import { BaseService } from '../api.base.service';
 
 export interface CreateBusinessApplicationV1RequestParams {
     businessApplication: BusinessApplication;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface GetBusinessApplicationV1RequestParams {
     /** Business Application ID. */
     id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface ListBusinessApplicationsV1RequestParams {
@@ -53,6 +57,8 @@ export interface ListBusinessApplicationsV1RequestParams {
     limit?: number;
     /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     offset?: number;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface UpdateBusinessApplicationV1RequestParams {
@@ -60,6 +66,8 @@ export interface UpdateBusinessApplicationV1RequestParams {
     id: string;
     /** A JSON array of patch operations per RFC 6902. */
     jsonPatchOperation: Array<JsonPatchOperation>;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 
@@ -87,8 +95,12 @@ export class BusinessApplicationsService extends BaseService {
         if (businessApplication === null || businessApplication === undefined) {
             throw new Error('Required parameter businessApplication was null or undefined when calling createBusinessApplicationV1.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -152,8 +164,12 @@ export class BusinessApplicationsService extends BaseService {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling getBusinessApplicationV1.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -208,6 +224,7 @@ export class BusinessApplicationsService extends BaseService {
         const count = requestParameters?.count;
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
@@ -222,6 +239,9 @@ export class BusinessApplicationsService extends BaseService {
           <any>offset, 'offset');
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -280,8 +300,12 @@ export class BusinessApplicationsService extends BaseService {
         if (jsonPatchOperation === null || jsonPatchOperation === undefined) {
             throw new Error('Required parameter jsonPatchOperation was null or undefined when calling updateBusinessApplicationV1.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'

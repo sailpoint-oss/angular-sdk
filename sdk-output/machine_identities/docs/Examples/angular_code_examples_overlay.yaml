@@ -144,6 +144,7 @@
               "existsOnSource" : "TRUE",
               "status" : "ACTIVE"
             }; // MachineidentityV2
+            const xSailPointExperimental: string = 'true'; // string
             this.api.createMachineIdentityV2({ machineidentityv2: machineidentityv2 }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -187,6 +188,7 @@
 
           deleteMachineIdentityV2(): void {
             const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
             this.api.deleteMachineIdentityV2({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -210,6 +212,7 @@
             const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
             const resourceId: string = 'aws:iam-role'; // string
             const configId: string = 'f5dd23fe-3414-42b7-bb1c-869400ad7a10'; // string
+            const xSailPointExperimental: string = 'true'; // string
             this.api.deleteOwnershipCorrelationConfigV1({ sourceId: sourceId, resourceId: resourceId, configId: configId }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -253,6 +256,7 @@
 
           getMachineIdentityV2(): void {
             const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
             this.api.getMachineIdentityV2({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -276,6 +280,7 @@
             const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
             const resourceId: string = 'aws:iam-role'; // string
             const configId: string = 'f5dd23fe-3414-42b7-bb1c-869400ad7a10'; // string
+            const xSailPointExperimental: string = 'true'; // string
             this.api.getOwnershipCorrelationConfigV1({ sourceId: sourceId, resourceId: resourceId, configId: configId }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -348,6 +353,7 @@
             const count: boolean = true; // boolean
             const limit: number = 250; // number
             const offset: number = 0; // number
+            const xSailPointExperimental: string = 'true'; // string
             this.api.listMachineIdentitiesV2({  }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -426,6 +432,7 @@
             const count: boolean = true; // boolean
             const limit: number = 250; // number
             const offset: number = 0; // number
+            const xSailPointExperimental: string = 'true'; // string
             this.api.listOwnershipCorrelationConfigsV1({ sourceId: sourceId, resourceId: resourceId }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -455,6 +462,7 @@
               "path" : "/description",
               "value" : "New description"
             }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
             this.api.patchOwnershipCorrelationConfigV1({ sourceId: sourceId, resourceId: resourceId, configId: configId, jsonPatchOperation: jsonPatchOperation }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -532,6 +540,7 @@
               "path" : "/description",
               "value" : "New description"
             }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
             this.api.updateMachineIdentityV2({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),

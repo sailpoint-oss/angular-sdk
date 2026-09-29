@@ -75,6 +75,11 @@ export interface CreateAccessRequestV1RequestParams {
     accessRequest: AccessRequest;
 }
 
+export interface GetAccessRequestConfigV2RequestParams {
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
 export interface GetEntitlementDetailsForIdentityV1RequestParams {
     /** The identity ID. */
     identityId: string;
@@ -142,6 +147,8 @@ export interface SetAccessRequestConfigV1RequestParams {
 
 export interface SetAccessRequestConfigV2RequestParams {
     accessRequestConfig2: AccessRequestConfig2;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 
@@ -533,15 +540,20 @@ export class AccessRequestsService extends BaseService {
     /**
      * Get access request configuration
      * This endpoint returns the current access-request configuration.  To manage approval configurations, use the [Put approval config](https://developer.sailpoint.com/docs/api/put-approvals-config-v-1/) endpoint.
+     * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getAccessRequestConfigV2(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AccessRequestConfig2>;
-    public getAccessRequestConfigV2(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AccessRequestConfig2>>;
-    public getAccessRequestConfigV2(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AccessRequestConfig2>>;
-    public getAccessRequestConfigV2(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public getAccessRequestConfigV2(requestParameters?: GetAccessRequestConfigV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AccessRequestConfig2>;
+    public getAccessRequestConfigV2(requestParameters?: GetAccessRequestConfigV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AccessRequestConfig2>>;
+    public getAccessRequestConfigV2(requestParameters?: GetAccessRequestConfigV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AccessRequestConfig2>>;
+    public getAccessRequestConfigV2(requestParameters?: GetAccessRequestConfigV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -964,8 +976,12 @@ export class AccessRequestsService extends BaseService {
         if (accessRequestConfig2 === null || accessRequestConfig2 === undefined) {
             throw new Error('Required parameter accessRequestConfig2 was null or undefined when calling setAccessRequestConfigV2.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'

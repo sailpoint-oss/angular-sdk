@@ -61,6 +61,8 @@ export interface SetMachineAccountMappingsV1RequestParams {
     /** Source ID. */
     sourceId: string;
     attributeMappings: AttributeMappings;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 
@@ -292,8 +294,12 @@ export class MachineAccountMappingsService extends BaseService {
         if (attributeMappings === null || attributeMappings === undefined) {
             throw new Error('Required parameter attributeMappings was null or undefined when calling setMachineAccountMappingsV1.');
         }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'

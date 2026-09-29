@@ -400,6 +400,9 @@ export class ExampleComponent {
 [[Back to top]](#)
 
 ## get-access-request-config-v2
+:::warning experimental
+This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
+:::
 Get access request configuration
 This endpoint returns the current access-request configuration.
 
@@ -411,7 +414,10 @@ To manage approval configurations, use the [Put approval config](https://develop
 
 The service takes one object that holds every parameter. Its type is `GetAccessRequestConfigV2RequestParams`.
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 
 ### Return type
 
@@ -433,6 +439,7 @@ export class ExampleComponent {
   private readonly api = inject(AccessRequestsService);
 
   getAccessRequestConfigV2(): void {
+    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.getAccessRequestConfigV2({  }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
@@ -757,6 +764,9 @@ export class ExampleComponent {
 [[Back to top]](#)
 
 ## set-access-request-config-v2
+:::warning experimental
+This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
+:::
 Update access request configuration
 This endpoint replaces the current access-request configuration.
 
@@ -772,6 +782,7 @@ The service takes one object that holds every parameter. Its type is `SetAccessR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **accessRequestConfig2** | `AccessRequestConfig2` |  | 
+**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 
 ### Return type
 
@@ -795,6 +806,7 @@ export class ExampleComponent {
 
   setAccessRequestConfigV2(): void {
     const accessRequestConfig2: AccessRequestConfig2 = ; // 
+    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.setAccessRequestConfigV2({ accessRequestConfig2: accessRequestConfig2 }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),

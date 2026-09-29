@@ -42,6 +42,8 @@ export interface ListPublicMachineIdentitiesV1RequestParams {
     filters?: string;
     /** Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, name, subtype**  Sorting on &#x60;subtype&#x60; is only available when your tenant returns enriched public machine identity data; otherwise the request returns &#x60;400 Bad Request&#x60;. */
     sorters?: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 
@@ -70,6 +72,7 @@ export class PublicMachineIdentitiesService extends BaseService {
         const count = requestParameters?.count;
         const filters = requestParameters?.filters;
         const sorters = requestParameters?.sorters;
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
@@ -84,6 +87,9 @@ export class PublicMachineIdentitiesService extends BaseService {
           <any>sorters, 'sorters');
 
         let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
