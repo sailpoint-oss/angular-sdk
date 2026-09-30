@@ -7,6 +7,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { JitActivationCallerMetadata } from './jitActivationCallerMetadata';
 
 
 export interface JitActivationExtendRequest { 
@@ -18,5 +19,10 @@ export interface JitActivationExtendRequest {
      * Number of minutes to extend the activation period.
      */
     activationPeriodExtensionMins: number;
+    /**
+     * Origin of the request.
+     */
+    requestOrigin?: string;
+    metaData?: JitActivationCallerMetadata;
 }
 

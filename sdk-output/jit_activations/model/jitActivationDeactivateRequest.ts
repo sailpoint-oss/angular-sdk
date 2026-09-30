@@ -7,6 +7,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { JitActivationCallerMetadata } from './jitActivationCallerMetadata';
 
 
 export interface JitActivationDeactivateRequest { 
@@ -14,5 +15,10 @@ export interface JitActivationDeactivateRequest {
      * Entitlement connection identifier for the activation to deactivate.
      */
     connectionId: string;
+    /**
+     * Origin of the request.
+     */
+    requestOrigin?: string;
+    metaData?: JitActivationCallerMetadata;
 }
 

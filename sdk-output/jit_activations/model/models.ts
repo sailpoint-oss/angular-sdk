@@ -3,6 +3,7 @@ export * from './errorMessageDto';
 export * from './errorResponseDto';
 export * from './jitActivationActivateRequest';
 export * from './jitActivationActivateResponse';
+export * from './jitActivationCallerMetadata';
 export * from './jitActivationDeactivateRequest';
 export * from './jitActivationDeactivateResponse';
 export * from './jitActivationExtendRequest';

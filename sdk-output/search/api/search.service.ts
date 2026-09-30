@@ -219,7 +219,7 @@ export class SearchService extends BaseService {
 
     /**
      * Get a document by id
-     * Fetches a single document from the specified index, using the specified document ID.
+     * Fetches a single document from the specified index, using the specified document ID. **Note:** Response fields with an underscore (&#x60;_&#x60;) prefix, such as &#x60;_type&#x60; and &#x60;_index&#x60;, are internal metadata fields. These fields are for SailPoint internal use only and are subject to change without notice. Do not rely on them in your integrations.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -278,7 +278,7 @@ export class SearchService extends BaseService {
 
     /**
      * Perform search
-     * Perform a search with the provided query and return a matching result collection. To page past 10,000 records, you can use &#x60;searchAfter&#x60; paging.  Refer to [Paginating Search Queries](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-search-queries) for more information about how to implement &#x60;searchAfter&#x60; paging. The search query itself has a size limitation of approximately 800 objects when filtering by large lists of IDs or values (e.g., using &#x60;terms&#x60; filters with extensive lists).
+     * Perform a search with the provided query and return a matching result collection. To page past 10,000 records, you can use &#x60;searchAfter&#x60; paging.  Refer to [Paginating Search Queries](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-search-queries) for more information about how to implement &#x60;searchAfter&#x60; paging. The search query itself has a size limitation of approximately 800 objects when filtering by large lists of IDs or values (e.g., using &#x60;terms&#x60; filters with extensive lists). **Note:** Response fields with an underscore (&#x60;_&#x60;) prefix, such as &#x60;_type&#x60; and &#x60;_index&#x60;, are internal metadata fields. These fields are for SailPoint internal use only and are subject to change without notice. Do not rely on them in your integrations.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
