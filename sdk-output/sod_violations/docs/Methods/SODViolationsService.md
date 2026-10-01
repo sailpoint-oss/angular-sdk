@@ -331,7 +331,7 @@ export class ExampleComponent {
 
 ## start-predict-sod-violations-v1
 Predict sod violations for identity.
-This API is used to check if granting some additional accesses would cause the subject to be in violation of any SOD policies. Returns the violations that would be caused.
+This API is used to check if granting some additional accesses (entitlements, access profiles, or roles) would cause the subject to be in violation of any SOD policies. Returns the violations that would be caused.
 
 [API Spec](https://developer.sailpoint.com/docs/api/start-predict-sod-violations-v-1)
 

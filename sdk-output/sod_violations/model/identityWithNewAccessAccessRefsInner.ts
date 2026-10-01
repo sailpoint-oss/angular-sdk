@@ -10,20 +10,22 @@
 
 
 /**
- * Entitlement including a specific set of access.
+ * Reference to an access item that may contribute to an SOD violation.
  */
 export interface IdentityWithNewAccessAccessRefsInner { 
     /**
-     * Entitlement\'s DTO type.
+     * Access item DTO type.
      */
     type?: IdentityWithNewAccessAccessRefsInnerTypeEnum;
     /**
-     * Entitlement\'s ID.
+     * Access item ID.
      */
     id?: string;
 }
 export enum IdentityWithNewAccessAccessRefsInnerTypeEnum {
-    Entitlement = 'ENTITLEMENT'
+    Entitlement = 'ENTITLEMENT',
+    AccessProfile = 'ACCESS_PROFILE',
+    Role = 'ROLE'
 };
 
 

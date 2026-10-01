@@ -19,7 +19,7 @@ export interface IdentityWithNewAccess {
      */
     identityId: string;
     /**
-     * The list of entitlements to consider for possible violations in a preventive check.
+     * The list of access items to consider for possible violations in a preventive check. Supported types are ENTITLEMENT, ACCESS_PROFILE, and ROLE.
      */
     accessRefs: Array<IdentityWithNewAccessAccessRefsInner>;
 }
