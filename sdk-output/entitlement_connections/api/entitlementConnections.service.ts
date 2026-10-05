@@ -19,10 +19,6 @@ import { Observable }                                        from 'rxjs';
 // @ts-ignore
 import { EntitlementConnection } from '../model/entitlementConnection';
 // @ts-ignore
-import { EntitlementConnectionBulkUpdateItem } from '../model/entitlementConnectionBulkUpdateItem';
-// @ts-ignore
-import { EntitlementConnectionBulkUpdateResultItem } from '../model/entitlementConnectionBulkUpdateResultItem';
-// @ts-ignore
 import { EntitlementConnectionSearchHit } from '../model/entitlementConnectionSearchHit';
 // @ts-ignore
 import { ErrorResponseDto } from '../model/errorResponseDto';
@@ -75,20 +71,6 @@ export interface PatchEntitlementConnectionByIdV1RequestParams {
     /** Connection ID (UUID with or without hyphens). */
     connectionId: string;
     jsonPatchOperation: Array<JsonPatchOperation>;
-}
-
-export interface PatchEntitlementConnectionByQueryV1RequestParams {
-    /** Entitlement ID (UUID with or without hyphens). */
-    entitlementId: string;
-    /** Identity ID (UUID with or without hyphens). */
-    identityId: string;
-    /** Account ID (UUID with or without hyphens). */
-    accountId: string;
-    jsonPatchOperation: Array<JsonPatchOperation>;
-}
-
-export interface UpdateEntitlementConnectionsBulkV1RequestParams {
-    entitlementConnectionBulkUpdateItem: Array<EntitlementConnectionBulkUpdateItem>;
 }
 
 
@@ -304,157 +286,6 @@ export class EntitlementConnectionsService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: jsonPatchOperation,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * Update connection by query
-     * Applies JSON Patch operations to a single entitlement connection selected by &#x60;entitlementId&#x60;, &#x60;identityId&#x60;, and &#x60;accountId&#x60;. 
-     * @param requestParameters
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public patchEntitlementConnectionByQueryV1(requestParameters: PatchEntitlementConnectionByQueryV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<EntitlementConnection>;
-    public patchEntitlementConnectionByQueryV1(requestParameters: PatchEntitlementConnectionByQueryV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<EntitlementConnection>>;
-    public patchEntitlementConnectionByQueryV1(requestParameters: PatchEntitlementConnectionByQueryV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<EntitlementConnection>>;
-    public patchEntitlementConnectionByQueryV1(requestParameters: PatchEntitlementConnectionByQueryV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const entitlementId = requestParameters?.entitlementId;
-        if (entitlementId === null || entitlementId === undefined) {
-            throw new Error('Required parameter entitlementId was null or undefined when calling patchEntitlementConnectionByQueryV1.');
-        }
-        const identityId = requestParameters?.identityId;
-        if (identityId === null || identityId === undefined) {
-            throw new Error('Required parameter identityId was null or undefined when calling patchEntitlementConnectionByQueryV1.');
-        }
-        const accountId = requestParameters?.accountId;
-        if (accountId === null || accountId === undefined) {
-            throw new Error('Required parameter accountId was null or undefined when calling patchEntitlementConnectionByQueryV1.');
-        }
-        const jsonPatchOperation = requestParameters?.jsonPatchOperation;
-        if (jsonPatchOperation === null || jsonPatchOperation === undefined) {
-            throw new Error('Required parameter jsonPatchOperation was null or undefined when calling patchEntitlementConnectionByQueryV1.');
-        }
-
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>entitlementId, 'entitlementId');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>identityId, 'identityId');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>accountId, 'accountId');
-
-        let localVarHeaders = this.defaultHeaders;
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json-patch+json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/entitlement-connections/v1`;
-        return this.httpClient.request<EntitlementConnection>('patch', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                body: jsonPatchOperation,
-                params: localVarQueryParameters,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * Update connections in bulk
-     * Updates connection type for up to 100 connections in one request. The API returns per-item results in a 207 Multi-Status response. 
-     * @param requestParameters
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public updateEntitlementConnectionsBulkV1(requestParameters: UpdateEntitlementConnectionsBulkV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<EntitlementConnectionBulkUpdateResultItem>>;
-    public updateEntitlementConnectionsBulkV1(requestParameters: UpdateEntitlementConnectionsBulkV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<EntitlementConnectionBulkUpdateResultItem>>>;
-    public updateEntitlementConnectionsBulkV1(requestParameters: UpdateEntitlementConnectionsBulkV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<EntitlementConnectionBulkUpdateResultItem>>>;
-    public updateEntitlementConnectionsBulkV1(requestParameters: UpdateEntitlementConnectionsBulkV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const entitlementConnectionBulkUpdateItem = requestParameters?.entitlementConnectionBulkUpdateItem;
-        if (entitlementConnectionBulkUpdateItem === null || entitlementConnectionBulkUpdateItem === undefined) {
-            throw new Error('Required parameter entitlementConnectionBulkUpdateItem was null or undefined when calling updateEntitlementConnectionsBulkV1.');
-        }
-
-        let localVarHeaders = this.defaultHeaders;
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/entitlement-connections/v1`;
-        return this.httpClient.request<Array<EntitlementConnectionBulkUpdateResultItem>>('post', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                body: entitlementConnectionBulkUpdateItem,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

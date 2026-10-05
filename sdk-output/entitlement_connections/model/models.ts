@@ -1,7 +1,5 @@
 export * from './arrayInner';
 export * from './entitlementConnection';
-export * from './entitlementConnectionBulkUpdateItem';
-export * from './entitlementConnectionBulkUpdateResultItem';
 export * from './entitlementConnectionSearchHit';
 export * from './entitlementConnectionSearchHitEntitlement';
 export * from './entitlementConnectionSearchHitEntitlementPrivilegeLevel';

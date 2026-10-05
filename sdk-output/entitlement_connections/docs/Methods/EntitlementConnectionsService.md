@@ -20,8 +20,6 @@ Method | HTTP request | Description
 [**list-entitlement-connections-for-current-identity-v1**](#list-entitlement-connections-for-current-identity-v1) | **GET** `/entitlement-connections/v1/current-identity` | List my entitlement connections
 [**list-entitlement-connections-v1**](#list-entitlement-connections-v1) | **GET** `/entitlement-connections/v1` | List entitlement connections
 [**patch-entitlement-connection-by-id-v1**](#patch-entitlement-connection-by-id-v1) | **PATCH** `/entitlement-connections/v1/{connectionId}` | Update entitlement connection
-[**patch-entitlement-connection-by-query-v1**](#patch-entitlement-connection-by-query-v1) | **PATCH** `/entitlement-connections/v1` | Update connection by query
-[**update-entitlement-connections-bulk-v1**](#update-entitlement-connections-bulk-v1) | **POST** `/entitlement-connections/v1` | Update connections in bulk
 
 
 ## list-entitlement-connections-for-current-identity-v1
@@ -183,110 +181,6 @@ export class ExampleComponent {
     const connectionId: string = ; // Connection ID (UUID with or without hyphens).
     const jsonPatchOperation: Array<JsonPatchOperation> = ; // 
     this.api.patchEntitlementConnectionByIdV1({ connectionId: connectionId, jsonPatchOperation: jsonPatchOperation }).subscribe({
-      next: (result) => console.log(result),
-      error: (error) => console.error(error),
-    });
-  }
-}
-```
-
-[[Back to top]](#)
-
-## patch-entitlement-connection-by-query-v1
-Update connection by query
-Applies JSON Patch operations to a single entitlement connection selected by
-`entitlementId`, `identityId`, and `accountId`.
-
-
-[API Spec](https://developer.sailpoint.com/docs/api/patch-entitlement-connection-by-query-v-1)
-
-### Parameters
-
-The service takes one object that holds every parameter. Its type is `PatchEntitlementConnectionByQueryV1RequestParams`.
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**entitlementId** | `string` | Entitlement ID (UUID with or without hyphens). |  [default to undefined]
-**identityId** | `string` | Identity ID (UUID with or without hyphens). |  [default to undefined]
-**accountId** | `string` | Account ID (UUID with or without hyphens). |  [default to undefined]
-**jsonPatchOperation** | `Array<JsonPatchOperation>` |  | 
-
-### Return type
-
-`Observable<EntitlementConnection>`
-
-### HTTP request headers
-
-- **Content-Type**: application/json-patch+json
-- **Accept**: application/json
-
-### Example
-
-```typescript
-import { Component, inject } from '@angular/core';
-import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
-import { JsonPatchOperation } from '@sailpoint/angular-sdk/entitlement_connections';
-
-@Component({ selector: 'app-example', template: '' })
-export class ExampleComponent {
-  private readonly api = inject(EntitlementConnectionsService);
-
-  patchEntitlementConnectionByQueryV1(): void {
-    const entitlementId: string = ; // Entitlement ID (UUID with or without hyphens).
-    const identityId: string = ; // Identity ID (UUID with or without hyphens).
-    const accountId: string = ; // Account ID (UUID with or without hyphens).
-    const jsonPatchOperation: Array<JsonPatchOperation> = ; // 
-    this.api.patchEntitlementConnectionByQueryV1({ entitlementId: entitlementId, identityId: identityId, accountId: accountId, jsonPatchOperation: jsonPatchOperation }).subscribe({
-      next: (result) => console.log(result),
-      error: (error) => console.error(error),
-    });
-  }
-}
-```
-
-[[Back to top]](#)
-
-## update-entitlement-connections-bulk-v1
-Update connections in bulk
-Updates connection type for up to 100 connections in one request.
-The API returns per-item results in a 207 Multi-Status response.
-
-
-[API Spec](https://developer.sailpoint.com/docs/api/update-entitlement-connections-bulk-v-1)
-
-### Parameters
-
-The service takes one object that holds every parameter. Its type is `UpdateEntitlementConnectionsBulkV1RequestParams`.
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**entitlementConnectionBulkUpdateItem** | `Array<EntitlementConnectionBulkUpdateItem>` |  | 
-
-### Return type
-
-`Observable<Array<EntitlementConnectionBulkUpdateResultItem>>`
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### Example
-
-```typescript
-import { Component, inject } from '@angular/core';
-import { EntitlementConnectionsService } from '@sailpoint/angular-sdk/entitlement_connections';
-import { EntitlementConnectionBulkUpdateItem } from '@sailpoint/angular-sdk/entitlement_connections';
-
-@Component({ selector: 'app-example', template: '' })
-export class ExampleComponent {
-  private readonly api = inject(EntitlementConnectionsService);
-
-  updateEntitlementConnectionsBulkV1(): void {
-    const entitlementConnectionBulkUpdateItem: Array<EntitlementConnectionBulkUpdateItem> = ; // 
-    this.api.updateEntitlementConnectionsBulkV1({ entitlementConnectionBulkUpdateItem: entitlementConnectionBulkUpdateItem }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });
