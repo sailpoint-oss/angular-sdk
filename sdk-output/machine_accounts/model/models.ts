@@ -6,5 +6,7 @@ export * from './listMachineAccountsV1401Response';
 export * from './listMachineAccountsV1429Response';
 export * from './localeOrigin';
 export * from './machineAccount';
+export * from './machineAccountAllOfCompliance';
+export * from './machineAccountAllOfRisk';
 export * from './machineAccountsAsyncResult';
 export * from './sourceSubtype';

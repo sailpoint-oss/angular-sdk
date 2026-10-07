@@ -7,6 +7,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { MachineAccountAllOfCompliance } from './machineAccountAllOfCompliance';
+import { MachineAccountAllOfRisk } from './machineAccountAllOfRisk';
 
 
 export interface MachineAccount { 
@@ -94,12 +96,31 @@ export interface MachineAccount {
      * The source this machine account belongs to.
      */
     source: any | null;
+    risk?: MachineAccountAllOfRisk | null;
+    /**
+     * Entro permission level. Null when not enriched. Read-only; written only by aggregation.
+     */
+    readonly permissionLevel?: MachineAccountPermissionLevelEnum | null;
+    /**
+     * Entro compliance control ids. Null when absent; empty when Entro recorded no violations. A violations count is the length of this array. There is no `complianceViolationsCount` field, and `compliance` is not a list filter or sort field. Read-only; written only by aggregation.
+     */
+    readonly compliance?: Array<MachineAccountAllOfCompliance> | null;
+    /**
+     * When the machine account was last used, from Entro. Null when not enriched. Read-only; written only by aggregation.
+     */
+    readonly lastUsedAt?: string | null;
 }
 export enum MachineAccountClassificationMethodEnum {
     Source = 'SOURCE',
     Criteria = 'CRITERIA',
     Discovery = 'DISCOVERY',
     Manual = 'MANUAL'
+};
+export enum MachineAccountPermissionLevelEnum {
+    Privileged = 'PRIVILEGED',
+    Elevated = 'ELEVATED',
+    Basic = 'BASIC',
+    Unknown = 'UNKNOWN'
 };
 
 

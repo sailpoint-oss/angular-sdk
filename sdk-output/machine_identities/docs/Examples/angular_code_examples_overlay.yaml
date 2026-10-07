@@ -68,16 +68,7 @@
           createMachineIdentityV2(): void {
             const machineidentityv2: MachineidentityV2 = {
               "sourceId" : "6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa",
-              "resource" : {
-                "features" : [ "PROVISIONING", "AUTHENTICATION" ],
-                "name" : "nightly-batch-role",
-                "id" : "8886e5e3-63d0-462f-a195-d98da885b8dc",
-                "type" : "aws:iam-role"
-              },
-              "created" : "2015-05-28T14:07:17Z",
-              "connectorAttributes" : {
-                "objectguid" : "abc-123"
-              },
+              "entroId" : "117923dfeaaf4a1ab09b6252ea369e44",
               "description" : "Service account for nightly batch jobs",
               "owners" : {
                 "secondary" : [ {
@@ -97,10 +88,9 @@
                 "type" : "IDENTITY"
               },
               "uuid" : "f5dd23fe-3414-42b7-bb1c-869400ad7a10",
-              "nativeIdentity" : "abc:123:dddd",
-              "effectiveSanctionedStatus" : "SANCTIONED",
-              "environment" : "PRODUCTION",
+              "suspiciousSessionCount" : 22,
               "subtype" : "AI_AGENT",
+              "sessionCount" : 152,
               "businessApplicationRefs" : [ {
                 "name" : "Cursor",
                 "correlationType" : "MANUAL",
@@ -127,9 +117,24 @@
                   "type" : "IDENTITY"
                 }
               } ],
-              "name" : "aName",
               "modified" : "2015-05-28T14:07:17Z",
               "datasetId" : "8886e5e3-63d0-462f-a195-d98da885b8dc",
+              "id" : "id12345",
+              "resource" : {
+                "features" : [ "PROVISIONING", "AUTHENTICATION" ],
+                "name" : "nightly-batch-role",
+                "id" : "8886e5e3-63d0-462f-a195-d98da885b8dc",
+                "type" : "aws:iam-role"
+              },
+              "insights" : [ "Sanctioned Service Access" ],
+              "created" : "2015-05-28T14:07:17Z",
+              "connectorAttributes" : {
+                "objectguid" : "abc-123"
+              },
+              "nativeIdentity" : "abc:123:dddd",
+              "effectiveSanctionedStatus" : "SANCTIONED",
+              "environment" : "PRODUCTION",
+              "name" : "aName",
               "attributes" : {
                 "privilegeLevel" : "HIGH",
                 "region" : "APAC"
@@ -138,7 +143,6 @@
                 "severity" : "HIGH",
                 "score" : 72.5
               },
-              "id" : "id12345",
               "manuallyEdited" : true,
               "manuallyCreated" : true,
               "existsOnSource" : "TRUE",

@@ -101,6 +101,22 @@ export interface MachineidentityV2 {
      */
     readonly effectiveSanctionedStatus?: SanctionedStatus | null;
     risk?: MachineIdentityV2Risk;
+    /**
+     * Entro back-reference. Present when Entro enrichment is enabled for the tenant. Null means the identity is not Entro-correlated. Read-only; written only by aggregation. Not returned on older machine-identity versions.
+     */
+    readonly entroId?: string | null;
+    /**
+     * Entro insights. Null means not Entro-correlated; an empty array means enriched with no insights. Read-only; written only by aggregation. Filter matches a whole element, not a substring.
+     */
+    readonly insights?: Array<string> | null;
+    /**
+     * Entro session count. Null means not Entro-correlated and is not the same as 0. Read-only; written only by aggregation.
+     */
+    readonly sessionCount?: number | null;
+    /**
+     * Entro suspicious session count. Null means not Entro-correlated and is not the same as 0. Read-only; written only by aggregation.
+     */
+    readonly suspiciousSessionCount?: number | null;
 }
 
 
