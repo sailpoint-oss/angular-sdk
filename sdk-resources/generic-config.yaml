@@ -1,6 +1,6 @@
 npmName: "@sailpoint/angular-sdk"
 npmRepository: sailpoint.com
-npmVersion: 0.0.21
+npmVersion: 0.0.22
 ngVersion: 22
 providedIn: root
 packageName: generic
