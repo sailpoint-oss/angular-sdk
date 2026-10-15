@@ -158,7 +158,7 @@ The service takes one object that holds every parameter. Its type is `SearchGetV
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**index** | `'accessprofiles' | 'accountactivities' | 'entitlements' | 'events' | 'identities' | 'roles'` | The index from which to fetch the specified document.  The currently supported index names are: *accessprofiles*, *accountactivities*, *entitlements*, *events*, *identities*, and *roles*.  |  [default to undefined]
+**index** | `'accessprofiles' | 'accountactivities' | 'entitlements' | 'events' | 'identities' | 'roles' | 'workflowsummaries'` | The index from which to fetch the specified document.  The currently supported index names are: *accessprofiles*, *accountactivities*, *entitlements*, *events*, *identities*, *roles*, and *workflowsummaries*.  |  [default to undefined]
 **id** | `string` | ID of the requested document. |  [default to undefined]
 
 ### Return type
@@ -181,7 +181,7 @@ export class ExampleComponent {
   private readonly api = inject(SearchService);
 
   searchGetV1(): void {
-    const index: string = ; // The index from which to fetch the specified document.  The currently supported index names are: *accessprofiles*, *accountactivities*, *entitlements*, *events*, *identities*, and *roles*. 
+    const index: string = ; // The index from which to fetch the specified document.  The currently supported index names are: *accessprofiles*, *accountactivities*, *entitlements*, *events*, *identities*, *roles*, and *workflowsummaries*. 
     const id: string = ; // ID of the requested document.
     this.api.searchGetV1({ index: index, id: id }).subscribe({
       next: (result) => console.log(result),

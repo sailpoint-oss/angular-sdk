@@ -291,7 +291,7 @@
           private readonly api = inject(SearchService);
 
           searchGetV1(): void {
-            const index: string = 'identities'; // 'accessprofiles' | 'accountactivities' | 'entitlements' | 'events' | 'identities' | 'roles'
+            const index: string = 'identities'; // 'accessprofiles' | 'accountactivities' | 'entitlements' | 'events' | 'identities' | 'roles' | 'workflowsummaries'
             const id: string = '2c91808568c529c60168cca6f90c1313'; // string
             this.api.searchGetV1({ index: index, id: id }).subscribe({
               next: (result) => console.log(result),

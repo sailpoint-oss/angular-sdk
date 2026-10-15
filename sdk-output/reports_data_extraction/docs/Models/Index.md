@@ -32,6 +32,8 @@ import { Index } from '@sailpoint/angular-sdk/reports_data_extraction';
 
 * `Roles` (value: `'roles'`)
 
+* `Workflowsummaries` (value: `'workflowsummaries'`)
+
 * `Star` (value: `'*'`)
 
 

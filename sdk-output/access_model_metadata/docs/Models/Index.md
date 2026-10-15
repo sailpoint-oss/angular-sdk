@@ -32,6 +32,8 @@ import { Index } from '@sailpoint/angular-sdk/access_model_metadata';
 
 * `Roles` (value: `'roles'`)
 
+* `Workflowsummaries` (value: `'workflowsummaries'`)
+
 * `Star` (value: `'*'`)
 
 

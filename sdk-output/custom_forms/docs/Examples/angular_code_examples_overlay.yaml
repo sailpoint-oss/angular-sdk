@@ -484,7 +484,6 @@
           private readonly api = inject(CustomFormsService);
 
           searchFormInstancesByTenantV1(): void {
-            const offset: number = 0; // number
             const limit: number = 100; // number
             const filters: string = 'formDefinitionId eq "351c1daa-56f6-4bbf-b32c-49844c0b716e"'; // string
             this.api.searchFormInstancesByTenantV1({  }).subscribe({

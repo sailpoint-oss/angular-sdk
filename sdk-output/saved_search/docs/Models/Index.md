@@ -32,6 +32,8 @@ import { Index } from '@sailpoint/angular-sdk/saved_search';
 
 * `Roles` (value: `'roles'`)
 
+* `Workflowsummaries` (value: `'workflowsummaries'`)
+
 * `Star` (value: `'*'`)
 
 

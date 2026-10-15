@@ -19,6 +19,10 @@ import { Observable }                                        from 'rxjs';
 // @ts-ignore
 import { ErrorResponseDto } from '../model/errorResponseDto';
 // @ts-ignore
+import { JITActivationFrictionPatchRequest } from '../model/jITActivationFrictionPatchRequest';
+// @ts-ignore
+import { JITActivationFrictionsResponse } from '../model/jITActivationFrictionsResponse';
+// @ts-ignore
 import { JitActivationActivateRequest } from '../model/jitActivationActivateRequest';
 // @ts-ignore
 import { JitActivationActivateResponse } from '../model/jitActivationActivateResponse';
@@ -42,6 +46,13 @@ import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables'
 import { Configuration }                                     from '../configuration';
 import { BaseService } from '../api.base.service';
 
+
+export interface GetJitActivationFrictionsV1RequestParams {
+    /** Identifier of the activation. */
+    activationId: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
 
 export interface ListJitActivationHistoryForCurrentIdentityV1RequestParams {
     /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
@@ -77,6 +88,15 @@ export interface ListJitActivationHistoryV1RequestParams {
     xSailPointExperimental?: string;
 }
 
+export interface PatchJitActivationFrictionsV1RequestParams {
+    /** Identifier of the activation. */
+    activationId: string;
+    /** Submission for the current friction step. */
+    jITActivationFrictionPatchRequest: JITActivationFrictionPatchRequest;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
 export interface StartActivateWorkflowV1RequestParams {
     jitActivationActivateRequest: JitActivationActivateRequest;
     /** Use this header to enable this experimental API. */
@@ -103,6 +123,65 @@ export class JITActivationsService extends BaseService {
 
     constructor(protected httpClient: HttpClient, @Optional() @Inject(BASE_PATH) basePath: string|string[], @Optional() configuration?: Configuration) {
         super(basePath, configuration);
+    }
+
+    /**
+     * Get JIT activation frictions
+     * Returns evaluated frictions for a JIT Privileged (JIT P) activation.  Requires OAuth scope **idn:jit-activation-workflow:activate** or **idn:jit-activation-workflow:manage**. The JWT identity id must match the activation identity.  Returns HTTP 403 when **PSPM_JIT_ACCESS_ACTIVATION** or **PSPM_JIT_ACCESS_ACTIVATION_15** is disabled.  Returns HTTP 404 when the activation does not exist. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getJitActivationFrictionsV1(requestParameters: GetJitActivationFrictionsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<JITActivationFrictionsResponse>;
+    public getJitActivationFrictionsV1(requestParameters: GetJitActivationFrictionsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<JITActivationFrictionsResponse>>;
+    public getJitActivationFrictionsV1(requestParameters: GetJitActivationFrictionsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<JITActivationFrictionsResponse>>;
+    public getJitActivationFrictionsV1(requestParameters: GetJitActivationFrictionsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const activationId = requestParameters?.activationId;
+        if (activationId === null || activationId === undefined) {
+            throw new Error('Required parameter activationId was null or undefined when calling getJitActivationFrictionsV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/jit-activations/v1/${this.configuration.encodeParam({name: "activationId", value: activationId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}/frictions`;
+        return this.httpClient.request<JITActivationFrictionsResponse>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
     }
 
     /**
@@ -247,6 +326,79 @@ export class JITActivationsService extends BaseService {
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Submit JIT activation friction
+     * Submits the current friction step for a JIT Privileged (JIT P) activation.  Requires OAuth scope **idn:jit-activation-workflow:activate** or **idn:jit-activation-workflow:manage**. The JWT identity id must match the activation identity.  Returns HTTP 403 when **PSPM_JIT_ACCESS_ACTIVATION** or **PSPM_JIT_ACCESS_ACTIVATION_15** is disabled.  Request bodies larger than 16 KB return HTTP 413. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public patchJitActivationFrictionsV1(requestParameters: PatchJitActivationFrictionsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<JITActivationFrictionsResponse>;
+    public patchJitActivationFrictionsV1(requestParameters: PatchJitActivationFrictionsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<JITActivationFrictionsResponse>>;
+    public patchJitActivationFrictionsV1(requestParameters: PatchJitActivationFrictionsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<JITActivationFrictionsResponse>>;
+    public patchJitActivationFrictionsV1(requestParameters: PatchJitActivationFrictionsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const activationId = requestParameters?.activationId;
+        if (activationId === null || activationId === undefined) {
+            throw new Error('Required parameter activationId was null or undefined when calling patchJitActivationFrictionsV1.');
+        }
+        const jITActivationFrictionPatchRequest = requestParameters?.jITActivationFrictionPatchRequest;
+        if (jITActivationFrictionPatchRequest === null || jITActivationFrictionPatchRequest === undefined) {
+            throw new Error('Required parameter jITActivationFrictionPatchRequest was null or undefined when calling patchJitActivationFrictionsV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/jit-activations/v1/${this.configuration.encodeParam({name: "activationId", value: activationId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}/frictions`;
+        return this.httpClient.request<JITActivationFrictionsResponse>('patch', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: jITActivationFrictionPatchRequest,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

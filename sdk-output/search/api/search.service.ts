@@ -48,8 +48,8 @@ export interface SearchCountV1RequestParams {
 }
 
 export interface SearchGetV1RequestParams {
-    /** The index from which to fetch the specified document.  The currently supported index names are: *accessprofiles*, *accountactivities*, *entitlements*, *events*, *identities*, and *roles*.  */
-    index: 'accessprofiles' | 'accountactivities' | 'entitlements' | 'events' | 'identities' | 'roles';
+    /** The index from which to fetch the specified document.  The currently supported index names are: *accessprofiles*, *accountactivities*, *entitlements*, *events*, *identities*, *roles*, and *workflowsummaries*.  */
+    index: 'accessprofiles' | 'accountactivities' | 'entitlements' | 'events' | 'identities' | 'roles' | 'workflowsummaries';
     /** ID of the requested document. */
     id: string;
 }
@@ -262,7 +262,7 @@ export class SearchService extends BaseService {
             }
         }
 
-        let localVarPath = `/search/v1/${this.configuration.encodeParam({name: "index", value: index, in: "path", style: "simple", explode: false, dataType: "'accessprofiles' | 'accountactivities' | 'entitlements' | 'events' | 'identities' | 'roles'", dataFormat: undefined})}/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        let localVarPath = `/search/v1/${this.configuration.encodeParam({name: "index", value: index, in: "path", style: "simple", explode: false, dataType: "'accessprofiles' | 'accountactivities' | 'entitlements' | 'events' | 'identities' | 'roles' | 'workflowsummaries'", dataFormat: undefined})}/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         return this.httpClient.request<object>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,

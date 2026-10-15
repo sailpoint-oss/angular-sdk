@@ -3,6 +3,13 @@
 ActivationWorkflowStatus.md
 ErrorMessageDto.md
 ErrorResponseDto.md
+FrictionSubmittedData.md
+JITActivationFrictionPatchRequest.md
+JITActivationFrictionResponse.md
+JITActivationFrictionState.md
+JITActivationFrictionStatus.md
+JITActivationFrictionType.md
+JITActivationFrictionsResponse.md
 JITActivationsService.md
 JITActivationsServicedeveloperSite_code_examples.yaml
 JitActivationActivateRequest.md
@@ -36,6 +43,13 @@ index.ts
 model/activationWorkflowStatus.ts
 model/errorMessageDto.ts
 model/errorResponseDto.ts
+model/frictionSubmittedData.ts
+model/jITActivationFrictionPatchRequest.ts
+model/jITActivationFrictionResponse.ts
+model/jITActivationFrictionState.ts
+model/jITActivationFrictionStatus.ts
+model/jITActivationFrictionType.ts
+model/jITActivationFrictionsResponse.ts
 model/jitActivationActivateRequest.ts
 model/jitActivationActivateResponse.ts
 model/jitActivationCallerMetadata.ts

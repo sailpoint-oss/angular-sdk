@@ -1,3 +1,25 @@
+- path: /jit-activations/v1/{activationId}/frictions
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#get-jit-activation-frictions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITActivationsService);
+
+          getJitActivationFrictionsV1(): void {
+            const activationId: string = '857fb802-1034-786a-151e-d3a56e4c5bd9'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getJitActivationFrictionsV1({ activationId: activationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /jit-activation-history/v1/current-identity
   method: get
   xCodeSample:
@@ -47,6 +69,34 @@
             const filters: string = 'status eq "PROVISIONED"'; // string
             const xSailPointExperimental: string = 'true'; // string
             this.api.listJitActivationHistoryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /jit-activations/v1/{activationId}/frictions
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_activations/methods/jit-activations#patch-jit-activation-frictions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+        import { JITActivationFrictionPatchRequest } from '@sailpoint/angular-sdk/jit_activations';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITActivationsService);
+
+          patchJitActivationFrictionsV1(): void {
+            const activationId: string = '857fb802-1034-786a-151e-d3a56e4c5bd9'; // string
+            const jITActivationFrictionPatchRequest: JITActivationFrictionPatchRequest = {
+              "submittedData" : "",
+              "bypass" : false,
+              "type" : ""
+            }; // JITActivationFrictionPatchRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchJitActivationFrictionsV1({ activationId: activationId, jITActivationFrictionPatchRequest: jITActivationFrictionPatchRequest }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });

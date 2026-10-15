@@ -11,7 +11,7 @@ tags: ['SDK', 'Software Development Kit', 'JITActivations', 'jit_activations']
 
 # JITActivationsService
   Use this API to start and manage Just-In-Time (JIT) Privileged activation workflows for entitlement connections,
-and to search activation history.
+to read and submit activation frictions, and to search activation history.
 
 OAuth scopes: **idn:jit-activation-workflow:*** (activate, extend, deactivate, manage) for workflow APIs.
 **idn:jit-activation-history:read** (admin history view) and **idn:jit-activation-history-self:read** (self history view).
@@ -20,12 +20,75 @@ Every method returns an `Observable`. All request paths are relative to the `bas
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get-jit-activation-frictions-v1**](#get-jit-activation-frictions-v1) | **GET** `/jit-activations/v1/{activationId}/frictions` | Get JIT activation frictions
 [**list-jit-activation-history-for-current-identity-v1**](#list-jit-activation-history-for-current-identity-v1) | **GET** `/jit-activation-history/v1/current-identity` | List JIT activation history (self)
 [**list-jit-activation-history-v1**](#list-jit-activation-history-v1) | **GET** `/jit-activation-history/v1` | List JIT activation history (admin)
+[**patch-jit-activation-frictions-v1**](#patch-jit-activation-frictions-v1) | **PATCH** `/jit-activations/v1/{activationId}/frictions` | Submit JIT activation friction
 [**start-activate-workflow-v1**](#start-activate-workflow-v1) | **POST** `/jit-activations/v1/activate` | Start JIT activation workflow
 [**start-deactivate-workflow-v1**](#start-deactivate-workflow-v1) | **POST** `/jit-activations/v1/deactivate` | Deactivate JIT activation workflow
 [**start-extend-workflow-v1**](#start-extend-workflow-v1) | **POST** `/jit-activations/v1/extend` | Extend JIT activation workflow
 
+
+## get-jit-activation-frictions-v1
+:::warning experimental
+This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
+:::
+Get JIT activation frictions
+Returns evaluated frictions for a JIT Privileged (JIT P) activation.
+
+Requires OAuth scope **idn:jit-activation-workflow:activate** or
+**idn:jit-activation-workflow:manage**. The JWT identity id must match the
+activation identity.
+
+Returns HTTP 403 when **PSPM_JIT_ACCESS_ACTIVATION** or
+**PSPM_JIT_ACCESS_ACTIVATION_15** is disabled.
+
+Returns HTTP 404 when the activation does not exist.
+
+
+[API Spec](https://developer.sailpoint.com/docs/api/get-jit-activation-frictions-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `GetJitActivationFrictionsV1RequestParams`.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**activationId** | `string` | Identifier of the activation. |  [default to undefined]
+**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
+
+### Return type
+
+`Observable<JITActivationFrictionsResponse>`
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(JITActivationsService);
+
+  getJitActivationFrictionsV1(): void {
+    const activationId: string = ; // Identifier of the activation.
+    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
+    this.api.getJitActivationFrictionsV1({ activationId: activationId }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
 
 ## list-jit-activation-history-for-current-identity-v1
 :::warning experimental
@@ -152,6 +215,70 @@ export class ExampleComponent {
     const filters: string = ; // Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **identityId**: *eq, in*  **entitlementId**: *eq, in*  **sourceId**: *eq*  **connectionId**: *eq*  **status**: *eq, in*  **activationInitiated**: *gt, lt, ge, le*  **policyFrictionOutcome**: *eq, in* (optional)
     const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.listJitActivationHistoryV1({  }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
+
+## patch-jit-activation-frictions-v1
+:::warning experimental
+This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
+:::
+Submit JIT activation friction
+Submits the current friction step for a JIT Privileged (JIT P) activation.
+
+Requires OAuth scope **idn:jit-activation-workflow:activate** or
+**idn:jit-activation-workflow:manage**. The JWT identity id must match the
+activation identity.
+
+Returns HTTP 403 when **PSPM_JIT_ACCESS_ACTIVATION** or
+**PSPM_JIT_ACCESS_ACTIVATION_15** is disabled.
+
+Request bodies larger than 16 KB return HTTP 413.
+
+
+[API Spec](https://developer.sailpoint.com/docs/api/patch-jit-activation-frictions-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `PatchJitActivationFrictionsV1RequestParams`.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**activationId** | `string` | Identifier of the activation. |  [default to undefined]
+**jITActivationFrictionPatchRequest** | `JITActivationFrictionPatchRequest` | Submission for the current friction step. | 
+**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
+
+### Return type
+
+`Observable<JITActivationFrictionsResponse>`
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { JITActivationsService } from '@sailpoint/angular-sdk/jit_activations';
+import { JITActivationFrictionPatchRequest } from '@sailpoint/angular-sdk/jit_activations';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(JITActivationsService);
+
+  patchJitActivationFrictionsV1(): void {
+    const activationId: string = ; // Identifier of the activation.
+    const jITActivationFrictionPatchRequest: JITActivationFrictionPatchRequest = ; // Submission for the current friction step.
+    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
+    this.api.patchJitActivationFrictionsV1({ activationId: activationId, jITActivationFrictionPatchRequest: jITActivationFrictionPatchRequest }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });

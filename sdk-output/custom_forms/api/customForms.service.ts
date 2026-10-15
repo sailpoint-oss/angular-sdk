@@ -163,8 +163,6 @@ export interface SearchFormElementDataByElementIDV1RequestParams {
 }
 
 export interface SearchFormInstancesByTenantV1RequestParams {
-    /** Offset  Integer specifying the offset of the first result from the beginning of the collection. The standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-results). The offset value is record-based, not page-based, and the index starts at 0. */
-    offset?: number;
     /** Limit  Integer specifying the maximum number of records to return in a single API call. The standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-results). If it is not specified, a default limit is used. */
     limit?: number;
     /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **formDefinitionId**: *eq* */
@@ -515,7 +513,7 @@ export class CustomFormsService extends BaseService {
     }
 
     /**
-     * List form definitions by tenant.
+     * Export form definitions by tenant.
      * No parameters required.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -984,7 +982,7 @@ export class CustomFormsService extends BaseService {
     }
 
     /**
-     * Export form definitions by tenant.
+     * List form definitions by tenant.
      * No parameters required.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -1131,13 +1129,10 @@ export class CustomFormsService extends BaseService {
     public searchFormInstancesByTenantV1(requestParameters?: SearchFormInstancesByTenantV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<ListFormInstancesByTenantResponse>>>;
     public searchFormInstancesByTenantV1(requestParameters?: SearchFormInstancesByTenantV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<ListFormInstancesByTenantResponse>>>;
     public searchFormInstancesByTenantV1(requestParameters?: SearchFormInstancesByTenantV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const offset = requestParameters?.offset;
         const limit = requestParameters?.limit;
         const filters = requestParameters?.filters;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>offset, 'offset');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>limit, 'limit');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
