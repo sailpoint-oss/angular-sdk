@@ -1,6 +1,6 @@
 {
   "name": "@sailpoint/angular-sdk",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "OpenAPI client for @sailpoint/angular-sdk",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
