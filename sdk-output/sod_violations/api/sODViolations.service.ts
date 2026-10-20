@@ -46,13 +46,9 @@ import { BaseService } from '../api.base.service';
 export interface GetViolationV1RequestParams {
     /** The ID of the policy violation to fetch */
     id: string;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
 }
 
 export interface ListMyViolationsV1RequestParams {
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
     /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     limit?: number;
     /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
@@ -66,8 +62,6 @@ export interface ListMyViolationsV1RequestParams {
 }
 
 export interface ListViolationsV1RequestParams {
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
     /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     limit?: number;
     /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
@@ -85,8 +79,6 @@ export interface MoveViolationV1RequestParams {
     id: string;
     /** Data needed to reassign a Policy Violation */
     violationreassigninput: Violationreassigninput;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
 }
 
 export interface StartApplyControlV1RequestParams {
@@ -94,8 +86,6 @@ export interface StartApplyControlV1RequestParams {
     id: string;
     /** Data needed to apply a control to a Policy Violation */
     appliedcontrolcreate: Appliedcontrolcreate;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
 }
 
 export interface StartPredictSodViolationsV1RequestParams {
@@ -131,12 +121,8 @@ export class SODViolationsService extends BaseService {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling getViolationV1.');
         }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -186,7 +172,6 @@ export class SODViolationsService extends BaseService {
     public listMyViolationsV1(requestParameters?: ListMyViolationsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Policyviolationresponse>>>;
     public listMyViolationsV1(requestParameters?: ListMyViolationsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Policyviolationresponse>>>;
     public listMyViolationsV1(requestParameters?: ListMyViolationsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
         const count = requestParameters?.count;
@@ -206,9 +191,6 @@ export class SODViolationsService extends BaseService {
           <any>sorters, 'sorters');
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -259,7 +241,6 @@ export class SODViolationsService extends BaseService {
     public listViolationsV1(requestParameters?: ListViolationsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Policyviolationresponse>>>;
     public listViolationsV1(requestParameters?: ListViolationsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Policyviolationresponse>>>;
     public listViolationsV1(requestParameters?: ListViolationsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
         const count = requestParameters?.count;
@@ -279,9 +260,6 @@ export class SODViolationsService extends BaseService {
           <any>sorters, 'sorters');
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -340,12 +318,8 @@ export class SODViolationsService extends BaseService {
         if (violationreassigninput === null || violationreassigninput === undefined) {
             throw new Error('Required parameter violationreassigninput was null or undefined when calling moveViolationV1.');
         }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -413,12 +387,8 @@ export class SODViolationsService extends BaseService {
         if (appliedcontrolcreate === null || appliedcontrolcreate === undefined) {
             throw new Error('Required parameter appliedcontrolcreate was null or undefined when calling startApplyControlV1.');
         }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'

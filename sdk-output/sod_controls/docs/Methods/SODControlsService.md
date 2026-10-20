@@ -24,9 +24,6 @@ Method | HTTP request | Description
 
 
 ## create-control-v1
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
 Create Compensating Control
 Creates a compensating control associated with separation-of-duties policies.
 
@@ -40,7 +37,6 @@ The service takes one object that holds every parameter. Its type is `CreateCont
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **compensatingcontrolcreate** | `Compensatingcontrolcreate` | Data needed to create a Compensating Control | 
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 
 ### Return type
 
@@ -64,7 +60,6 @@ export class ExampleComponent {
 
   createControlV1(): void {
     const compensatingcontrolcreate: Compensatingcontrolcreate = ; // Data needed to create a Compensating Control
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.createControlV1({ compensatingcontrolcreate: compensatingcontrolcreate }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
@@ -76,9 +71,6 @@ export class ExampleComponent {
 [[Back to top]](#)
 
 ## delete-control-v1
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
 Delete compensating control by ID
 Deletes the specified compensating control from the data store.
 
@@ -92,7 +84,6 @@ The service takes one object that holds every parameter. Its type is `DeleteCont
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **id** | `string` | the ID (UUID) of the compensating control to delete. |  [default to undefined]
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 
 ### Return type
 
@@ -115,7 +106,6 @@ export class ExampleComponent {
 
   deleteControlV1(): void {
     const id: string = ; // the ID (UUID) of the compensating control to delete.
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.deleteControlV1({ id: id }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
@@ -127,9 +117,6 @@ export class ExampleComponent {
 [[Back to top]](#)
 
 ## get-control-v1
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
 Get compensating control by ID
 Returns a single compensating control by ID.
 
@@ -143,7 +130,6 @@ The service takes one object that holds every parameter. Its type is `GetControl
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **id** | `string` | The ID of the compensating control to fetch |  [default to undefined]
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 
 ### Return type
 
@@ -166,7 +152,6 @@ export class ExampleComponent {
 
   getControlV1(): void {
     const id: string = ; // The ID of the compensating control to fetch
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.getControlV1({ id: id }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
@@ -178,9 +163,6 @@ export class ExampleComponent {
 [[Back to top]](#)
 
 ## list-controls-v1
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
 List Compensating Controls
 Returns a list of compensating controls associated with separation-of-duties policies.
 
@@ -193,7 +175,6 @@ The service takes one object that holds every parameter. Its type is `ListContro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 **limit** | `number` | Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to 250]
 **offset** | `number` | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to 0]
 **count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to false]
@@ -220,7 +201,6 @@ export class ExampleComponent {
   private readonly api = inject(SODControlsService);
 
   listControlsV1(): void {
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     const limit: number = ; // Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
     const offset: number = ; // Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
     const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
@@ -237,9 +217,6 @@ export class ExampleComponent {
 [[Back to top]](#)
 
 ## put-control-v1
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
 Put Compensating Control
 Updates the specified compensating control.
 
@@ -254,7 +231,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **id** | `string` | The unique identifier of the Compensating Control to be updated. |  [default to undefined]
 **compensatingcontrolupdate** | `Compensatingcontrolupdate` | Data needed to put a Compensating Control | 
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 
 ### Return type
 
@@ -279,7 +255,6 @@ export class ExampleComponent {
   putControlV1(): void {
     const id: string = ; // The unique identifier of the Compensating Control to be updated.
     const compensatingcontrolupdate: Compensatingcontrolupdate = ; // Data needed to put a Compensating Control
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.putControlV1({ id: id, compensatingcontrolupdate: compensatingcontrolupdate }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),

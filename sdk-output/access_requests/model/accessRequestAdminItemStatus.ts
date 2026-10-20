@@ -47,6 +47,10 @@ export interface AccessRequestAdminItemStatus {
      */
     approvalDetails?: Array<ApprovalStatusDto>;
     /**
+     * List of approval IDs associated with the request.
+     */
+    approvalIds?: Array<string> | null;
+    /**
      * Manual work items created for provisioning the item.
      */
     manualWorkItemDetails?: Array<ManualWorkItemDetails> | null;

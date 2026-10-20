@@ -9,7 +9,7 @@
  */
 
 
-export interface CreateIdentityCollectorV1200Response { 
+export interface CreateIdentityCollectorV1201Response { 
     /**
      * The unique identifier of the created identity collector.
      */

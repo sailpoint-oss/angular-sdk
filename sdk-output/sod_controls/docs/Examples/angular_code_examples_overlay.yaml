@@ -30,7 +30,6 @@
               "justificationRequired" : true,
               "workflowID" : "3e07886555ed43cfb83c85c58d2016e6"
             }; // Compensatingcontrolcreate
-            const xSailPointExperimental: string = 'true'; // string
             this.api.createControlV1({ compensatingcontrolcreate: compensatingcontrolcreate }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -52,7 +51,6 @@
 
           deleteControlV1(): void {
             const id: string = '3e078865-55ed-43cf-b83c-85c58d2016e6'; // string
-            const xSailPointExperimental: string = 'true'; // string
             this.api.deleteControlV1({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -74,7 +72,6 @@
 
           getControlV1(): void {
             const id: string = '3e078865-55ed-43cf-b83c-85c58d2016e6'; // string
-            const xSailPointExperimental: string = 'true'; // string
             this.api.getControlV1({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -95,7 +92,6 @@
           private readonly api = inject(SODControlsService);
 
           listControlsV1(): void {
-            const xSailPointExperimental: string = 'true'; // string
             const limit: number = 250; // number
             const offset: number = 0; // number
             const count: boolean = true; // boolean
@@ -140,7 +136,6 @@
               "justificationRequired" : true,
               "workflowID" : "3e07886555ed43cfb83c85c58d2016e6"
             }; // Compensatingcontrolupdate
-            const xSailPointExperimental: string = 'true'; // string
             this.api.putControlV1({ id: id, compensatingcontrolupdate: compensatingcontrolupdate }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),

@@ -1,0 +1,1460 @@
+- path: /certification-campaigns/v1/campaigns/{id}/complete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#complete-gov-certification-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { CompleteCampaignOptions } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          completeGovCertificationCampaignV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const completeCampaignOptions: CompleteCampaignOptions = {
+              "autoCompleteAction" : "REVOKE"
+            }; // CompleteCampaignOptions
+            this.api.completeGovCertificationCampaignV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates/{id}/generate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#create-campaign-from-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          createCampaignFromTemplateV1(): void {
+            const id: string = '2c918083-5d19-1a86-a15d-28455b4a2329'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createCampaignFromTemplateV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-filters
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#create-gov-certification-campaign-filter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { CampaignFilterCreate } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          createGovCertificationCampaignFilterV1(): void {
+            const campaignFilterCreate: CampaignFilterCreate = {
+              "mode" : "INCLUSION",
+              "name" : "Identity Attribute Campaign Filter",
+              "description" : "Campaign filter to certify data based on specified property of Identity Attribute.",
+              "criteriaList" : [ {
+                "criteriaType" : "IDENTITY",
+                "criteriaProperty" : "DISPLAY_NAME",
+                "criteriaValue" : "support",
+                "operation" : "EQUALS"
+              } ]
+            }; // CampaignFilterCreate
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createGovCertificationCampaignFilterV1({ campaignFilterCreate: campaignFilterCreate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#create-gov-certification-campaign-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { CampaignTemplateCreate } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          createGovCertificationCampaignTemplateV1(): void {
+            const campaignTemplateCreate: CampaignTemplateCreate = {
+              "recommendationsEnabled" : true,
+              "sunsetCommentsRequired" : true,
+              "deadlineDuration" : "P2W",
+              "searchBasedParams" : {
+                "identityIds" : [ "0fbe863c063c4c88a35fd7f17e8a3df5" ],
+                "searchType" : "ACCESS",
+                "query" : "admin",
+                "accessConstraints" : [ {
+                  "ids" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                  "type" : "ENTITLEMENT",
+                  "operator" : "SELECTED"
+                }, {
+                  "ids" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                  "type" : "ENTITLEMENT",
+                  "operator" : "SELECTED"
+                } ]
+              },
+              "description" : "Template for the annual manager campaign.",
+              "reviewer" : {
+                "name" : "William Wilson",
+                "id" : "0fbe863c063c4c88a35fd7f17e8a3df5",
+                "type" : "IDENTITY"
+              },
+              "type" : "IDENTITY",
+              "filterRef" : {
+                "id" : "e9f9a139-7b84-2fd5-a658-42087040d3ac"
+              },
+              "emailNotificationEnabled" : false,
+              "remediatorRef" : {
+                "name" : "Role Admin",
+                "id" : "2c90ad2a70ace7d50170acf22ca90010"
+              },
+              "autoRevokeAllowed" : false,
+              "name" : "Manager Campaign Template",
+              "mandatoryCommentRequirement" : "NO_DECISIONS",
+              "campaignDescription" : "Everyone needs to be reviewed by their manager",
+              "campaignName" : "Manager Campaign",
+              "sourceIds" : [ "0fbe863c063c4c88a35fd7f17e8a3df5" ]
+            }; // CampaignTemplateCreate
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createGovCertificationCampaignTemplateV1({ campaignTemplateCreate: campaignTemplateCreate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#create-gov-certification-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { CampaignCreate } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          createGovCertificationCampaignV1(): void {
+            const campaignCreate: CampaignCreate = {
+              "inlineFilter" : {
+                "mode" : "INCLUSION",
+                "criteriaList" : [ {
+                  "criteriaType" : "IDENTITY",
+                  "criteriaProperty" : "DISPLAY_NAME",
+                  "criteriaValue" : "support",
+                  "operation" : "EQUALS"
+                } ]
+              },
+              "recommendationsEnabled" : true,
+              "sunsetCommentsRequired" : true,
+              "searchBasedParams" : {
+                "identityIds" : [ "0fbe863c063c4c88a35fd7f17e8a3df5" ],
+                "searchType" : "ACCESS",
+                "query" : "admin",
+                "accessConstraints" : [ {
+                  "ids" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                  "type" : "ENTITLEMENT",
+                  "operator" : "SELECTED"
+                }, {
+                  "ids" : [ "2c90ad2a70ace7d50170acf22ca90010" ],
+                  "type" : "ENTITLEMENT",
+                  "operator" : "SELECTED"
+                } ]
+              },
+              "description" : "Everyone needs to be reviewed by their manager",
+              "reviewer" : {
+                "name" : "William Wilson",
+                "id" : "0fbe863c063c4c88a35fd7f17e8a3df5",
+                "type" : "IDENTITY"
+              },
+              "autoActivate" : true,
+              "type" : "IDENTITY",
+              "filterRef" : {
+                "id" : "e9f9a139-7b84-2fd5-a658-42087040d3ac"
+              },
+              "emailNotificationEnabled" : false,
+              "remediatorRef" : {
+                "name" : "Role Admin",
+                "id" : "2c90ad2a70ace7d50170acf22ca90010"
+              },
+              "autoRevokeAllowed" : false,
+              "name" : "Manager Campaign",
+              "mandatoryCommentRequirement" : "NO_DECISIONS",
+              "deadlineTimezone" : "-05:00",
+              "deadline" : "2020-03-15",
+              "sourceIds" : [ "0fbe863c063c4c88a35fd7f17e8a3df5" ]
+            }; // CampaignCreate
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createGovCertificationCampaignV1({ campaignCreate: campaignCreate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns/{campaignId}/reports
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#create-report-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { TriggerCampaignReportRequest } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          createReportV1(): void {
+            const campaignId: string = 'e1aeb0b6-0021-4f40-8bc7-5c56533214b3'; // string
+            const triggerCampaignReportRequest: TriggerCampaignReportRequest = {
+              "format" : "PDF",
+              "name" : "My Campaign Report",
+              "type" : "REMEDIATION"
+            }; // TriggerCampaignReportRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createReportV1({ campaignId: campaignId, triggerCampaignReportRequest: triggerCampaignReportRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-filters/delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#delete-gov-certification-campaign-filters-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          deleteGovCertificationCampaignFiltersV1(): void {
+            const requestBody: Array<string> = ; // Array<string>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteGovCertificationCampaignFiltersV1({ requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates/{id}/schedule
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#delete-gov-certification-campaign-template-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          deleteGovCertificationCampaignTemplateScheduleV1(): void {
+            const id: string = '2c918083-5d19-1a86-a15d-28455b4a2329'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteGovCertificationCampaignTemplateScheduleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#delete-gov-certification-campaign-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          deleteGovCertificationCampaignTemplateV1(): void {
+            const id: string = '2c918083-5d19-1a86-a15d-28455b4a2329'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteGovCertificationCampaignTemplateV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns/delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#delete-gov-certification-campaigns-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { CampaignsDeleteRequest } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          deleteGovCertificationCampaignsV1(): void {
+            const campaignsDeleteRequest: CampaignsDeleteRequest = {
+              "ids" : [ "ef38f943-47e9-4562-b5bb-8424a56397d8", "ef38f943-47e9-4562-b5bb-8424a56397d9" ]
+            }; // CampaignsDeleteRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteGovCertificationCampaignsV1({ campaignsDeleteRequest: campaignsDeleteRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/access-summaries/{type}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-access-summaries-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getAccessSummariesV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const type: CertificationItemType = ACCESS_PROFILE; // CertificationItemType
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'completed eq false and sourceName sw 'AD''; // string
+            const sorters: string = 'targetReference.name'; // string
+            this.api.getAccessSummariesV1({ certificationId: certificationId, type: type }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}/children
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-certification-entitlement-children-details-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getCertificationEntitlementChildrenDetailsV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reviewItemId: string = '2478b87b-f0d2-4585-b42d-45e4d580c5cf'; // string
+            const entitlementId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq 'Read Only''; // string
+            const sorters: string = 'name'; // string
+            this.api.getCertificationEntitlementChildrenDetailsV1({ certificationId: certificationId, reviewItemId: reviewItemId, entitlementId: entitlementId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-certification-entitlement-details-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getCertificationEntitlementDetailsV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reviewItemId: string = '2478b87b-f0d2-4585-b42d-45e4d580c5cf'; // string
+            const entitlementId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getCertificationEntitlementDetailsV1({ certificationId: certificationId, reviewItemId: reviewItemId, entitlementId: entitlementId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}/parents
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-certification-entitlement-parents-details-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getCertificationEntitlementParentsDetailsV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reviewItemId: string = '2478b87b-f0d2-4585-b42d-45e4d580c5cf'; // string
+            const entitlementId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'attribute eq 'role''; // string
+            const sorters: string = 'name'; // string
+            this.api.getCertificationEntitlementParentsDetailsV1({ certificationId: certificationId, reviewItemId: reviewItemId, entitlementId: entitlementId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}/permissions
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-certification-entitlement-permissions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getCertificationEntitlementPermissionsV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reviewItemId: string = '2478b87b-f0d2-4585-b42d-45e4d580c5cf'; // string
+            const entitlementId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.getCertificationEntitlementPermissionsV1({ certificationId: certificationId, reviewItemId: reviewItemId, entitlementId: entitlementId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/item-id/{entitlementId}/cert-account-details
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-certification-item-account-details-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getCertificationItemAccountDetailsV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reviewItemId: string = '2478b87b-f0d2-4585-b42d-45e4d580c5cf'; // string
+            const entitlementId: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getCertificationItemAccountDetailsV1({ certificationId: certificationId, reviewItemId: reviewItemId, entitlementId: entitlementId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-certification-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getCertificationV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getCertificationV1({ certificationId: certificationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/decision-summary
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-decision-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getDecisionSummaryV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const filters: string = 'certificationSubjectSummary.id in ('2c918085-71bc-fcf8-0171-c23e4b4221fc','2c918085-71bc-fcf8-0171-c23e4b4221fd')'; // string
+            this.api.getDecisionSummaryV1({ certificationId: certificationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns/{campaignId}/reports/{reportId}/download-url
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-download-url-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getDownloadUrlV1(): void {
+            const campaignId: string = 'e1aeb0b6-0021-4f40-8bc7-5c56533214b3'; // string
+            const reportId: string = 'e1aeb0b6-0021-4f40-8bc7-5c56533214b3'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getDownloadUrlV1({ campaignId: campaignId, reportId: reportId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/access-profiles/{accessProfileId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-gov-certification-access-profile-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getGovCertificationAccessProfileV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reviewItemId: string = '2478b87b-f0d2-4585-b42d-45e4d580c5cf'; // string
+            const accessProfileId: string = '2c9180837ca6693d017ca8d097500149'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getGovCertificationAccessProfileV1({ certificationId: certificationId, reviewItemId: reviewItemId, accessProfileId: accessProfileId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-filters/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-gov-certification-campaign-filter-by-id-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getGovCertificationCampaignFilterByIdV1(): void {
+            const id: string = 'e9f9a139-7b84-2fd5-a658-42087040d3ac'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getGovCertificationCampaignFilterByIdV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns/{campaignId}/reports/{reportId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-gov-certification-campaign-report-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getGovCertificationCampaignReportV1(): void {
+            const campaignId: string = 'e1aeb0b6-0021-4f40-8bc7-5c56533214b3'; // string
+            const reportId: string = 'e1aeb0b6-0021-4f40-8bc7-5c56533214b3'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getGovCertificationCampaignReportV1({ campaignId: campaignId, reportId: reportId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates/{id}/schedule
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-gov-certification-campaign-template-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getGovCertificationCampaignTemplateScheduleV1(): void {
+            const id: string = '2c918083-5d19-1a86-a15d-28455b4a2329'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getGovCertificationCampaignTemplateScheduleV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-gov-certification-campaign-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getGovCertificationCampaignTemplateV1(): void {
+            const id: string = '2c918083-5d19-1a86-a15d-28455b4a2329'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getGovCertificationCampaignTemplateV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-gov-certification-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getGovCertificationCampaignV1(): void {
+            const id: string = '2c918085-71bc-4cf8-a171-c23e4b4221fc'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getGovCertificationCampaignV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certification-tasks/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-gov-certification-task-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getGovCertificationTaskV1(): void {
+            const id: string = '63b32151-26c0-42f4-9299-8898dc1c9daa'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getGovCertificationTaskV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certification-tasks
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-pending-tasks-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getPendingTasksV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const reviewerIdentity: string = 'Ada.1de82e55078344'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'type eq "REASSIGN_SUBJECTS_AND_ITEMS"'; // string
+            this.api.getPendingTasksV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/status-summary
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-status-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getStatusSummaryV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getStatusSummaryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/subject-summary/{subjectId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#get-subject-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          getSubjectSummaryV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const subjectId: string = '2c918087-72a5-44f5-a172-a9540e501ba8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSubjectSummaryV1({ certificationId: certificationId, subjectId: subjectId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#list-campaign-templates-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          listCampaignTemplatesV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = 'name'; // string
+            const filters: string = 'name eq "Campaign Template"'; // string
+            this.api.listCampaignTemplatesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#list-campaigns-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          listCampaignsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq "Manager Campaign"'; // string
+            const sorters: string = 'name,-created'; // string
+            this.api.listCampaignsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#list-certifications-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          listCertificationsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const reviewerIdentity: string = 'me'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq "Bob"'; // string
+            const sorters: string = 'name'; // string
+            this.api.listCertificationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-filters
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#list-gov-certification-campaign-filters-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          listGovCertificationCampaignFiltersV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.listGovCertificationCampaignFiltersV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/reviewers
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#list-gov-certification-reviewers-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          listGovCertificationReviewersV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq "Bob"'; // string
+            const sorters: string = 'name'; // string
+            this.api.listGovCertificationReviewersV1({ certificationId: certificationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns/{campaignId}/reports
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#list-reports-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          listReportsV1(): void {
+            const campaignId: string = 'e1aeb0b6-0021-4f40-8bc7-5c56533214b3'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'type eq "SIGN_OFF"'; // string
+            const sorters: string = 'name,-created'; // string
+            this.api.listReportsV1({ campaignId: campaignId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/review-items
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#list-review-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          listReviewItemsV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "ef38f943-47e9-4562-b5bb-8424a56397d8"'; // string
+            const sorters: string = 'certificationSubjectSummary.subjectName'; // string
+            const activityData: boolean = false; // boolean
+            this.api.listReviewItemsV1({ certificationId: certificationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/subject-summaries
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#list-subject-summaries-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          listSubjectSummariesV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'completed eq false and subjectName sw 'Derek''; // string
+            const sorters: string = 'subjectName'; // string
+            this.api.listSubjectSummariesV1({ certificationId: certificationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns/{campaignId}/reassign
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#move-certifications-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { ReassignCertifications } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          moveCertificationsV1(): void {
+            const campaignId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reassignCertifications: ReassignCertifications = {
+              "certificationIds" : [ "af385946-4779-4712-91bb-8424a563abc1", "af385946-4779-4712-91bb-8424a563abc2", "af385946-4779-4712-91bb-8424a563abc3" ],
+              "reason" : "Reassigning the certifications",
+              "reassignTo" : {
+                "id" : "0fbe863c-063c-4c88-a35f-d7f17e8a3df5",
+                "type" : "IDENTITY"
+              }
+            }; // ReassignCertifications
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.moveCertificationsV1({ campaignId: campaignId, reassignCertifications: reassignCertifications }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/reassign-async
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#move-subject-and-items-async-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { ReassignReference } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          moveSubjectAndItemsAsyncV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reassignReference: ReassignReference = {
+              "reason" : "Reassigning this item to the appropriate reviewer.",
+              "reassignTo" : "ef38f943-47e9-4562-b5bb-8424a56397d8",
+              "reassign" : [ {
+                "id" : "ef38f943-47e9-4562-b5bb-8424a56397d8",
+                "type" : "ITEM"
+              } ]
+            }; // ReassignReference
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.moveSubjectAndItemsAsyncV1({ certificationId: certificationId, reassignReference: reassignReference }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/reassign
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#move-subject-and-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { ReassignReference } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          moveSubjectAndItemsV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reassignReference: ReassignReference = {
+              "reason" : "Reassigning this item to the appropriate reviewer.",
+              "reassignTo" : "ef38f943-47e9-4562-b5bb-8424a56397d8",
+              "reassign" : [ {
+                "id" : "ef38f943-47e9-4562-b5bb-8424a56397d8",
+                "type" : "ITEM"
+              } ]
+            }; // ReassignReference
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.moveSubjectAndItemsV1({ certificationId: certificationId, reassignReference: reassignReference }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#patch-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          patchCampaignV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchCampaignV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#patch-gov-certification-campaign-template-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          patchGovCertificationCampaignTemplateV1(): void {
+            const id: string = '2c918083-5d19-1a86-a15d-28455b4a2329'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchGovCertificationCampaignTemplateV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/sign-off
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#process-sign-off-certification-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          processSignOffCertificationV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.processSignOffCertificationV1({ certificationId: certificationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-filters/{id}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#put-campaign-filter-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { CampaignFilterUpdate } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          putCampaignFilterV1(): void {
+            const id: string = 'e9f9a139-7b84-2fd5-a658-42087040d3ac'; // string
+            const campaignFilterUpdate: CampaignFilterUpdate = {
+              "mode" : "INCLUSION",
+              "name" : "Identity Attribute Campaign Filter",
+              "description" : "Campaign filter to certify data based on specified property of Identity Attribute.",
+              "criteriaList" : [ {
+                "criteriaType" : "IDENTITY",
+                "criteriaProperty" : "DISPLAY_NAME",
+                "criteriaValue" : "support",
+                "operation" : "EQUALS"
+              } ]
+            }; // CampaignFilterUpdate
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.putCampaignFilterV1({ id: id, campaignFilterUpdate: campaignFilterUpdate }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates/search
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#search-campaign-templates-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { SearchRequest } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          searchCampaignTemplatesV1(): void {
+            const searchRequest: SearchRequest = {
+              "queryString" : "identity 2023"
+            }; // SearchRequest
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = 'name'; // string
+            const filters: string = 'name eq "Campaign Template"'; // string
+            this.api.searchCampaignTemplatesV1({ searchRequest: searchRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/search
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#search-certifications-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { SearchRequest } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          searchCertificationsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const reviewerIdentity: string = 'me'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'reviewerName sw "Bob"'; // string
+            const sorters: string = 'name'; // string
+            const searchRequest: SearchRequest = {
+              "queryString" : "identity 2023"
+            }; // SearchRequest
+            this.api.searchCertificationsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/insights/access-summary
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#search-insights-access-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { InsightDetails } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          searchInsightsAccessSummaryV1(): void {
+            const insightDetails: InsightDetails = {
+              "campaignType" : "IDENTITY",
+              "identityIdFilter" : [ "2c918085718230600171993742c63558" ],
+              "query" : "admin",
+              "type" : "ENTITLEMENT"
+            }; // InsightDetails
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.searchInsightsAccessSummaryV1({ insightDetails: insightDetails }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/review-items/search
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#search-review-items-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { SearchRequest } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          searchReviewItemsV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'id eq "ef38f943-47e9-4562-b5bb-8424a56397d8"'; // string
+            const sorters: string = 'certificationSubjectSummary.subjectName'; // string
+            const activityData: boolean = false; // boolean
+            const searchRequest: SearchRequest = {
+              "queryString" : "identity 2023"
+            }; // SearchRequest
+            this.api.searchReviewItemsV1({ certificationId: certificationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/subject-summaries/search
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#search-subject-summaries-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { SearchRequest } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          searchSubjectSummariesV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'completed eq false and subjectName sw 'Derek''; // string
+            const sorters: string = 'subjectName'; // string
+            const searchRequest: SearchRequest = {
+              "queryString" : "identity 2023"
+            }; // SearchRequest
+            this.api.searchSubjectSummariesV1({ certificationId: certificationId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaign-templates/{id}/schedule
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#set-or-update-campaign-template-schedule-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { Schedule } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          setOrUpdateCampaignTemplateScheduleV1(): void {
+            const id: string = '2c918083-5d19-1a86-a15d-28455b4a2329'; // string
+            const schedule: Schedule = {
+              "hours" : {
+                "values" : [ "1", "2", "3" ],
+                "interval" : 2,
+                "type" : "LIST"
+              },
+              "months" : {
+                "values" : [ "1", "2", "3" ],
+                "interval" : 2,
+                "type" : "LIST"
+              },
+              "timeZoneId" : "America/Chicago",
+              "days" : {
+                "values" : [ "1", "2", "3" ],
+                "interval" : 2,
+                "type" : "LIST"
+              },
+              "expiration" : "2025-09-15T16:00:00Z",
+              "type" : "DAILY"
+            }; // Schedule
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.setOrUpdateCampaignTemplateScheduleV1({ id: id, schedule: schedule }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/campaigns/{id}/activate
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#start-gov-certification-campaign-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { ActivateCampaignOptions } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          startGovCertificationCampaignV1(): void {
+            const id: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const activateCampaignOptions: ActivateCampaignOptions = {
+              "timeZone" : "-05:00"
+            }; // ActivateCampaignOptions
+            this.api.startGovCertificationCampaignV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /certification-campaigns/v1/certifications/{certificationId}/decide
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/gov_certification/methods/next-generation-certification-campaigns#submit-decisions-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { NextGenerationCertificationCampaignsService } from '@sailpoint/angular-sdk/gov_certification';
+        import { ReviewDecision } from '@sailpoint/angular-sdk/gov_certification';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(NextGenerationCertificationCampaignsService);
+
+          submitDecisionsV1(): void {
+            const certificationId: string = 'ef38f943-47e9-4562-b5bb-8424a56397d8'; // string
+            const reviewDecision: Array<ReviewDecision> = {
+              "comments" : "This user no longer needs access to this source",
+              "decision" : "APPROVED",
+              "proposedEndDate" : "2017-07-11T18:45:37.098Z",
+              "recommendation" : {
+                "reasons" : [ "Reason 1", "Reason 2" ],
+                "recommendation" : "APPROVE",
+                "timestamp" : "2020-06-01T13:49:37.385Z"
+              },
+              "id" : "ef38f943-47e9-4562-b5bb-8424a56397d8"
+            }; // Array<ReviewDecision>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.submitDecisionsV1({ certificationId: certificationId, reviewDecision: reviewDecision }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

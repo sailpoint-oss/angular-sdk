@@ -111,8 +111,6 @@ export interface ListAccessRequestStatusV1RequestParams {
 }
 
 export interface ListAdministratorsAccessRequestStatusV1RequestParams {
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental: string;
     /** Filter the results by the identity the requests were made for. *me* indicates the current user. Mutually exclusive with *regarding-identity*. */
     requestedFor?: string;
     /** Filter the results by the identity who made the requests. *me* indicates the current user. Mutually exclusive with *regarding-identity*. */
@@ -133,6 +131,8 @@ export interface ListAdministratorsAccessRequestStatusV1RequestParams {
     sorters?: string;
     /** Filter the results by the state of the request. The only valid value is *EXECUTING*. */
     requestState?: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface LoadAccountSelectionsV1RequestParams {
@@ -742,14 +742,10 @@ export class AccessRequestsService extends BaseService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public listAdministratorsAccessRequestStatusV1(requestParameters: ListAdministratorsAccessRequestStatusV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AccessRequestAdminItemStatus>>;
-    public listAdministratorsAccessRequestStatusV1(requestParameters: ListAdministratorsAccessRequestStatusV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AccessRequestAdminItemStatus>>>;
-    public listAdministratorsAccessRequestStatusV1(requestParameters: ListAdministratorsAccessRequestStatusV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<AccessRequestAdminItemStatus>>>;
-    public listAdministratorsAccessRequestStatusV1(requestParameters: ListAdministratorsAccessRequestStatusV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
-        if (xSailPointExperimental === null || xSailPointExperimental === undefined) {
-            throw new Error('Required parameter xSailPointExperimental was null or undefined when calling listAdministratorsAccessRequestStatusV1.');
-        }
+    public listAdministratorsAccessRequestStatusV1(requestParameters?: ListAdministratorsAccessRequestStatusV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AccessRequestAdminItemStatus>>;
+    public listAdministratorsAccessRequestStatusV1(requestParameters?: ListAdministratorsAccessRequestStatusV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AccessRequestAdminItemStatus>>>;
+    public listAdministratorsAccessRequestStatusV1(requestParameters?: ListAdministratorsAccessRequestStatusV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<AccessRequestAdminItemStatus>>>;
+    public listAdministratorsAccessRequestStatusV1(requestParameters?: ListAdministratorsAccessRequestStatusV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const requestedFor = requestParameters?.requestedFor;
         const requestedBy = requestParameters?.requestedBy;
         const regardingIdentity = requestParameters?.regardingIdentity;
@@ -760,6 +756,7 @@ export class AccessRequestsService extends BaseService {
         const filters = requestParameters?.filters;
         const sorters = requestParameters?.sorters;
         const requestState = requestParameters?.requestState;
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,

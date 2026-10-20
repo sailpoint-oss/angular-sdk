@@ -583,7 +583,6 @@ The service takes one object that holds every parameter. Its type is `ListAdmini
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. |  [default to &#39;true&#39;]
 **requestedFor** | `string` | Filter the results by the identity the requests were made for. *me* indicates the current user. Mutually exclusive with *regarding-identity*. | [optional] [default to undefined]
 **requestedBy** | `string` | Filter the results by the identity who made the requests. *me* indicates the current user. Mutually exclusive with *regarding-identity*. | [optional] [default to undefined]
 **regardingIdentity** | `string` | Filter the results by the specified identity who is either the requester or target of the requests. *me* indicates the current user. Mutually exclusive with *requested-for* and *requested-by*. | [optional] [default to undefined]
@@ -594,6 +593,7 @@ Name | Type | Description  | Notes
 **filters** | `string` | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **accountActivityItemId**: *eq, in, ge, gt, le, lt, ne, isnull, sw*  **accessRequestId**: *in, eq, ne, ge, gt, le, lt, sw*  **status**: *in, eq, ne*  **created**: *eq, in, ge, gt, le, lt, ne, isnull, sw* | [optional] [default to undefined]
 **sorters** | `string` | Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **created, modified, accountActivityItemId, name, accessRequestId** | [optional] [default to undefined]
 **requestState** | `string` | Filter the results by the state of the request. The only valid value is *EXECUTING*. | [optional] [default to undefined]
+**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
 
 ### Return type
 
@@ -615,7 +615,6 @@ export class ExampleComponent {
   private readonly api = inject(AccessRequestsService);
 
   listAdministratorsAccessRequestStatusV1(): void {
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API.
     const requestedFor: string = ; // Filter the results by the identity the requests were made for. *me* indicates the current user. Mutually exclusive with *regarding-identity*. (optional)
     const requestedBy: string = ; // Filter the results by the identity who made the requests. *me* indicates the current user. Mutually exclusive with *regarding-identity*. (optional)
     const regardingIdentity: string = ; // Filter the results by the specified identity who is either the requester or target of the requests. *me* indicates the current user. Mutually exclusive with *requested-for* and *requested-by*. (optional)
@@ -626,7 +625,8 @@ export class ExampleComponent {
     const filters: string = ; // Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **accountActivityItemId**: *eq, in, ge, gt, le, lt, ne, isnull, sw*  **accessRequestId**: *in, eq, ne, ge, gt, le, lt, sw*  **status**: *in, eq, ne*  **created**: *eq, in, ge, gt, le, lt, ne, isnull, sw* (optional)
     const sorters: string = ; // Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **created, modified, accountActivityItemId, name, accessRequestId** (optional)
     const requestState: string = ; // Filter the results by the state of the request. The only valid value is *EXECUTING*. (optional)
-    this.api.listAdministratorsAccessRequestStatusV1({ xSailPointExperimental: xSailPointExperimental }).subscribe({
+    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
+    this.api.listAdministratorsAccessRequestStatusV1({  }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });

@@ -23,7 +23,7 @@ import { AssignResourceOwnerRequest } from '../model/assignResourceOwnerRequest'
 // @ts-ignore
 import { BaseCreateApplicationRequest } from '../model/baseCreateApplicationRequest';
 // @ts-ignore
-import { CreateIdentityCollectorV1200Response } from '../model/createIdentityCollectorV1200Response';
+import { CreateIdentityCollectorV1201Response } from '../model/createIdentityCollectorV1201Response';
 // @ts-ignore
 import { CreateIdentityCollectorV1409Response } from '../model/createIdentityCollectorV1409Response';
 // @ts-ignore
@@ -48,6 +48,8 @@ import { Identitycollectorbuiltinpropertiesresponse } from '../model/identitycol
 import { Identitycollectordependenciesconflicterror } from '../model/identitycollectordependenciesconflicterror';
 // @ts-ignore
 import { Identitycollectorlistitem } from '../model/identitycollectorlistitem';
+// @ts-ignore
+import { Identitycollectortypesresponse } from '../model/identitycollectortypesresponse';
 // @ts-ignore
 import { ReelectRequest } from '../model/reelectRequest';
 // @ts-ignore
@@ -478,9 +480,9 @@ export class DataAccessSecurityService extends BaseService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createIdentityCollectorV1(requestParameters: CreateIdentityCollectorV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CreateIdentityCollectorV1200Response>;
-    public createIdentityCollectorV1(requestParameters: CreateIdentityCollectorV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CreateIdentityCollectorV1200Response>>;
-    public createIdentityCollectorV1(requestParameters: CreateIdentityCollectorV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CreateIdentityCollectorV1200Response>>;
+    public createIdentityCollectorV1(requestParameters: CreateIdentityCollectorV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CreateIdentityCollectorV1201Response>;
+    public createIdentityCollectorV1(requestParameters: CreateIdentityCollectorV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CreateIdentityCollectorV1201Response>>;
+    public createIdentityCollectorV1(requestParameters: CreateIdentityCollectorV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CreateIdentityCollectorV1201Response>>;
     public createIdentityCollectorV1(requestParameters: CreateIdentityCollectorV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const createidentitycollectorrequest = requestParameters?.createidentitycollectorrequest;
         if (createidentitycollectorrequest === null || createidentitycollectorrequest === undefined) {
@@ -522,7 +524,7 @@ export class DataAccessSecurityService extends BaseService {
         }
 
         let localVarPath = `/das/v1/identity-collectors`;
-        return this.httpClient.request<CreateIdentityCollectorV1200Response>('post', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<CreateIdentityCollectorV1201Response>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: createidentitycollectorrequest,
@@ -1367,14 +1369,14 @@ export class DataAccessSecurityService extends BaseService {
 
     /**
      * List identity collector types
-     * Returns the public identity collector type display names exposed for metadata and UI discovery. This endpoint lists base types only (for example, &#x60;Box&#x60; rather than &#x60;Box SaaS&#x60;). SaaS variants are not listed here; the identity collector type is derived from &#x60;sourceId&#x60; when creating an identity collector. Existing identity collectors may still report SaaS variant types in list and update responses.  Pagination is not supported for this endpoint; the full set of public types is always returned.
+     * Returns the public identity collector types exposed for metadata and UI discovery, including the ISC &#x60;connectorName&#x60; values to use when listing sources for each type. This endpoint lists base types only (for example, &#x60;Box&#x60; rather than &#x60;Box SaaS&#x60;). SaaS variants are not listed as separate types; create derives the identity collector type from &#x60;sourceId&#x60;. Existing identity collectors may still report SaaS variant types in list and update responses.  Flagged types (Snowflake, Databricks, Atlassian Suite) are included only when the corresponding tenant feature flag is enabled.  Pagination is not supported for this endpoint; the full set of enabled public types is always returned.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<string>>;
-    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<string>>>;
-    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<string>>>;
+    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Identitycollectortypesresponse>;
+    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Identitycollectortypesresponse>>;
+    public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Identitycollectortypesresponse>>;
     public getIdentityCollectorTypesV1(requestParameters?: GetIdentityCollectorTypesV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
@@ -1411,7 +1413,7 @@ export class DataAccessSecurityService extends BaseService {
         }
 
         let localVarPath = `/das/v1/identity-collectors/types`;
-        return this.httpClient.request<Array<string>>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<Identitycollectortypesresponse>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,

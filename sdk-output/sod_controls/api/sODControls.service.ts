@@ -38,27 +38,19 @@ import { BaseService } from '../api.base.service';
 export interface CreateControlV1RequestParams {
     /** Data needed to create a Compensating Control */
     compensatingcontrolcreate: Compensatingcontrolcreate;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
 }
 
 export interface DeleteControlV1RequestParams {
     /** the ID (UUID) of the compensating control to delete. */
     id: string;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
 }
 
 export interface GetControlV1RequestParams {
     /** The ID of the compensating control to fetch */
     id: string;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
 }
 
 export interface ListControlsV1RequestParams {
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
     /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
     limit?: number;
     /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
@@ -76,8 +68,6 @@ export interface PutControlV1RequestParams {
     id: string;
     /** Data needed to put a Compensating Control */
     compensatingcontrolupdate: Compensatingcontrolupdate;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
 }
 
 
@@ -105,12 +95,8 @@ export class SODControlsService extends BaseService {
         if (compensatingcontrolcreate === null || compensatingcontrolcreate === undefined) {
             throw new Error('Required parameter compensatingcontrolcreate was null or undefined when calling createControlV1.');
         }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -174,12 +160,8 @@ export class SODControlsService extends BaseService {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling deleteControlV1.');
         }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -233,12 +215,8 @@ export class SODControlsService extends BaseService {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling getControlV1.');
         }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -288,7 +266,6 @@ export class SODControlsService extends BaseService {
     public listControlsV1(requestParameters?: ListControlsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Compensatingcontrolresponse>>>;
     public listControlsV1(requestParameters?: ListControlsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Compensatingcontrolresponse>>>;
     public listControlsV1(requestParameters?: ListControlsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
         const count = requestParameters?.count;
@@ -308,9 +285,6 @@ export class SODControlsService extends BaseService {
           <any>sort, 'sort');
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -369,12 +343,8 @@ export class SODControlsService extends BaseService {
         if (compensatingcontrolupdate === null || compensatingcontrolupdate === undefined) {
             throw new Error('Required parameter compensatingcontrolupdate was null or undefined when calling putControlV1.');
         }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'

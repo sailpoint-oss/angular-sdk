@@ -65,6 +65,7 @@ import { DimensionsService as _DimensionsService } from "./dimensions/index";
 import { EntitlementConnectionsService as _EntitlementConnectionsService } from "./entitlement_connections/index";
 import { EntitlementsService as _EntitlementsService } from "./entitlements/index";
 import { GlobalTenantSecuritySettingsService as _GlobalTenantSecuritySettingsService } from "./global_tenant_security_settings/index";
+import { NextGenerationCertificationCampaignsService as _NextGenerationCertificationCampaignsService } from "./gov_certification/index";
 import { GovernanceGroupsService as _GovernanceGroupsService } from "./governance_groups/index";
 import { IAIAccessRequestRecommendationsService as _IAIAccessRequestRecommendationsService } from "./iai_access_request_recommendations/index";
 import { IAICommonAccessService as _IAICommonAccessService } from "./iai_common_access/index";
@@ -181,6 +182,7 @@ export { _DimensionsService as DimensionsService };
 export { _EntitlementConnectionsService as EntitlementConnectionsService };
 export { _EntitlementsService as EntitlementsService };
 export { _GlobalTenantSecuritySettingsService as GlobalTenantSecuritySettingsService };
+export { _NextGenerationCertificationCampaignsService as NextGenerationCertificationCampaignsService };
 export { _GovernanceGroupsService as GovernanceGroupsService };
 export { _IAIAccessRequestRecommendationsService as IAIAccessRequestRecommendationsService };
 export { _IAICommonAccessService as IAICommonAccessService };
@@ -299,6 +301,7 @@ export const SailPointAngular = {
   EntitlementConnectionsService: _EntitlementConnectionsService,
   EntitlementsService: _EntitlementsService,
   GlobalTenantSecuritySettingsService: _GlobalTenantSecuritySettingsService,
+  NextGenerationCertificationCampaignsService: _NextGenerationCertificationCampaignsService,
   GovernanceGroupsService: _GovernanceGroupsService,
   IAIAccessRequestRecommendationsService: _IAIAccessRequestRecommendationsService,
   IAICommonAccessService: _IAICommonAccessService,

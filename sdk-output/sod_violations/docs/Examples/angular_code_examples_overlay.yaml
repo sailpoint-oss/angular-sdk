@@ -13,7 +13,6 @@
 
           getViolationV1(): void {
             const id: string = '3e078865-55ed-43cf-b83c-85c58d2016e6'; // string
-            const xSailPointExperimental: string = 'true'; // string
             this.api.getViolationV1({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -34,7 +33,6 @@
           private readonly api = inject(SODViolationsService);
 
           listMyViolationsV1(): void {
-            const xSailPointExperimental: string = 'true'; // string
             const limit: number = 250; // number
             const offset: number = 0; // number
             const count: boolean = true; // boolean
@@ -60,7 +58,6 @@
           private readonly api = inject(SODViolationsService);
 
           listViolationsV1(): void {
-            const xSailPointExperimental: string = 'true'; // string
             const limit: number = 250; // number
             const offset: number = 0; // number
             const count: boolean = true; // boolean
@@ -95,7 +92,6 @@
                 "assigneeId" : "3e07886555ed43cfb83c85c58d2016e6"
               }
             }; // Violationreassigninput
-            const xSailPointExperimental: string = 'true'; // string
             this.api.moveViolationV1({ id: id, violationreassigninput: violationreassigninput }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
@@ -122,7 +118,6 @@
               "comments" : "Some comments about the applied control",
               "control" : "3e07886555ed43cfb83c85c58d2016e6"
             }; // Appliedcontrolcreate
-            const xSailPointExperimental: string = 'true'; // string
             this.api.startApplyControlV1({ id: id, appliedcontrolcreate: appliedcontrolcreate }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),

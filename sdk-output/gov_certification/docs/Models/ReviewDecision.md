@@ -1,0 +1,29 @@
+---
+id: gov_certification-model-review-decision
+title: ReviewDecision
+pagination_label: ReviewDecision
+sidebar_label: ReviewDecision
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'ReviewDecision', 'gov_certification']
+slug: /tools/sdk/angular/gov_certification/models/review-decision
+tags: ['SDK', 'Software Development Kit', 'ReviewDecision', 'gov_certification']
+---
+
+# ReviewDecision
+
+Import this model from the entry point of its package:
+
+```typescript
+import { ReviewDecision } from '@sailpoint/angular-sdk/gov_certification';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | `string` | The id of the Certification Item being decided on | [default to undefined]
+**decision** | `CertificationDecision` |  | [default to undefined]
+**proposedEndDate** | **(optional)** `string` | The date at which a user\'s access should be taken away. Should only be set for `REVOKE` decisions. | [default to undefined]
+**recommendation** | **(optional)** `ReviewRecommendation` |  | [default to undefined]
+**comments** | **(optional)** `string` | Comments recorded when the decision was made | [default to undefined]
+
