@@ -1,0 +1,26 @@
+- path: /convert-entitlement-connection/v1
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/jit_activation_convert/methods/jit-activation-convert#start-entitlement-connection-conversion-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { JITActivationConvertService } from '@sailpoint/angular-sdk/jit_activation_convert';
+        import { ConvertEntitlementConnectionRequest } from '@sailpoint/angular-sdk/jit_activation_convert';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(JITActivationConvertService);
+
+          startEntitlementConnectionConversionV1(): void {
+            const convertEntitlementConnectionRequest: ConvertEntitlementConnectionRequest = {
+              "connectionId" : "757fb803-9024-5861-e510-83a56e4c5bd3",
+              "targetType" : "JIT"
+            }; // ConvertEntitlementConnectionRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startEntitlementConnectionConversionV1({ convertEntitlementConnectionRequest: convertEntitlementConnectionRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

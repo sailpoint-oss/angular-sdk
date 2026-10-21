@@ -1118,6 +1118,29 @@
             });
           }
         }
+- path: /sources/v1/{sourceId}/service-desk-integrations
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-service-desk-integrations-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from '@sailpoint/angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceServiceDeskIntegrationsV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            this.api.getSourceServiceDeskIntegrationsV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /sources/v1/{id}
   method: get
   xCodeSample:

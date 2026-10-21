@@ -73,6 +73,8 @@ import { SourceHealthDto } from '../model/sourceHealthDto';
 // @ts-ignore
 import { SourceResourceMappingValue } from '../model/sourceResourceMappingValue';
 // @ts-ignore
+import { SourceServiceDeskIntegrationDto } from '../model/sourceServiceDeskIntegrationDto';
+// @ts-ignore
 import { SourceSyncJob } from '../model/sourceSyncJob';
 // @ts-ignore
 import { StatusResponse } from '../model/statusResponse';
@@ -365,6 +367,15 @@ export interface GetSourceSchemasV1RequestParams {
     includeTypes?: 'group' | 'user';
     /** A comma-separated list of schema names to filter result. */
     includeNames?: string;
+}
+
+export interface GetSourceServiceDeskIntegrationsV1RequestParams {
+    /** Source ID. */
+    sourceId: string;
+    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    offset?: number;
 }
 
 export interface GetSourceV1RequestParams {
@@ -3074,6 +3085,70 @@ export class SourcesService extends BaseService {
 
         let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/schemas`;
         return this.httpClient.request<Array<Schema>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * List source service desk integrations
+     * Use this API to list the Service Desk Integrations that carry out provisioning for a source in Identity Security Cloud (ISC).  A source is provisioned either entirely through its own connector or entirely through a Service Desk Integration; provisioning is never split between the two. An empty list therefore means the source\&#39;s own connector handles provisioning, and a non-empty list means every provisioning request for the source is routed to the integrations named in the response.  Use this API to determine why provisioning settings on the source itself have no effect, and to identify the integration an administrator must change instead.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getSourceServiceDeskIntegrationsV1(requestParameters: GetSourceServiceDeskIntegrationsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<SourceServiceDeskIntegrationDto>>;
+    public getSourceServiceDeskIntegrationsV1(requestParameters: GetSourceServiceDeskIntegrationsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<SourceServiceDeskIntegrationDto>>>;
+    public getSourceServiceDeskIntegrationsV1(requestParameters: GetSourceServiceDeskIntegrationsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<SourceServiceDeskIntegrationDto>>>;
+    public getSourceServiceDeskIntegrationsV1(requestParameters: GetSourceServiceDeskIntegrationsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const sourceId = requestParameters?.sourceId;
+        if (sourceId === null || sourceId === undefined) {
+            throw new Error('Required parameter sourceId was null or undefined when calling getSourceServiceDeskIntegrationsV1.');
+        }
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/service-desk-integrations`;
+        return this.httpClient.request<Array<SourceServiceDeskIntegrationDto>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,

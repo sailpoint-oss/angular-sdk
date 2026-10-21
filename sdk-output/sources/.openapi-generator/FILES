@@ -86,6 +86,7 @@ SourceOwner.md
 SourcePasswordPoliciesInner.md
 SourceResourceMappingValue.md
 SourceSchemasInner.md
+SourceServiceDeskIntegrationDto.md
 SourceSyncJob.md
 SourceSyncPayload.md
 SourcesService.md
@@ -193,6 +194,7 @@ model/sourceOwner.ts
 model/sourcePasswordPoliciesInner.ts
 model/sourceResourceMappingValue.ts
 model/sourceSchemasInner.ts
+model/sourceServiceDeskIntegrationDto.ts
 model/sourceSyncJob.ts
 model/sourceSyncPayload.ts
 model/statusResponse.ts

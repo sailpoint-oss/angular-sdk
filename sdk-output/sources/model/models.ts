@@ -83,6 +83,7 @@ export * from './sourceOwner';
 export * from './sourcePasswordPoliciesInner';
 export * from './sourceResourceMappingValue';
 export * from './sourceSchemasInner';
+export * from './sourceServiceDeskIntegrationDto';
 export * from './sourceSyncJob';
 export * from './sourceSyncPayload';
 export * from './statusResponse';

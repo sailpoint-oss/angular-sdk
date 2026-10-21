@@ -80,6 +80,7 @@ import { IdentityHistoryService as _IdentityHistoryService } from "./identity_hi
 import { IdentityProfilesService as _IdentityProfilesService } from "./identity_profiles/index";
 import { IntelligenceService as _IntelligenceService } from "./intelligence/index";
 import { JITAccessService as _JITAccessService } from "./jit_access/index";
+import { JITActivationConvertService as _JITActivationConvertService } from "./jit_activation_convert/index";
 import { JITActivationsService as _JITActivationsService } from "./jit_activations/index";
 import { LaunchersService as _LaunchersService } from "./launchers/index";
 import { LifecycleStatesService as _LifecycleStatesService } from "./lifecycle_states/index";
@@ -197,6 +198,7 @@ export { _IdentityHistoryService as IdentityHistoryService };
 export { _IdentityProfilesService as IdentityProfilesService };
 export { _IntelligenceService as IntelligenceService };
 export { _JITAccessService as JITAccessService };
+export { _JITActivationConvertService as JITActivationConvertService };
 export { _JITActivationsService as JITActivationsService };
 export { _LaunchersService as LaunchersService };
 export { _LifecycleStatesService as LifecycleStatesService };
@@ -316,6 +318,7 @@ export const SailPointAngular = {
   IdentityProfilesService: _IdentityProfilesService,
   IntelligenceService: _IntelligenceService,
   JITAccessService: _JITAccessService,
+  JITActivationConvertService: _JITActivationConvertService,
   JITActivationsService: _JITActivationsService,
   LaunchersService: _LaunchersService,
   LifecycleStatesService: _LifecycleStatesService,

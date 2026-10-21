@@ -263,6 +263,7 @@
             const limit: number = 250; // number
             const filters: string = 'name sw "my form"'; // string
             const sorters: string = 'name'; // string
+            const count: boolean = true; // boolean
             this.api.exportFormDefinitionsByTenantV1({  }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
