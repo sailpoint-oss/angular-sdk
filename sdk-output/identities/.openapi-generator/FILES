@@ -24,6 +24,10 @@ IdentityOwnershipAssociationDetails.md
 IdentityOwnershipAssociationDetailsAssociationDetailsInner.md
 IdentitySyncJob.md
 IdentitySyncPayload.md
+IdentityV2.md
+IdentityV2LifecycleState.md
+IdentityV2Manager.md
+IdentityV2PrivilegeLevel.md
 InviteIdentitiesRequest.md
 LifecycleStateDto.md
 ListIdentitiesV1401Response.md
@@ -79,6 +83,10 @@ model/identityOwnershipAssociationDetails.ts
 model/identityOwnershipAssociationDetailsAssociationDetailsInner.ts
 model/identitySyncJob.ts
 model/identitySyncPayload.ts
+model/identityV2.ts
+model/identityV2LifecycleState.ts
+model/identityV2Manager.ts
+model/identityV2PrivilegeLevel.ts
 model/inviteIdentitiesRequest.ts
 model/lifecycleStateDto.ts
 model/listIdentitiesV1401Response.ts

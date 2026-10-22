@@ -61,6 +61,28 @@
             });
           }
         }
+- path: /identities/v2/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#get-identity-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          getIdentityV2(): void {
+            const id: string = '01f04e428c484542a241dc89c303b178'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getIdentityV2({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /identities/v1/{identityId}/role-assignments/{assignmentId}
   method: get
   xCodeSample:
@@ -151,6 +173,33 @@
             const limit: number = 250; // number
             const offset: number = 0; // number
             this.api.listIdentitiesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /identities/v2
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/identities/methods/identities#list-identities-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IdentitiesService } from '@sailpoint/angular-sdk/identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IdentitiesService);
+
+          listIdentitiesV2(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const searchAfter: string = 'John Mathews,01f04e428c484542a241dc89c303b178'; // string
+            const filters: string = 'privilegeLevel.effective eq "HIGH"'; // string
+            const sorters: string = 'privilegeLevel.effective,id'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listIdentitiesV2({  }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
