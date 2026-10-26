@@ -24,3 +24,68 @@
             });
           }
         }
+- path: /public-identities/v2/visible-attributes
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/public_identities/methods/public-identities#get-public-identities-visible-attributes-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PublicIdentitiesService } from '@sailpoint/angular-sdk/public_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PublicIdentitiesService);
+
+          getPublicIdentitiesVisibleAttributesV2(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getPublicIdentitiesVisibleAttributesV2({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /public-identities/v2/search
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/public_identities/methods/public-identities#search-public-identities-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { PublicIdentitiesService } from '@sailpoint/angular-sdk/public_identities';
+        import { PublicIdentitiesSearchRequest } from '@sailpoint/angular-sdk/public_identities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(PublicIdentitiesService);
+
+          searchPublicIdentitiesV2(): void {
+            const publicIdentitiesSearchRequest: PublicIdentitiesSearchRequest = {
+              "indices" : [ "identities" ],
+              "sort" : [ "name" ],
+              "querySet" : {
+                "entries" : [ {
+                  "queryType" : "TEXT",
+                  "textQuery" : {
+                    "fields" : [ "attributes.identityState.exact" ],
+                    "terms" : [ "ACTIVE" ],
+                    "matchAny" : false,
+                    "contains" : false,
+                    "strict" : true
+                  }
+                } ],
+                "matchAny" : false
+              },
+              "queryType" : "COMPOSITE",
+              "includeNested" : false
+            }; // PublicIdentitiesSearchRequest
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.searchPublicIdentitiesV2({ publicIdentitiesSearchRequest: publicIdentitiesSearchRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
