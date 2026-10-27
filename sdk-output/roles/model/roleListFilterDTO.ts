@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Roles
+ * SailPoint Identity Security API - Roles
  *
  * 
  *
@@ -15,7 +15,7 @@ import { RoleListFilterDTOAmmKeyValuesInner } from './roleListFilterDTOAmmKeyVal
  */
 export interface RoleListFilterDTO { 
     /**
-     * Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results) Filtering is supported for the following fields and operators:  **id**: *eq, in*  **name**: *eq, sw*  **created**: *gt, lt, ge, le*  **modified**: *gt, lt, ge, le*  **owner.id**: *eq, in*  **requestable**: *eq*
+     * Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results) Filtering is supported for the following fields and operators:  **id**: *eq, in*  **name**: *eq, sw*  **created**: *gt, lt, ge, le*  **modified**: *gt, lt, ge, le*  **owner.id**: *eq, in*  **requestable**: *eq*
      */
     filters?: string | null;
     ammKeyValues?: Array<RoleListFilterDTOAmmKeyValuesInner> | null;

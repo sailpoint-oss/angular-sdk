@@ -12,7 +12,7 @@ tags: ['SDK', 'Software Development Kit', 'Launchers', 'launchers']
 # LaunchersService
   Use this API to manage Launchers.
 
-A launcher lets users start a workflow on demand from Identity Security Cloud, such as a Privileged Workflow or a workflow that creates an Active Directory group. Each launcher references a workflow. Launching it starts an interactive process that runs that workflow for the user who launched it, and the response returns the ID of that interactive process.
+A launcher lets users start a workflow on demand from SailPoint Identity Security, such as a Privileged Workflow or a workflow that creates an Active Directory group. Each launcher references a workflow. Launching it starts an interactive process that runs that workflow for the user who launched it, and the response returns the ID of that interactive process.
 
 Users can launch only the launchers assigned to them, and only while the launcher is enabled.
 
@@ -184,7 +184,7 @@ The service takes one object that holds every parameter. Its type is `GetLaunche
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**filters** | `string` | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **description**: *sw*  **disabled**: *eq*  **name**: *sw* | [optional] [default to undefined]
+**filters** | `string` | Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **description**: *sw*  **disabled**: *eq*  **name**: *sw* | [optional] [default to undefined]
 **next** | `string` | Pagination marker | [optional] [default to undefined]
 **limit** | `number` | Number of Launchers to return | [optional] [default to 10]
 
@@ -208,7 +208,7 @@ export class ExampleComponent {
   private readonly api = inject(LaunchersService);
 
   getLaunchersV1(): void {
-    const filters: string = ; // Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **description**: *sw*  **disabled**: *eq*  **name**: *sw* (optional)
+    const filters: string = ; // Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **description**: *sw*  **disabled**: *eq*  **name**: *sw* (optional)
     const next: string = ; // Pagination marker (optional)
     const limit: number = ; // Number of Launchers to return (optional)
     this.api.getLaunchersV1({  }).subscribe({

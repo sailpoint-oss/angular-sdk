@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Public Identities
+ * SailPoint Identity Security API - Public Identities
  *
  * 
  *
@@ -31,7 +31,7 @@ export interface PublicIdentityV2 {
      */
     email: string | null;
     /**
-     * The current state of the identity, which determines how Identity Security Cloud interacts with the identity.
+     * The current state of the identity, which determines how SailPoint Identity Security interacts with the identity.
      */
     identityState: PublicIdentityV2IdentityStateEnum | null;
     /**

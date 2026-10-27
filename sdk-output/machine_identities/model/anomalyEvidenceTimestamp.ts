@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Machine Identities
+ * SailPoint Identity Security API - Machine Identities
  *
  * 
  *

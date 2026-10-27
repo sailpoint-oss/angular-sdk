@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 **includeSystem** | `boolean` | Include \&#39;system\&#39; attributes in the response. | [optional] [default to false]
 **includeSilent** | `boolean` | Include \&#39;silent\&#39; attributes in the response. | [optional] [default to false]
 **searchableOnly** | `boolean` | Include only \&#39;searchable\&#39; attributes in the response. | [optional] [default to false]
-**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to false]
+**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to false]
 
 ### Return type
 
@@ -250,7 +250,7 @@ export class ExampleComponent {
     const includeSystem: boolean = ; // Include \&#39;system\&#39; attributes in the response. (optional)
     const includeSilent: boolean = ; // Include \&#39;silent\&#39; attributes in the response. (optional)
     const searchableOnly: boolean = ; // Include only \&#39;searchable\&#39; attributes in the response. (optional)
-    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
+    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
     this.api.listIdentityAttributesV1({  }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),

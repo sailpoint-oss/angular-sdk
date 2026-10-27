@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Search Attribute Configuration
+ * SailPoint Identity Security API - Search Attribute Configuration
  *
  * 
  *
@@ -43,9 +43,9 @@ export interface DeleteSearchAttributeConfigV1RequestParams {
 }
 
 export interface GetSearchAttributeConfigV1RequestParams {
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
 }
 
@@ -192,7 +192,7 @@ export class SearchAttributeConfigurationService extends BaseService {
 
     /**
      * List extended search attributes
-     * Get a list of attribute/application attributes currently configured in Identity Security Cloud (ISC).
+     * Get a list of attribute/application attributes currently configured in SailPoint Identity Security.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

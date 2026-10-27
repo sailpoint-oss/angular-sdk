@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Privilege Criteria Configuration
+ * SailPoint Identity Security API - Privilege Criteria Configuration
  *
  * 
  *
@@ -37,7 +37,7 @@ export interface GetPrivilegeCriteriaConfigV1RequestParams {
 }
 
 export interface ListPrivilegeCriteriaConfigV1RequestParams {
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **sourceId**: *eq*  All filter values are case-sensitive for this API.  For example, the following is valid: &#x60;?filters&#x3D;sourceId eq \&quot;2c91809175e6c63f0175fb5570220569\&quot;&#x60; */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **sourceId**: *eq*  All filter values are case-sensitive for this API.  For example, the following is valid: &#x60;?filters&#x3D;sourceId eq \&quot;2c91809175e6c63f0175fb5570220569\&quot;&#x60; */
     filters: string;
 }
 

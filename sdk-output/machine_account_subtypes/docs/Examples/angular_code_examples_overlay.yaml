@@ -1,3 +1,95 @@
+- path: /source-subtypes/v2/{id}/overrides
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#create-source-subtype-override-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+        import { SourceSubtypeOverrideRequest } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          createSourceSubtypeOverrideV2(): void {
+            const id: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
+            const sourceSubtypeOverrideRequest: SourceSubtypeOverrideRequest = {
+              "sourceId" : "6d0458373bec4b4b80460992b76016da"
+            }; // SourceSubtypeOverrideRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createSourceSubtypeOverrideV2({ id: id, sourceSubtypeOverrideRequest: sourceSubtypeOverrideRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-subtypes/v2/{id}/provisioning-policy
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#create-source-subtype-provisioning-policy-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+        import { SubtypeProvisioningPolicy } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          createSourceSubtypeProvisioningPolicyV2(): void {
+            const id: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
+            const subtypeProvisioningPolicy: SubtypeProvisioningPolicy = {
+              "name" : "Service Account",
+              "description" : "Fields collected when creating a service account.",
+              "id" : "d7ae9ea3-507f-4d00-9d4f-b4464b344b88",
+              "subtypeId" : "43bdd144-4b17-4fce-a744-17c7fd3e717b",
+              "fields" : [ {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "{firstname}.{lastname}{uniqueCounter}",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              }, {
+                "isRequired" : false,
+                "transform" : {
+                  "type" : "rule",
+                  "attributes" : {
+                    "name" : "Create Unique LDAP Attribute"
+                  }
+                },
+                "isMultiValued" : false,
+                "name" : "userName",
+                "attributes" : {
+                  "template" : "{firstname}.{lastname}{uniqueCounter}",
+                  "cloudMaxUniqueChecks" : "50",
+                  "cloudMaxSize" : "20",
+                  "cloudRequired" : "true"
+                },
+                "type" : "string"
+              } ],
+              "usageType" : "CREATE_MACHINE_ACCOUNT"
+            }; // SubtypeProvisioningPolicy
+            const useDefaultFields: boolean = true; // boolean
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createSourceSubtypeProvisioningPolicyV2({ id: id, subtypeProvisioningPolicy: subtypeProvisioningPolicy }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /source-subtypes/v1
   method: post
   xCodeSample:
@@ -21,6 +113,38 @@
             });
           }
         }
+- path: /source-subtypes/v2
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#create-source-subtype-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+        import { CreateSourceSubtypeV2Request } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          createSourceSubtypeV2(): void {
+            const createSourceSubtypeV2Request: CreateSourceSubtypeV2Request = {
+              "targetName" : "Active Directory",
+              "targetId" : "active-directory",
+              "displayName" : "Service Account",
+              "description" : "Accounts used by automated services.",
+              "targetType" : "CONNECTOR",
+              "type" : "MACHINE",
+              "classification" : "MACHINE",
+              "technicalName" : "service-account"
+            }; // CreateSourceSubtypeV2Request
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createSourceSubtypeV2({ createSourceSubtypeV2Request: createSourceSubtypeV2Request }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /source-subtypes/v1/{subtypeId}
   method: delete
   xCodeSample:
@@ -38,6 +162,50 @@
             const subtypeId: string = '6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa'; // string
             const xSailPointExperimental: string = 'true'; // string
             this.api.deleteMachineAccountSubtypeV1({ subtypeId: subtypeId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-subtypes/v2/{id}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#delete-machine-account-subtype-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          deleteMachineAccountSubtypeV2(): void {
+            const id: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteMachineAccountSubtypeV2({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-subtypes/v2/{id}/provisioning-policy
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#delete-source-subtype-provisioning-policy-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          deleteSourceSubtypeProvisioningPolicyV2(): void {
+            const id: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteSourceSubtypeProvisioningPolicyV2({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -87,6 +255,77 @@
             });
           }
         }
+- path: /source-subtypes/v2/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#get-source-subtype-by-id-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          getSourceSubtypeByIdV2(): void {
+            const id: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceSubtypeByIdV2({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-subtypes/v2/{id}/provisioning-policy
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#get-source-subtype-provisioning-policy-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          getSourceSubtypeProvisioningPolicyV2(): void {
+            const id: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceSubtypeProvisioningPolicyV2({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-subtypes/v2/targets
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#list-source-subtype-targets-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          listSourceSubtypeTargetsV2(): void {
+            const filters: string = 'targetType eq "CONNECTOR"'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const sorters: string = '-subtypeCount'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listSourceSubtypeTargetsV2({ filters: filters }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /source-subtypes/v1
   method: get
   xCodeSample:
@@ -108,6 +347,36 @@
             const limit: number = 250; // number
             const offset: number = 0; // number
             this.api.listSourceSubtypesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-subtypes/v2
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#list-source-subtypes-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          listSourceSubtypesV2(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const effectiveSet: boolean = true; // boolean
+            const targetType: string = 'CONNECTOR'; // 'SOURCE' | 'CONNECTOR'
+            const includeConfigs: boolean = false; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'targetType eq "CONNECTOR"'; // string
+            const sorters: string = 'displayName'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listSourceSubtypesV2({  }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -153,6 +422,62 @@
             const requestBody: Array<object> = [{"op":"replace","path":"/displayName","value":"Test New DisplayName"}]; // Array<object>
             const xSailPointExperimental: string = 'true'; // string
             this.api.patchMachineAccountSubtypeV1({ subtypeId: subtypeId, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-subtypes/v2/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#patch-machine-account-subtype-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          patchMachineAccountSubtypeV2(): void {
+            const id: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchMachineAccountSubtypeV2({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /source-subtypes/v2/{id}/provisioning-policy
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_subtypes/methods/machine-account-subtypes#patch-source-subtype-provisioning-policy-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountSubtypesService);
+
+          patchSourceSubtypeProvisioningPolicyV2(): void {
+            const id: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.patchSourceSubtypeProvisioningPolicyV2({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });

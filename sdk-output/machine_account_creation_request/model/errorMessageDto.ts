@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Machine Account Creation Request
+ * SailPoint Identity Security API - Machine Account Creation Request
  *
  * 
  *

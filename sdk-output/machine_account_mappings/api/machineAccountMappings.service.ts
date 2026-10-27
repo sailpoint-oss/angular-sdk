@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Machine Account Mappings
+ * SailPoint Identity Security API - Machine Account Mappings
  *
  * 
  *
@@ -49,9 +49,9 @@ export interface DeleteMachineAccountMappingsV1RequestParams {
 export interface ListMachineAccountMappingsV1RequestParams {
     /** Source ID */
     sourceId: string;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;

@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Launchers
+ * SailPoint Identity Security API - Launchers
  *
  * 
  *
@@ -53,7 +53,7 @@ export interface GetLauncherV1RequestParams {
 }
 
 export interface GetLaunchersV1RequestParams {
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **description**: *sw*  **disabled**: *eq*  **name**: *sw* */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **description**: *sw*  **disabled**: *eq*  **name**: *sw* */
     filters?: string;
     /** Pagination marker */
     next?: string;

@@ -21,7 +21,7 @@ import { Intelnonhumanidentityownershipitem } from '@sailpoint/angular-sdk/intel
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | `string` | Identity Security Cloud identifier for the owned non-human identity. | [default to undefined]
+**id** | `string` | SailPoint Identity Security identifier for the owned non-human identity. | [default to undefined]
 **displayName** | `string` | Preferred display name for the owned non-human identity. | [default to undefined]
 **source** | **(optional)** `Intelmachinesourcewire` | Source of the owned non-human identity. | [default to undefined]
 

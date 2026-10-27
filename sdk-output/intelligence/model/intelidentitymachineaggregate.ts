@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Intelligence
+ * SailPoint Identity Security API - Intelligence
  *
  * 
  *
@@ -20,7 +20,7 @@ import { Intelmachinesourcewire } from './intelmachinesourcewire';
  */
 export interface Intelidentitymachineaggregate { 
     /**
-     * Identity Security Cloud identifier for this non-human identity.
+     * SailPoint Identity Security identifier for this non-human identity.
      */
     id: string;
     /**
@@ -40,11 +40,11 @@ export interface Intelidentitymachineaggregate {
      */
     subtype?: string | null;
     /**
-     * Timestamp when the identity record was created in Identity Security Cloud.
+     * Timestamp when the identity record was created in SailPoint Identity Security.
      */
     created?: string;
     /**
-     * Timestamp when the identity record was last modified in Identity Security Cloud.
+     * Timestamp when the identity record was last modified in SailPoint Identity Security.
      */
     modified?: string;
     /**
@@ -77,7 +77,7 @@ export interface Intelidentitymachineaggregate {
      */
     manuallyEdited?: boolean;
     /**
-     * True when the machine identity was created manually in Identity Security Cloud.
+     * True when the machine identity was created manually in SailPoint Identity Security.
      */
     manuallyCreated?: boolean;
     owners: Intelmachineidentityowners;

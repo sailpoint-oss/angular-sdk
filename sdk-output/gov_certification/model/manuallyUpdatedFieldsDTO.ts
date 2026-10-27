@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Next Generation Certification Campaigns
+ * SailPoint Identity Security API - Next Generation Certification Campaigns
  *
  * 
  *
@@ -11,11 +11,11 @@
 
 export interface ManuallyUpdatedFieldsDTO { 
     /**
-     * True if the entitlements name was updated manually via entitlement import csv or patch endpoint. False means that property value has not been change after first entitlement aggregation. Field refers to [Entitlement response schema](https://developer.sailpoint.com/idn/api/beta/get-entitlement) > `name` property.
+     * True if the entitlements name was updated manually via entitlement import csv or patch endpoint. False means that property value has not been change after first entitlement aggregation. Field refers to [Entitlement response schema](https://developer.sailpoint.com/docs/api/get-entitlement-v-1) > `name` property.
      */
     displayName?: boolean;
     /**
-     * True if the entitlement description was updated manually via entitlement import csv or patch endpoint. False means that property value has not been change after first entitlement aggregation. Field refers to [Entitlement response schema](https://developer.sailpoint.com/idn/api/beta/get-entitlement) > `description` property.
+     * True if the entitlement description was updated manually via entitlement import csv or patch endpoint. False means that property value has not been change after first entitlement aggregation. Field refers to [Entitlement response schema](https://developer.sailpoint.com/docs/api/get-entitlement-v-1) > `description` property.
      */
     description?: boolean;
 }

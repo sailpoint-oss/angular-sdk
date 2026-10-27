@@ -14,7 +14,9 @@ ErrorResponseDto.md
 LocaleOrigin.md
 MachineAccountCreateAccessDto.md
 MachineAccountCreateAccessDtoSubtypesInner.md
+MachineAccountCreateEntitlement.md
 MachineAccountCreateRequestInput.md
+MachineAccountCreateRequestInputV2.md
 MachineAccountCreationRequestService.md
 MachineAccountCreationRequestServicedeveloperSite_code_examples.yaml
 README.md
@@ -42,7 +44,9 @@ model/errorResponseDto.ts
 model/localeOrigin.ts
 model/machineAccountCreateAccessDto.ts
 model/machineAccountCreateAccessDtoSubtypesInner.ts
+model/machineAccountCreateEntitlement.ts
 model/machineAccountCreateRequestInput.ts
+model/machineAccountCreateRequestInputV2.ts
 model/models.ts
 ng-package.json
 package.json

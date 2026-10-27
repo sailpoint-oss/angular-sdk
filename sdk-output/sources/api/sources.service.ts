@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Sources
+ * SailPoint Identity Security API - Sources
  *
  * 
  *
@@ -25,7 +25,11 @@ import { ConnectorDetail } from '../model/connectorDetail';
 // @ts-ignore
 import { CorrelationConfig } from '../model/correlationConfig';
 // @ts-ignore
+import { CorrelationReprocessStatus } from '../model/correlationReprocessStatus';
+// @ts-ignore
 import { DatasetAggregationRequest } from '../model/datasetAggregationRequest';
+// @ts-ignore
+import { DeleteSourceAgentsRequest } from '../model/deleteSourceAgentsRequest';
 // @ts-ignore
 import { DeleteSourceV1202Response } from '../model/deleteSourceV1202Response';
 // @ts-ignore
@@ -60,6 +64,8 @@ import { Schedule3 } from '../model/schedule3';
 import { Schema } from '../model/schema';
 // @ts-ignore
 import { Source } from '../model/source';
+// @ts-ignore
+import { SourceAgentDeletionTaskStatus } from '../model/sourceAgentDeletionTaskStatus';
 // @ts-ignore
 import { SourceConnectionsDto } from '../model/sourceConnectionsDto';
 // @ts-ignore
@@ -163,6 +169,14 @@ export interface DeleteProvisioningPolicyV2RequestParams {
     sourceId: string;
     /** The provisioning policy ID. */
     id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
+export interface DeleteSourceAgentsV1RequestParams {
+    /** Source ID. */
+    id: string;
+    deleteSourceAgentsRequest: DeleteSourceAgentsRequest;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -292,11 +306,11 @@ export interface GetSourceDatasetV1RequestParams {
 export interface GetSourceDatasetsV1RequestParams {
     /** Source ID. */
     sourceId: string;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     count?: boolean;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
@@ -310,6 +324,17 @@ export interface GetSourceEntitlementRequestConfigV1RequestParams {
 export interface GetSourceHealthV1RequestParams {
     /** The Source id. */
     sourceId: string;
+}
+
+export interface GetSourceResourceCorrelationReprocessV1RequestParams {
+    /** Source ID. */
+    sourceId: string;
+    /** Resource ID. */
+    resourceId: string;
+    /** Kind of correlation reprocess run to get. */
+    type: 'OWNER_CORRELATION';
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface GetSourceResourceMappingsV1RequestParams {
@@ -331,11 +356,11 @@ export interface GetSourceResourceV1RequestParams {
 export interface GetSourceResourcesV1RequestParams {
     /** Source ID. */
     sourceId: string;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     count?: boolean;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
@@ -372,9 +397,9 @@ export interface GetSourceSchemasV1RequestParams {
 export interface GetSourceServiceDeskIntegrationsV1RequestParams {
     /** Source ID. */
     sourceId: string;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
 }
 
@@ -438,46 +463,46 @@ export interface ImportUncorrelatedAccountsV1RequestParams {
 export interface ListPasswordPolicyHoldersOnSourceV1RequestParams {
     /** The Source id */
     sourceId: string;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     count?: boolean;
 }
 
 export interface ListProvisioningPoliciesV1RequestParams {
     /** The Source id */
     sourceId: string;
-    /** Offset  Integer specifying the offset of the first result from the beginning of the collection. The standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-results). The offset value is record-based, not page-based, and the index starts at 0. */
+    /** Offset  Integer specifying the offset of the first result from the beginning of the collection. The standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#paginating-results). The offset value is record-based, not page-based, and the index starts at 0. */
     offset?: number;
-    /** Limit        Integer specifying the maximum number of records to return in a single API call. The standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-results). If it is not specified, a default limit is used. */
+    /** Limit        Integer specifying the maximum number of records to return in a single API call. The standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#paginating-results). If it is not specified, a default limit is used. */
     limit?: number;
 }
 
 export interface ListProvisioningPoliciesV2RequestParams {
     /** The Source id */
     sourceId: string;
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **subtypeId**: *eq*  **usageType**: *eq* */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **subtypeId**: *eq*  **usageType**: *eq* */
     filters?: string;
-    /** Offset  Integer specifying the offset of the first result from the beginning of the collection. The standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-results). The offset value is record-based, not page-based, and the index starts at 0. */
+    /** Offset  Integer specifying the offset of the first result from the beginning of the collection. The standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#paginating-results). The offset value is record-based, not page-based, and the index starts at 0. */
     offset?: number;
-    /** Limit Integer specifying the maximum number of records to return in a single API call. The standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-results). If it is not specified, a default limit is used. */
+    /** Limit Integer specifying the maximum number of records to return in a single API call. The standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#paginating-results). If it is not specified, a default limit is used. */
     limit?: number;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
 
 export interface ListSourcesV1RequestParams {
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     count?: boolean;
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in, ge, gt, le, lt, ne, isnull, sw*  **name**: *co, eq, in, sw, ge, gt, ne, isnull*  **type**: *eq, in, ge, gt, ne, isnull, sw*  **owner.id**: *eq, in, ge, gt, le, lt, ne, isnull, sw*  **features**: *ca, co*  **created**: *eq, ge, gt, in, le, lt, ne, isnull, sw*  **modified**: *eq, ge, gt, in, le, lt, ne, isnull, sw*  **managementWorkgroup.id**: *eq, ge, gt, in, le, lt, ne, isnull, sw*  **description**: *eq, sw*  **authoritative**: *eq, ne, isnull*  **healthy**: *isnull*  **status**: *eq, in, ge, gt, le, lt, ne, isnull, sw*  **connectionType**: *eq, ge, gt, in, le, lt, ne, isnull, sw*  **connectorName**: *eq, ge, gt, in, ne, isnull, sw*  **category**: *co, eq, ge, gt, in, le, lt, ne, sw* */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in, ge, gt, le, lt, ne, isnull, sw*  **name**: *co, eq, in, sw, ge, gt, ne, isnull*  **type**: *eq, in, ge, gt, ne, isnull, sw*  **owner.id**: *eq, in, ge, gt, le, lt, ne, isnull, sw*  **features**: *ca, co*  **created**: *eq, ge, gt, in, le, lt, ne, isnull, sw*  **modified**: *eq, ge, gt, in, le, lt, ne, isnull, sw*  **managementWorkgroup.id**: *eq, ge, gt, in, le, lt, ne, isnull, sw*  **description**: *eq, sw*  **authoritative**: *eq, ne, isnull*  **healthy**: *isnull*  **status**: *eq, in, ge, gt, le, lt, ne, isnull, sw*  **connectionType**: *eq, ge, gt, in, le, lt, ne, isnull, sw*  **connectorName**: *eq, ge, gt, in, ne, isnull, sw*  **category**: *co, eq, ge, gt, in, le, lt, ne, sw* */
     filters?: string;
-    /** Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **type, created, modified, name, owner.name, healthy, status, id, description, owner.id, accountCorrelationConfig.id, accountCorrelationConfig.name, managerCorrelationRule.type, managerCorrelationRule.id, managerCorrelationRule.name, authoritative, managementWorkgroup.id, connectorName, connectionType** */
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **type, created, modified, name, owner.name, healthy, status, id, description, owner.id, accountCorrelationConfig.id, accountCorrelationConfig.name, managerCorrelationRule.type, managerCorrelationRule.id, managerCorrelationRule.name, authoritative, managementWorkgroup.id, connectorName, connectionType** */
     sorters?: string;
     /** Filter the returned list of sources for the identity specified by the parameter, which is the id of an identity with the role SOURCE_SUBADMIN. By convention, the value **me** indicates the identity id of the current user. Subadmins may only view Sources which they are able to administer; all other Sources will be filtered out when this parameter is set. If the current user is a SOURCE_SUBADMIN but fails to pass a valid value for this parameter, a 403 Forbidden is returned. */
     forSubadmin?: string;
@@ -566,6 +591,17 @@ export interface SearchResourceObjectsV1RequestParams {
     /** The ID of the Source */
     sourceId: string;
     resourceObjectsRequest: ResourceObjectsRequest;
+}
+
+export interface StartSourceResourceCorrelationReprocessV1RequestParams {
+    /** Source ID. */
+    sourceId: string;
+    /** Resource ID. */
+    resourceId: string;
+    /** Kind of correlation to reprocess. &#x60;OWNER_CORRELATION&#x60; re-runs owner correlation. */
+    type: 'OWNER_CORRELATION';
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface SyncAttributesForSourceV1RequestParams {
@@ -680,7 +716,7 @@ export interface UpdateSourceSchemaV1RequestParams {
 export interface UpdateSourceV1RequestParams {
     /** Source ID. */
     id: string;
-    /** A list of account update operations according to the [JSON Patch](https://tools.ietf.org/html/rfc6902) standard. Any password changes are submitted as plain-text and encrypted upon receipt in Identity Security Cloud (ISC). */
+    /** A list of account update operations according to the [JSON Patch](https://tools.ietf.org/html/rfc6902) standard. Any password changes are submitted as plain-text and encrypted upon receipt in SailPoint Identity Security. */
     jsonPatchOperation: Array<JsonPatchOperation>;
 }
 
@@ -844,7 +880,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Create dataset on source
-     * Use this API to create a dataset on the specified source in Identity Security Cloud (ISC).   This operation requires a connector with the &#x60;supportDatasetCreation&#x60; label. &#x60;name&#x60; is required. The dataset &#x60;id&#x60; is always server-generated from &#x60;name&#x60; as &#x60;customer:&#x60; plus a normalized form of the name; any client-supplied &#x60;id&#x60; is ignored. 
+     * Use this API to create a dataset on the specified source in SailPoint Identity Security.   This operation requires a connector with the &#x60;supportDatasetCreation&#x60; label. &#x60;name&#x60; is required. The dataset &#x60;id&#x60; is always server-generated from &#x60;name&#x60; as &#x60;customer:&#x60; plus a normalized form of the name; any client-supplied &#x60;id&#x60; is ignored. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -917,7 +953,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Create resource on source
-     * Use this API to create a resource on the specified source in Identity Security Cloud (ISC).   This operation requires a connector with the &#x60;supportDatasetCreation&#x60; label. &#x60;name&#x60;, &#x60;type&#x60;, &#x60;datasetId&#x60;, and &#x60;schema&#x60; are required. The &#x60;schema&#x60; must define at least one attribute plus &#x60;identityAttribute&#x60; and &#x60;displayAttribute&#x60;. The resource &#x60;id&#x60; is always server-generated from &#x60;name&#x60; as &#x60;customer:&#x60; plus a normalized form of the name; any client-supplied &#x60;id&#x60; is ignored. After creation, schema attribute edits are made through the source schema APIs. 
+     * Use this API to create a resource on the specified source in SailPoint Identity Security.   This operation requires a connector with the &#x60;supportDatasetCreation&#x60; label. &#x60;name&#x60;, &#x60;type&#x60;, &#x60;datasetId&#x60;, and &#x60;schema&#x60; are required. The &#x60;schema&#x60; must define at least one attribute plus &#x60;identityAttribute&#x60; and &#x60;displayAttribute&#x60;. The resource &#x60;id&#x60; is always server-generated from &#x60;name&#x60; as &#x60;customer:&#x60; plus a normalized form of the name; any client-supplied &#x60;id&#x60; is ignored. After creation, schema attribute edits are made through the source schema APIs. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -990,7 +1026,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Create schedule on source
-     * Use this API to create a new schedule for a type on the specified source in Identity Security Cloud (ISC). 
+     * Use this API to create a new schedule for a type on the specified source in SailPoint Identity Security. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1059,7 +1095,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Create schema on source
-     * Use this API to create a new schema on the specified source in Identity Security Cloud (ISC). 
+     * Use this API to create a new schema on the specified source in SailPoint Identity Security. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1430,8 +1466,81 @@ export class SourcesService extends BaseService {
     }
 
     /**
+     * Delete source AI agents
+     * Use this API to delete all AI agents that were aggregated into the given datasets on a source. Deletion runs as an asynchronous task, and the response contains the task\&#39;s initial status.   This API returns &#x60;400&#x60; when the source has no connector instance, when &#x60;datasetIds&#x60; is missing or empty, or when a deletion or aggregation is already running for the source.   When agentic identity governance is not enabled for the tenant, or AI agent deletion is not available, this API returns &#x60;404&#x60;. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public deleteSourceAgentsV1(requestParameters: DeleteSourceAgentsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SourceAgentDeletionTaskStatus>;
+    public deleteSourceAgentsV1(requestParameters: DeleteSourceAgentsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SourceAgentDeletionTaskStatus>>;
+    public deleteSourceAgentsV1(requestParameters: DeleteSourceAgentsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SourceAgentDeletionTaskStatus>>;
+    public deleteSourceAgentsV1(requestParameters: DeleteSourceAgentsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling deleteSourceAgentsV1.');
+        }
+        const deleteSourceAgentsRequest = requestParameters?.deleteSourceAgentsRequest;
+        if (deleteSourceAgentsRequest === null || deleteSourceAgentsRequest === undefined) {
+            throw new Error('Required parameter deleteSourceAgentsRequest was null or undefined when calling deleteSourceAgentsV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/agents-delete`;
+        return this.httpClient.request<SourceAgentDeletionTaskStatus>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: deleteSourceAgentsRequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Delete objects for source dataset
-     * Starts a task to delete aggregated objects for the specified dataset on the source in Identity Security Cloud (ISC). Linked dataset and resource definitions are not deleted. 
+     * Starts a task to delete aggregated objects for the specified dataset on the source in SailPoint Identity Security (SailPoint Identity Security). Linked dataset and resource definitions are not deleted. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1494,7 +1603,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Delete source dataset by id
-     * Use this API to delete a dataset on the specified source in Identity Security Cloud (ISC).   This operation requires a connector with the &#x60;supportDatasetCreation&#x60; label. Linked resource schemas are not deleted. 
+     * Use this API to delete a dataset on the specified source in SailPoint Identity Security.   This operation requires a connector with the &#x60;supportDatasetCreation&#x60; label. Linked resource schemas are not deleted. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1557,7 +1666,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Delete source resource by id
-     * Use this API to delete a resource on the specified source in Identity Security Cloud (ISC).   The resource schema is deleted and the resource is unlinked from any dataset rows on the source. 
+     * Use this API to delete a resource on the specified source in SailPoint Identity Security.   The resource schema is deleted and the resource is unlinked from any dataset rows on the source. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -1736,7 +1845,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Delete source by id
-     * Use this API to delete a specific source in Identity Security Cloud (ISC). The API removes all the accounts on the source first, and then it deletes the source. You can retrieve the actual task execution status with this method: GET &#x60;/task-status/{id}&#x60;
+     * Use this API to delete a specific source in SailPoint Identity Security. The API removes all the accounts on the source first, and then it deletes the source. You can retrieve the actual task execution status with this method: GET &#x60;/task-status/{id}&#x60;
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2188,7 +2297,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Get provisioning policy by ID
-     * This end-point retrieves the ProvisioningPolicy with the specified ID on the specified Source in Identity Security Cloud.
+     * This end-point retrieves the ProvisioningPolicy with the specified ID on the specified Source in SailPoint Identity Security.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2371,7 +2480,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Get source connections by id
-     * Use this API to get all dependent Profiles, Attributes, Applications and Custom Transforms for a source by a specified ID in Identity Security Cloud (ISC).
+     * Use this API to get all dependent Profiles, Attributes, Applications and Custom Transforms for a source by a specified ID in SailPoint Identity Security.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2426,7 +2535,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Get source dataset by id
-     * Use this API to get a dataset by id for the specified source in Identity Security Cloud (ISC). 
+     * Use this API to get a dataset by id for the specified source in SailPoint Identity Security. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2489,7 +2598,7 @@ export class SourcesService extends BaseService {
 
     /**
      * List datasets on source
-     * Use this API to list datasets for the specified source in Identity Security Cloud (ISC). 
+     * Use this API to list datasets for the specified source in SailPoint Identity Security. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2669,8 +2778,80 @@ export class SourcesService extends BaseService {
     }
 
     /**
+     * Get resource correlation reprocess status
+     * Use this API to get the progress of the latest correlation reprocess run of the given &#x60;type&#x60; for a resource on a source. You can call it whatever state the run is in. Finished runs are kept for a limited time. This API returns &#x60;404&#x60; when no run is found for the source resource and &#x60;type&#x60;.   When machine identity security is not enabled for the tenant, or correlation reprocessing is not available, this API returns &#x60;404&#x60;. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getSourceResourceCorrelationReprocessV1(requestParameters: GetSourceResourceCorrelationReprocessV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CorrelationReprocessStatus>;
+    public getSourceResourceCorrelationReprocessV1(requestParameters: GetSourceResourceCorrelationReprocessV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CorrelationReprocessStatus>>;
+    public getSourceResourceCorrelationReprocessV1(requestParameters: GetSourceResourceCorrelationReprocessV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CorrelationReprocessStatus>>;
+    public getSourceResourceCorrelationReprocessV1(requestParameters: GetSourceResourceCorrelationReprocessV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const sourceId = requestParameters?.sourceId;
+        if (sourceId === null || sourceId === undefined) {
+            throw new Error('Required parameter sourceId was null or undefined when calling getSourceResourceCorrelationReprocessV1.');
+        }
+        const resourceId = requestParameters?.resourceId;
+        if (resourceId === null || resourceId === undefined) {
+            throw new Error('Required parameter resourceId was null or undefined when calling getSourceResourceCorrelationReprocessV1.');
+        }
+        const type = requestParameters?.type;
+        if (type === null || type === undefined) {
+            throw new Error('Required parameter type was null or undefined when calling getSourceResourceCorrelationReprocessV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>type, 'type');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/resources/${this.configuration.encodeParam({name: "resourceId", value: resourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/reprocess-correlations`;
+        return this.httpClient.request<CorrelationReprocessStatus>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Get source resource mappings
-     * Use this API to get aggregation metadata for resources on the specified source in Identity Security Cloud (ISC). The response is keyed by resource id. Each value includes the linked dataset id, resource type, and connector object type. Resources without a matching schema are omitted. 
+     * Use this API to get aggregation metadata for resources on the specified source in SailPoint Identity Security (SailPoint Identity Security). The response is keyed by resource id. Each value includes the linked dataset id, resource type, and connector object type. Resources without a matching schema are omitted. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2729,7 +2910,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Get source resource by id
-     * Use this API to get a resource by id on the specified source in Identity Security Cloud (ISC). The response includes the full CIS schema for the resource. 
+     * Use this API to get a resource by id on the specified source in SailPoint Identity Security. The response includes the full CIS schema for the resource. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2792,7 +2973,7 @@ export class SourcesService extends BaseService {
 
     /**
      * List resources for a source
-     * Use this API to list resources defined on the specified source in Identity Security Cloud (ISC). 
+     * Use this API to list resources defined on the specified source in SailPoint Identity Security. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2863,7 +3044,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Get source schedule by type
-     * Get the source schedule by type in Identity Security Cloud (ISC). 
+     * Get the source schedule by type in SailPoint Identity Security. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2922,7 +3103,7 @@ export class SourcesService extends BaseService {
 
     /**
      * List schedules on source
-     * Use this API to list the schedules that exist on the specified source in Identity Security Cloud (ISC). :::info This endpoint uses a **cron expression** to schedule a task, following standard **cron job syntax**.  For example, &#x60;0 0 12 1/1 * ? *&#x60; runs the task **daily at 12:00 PM**.  **Days of the week are represented as 1-7 (Sunday-Saturday).** ::: 
+     * Use this API to list the schedules that exist on the specified source in SailPoint Identity Security. :::info This endpoint uses a **cron expression** to schedule a task, following standard **cron job syntax**.  For example, &#x60;0 0 12 1/1 * ? *&#x60; runs the task **daily at 12:00 PM**.  **Days of the week are represented as 1-7 (Sunday-Saturday).** ::: 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3036,7 +3217,7 @@ export class SourcesService extends BaseService {
 
     /**
      * List schemas on source
-     * Use this API to list the schemas that exist on the specified source in Identity Security Cloud (ISC).
+     * Use this API to list the schemas that exist on the specified source in SailPoint Identity Security.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3100,7 +3281,7 @@ export class SourcesService extends BaseService {
 
     /**
      * List source service desk integrations
-     * Use this API to list the Service Desk Integrations that carry out provisioning for a source in Identity Security Cloud (ISC).  A source is provisioned either entirely through its own connector or entirely through a Service Desk Integration; provisioning is never split between the two. An empty list therefore means the source\&#39;s own connector handles provisioning, and a non-empty list means every provisioning request for the source is routed to the integrations named in the response.  Use this API to determine why provisioning settings on the source itself have no effect, and to identify the integration an administrator must change instead.
+     * Use this API to list the Service Desk Integrations that carry out provisioning for a source in SailPoint Identity Security (SailPoint Identity Security).  A source is provisioned either entirely through its own connector or entirely through a Service Desk Integration; provisioning is never split between the two. An empty list therefore means the source\&#39;s own connector handles provisioning, and a non-empty list means every provisioning request for the source is routed to the integrations named in the response.  Use this API to determine why provisioning settings on the source itself have no effect, and to identify the integration an administrator must change instead.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3164,7 +3345,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Get source by id
-     * Use this API to get a source by a specified ID in Identity Security Cloud (ISC).
+     * Use this API to get a source by a specified ID in SailPoint Identity Security.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -3624,7 +3805,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Aggregate source dataset
-     * Starts an aggregation for the specified dataset on the source in Identity Security Cloud (ISC). An optional &#x60;config&#x60; object can be supplied for connector-specific aggregation settings. 
+     * Starts an aggregation for the specified dataset on the source in SailPoint Identity Security. An optional &#x60;config&#x60; object can be supplied for connector-specific aggregation settings. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -4320,7 +4501,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Update provisioning policy by ID
-     * This end-point updates the provisioning policy with the specified ID on the specified source in Identity Security Cloud. Transforms can be used in the provisioning policy to create a new attribute that you only need during provisioning. Refer to [Transforms in Provisioning Policies](https://developer.sailpoint.com/docs/extensibility/transforms/guides/transforms-in-provisioning-policies) for more information.
+     * This end-point updates the provisioning policy with the specified ID on the specified source in SailPoint Identity Security. Transforms can be used in the provisioning policy to create a new attribute that you only need during provisioning. Refer to [Transforms in Provisioning Policies](https://developer.sailpoint.com/docs/extensibility/transforms/guides/transforms-in-provisioning-policies) for more information.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -4470,7 +4651,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Update source dataset (full)
-     * Use this API to replace a dataset on the specified source in Identity Security Cloud (ISC).   Callers should round-trip the GET representation. &#x60;id&#x60; is required in the request body and must match the path. &#x60;aggregationEnabled&#x60; may always be updated. &#x60;name&#x60;, &#x60;description&#x60;, and &#x60;resources&#x60; can be changed only when the connector has the &#x60;supportDatasetCreation&#x60; label. 
+     * Use this API to replace a dataset on the specified source in SailPoint Identity Security.   Callers should round-trip the GET representation. &#x60;id&#x60; is required in the request body and must match the path. &#x60;aggregationEnabled&#x60; may always be updated. &#x60;name&#x60;, &#x60;description&#x60;, and &#x60;resources&#x60; can be changed only when the connector has the &#x60;supportDatasetCreation&#x60; label. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -4547,7 +4728,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Update source resource (full)
-     * Use this API to replace a resource on the specified source in Identity Security Cloud (ISC).   After creation, schema attribute edits should be made through the source schema APIs. Connectors with the &#x60;supportDatasetCreation&#x60; label can update additional resource fields. 
+     * Use this API to replace a resource on the specified source in SailPoint Identity Security.   After creation, schema attribute edits should be made through the source schema APIs. Connectors with the &#x60;supportDatasetCreation&#x60; label can update additional resource fields. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -4697,7 +4878,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Update source (full)
-     * Use this API to update a source in Identity Security Cloud (ISC), using a full object representation. This means that when you use this API, it completely replaces the existing source configuration.  These fields are immutable, so they cannot be changed:  * id * type * authoritative * connector * connectorClass * passwordPolicies  Attempts to modify these fields will result in a 400 error. 
+     * Use this API to update a source in SailPoint Identity Security, using a full object representation. This means that when you use this API, it completely replaces the existing source configuration.  These fields are immutable, so they cannot be changed:  * id * type * authoritative * connector * connectorClass * passwordPolicies  Attempts to modify these fields will result in a 400 error. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -4823,6 +5004,78 @@ export class SourcesService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: resourceObjectsRequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Start resource correlation reprocess
+     * Use this API to re-run correlation for the machine objects aggregated from a resource on a source, without running a new aggregation. The run is asynchronous. Poll its progress with the &#x60;GET&#x60; method on the same path and &#x60;type&#x60;.   Only one run of a given &#x60;type&#x60; can be in progress for a source resource at a time. Starting another run while one is in progress returns &#x60;400&#x60;. This API returns &#x60;404&#x60; when the source or resource does not exist.   When machine identity security is not enabled for the tenant, or correlation reprocessing is not available, this API returns &#x60;404&#x60;. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public startSourceResourceCorrelationReprocessV1(requestParameters: StartSourceResourceCorrelationReprocessV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CorrelationReprocessStatus>;
+    public startSourceResourceCorrelationReprocessV1(requestParameters: StartSourceResourceCorrelationReprocessV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CorrelationReprocessStatus>>;
+    public startSourceResourceCorrelationReprocessV1(requestParameters: StartSourceResourceCorrelationReprocessV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CorrelationReprocessStatus>>;
+    public startSourceResourceCorrelationReprocessV1(requestParameters: StartSourceResourceCorrelationReprocessV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const sourceId = requestParameters?.sourceId;
+        if (sourceId === null || sourceId === undefined) {
+            throw new Error('Required parameter sourceId was null or undefined when calling startSourceResourceCorrelationReprocessV1.');
+        }
+        const resourceId = requestParameters?.resourceId;
+        if (resourceId === null || resourceId === undefined) {
+            throw new Error('Required parameter resourceId was null or undefined when calling startSourceResourceCorrelationReprocessV1.');
+        }
+        const type = requestParameters?.type;
+        if (type === null || type === undefined) {
+            throw new Error('Required parameter type was null or undefined when calling startSourceResourceCorrelationReprocessV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>type, 'type');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/resources/${this.configuration.encodeParam({name: "resourceId", value: resourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/reprocess-correlations`;
+        return this.httpClient.request<CorrelationReprocessStatus>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
@@ -5799,7 +6052,7 @@ export class SourcesService extends BaseService {
 
     /**
      * Update source (partial)
-     * Use this API to partially update a source in Identity Security Cloud (ISC), using a list of patch operations according to the [JSON Patch](https://tools.ietf.org/html/rfc6902) standard.  These fields are immutable, so they cannot be changed:  * id * type * authoritative * created * modified * connector * connectorClass * passwordPolicies  Attempts to modify these fields will result in a 400 error. 
+     * Use this API to partially update a source in SailPoint Identity Security, using a list of patch operations according to the [JSON Patch](https://tools.ietf.org/html/rfc6902) standard.  These fields are immutable, so they cannot be changed:  * id * type * authoritative * created * modified * connector * connectorClass * passwordPolicies  Attempts to modify these fields will result in a 400 error. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

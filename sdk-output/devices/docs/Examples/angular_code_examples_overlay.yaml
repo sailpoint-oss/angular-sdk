@@ -1,0 +1,97 @@
+- path: /devices/v1/device-counts
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/devices/methods/devices#get-device-counts-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DevicesService } from '@sailpoint/angular-sdk/devices';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DevicesService);
+
+          getDeviceCountsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getDeviceCountsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /devices/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/devices/methods/devices#get-device-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DevicesService } from '@sailpoint/angular-sdk/devices';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DevicesService);
+
+          getDeviceV1(): void {
+            const id: string = '5be33d3e-c54d-4ed7-af73-2380543e8283'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getDeviceV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /devices/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/devices/methods/devices#list-devices-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DevicesService } from '@sailpoint/angular-sdk/devices';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DevicesService);
+
+          listDevicesV1(): void {
+            const filters: string = 'hostname sw "lab-"'; // string
+            const sorters: string = 'hostname'; // string
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listDevicesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /devices/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/devices/methods/devices#update-device-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { DevicesService } from '@sailpoint/angular-sdk/devices';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/devices';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(DevicesService);
+
+          updateDeviceV1(): void {
+            const id: string = '5be33d3e-c54d-4ed7-af73-2380543e8283'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateDeviceV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

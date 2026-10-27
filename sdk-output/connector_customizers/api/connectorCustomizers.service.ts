@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Connector Customizers
+ * SailPoint Identity Security API - Connector Customizers
  *
  * 
  *
@@ -62,9 +62,9 @@ export interface GetConnectorCustomizerV1RequestParams {
 }
 
 export interface ListConnectorCustomizersV1RequestParams {
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
 }
 

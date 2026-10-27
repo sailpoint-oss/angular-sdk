@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Data Access Security
+ * SailPoint Identity Security API - Data Access Security
  *
  * 
  *
@@ -12,7 +12,7 @@ import { Identitycollectorfieldmapping } from './identitycollectorfieldmapping';
 
 export interface Identitycollectorcollectionsettings { 
     /**
-     * Source attribute names to register as datasource columns for this collection. These names must match the attributes sent by Identity Security Cloud. Use an empty array when no custom attributes are required.
+     * Source attribute names to register as datasource columns for this collection. These names must match the attributes sent by SailPoint Identity Security. Use an empty array when no custom attributes are required.
      */
     properties: Array<string>;
     /**

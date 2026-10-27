@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Identity Attributes
+ * SailPoint Identity Security API - Identity Attributes
  *
  * 
  *
@@ -58,7 +58,7 @@ export interface ListIdentityAttributesV1RequestParams {
     includeSilent?: boolean;
     /** Include only \&#39;searchable\&#39; attributes in the response. */
     searchableOnly?: boolean;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     count?: boolean;
 }
 

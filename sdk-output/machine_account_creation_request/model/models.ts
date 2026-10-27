@@ -12,4 +12,6 @@ export * from './errorResponseDto';
 export * from './localeOrigin';
 export * from './machineAccountCreateAccessDto';
 export * from './machineAccountCreateAccessDtoSubtypesInner';
+export * from './machineAccountCreateEntitlement';
 export * from './machineAccountCreateRequestInput';
+export * from './machineAccountCreateRequestInputV2';

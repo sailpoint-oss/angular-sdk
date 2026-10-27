@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Triggers
+ * SailPoint Identity Security API - Triggers
  *
  * 
  *
@@ -19,7 +19,7 @@ export interface AccessRequestSubmittedResponse {
      */
     comment: string;
     /**
-     * Name of the subscribing service approving the request.  This doesn\'t normally have to be the name of an existing identity in ISC, but it does if you have an active subscription to the [Access Request Decision trigger](https://developer.sailpoint.com/docs/extensibility/event-triggers/triggers/access-request-decision). If you don\'t provide the `username` of an existing identity in your tenant, your Access Request Decision subscriptions will never trigger.
+     * Name of the subscribing service approving the request.  This doesn\'t normally have to be the name of an existing identity in SailPoint Identity Security, but it does if you have an active subscription to the [Access Request Decision trigger](https://developer.sailpoint.com/docs/extensibility/event-triggers/triggers/access-request-decision). If you don\'t provide the `username` of an existing identity in your tenant, your Access Request Decision subscriptions will never trigger.
      */
     approver: string;
 }

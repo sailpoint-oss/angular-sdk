@@ -46,6 +46,7 @@ import { AuthProfileService as _AuthProfileService } from "./auth_profile/index"
 import { AuthUsersService as _AuthUsersService } from "./auth_users/index";
 import { BrandingService as _BrandingService } from "./branding/index";
 import { BusinessApplicationsService as _BusinessApplicationsService } from "./business_applications/index";
+import { CapabilitiesService as _CapabilitiesService } from "./capabilities/index";
 import { CertificationCampaignFiltersService as _CertificationCampaignFiltersService } from "./certification_campaign_filters/index";
 import { CertificationCampaignsService as _CertificationCampaignsService } from "./certification_campaigns/index";
 import { CertificationSummariesService as _CertificationSummariesService } from "./certification_summaries/index";
@@ -55,15 +56,18 @@ import { ConfigurationHubService as _ConfigurationHubService } from "./configura
 import { ConnectorCustomizersService as _ConnectorCustomizersService } from "./connector_customizers/index";
 import { ConnectorRuleManagementService as _ConnectorRuleManagementService } from "./connector_rule_management/index";
 import { ConnectorsService as _ConnectorsService } from "./connectors/index";
+import { CredentialsService as _CredentialsService } from "./credentials/index";
 import { CustomFormsService as _CustomFormsService } from "./custom_forms/index";
 import { CustomPasswordInstructionsService as _CustomPasswordInstructionsService } from "./custom_password_instructions/index";
 import { CustomUserLevelsService as _CustomUserLevelsService } from "./custom_user_levels/index";
 import { DataAccessSecurityService as _DataAccessSecurityService } from "./data_access_security/index";
 import { DataSegmentationService as _DataSegmentationService } from "./data_segmentation/index";
 import { DeclassifySourceService as _DeclassifySourceService } from "./declassify_source/index";
+import { DevicesService as _DevicesService } from "./devices/index";
 import { DimensionsService as _DimensionsService } from "./dimensions/index";
 import { EntitlementConnectionsService as _EntitlementConnectionsService } from "./entitlement_connections/index";
 import { EntitlementsService as _EntitlementsService } from "./entitlements/index";
+import { GenericRequestApprovalConfigService as _GenericRequestApprovalConfigService } from "./generic_request_approval_config/index";
 import { GlobalTenantSecuritySettingsService as _GlobalTenantSecuritySettingsService } from "./global_tenant_security_settings/index";
 import { NextGenerationCertificationCampaignsService as _NextGenerationCertificationCampaignsService } from "./gov_certification/index";
 import { GovernanceGroupsService as _GovernanceGroupsService } from "./governance_groups/index";
@@ -87,11 +91,14 @@ import { LifecycleStatesService as _LifecycleStatesService } from "./lifecycle_s
 import { MachineAccountClassifyService as _MachineAccountClassifyService } from "./machine_account_classify/index";
 import { MachineAccountCreationRequestService as _MachineAccountCreationRequestService } from "./machine_account_creation_request/index";
 import { MachineAccountMappingsService as _MachineAccountMappingsService } from "./machine_account_mappings/index";
+import { MachineAccountRecommendationService as _MachineAccountRecommendationService } from "./machine_account_recommendation/index";
 import { MachineAccountSubtypesService as _MachineAccountSubtypesService } from "./machine_account_subtypes/index";
 import { MachineAccountsService as _MachineAccountsService } from "./machine_accounts/index";
 import { MachineClassificationConfigService as _MachineClassificationConfigService } from "./machine_classification_config/index";
 import { MachineIdentitiesService as _MachineIdentitiesService } from "./machine_identities/index";
 import { MachineIdentityLifecycleActionsService as _MachineIdentityLifecycleActionsService } from "./machine_identities_lifecycle_actions/index";
+import { MachineIdentityMetadataService as _MachineIdentityMetadataService } from "./machine_identity_metadata/index";
+import { MachineMappingMetadataService as _MachineMappingMetadataService } from "./machine_mapping_metadata/index";
 import { ManagedClientsService as _ManagedClientsService } from "./managed_clients/index";
 import { ManagedClusterTypesService as _ManagedClusterTypesService } from "./managed_cluster_types/index";
 import { ManagedClustersService as _ManagedClustersService } from "./managed_clusters/index";
@@ -164,6 +171,7 @@ export { _AuthProfileService as AuthProfileService };
 export { _AuthUsersService as AuthUsersService };
 export { _BrandingService as BrandingService };
 export { _BusinessApplicationsService as BusinessApplicationsService };
+export { _CapabilitiesService as CapabilitiesService };
 export { _CertificationCampaignFiltersService as CertificationCampaignFiltersService };
 export { _CertificationCampaignsService as CertificationCampaignsService };
 export { _CertificationSummariesService as CertificationSummariesService };
@@ -173,15 +181,18 @@ export { _ConfigurationHubService as ConfigurationHubService };
 export { _ConnectorCustomizersService as ConnectorCustomizersService };
 export { _ConnectorRuleManagementService as ConnectorRuleManagementService };
 export { _ConnectorsService as ConnectorsService };
+export { _CredentialsService as CredentialsService };
 export { _CustomFormsService as CustomFormsService };
 export { _CustomPasswordInstructionsService as CustomPasswordInstructionsService };
 export { _CustomUserLevelsService as CustomUserLevelsService };
 export { _DataAccessSecurityService as DataAccessSecurityService };
 export { _DataSegmentationService as DataSegmentationService };
 export { _DeclassifySourceService as DeclassifySourceService };
+export { _DevicesService as DevicesService };
 export { _DimensionsService as DimensionsService };
 export { _EntitlementConnectionsService as EntitlementConnectionsService };
 export { _EntitlementsService as EntitlementsService };
+export { _GenericRequestApprovalConfigService as GenericRequestApprovalConfigService };
 export { _GlobalTenantSecuritySettingsService as GlobalTenantSecuritySettingsService };
 export { _NextGenerationCertificationCampaignsService as NextGenerationCertificationCampaignsService };
 export { _GovernanceGroupsService as GovernanceGroupsService };
@@ -205,11 +216,14 @@ export { _LifecycleStatesService as LifecycleStatesService };
 export { _MachineAccountClassifyService as MachineAccountClassifyService };
 export { _MachineAccountCreationRequestService as MachineAccountCreationRequestService };
 export { _MachineAccountMappingsService as MachineAccountMappingsService };
+export { _MachineAccountRecommendationService as MachineAccountRecommendationService };
 export { _MachineAccountSubtypesService as MachineAccountSubtypesService };
 export { _MachineAccountsService as MachineAccountsService };
 export { _MachineClassificationConfigService as MachineClassificationConfigService };
 export { _MachineIdentitiesService as MachineIdentitiesService };
 export { _MachineIdentityLifecycleActionsService as MachineIdentityLifecycleActionsService };
+export { _MachineIdentityMetadataService as MachineIdentityMetadataService };
+export { _MachineMappingMetadataService as MachineMappingMetadataService };
 export { _ManagedClientsService as ManagedClientsService };
 export { _ManagedClusterTypesService as ManagedClusterTypesService };
 export { _ManagedClustersService as ManagedClustersService };
@@ -284,6 +298,7 @@ export const SailPointAngular = {
   AuthUsersService: _AuthUsersService,
   BrandingService: _BrandingService,
   BusinessApplicationsService: _BusinessApplicationsService,
+  CapabilitiesService: _CapabilitiesService,
   CertificationCampaignFiltersService: _CertificationCampaignFiltersService,
   CertificationCampaignsService: _CertificationCampaignsService,
   CertificationSummariesService: _CertificationSummariesService,
@@ -293,15 +308,18 @@ export const SailPointAngular = {
   ConnectorCustomizersService: _ConnectorCustomizersService,
   ConnectorRuleManagementService: _ConnectorRuleManagementService,
   ConnectorsService: _ConnectorsService,
+  CredentialsService: _CredentialsService,
   CustomFormsService: _CustomFormsService,
   CustomPasswordInstructionsService: _CustomPasswordInstructionsService,
   CustomUserLevelsService: _CustomUserLevelsService,
   DataAccessSecurityService: _DataAccessSecurityService,
   DataSegmentationService: _DataSegmentationService,
   DeclassifySourceService: _DeclassifySourceService,
+  DevicesService: _DevicesService,
   DimensionsService: _DimensionsService,
   EntitlementConnectionsService: _EntitlementConnectionsService,
   EntitlementsService: _EntitlementsService,
+  GenericRequestApprovalConfigService: _GenericRequestApprovalConfigService,
   GlobalTenantSecuritySettingsService: _GlobalTenantSecuritySettingsService,
   NextGenerationCertificationCampaignsService: _NextGenerationCertificationCampaignsService,
   GovernanceGroupsService: _GovernanceGroupsService,
@@ -325,11 +343,14 @@ export const SailPointAngular = {
   MachineAccountClassifyService: _MachineAccountClassifyService,
   MachineAccountCreationRequestService: _MachineAccountCreationRequestService,
   MachineAccountMappingsService: _MachineAccountMappingsService,
+  MachineAccountRecommendationService: _MachineAccountRecommendationService,
   MachineAccountSubtypesService: _MachineAccountSubtypesService,
   MachineAccountsService: _MachineAccountsService,
   MachineClassificationConfigService: _MachineClassificationConfigService,
   MachineIdentitiesService: _MachineIdentitiesService,
   MachineIdentityLifecycleActionsService: _MachineIdentityLifecycleActionsService,
+  MachineIdentityMetadataService: _MachineIdentityMetadataService,
+  MachineMappingMetadataService: _MachineMappingMetadataService,
   ManagedClientsService: _ManagedClientsService,
   ManagedClusterTypesService: _ManagedClusterTypesService,
   ManagedClustersService: _ManagedClustersService,

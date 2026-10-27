@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Entitlements
+ * SailPoint Identity Security API - Entitlements
  *
  * 
  *
@@ -15,7 +15,7 @@ import { EntitlementmetadatabulkupdatebyidrequestValuesInner } from './entitleme
  */
 export interface Entitlementmetadatabulkupdatebyfilterrequest { 
     /**
-     * Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq*
+     * Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq*
      */
     filters: string;
     /**

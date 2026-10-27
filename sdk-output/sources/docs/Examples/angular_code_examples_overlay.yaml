@@ -499,6 +499,32 @@
             });
           }
         }
+- path: /sources/v1/{id}/agents-delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#delete-source-agents-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from '@sailpoint/angular-sdk/sources';
+        import { DeleteSourceAgentsRequest } from '@sailpoint/angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          deleteSourceAgentsV1(): void {
+            const id: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const deleteSourceAgentsRequest: DeleteSourceAgentsRequest = {
+              "datasetIds" : [ "datasetId12345", "datasetId67890" ]
+            }; // DeleteSourceAgentsRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteSourceAgentsV1({ id: id, deleteSourceAgentsRequest: deleteSourceAgentsRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /sources/v1/{sourceId}/datasets/{datasetId}/delete-objects
   method: post
   xCodeSample:
@@ -955,6 +981,30 @@
           getSourceHealthV1(): void {
             const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
             this.api.getSourceHealthV1({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}/reprocess-correlations
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#get-source-resource-correlation-reprocess-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from '@sailpoint/angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          getSourceResourceCorrelationReprocessV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'account'; // string
+            const type: string = 'OWNER_CORRELATION'; // 'OWNER_CORRELATION'
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getSourceResourceCorrelationReprocessV1({ sourceId: sourceId, resourceId: resourceId, type: type }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -1975,6 +2025,30 @@
               "objectType" : "group"
             }; // ResourceObjectsRequest
             this.api.searchResourceObjectsV1({ sourceId: sourceId, resourceObjectsRequest: resourceObjectsRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /sources/v1/{sourceId}/resources/{resourceId}/reprocess-correlations
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/sources/methods/sources#start-source-resource-correlation-reprocess-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { SourcesService } from '@sailpoint/angular-sdk/sources';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(SourcesService);
+
+          startSourceResourceCorrelationReprocessV1(): void {
+            const sourceId: string = '2c9180835d191a86015d28455b4a2329'; // string
+            const resourceId: string = 'account'; // string
+            const type: string = 'OWNER_CORRELATION'; // 'OWNER_CORRELATION'
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.startSourceResourceCorrelationReprocessV1({ sourceId: sourceId, resourceId: resourceId, type: type }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });

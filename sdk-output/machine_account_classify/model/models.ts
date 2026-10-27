@@ -1,3 +1,5 @@
+export * from './bulkClassifyMachineAccountResult';
+export * from './bulkClassifyMachineAccountsRequest';
 export * from './errorMessageDto';
 export * from './errorResponseDto';
 export * from './localeOrigin';

@@ -1,6 +1,7 @@
 .gitignore
 .openapi-generator-ignore
 ArrayInner.md
+BaseCommonDto.md
 BaseReferenceDto.md
 BusinessApplication.md
 BusinessApplicationAdditionalOwnersInner.md
@@ -18,6 +19,14 @@ JsonPatchOperationValue.md
 ListBusinessApplicationsV1401Response.md
 ListBusinessApplicationsV1429Response.md
 LocaleOrigin.md
+MCPConnectedAgentBusinessApplicationRefs.md
+MCPConnectedAgentOwners.md
+MCPConnectedAgentSource.md
+MCPConnectedAgentUserEntitlements.md
+MCPPackage.md
+MCPServer.md
+MCPServerCounts.md
+Mcpconnectedagent.md
 README.md
 SanctionedStatus.md
 api.base.service.ts
@@ -31,6 +40,7 @@ encoder.ts
 git_push.sh
 index.ts
 model/arrayInner.ts
+model/baseCommonDto.ts
 model/baseReferenceDto.ts
 model/businessApplication.ts
 model/businessApplicationAdditionalOwnersInner.ts
@@ -46,6 +56,14 @@ model/jsonPatchOperationValue.ts
 model/listBusinessApplicationsV1401Response.ts
 model/listBusinessApplicationsV1429Response.ts
 model/localeOrigin.ts
+model/mCPConnectedAgentBusinessApplicationRefs.ts
+model/mCPConnectedAgentOwners.ts
+model/mCPConnectedAgentSource.ts
+model/mCPConnectedAgentUserEntitlements.ts
+model/mCPPackage.ts
+model/mCPServer.ts
+model/mCPServerCounts.ts
+model/mcpconnectedagent.ts
 model/models.ts
 model/sanctionedStatus.ts
 ng-package.json

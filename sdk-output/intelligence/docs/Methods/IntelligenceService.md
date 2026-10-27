@@ -135,7 +135,7 @@ The service takes one object that holds every parameter. Its type is `GetIdentit
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**filters** | `string` | Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq*  **email**: *eq*  **opaqueIdentifier**: *eq* |  [default to undefined]
+**filters** | `string` | Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq*  **email**: *eq*  **opaqueIdentifier**: *eq* |  [default to undefined]
 
 ### Return type
 
@@ -157,7 +157,7 @@ export class ExampleComponent {
   private readonly api = inject(IntelligenceService);
 
   getIdentityIntelligenceV1(): void {
-    const filters: string = ; // Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq*  **email**: *eq*  **opaqueIdentifier**: *eq*
+    const filters: string = ; // Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq*  **email**: *eq*  **opaqueIdentifier**: *eq*
     this.api.getIdentityIntelligenceV1({ filters: filters }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 **id** | `string` | Non-empty identity id path segment for Intelligence sub-resources. |  [default to undefined]
 **limit** | `number` | Page size. Defaults to 250; values above 250 are rejected with 400. | [optional] [default to 250]
 **offset** | `number` | Zero-based page offset. Defaults to 0. | [optional] [default to 0]
-**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to false]
+**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to false]
 
 ### Return type
 
@@ -216,7 +216,7 @@ export class ExampleComponent {
     const id: string = ; // Non-empty identity id path segment for Intelligence sub-resources.
     const limit: number = ; // Page size. Defaults to 250; values above 250 are rejected with 400. (optional)
     const offset: number = ; // Zero-based page offset. Defaults to 0. (optional)
-    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
+    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
     this.api.getIntelIdentityAccessItemHistoryV1({ id: id }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 **id** | `string` | Non-empty identity id path segment for Intelligence sub-resources. |  [default to undefined]
 **limit** | `number` | Page size. Defaults to 250; values above 250 are rejected with 400. | [optional] [default to 250]
 **offset** | `number` | Zero-based page offset. Defaults to 0. | [optional] [default to 0]
-**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to false]
+**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to false]
 **isNHI** | `boolean` | NHI accounts when &#x60;true&#x60; (bare array). Human accounts when omitted or &#x60;false&#x60; (slice object).  | [optional] [default to false]
 
 ### Return type
@@ -273,7 +273,7 @@ export class ExampleComponent {
     const id: string = ; // Non-empty identity id path segment for Intelligence sub-resources.
     const limit: number = ; // Page size. Defaults to 250; values above 250 are rejected with 400. (optional)
     const offset: number = ; // Zero-based page offset. Defaults to 0. (optional)
-    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
+    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
     const isNHI: boolean = ; // NHI accounts when &#x60;true&#x60; (bare array). Human accounts when omitted or &#x60;false&#x60; (slice object).  (optional)
     this.api.getIntelIdentityAccountsV1({ id: id }).subscribe({
       next: (result) => console.log(result),
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 **id** | `string` | Non-empty identity id path segment for Intelligence sub-resources. |  [default to undefined]
 **limit** | `number` | Page size. Defaults to 250; values above 250 are rejected with 400. | [optional] [default to 250]
 **offset** | `number` | Zero-based page offset. Defaults to 0. | [optional] [default to 0]
-**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to false]
+**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to false]
 
 ### Return type
 
@@ -333,7 +333,7 @@ export class ExampleComponent {
     const id: string = ; // Non-empty identity id path segment for Intelligence sub-resources.
     const limit: number = ; // Page size. Defaults to 250; values above 250 are rejected with 400. (optional)
     const offset: number = ; // Zero-based page offset. Defaults to 0. (optional)
-    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
+    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
     this.api.getIntelIdentityCertificationHistoryV1({ id: id }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 **ownershipRole** | `'primary' | 'secondary'` | Optional ownership role discriminator. When set to &#x60;primary&#x60; or &#x60;secondary&#x60;, returns one paged role bucket. When omitted, defaults to &#x60;primary&#x60;.  | [optional] [default to &#39;primary&#39;]
 **limit** | `number` | Page size. Defaults to 250; values above 250 are rejected with 400. | [optional] [default to 250]
 **offset** | `number` | Zero-based page offset. Defaults to 0. | [optional] [default to 0]
-**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to false]
+**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to false]
 
 ### Return type
 
@@ -404,7 +404,7 @@ export class ExampleComponent {
     const ownershipRole: string = ; // Optional ownership role discriminator. When set to &#x60;primary&#x60; or &#x60;secondary&#x60;, returns one paged role bucket. When omitted, defaults to &#x60;primary&#x60;.  (optional)
     const limit: number = ; // Page size. Defaults to 250; values above 250 are rejected with 400. (optional)
     const offset: number = ; // Zero-based page offset. Defaults to 0. (optional)
-    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
+    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
     this.api.getIntelIdentityNonHumanIdentityOwnershipV1({ id: id, category: category }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 **id** | `string` | Non-empty identity id path segment for Intelligence sub-resources. |  [default to undefined]
 **limit** | `number` | Page size. Defaults to 250; values above 250 are rejected with 400. | [optional] [default to 250]
 **offset** | `number` | Zero-based page offset. Defaults to 0. | [optional] [default to 0]
-**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. | [optional] [default to false]
+**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to false]
 
 ### Return type
 
@@ -464,7 +464,7 @@ export class ExampleComponent {
     const id: string = ; // Non-empty identity id path segment for Intelligence sub-resources.
     const limit: number = ; // Page size. Defaults to 250; values above 250 are rejected with 400. (optional)
     const offset: number = ; // Zero-based page offset. Defaults to 0. (optional)
-    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. (optional)
+    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
     this.api.getIntelIdentityRareAccessV1({ id: id }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),

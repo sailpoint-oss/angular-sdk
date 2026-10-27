@@ -1,0 +1,52 @@
+- path: /generic-request-approval-config/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/generic_request_approval_config/methods/generic-request-approval-config#get-generic-request-approval-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GenericRequestApprovalConfigService } from '@sailpoint/angular-sdk/generic_request_approval_config';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GenericRequestApprovalConfigService);
+
+          getGenericRequestApprovalConfigV1(): void {
+            const targetType: string = 'RESOURCE'; // 'RESOURCE' | 'SUBTYPE' | 'SOURCE' | 'GLOBAL'
+            const targetId: string = 'aws:bedrock-agent-alias-version'; // string
+            const sourceId: string = '6d28b7c1-620c-49c6-b6d5-cbf81eb4b5fa'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getGenericRequestApprovalConfigV1({ targetType: targetType }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /generic-request-approval-config/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/generic_request_approval_config/methods/generic-request-approval-config#update-generic-request-approval-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GenericRequestApprovalConfigService } from '@sailpoint/angular-sdk/generic_request_approval_config';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/generic_request_approval_config';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GenericRequestApprovalConfigService);
+
+          updateGenericRequestApprovalConfigV1(): void {
+            const id: string = '0f2c7a9e-3b4d-4e5f-8a6b-7c8d9e0f1a2b'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateGenericRequestApprovalConfigV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

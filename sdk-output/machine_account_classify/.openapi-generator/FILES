@@ -1,5 +1,7 @@
 .gitignore
 .openapi-generator-ignore
+BulkClassifyMachineAccountResult.md
+BulkClassifyMachineAccountsRequest.md
 ErrorMessageDto.md
 ErrorResponseDto.md
 LocaleOrigin.md
@@ -19,6 +21,8 @@ docs/Models/Index.md
 encoder.ts
 git_push.sh
 index.ts
+model/bulkClassifyMachineAccountResult.ts
+model/bulkClassifyMachineAccountsRequest.ts
 model/errorMessageDto.ts
 model/errorResponseDto.ts
 model/localeOrigin.ts

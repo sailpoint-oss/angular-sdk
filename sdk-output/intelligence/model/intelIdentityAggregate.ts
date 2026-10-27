@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Intelligence
+ * SailPoint Identity Security API - Intelligence
  *
  * 
  *
@@ -20,7 +20,7 @@ import { Intelnonhumanidentityownership } from './intelnonhumanidentityownership
  */
 export interface IntelIdentityAggregate { 
     /**
-     * Identity Security Cloud identifier for this identity.
+     * SailPoint Identity Security identifier for this identity.
      */
     id: string;
     /**
@@ -44,11 +44,11 @@ export interface IntelIdentityAggregate {
      */
     attributes?: { [key: string]: any; };
     /**
-     * Timestamp when the identity record was created in Identity Security Cloud.
+     * Timestamp when the identity record was created in SailPoint Identity Security.
      */
     created?: string;
     /**
-     * Timestamp when the identity record was last modified in Identity Security Cloud.
+     * Timestamp when the identity record was last modified in SailPoint Identity Security.
      */
     modified?: string;
     /**
@@ -60,7 +60,7 @@ export interface IntelIdentityAggregate {
      */
     email?: string;
     /**
-     * Current identity lifecycle status label from Identity Security Cloud.
+     * Current identity lifecycle status label from SailPoint Identity Security.
      */
     identityStatus?: string;
     /**

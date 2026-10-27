@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Data Access Security
+ * SailPoint Identity Security API - Data Access Security
  *
  * 
  *
@@ -10,7 +10,7 @@
 
 
 /**
- * A public identity collector type and the ISC `connectorName` values the UI should use when querying `GET /v3/sources` for sources that can back that type.
+ * A public identity collector type and the SailPoint Identity Security `connectorName` values the UI should use when querying `GET /v3/sources` for sources that can back that type.
  */
 export interface Identitycollectortype { 
     /**
@@ -18,7 +18,7 @@ export interface Identitycollectortype {
      */
     type: string;
     /**
-     * Exact ISC `connectorName` values to use in `GET /v3/sources` filters (`connectorName eq \"...\"`). These are not always equal to `type` (for example Google Drive maps to `G Suite` and `Google Workspace SaaS`).
+     * Exact SailPoint Identity Security `connectorName` values to use in `GET /v3/sources` filters (`connectorName eq \"...\"`). These are not always equal to `type` (for example Google Drive maps to `G Suite` and `Google Workspace SaaS`).
      */
     iscConnectorNames: Array<string>;
 }

@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Certification Campaign Filters
+ * SailPoint Identity Security API - Certification Campaign Filters
  *
  * 
  *
@@ -48,9 +48,9 @@ export interface GetCampaignFilterByIdV1RequestParams {
 }
 
 export interface ListCampaignFiltersV1RequestParams {
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** Start/Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Start/Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     start?: number;
     /** If this is true, the API includes system filters in the count and results. Otherwise it excludes them. If no value is provided, the default is true.  */
     includeSystemFilters?: boolean;

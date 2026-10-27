@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Intelligence
+ * SailPoint Identity Security API - Intelligence
  *
  * 
  *
@@ -16,7 +16,7 @@ import { Intelmachinesourcewire } from './intelmachinesourcewire';
  */
 export interface Intelmachineaccountwire { 
     /**
-     * Unique account identifier in Identity Security Cloud.
+     * Unique account identifier in SailPoint Identity Security.
      */
     id: string;
     /**

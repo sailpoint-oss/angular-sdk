@@ -67,6 +67,32 @@
             });
           }
         }
+- path: /machine-accounts/v1/{id}/delete
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#delete-machine-account-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+        import { MachineAccountDeleteRequest } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          deleteMachineAccountV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const machineAccountDeleteRequest: MachineAccountDeleteRequest = {
+              "comments" : "This machine account is no longer used."
+            }; // MachineAccountDeleteRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteMachineAccountV1({ id: id, machineAccountDeleteRequest: machineAccountDeleteRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /machine-accounts/v1/{id}/disable
   method: post
   xCodeSample:
@@ -89,6 +115,31 @@
             });
           }
         }
+- path: /machine-accounts/v1/bulk-disable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#disable-machine-accounts-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+        import { MachineAccountBulkRequest } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          disableMachineAccountsInBulkV1(): void {
+            const machineAccountBulkRequest: MachineAccountBulkRequest = {
+              "ids" : [ "ef38f94347e94562b5bb8424a56397d8", "2c9180835d2e5168015d32f890ca1581" ]
+            }; // MachineAccountBulkRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.disableMachineAccountsInBulkV1({ machineAccountBulkRequest: machineAccountBulkRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /machine-accounts/v1/{id}/enable
   method: post
   xCodeSample:
@@ -106,6 +157,55 @@
             const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
             const xSailPointExperimental: string = 'true'; // string
             this.api.enableMachineAccountV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/bulk-enable
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#enable-machine-accounts-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+        import { MachineAccountBulkRequest } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          enableMachineAccountsInBulkV1(): void {
+            const machineAccountBulkRequest: MachineAccountBulkRequest = {
+              "ids" : [ "ef38f94347e94562b5bb8424a56397d8", "2c9180835d2e5168015d32f890ca1581" ]
+            }; // MachineAccountBulkRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.enableMachineAccountsInBulkV1({ machineAccountBulkRequest: machineAccountBulkRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/{id}/entitlements
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#get-machine-account-entitlements-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          getMachineAccountEntitlementsV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getMachineAccountEntitlementsV1({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -178,6 +278,72 @@
             });
           }
         }
+- path: /machine-accounts/v2/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#get-machine-account-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          getMachineAccountV2(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getMachineAccountV2({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/machine-accounts-summary
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#get-machine-accounts-summary-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          getMachineAccountsSummaryV1(): void {
+            const filters: string = 'source.id eq "8d3e0094e99445de98eef6c75e25jc04"'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getMachineAccountsSummaryV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/{id}/machine-identities
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#list-machine-account-machine-identities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          listMachineAccountMachineIdentitiesV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listMachineAccountMachineIdentitiesV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /sources/v1/{sourceId}/subtypes
   method: get
   xCodeSample:
@@ -231,6 +397,33 @@
             });
           }
         }
+- path: /machine-accounts/v2
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#list-machine-accounts-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          listMachineAccountsV2(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const ownerIdentity: string = 'self'; // string
+            const filters: string = 'machineIdentity.id eq "2c9180858082150f0180893dbaf44201"'; // string
+            const sorters: string = 'id,name'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listMachineAccountsV2({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /sources/v1/{sourceId}/subtypes/{technicalName}
   method: patch
   xCodeSample:
@@ -277,6 +470,56 @@
             });
           }
         }
+- path: /machine-accounts/v1/bulk-reload-async
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#reload-machine-accounts-in-bulk-async-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+        import { MachineAccountBulkRequest } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          reloadMachineAccountsInBulkAsyncV1(): void {
+            const machineAccountBulkRequest: MachineAccountBulkRequest = {
+              "ids" : [ "ef38f94347e94562b5bb8424a56397d8", "2c9180835d2e5168015d32f890ca1581" ]
+            }; // MachineAccountBulkRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.reloadMachineAccountsInBulkAsyncV1({ machineAccountBulkRequest: machineAccountBulkRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/bulk-reload
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#reload-machine-accounts-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+        import { MachineAccountBulkRequest } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          reloadMachineAccountsInBulkV1(): void {
+            const machineAccountBulkRequest: MachineAccountBulkRequest = {
+              "ids" : [ "ef38f94347e94562b5bb8424a56397d8", "2c9180835d2e5168015d32f890ca1581" ]
+            }; // MachineAccountBulkRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.reloadMachineAccountsInBulkV1({ machineAccountBulkRequest: machineAccountBulkRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /machine-accounts/v1/{id}/unlock
   method: post
   xCodeSample:
@@ -317,6 +560,68 @@
             const requestBody: Array<object> = [{"op":"add","path":"/environment","value":"test"}]; // Array<object>
             const xSailPointExperimental: string = 'true'; // string
             this.api.updateMachineAccountV1({ id: id, requestBody: requestBody }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v2/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#update-machine-account-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          updateMachineAccountV2(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }{
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateMachineAccountV2({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /machine-accounts/v1/bulk-update
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_accounts/methods/machine-accounts#update-machine-accounts-in-bulk-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
+        import { MachineAccountBulkUpdateRequest } from '@sailpoint/angular-sdk/machine_accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountsService);
+
+          updateMachineAccountsInBulkV1(): void {
+            const machineAccountBulkUpdateRequest: MachineAccountBulkUpdateRequest = {
+              "ids" : [ "ef38f94347e94562b5bb8424a56397d8", "2c9180835d2e5168015d32f890ca1581" ],
+              "jsonPatch" : [ {
+                "op" : "replace",
+                "path" : "/environment",
+                "value" : "PROD"
+              } ]
+            }; // MachineAccountBulkUpdateRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateMachineAccountsInBulkV1({ machineAccountBulkUpdateRequest: machineAccountBulkUpdateRequest }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });

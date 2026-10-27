@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Machine Account Creation Request
+ * SailPoint Identity Security API - Machine Account Creation Request
  *
  * 
  *
@@ -30,6 +30,8 @@ import { ErrorResponseDto } from '../model/errorResponseDto';
 import { MachineAccountCreateAccessDto } from '../model/machineAccountCreateAccessDto';
 // @ts-ignore
 import { MachineAccountCreateRequestInput } from '../model/machineAccountCreateRequestInput';
+// @ts-ignore
+import { MachineAccountCreateRequestInputV2 } from '../model/machineAccountCreateRequestInputV2';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -39,6 +41,18 @@ import { BaseService } from '../api.base.service';
 
 export interface CreateMachineAccountRequestV1RequestParams {
     machineAccountCreateRequestInput: MachineAccountCreateRequestInput;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
+export interface CreateMachineAccountRequestV2RequestParams {
+    machineAccountCreateRequestInputV2: MachineAccountCreateRequestInputV2;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
+export interface CreateMachineAccountV2RequestParams {
+    machineAccountCreateRequestInputV2: MachineAccountCreateRequestInputV2;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -53,9 +67,9 @@ export interface GetCreateMachineAccountRequestV1RequestParams {
 export interface GetMachineAccountCreateAccessInfoV1RequestParams {
     /** Use this header to enable this experimental API. */
     xSailPointExperimental: string;
-    /** Offset  Integer specifying the offset of the first result from the beginning of the collection. The standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-results). The offset value is record-based, not page-based, and the index starts at 0. */
+    /** Offset  Integer specifying the offset of the first result from the beginning of the collection. The standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#paginating-results). The offset value is record-based, not page-based, and the index starts at 0. */
     offset?: number;
-    /** Limit  Integer specifying the maximum number of records to return in a single API call. The standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-results). If it is not specified, a default limit is used. */
+    /** Limit  Integer specifying the maximum number of records to return in a single API call. The standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#paginating-results). If it is not specified, a default limit is used. */
     limit?: number;
 }
 
@@ -128,6 +142,144 @@ export class MachineAccountCreationRequestService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: machineAccountCreateRequestInput,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Submit Machine Account Creation Request
+     * Submits a machine account creation request on the account-requests API. This operation accepts the same request and runs the same creation process as [Create Machine Account](https://developer.sailpoint.com/docs/api/create-machine-account-v-2). Use this operation when the integration already calls the account-requests APIs. New integrations should call [Create Machine Account](https://developer.sailpoint.com/docs/api/create-machine-account-v-2).  This method validates the input data, processes the machine account creation request, and returns an asynchronous result containing a tracking ID.  Compared with v1, this version: - Accepts a &#x60;sourceId&#x60; so you can choose the source to create the account on. When subtypes can be configured per source for the tenant, &#x60;sourceId&#x60; is required and the subtype must be available on that source. - Accepts &#x60;entitlements&#x60;, which lets you add a comment, start date, and remove date to each requested entitlement. - Supports subtypes that are not tied to a single source. Version 1 rejects those subtypes.  There is no v2 status endpoint. Use the returned &#x60;accountRequestId&#x60; with [Get Machine Account Creation Request](https://developer.sailpoint.com/docs/api/get-create-machine-account-request-v-1) to track the request.  This API returns &#x60;403&#x60; when machine identity creation is not included in the tenant\&#39;s plan. When machine account creation is not enabled for the tenant, this API returns &#x60;404&#x60;.  &gt;**NOTE: You can only request a machine account on a subtype for which you have a create machine account entitlement provisioned. Otherwise, this API returns &#x60;403&#x60;.** 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public createMachineAccountRequestV2(requestParameters: CreateMachineAccountRequestV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AccountRequestAsyncResult>;
+    public createMachineAccountRequestV2(requestParameters: CreateMachineAccountRequestV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AccountRequestAsyncResult>>;
+    public createMachineAccountRequestV2(requestParameters: CreateMachineAccountRequestV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AccountRequestAsyncResult>>;
+    public createMachineAccountRequestV2(requestParameters: CreateMachineAccountRequestV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const machineAccountCreateRequestInputV2 = requestParameters?.machineAccountCreateRequestInputV2;
+        if (machineAccountCreateRequestInputV2 === null || machineAccountCreateRequestInputV2 === undefined) {
+            throw new Error('Required parameter machineAccountCreateRequestInputV2 was null or undefined when calling createMachineAccountRequestV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/account-requests/v2/machine-account-create`;
+        return this.httpClient.request<AccountRequestAsyncResult>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: machineAccountCreateRequestInputV2,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Create Machine Account V2
+     * Submits a machine account creation request. New integrations should use this operation. This operation accepts the same request and runs the same creation process as [Submit Machine Account Creation Request](https://developer.sailpoint.com/docs/api/create-machine-account-request-v-2). That operation stays on the account-requests API for integrations that already call it. When version 1 cannot create the account because the subtype is not tied to a single source, the error directs the caller here. This method validates the input data, processes the machine account creation request, and returns an asynchronous result containing a tracking ID.  Compared with v1, this version: - Accepts a &#x60;sourceId&#x60; so you can choose the source to create the account on. When subtypes can be configured per source for the tenant, &#x60;sourceId&#x60; is required and the subtype must be available on that source. - Accepts &#x60;entitlements&#x60;, which lets you add a comment, start date, and remove date to each requested entitlement. - Supports subtypes that are not tied to a single source. Version 1 rejects those subtypes.  There is no v2 status endpoint. Use the returned &#x60;accountRequestId&#x60; with [Get Machine Account Creation Request](https://developer.sailpoint.com/docs/api/get-create-machine-account-request-v-1) to track the request.  This API returns &#x60;403&#x60; when machine identity creation is not included in the tenant\&#39;s plan. When machine account creation is not enabled for the tenant, this API returns &#x60;404&#x60;.  &gt;**NOTE: You can only request a machine account on a subtype for which you have a create machine account entitlement provisioned. Otherwise, this API returns &#x60;403&#x60;.** 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public createMachineAccountV2(requestParameters: CreateMachineAccountV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AccountRequestAsyncResult>;
+    public createMachineAccountV2(requestParameters: CreateMachineAccountV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AccountRequestAsyncResult>>;
+    public createMachineAccountV2(requestParameters: CreateMachineAccountV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AccountRequestAsyncResult>>;
+    public createMachineAccountV2(requestParameters: CreateMachineAccountV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const machineAccountCreateRequestInputV2 = requestParameters?.machineAccountCreateRequestInputV2;
+        if (machineAccountCreateRequestInputV2 === null || machineAccountCreateRequestInputV2 === undefined) {
+            throw new Error('Required parameter machineAccountCreateRequestInputV2 was null or undefined when calling createMachineAccountV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/machine-accounts/v2/machine-account-create`;
+        return this.httpClient.request<AccountRequestAsyncResult>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: machineAccountCreateRequestInputV2,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

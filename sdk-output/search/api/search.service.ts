@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Search
+ * SailPoint Identity Security API - Search
  *
  * 
  *
@@ -35,11 +35,11 @@ import { BaseService } from '../api.base.service';
 
 export interface SearchAggregateV1RequestParams {
     search: Search;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     count?: boolean;
 }
 
@@ -56,11 +56,11 @@ export interface SearchGetV1RequestParams {
 
 export interface SearchPostV1RequestParams {
     search: Search;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     count?: boolean;
 }
 
@@ -76,7 +76,7 @@ export class SearchService extends BaseService {
 
     /**
      * Perform a search query aggregation
-     * Performs a search query aggregation and returns the aggregation result. By default, you can page a maximum of 10,000 search result records.  To page past 10,000 records, you can use searchAfter paging.  Refer to [Paginating Search Queries](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-search-queries) for more information about how to implement searchAfter paging. 
+     * Performs a search query aggregation and returns the aggregation result. By default, you can page a maximum of 10,000 search result records.  To page past 10,000 records, you can use searchAfter paging.  Refer to [Paginating Search Queries](https://developer.sailpoint.com/docs/api/standard-collection-parameters#paginating-search-queries) for more information about how to implement searchAfter paging. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -278,7 +278,7 @@ export class SearchService extends BaseService {
 
     /**
      * Perform search
-     * Perform a search with the provided query and return a matching result collection. To page past 10,000 records, you can use &#x60;searchAfter&#x60; paging.  Refer to [Paginating Search Queries](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-search-queries) for more information about how to implement &#x60;searchAfter&#x60; paging. The search query itself has a size limitation of approximately 800 objects when filtering by large lists of IDs or values (e.g., using &#x60;terms&#x60; filters with extensive lists). **Note:** Response fields with an underscore (&#x60;_&#x60;) prefix, such as &#x60;_type&#x60; and &#x60;_index&#x60;, are internal metadata fields. These fields are for SailPoint internal use only and are subject to change without notice. Do not rely on them in your integrations.
+     * Perform a search with the provided query and return a matching result collection. To page past 10,000 records, you can use &#x60;searchAfter&#x60; paging.  Refer to [Paginating Search Queries](https://developer.sailpoint.com/docs/api/standard-collection-parameters#paginating-search-queries) for more information about how to implement &#x60;searchAfter&#x60; paging. The search query itself has a size limitation of approximately 800 objects when filtering by large lists of IDs or values (e.g., using &#x60;terms&#x60; filters with extensive lists). **Note:** Response fields with an underscore (&#x60;_&#x60;) prefix, such as &#x60;_type&#x60; and &#x60;_index&#x60;, are internal metadata fields. These fields are for SailPoint internal use only and are subject to change without notice. Do not rely on them in your integrations.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

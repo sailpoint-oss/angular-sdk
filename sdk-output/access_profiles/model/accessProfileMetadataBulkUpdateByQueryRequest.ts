@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Access Profiles
+ * SailPoint Identity Security API - Access Profiles
  *
  * 
  *
@@ -11,7 +11,7 @@ import { AccessProfileMetadataBulkUpdateByIdRequestValuesInner } from './accessP
 
 
 /**
- * Request to bulk update Access Model Metadata on every access profile matching a search query. A single access profile cannot be assigned more than 25 metadata values. Adding or replacing custom metadata requires a suite license.  For more information about the query object, refer to [V3 API Perform Search](https://developer.sailpoint.com/docs/api/v3/search-post).
+ * Request to bulk update Access Model Metadata on every access profile matching a search query. A single access profile cannot be assigned more than 25 metadata values. Adding or replacing custom metadata requires a suite license.  For more information about the query object, refer to [V3 API Perform Search](https://developer.sailpoint.com/docs/api/search-post-v-1).
  */
 export interface AccessProfileMetadataBulkUpdateByQueryRequest { 
     /**

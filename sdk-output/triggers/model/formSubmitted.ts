@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Triggers
+ * SailPoint Identity Security API - Triggers
  *
  * 
  *
@@ -17,7 +17,7 @@ export interface FormSubmitted {
      */
     submittedAt: string;
     /**
-     * ISC tenant\'s unique identifier.
+     * SailPoint Identity Security tenant\'s unique identifier.
      */
     tenantId: string;
     /**

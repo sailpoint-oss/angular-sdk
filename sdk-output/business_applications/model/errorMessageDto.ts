@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Business Applications
+ * SailPoint Identity Security API - Business Applications
  *
  * 
  *

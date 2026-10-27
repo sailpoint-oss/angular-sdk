@@ -12,7 +12,7 @@ tags: ['SDK', 'Software Development Kit', 'JITAccess', 'jit_access']
 # JITAccessService
   Use these APIs to configure JIT provisioning activation policy for the tenant.
 OAuth scopes: **idn:jit-policy:read** and **idn:jit-policy:manage** (get config), **idn:jit-policy:update** and **idn:jit-policy:manage** (update config). JIT activation workflow APIs use **idn:jit-activation-workflow:*** scopes (activate, extend, deactivate, manage, and **idn:jit-activation-workflow-internal:manage**).
-For REST contract details, use the JIT Access operations in this specification and the [SailPoint API documentation](https://developer.sailpoint.com/idn/api/).
+For REST contract details, use the JIT Access operations in this specification and the [SailPoint API documentation](https://developer.sailpoint.com/docs/api/).
  
 Every method returns an `Observable`. All request paths are relative to the `baseUrl` you pass to `provideSailPoint()`.
 

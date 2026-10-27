@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Sources
+ * SailPoint Identity Security API - Sources
  *
  * 
  *

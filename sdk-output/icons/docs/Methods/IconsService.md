@@ -11,7 +11,7 @@ tags: ['SDK', 'Software Development Kit', 'Icons', 'icons']
 
 # IconsService
   Use this API to implement functionality related to object icons (application icons for example). 
-With this functionality in place, administrators can set or remove an icon for specific object type for use throughout Identity Security Cloud.
+With this functionality in place, administrators can set or remove an icon for specific object type for use throughout SailPoint Identity Security.
  
 Every method returns an `Observable`. All request paths are relative to the `baseUrl` you pass to `provideSailPoint()`.
 

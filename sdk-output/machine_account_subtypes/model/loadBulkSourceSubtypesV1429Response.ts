@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Machine Account Subtypes
+ * SailPoint Identity Security API - Machine Account Subtypes
  *
  * 
  *

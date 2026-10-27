@@ -12,7 +12,7 @@ tags: ['SDK', 'Software Development Kit', 'GlobalTenantSecuritySettings', 'globa
 # GlobalTenantSecuritySettingsService
   Use this API to implement and customize global tenant security settings.
 With this functionality in place, administrators can manage the global security settings that a tenant/org has.
-This API can be used to configure the networks and Geographies allowed to access Identity Security Cloud URLs.
+This API can be used to configure the networks and Geographies allowed to access SailPoint Identity Security URLs.
  
 Every method returns an `Observable`. All request paths are relative to the `baseUrl` you pass to `provideSailPoint()`.
 

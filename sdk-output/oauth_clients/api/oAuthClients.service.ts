@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - OAuth Clients
+ * SailPoint Identity Security API - OAuth Clients
  *
  * 
  *
@@ -52,7 +52,7 @@ export interface GetOauthClientV1RequestParams {
 }
 
 export interface ListOauthClientsV1RequestParams {
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **lastUsed**: *le, isnull* */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **lastUsed**: *le, isnull* */
     filters?: string;
 }
 

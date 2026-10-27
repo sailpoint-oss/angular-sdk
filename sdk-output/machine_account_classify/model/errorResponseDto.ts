@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Machine Account Classify
+ * SailPoint Identity Security API - Machine Account Classify
  *
  * 
  *

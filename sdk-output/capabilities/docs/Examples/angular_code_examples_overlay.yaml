@@ -1,0 +1,76 @@
+- path: /capabilities/v1/{id}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/capabilities/methods/capabilities#get-capability-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CapabilitiesService } from '@sailpoint/angular-sdk/capabilities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CapabilitiesService);
+
+          getCapabilityV1(): void {
+            const id: string = '9b1c2d3e-4f5a-4b6c-8d7e-9f0a1b2c3d4e'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getCapabilityV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /capabilities/v1
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/capabilities/methods/capabilities#list-capabilities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CapabilitiesService } from '@sailpoint/angular-sdk/capabilities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CapabilitiesService);
+
+          listCapabilitiesV1(): void {
+            const filters: string = 'type eq "MCP"'; // string
+            const sorters: string = 'name'; // string
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listCapabilitiesV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /capabilities/v1/{id}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/capabilities/methods/capabilities#update-capability-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CapabilitiesService } from '@sailpoint/angular-sdk/capabilities';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/capabilities';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CapabilitiesService);
+
+          updateCapabilityV1(): void {
+            const id: string = '9b1c2d3e-4f5a-4b6c-8d7e-9f0a1b2c3d4e'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateCapabilityV1({ id: id, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

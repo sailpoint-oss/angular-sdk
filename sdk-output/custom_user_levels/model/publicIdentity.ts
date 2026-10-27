@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Custom User Levels
+ * SailPoint Identity Security API - Custom User Levels
  *
  * 
  *
@@ -36,7 +36,7 @@ export interface PublicIdentity {
      */
     status?: string | null;
     /**
-     * The current state of the identity, which determines how Identity Security Cloud interacts with the identity. An identity that is Active will be included identity picklists in Request Center, identity processing, and more. Identities that are Inactive will be excluded from these features. 
+     * The current state of the identity, which determines how SailPoint Identity Security interacts with the identity. An identity that is Active will be included identity picklists in Request Center, identity processing, and more. Identities that are Inactive will be excluded from these features. 
      */
     identityState?: PublicIdentityIdentityStateEnum | null;
     manager?: IdentityReference | null;

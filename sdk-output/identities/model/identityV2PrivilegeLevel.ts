@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Identities
+ * SailPoint Identity Security API - Identities
  *
  * 
  *
@@ -10,7 +10,7 @@
 
 
 /**
- * Effective privilege level of the identity. This object is null when the IDNARC_ENABLE_IDENTITY_EFFECTIVE_PRIVILEGE feature flag is disabled. When the flag is enabled, an identity with no privilege level is returned with effective set to NONE.
+ * Effective privilege level of the identity with no privilege level is returned with effective set to NONE.
  */
 export interface IdentityV2PrivilegeLevel { 
     /**

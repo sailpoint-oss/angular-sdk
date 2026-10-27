@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Api Usage
+ * SailPoint Identity Security API - Api Usage
  *
  * 
  *
@@ -34,14 +34,14 @@ import { BaseService } from '../api.base.service';
 export interface GetTotalCountV1RequestParams {
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **method**: *eq*  **startDate**: *gt, eq*  **endDate**: *lt, eq* */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **method**: *eq*  **startDate**: *gt, eq*  **endDate**: *lt, eq* */
     filters?: string;
 }
 
 export interface ListApiSummaryV1RequestParams {
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **method**: *eq*  **startDate**: *gt, eq*  **endDate**: *lt, eq* */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **method**: *eq*  **startDate**: *gt, eq*  **endDate**: *lt, eq* */
     filters?: string;
     /** Max number of results to return. */
     limit?: number;

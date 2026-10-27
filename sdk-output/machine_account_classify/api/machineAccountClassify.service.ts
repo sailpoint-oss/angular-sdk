@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Machine Account Classify
+ * SailPoint Identity Security API - Machine Account Classify
  *
  * 
  *
@@ -17,6 +17,10 @@ import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
 // @ts-ignore
+import { BulkClassifyMachineAccountResult } from '../model/bulkClassifyMachineAccountResult';
+// @ts-ignore
+import { BulkClassifyMachineAccountsRequest } from '../model/bulkClassifyMachineAccountsRequest';
+// @ts-ignore
 import { ErrorResponseDto } from '../model/errorResponseDto';
 // @ts-ignore
 import { SendClassifyMachineAccountV1200Response } from '../model/sendClassifyMachineAccountV1200Response';
@@ -30,6 +34,14 @@ import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables'
 import { Configuration }                                     from '../configuration';
 import { BaseService } from '../api.base.service';
 
+
+export interface SendBulkClassifyMachineAccountsV1RequestParams {
+    bulkClassifyMachineAccountsRequest: BulkClassifyMachineAccountsRequest;
+    /** Specifies how the accounts should be classified.        default - uses criteria to classify account as machine or human, excludes accounts that were manually classified.       ignoreManual - like default, but includes accounts that were manually classified.       forceMachine - forces account to be classified as machine.       forceHuman - forces account to be classified as human. */
+    classificationMode?: 'default' | 'ignoreManual' | 'forceMachine' | 'forceHuman';
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
 
 export interface SendClassifyMachineAccountV1RequestParams {
     /** Account ID. */
@@ -48,6 +60,81 @@ export class MachineAccountClassifyService extends BaseService {
 
     constructor(protected httpClient: HttpClient, @Optional() @Inject(BASE_PATH) basePath: string|string[], @Optional() configuration?: Configuration) {
         super(basePath, configuration);
+    }
+
+    /**
+     * Classify multiple machine accounts
+     * Use this API to classify up to 250 accounts in one request. The response lists a result for each requested account, with its own status code, so some accounts can succeed while others fail. A token with API, ORG_ADMIN, SOURCE_ADMIN, or SOURCE_SUBADMIN authority is required to call this API. When machine account classification is not enabled for the tenant, this API returns &#x60;404&#x60;.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public sendBulkClassifyMachineAccountsV1(requestParameters: SendBulkClassifyMachineAccountsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<BulkClassifyMachineAccountResult>>;
+    public sendBulkClassifyMachineAccountsV1(requestParameters: SendBulkClassifyMachineAccountsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<BulkClassifyMachineAccountResult>>>;
+    public sendBulkClassifyMachineAccountsV1(requestParameters: SendBulkClassifyMachineAccountsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<BulkClassifyMachineAccountResult>>>;
+    public sendBulkClassifyMachineAccountsV1(requestParameters: SendBulkClassifyMachineAccountsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const bulkClassifyMachineAccountsRequest = requestParameters?.bulkClassifyMachineAccountsRequest;
+        if (bulkClassifyMachineAccountsRequest === null || bulkClassifyMachineAccountsRequest === undefined) {
+            throw new Error('Required parameter bulkClassifyMachineAccountsRequest was null or undefined when calling sendBulkClassifyMachineAccountsV1.');
+        }
+        const classificationMode = requestParameters?.classificationMode;
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>classificationMode, 'classificationMode');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/accounts/v1/bulk-classify`;
+        return this.httpClient.request<Array<BulkClassifyMachineAccountResult>>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: bulkClassifyMachineAccountsRequest,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
     }
 
     /**

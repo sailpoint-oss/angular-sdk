@@ -1,0 +1,44 @@
+- path: /accounts/v1/{id}/recommendation
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_recommendation/methods/machine-account-recommendation#get-machine-account-recommendation-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountRecommendationService } from '@sailpoint/angular-sdk/machine_account_recommendation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountRecommendationService);
+
+          getMachineAccountRecommendationV1(): void {
+            const id: string = '2c9180835d2e5168015d32f890ca1581'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getMachineAccountRecommendationV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /ai-recommendations/v1/reasons/machine-account-discovery
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_recommendation/methods/machine-account-recommendation#list-machine-account-discovery-reasons-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountRecommendationService } from '@sailpoint/angular-sdk/machine_account_recommendation';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountRecommendationService);
+
+          listMachineAccountDiscoveryReasonsV1(): void {
+            const xSailPointExperimental: string = 'true'; // string
+            const acceptLanguage: string = 'en-US'; // string
+            this.api.listMachineAccountDiscoveryReasonsV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

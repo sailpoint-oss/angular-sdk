@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Intelligence
+ * SailPoint Identity Security API - Intelligence
  *
  * 
  *
@@ -14,7 +14,7 @@
  */
 export interface Intelidentityambiguouscandidate { 
     /**
-     * Identity Security Cloud identifier for a matching candidate.
+     * SailPoint Identity Security identifier for a matching candidate.
      */
     id: string;
     /**

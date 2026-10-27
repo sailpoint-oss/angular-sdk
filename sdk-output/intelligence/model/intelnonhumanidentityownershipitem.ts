@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Intelligence
+ * SailPoint Identity Security API - Intelligence
  *
  * 
  *
@@ -15,7 +15,7 @@ import { Intelmachinesourcewire } from './intelmachinesourcewire';
  */
 export interface Intelnonhumanidentityownershipitem { 
     /**
-     * Identity Security Cloud identifier for the owned non-human identity.
+     * SailPoint Identity Security identifier for the owned non-human identity.
      */
     id: string;
     /**

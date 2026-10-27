@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Intelligence
+ * SailPoint Identity Security API - Intelligence
  *
  * 
  *
@@ -12,7 +12,7 @@ import { IntelAccessSourceWire } from './intelAccessSourceWire';
 
 export interface IntelAccessAccountWire { 
     /**
-     * Unique account identifier in Identity Security Cloud.
+     * Unique account identifier in SailPoint Identity Security.
      */
     id: string;
     /**
@@ -52,11 +52,11 @@ export interface IntelAccessAccountWire {
      */
     nativeIdentity?: string | null;
     /**
-     * Timestamp when the account record was created in Identity Security Cloud.
+     * Timestamp when the account record was created in SailPoint Identity Security.
      */
     created: string;
     /**
-     * Timestamp when the account record was last modified in Identity Security Cloud.
+     * Timestamp when the account record was last modified in SailPoint Identity Security.
      */
     modified: string;
 }

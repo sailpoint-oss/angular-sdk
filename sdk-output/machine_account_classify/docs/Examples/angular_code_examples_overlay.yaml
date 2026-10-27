@@ -1,3 +1,29 @@
+- path: /accounts/v1/bulk-classify
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/machine_account_classify/methods/machine-account-classify#send-bulk-classify-machine-accounts-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MachineAccountClassifyService } from '@sailpoint/angular-sdk/machine_account_classify';
+        import { BulkClassifyMachineAccountsRequest } from '@sailpoint/angular-sdk/machine_account_classify';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MachineAccountClassifyService);
+
+          sendBulkClassifyMachineAccountsV1(): void {
+            const bulkClassifyMachineAccountsRequest: BulkClassifyMachineAccountsRequest = {
+              "ids" : [ "ef38f94347e94562b5bb8424a56397d8", "2c9180835d191a86015d28455b4a2329" ]
+            }; // BulkClassifyMachineAccountsRequest
+            const classificationMode: string = 'forceMachine'; // 'default' | 'ignoreManual' | 'forceMachine' | 'forceHuman'
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.sendBulkClassifyMachineAccountsV1({ bulkClassifyMachineAccountsRequest: bulkClassifyMachineAccountsRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /accounts/v1/{id}/classify
   method: post
   xCodeSample:

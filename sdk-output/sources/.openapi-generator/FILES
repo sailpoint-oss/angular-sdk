@@ -20,7 +20,10 @@ BaseReferenceDto.md
 ConnectorDetail.md
 CorrelationConfig.md
 CorrelationConfigAttributeAssignmentsInner.md
+CorrelationReprocessStatus.md
+CorrelationReprocessStatusStartedBy.md
 DatasetAggregationRequest.md
+DeleteSourceAgentsRequest.md
 DeleteSourceV1202Response.md
 DependantAppConnections.md
 DependantAppConnectionsAccountSource.md
@@ -51,6 +54,7 @@ LoadUncorrelatedAccountsTaskTask.md
 LoadUncorrelatedAccountsTaskTaskAttributes.md
 LoadUncorrelatedAccountsTaskTaskMessagesInner.md
 LocaleOrigin.md
+LocalizedMessage.md
 ManagerCorrelationMapping.md
 NativeChangeDetectionConfig.md
 PasswordPolicyHoldersDtoAttributes.md
@@ -67,6 +71,8 @@ Schema.md
 Source.md
 SourceAccountCorrelationConfig.md
 SourceAccountCorrelationRule.md
+SourceAgentDeletionTaskStatus.md
+SourceAgentDeletionTaskStatusTarget.md
 SourceBeforeProvisioningRule.md
 SourceCluster.md
 SourceConnectionsDto.md
@@ -92,8 +98,12 @@ SourceSyncPayload.md
 SourcesService.md
 SourcesServicedeveloperSite_code_examples.yaml
 StatusResponse.md
+TaskDefinitionSummary.md
 TaskResultDetails.md
 TaskResultDto.md
+TaskReturnDetails.md
+TaskStatusMessage.md
+TaskStatusMessageParametersInner.md
 Transform.md
 TransformRead.md
 UsageType.md
@@ -128,7 +138,10 @@ model/baseReferenceDto.ts
 model/connectorDetail.ts
 model/correlationConfig.ts
 model/correlationConfigAttributeAssignmentsInner.ts
+model/correlationReprocessStatus.ts
+model/correlationReprocessStatusStartedBy.ts
 model/datasetAggregationRequest.ts
+model/deleteSourceAgentsRequest.ts
 model/deleteSourceV1202Response.ts
 model/dependantAppConnections.ts
 model/dependantAppConnectionsAccountSource.ts
@@ -159,6 +172,7 @@ model/loadUncorrelatedAccountsTaskTask.ts
 model/loadUncorrelatedAccountsTaskTaskAttributes.ts
 model/loadUncorrelatedAccountsTaskTaskMessagesInner.ts
 model/localeOrigin.ts
+model/localizedMessage.ts
 model/managerCorrelationMapping.ts
 model/models.ts
 model/nativeChangeDetectionConfig.ts
@@ -175,6 +189,8 @@ model/schema.ts
 model/source.ts
 model/sourceAccountCorrelationConfig.ts
 model/sourceAccountCorrelationRule.ts
+model/sourceAgentDeletionTaskStatus.ts
+model/sourceAgentDeletionTaskStatusTarget.ts
 model/sourceBeforeProvisioningRule.ts
 model/sourceCluster.ts
 model/sourceConnectionsDto.ts
@@ -198,8 +214,12 @@ model/sourceServiceDeskIntegrationDto.ts
 model/sourceSyncJob.ts
 model/sourceSyncPayload.ts
 model/statusResponse.ts
+model/taskDefinitionSummary.ts
 model/taskResultDetails.ts
 model/taskResultDto.ts
+model/taskReturnDetails.ts
+model/taskStatusMessage.ts
+model/taskStatusMessageParametersInner.ts
 model/transform.ts
 model/transformRead.ts
 model/usageType.ts

@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - Managed Cluster Types
+ * SailPoint Identity Security API - Managed Cluster Types
  *
  * 
  *
@@ -54,9 +54,9 @@ export interface GetManagedClusterTypesV1RequestParams {
     pod?: string;
     /** Pinned org (or default) */
     org?: string;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
 }
 
