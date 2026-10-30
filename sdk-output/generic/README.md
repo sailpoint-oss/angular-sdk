@@ -1,8 +1,8 @@
 # @sailpoint/angular-sdk@0.0.37
 
-Generic API specification for the Identity Security Cloud platform
+Generic client for the SailPoint Identity Security versioned APIs. Use it to call any endpoint, in any version, by its path, for example `sources/v1` or `sources/v2/{sourceId}/provisioning-policies`, including endpoints that do not have a resource-specific client or documentation yet. The version is part of the path, so this client is not tied to one API version and the base URL has no version segment.
 
-The version of the OpenAPI document: v2025
+The version of the OpenAPI document: any (set in the path)
 
 ## Building
 

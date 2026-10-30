@@ -86,33 +86,6 @@ export class Configuration {
         else {
             this.credentials = {};
         }
-
-        // init default userAuth credential
-        if (!this.credentials['userAuth']) {
-            this.credentials['userAuth'] = () => {
-                return typeof this.accessToken === 'function'
-                    ? this.accessToken()
-                    : this.accessToken;
-            };
-        }
-
-        // init default userAuth credential
-        if (!this.credentials['userAuth']) {
-            this.credentials['userAuth'] = () => {
-                return typeof this.accessToken === 'function'
-                    ? this.accessToken()
-                    : this.accessToken;
-            };
-        }
-
-        // init default applicationAuth credential
-        if (!this.credentials['applicationAuth']) {
-            this.credentials['applicationAuth'] = () => {
-                return typeof this.accessToken === 'function'
-                    ? this.accessToken()
-                    : this.accessToken;
-            };
-        }
     }
 
     /**
