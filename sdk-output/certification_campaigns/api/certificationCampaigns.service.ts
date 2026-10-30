@@ -1379,7 +1379,7 @@ export class CertificationCampaignsService extends BaseService {
 
     /**
      * Activate a campaign
-     * Use this API to submit a job to activate the certified campaign with the specified ID. The campaign must be staged. 
+     * Use this API to submit a job to activate the certified campaign with the specified ID. The campaign must be staged.  :::note  A STAGED campaign can be activated only when its &#x60;deadline&#x60; is in the future. Activating with a deadline of today or in the past returns a 400 error. List and get campaign APIs still report &#x60;STAGED&#x60; after the deadline; set a future deadline with &#x60;PATCH /campaigns/v1/{id}&#x60; before activating.  ::: 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
