@@ -55,9 +55,8 @@ const NPM_VERSION = "0.0.37";
 const NG_VERSION  = "22";
 
 // The generic API is built from a standalone spec in sdk-resources/, not from a
-// partition under apis/, so it uses a static config file instead of a generated one.
+// partition under apis/. It uses the same generated config as the partitions.
 const GENERIC_SPEC   = path.join(__dirname, "generic-api.yaml");
-const GENERIC_CONFIG = path.join(__dirname, "generic-config.yaml");
 const GENERIC_DIR    = "generic";
 
 // NERM (Non-Employee Risk Management) is a separate product with its own host,
@@ -467,33 +466,43 @@ function runPostscript(outputDir) {
 // ---------------------------------------------------------------------------
 // Generic API package  (sdk-output/generic)
 //
-// The generic API is one service that can call any Identity Security Cloud
-// endpoint by path, including endpoints this SDK does not model yet. It is built
-// from sdk-resources/generic-api.yaml instead of from a partition under apis/, so
-// it takes no part in partition discovery, version combining or stale cleanup.
+// The generic API is one service that can call any versioned SailPoint Identity
+// Security endpoint by path, including endpoints this SDK does not model yet. It
+// is built from sdk-resources/generic-api.yaml instead of from a partition under
+// apis/, so it takes no part in partition discovery, version combining or stale
+// cleanup.
 //
 // Two things make it work with the runtime configuration of the Angular SDK:
 //   1. generic-api.yaml declares a relative server ("/"), so the generated
 //      basePath is empty and sailpointInterceptor prepends the tenant base URL.
+//      The base URL has no version segment, because the version is part of the
+//      path (for example "accounts/v1").
 //   2. patchGenericPathEncoding() below replaces the generated path encoder,
 //      because the default one destroys multi-segment paths.
 // ---------------------------------------------------------------------------
 
 // The generator encodes every path parameter with encodeURIComponent. For the
 // generic `path` parameter that is wrong: it turns the slashes of a multi-segment
-// path ("v2025/accounts/1234") into %2F and the request fails. This helper encodes
+// path ("accounts/v1/1234") into %2F and the request fails. This helper encodes
 // each segment on its own, so the slashes between segments survive.
 const GENERIC_PATH_HELPER = `
 /**
  * Encode the \`path\` parameter of a generic request.
  *
- * \`path\` is everything after the tenant base URL, including the API version
- * segment. For example \`v2025/accounts\` or \`beta/sources/2c918085/schemas\`.
- * Leading and trailing slashes are optional.
+ * \`path\` is everything after the tenant base URL, including the API version,
+ * for example \`accounts/v1\` or \`sources/v1/2c918085/schemas\`. Leading and
+ * trailing slashes are optional. Each segment is URL-encoded on its own, so the
+ * slashes between segments are kept. Anything after a \`?\` is kept as a query
+ * string, for example \`accounts/v1?detailLevel=SLIM\`. HttpClient adds the
+ * other query parameters after it.
  */
 function encodeGenericPath(value: string): string {
-    const segments = String(value).split('/').filter((segment) => segment.length > 0);
-    return segments.map((segment) => encodeURIComponent(segment)).join('/');
+    const raw = String(value);
+    const queryStart = raw.indexOf('?');
+    const pathPart = queryStart === -1 ? raw : raw.slice(0, queryStart);
+    const query = queryStart === -1 ? '' : raw.slice(queryStart);
+    const segments = pathPart.split('/').filter((segment) => segment.length > 0);
+    return segments.map((segment) => encodeURIComponent(segment)).join('/') + query;
 }
 `;
 
@@ -527,15 +536,17 @@ function patchGenericPathEncoding(outputDir) {
 function buildGenericPackage() {
   const outputDir = path.join(SDK_OUTPUT, GENERIC_DIR);
 
-  for (const [label, file] of [["spec", GENERIC_SPEC], ["config", GENERIC_CONFIG]]) {
-    if (!fs.existsSync(file)) {
-      return { ok: false, step: "setup", output: `generic ${label} not found at ${file}` };
-    }
+  if (!fs.existsSync(GENERIC_SPEC)) {
+    return { ok: false, step: "setup", output: `generic spec not found at ${GENERIC_SPEC}` };
   }
 
   if (fs.existsSync(outputDir)) {
     fs.rmSync(outputDir, { recursive: true, force: true });
   }
+
+  // The generic API uses the partition config, so it gets the same docs.
+  fs.mkdirSync(TEMP_DIR, { recursive: true });
+  const configPath = writePartitionConfig(GENERIC_DIR);
 
   const gen = spawnSync(
     "java",
@@ -545,8 +556,8 @@ function buildGenericPackage() {
       "-i", GENERIC_SPEC,
       "-g", "typescript-angular",
       "-o", outputDir,
-      "--global-property", "skipFormModel=false",
-      "--config", GENERIC_CONFIG,
+      "--global-property", "skipFormModel=false,apiDocs=true,modelDocs=true",
+      "--config", configPath,
     ],
     { encoding: "utf8" }
   );
@@ -985,7 +996,8 @@ function generateIndexTs() {
         `  GenericPatchRequestParams,`,
         `  GenericDeleteRequestParams,`,
         `} from "./${GENERIC_DIR}/api/generic.service";`,
-        `export type { GenericResponse } from "./${GENERIC_DIR}/model/genericResponse";`,
+        `/** Any JSON value returned by a GenericService request. */`,
+        `export type GenericResponse = any;`,
       ].join("\n")
     : `// (sdk-output/${GENERIC_DIR}/ not built — run the build to generate the generic API)`;
 
@@ -1079,6 +1091,8 @@ function main() {
     if (nermOnly) {
       buildNermPackages(results);
     }
+
+    if (!keepTmp) fs.rmSync(TEMP_DIR, { recursive: true, force: true });
 
     console.log("\n[INDEX] Regenerating sdk-output/index.ts ...");
     generateIndexTs();
@@ -1208,12 +1222,6 @@ function main() {
     console.log(`  ✓ ${partition} → sdk-output/${gen.packageDir}/`);
   }
 
-  // Cleanup
-  if (!keepTmp) {
-    console.log("\n[CLEANUP] Removing .sdk-build-tmp/ ...");
-    fs.rmSync(TEMP_DIR, { recursive: true, force: true });
-  }
-
   // Build the generic API package (independent of the apis/ partitions)
   console.log(`\n${"=".repeat(60)}`);
   console.log("  Building: generic API");
@@ -1238,6 +1246,12 @@ function main() {
 
   // Build the NERM packages (separate product, separate host)
   buildNermPackages(results);
+
+  // Cleanup (after the generic build, which writes its config to .sdk-build-tmp/)
+  if (!keepTmp) {
+    console.log("\n[CLEANUP] Removing .sdk-build-tmp/ ...");
+    fs.rmSync(TEMP_DIR, { recursive: true, force: true });
+  }
 
   // Regenerate index.ts
   console.log("\n[INDEX] Regenerating sdk-output/index.ts ...");

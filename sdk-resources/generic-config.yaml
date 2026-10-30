@@ -1,8 +1,0 @@
-npmName: "@sailpoint/angular-sdk"
-npmRepository: sailpoint.com
-npmVersion: 0.0.37
-ngVersion: 22
-providedIn: root
-packageName: generic
-useSingleRequestParameter: true
-stringEnums: true
