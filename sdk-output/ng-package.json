@@ -3,5 +3,6 @@
   "lib": {
     "entryFile": "index.ts"
   },
+  "assets": ["sailpoint-scopes.json"],
   "deleteDestPath": false
 }
