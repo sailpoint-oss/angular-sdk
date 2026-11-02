@@ -1,4 +1,4 @@
-# @sailpoint/angular-sdk@0.0.37
+# @sailpoint/angular-sdk@0.0.38
 
 The NERM API v2025 accesss and modifies resources in your environment.
 
@@ -24,7 +24,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```console
-npm install @sailpoint/angular-sdk@0.0.37 --save
+npm install @sailpoint/angular-sdk@0.0.38 --save
 ```
 
 _without publishing (not recommended):_
