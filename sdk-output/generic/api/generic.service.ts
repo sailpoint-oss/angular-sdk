@@ -1,5 +1,5 @@
 /**
- * Generic Identity Security Cloud V2025 API
+ * SailPoint Identity Security API - Generic
  *
  * 
  *
@@ -16,8 +16,6 @@ import { HttpClient, HttpHeaders, HttpParams,
 import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
-// @ts-ignore
-import { GenericResponse } from '../model/genericResponse';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -27,54 +25,70 @@ import { BaseService } from '../api.base.service';
 /**
  * Encode the `path` parameter of a generic request.
  *
- * `path` is everything after the tenant base URL, including the API version
- * segment. For example `v2025/accounts` or `beta/sources/2c918085/schemas`.
- * Leading and trailing slashes are optional.
+ * `path` is everything after the tenant base URL, including the API version,
+ * for example `accounts/v1` or `sources/v1/2c918085/schemas`. Leading and
+ * trailing slashes are optional. Each segment is URL-encoded on its own, so the
+ * slashes between segments are kept. Anything after a `?` is kept as a query
+ * string, for example `accounts/v1?detailLevel=SLIM`. HttpClient adds the
+ * other query parameters after it.
  */
 function encodeGenericPath(value: string): string {
-    const segments = String(value).split('/').filter((segment) => segment.length > 0);
-    return segments.map((segment) => encodeURIComponent(segment)).join('/');
+    const raw = String(value);
+    const queryStart = raw.indexOf('?');
+    const pathPart = queryStart === -1 ? raw : raw.slice(0, queryStart);
+    const query = queryStart === -1 ? '' : raw.slice(queryStart);
+    const segments = pathPart.split('/').filter((segment) => segment.length > 0);
+    return segments.map((segment) => encodeURIComponent(segment)).join('/') + query;
 }
 
 
 
 export interface GenericDeleteRequestParams {
+    /** API path relative to the tenant base URL, including the API version, for example &#x60;accounts/v1&#x60;, &#x60;sources/v1/2c9180835d2e5168015d32f890ca1581&#x60; or &#x60;sources/v2/2c9180835d2e5168015d32f890ca1581/provisioning-policies&#x60;. Use whichever version the endpoint has. A leading slash is optional. Slashes separate path segments, and the SDK URL-encodes each segment, so pass the segments unencoded. Anything after a &#x60;?&#x60; is sent as query parameters, for example &#x60;accounts/v1?detailLevel&#x3D;SLIM&#x60;. */
     path: string;
-    /** Use this header to enable this experimental API. */
+    /** Set this header to &#x60;true&#x60; to call an experimental API. The SDK configuration must also enable experimental APIs. */
     xSailPointExperimental?: string;
 }
 
 export interface GenericGetRequestParams {
+    /** API path relative to the tenant base URL, including the API version, for example &#x60;accounts/v1&#x60;, &#x60;sources/v1/2c9180835d2e5168015d32f890ca1581&#x60; or &#x60;sources/v2/2c9180835d2e5168015d32f890ca1581/provisioning-policies&#x60;. Use whichever version the endpoint has. A leading slash is optional. Slashes separate path segments, and the SDK URL-encodes each segment, so pass the segments unencoded. Anything after a &#x60;?&#x60; is sent as query parameters, for example &#x60;accounts/v1?detailLevel&#x3D;SLIM&#x60;. */
     path: string;
-    /** Max number of results to return. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Max number of results to return. See [Standard Collection Parameters](https://developer.sailpoint.com/docs/standard-collection-parameters) for more information. */
     limit?: number;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
-    count?: boolean;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters) for more information. */
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. */
     offset?: number;
-    /** Use this header to enable this experimental API. */
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored. */
+    count?: boolean;
+    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/docs/standard-collection-parameters#filtering-results). */
+    filters?: string;
+    /** Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/docs/standard-collection-parameters#sorting-results). */
+    sorters?: string;
+    /** Set this header to &#x60;true&#x60; to call an experimental API. The SDK configuration must also enable experimental APIs. */
     xSailPointExperimental?: string;
 }
 
 export interface GenericPatchRequestParams {
+    /** API path relative to the tenant base URL, including the API version, for example &#x60;accounts/v1&#x60;, &#x60;sources/v1/2c9180835d2e5168015d32f890ca1581&#x60; or &#x60;sources/v2/2c9180835d2e5168015d32f890ca1581/provisioning-policies&#x60;. Use whichever version the endpoint has. A leading slash is optional. Slashes separate path segments, and the SDK URL-encodes each segment, so pass the segments unencoded. Anything after a &#x60;?&#x60; is sent as query parameters, for example &#x60;accounts/v1?detailLevel&#x3D;SLIM&#x60;. */
     path: string;
-    /** Use this header to enable this experimental API. */
+    /** Set this header to &#x60;true&#x60; to call an experimental API. The SDK configuration must also enable experimental APIs. */
     xSailPointExperimental?: string;
-    requestBody?: { [key: string]: any; };
+    requestBody?: any | null;
 }
 
 export interface GenericPostRequestParams {
+    /** API path relative to the tenant base URL, including the API version, for example &#x60;accounts/v1&#x60;, &#x60;sources/v1/2c9180835d2e5168015d32f890ca1581&#x60; or &#x60;sources/v2/2c9180835d2e5168015d32f890ca1581/provisioning-policies&#x60;. Use whichever version the endpoint has. A leading slash is optional. Slashes separate path segments, and the SDK URL-encodes each segment, so pass the segments unencoded. Anything after a &#x60;?&#x60; is sent as query parameters, for example &#x60;accounts/v1?detailLevel&#x3D;SLIM&#x60;. */
     path: string;
-    /** Use this header to enable this experimental API. */
+    /** Set this header to &#x60;true&#x60; to call an experimental API. The SDK configuration must also enable experimental APIs. */
     xSailPointExperimental?: string;
-    requestBody?: { [key: string]: any; };
+    requestBody?: any | null;
 }
 
 export interface GenericPutRequestParams {
+    /** API path relative to the tenant base URL, including the API version, for example &#x60;accounts/v1&#x60;, &#x60;sources/v1/2c9180835d2e5168015d32f890ca1581&#x60; or &#x60;sources/v2/2c9180835d2e5168015d32f890ca1581/provisioning-policies&#x60;. Use whichever version the endpoint has. A leading slash is optional. Slashes separate path segments, and the SDK URL-encodes each segment, so pass the segments unencoded. Anything after a &#x60;?&#x60; is sent as query parameters, for example &#x60;accounts/v1?detailLevel&#x3D;SLIM&#x60;. */
     path: string;
-    /** Use this header to enable this experimental API. */
+    /** Set this header to &#x60;true&#x60; to call an experimental API. The SDK configuration must also enable experimental APIs. */
     xSailPointExperimental?: string;
-    requestBody?: { [key: string]: any; };
+    requestBody?: any | null;
 }
 
 
@@ -89,13 +103,14 @@ export class GenericService extends BaseService {
 
     /**
      * Generic DELETE request
+     * Sends a DELETE request to any versioned API path.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public genericDelete(requestParameters: GenericDeleteRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GenericResponse>;
-    public genericDelete(requestParameters: GenericDeleteRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GenericResponse>>;
-    public genericDelete(requestParameters: GenericDeleteRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GenericResponse>>;
+    public genericDelete(requestParameters: GenericDeleteRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
+    public genericDelete(requestParameters: GenericDeleteRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
+    public genericDelete(requestParameters: GenericDeleteRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
     public genericDelete(requestParameters: GenericDeleteRequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const path = requestParameters?.path;
         if (path === null || path === undefined) {
@@ -107,9 +122,6 @@ export class GenericService extends BaseService {
         if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
             localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
         }
-
-        // authentication (userAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('userAuth', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -135,7 +147,7 @@ export class GenericService extends BaseService {
         }
 
         let localVarPath = `/${encodeGenericPath(path)}`;
-        return this.httpClient.request<GenericResponse>('delete', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -150,38 +162,42 @@ export class GenericService extends BaseService {
 
     /**
      * Generic GET request
+     * Sends a GET request to any versioned API path, for example &#x60;sources/v1/{id}/schemas&#x60; or &#x60;sources/v2/{sourceId}/provisioning-policies&#x60;.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public genericGet(requestParameters: GenericGetRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GenericResponse>;
-    public genericGet(requestParameters: GenericGetRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GenericResponse>>;
-    public genericGet(requestParameters: GenericGetRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GenericResponse>>;
+    public genericGet(requestParameters: GenericGetRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
+    public genericGet(requestParameters: GenericGetRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
+    public genericGet(requestParameters: GenericGetRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
     public genericGet(requestParameters: GenericGetRequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const path = requestParameters?.path;
         if (path === null || path === undefined) {
             throw new Error('Required parameter path was null or undefined when calling genericGet.');
         }
         const limit = requestParameters?.limit;
-        const count = requestParameters?.count;
         const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+        const filters = requestParameters?.filters;
+        const sorters = requestParameters?.sorters;
         const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>limit, 'limit');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>count, 'count');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>offset, 'offset');
+          <any>filters, 'filters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
 
         let localVarHeaders = this.defaultHeaders;
         if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
             localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
         }
-
-        // authentication (userAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('userAuth', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -207,7 +223,7 @@ export class GenericService extends BaseService {
         }
 
         let localVarPath = `/${encodeGenericPath(path)}`;
-        return this.httpClient.request<GenericResponse>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<any>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -223,13 +239,14 @@ export class GenericService extends BaseService {
 
     /**
      * Generic PATCH request
+     * Sends a PATCH request to any versioned API path. The body is a JSON Patch document (RFC 6902): a list of operations such as &#x60;[{\&quot;op\&quot;: \&quot;replace\&quot;, \&quot;path\&quot;: \&quot;/description\&quot;, \&quot;value\&quot;: \&quot;New description\&quot;}]&#x60;.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public genericPatch(requestParameters: GenericPatchRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GenericResponse>;
-    public genericPatch(requestParameters: GenericPatchRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GenericResponse>>;
-    public genericPatch(requestParameters: GenericPatchRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GenericResponse>>;
+    public genericPatch(requestParameters: GenericPatchRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
+    public genericPatch(requestParameters: GenericPatchRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
+    public genericPatch(requestParameters: GenericPatchRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
     public genericPatch(requestParameters: GenericPatchRequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const path = requestParameters?.path;
         if (path === null || path === undefined) {
@@ -242,9 +259,6 @@ export class GenericService extends BaseService {
         if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
             localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
         }
-
-        // authentication (userAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('userAuth', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -260,7 +274,7 @@ export class GenericService extends BaseService {
 
         // to determine the Content-Type header
         const consumes: string[] = [
-            'application/json'
+            'application/json-patch+json'
         ];
         const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
         if (httpContentTypeSelected !== undefined) {
@@ -279,7 +293,7 @@ export class GenericService extends BaseService {
         }
 
         let localVarPath = `/${encodeGenericPath(path)}`;
-        return this.httpClient.request<GenericResponse>('patch', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<any>('patch', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: requestBody,
@@ -295,13 +309,14 @@ export class GenericService extends BaseService {
 
     /**
      * Generic POST request
+     * Sends a POST request with a JSON body to any versioned API path.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public genericPost(requestParameters: GenericPostRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GenericResponse>;
-    public genericPost(requestParameters: GenericPostRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GenericResponse>>;
-    public genericPost(requestParameters: GenericPostRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GenericResponse>>;
+    public genericPost(requestParameters: GenericPostRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
+    public genericPost(requestParameters: GenericPostRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
+    public genericPost(requestParameters: GenericPostRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
     public genericPost(requestParameters: GenericPostRequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const path = requestParameters?.path;
         if (path === null || path === undefined) {
@@ -314,9 +329,6 @@ export class GenericService extends BaseService {
         if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
             localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
         }
-
-        // authentication (userAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('userAuth', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -351,7 +363,7 @@ export class GenericService extends BaseService {
         }
 
         let localVarPath = `/${encodeGenericPath(path)}`;
-        return this.httpClient.request<GenericResponse>('post', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: requestBody,
@@ -367,13 +379,14 @@ export class GenericService extends BaseService {
 
     /**
      * Generic PUT request
+     * Sends a PUT request with a JSON body to any versioned API path.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public genericPut(requestParameters: GenericPutRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<GenericResponse>;
-    public genericPut(requestParameters: GenericPutRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<GenericResponse>>;
-    public genericPut(requestParameters: GenericPutRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<GenericResponse>>;
+    public genericPut(requestParameters: GenericPutRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
+    public genericPut(requestParameters: GenericPutRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
+    public genericPut(requestParameters: GenericPutRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
     public genericPut(requestParameters: GenericPutRequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const path = requestParameters?.path;
         if (path === null || path === undefined) {
@@ -386,9 +399,6 @@ export class GenericService extends BaseService {
         if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
             localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
         }
-
-        // authentication (userAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('userAuth', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'application/json'
@@ -423,7 +433,7 @@ export class GenericService extends BaseService {
         }
 
         let localVarPath = `/${encodeGenericPath(path)}`;
-        return this.httpClient.request<GenericResponse>('put', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<any>('put', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: requestBody,

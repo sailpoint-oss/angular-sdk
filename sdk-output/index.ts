@@ -414,7 +414,8 @@ export type {
   GenericPatchRequestParams,
   GenericDeleteRequestParams,
 } from "./generic/api/generic.service";
-export type { GenericResponse } from "./generic/model/genericResponse";
+/** Any JSON value returned by a GenericService request. */
+export type GenericResponse = any;
 
 // --- NERM (Non-Employee Risk Management) ---
 // nerm — 35 service(s)

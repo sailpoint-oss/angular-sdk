@@ -1,0 +1,118 @@
+- path: /{path}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/generic/methods/generic#generic-delete
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GenericService } from '@sailpoint/angular-sdk/generic';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GenericService);
+
+          genericDelete(): void {
+            const path: string = 'accounts/v1'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.genericDelete({ path: path }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /{path}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/generic/methods/generic#generic-get
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GenericService } from '@sailpoint/angular-sdk/generic';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GenericService);
+
+          genericGet(): void {
+            const path: string = 'accounts/v1'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const filters: string = 'name eq "Example"'; // string
+            const sorters: string = 'name,-created'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.genericGet({ path: path }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /{path}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/generic/methods/generic#generic-patch
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GenericService } from '@sailpoint/angular-sdk/generic';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GenericService);
+
+          genericPatch(): void {
+            const path: string = 'accounts/v1'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const requestBody: any = ; // any
+            this.api.genericPatch({ path: path }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /{path}
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/generic/methods/generic#generic-post
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GenericService } from '@sailpoint/angular-sdk/generic';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GenericService);
+
+          genericPost(): void {
+            const path: string = 'accounts/v1'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const requestBody: any = ; // any
+            this.api.genericPost({ path: path }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /{path}
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/generic/methods/generic#generic-put
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { GenericService } from '@sailpoint/angular-sdk/generic';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(GenericService);
+
+          genericPut(): void {
+            const path: string = 'accounts/v1'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            const requestBody: any = ; // any
+            this.api.genericPut({ path: path }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

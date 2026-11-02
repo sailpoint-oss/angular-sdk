@@ -28,6 +28,26 @@ and code examples for every SailPoint SDK.
 npm install @sailpoint/angular-sdk
 ```
 
+## Calling any API with the generic client
+
+The generic client calls any SailPoint versioned API by its path, including APIs
+that do not have a resource-specific client or documentation yet. The path
+includes the API version, for example `accounts/v1`. The client uses the same
+configuration, authentication and retries as the other clients.
+
+- Each path segment is URL-encoded. Pass the segments unencoded.
+- Anything after a `?` in the path is sent as query parameters.
+- A PATCH body is a JSON Patch list, sent as `application/json-patch+json`.
+
+```typescript
+import { inject } from "@angular/core";
+import { GenericService } from "@sailpoint/angular-sdk";
+
+const api = inject(GenericService);
+
+api.genericGet({ path: "accounts/v1", limit: 10 }).subscribe((accounts) => console.log(accounts));
+```
+
 ## About this repository
 
 This repository holds the generator that builds the SDK from the SailPoint API

@@ -9,6 +9,7 @@ import {
 import { firstValueFrom, type Observable } from 'rxjs';
 import {
   AccountsService,
+  GenericService,
   IdentitiesService,
   Paginator,
   SAILPOINT_CONFIG_PARAMS,
@@ -92,6 +93,31 @@ describeTenant('accounts', () => {
     );
 
     expect(accounts.length).toBeLessThanOrEqual(30);
+  }, TIMEOUT);
+});
+
+// The generic service calls any versioned endpoint by path, through the same
+// interceptor and token as the resource services.
+describeTenant('generic', () => {
+  it('gets a v1 endpoint', async () => {
+    const api = service(GenericService, tenantHttpClient());
+
+    const sources = await first(api.genericGet({ path: 'sources/v1', limit: 10 }));
+
+    expect(Array.isArray(sources)).toStrictEqual(true);
+    expect(sources.length).toBeLessThanOrEqual(10);
+  }, TIMEOUT);
+
+  // access-request-config/v2 is experimental, so the header is required.
+  it('gets a v2 endpoint', async () => {
+    const api = service(GenericService, tenantHttpClient());
+
+    const config = await first(
+      api.genericGet({ path: 'access-request-config/v2', xSailPointExperimental: 'true' })
+    );
+
+    expect(typeof config).toStrictEqual('object');
+    expect(Array.isArray(config)).toStrictEqual(false);
   }, TIMEOUT);
 });
 

@@ -138,7 +138,6 @@ jobs:
         shell: bash
         run: |
           VERSION="${{ steps.version.outputs.new }}"
-          yq -i ".npmVersion = \"$VERSION\"" sdk-resources/generic-config.yaml
           yq -i ".npmVersion = \"$VERSION\"" sdk-resources/nerm-config.yaml
           yq -i ".npmVersion = \"$VERSION\"" sdk-resources/nerm-v2025-config.yaml
           sed -i "s/const NPM_VERSION = \"[^\"]*\"/const NPM_VERSION = \"$VERSION\"/" sdk-resources/build-versioned-sdk.js
