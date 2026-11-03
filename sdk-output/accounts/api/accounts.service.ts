@@ -27,6 +27,8 @@ import { AccountToggleRequest } from '../model/accountToggleRequest';
 // @ts-ignore
 import { AccountUnlockRequest } from '../model/accountUnlockRequest';
 // @ts-ignore
+import { AccountV2 } from '../model/accountV2';
+// @ts-ignore
 import { AccountsAsyncResult } from '../model/accountsAsyncResult';
 // @ts-ignore
 import { BulkIdentitiesAccountsResponse } from '../model/bulkIdentitiesAccountsResponse';
@@ -122,6 +124,23 @@ export interface ListAccountsV1RequestParams {
     filters?: string;
     /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, name, created, modified, sourceId, identityId, nativeIdentity, uuid, manuallyCorrelated, entitlements, origin, identity.name, identity.identityState, identity.correlated, source.displayableName, source.authoritative, source.connectionType** */
     sorters?: string;
+}
+
+export interface ListAccountsV2RequestParams {
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+    /** Used to begin the search window at the values specified.  This parameter consists of the last values of the sorted fields in the current record set.  searchAfter length must match the number of sorters.  This is used to page beyond the offset limit of 10,000 records by shifting the search window to begin at this value.  &#x60;searchAfter&#x60; cannot be combined with &#x60;offset&#x60;. When &#x60;searchAfter&#x60; is provided, &#x60;id&#x60; must be included in &#x60;sorters&#x60;.  It is recommended that you always include the ID of the object in addition to any other sort fields in order to ensure you don\&#39;t get duplicate results while paging.  For example, if you are sorting by name you will also want to include ID, for example searchAfter&#x3D;Account Payable,2c91808375d8e80a0175e1f88a575221&amp;sorters&#x3D;name,id.  Refer to [Paginating Search Queries](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-search-queries) for more information about how to implement &#x60;searchAfter&#x60; paging. */
+    searchAfter?: string;
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in, sw*  **name**: *eq, in, sw, isnull, pr*  **uuid**: *eq, in, sw, isnull, pr*  **nativeIdentity**: *eq, in, sw, isnull, pr*  **description**: *eq, in, sw, isnull, pr*  **type**: *eq, ne*  **recommendation.type**: *eq, in, sw, isnull, pr*  **recommendation.method**: *eq, in, sw, isnull, pr*  **locked**: *eq*  **disabled**: *eq*  **hasEntitlements**: *eq*  **manuallyCorrelated**: *eq*  **privilegeLevel.effective**: *eq, in, isnull, pr*  **correlated**: *eq*  **classificationMethod**: *eq, ne, in, sw, isnull, pr*  **subType**: *eq, ne, in, sw, isnull, pr*  **created**: *eq, ge, gt, le, lt*  **modified**: *eq, ge, gt, le, lt*  **synced**: *eq, ge, gt, le, lt*  **owner.id**: *eq, in, sw*  **owner.name**: *eq, in, sw, isnull, pr*  **owner.state**: *eq, in, sw, isnull, pr*  **correlatedIdentity.id**: *eq, in, sw*  **correlatedIdentity.name**: *eq, in, sw, isnull, pr*  **correlatedIdentity.state**: *eq, in, sw, isnull, pr*  **source.id**: *eq, in, sw*  **source.name**: *eq, in, sw*  **source.authoritative**: *eq*  **source.connectionType**: *eq, in, isnull, pr*  **origin**: *eq, in*  Filter values are case-insensitive for **name, description, type, origin, source.name, source.connectionType, owner.name, correlatedIdentity.name, correlatedIdentity.state, privilegeLevel.effective, recommendation.type, recommendation.method, classificationMethod, subType**.  Filter values remain case-sensitive for the identifier fields **id, uuid, nativeIdentity, source.id, owner.id, correlatedIdentity.id**. */
+    filters?: string;
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, name, uuid, nativeIdentity, created, modified, manuallyCorrelated, description, type, recommendation.type, recommendation.method, locked, disabled, correlated, hasEntitlements, origin, privilegeLevel.effective, classificationMethod, subType, owner.id, owner.name, owner.state, correlatedIdentity.id, correlatedIdentity.name, correlatedIdentity.state, source.id, source.name, source.authoritative, source.connectionType, synced**  Sorting on the following fields is case-insensitive: **name, description, type, origin, source.name, source.connectionType, owner.name, correlatedIdentity.name, correlatedIdentity.state, privilegeLevel.effective, recommendation.type, recommendation.method, classificationMethod, subType**. Identifier fields such as **id, uuid, nativeIdentity, source.id, owner.id,** and **correlatedIdentity.id** remain case-sensitive.  Default sort is **created** when no collection parameters are sent. */
+    sorters?: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface PutAccountV1RequestParams {
@@ -892,6 +911,82 @@ export class AccountsService extends BaseService {
 
         let localVarPath = `/accounts/v1`;
         return this.httpClient.request<Array<Account>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * List accounts (search)
+     * List accounts from the accounts search index.  Use standard collection parameters for paging (&#x60;limit&#x60;, &#x60;offset&#x60;, &#x60;count&#x60;). Default page size is 25 when no collection parameters are sent. Maximum &#x60;limit&#x60; is 250. Requests that specify a larger &#x60;limit&#x60; are capped at 250. &#x60;offset + limit&#x60; cannot exceed 10,000. To page beyond that window, use &#x60;searchAfter&#x60; instead of a large offset. &#x60;searchAfter&#x60; cannot be combined with &#x60;offset&#x60;. Always include &#x60;id&#x60; in &#x60;sorters&#x60; when using &#x60;searchAfter&#x60;. Refer to [Paginating Search Queries](https://developer.sailpoint.com/idn/api/standard-collection-parameters#paginating-search-queries) for more information.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public listAccountsV2(requestParameters?: ListAccountsV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AccountV2>>;
+    public listAccountsV2(requestParameters?: ListAccountsV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AccountV2>>>;
+    public listAccountsV2(requestParameters?: ListAccountsV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<AccountV2>>>;
+    public listAccountsV2(requestParameters?: ListAccountsV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+        const searchAfter = requestParameters?.searchAfter;
+        const filters = requestParameters?.filters;
+        const sorters = requestParameters?.sorters;
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>searchAfter, 'searchAfter');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>filters, 'filters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/accounts/v2`;
+        return this.httpClient.request<Array<AccountV2>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,

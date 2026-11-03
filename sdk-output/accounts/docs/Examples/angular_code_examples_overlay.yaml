@@ -284,6 +284,33 @@
             });
           }
         }
+- path: /accounts/v2
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/accounts/methods/accounts#list-accounts-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { AccountsService } from '@sailpoint/angular-sdk/accounts';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(AccountsService);
+
+          listAccountsV2(): void {
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            const searchAfter: string = 'Account Payable,2c91808375d8e80a0175e1f88a575221'; // string
+            const filters: string = 'name sw "test"'; // string
+            const sorters: string = 'name,id'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listAccountsV2({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /accounts/v1/{id}
   method: put
   xCodeSample:

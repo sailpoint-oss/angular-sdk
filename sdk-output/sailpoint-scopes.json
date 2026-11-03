@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sdk": "angular",
-  "sdkVersion": "0.0.37",
+  "sdkVersion": "0.0.39",
   "operations": {
     "addAccessRequestRecommendationsIgnoredItemV1": {
       "resource": "iai-access-request-recommendations",
@@ -237,6 +237,23 @@
         "ORG_ADMIN"
       ]
     },
+    "cancelMachineIdentityLifecycleActionV1": {
+      "resource": "machine-identities-lifecycle-actions",
+      "tag": "Machine Identity Lifecycle Actions",
+      "sdkName": "cancelMachineIdentityLifecycleActionV1",
+      "httpMethod": "POST",
+      "path": "/machine-identities/v1/lifecycle-actions/{requestId}/cancel",
+      "userAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "USER"
+      ]
+    },
     "cancelReportV1": {
       "resource": "reports-data-extraction",
       "tag": "Reports Data Extraction",
@@ -343,6 +360,21 @@
       "sdkName": "completeCampaignV1",
       "httpMethod": "POST",
       "path": "/campaigns/v1/{id}/complete",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "completeGovCertificationCampaignV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "completeGovCertificationCampaignV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaigns/{id}/complete",
       "userAuth": [
         "idn:campaign:manage"
       ],
@@ -540,6 +572,20 @@
         "ORG_ADMIN"
       ]
     },
+    "createBusinessApplicationV1": {
+      "resource": "business-applications",
+      "tag": "Business Applications",
+      "sdkName": "createBusinessApplicationV1",
+      "httpMethod": "POST",
+      "path": "/business-applications/v1",
+      "userAuth": [
+        "idn:business-application:create"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
     "createCampaignFilterV1": {
       "resource": "certification-campaign-filters",
       "tag": "Certification Campaign Filters",
@@ -550,6 +596,21 @@
         "idn:campaign-filter:manage"
       ],
       "applicationAuth": null
+    },
+    "createCampaignFromTemplateV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "createCampaignFromTemplateV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaign-templates/{id}/generate",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
     },
     "createCampaignTemplateV1": {
       "resource": "certification-campaigns",
@@ -573,7 +634,8 @@
       "httpMethod": "POST",
       "path": "/campaigns/v1",
       "userAuth": [
-        "idn:campaign:manage"
+        "idn:campaign:manage",
+        "idn:campaign-filter:read"
       ],
       "applicationAuth": null,
       "userLevels": [
@@ -636,6 +698,21 @@
         "ORG_ADMIN"
       ]
     },
+    "createControlV1": {
+      "resource": "sod-controls",
+      "tag": "SOD Controls",
+      "sdkName": "createControlV1",
+      "httpMethod": "POST",
+      "path": "/controls/v1",
+      "userAuth": [
+        "idn:sod-control:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_CONTROL_ADMIN"
+      ]
+    },
     "createCustomConnectorV1": {
       "resource": "connectors",
       "tag": "Connectors",
@@ -688,6 +765,22 @@
         "idn:user-level:manage"
       ],
       "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "createDataDictionaryFieldV1": {
+      "resource": "data-access-security",
+      "tag": "Data Access Security",
+      "sdkName": "createDataDictionaryFieldV1",
+      "httpMethod": "POST",
+      "path": "/das/v1/permissions/fields",
+      "userAuth": [
+        "das:permissions:manage"
+      ],
+      "applicationAuth": [
+        "das:permissions:manage"
+      ],
       "userLevels": [
         "ORG_ADMIN"
       ]
@@ -825,6 +918,51 @@
         "ORG_ADMIN"
       ]
     },
+    "createGovCertificationCampaignFilterV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "createGovCertificationCampaignFilterV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaign-filters",
+      "userAuth": [
+        "idn:campaign-filter:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "createGovCertificationCampaignTemplateV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "createGovCertificationCampaignTemplateV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaign-templates",
+      "userAuth": [
+        "idn:campaign-template:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "createGovCertificationCampaignV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "createGovCertificationCampaignV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaigns",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "createIdentityAttributeV1": {
       "resource": "identity-attributes",
       "tag": "Identity Attributes",
@@ -841,7 +979,7 @@
       "tag": "Data Access Security",
       "sdkName": "createIdentityCollectorV1",
       "httpMethod": "POST",
-      "path": "/das/identity-collectors/v1",
+      "path": "/das/v1/identity-collectors",
       "userAuth": [
         "das:identity-collectors:manage"
       ],
@@ -931,6 +1069,18 @@
         "USER"
       ]
     },
+    "createMachineAccountRequestV2": {
+      "resource": "machine-account-creation-request",
+      "tag": "Machine Account Creation Request",
+      "sdkName": "createMachineAccountRequestV2",
+      "httpMethod": "POST",
+      "path": "/account-requests/v2/machine-account-create",
+      "userAuth": [],
+      "applicationAuth": null,
+      "userLevels": [
+        "USER"
+      ]
+    },
     "createMachineAccountSubtypeV1": {
       "resource": "machine-accounts",
       "tag": "Machine Accounts",
@@ -947,6 +1097,18 @@
         "ORG_ADMIN",
         "SOURCE_ADMIN",
         "SOURCE_SUBADMIN"
+      ]
+    },
+    "createMachineAccountV2": {
+      "resource": "machine-account-creation-request",
+      "tag": "Machine Account Creation Request",
+      "sdkName": "createMachineAccountV2",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v2/machine-account-create",
+      "userAuth": [],
+      "applicationAuth": null,
+      "userLevels": [
+        "USER"
       ]
     },
     "createMachineIdentityV1": {
@@ -1268,7 +1430,42 @@
       "userAuth": [
         "idn:reassignment-configuration:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "createReportV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "createReportV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaigns/{campaignId}/reports",
+      "userAuth": [
+        "idn:campaign-report:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN",
+        "REPORT_ADMIN"
+      ]
+    },
+    "createResponseActionV1": {
+      "resource": "intelligence",
+      "tag": "Intelligence",
+      "sdkName": "createResponseActionV1",
+      "httpMethod": "POST",
+      "path": "/intelligence/v1/response-actions",
+      "userAuth": [
+        "sp:identity-sec-intel:write"
+      ],
+      "applicationAuth": [
+        "sp:identity-sec-intel:write"
+      ],
+      "userLevels": [
+        "Any"
+      ]
     },
     "createRoleInsightRequestsV1": {
       "resource": "role-insights",
@@ -1432,7 +1629,11 @@
       "userAuth": [
         "idn:sod-policy:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_POLICY_ADMIN"
+      ]
     },
     "createSourceAppV1": {
       "resource": "apps",
@@ -1444,6 +1645,54 @@
         "idn:app-roles:manage"
       ],
       "applicationAuth": null
+    },
+    "createSourceDatasetV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "createSourceDatasetV1",
+      "httpMethod": "POST",
+      "path": "/sources/v1/{sourceId}/datasets",
+      "userAuth": [
+        "idn:sources:update",
+        "idn:source-schema:create",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:update",
+        "idn:source-schema:create",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "createSourceResourceV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "createSourceResourceV1",
+      "httpMethod": "POST",
+      "path": "/sources/v1/{sourceId}/resources",
+      "userAuth": [
+        "idn:sources:update",
+        "idn:source-schema:create",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:update",
+        "idn:source-schema:create",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
     },
     "createSourceScheduleV1": {
       "resource": "sources",
@@ -1478,6 +1727,44 @@
         "SOURCE_ADMIN"
       ]
     },
+    "createSourceSubtypeOverrideV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "createSourceSubtypeOverrideV2",
+      "httpMethod": "POST",
+      "path": "/source-subtypes/v2/{id}/overrides",
+      "userAuth": [
+        "idn:sources:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "createSourceSubtypeProvisioningPolicyV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "createSourceSubtypeProvisioningPolicyV2",
+      "httpMethod": "POST",
+      "path": "/source-subtypes/v2/{id}/provisioning-policy",
+      "userAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "createSourceSubtypeV1": {
       "resource": "machine-account-subtypes",
       "tag": "Machine Account Subtypes",
@@ -1489,6 +1776,26 @@
       ],
       "applicationAuth": [
         "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "createSourceSubtypeV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "createSourceSubtypeV2",
+      "httpMethod": "POST",
+      "path": "/source-subtypes/v2",
+      "userAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
       ],
       "userLevels": [
         "ORG_ADMIN",
@@ -1646,6 +1953,38 @@
       ],
       "applicationAuth": [
         "idn:workgroup:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "deleteAccessModelMetadataAttributeV1": {
+      "resource": "access-model-metadata",
+      "tag": "Access Model Metadata",
+      "sdkName": "deleteAccessModelMetadataAttributeV1",
+      "httpMethod": "DELETE",
+      "path": "/access-model-metadata/v1/attributes/{key}",
+      "userAuth": [
+        "idn:access-model-metadata:delete"
+      ],
+      "applicationAuth": [
+        "idn:access-model-metadata:delete"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "deleteAccessModelMetadataAttributeValueV1": {
+      "resource": "access-model-metadata",
+      "tag": "Access Model Metadata",
+      "sdkName": "deleteAccessModelMetadataAttributeValueV1",
+      "httpMethod": "DELETE",
+      "path": "/access-model-metadata/v1/attributes/{key}/values/{value}",
+      "userAuth": [
+        "idn:access-model-metadata:delete"
+      ],
+      "applicationAuth": [
+        "idn:access-model-metadata:delete"
       ],
       "userLevels": [
         "ORG_ADMIN"
@@ -1969,6 +2308,20 @@
         "ORG_ADMIN"
       ]
     },
+    "deleteControlV1": {
+      "resource": "sod-controls",
+      "tag": "SOD Controls",
+      "sdkName": "deleteControlV1",
+      "httpMethod": "DELETE",
+      "path": "/controls/v1/{id}",
+      "userAuth": [
+        "idn:sod-control:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
     "deleteCustomConnectorV1": {
       "resource": "connectors",
       "tag": "Connectors",
@@ -2007,6 +2360,22 @@
         "sp:gov-criteria:write"
       ],
       "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "deleteDataDictionaryFieldV1": {
+      "resource": "data-access-security",
+      "tag": "Data Access Security",
+      "sdkName": "deleteDataDictionaryFieldV1",
+      "httpMethod": "DELETE",
+      "path": "/das/v1/permissions/fields/{name}",
+      "userAuth": [
+        "das:permissions:manage"
+      ],
+      "applicationAuth": [
+        "das:permissions:manage"
+      ],
       "userLevels": [
         "ORG_ADMIN"
       ]
@@ -2064,6 +2433,67 @@
       ],
       "applicationAuth": null
     },
+    "deleteGovCertificationCampaignFiltersV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "deleteGovCertificationCampaignFiltersV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaign-filters/delete",
+      "userAuth": [
+        "idn:campaign-filter:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "deleteGovCertificationCampaignTemplateScheduleV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "deleteGovCertificationCampaignTemplateScheduleV1",
+      "httpMethod": "DELETE",
+      "path": "/certification-campaigns/v1/campaign-templates/{id}/schedule",
+      "userAuth": [
+        "idn:campaign-template:manage",
+        "sp:scheduled-action:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "deleteGovCertificationCampaignTemplateV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "deleteGovCertificationCampaignTemplateV1",
+      "httpMethod": "DELETE",
+      "path": "/certification-campaigns/v1/campaign-templates/{id}",
+      "userAuth": [
+        "idn:campaign-template:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "deleteGovCertificationCampaignsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "deleteGovCertificationCampaignsV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaigns/delete",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "deleteIconV1": {
       "resource": "icons",
       "tag": "Icons",
@@ -2104,7 +2534,7 @@
       "tag": "Data Access Security",
       "sdkName": "deleteIdentityCollectorV1",
       "httpMethod": "DELETE",
-      "path": "/das/identity-collectors/v1/{id}",
+      "path": "/das/v1/identity-collectors/{id}",
       "userAuth": [
         "das:identity-collectors:manage"
       ],
@@ -2192,6 +2622,24 @@
         "ORG_ADMIN"
       ]
     },
+    "deleteMachineAccountAsyncV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "deleteMachineAccountAsyncV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/{id}/remove",
+      "userAuth": [
+        "idn:mis-account:remove"
+      ],
+      "applicationAuth": [
+        "idn:mis-account:remove"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "deleteMachineAccountMappingsV1": {
       "resource": "machine-account-mappings",
       "tag": "Machine Account Mappings",
@@ -2246,6 +2694,44 @@
         "SOURCE_SUBADMIN"
       ]
     },
+    "deleteMachineAccountSubtypeV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "deleteMachineAccountSubtypeV2",
+      "httpMethod": "DELETE",
+      "path": "/source-subtypes/v2/{id}",
+      "userAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "deleteMachineAccountV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "deleteMachineAccountV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/{id}/delete",
+      "userAuth": [
+        "idn:mis-account:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-account:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "deleteMachineClassificationConfigV1": {
       "resource": "machine-classification-config",
       "tag": "Machine Classification Config",
@@ -2262,6 +2748,54 @@
         "ORG_ADMIN",
         "SOURCE_ADMIN",
         "SOURCE_SUBADMIN"
+      ]
+    },
+    "deleteMachineIdentitiesInBulkV2": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "deleteMachineIdentitiesInBulkV2",
+      "httpMethod": "POST",
+      "path": "/machine-identities/v2/bulk-delete",
+      "userAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "deleteMachineIdentityAsyncV1": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "deleteMachineIdentityAsyncV1",
+      "httpMethod": "DELETE",
+      "path": "/machine-identities/v1/{id}/delete-async",
+      "userAuth": [
+        "idn:dataset:manage"
+      ],
+      "applicationAuth": [
+        "idn:dataset:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "deleteMachineIdentityAsyncV2": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "deleteMachineIdentityAsyncV2",
+      "httpMethod": "DELETE",
+      "path": "/machine-identities/v2/{id}/delete-async",
+      "userAuth": [
+        "idn:dataset:manage"
+      ],
+      "applicationAuth": [
+        "idn:dataset:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
       ]
     },
     "deleteMachineIdentityV1": {
@@ -2336,6 +2870,24 @@
       "applicationAuth": null,
       "userLevels": [
         "ORG_ADMIN"
+      ]
+    },
+    "deleteMetadataFromAccessProfileByKeyAndValueV1": {
+      "resource": "access-profiles",
+      "tag": "Access Profiles",
+      "sdkName": "deleteMetadataFromAccessProfileByKeyAndValueV1",
+      "httpMethod": "DELETE",
+      "path": "/access-profiles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}",
+      "userAuth": [
+        "idn:access-profile:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "ROLE_ADMIN",
+        "ROLE_SUBADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
       ]
     },
     "deleteMetadataFromRoleByKeyAndValueV1": {
@@ -2784,7 +3336,29 @@
       "userAuth": [
         "idn:sod-policy:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_POLICY_ADMIN"
+      ]
+    },
+    "deleteSourceAgentsV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "deleteSourceAgentsV1",
+      "httpMethod": "POST",
+      "path": "/sources/v1/{id}/agents-delete",
+      "userAuth": [
+        "idn:dataset:manage"
+      ],
+      "applicationAuth": [
+        "idn:dataset:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
     },
     "deleteSourceAppV1": {
       "resource": "apps",
@@ -2796,6 +3370,74 @@
         "idn:app-roles:manage"
       ],
       "applicationAuth": null
+    },
+    "deleteSourceDatasetObjectsV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "deleteSourceDatasetObjectsV1",
+      "httpMethod": "POST",
+      "path": "/sources/v1/{sourceId}/datasets/{datasetId}/delete-objects",
+      "userAuth": [
+        "idn:sources:aggregate",
+        "idn:sources:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:aggregate",
+        "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "deleteSourceDatasetV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "deleteSourceDatasetV1",
+      "httpMethod": "DELETE",
+      "path": "/sources/v1/{sourceId}/datasets/{datasetId}",
+      "userAuth": [
+        "idn:sources:delete",
+        "idn:source-schema:delete",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:delete",
+        "idn:source-schema:delete",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "deleteSourceResourceV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "deleteSourceResourceV1",
+      "httpMethod": "DELETE",
+      "path": "/sources/v1/{sourceId}/resources/{resourceId}",
+      "userAuth": [
+        "idn:sources:update",
+        "idn:source-schema:delete",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:update",
+        "idn:source-schema:delete",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
     },
     "deleteSourceScheduleV1": {
       "resource": "sources",
@@ -2825,6 +3467,26 @@
         "idn:source-schema:manage"
       ],
       "applicationAuth": null
+    },
+    "deleteSourceSubtypeProvisioningPolicyV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "deleteSourceSubtypeProvisioningPolicyV2",
+      "httpMethod": "DELETE",
+      "path": "/source-subtypes/v2/{id}/provisioning-policy",
+      "userAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
     },
     "deleteSourceV1": {
       "resource": "sources",
@@ -3011,10 +3673,10 @@
       "httpMethod": "POST",
       "path": "/workgroups/v1/{workgroupId}/members/bulk-delete",
       "userAuth": [
-        "idn:workgroup:write"
+        "idn:workgroup:manage"
       ],
       "applicationAuth": [
-        "idn:workgroup:write"
+        "idn:workgroup:manage"
       ],
       "userLevels": [
         "ORG_ADMIN"
@@ -3105,6 +3767,42 @@
         "ORG_ADMIN"
       ]
     },
+    "disableMachineAccountV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "disableMachineAccountV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/{id}/disable",
+      "userAuth": [
+        "idn:mis-account:disable"
+      ],
+      "applicationAuth": [
+        "idn:mis-account:disable"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "disableMachineAccountsInBulkV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "disableMachineAccountsInBulkV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/bulk-disable",
+      "userAuth": [
+        "idn:mis-account-state:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-account-state:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "downloadRoleInsightsEntitlementsChangesV1": {
       "resource": "role-insights",
       "tag": "Role Insights",
@@ -3186,6 +3884,42 @@
         "ORG_ADMIN"
       ]
     },
+    "enableMachineAccountV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "enableMachineAccountV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/{id}/enable",
+      "userAuth": [
+        "idn:mis-account:enable"
+      ],
+      "applicationAuth": [
+        "idn:mis-account:enable"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "enableMachineAccountsInBulkV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "enableMachineAccountsInBulkV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/bulk-enable",
+      "userAuth": [
+        "idn:mis-account-state:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-account-state:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "executeSavedSearchV1": {
       "resource": "saved-search",
       "tag": "Saved Search",
@@ -3224,6 +3958,10 @@
       ],
       "applicationAuth": [
         "idn:identity-profile:read"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "API"
       ]
     },
     "exportNonEmployeeRecordsV1": {
@@ -3592,6 +4330,22 @@
         "Any"
       ]
     },
+    "getAccessSummariesV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getAccessSummariesV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/access-summaries/{type}",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "getAccountActivityV1": {
       "resource": "account-activities",
       "tag": "Account Activities",
@@ -3599,10 +4353,13 @@
       "httpMethod": "GET",
       "path": "/account-activities/v1/{id}",
       "userAuth": [
-        "sp:scopes:all"
+        "idn:account-activity:read"
       ],
       "applicationAuth": null,
-      "defaultScope": true
+      "userLevels": [
+        "ORG_ADMIN",
+        "API"
+      ]
     },
     "getAccountAggregationStatusV1": {
       "resource": "account-aggregations",
@@ -3994,6 +4751,20 @@
         "ROLE_SUBADMIN"
       ]
     },
+    "getBusinessApplicationV1": {
+      "resource": "business-applications",
+      "tag": "Business Applications",
+      "sdkName": "getBusinessApplicationV1",
+      "httpMethod": "GET",
+      "path": "/business-applications/v1/{id}",
+      "userAuth": [
+        "idn:business-application:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
     "getCampaignFilterByIdV1": {
       "resource": "certification-campaign-filters",
       "tag": "Certification Campaign Filters",
@@ -4045,7 +4816,7 @@
       "httpMethod": "GET",
       "path": "/campaign-templates/v1/{id}/schedule",
       "userAuth": [
-        "idn:campaign-temlates:read"
+        "idn:campaign-template:read"
       ],
       "applicationAuth": null,
       "userLevels": [
@@ -4101,6 +4872,107 @@
         "CERT_ADMIN"
       ]
     },
+    "getCapabilityV1": {
+      "resource": "capabilities",
+      "tag": "Capabilities",
+      "sdkName": "getCapabilityV1",
+      "httpMethod": "GET",
+      "path": "/capabilities/v1/{id}",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getCertificationEntitlementChildrenDetailsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getCertificationEntitlementChildrenDetailsV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}/children",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "getCertificationEntitlementDetailsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getCertificationEntitlementDetailsV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "getCertificationEntitlementParentsDetailsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getCertificationEntitlementParentsDetailsV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}/parents",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "getCertificationEntitlementPermissionsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getCertificationEntitlementPermissionsV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}/permissions",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "getCertificationItemAccountDetailsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getCertificationItemAccountDetailsV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/item-id/{entitlementId}/cert-account-details",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "getCertificationTaskV1": {
       "resource": "certifications",
       "tag": "Certifications",
@@ -4109,6 +4981,22 @@
       "path": "/certification-tasks/v1/{id}",
       "userAuth": [
         "idn:campaign:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "getCertificationV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getCertificationV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
       ],
       "applicationAuth": null,
       "userLevels": [
@@ -4325,6 +5213,22 @@
         "SOURCE_SUBADMIN"
       ]
     },
+    "getControlV1": {
+      "resource": "sod-controls",
+      "tag": "SOD Controls",
+      "sdkName": "getControlV1",
+      "httpMethod": "GET",
+      "path": "/controls/v1/{id}",
+      "userAuth": [
+        "idn:sod-control:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_CONTROL_ADMIN",
+        "SOD_POLICY_ADMIN"
+      ]
+    },
     "getCorrelationConfigV1": {
       "resource": "sources",
       "tag": "Sources",
@@ -4379,6 +5283,27 @@
       "applicationAuth": null,
       "userLevels": [
         "USER"
+      ]
+    },
+    "getCredentialV1": {
+      "resource": "credentials",
+      "tag": "Credentials",
+      "sdkName": "getCredentialV1",
+      "httpMethod": "GET",
+      "path": "/credentials/v1/{id}",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
       ]
     },
     "getCustomPasswordInstructionsV1": {
@@ -4450,6 +5375,22 @@
         "ORG_ADMIN"
       ]
     },
+    "getDecisionSummaryV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getDecisionSummaryV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/decision-summary",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "getDefaultIdentityAttributeConfigV1": {
       "resource": "identity-profiles",
       "tag": "Identity Profiles",
@@ -4493,6 +5434,48 @@
         "sp:config-deploy:manage"
       ],
       "applicationAuth": null
+    },
+    "getDeviceCountsV1": {
+      "resource": "devices",
+      "tag": "Devices",
+      "sdkName": "getDeviceCountsV1",
+      "httpMethod": "GET",
+      "path": "/devices/v1/device-counts",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getDeviceV1": {
+      "resource": "devices",
+      "tag": "Devices",
+      "sdkName": "getDeviceV1",
+      "httpMethod": "GET",
+      "path": "/devices/v1/{id}",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
     },
     "getDimensionEntitlementsV1": {
       "resource": "dimensions",
@@ -4559,6 +5542,22 @@
       "applicationAuth": null,
       "userLevels": [
         "ORG_ADMIN"
+      ]
+    },
+    "getDownloadUrlV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getDownloadUrlV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaigns/{campaignId}/reports/{reportId}/download-url",
+      "userAuth": [
+        "idn:campaign-report:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN",
+        "REPORT_ADMIN"
       ]
     },
     "getEntitlementAggregationGroupsV1": {
@@ -4753,6 +5752,135 @@
       ],
       "applicationAuth": null
     },
+    "getGenericRequestApprovalConfigV1": {
+      "resource": "generic-request-approval-config",
+      "tag": "Generic Request Approval Config",
+      "sdkName": "getGenericRequestApprovalConfigV1",
+      "httpMethod": "GET",
+      "path": "/generic-request-approval-config/v1",
+      "userAuth": [
+        "idn:generic-request-approval-config:read",
+        "idn:generic-request-approval-config:manage"
+      ],
+      "applicationAuth": [
+        "idn:generic-request-approval-config:read",
+        "idn:generic-request-approval-config:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "getGovCertificationAccessProfileV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getGovCertificationAccessProfileV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/access-profiles/{accessProfileId}",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "getGovCertificationCampaignFilterByIdV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getGovCertificationCampaignFilterByIdV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaign-filters/{id}",
+      "userAuth": [
+        "idn:campaign-filter:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "getGovCertificationCampaignReportV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getGovCertificationCampaignReportV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaigns/{campaignId}/reports/{reportId}",
+      "userAuth": [
+        "idn:campaign-report:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN",
+        "REPORT_ADMIN"
+      ]
+    },
+    "getGovCertificationCampaignTemplateScheduleV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getGovCertificationCampaignTemplateScheduleV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaign-templates/{id}/schedule",
+      "userAuth": [
+        "idn:campaign-template:read",
+        "sp:scheduled-action:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "getGovCertificationCampaignTemplateV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getGovCertificationCampaignTemplateV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaign-templates/{id}",
+      "userAuth": [
+        "idn:campaign-template:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "getGovCertificationCampaignV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getGovCertificationCampaignV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaigns/{id}",
+      "userAuth": [
+        "idn:campaign:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN",
+        "REPORT_ADMIN"
+      ]
+    },
+    "getGovCertificationTaskV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getGovCertificationTaskV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certification-tasks/{id}",
+      "userAuth": [
+        "idn:campaign:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "getHistoricalIdentityEventsV1": {
       "resource": "identity-history",
       "tag": "Identity History",
@@ -4856,6 +5984,42 @@
       "userLevels": [
         "ORG_ADMIN",
         "CERT_ADMIN"
+      ]
+    },
+    "getIdentityCollectorBuiltinPropertiesV1": {
+      "resource": "data-access-security",
+      "tag": "Data Access Security",
+      "sdkName": "getIdentityCollectorBuiltinPropertiesV1",
+      "httpMethod": "GET",
+      "path": "/das/v1/identity-collectors/properties",
+      "userAuth": [
+        "das:identity-collectors:read",
+        "das:identity-collectors:manage"
+      ],
+      "applicationAuth": [
+        "das:identity-collectors:read",
+        "das:identity-collectors:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "getIdentityCollectorTypesV1": {
+      "resource": "data-access-security",
+      "tag": "Data Access Security",
+      "sdkName": "getIdentityCollectorTypesV1",
+      "httpMethod": "GET",
+      "path": "/das/v1/identity-collectors/types",
+      "userAuth": [
+        "das:identity-collectors:read",
+        "das:identity-collectors:manage"
+      ],
+      "applicationAuth": [
+        "das:identity-collectors:read",
+        "das:identity-collectors:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
       ]
     },
     "getIdentityDecisionSummaryV1": {
@@ -5042,6 +6206,27 @@
       ],
       "applicationAuth": null
     },
+    "getIdentityV2": {
+      "resource": "identities",
+      "tag": "Identities",
+      "sdkName": "getIdentityV2",
+      "httpMethod": "GET",
+      "path": "/identities/v2/{id}",
+      "userAuth": [
+        "idn:identity:read",
+        "idn:identity-self:read"
+      ],
+      "applicationAuth": [
+        "idn:identity:read",
+        "idn:identity-self:read"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
     "getIntelIdentityAccessItemHistoryV1": {
       "resource": "intelligence",
       "tag": "Intelligence",
@@ -5080,6 +6265,22 @@
       "sdkName": "getIntelIdentityCertificationHistoryV1",
       "httpMethod": "GET",
       "path": "/intelligence/v1/identities/{id}/access-history/certifications",
+      "userAuth": [
+        "sp:identity-sec-intel:read"
+      ],
+      "applicationAuth": [
+        "sp:identity-sec-intel:read"
+      ],
+      "userLevels": [
+        "Any"
+      ]
+    },
+    "getIntelIdentityNonHumanIdentityOwnershipV1": {
+      "resource": "intelligence",
+      "tag": "Intelligence",
+      "sdkName": "getIntelIdentityNonHumanIdentityOwnershipV1",
+      "httpMethod": "GET",
+      "path": "/intelligence/v1/identities/{id}/non-human-identity-ownership/{category}",
       "userAuth": [
         "sp:identity-sec-intel:read"
       ],
@@ -5129,6 +6330,21 @@
       "applicationAuth": null,
       "userLevels": [
         "POLICY_ADMIN"
+      ]
+    },
+    "getJitActivationFrictionsV1": {
+      "resource": "jit-activations",
+      "tag": "JIT Activations",
+      "sdkName": "getJitActivationFrictionsV1",
+      "httpMethod": "GET",
+      "path": "/jit-activations/v1/{activationId}/frictions",
+      "userAuth": [
+        "idn:jit-activation-workflow:activate",
+        "idn:jit-activation-workflow:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "USER"
       ]
     },
     "getLatestIdentityOutlierSnapshotsV1": {
@@ -5287,6 +6503,44 @@
         "SOURCE_SUBADMIN"
       ]
     },
+    "getMachineAccountEntitlementsV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "getMachineAccountEntitlementsV1",
+      "httpMethod": "GET",
+      "path": "/machine-accounts/v1/{id}/entitlements",
+      "userAuth": [
+        "idn:mis-account:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineAccountRecommendationV1": {
+      "resource": "machine-account-recommendation",
+      "tag": "Machine Account Recommendation",
+      "sdkName": "getMachineAccountRecommendationV1",
+      "httpMethod": "GET",
+      "path": "/accounts/v1/{id}/recommendation",
+      "userAuth": [
+        "idn:accounts:read",
+        "idn:accounts:manage"
+      ],
+      "applicationAuth": [
+        "idn:accounts:read",
+        "idn:accounts:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
     "getMachineAccountSubtypeApprovalConfigV1": {
       "resource": "machine-account-subtypes",
       "tag": "Machine Account Subtypes",
@@ -5362,6 +6616,41 @@
         "HELPDESK"
       ]
     },
+    "getMachineAccountV2": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "getMachineAccountV2",
+      "httpMethod": "GET",
+      "path": "/machine-accounts/v2/{id}",
+      "userAuth": [
+        "idn:mis-account:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineAccountsSummaryV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "getMachineAccountsSummaryV1",
+      "httpMethod": "GET",
+      "path": "/machine-accounts/v1/machine-accounts-summary",
+      "userAuth": [
+        "idn:mis-account:read",
+        "idn:mis-account:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
     "getMachineClassificationConfigV1": {
       "resource": "machine-classification-config",
       "tag": "Machine Classification Config",
@@ -5380,6 +6669,151 @@
         "ORG_ADMIN",
         "SOURCE_ADMIN",
         "SOURCE_SUBADMIN"
+      ]
+    },
+    "getMachineIdentityAgentCountsV1": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "getMachineIdentityAgentCountsV1",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v1/agent-counts",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineIdentityAgentCountsV2": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "getMachineIdentityAgentCountsV2",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v2/agent-counts",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineIdentityAllCountsV1": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "getMachineIdentityAllCountsV1",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v1/all-counts",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage",
+        "idn:mis-account:read"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage",
+        "idn:mis-account:read"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineIdentityApplicationCountsV1": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "getMachineIdentityApplicationCountsV1",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v1/application-counts",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineIdentityApplicationCountsV2": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "getMachineIdentityApplicationCountsV2",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v2/application-counts",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineIdentityDailyCountsV1": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "getMachineIdentityDailyCountsV1",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v1/counts/daily",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineIdentityLifecycleActionV1": {
+      "resource": "machine-identities-lifecycle-actions",
+      "tag": "Machine Identity Lifecycle Actions",
+      "sdkName": "getMachineIdentityLifecycleActionV1",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v1/lifecycle-actions/{requestId}",
+      "userAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "USER"
       ]
     },
     "getMachineIdentityV1": {
@@ -5412,6 +6846,46 @@
       "applicationAuth": [
         "idn:mis-identity:read",
         "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineMappingTargetAccountAttributesV1": {
+      "resource": "machine-mapping-metadata",
+      "tag": "Machine Mapping Metadata",
+      "sdkName": "getMachineMappingTargetAccountAttributesV1",
+      "httpMethod": "GET",
+      "path": "/machine-mapping-metadata/v1/target-account-attributes",
+      "userAuth": [
+        "idn:accounts:read",
+        "idn:accounts:manage"
+      ],
+      "applicationAuth": [
+        "idn:accounts:read",
+        "idn:accounts:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMachineMappingTargetIdentityAttributesV1": {
+      "resource": "machine-mapping-metadata",
+      "tag": "Machine Mapping Metadata",
+      "sdkName": "getMachineMappingTargetIdentityAttributesV1",
+      "httpMethod": "GET",
+      "path": "/machine-mapping-metadata/v1/target-identity-attributes",
+      "userAuth": [
+        "idn:identity:read"
+      ],
+      "applicationAuth": [
+        "idn:identity:read"
       ],
       "userLevels": [
         "ORG_ADMIN",
@@ -5573,6 +7047,40 @@
         "idn:application-discovery:read"
       ],
       "applicationAuth": null
+    },
+    "getMcpServerCountsV1": {
+      "resource": "business-applications",
+      "tag": "Business Applications",
+      "sdkName": "getMcpServerCountsV1",
+      "httpMethod": "GET",
+      "path": "/business-applications/v1/mcp-servers/count",
+      "userAuth": [
+        "idn:business-application:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getMcpServerV1": {
+      "resource": "business-applications",
+      "tag": "Business Applications",
+      "sdkName": "getMcpServerV1",
+      "httpMethod": "GET",
+      "path": "/business-applications/v1/mcp-servers/{id}",
+      "userAuth": [
+        "idn:business-application:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
     },
     "getMultiHostIntegrationsListV1": {
       "resource": "multi-host-integration",
@@ -5960,7 +7468,7 @@
       "tag": "Parameter Storage",
       "sdkName": "getParameterStorageSpecificationV1",
       "httpMethod": "GET",
-      "path": "/parameter-storage/v1/specification",
+      "path": "/parameter-storage/v1/specifications",
       "userAuth": [
         "sp:parameter-storage:read",
         "sp:parameter-storage:manage"
@@ -6119,6 +7627,21 @@
         "idn:campaign:read"
       ],
       "applicationAuth": null
+    },
+    "getPendingTasksV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getPendingTasksV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certification-tasks",
+      "userAuth": [
+        "idn:campaign:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
     },
     "getPotentialRoleApplicationsV1": {
       "resource": "iai-role-mining",
@@ -6318,6 +7841,20 @@
         "USER"
       ]
     },
+    "getPublicIdentitiesVisibleAttributesV2": {
+      "resource": "public-identities",
+      "tag": "Public Identities",
+      "sdkName": "getPublicIdentitiesVisibleAttributesV2",
+      "httpMethod": "GET",
+      "path": "/public-identities/v2/visible-attributes",
+      "userAuth": [
+        "sp:scopes:default"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "USER"
+      ]
+    },
     "getPublicIdentityConfigV1": {
       "resource": "public-identities-config",
       "tag": "Public Identities Config",
@@ -6413,6 +7950,22 @@
       "applicationAuth": [
         "sp:report:read",
         "sp:report:manage"
+      ]
+    },
+    "getResponseActionStatusV1": {
+      "resource": "intelligence",
+      "tag": "Intelligence",
+      "sdkName": "getResponseActionStatusV1",
+      "httpMethod": "GET",
+      "path": "/intelligence/v1/response-actions/{id}/status",
+      "userAuth": [
+        "sp:identity-sec-intel:read"
+      ],
+      "applicationAuth": [
+        "sp:identity-sec-intel:read"
+      ],
+      "userLevels": [
+        "Any"
       ]
     },
     "getRoleAssignedIdentitiesV1": {
@@ -6679,12 +8232,7 @@
         "idn:role-checked:manage",
         "idn:role-checked:read"
       ],
-      "applicationAuth": [
-        "idn:role-unchecked:read",
-        "idn:role-unchecked:manage",
-        "idn:role-checked:manage",
-        "idn:role-checked:read"
-      ],
+      "applicationAuth": null,
       "userLevels": [
         "ORG_ADMIN",
         "ROLE_ADMIN",
@@ -6982,7 +8530,11 @@
         "idn:sod-policy:read",
         "idn:sod-policy:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_POLICY_ADMIN"
+      ]
     },
     "getSodViolationReportRunStatusV1": {
       "resource": "sod-policies",
@@ -7077,6 +8629,46 @@
         "SOURCE_SUBADMIN"
       ]
     },
+    "getSourceDatasetV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "getSourceDatasetV1",
+      "httpMethod": "GET",
+      "path": "/sources/v1/{sourceId}/datasets/{datasetId}",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:sources:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "getSourceDatasetsV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "getSourceDatasetsV1",
+      "httpMethod": "GET",
+      "path": "/sources/v1/{sourceId}/datasets",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:sources:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "getSourceEntitlementRequestConfigV1": {
       "resource": "sources",
       "tag": "Sources",
@@ -7110,6 +8702,96 @@
       "applicationAuth": [
         "idn:sources:read",
         "idn:sources:manage"
+      ]
+    },
+    "getSourceResourceCorrelationReprocessV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "getSourceResourceCorrelationReprocessV1",
+      "httpMethod": "GET",
+      "path": "/sources/v1/{sourceId}/resources/{resourceId}/reprocess-correlations",
+      "userAuth": [
+        "idn:mis-correlation:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-correlation:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "getSourceResourceMappingsV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "getSourceResourceMappingsV1",
+      "httpMethod": "GET",
+      "path": "/sources/v1/{sourceId}/resources/mappings",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:source-schema:read",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:source-schema:read",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "getSourceResourceV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "getSourceResourceV1",
+      "httpMethod": "GET",
+      "path": "/sources/v1/{sourceId}/resources/{resourceId}",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:source-schema:read",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:source-schema:read",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "getSourceResourcesV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "getSourceResourcesV1",
+      "httpMethod": "GET",
+      "path": "/sources/v1/{sourceId}/resources",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:source-schema:read",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:source-schema:read",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
       ]
     },
     "getSourceScheduleV1": {
@@ -7181,6 +8863,26 @@
         "SOURCE_SUBADMIN"
       ]
     },
+    "getSourceServiceDeskIntegrationsV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "getSourceServiceDeskIntegrationsV1",
+      "httpMethod": "GET",
+      "path": "/sources/v1/{sourceId}/service-desk-integrations",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:sources:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "getSourceSubtypeByIdV1": {
       "resource": "machine-account-subtypes",
       "tag": "Machine Account Subtypes",
@@ -7199,6 +8901,52 @@
         "ORG_ADMIN",
         "SOURCE_ADMIN",
         "SOURCE_SUBADMIN"
+      ]
+    },
+    "getSourceSubtypeByIdV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "getSourceSubtypeByIdV2",
+      "httpMethod": "GET",
+      "path": "/source-subtypes/v2/{id}",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "getSourceSubtypeProvisioningPolicyV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "getSourceSubtypeProvisioningPolicyV2",
+      "httpMethod": "GET",
+      "path": "/source-subtypes/v2/{id}/provisioning-policy",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
       ]
     },
     "getSourceV1": {
@@ -7322,6 +9070,22 @@
         "ORG_ADMIN"
       ]
     },
+    "getStatusSummaryV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getStatusSummaryV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/status-summary",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "getStreamStatusV1": {
       "resource": "shared-signals-framework-ssf",
       "tag": "Shared Signals Framework (SSF)",
@@ -7348,6 +9112,22 @@
       "applicationAuth": null,
       "userLevels": [
         "ORG_ADMIN"
+      ]
+    },
+    "getSubjectSummaryV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "getSubjectSummaryV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/subject-summary/{subjectId}",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
       ]
     },
     "getTagByIdV1": {
@@ -7559,6 +9339,20 @@
         "ORG_ADMIN"
       ]
     },
+    "getUnsanctionedAnomalySummaryV1": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "getUnsanctionedAnomalySummaryV1",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v1/anomaly-summaries/unsanctioned",
+      "userAuth": [
+        "idn:mis-identity:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
     "getUploadedConfigurationV1": {
       "resource": "configuration-hub",
       "tag": "Configuration Hub",
@@ -7629,6 +9423,20 @@
         "ORG_ADMIN"
       ]
     },
+    "getViolationV1": {
+      "resource": "sod-violations",
+      "tag": "SOD Violations",
+      "sdkName": "getViolationV1",
+      "httpMethod": "GET",
+      "path": "/violations/v1/{id}",
+      "userAuth": [
+        "idn:sod-violation:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "Any"
+      ]
+    },
     "getWorkItemV1": {
       "resource": "work-items",
       "tag": "Work Items",
@@ -7660,19 +9468,24 @@
       "httpMethod": "GET",
       "path": "/workflow-executions/v1/{id}/history",
       "userAuth": [
-        "sp:workflow:read",
+        "sp:workflow-execution:read",
         "sp:workflow:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_SUBADMIN",
+        "SOURCE_ADMIN"
+      ]
     },
-    "getWorkflowExecutionHistoryV2": {
+    "getWorkflowExecutionHistoryV2ForV1": {
       "resource": "workflows",
       "tag": "Workflows",
-      "sdkName": "getWorkflowExecutionHistoryV2",
+      "sdkName": "getWorkflowExecutionHistoryV2ForV1",
       "httpMethod": "GET",
       "path": "/workflow-executions/v1/{id}/history-v2",
       "userAuth": [
-        "sp:workflow:read",
+        "sp:workflow-execution:read",
         "sp:workflow:manage"
       ],
       "applicationAuth": null,
@@ -7689,10 +9502,13 @@
       "httpMethod": "GET",
       "path": "/workflow-executions/v1/{id}",
       "userAuth": [
-        "sp:workflow:read",
+        "sp:workflow-execution:read",
         "sp:workflow:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
     },
     "getWorkflowExecutionsV1": {
       "resource": "workflows",
@@ -7701,7 +9517,7 @@
       "httpMethod": "GET",
       "path": "/workflows/v1/{id}/executions",
       "userAuth": [
-        "sp:workflow:read",
+        "sp:workflow-execution:read",
         "sp:workflow:manage"
       ],
       "applicationAuth": null,
@@ -7861,7 +9677,13 @@
       "userAuth": [
         "idn:identity-profile:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": [
+        "idn:identity-profile:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "API"
+      ]
     },
     "importNonEmployeeRecordsInBulkV1": {
       "resource": "non-employee-lifecycle-management",
@@ -7874,6 +9696,26 @@
       ],
       "applicationAuth": [
         "idn:nelm:manage"
+      ]
+    },
+    "importSourceDatasetV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "importSourceDatasetV1",
+      "httpMethod": "POST",
+      "path": "/sources/v1/{sourceId}/datasets/{datasetId}/aggregate",
+      "userAuth": [
+        "idn:sources:aggregate",
+        "idn:sources:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:aggregate",
+        "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
       ]
     },
     "importSpConfigV1": {
@@ -8006,10 +9848,13 @@
       "httpMethod": "GET",
       "path": "/account-activities/v1",
       "userAuth": [
-        "sp:scopes:all"
+        "idn:account-activity:read"
       ],
       "applicationAuth": null,
-      "defaultScope": true
+      "userLevels": [
+        "ORG_ADMIN",
+        "API"
+      ]
     },
     "listAccountsV1": {
       "resource": "accounts",
@@ -8024,6 +9869,29 @@
       "applicationAuth": [
         "idn:accounts:read",
         "idn:accounts:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "listAccountsV2": {
+      "resource": "accounts",
+      "tag": "Accounts",
+      "sdkName": "listAccountsV2",
+      "httpMethod": "GET",
+      "path": "/accounts/v2",
+      "userAuth": [
+        "idn:account-list:read",
+        "idn:mis-account-list:read",
+        "idn:account-self:read"
+      ],
+      "applicationAuth": [
+        "idn:account-list:read",
+        "idn:mis-account-list:read",
+        "idn:account-self:read"
       ],
       "userLevels": [
         "ORG_ADMIN",
@@ -8151,6 +10019,20 @@
       ],
       "applicationAuth": null
     },
+    "listBusinessApplicationsV1": {
+      "resource": "business-applications",
+      "tag": "Business Applications",
+      "sdkName": "listBusinessApplicationsV1",
+      "httpMethod": "GET",
+      "path": "/business-applications/v1",
+      "userAuth": [
+        "idn:business-application:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
     "listCampaignFiltersV1": {
       "resource": "certification-campaign-filters",
       "tag": "Certification Campaign Filters",
@@ -8162,6 +10044,57 @@
       ],
       "applicationAuth": null
     },
+    "listCampaignTemplatesV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "listCampaignTemplatesV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaign-templates",
+      "userAuth": [
+        "idn:campaign-template:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "listCampaignsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "listCampaignsV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaigns",
+      "userAuth": [
+        "idn:campaign:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "listCapabilitiesV1": {
+      "resource": "capabilities",
+      "tag": "Capabilities",
+      "sdkName": "listCapabilitiesV1",
+      "httpMethod": "GET",
+      "path": "/capabilities/v1",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
     "listCertificationReviewersV1": {
       "resource": "certifications",
       "tag": "Certifications",
@@ -8170,6 +10103,22 @@
       "path": "/certifications/v1/{id}/reviewers",
       "userAuth": [
         "idn:campaign:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "listCertificationsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "listCertificationsV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
       ],
       "applicationAuth": null,
       "userLevels": [
@@ -8198,7 +10147,10 @@
       "userAuth": [
         "idn:access-request-approvals:read"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
     },
     "listConnectionsV1": {
       "resource": "governance-groups",
@@ -8232,6 +10184,61 @@
         "ORG_ADMIN"
       ]
     },
+    "listControlsV1": {
+      "resource": "sod-controls",
+      "tag": "SOD Controls",
+      "sdkName": "listControlsV1",
+      "httpMethod": "GET",
+      "path": "/controls/v1",
+      "userAuth": [
+        "idn:sod-control:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_CONTROL_ADMIN",
+        "SOD_POLICY_ADMIN"
+      ]
+    },
+    "listCredentialsV1": {
+      "resource": "credentials",
+      "tag": "Credentials",
+      "sdkName": "listCredentialsV1",
+      "httpMethod": "GET",
+      "path": "/credentials/v1",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "listDataDictionaryFieldsV1": {
+      "resource": "data-access-security",
+      "tag": "Data Access Security",
+      "sdkName": "listDataDictionaryFieldsV1",
+      "httpMethod": "GET",
+      "path": "/das/v1/permissions/fields",
+      "userAuth": [
+        "das:permissions:read",
+        "das:permissions:manage"
+      ],
+      "applicationAuth": [
+        "das:permissions:read",
+        "das:permissions:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
     "listDataSegmentsV1": {
       "resource": "data-segmentation",
       "tag": "Data Segmentation",
@@ -8257,6 +10264,27 @@
         "sp:config-deploy:manage"
       ],
       "applicationAuth": null
+    },
+    "listDevicesV1": {
+      "resource": "devices",
+      "tag": "Devices",
+      "sdkName": "listDevicesV1",
+      "httpMethod": "GET",
+      "path": "/devices/v1",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
     },
     "listDimensionAccessProfilesV1": {
       "resource": "dimensions",
@@ -8420,6 +10448,37 @@
         "ORG_ADMIN"
       ]
     },
+    "listGovCertificationCampaignFiltersV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "listGovCertificationCampaignFiltersV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaign-filters",
+      "userAuth": [
+        "idn:campaign-filter-list:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "listGovCertificationReviewersV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "listGovCertificationReviewersV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/reviewers",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "listHistoricalIdentitiesV1": {
       "resource": "identity-history",
       "tag": "Identity History",
@@ -8446,6 +10505,27 @@
         "idn:identity:manage"
       ],
       "applicationAuth": null
+    },
+    "listIdentitiesV2": {
+      "resource": "identities",
+      "tag": "Identities",
+      "sdkName": "listIdentitiesV2",
+      "httpMethod": "GET",
+      "path": "/identities/v2",
+      "userAuth": [
+        "idn:identity-list:read",
+        "idn:identity-self:read"
+      ],
+      "applicationAuth": [
+        "idn:identity-list:read",
+        "idn:identity-self:read"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
     },
     "listIdentityAccessItemsV1": {
       "resource": "identity-history",
@@ -8513,7 +10593,7 @@
       "tag": "Data Access Security",
       "sdkName": "listIdentityCollectorsV1",
       "httpMethod": "GET",
-      "path": "/das/identity-collectors/v1",
+      "path": "/das/v1/identity-collectors",
       "userAuth": [
         "das:identity-collectors:read",
         "das:identity-collectors:manage"
@@ -8573,6 +10653,72 @@
         "idn:identity-history:manage"
       ]
     },
+    "listJitActivationHistoryForCurrentIdentityV1": {
+      "resource": "jit-activations",
+      "tag": "JIT Activations",
+      "sdkName": "listJitActivationHistoryForCurrentIdentityV1",
+      "httpMethod": "GET",
+      "path": "/jit-activation-history/v1/current-identity",
+      "userAuth": [
+        "idn:jit-activation-history-self:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "USER"
+      ]
+    },
+    "listJitActivationHistoryV1": {
+      "resource": "jit-activations",
+      "tag": "JIT Activations",
+      "sdkName": "listJitActivationHistoryV1",
+      "httpMethod": "GET",
+      "path": "/jit-activation-history/v1",
+      "userAuth": [
+        "idn:jit-activation-history:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "listMachineAccountDiscoveryReasonsV1": {
+      "resource": "machine-account-recommendation",
+      "tag": "Machine Account Recommendation",
+      "sdkName": "listMachineAccountDiscoveryReasonsV1",
+      "httpMethod": "GET",
+      "path": "/ai-recommendations/v1/reasons/machine-account-discovery",
+      "userAuth": [
+        "idn:accounts:read",
+        "idn:accounts:manage"
+      ],
+      "applicationAuth": [
+        "idn:accounts:read",
+        "idn:accounts:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "listMachineAccountMachineIdentitiesV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "listMachineAccountMachineIdentitiesV1",
+      "httpMethod": "GET",
+      "path": "/machine-accounts/v1/{id}/machine-identities",
+      "userAuth": [
+        "idn:mis-account:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
     "listMachineAccountMappingsV1": {
       "resource": "machine-account-mappings",
       "tag": "Machine Account Mappings",
@@ -8630,6 +10776,24 @@
         "HELPDESK"
       ]
     },
+    "listMachineAccountsV2": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "listMachineAccountsV2",
+      "httpMethod": "GET",
+      "path": "/machine-accounts/v2",
+      "userAuth": [
+        "idn:mis-account:read",
+        "idn:mis-account:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
     "listMachineIdentitiesV1": {
       "resource": "machine-identities",
       "tag": "Machine Identities",
@@ -8669,6 +10833,140 @@
         "HELPDESK"
       ]
     },
+    "listMachineIdentityAccountsV2": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "listMachineIdentityAccountsV2",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v2/{id}/accounts",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "listMachineIdentityAnomaliesV1": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "listMachineIdentityAnomaliesV1",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v1/{id}/anomalies",
+      "userAuth": [
+        "idn:mis-identity:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "listMachineIdentityCapabilitiesV2": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "listMachineIdentityCapabilitiesV2",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v2/{id}/capabilities",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "listMachineIdentityEntitlementsV2": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "listMachineIdentityEntitlementsV2",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v2/{id}/entitlements",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "listMachineIdentityHostnamesV2": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "listMachineIdentityHostnamesV2",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v2/hostnames",
+      "userAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:read",
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "listMachineIdentityLifecycleActionsV1": {
+      "resource": "machine-identities-lifecycle-actions",
+      "tag": "Machine Identity Lifecycle Actions",
+      "sdkName": "listMachineIdentityLifecycleActionsV1",
+      "httpMethod": "GET",
+      "path": "/machine-identities/v1/lifecycle-actions",
+      "userAuth": [
+        "sp:scopes:all"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "USER"
+      ]
+    },
+    "listMachineIdentitySubtypesV1": {
+      "resource": "machine-identity-metadata",
+      "tag": "Machine Identity Metadata",
+      "sdkName": "listMachineIdentitySubtypesV1",
+      "httpMethod": "GET",
+      "path": "/machine-identity-metadata/v1/subtypes",
+      "userAuth": [
+        "idn:identity:read"
+      ],
+      "applicationAuth": [
+        "idn:identity:read"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
     "listMachineIdentityUserEntitlementsV1": {
       "resource": "machine-identities",
       "tag": "Machine Identities",
@@ -8684,6 +10982,54 @@
         "SOURCE_ADMIN",
         "SOURCE_SUBADMIN",
         "HELPDESK"
+      ]
+    },
+    "listMcpServerConnectedAgentsV1": {
+      "resource": "business-applications",
+      "tag": "Business Applications",
+      "sdkName": "listMcpServerConnectedAgentsV1",
+      "httpMethod": "GET",
+      "path": "/business-applications/v1/mcp-servers/{id}/connected-agents",
+      "userAuth": [
+        "idn:business-application:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "listMcpServersV1": {
+      "resource": "business-applications",
+      "tag": "Business Applications",
+      "sdkName": "listMcpServersV1",
+      "httpMethod": "GET",
+      "path": "/business-applications/v1/mcp-servers",
+      "userAuth": [
+        "idn:business-application:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
+    },
+    "listMyViolationsV1": {
+      "resource": "sod-violations",
+      "tag": "SOD Violations",
+      "sdkName": "listMyViolationsV1",
+      "httpMethod": "GET",
+      "path": "/my-violations/v1",
+      "userAuth": [
+        "idn:sod-violation:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "Any"
       ]
     },
     "listNonEmployeeApprovalsV1": {
@@ -8737,6 +11083,20 @@
       "applicationAuth": [
         "idn:nelm:read"
       ],
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "listNotificationPreferencesV1": {
+      "resource": "notifications",
+      "tag": "Notifications",
+      "sdkName": "listNotificationPreferencesV1",
+      "httpMethod": "GET",
+      "path": "/notification-preferences/v1",
+      "userAuth": [
+        "idn:notification-preferences:read"
+      ],
+      "applicationAuth": null,
       "userLevels": [
         "ORG_ADMIN"
       ]
@@ -8989,6 +11349,20 @@
         "ORG_ADMIN"
       ]
     },
+    "listPublicMachineIdentitiesV1": {
+      "resource": "public-machine-identities",
+      "tag": "Public Machine Identities",
+      "sdkName": "listPublicMachineIdentitiesV1",
+      "httpMethod": "GET",
+      "path": "/public-machine-identities/v1",
+      "userAuth": [
+        "sp:scopes:default"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "USER"
+      ]
+    },
     "listReassignmentConfigurationsV1": {
       "resource": "work-reassignment",
       "tag": "Work Reassignment",
@@ -8999,7 +11373,26 @@
         "idn:reassignment-configuration:read",
         "idn:reassignment-configuration:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "listReportsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "listReportsV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/campaigns/{campaignId}/reports",
+      "userAuth": [
+        "idn:campaign-report:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN",
+        "REPORT_ADMIN"
+      ]
     },
     "listRequestableObjectsV1": {
       "resource": "requestable-objects",
@@ -9015,6 +11408,22 @@
         "ORG_ADMIN"
       ]
     },
+    "listReviewItemsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "listReviewItemsV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/review-items",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "listRolesV1": {
       "resource": "roles",
       "tag": "Roles",
@@ -9027,12 +11436,7 @@
         "idn:role-checked:manage",
         "idn:role-checked:read"
       ],
-      "applicationAuth": [
-        "idn:role-unchecked:read",
-        "idn:role-unchecked:manage",
-        "idn:role-checked:manage",
-        "idn:role-checked:read"
-      ],
+      "applicationAuth": null,
       "userLevels": [
         "ORG_ADMIN",
         "ROLE_ADMIN",
@@ -9122,7 +11526,34 @@
         "idn:sod-policy:read",
         "idn:sod-policy:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_POLICY_ADMIN"
+      ]
+    },
+    "listSourceSubtypeTargetsV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "listSourceSubtypeTargetsV2",
+      "httpMethod": "GET",
+      "path": "/source-subtypes/v2/targets",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
+      ]
     },
     "listSourceSubtypesV1": {
       "resource": "machine-account-subtypes",
@@ -9142,6 +11573,29 @@
         "ORG_ADMIN",
         "SOURCE_ADMIN",
         "SOURCE_SUBADMIN"
+      ]
+    },
+    "listSourceSubtypesV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "listSourceSubtypesV2",
+      "httpMethod": "GET",
+      "path": "/source-subtypes/v2",
+      "userAuth": [
+        "idn:sources:read",
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:read",
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "HELPDESK"
       ]
     },
     "listSourcesV1": {
@@ -9178,6 +11632,22 @@
       "applicationAuth": null,
       "userLevels": [
         "ORG_ADMIN"
+      ]
+    },
+    "listSubjectSummariesV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "listSubjectSummariesV1",
+      "httpMethod": "GET",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/subject-summaries",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
       ]
     },
     "listSubscriptionsV1": {
@@ -9330,6 +11800,20 @@
       "path": "/authorization/v1/custom-user-levels",
       "userAuth": [
         "idn:user-level:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "listViolationsV1": {
+      "resource": "sod-violations",
+      "tag": "SOD Violations",
+      "sdkName": "listViolationsV1",
+      "httpMethod": "GET",
+      "path": "/violations/v1",
+      "userAuth": [
+        "idn:sod-violation:read"
       ],
       "applicationAuth": null,
       "userLevels": [
@@ -9499,6 +11983,51 @@
         "ORG_ADMIN"
       ]
     },
+    "moveCertificationsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "moveCertificationsV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaigns/{campaignId}/reassign",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "moveSubjectAndItemsAsyncV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "moveSubjectAndItemsAsyncV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/reassign-async",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "moveSubjectAndItemsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "moveSubjectAndItemsV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/reassign",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "moveV1": {
       "resource": "certification-campaigns",
       "tag": "Certification Campaigns",
@@ -9512,6 +12041,20 @@
       "userLevels": [
         "ORG_ADMIN",
         "CERT_ADMIN"
+      ]
+    },
+    "moveViolationV1": {
+      "resource": "sod-violations",
+      "tag": "SOD Violations",
+      "sdkName": "moveViolationV1",
+      "httpMethod": "POST",
+      "path": "/violations/v1/{id}/reassign",
+      "userAuth": [
+        "idn:sod-violation:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "Any"
       ]
     },
     "patchAccessProfileV1": {
@@ -9630,6 +12173,21 @@
         "CERT_ADMIN"
       ]
     },
+    "patchCampaignV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "patchCampaignV1",
+      "httpMethod": "PATCH",
+      "path": "/certification-campaigns/v1/campaigns/{id}",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "patchDataSegmentV1": {
       "resource": "data-segmentation",
       "tag": "Data Segmentation",
@@ -9675,20 +12233,6 @@
         "ORG_ADMIN"
       ]
     },
-    "patchEntitlementConnectionByQueryV1": {
-      "resource": "entitlement-connections",
-      "tag": "Entitlement Connections",
-      "sdkName": "patchEntitlementConnectionByQueryV1",
-      "httpMethod": "PATCH",
-      "path": "/entitlement-connections/v1",
-      "userAuth": [
-        "idn:entitlement-connections:manage"
-      ],
-      "applicationAuth": null,
-      "userLevels": [
-        "ORG_ADMIN"
-      ]
-    },
     "patchEntitlementRecommendationV1": {
       "resource": "suggested-entitlement-description",
       "tag": "Suggested Entitlement Description",
@@ -9714,8 +12258,7 @@
       "httpMethod": "PATCH",
       "path": "/entitlements/v1/{id}",
       "userAuth": [
-        "idn:entitlement:manage",
-        "idn:entitlement:update"
+        "idn:entitlement:manage"
       ],
       "applicationAuth": null,
       "userLevels": [
@@ -9746,6 +12289,21 @@
         "USER"
       ]
     },
+    "patchGovCertificationCampaignTemplateV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "patchGovCertificationCampaignTemplateV1",
+      "httpMethod": "PATCH",
+      "path": "/certification-campaigns/v1/campaign-templates/{id}",
+      "userAuth": [
+        "idn:campaign-template:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "patchJitActivationConfigV1": {
       "resource": "jit-access",
       "tag": "JIT Access",
@@ -9759,6 +12317,21 @@
       "applicationAuth": null,
       "userLevels": [
         "POLICY_ADMIN"
+      ]
+    },
+    "patchJitActivationFrictionsV1": {
+      "resource": "jit-activations",
+      "tag": "JIT Activations",
+      "sdkName": "patchJitActivationFrictionsV1",
+      "httpMethod": "PATCH",
+      "path": "/jit-activations/v1/{activationId}/frictions",
+      "userAuth": [
+        "idn:jit-activation-workflow:activate",
+        "idn:jit-activation-workflow:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "USER"
       ]
     },
     "patchMachineAccountSubtypeByTechnicalNameV1": {
@@ -9790,6 +12363,26 @@
       ],
       "applicationAuth": [
         "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "patchMachineAccountSubtypeV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "patchMachineAccountSubtypeV2",
+      "httpMethod": "PATCH",
+      "path": "/source-subtypes/v2/{id}",
+      "userAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
       ],
       "userLevels": [
         "ORG_ADMIN",
@@ -10065,7 +12658,11 @@
       "userAuth": [
         "idn:sod-policy:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_POLICY_ADMIN"
+      ]
     },
     "patchSourceAppV1": {
       "resource": "apps",
@@ -10077,6 +12674,26 @@
         "idn:app-roles:manage"
       ],
       "applicationAuth": null
+    },
+    "patchSourceSubtypeProvisioningPolicyV2": {
+      "resource": "machine-account-subtypes",
+      "tag": "Machine Account Subtypes",
+      "sdkName": "patchSourceSubtypeProvisioningPolicyV2",
+      "httpMethod": "PATCH",
+      "path": "/source-subtypes/v2/{id}/provisioning-policy",
+      "userAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:manage",
+        "idn:connector-subtypes:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
     },
     "patchSubscriptionV1": {
       "resource": "triggers",
@@ -10166,6 +12783,21 @@
         "ORG_ADMIN"
       ]
     },
+    "processSignOffCertificationV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "processSignOffCertificationV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/sign-off",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "publishCustomUserLevelV1": {
       "resource": "custom-user-levels",
       "tag": "Custom User Levels",
@@ -10240,6 +12872,21 @@
       "applicationAuth": null,
       "userLevels": [
         "ORG_ADMIN"
+      ]
+    },
+    "putCampaignFilterV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "putCampaignFilterV1",
+      "httpMethod": "PUT",
+      "path": "/certification-campaigns/v1/campaign-filters/{id}",
+      "userAuth": [
+        "idn:campaign-filter:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
       ]
     },
     "putClientLogConfigurationV1": {
@@ -10348,6 +12995,21 @@
         "SOURCE_SUBADMIN"
       ]
     },
+    "putControlV1": {
+      "resource": "sod-controls",
+      "tag": "SOD Controls",
+      "sdkName": "putControlV1",
+      "httpMethod": "PUT",
+      "path": "/controls/v1/{id}",
+      "userAuth": [
+        "idn:sod-control:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_CONTROL_ADMIN"
+      ]
+    },
     "putCorrelationConfigV1": {
       "resource": "sources",
       "tag": "Sources",
@@ -10376,6 +13038,22 @@
         "sp:gov-criteria:write"
       ],
       "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "putDataDictionaryFieldV1": {
+      "resource": "data-access-security",
+      "tag": "Data Access Security",
+      "sdkName": "putDataDictionaryFieldV1",
+      "httpMethod": "PUT",
+      "path": "/das/v1/permissions/fields/{name}",
+      "userAuth": [
+        "das:permissions:manage"
+      ],
+      "applicationAuth": [
+        "das:permissions:manage"
+      ],
       "userLevels": [
         "ORG_ADMIN"
       ]
@@ -10412,7 +13090,7 @@
       "tag": "Data Access Security",
       "sdkName": "putIdentityCollectorV1",
       "httpMethod": "PUT",
-      "path": "/das/identity-collectors/v1/{id}",
+      "path": "/das/v1/identity-collectors/{id}",
       "userAuth": [
         "das:identity-collectors:manage"
       ],
@@ -10620,7 +13298,11 @@
       "userAuth": [
         "idn:sod-policy:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOD_POLICY_ADMIN"
+      ]
     },
     "putSourceAttrSyncConfigV1": {
       "resource": "sources",
@@ -10634,6 +13316,50 @@
       "applicationAuth": null,
       "userLevels": [
         "ORG_ADMIN"
+      ]
+    },
+    "putSourceDatasetV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "putSourceDatasetV1",
+      "httpMethod": "PUT",
+      "path": "/sources/v1/{sourceId}/datasets/{datasetId}",
+      "userAuth": [
+        "idn:sources:update",
+        "idn:sources:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:update",
+        "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "putSourceResourceV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "putSourceResourceV1",
+      "httpMethod": "PUT",
+      "path": "/sources/v1/{sourceId}/resources/{resourceId}",
+      "userAuth": [
+        "idn:sources:update",
+        "idn:source-schema:update",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:update",
+        "idn:source-schema:update",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
       ]
     },
     "putSourceSchemaV1": {
@@ -10798,6 +13524,60 @@
       ],
       "applicationAuth": null
     },
+    "reloadMachineAccountV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "reloadMachineAccountV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/{id}/reload",
+      "userAuth": [
+        "idn:mis-account:reload"
+      ],
+      "applicationAuth": [
+        "idn:mis-account:reload"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "reloadMachineAccountsInBulkAsyncV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "reloadMachineAccountsInBulkAsyncV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/bulk-reload-async",
+      "userAuth": [
+        "idn:mis-account-state:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-account-state:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "reloadMachineAccountsInBulkV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "reloadMachineAccountsInBulkV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/bulk-reload",
+      "userAuth": [
+        "idn:mis-account-state:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-account-state:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "resetIdentityV1": {
       "resource": "identities",
       "tag": "Identities",
@@ -10825,6 +13605,25 @@
         "ORG_ADMIN"
       ]
     },
+    "searchAccessProfilesByFilterV1": {
+      "resource": "access-profiles",
+      "tag": "Access Profiles",
+      "sdkName": "searchAccessProfilesByFilterV1",
+      "httpMethod": "POST",
+      "path": "/access-profiles/v1/filter",
+      "userAuth": [
+        "idn:access-profile:read",
+        "idn:access-profile-checked:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "ROLE_ADMIN",
+        "ROLE_SUBADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "searchAggregateV1": {
       "resource": "search",
       "tag": "Search",
@@ -10836,6 +13635,37 @@
       ],
       "applicationAuth": [
         "sp:search:read"
+      ]
+    },
+    "searchCampaignTemplatesV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "searchCampaignTemplatesV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaign-templates/search",
+      "userAuth": [
+        "idn:campaign-template:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "searchCertificationsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "searchCertificationsV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/certifications/search",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
       ]
     },
     "searchCountV1": {
@@ -10873,7 +13703,10 @@
       "httpMethod": "GET",
       "path": "/form-instances/v1/{formInstanceID}/data-source/{formElementID}",
       "userAuth": [],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
     },
     "searchFormInstancesByTenantV1": {
       "resource": "custom-forms",
@@ -10910,6 +13743,22 @@
         "SOURCE_SUBADMIN",
         "ROLE_ADMIN",
         "ROLE_SUBADMIN"
+      ]
+    },
+    "searchInsightsAccessSummaryV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "searchInsightsAccessSummaryV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/insights/access-summary",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
       ]
     },
     "searchParametersV1": {
@@ -10961,6 +13810,20 @@
       ],
       "applicationAuth": null
     },
+    "searchPublicIdentitiesV2": {
+      "resource": "public-identities",
+      "tag": "Public Identities",
+      "sdkName": "searchPublicIdentitiesV2",
+      "httpMethod": "POST",
+      "path": "/public-identities/v2/search",
+      "userAuth": [
+        "sp:scopes:default"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "USER"
+      ]
+    },
     "searchResourceObjectsV1": {
       "resource": "sources",
       "tag": "Sources",
@@ -10977,6 +13840,22 @@
         "ORG_ADMIN"
       ]
     },
+    "searchReviewItemsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "searchReviewItemsV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/review-items/search",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "searchRolesByFilterV1": {
       "resource": "roles",
       "tag": "Roles",
@@ -10988,6 +13867,40 @@
         "idn:role-unchecked:manage"
       ],
       "applicationAuth": null
+    },
+    "searchSubjectSummariesV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "searchSubjectSummariesV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/subject-summaries/search",
+      "userAuth": [
+        "idn:campaign:read",
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "sendBulkClassifyMachineAccountsV1": {
+      "resource": "machine-account-classify",
+      "tag": "Machine Account Classify",
+      "sdkName": "sendBulkClassifyMachineAccountsV1",
+      "httpMethod": "POST",
+      "path": "/accounts/v1/bulk-classify",
+      "userAuth": [
+        "idn:accounts:classify"
+      ],
+      "applicationAuth": [
+        "idn:accounts:classify"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
     },
     "sendClassifyMachineAccountFromSourceV1": {
       "resource": "classify-source",
@@ -11270,7 +14183,7 @@
       "tag": "Machine Account Mappings",
       "sdkName": "setMachineAccountMappingsV1",
       "httpMethod": "PUT",
-      "path": "/sources/v1/{sourceId}/machine-mappings",
+      "path": "/sources/v1/{sourceId}/machine-account-mappings",
       "userAuth": [
         "idn:sources:manage"
       ],
@@ -11299,6 +14212,36 @@
         "ORG_ADMIN",
         "SOURCE_ADMIN",
         "SOURCE_SUBADMIN"
+      ]
+    },
+    "setNotificationPreferencesV1": {
+      "resource": "notifications",
+      "tag": "Notifications",
+      "sdkName": "setNotificationPreferencesV1",
+      "httpMethod": "PUT",
+      "path": "/notification-preferences/v1/{key}",
+      "userAuth": [
+        "idn:notification-preferences:create"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "setOrUpdateCampaignTemplateScheduleV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "setOrUpdateCampaignTemplateScheduleV1",
+      "httpMethod": "PUT",
+      "path": "/certification-campaigns/v1/campaign-templates/{id}/schedule",
+      "userAuth": [
+        "idn:campaign-template:manage",
+        "sp:scheduled-action:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
       ]
     },
     "setPasswordPolicyV1": {
@@ -11421,7 +14364,10 @@
         "sp:forms:read",
         "sp:forms:manage"
       ],
-      "applicationAuth": null
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
     },
     "showUserLevelCountsV1": {
       "resource": "custom-user-levels",
@@ -11481,6 +14427,20 @@
       "userLevels": [
         "ORG_ADMIN",
         "SOURCE_ADMIN"
+      ]
+    },
+    "startApplyControlV1": {
+      "resource": "sod-violations",
+      "tag": "SOD Violations",
+      "sdkName": "startApplyControlV1",
+      "httpMethod": "POST",
+      "path": "/violations/v1/{id}/controls",
+      "userAuth": [
+        "idn:sod-violation:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "Any"
       ]
     },
     "startCampaignRemediationScanV1": {
@@ -11545,6 +14505,20 @@
         "USER"
       ]
     },
+    "startEntitlementConnectionConversionV1": {
+      "resource": "jit-activation-convert",
+      "tag": "JIT Activation Convert",
+      "sdkName": "startEntitlementConnectionConversionV1",
+      "httpMethod": "POST",
+      "path": "/convert-entitlement-connection/v1",
+      "userAuth": [
+        "idn:jit-assignment-type-conversion:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
     "startEvaluateSodPolicyV1": {
       "resource": "sod-policies",
       "tag": "SOD Policies",
@@ -11580,7 +14554,23 @@
       "httpMethod": "POST",
       "path": "/campaign-templates/v1/{id}/generate",
       "userAuth": [
-        "idn:campaign-template:manage"
+        "idn:campaign-template:manage",
+        "idn:campaign-filter:read"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
+    "startGovCertificationCampaignV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "startGovCertificationCampaignV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/campaigns/{id}/activate",
+      "userAuth": [
+        "idn:campaign:manage"
       ],
       "applicationAuth": null,
       "userLevels": [
@@ -11739,6 +14729,24 @@
         "idn:sod-violation:manage"
       ]
     },
+    "startSourceResourceCorrelationReprocessV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "startSourceResourceCorrelationReprocessV1",
+      "httpMethod": "POST",
+      "path": "/sources/v1/{sourceId}/resources/{resourceId}/reprocess-correlations",
+      "userAuth": [
+        "idn:mis-correlation:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-correlation:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "startTaskRerunV1": {
       "resource": "data-access-security",
       "tag": "Data Access Security",
@@ -11801,6 +14809,21 @@
       "applicationAuth": null,
       "defaultScope": true
     },
+    "submitDecisionsV1": {
+      "resource": "gov-certification",
+      "tag": "Next Generation Certification Campaigns",
+      "sdkName": "submitDecisionsV1",
+      "httpMethod": "POST",
+      "path": "/certification-campaigns/v1/certifications/{certificationId}/decide",
+      "userAuth": [
+        "idn:campaign:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "CERT_ADMIN"
+      ]
+    },
     "submitEntitlementRecommendationsAssignmentV1": {
       "resource": "suggested-entitlement-description",
       "tag": "Suggested Entitlement Description",
@@ -11817,6 +14840,23 @@
         "ORG_ADMIN",
         "SOURCE_ADMIN",
         "SOURCE_SUBADMIN"
+      ]
+    },
+    "submitMachineIdentityLifecycleActionV1": {
+      "resource": "machine-identities-lifecycle-actions",
+      "tag": "Machine Identity Lifecycle Actions",
+      "sdkName": "submitMachineIdentityLifecycleActionV1",
+      "httpMethod": "POST",
+      "path": "/machine-identities/v1/{id}/lifecycle-actions",
+      "userAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN",
+        "USER"
       ]
     },
     "submitReassignCertsAsyncV1": {
@@ -12115,6 +15155,24 @@
         "HELPDESK"
       ]
     },
+    "unlockMachineAccountV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "unlockMachineAccountV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/{id}/unlock",
+      "userAuth": [
+        "idn:mis-account:unlock"
+      ],
+      "applicationAuth": [
+        "idn:mis-account:unlock"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "unsubscribeScheduledSearchV1": {
       "resource": "scheduled-search",
       "tag": "Scheduled Search",
@@ -12217,6 +15275,60 @@
         "SOURCE_SUBADMIN"
       ]
     },
+    "updateAccessProfilesMetadataByFilterV1": {
+      "resource": "access-profiles",
+      "tag": "Access Profiles",
+      "sdkName": "updateAccessProfilesMetadataByFilterV1",
+      "httpMethod": "POST",
+      "path": "/access-profiles/v1/access-model-metadata/bulk-update/filter",
+      "userAuth": [
+        "idn:access-profile:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "ROLE_ADMIN",
+        "ROLE_SUBADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "updateAccessProfilesMetadataByIdsV1": {
+      "resource": "access-profiles",
+      "tag": "Access Profiles",
+      "sdkName": "updateAccessProfilesMetadataByIdsV1",
+      "httpMethod": "POST",
+      "path": "/access-profiles/v1/access-model-metadata/bulk-update/ids",
+      "userAuth": [
+        "idn:access-profile:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "ROLE_ADMIN",
+        "ROLE_SUBADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "updateAccessProfilesMetadataByQueryV1": {
+      "resource": "access-profiles",
+      "tag": "Access Profiles",
+      "sdkName": "updateAccessProfilesMetadataByQueryV1",
+      "httpMethod": "POST",
+      "path": "/access-profiles/v1/access-model-metadata/bulk-update/query",
+      "userAuth": [
+        "idn:access-profile:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "ROLE_ADMIN",
+        "ROLE_SUBADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "updateAccountDeletionApprovalConfigV1": {
       "resource": "sources",
       "tag": "Sources",
@@ -12294,6 +15406,24 @@
         "APPROVAL_OWNER"
       ]
     },
+    "updateAttributeKeyAndValueToAccessProfileV1": {
+      "resource": "access-profiles",
+      "tag": "Access Profiles",
+      "sdkName": "updateAttributeKeyAndValueToAccessProfileV1",
+      "httpMethod": "POST",
+      "path": "/access-profiles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}",
+      "userAuth": [
+        "idn:access-profile:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "ROLE_ADMIN",
+        "ROLE_SUBADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "updateAttributeKeyAndValueToRoleV1": {
       "resource": "roles",
       "tag": "Roles",
@@ -12329,6 +15459,34 @@
         "SOURCE_SUBADMIN"
       ]
     },
+    "updateBulkPersonalAccessTokensV1": {
+      "resource": "personal-access-tokens",
+      "tag": "Personal Access Tokens",
+      "sdkName": "updateBulkPersonalAccessTokensV1",
+      "httpMethod": "PATCH",
+      "path": "/personal-access-tokens/v1/bulk-update",
+      "userAuth": [
+        "sp:all-personal-access-tokens:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "updateBusinessApplicationV1": {
+      "resource": "business-applications",
+      "tag": "Business Applications",
+      "sdkName": "updateBusinessApplicationV1",
+      "httpMethod": "PATCH",
+      "path": "/business-applications/v1/{id}",
+      "userAuth": [
+        "idn:business-application:update"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
     "updateCampaignFilterV1": {
       "resource": "certification-campaign-filters",
       "tag": "Certification Campaign Filters",
@@ -12354,6 +15512,22 @@
       "userLevels": [
         "ORG_ADMIN",
         "CERT_ADMIN"
+      ]
+    },
+    "updateCapabilityV1": {
+      "resource": "capabilities",
+      "tag": "Capabilities",
+      "sdkName": "updateCapabilityV1",
+      "httpMethod": "PATCH",
+      "path": "/capabilities/v1/{id}",
+      "userAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
       ]
     },
     "updateCommonAccessStatusInBulkV1": {
@@ -12385,16 +15559,34 @@
         "SOURCE_SUBADMIN"
       ]
     },
-    "updateEntitlementConnectionsBulkV1": {
-      "resource": "entitlement-connections",
-      "tag": "Entitlement Connections",
-      "sdkName": "updateEntitlementConnectionsBulkV1",
-      "httpMethod": "POST",
-      "path": "/entitlement-connections/v1",
+    "updateCredentialV1": {
+      "resource": "credentials",
+      "tag": "Credentials",
+      "sdkName": "updateCredentialV1",
+      "httpMethod": "PATCH",
+      "path": "/credentials/v1/{id}",
       "userAuth": [
-        "idn:entitlement-connections:manage"
+        "idn:mis-identity:manage"
       ],
-      "applicationAuth": null,
+      "applicationAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
+      ]
+    },
+    "updateDeviceV1": {
+      "resource": "devices",
+      "tag": "Devices",
+      "sdkName": "updateDeviceV1",
+      "httpMethod": "PATCH",
+      "path": "/devices/v1/{id}",
+      "userAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:manage"
+      ],
       "userLevels": [
         "ORG_ADMIN"
       ]
@@ -12415,6 +15607,54 @@
         "SOURCE_ADMIN"
       ]
     },
+    "updateEntitlementsMetadataByFilterV1": {
+      "resource": "entitlements",
+      "tag": "Entitlements",
+      "sdkName": "updateEntitlementsMetadataByFilterV1",
+      "httpMethod": "POST",
+      "path": "/entitlements/v1/access-model-metadata/bulk-update/filter",
+      "userAuth": [
+        "idn:entitlement:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "updateEntitlementsMetadataByIdsV1": {
+      "resource": "entitlements",
+      "tag": "Entitlements",
+      "sdkName": "updateEntitlementsMetadataByIdsV1",
+      "httpMethod": "POST",
+      "path": "/entitlements/v1/access-model-metadata/bulk-update/ids",
+      "userAuth": [
+        "idn:entitlement:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "updateEntitlementsMetadataByQueryV1": {
+      "resource": "entitlements",
+      "tag": "Entitlements",
+      "sdkName": "updateEntitlementsMetadataByQueryV1",
+      "httpMethod": "POST",
+      "path": "/entitlements/v1/access-model-metadata/bulk-update/query",
+      "userAuth": [
+        "idn:entitlement:manage"
+      ],
+      "applicationAuth": null,
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "updateEntitlementsPotentialRoleV1": {
       "resource": "iai-role-mining",
       "tag": "IAI Role Mining",
@@ -12426,6 +15666,24 @@
       ],
       "applicationAuth": [
         "iai:access-modeling:manage"
+      ]
+    },
+    "updateGenericRequestApprovalConfigV1": {
+      "resource": "generic-request-approval-config",
+      "tag": "Generic Request Approval Config",
+      "sdkName": "updateGenericRequestApprovalConfigV1",
+      "httpMethod": "PATCH",
+      "path": "/generic-request-approval-config/v1/{id}",
+      "userAuth": [
+        "idn:generic-request-approval-config:manage"
+      ],
+      "applicationAuth": [
+        "idn:generic-request-approval-config:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
       ]
     },
     "updateIdentityProfileV1": {
@@ -12513,6 +15771,58 @@
         "ORG_ADMIN",
         "SOURCE_ADMIN",
         "SOURCE_SUBADMIN"
+      ]
+    },
+    "updateMachineAccountV2": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "updateMachineAccountV2",
+      "httpMethod": "PATCH",
+      "path": "/machine-accounts/v2/{id}",
+      "userAuth": [
+        "idn:mis-account:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-account:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "updateMachineAccountsInBulkV1": {
+      "resource": "machine-accounts",
+      "tag": "Machine Accounts",
+      "sdkName": "updateMachineAccountsInBulkV1",
+      "httpMethod": "POST",
+      "path": "/machine-accounts/v1/bulk-update",
+      "userAuth": [
+        "idn:mis-account:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-account:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "updateMachineIdentitiesInBulkV2": {
+      "resource": "machine-identities",
+      "tag": "Machine Identities",
+      "sdkName": "updateMachineIdentitiesInBulkV2",
+      "httpMethod": "POST",
+      "path": "/machine-identities/v2/bulk-update",
+      "userAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "applicationAuth": [
+        "idn:mis-identity:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN"
       ]
     },
     "updateMachineIdentityV1": {
@@ -12825,6 +16135,26 @@
       ],
       "applicationAuth": null
     },
+    "updateSourceDatasetV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "updateSourceDatasetV1",
+      "httpMethod": "PATCH",
+      "path": "/sources/v1/{sourceId}/datasets/{datasetId}",
+      "userAuth": [
+        "idn:sources:update",
+        "idn:sources:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:update",
+        "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
     "updateSourceEntitlementRequestConfigV1": {
       "resource": "sources",
       "tag": "Sources",
@@ -12836,6 +16166,30 @@
       ],
       "applicationAuth": [
         "idn:sources:manage"
+      ],
+      "userLevels": [
+        "ORG_ADMIN",
+        "SOURCE_ADMIN",
+        "SOURCE_SUBADMIN"
+      ]
+    },
+    "updateSourceResourceV1": {
+      "resource": "sources",
+      "tag": "Sources",
+      "sdkName": "updateSourceResourceV1",
+      "httpMethod": "PATCH",
+      "path": "/sources/v1/{sourceId}/resources/{resourceId}",
+      "userAuth": [
+        "idn:sources:update",
+        "idn:source-schema:update",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
+      ],
+      "applicationAuth": [
+        "idn:sources:update",
+        "idn:source-schema:update",
+        "idn:sources:manage",
+        "idn:source-schema:manage"
       ],
       "userLevels": [
         "ORG_ADMIN",
@@ -13019,10 +16373,10 @@
       "httpMethod": "POST",
       "path": "/workgroups/v1/{workgroupId}/members/bulk-add",
       "userAuth": [
-        "idn:workgroup:write"
+        "idn:workgroup:manage"
       ],
       "applicationAuth": [
-        "idn:workgroup:write"
+        "idn:workgroup:manage"
       ],
       "userLevels": [
         "ORG_ADMIN"
