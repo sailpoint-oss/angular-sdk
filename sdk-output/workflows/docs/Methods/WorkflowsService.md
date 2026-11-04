@@ -724,7 +724,11 @@ List all workflows in the tenant.
 
 The service takes one object that holds every parameter. Its type is `ListWorkflowsV1RequestParams`.
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**limit** | `number` | Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to 250]
+**offset** | `number` | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to 0]
 
 ### Return type
 
@@ -746,6 +750,8 @@ export class ExampleComponent {
   private readonly api = inject(WorkflowsService);
 
   listWorkflowsV1(): void {
+    const limit: number = ; // Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
+    const offset: number = ; // Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
     this.api.listWorkflowsV1({  }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),

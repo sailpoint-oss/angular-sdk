@@ -55,5 +55,15 @@ export interface ListCompleteWorkflowLibraryV1200ResponseInner {
      * Example trigger payload if applicable
      */
     inputExample?: object | null;
+    /**
+     * Modes that the trigger uses, however no filterMode means the trigger is not filtered
+     */
+    filterMode?: Array<ListCompleteWorkflowLibraryV1200ResponseInnerFilterModeEnum>;
 }
+export enum ListCompleteWorkflowLibraryV1200ResponseInnerFilterModeEnum {
+    Basic = 'basic',
+    Advanced = 'advanced'
+};
+
+
 

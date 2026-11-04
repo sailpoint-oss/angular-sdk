@@ -150,6 +150,13 @@ export interface ListWorkflowLibraryTriggersV1RequestParams {
     filters?: string;
 }
 
+export interface ListWorkflowsV1RequestParams {
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+}
+
 export interface PatchWorkflowV1RequestParams {
     /** Id of the Workflow */
     id: string;
@@ -1016,13 +1023,22 @@ export class WorkflowsService extends BaseService {
     /**
      * List workflows
      * List all workflows in the tenant.
+     * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public listWorkflowsV1(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Workflow>>;
-    public listWorkflowsV1(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Workflow>>>;
-    public listWorkflowsV1(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Workflow>>>;
-    public listWorkflowsV1(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public listWorkflowsV1(requestParameters?: ListWorkflowsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Workflow>>;
+    public listWorkflowsV1(requestParameters?: ListWorkflowsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Workflow>>>;
+    public listWorkflowsV1(requestParameters?: ListWorkflowsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Workflow>>>;
+    public listWorkflowsV1(requestParameters?: ListWorkflowsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -1053,6 +1069,7 @@ export class WorkflowsService extends BaseService {
         return this.httpClient.request<Array<Workflow>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                params: localVarQueryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

@@ -55,12 +55,20 @@ export interface WorkflowLibraryTrigger {
      * One or more inputs that the trigger accepts
      */
     formFields?: Array<WorkflowLibraryFormFields> | null;
+    /**
+     * Modes that the trigger uses, however no filterMode means the trigger is not filtered
+     */
+    filterMode?: Array<WorkflowLibraryTriggerFilterModeEnum>;
 }
 export enum WorkflowLibraryTriggerTypeEnum {
     Event = 'EVENT',
     Scheduled = 'SCHEDULED',
     External = 'EXTERNAL',
     AccessRequestTrigger = 'AccessRequestTrigger'
+};
+export enum WorkflowLibraryTriggerFilterModeEnum {
+    Basic = 'basic',
+    Advanced = 'advanced'
 };
 
 

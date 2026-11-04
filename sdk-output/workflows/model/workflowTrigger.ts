@@ -22,6 +22,10 @@ export interface WorkflowTrigger {
      */
     displayName?: string | null;
     /**
+     * Mode used by the trigger.
+     */
+    mode?: WorkflowTriggerModeEnum;
+    /**
      * Workflow Trigger Attributes.
      */
     attributes: object | null;
@@ -31,6 +35,10 @@ export enum WorkflowTriggerTypeEnum {
     External = 'EXTERNAL',
     Scheduled = 'SCHEDULED',
     Empty = ''
+};
+export enum WorkflowTriggerModeEnum {
+    Basic = 'basic',
+    Advanced = 'advanced'
 };
 
 
