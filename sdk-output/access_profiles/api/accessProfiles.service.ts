@@ -27,6 +27,8 @@ import { AccessProfileBulkUpdateRequestInner } from '../model/accessProfileBulkU
 // @ts-ignore
 import { AccessProfileListFilterDTO } from '../model/accessProfileListFilterDTO';
 // @ts-ignore
+import { AccessProfileListFilterV2 } from '../model/accessProfileListFilterV2';
+// @ts-ignore
 import { AccessProfileMetadataBulkUpdateByFilterRequest } from '../model/accessProfileMetadataBulkUpdateByFilterRequest';
 // @ts-ignore
 import { AccessProfileMetadataBulkUpdateByIdRequest } from '../model/accessProfileMetadataBulkUpdateByIdRequest';
@@ -36,6 +38,10 @@ import { AccessProfileMetadataBulkUpdateByQueryRequest } from '../model/accessPr
 import { AccessProfileMetadataBulkUpdateResponse } from '../model/accessProfileMetadataBulkUpdateResponse';
 // @ts-ignore
 import { AccessProfileUpdateItem } from '../model/accessProfileUpdateItem';
+// @ts-ignore
+import { AccessprofileentitlementV2 } from '../model/accessprofileentitlementv2';
+// @ts-ignore
+import { AccessprofileV2 } from '../model/accessprofilev2';
 // @ts-ignore
 import { Entitlement } from '../model/entitlement';
 // @ts-ignore
@@ -59,13 +65,32 @@ export interface CreateAccessProfileV1RequestParams {
     accessProfile: AccessProfile;
 }
 
+export interface CreateAccessProfileV2RequestParams {
+    accessprofilev2: AccessprofileV2;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
 export interface DeleteAccessProfileV1RequestParams {
     /** ID of the Access Profile to delete */
     id: string;
 }
 
+export interface DeleteAccessProfileV2RequestParams {
+    /** ID of the Access Profile to delete */
+    id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+}
+
 export interface DeleteAccessProfilesInBulkV1RequestParams {
     accessProfileBulkDeleteRequest: AccessProfileBulkDeleteRequest;
+}
+
+export interface DeleteAccessProfilesInBulkV2RequestParams {
+    accessProfileBulkDeleteRequest: AccessProfileBulkDeleteRequest;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface DeleteMetadataFromAccessProfileByKeyAndValueV1RequestParams {
@@ -92,9 +117,35 @@ export interface GetAccessProfileEntitlementsV1RequestParams {
     sorters?: string;
 }
 
+export interface GetAccessProfileEntitlementsV2RequestParams {
+    /** ID of the access profile containing the entitlements. */
+    id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. Must be 0 when you supply a &#x60;cursor&#x60;, and &#x60;offset&#x60; plus &#x60;limit&#x60; must not exceed 10000.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in*  **name**: *eq, in, co*  **attribute**: *eq, co*  **value**: *eq, co*  **created**: *lt, le, gt, ge*  **modified**: *lt, le, gt, ge*  **privilegeLevel.effective**: *eq, in*  Results are automatically scoped to entitlements belonging to the access profile. */
+    filters?: string;
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **name, attribute, value, created, modified, id, privilegeLevel.effective**  Defaults to **created** ascending when omitted. */
+    sorters?: string;
+    /** Opaque cursor taken from the &#x60;X-Next-Cursor&#x60; header of a previous response, used to retrieve the next page of results. When you supply a cursor, &#x60;offset&#x60; must be 0. */
+    cursor?: string;
+}
+
 export interface GetAccessProfileV1RequestParams {
     /** ID of the Access Profile */
     id: string;
+}
+
+export interface GetAccessProfileV2RequestParams {
+    /** ID of the Access Profile */
+    id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface ListAccessProfilesV1RequestParams {
@@ -116,10 +167,41 @@ export interface ListAccessProfilesV1RequestParams {
     includeUnsegmented?: boolean;
 }
 
+export interface ListAccessProfilesV2RequestParams {
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+    /** Filters the returned list according to what is visible to the indicated ROLE_SUBADMIN or SOURCE_SUBADMIN identity. The value of the parameter is either an identity ID or the special value **me**, which is shorthand for the calling identity\&#39;s ID.  If you specify an identity that isn\&#39;t a subadmin, the API returns a 400 Bad Request error. */
+    forSubadmin?: string;
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. Must be 0 when you supply a &#x60;cursor&#x60;, and &#x60;offset&#x60; plus &#x60;limit&#x60; must not exceed 10000.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in*  **name**: *eq, in, co*  **created**: *lt, le, gt, ge*  **modified**: *lt, le, gt, ge*  **requestable**: *eq*  **source.id**: *eq, in*  **owner.id**: *eq, in*  **additionalOwners.id**: *eq, in*  **dimensional**: *eq*  **entitlement.id**: *eq, in*  **entitlement.name**: *eq, co*  **privilegeLevel.effective**: *eq, in*  Supported composite operators are *and, or* */
+    filters?: string;
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **name, created, modified, id, privilegeLevel.effective**  Defaults to **created** ascending when omitted. */
+    sorters?: string;
+    /** Filters access profiles to only those assigned to the segment(s) with the specified IDs. If segmentation is currently unavailable, specifying this parameter results in an error. */
+    forSegmentIds?: string;
+    /** Indicates whether the response list should contain unsegmented access profiles. If &#x60;for-segment-ids&#x60; is absent or empty, specifying *include-unsegmented* as &#x60;false&#x60; results in an error. */
+    includeUnsegmented?: boolean;
+    /** Opaque cursor taken from the &#x60;X-Next-Cursor&#x60; header of a previous response, used to retrieve the next page of results. When you supply a cursor, &#x60;offset&#x60; must be 0. */
+    cursor?: string;
+}
+
 export interface PatchAccessProfileV1RequestParams {
     /** ID of the Access Profile to patch */
     id: string;
     jsonPatchOperation: Array<JsonPatchOperation>;
+}
+
+export interface PatchAccessProfileV2RequestParams {
+    /** ID of the Access Profile to patch */
+    id: string;
+    jsonPatchOperation: Array<JsonPatchOperation>;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface SearchAccessProfilesByFilterV1RequestParams {
@@ -140,8 +222,36 @@ export interface SearchAccessProfilesByFilterV1RequestParams {
     includeUnsegmented?: boolean;
 }
 
+export interface SearchAccessProfilesByFilterV2RequestParams {
+    accessProfileListFilterV2: AccessProfileListFilterV2;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+    /** Filters the returned list according to what is visible to the indicated ROLE_SUBADMIN or SOURCE_SUBADMIN identity. The value of the parameter is either an identity ID or the special value **me**, which is shorthand for the calling identity\&#39;s ID.  If you specify an identity that isn\&#39;t a subadmin, the API returns a 400 Bad Request error. */
+    forSubadmin?: string;
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. Must be 0 when you supply a &#x60;cursor&#x60;, and &#x60;offset&#x60; plus &#x60;limit&#x60; must not exceed 10000.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **name, created, modified, id, privilegeLevel.effective**  Defaults to **created** ascending when omitted. */
+    sorters?: string;
+    /** Filters access profiles to only those assigned to the segment(s) with the specified IDs. If segmentation is currently unavailable, specifying this parameter results in an error. */
+    forSegmentIds?: string;
+    /** Indicates whether the response list should contain unsegmented access profiles. If &#x60;for-segment-ids&#x60; is absent or empty, specifying *include-unsegmented* as &#x60;false&#x60; results in an error. */
+    includeUnsegmented?: boolean;
+    /** Opaque cursor taken from the &#x60;X-Next-Cursor&#x60; header of a previous response, used to retrieve the next page of results. When you supply a cursor, &#x60;offset&#x60; must be 0. */
+    cursor?: string;
+}
+
 export interface UpdateAccessProfilesInBulkV1RequestParams {
     accessProfileBulkUpdateRequestInner: Array<AccessProfileBulkUpdateRequestInner>;
+}
+
+export interface UpdateAccessProfilesInBulkV2RequestParams {
+    accessProfileBulkUpdateRequestInner: Array<AccessProfileBulkUpdateRequestInner>;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface UpdateAccessProfilesMetadataByFilterV1RequestParams {
@@ -241,6 +351,75 @@ export class AccessProfilesService extends BaseService {
     }
 
     /**
+     * Create access profile
+     * Create an access profile.  This version accepts the same request body and applies the same validation as [Create Access Profile V1](https://developer.sailpoint.com/docs/api/create-access-profile-v-1). It returns the v2 access profile shape, which adds the read-only &#x60;privilegeLevel&#x60; field.  A user with &#x60;ROLE_SUBADMIN&#x60; or &#x60;SOURCE_SUBADMIN&#x60; authority must be associated with the access profile\&#39;s source. The maximum supported length for the description field is 2000 characters. Longer descriptions will be preserved for existing access profiles. However, any new access profiles as well as any updates to existing descriptions are limited to 2000 characters. &gt;**Note:** To use this endpoint, you need all the listed scopes. &gt;**Note:** &#x60;privilegeLevel&#x60; is read-only and is ignored if supplied in the request body. It is calculated asynchronously from the access profile\&#39;s entitlements, so it is typically absent from the create response.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public createAccessProfileV2(requestParameters: CreateAccessProfileV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AccessprofileV2>;
+    public createAccessProfileV2(requestParameters: CreateAccessProfileV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AccessprofileV2>>;
+    public createAccessProfileV2(requestParameters: CreateAccessProfileV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AccessprofileV2>>;
+    public createAccessProfileV2(requestParameters: CreateAccessProfileV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const accessprofilev2 = requestParameters?.accessprofilev2;
+        if (accessprofilev2 === null || accessprofilev2 === undefined) {
+            throw new Error('Required parameter accessprofilev2 was null or undefined when calling createAccessProfileV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v2`;
+        return this.httpClient.request<AccessprofileV2>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: accessprofilev2,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Delete the specified access profile
      * This API deletes an existing Access Profile.  The Access Profile must not be in use, for example, Access Profile can not be deleted if they belong to an Application, Life Cycle State or a Role. If it is, a 400 error is returned.  A user with SOURCE_SUBADMIN must be able to administer the Source associated with the Access Profile.
      * @param requestParameters
@@ -282,6 +461,65 @@ export class AccessProfilesService extends BaseService {
         }
 
         let localVarPath = `/access-profiles/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Delete the specified access profile
+     * This API deletes an existing Access Profile.  This version behaves identically to [Delete the Specified Access Profile V1](https://developer.sailpoint.com/docs/api/delete-access-profile-v-1).  The Access Profile must not be in use, for example, Access Profile can not be deleted if they belong to an Application, Life Cycle State or a Role. If it is, a 400 error is returned.  A user with SOURCE_SUBADMIN must be able to administer the Source associated with the Access Profile.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public deleteAccessProfileV2(requestParameters: DeleteAccessProfileV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
+    public deleteAccessProfileV2(requestParameters: DeleteAccessProfileV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
+    public deleteAccessProfileV2(requestParameters: DeleteAccessProfileV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
+    public deleteAccessProfileV2(requestParameters: DeleteAccessProfileV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling deleteAccessProfileV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
@@ -346,6 +584,75 @@ export class AccessProfilesService extends BaseService {
         }
 
         let localVarPath = `/access-profiles/v1/bulk-delete`;
+        return this.httpClient.request<AccessProfileBulkDeleteResponse>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: accessProfileBulkDeleteRequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Delete access profile(s)
+     * This endpoint initiates a bulk deletion of one or more access profiles.  This version behaves identically to [Delete Access Profile(s) V1](https://developer.sailpoint.com/docs/api/delete-access-profiles-in-bulk-v-1).  When the request is successful, the endpoint returns the bulk delete\&#39;s task result ID.  To follow the task, you can use [Get Task Status by ID](https://developer.sailpoint.com/docs/api/get-task-status-v-1), which will return the task result\&#39;s status and information.  This endpoint can only bulk delete up to a limit of 50 access profiles per request.  By default, if any of the indicated access profiles are in use, no deletions will be performed and the **inUse** field of the response indicates the usages that must be removed first. If the request field **bestEffortOnly** is **true**, however, usages are reported in the **inUse** response field but all other indicated access profiles will be deleted. A SOURCE_SUBADMIN user can only use this endpoint to delete access profiles associated with sources they\&#39;re able to administer.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public deleteAccessProfilesInBulkV2(requestParameters: DeleteAccessProfilesInBulkV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AccessProfileBulkDeleteResponse>;
+    public deleteAccessProfilesInBulkV2(requestParameters: DeleteAccessProfilesInBulkV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AccessProfileBulkDeleteResponse>>;
+    public deleteAccessProfilesInBulkV2(requestParameters: DeleteAccessProfilesInBulkV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AccessProfileBulkDeleteResponse>>;
+    public deleteAccessProfilesInBulkV2(requestParameters: DeleteAccessProfilesInBulkV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const accessProfileBulkDeleteRequest = requestParameters?.accessProfileBulkDeleteRequest;
+        if (accessProfileBulkDeleteRequest === null || accessProfileBulkDeleteRequest === undefined) {
+            throw new Error('Required parameter accessProfileBulkDeleteRequest was null or undefined when calling deleteAccessProfilesInBulkV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v2/bulk-delete`;
         return this.httpClient.request<AccessProfileBulkDeleteResponse>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
@@ -497,6 +804,86 @@ export class AccessProfilesService extends BaseService {
     }
 
     /**
+     * List access profile\&#39;s entitlements
+     * Get a list of an access profile\&#39;s entitlements.  This version reads from Search Lite and returns a superset of the entitlement returned by [List Access Profile\&#39;s Entitlements V1](https://developer.sailpoint.com/docs/api/get-access-profile-entitlements-v-1), adding the entitlement\&#39;s &#x60;tags&#x60; and calculated &#x60;privilegeLevel&#x60;. It also supports opaque cursor pagination through the &#x60;cursor&#x60; parameter and &#x60;X-Next-Cursor&#x60; response header.  A SOURCE_SUBADMIN user must have access to the source associated with the specified access profile.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getAccessProfileEntitlementsV2(requestParameters: GetAccessProfileEntitlementsV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AccessprofileentitlementV2>>;
+    public getAccessProfileEntitlementsV2(requestParameters: GetAccessProfileEntitlementsV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AccessprofileentitlementV2>>>;
+    public getAccessProfileEntitlementsV2(requestParameters: GetAccessProfileEntitlementsV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<AccessprofileentitlementV2>>>;
+    public getAccessProfileEntitlementsV2(requestParameters: GetAccessProfileEntitlementsV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling getAccessProfileEntitlementsV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+        const filters = requestParameters?.filters;
+        const sorters = requestParameters?.sorters;
+        const cursor = requestParameters?.cursor;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>filters, 'filters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>cursor, 'cursor');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/entitlements`;
+        return this.httpClient.request<Array<AccessprofileentitlementV2>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Get an access profile
      * This API returns an Access Profile by its ID. The &#x60;accessRequestConfig.formDefinitionId&#x60; field associates an optional custom form with access profile access requests.
      * @param requestParameters
@@ -539,6 +926,65 @@ export class AccessProfilesService extends BaseService {
 
         let localVarPath = `/access-profiles/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         return this.httpClient.request<AccessProfile>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Get an access profile
+     * Get an access profile by its ID.  This version reads from Search Lite and returns the same access profile shape as [Get Access Profile V1](https://developer.sailpoint.com/docs/api/get-access-profile-v-1), with the calculated &#x60;privilegeLevel&#x60; field added.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getAccessProfileV2(requestParameters: GetAccessProfileV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AccessprofileV2>;
+    public getAccessProfileV2(requestParameters: GetAccessProfileV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AccessprofileV2>>;
+    public getAccessProfileV2(requestParameters: GetAccessProfileV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AccessprofileV2>>;
+    public getAccessProfileV2(requestParameters: GetAccessProfileV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling getAccessProfileV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<AccessprofileV2>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -630,6 +1076,91 @@ export class AccessProfilesService extends BaseService {
     }
 
     /**
+     * List access profiles
+     * Get a list of access profiles.  This version reads from Search Lite and returns the same access profile shape as [List Access Profiles V1](https://developer.sailpoint.com/docs/api/list-access-profiles-v-1), with two additions: the calculated &#x60;privilegeLevel&#x60; field, and opaque cursor pagination through the &#x60;cursor&#x60; parameter and &#x60;X-Next-Cursor&#x60; response header.  &gt;**Note:** When you omit &#x60;sorters&#x60;, results are sorted by &#x60;created&#x60; ascending. For deterministic ordering across pages, always specify explicit sorters. When you use cursor pagination, include &#x60;id&#x60; in &#x60;sorters&#x60;; the service appends it automatically if you omit it.  &gt;**Note:** &#x60;offset&#x60; and &#x60;cursor&#x60; are mutually exclusive. Use &#x60;offset&#x3D;0&#x60; along with a cursor value taken from a prior response\&#39;s &#x60;X-Next-Cursor&#x60; header.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public listAccessProfilesV2(requestParameters?: ListAccessProfilesV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AccessprofileV2>>;
+    public listAccessProfilesV2(requestParameters?: ListAccessProfilesV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AccessprofileV2>>>;
+    public listAccessProfilesV2(requestParameters?: ListAccessProfilesV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<AccessprofileV2>>>;
+    public listAccessProfilesV2(requestParameters?: ListAccessProfilesV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+        const forSubadmin = requestParameters?.forSubadmin;
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+        const filters = requestParameters?.filters;
+        const sorters = requestParameters?.sorters;
+        const forSegmentIds = requestParameters?.forSegmentIds;
+        const includeUnsegmented = requestParameters?.includeUnsegmented;
+        const cursor = requestParameters?.cursor;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>forSubadmin, 'for-subadmin');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>filters, 'filters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>forSegmentIds, 'for-segment-ids');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>includeUnsegmented, 'include-unsegmented');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>cursor, 'cursor');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v2`;
+        return this.httpClient.request<Array<AccessprofileV2>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Patch a specified access profile
      * This API updates an existing Access Profile. The following fields are patchable:  **name**  **description**  **enabled**  **owner**  **additionalOwners**  **requestable**  **accessRequestConfig**  **revokeRequestConfig**  **segments**  **entitlements**  **provisioningCriteria**  **source** (must be updated with entitlements belonging to new source in the same API call)  If you need to change the &#x60;source&#x60; of the access profile, you can do so only if you update the &#x60;entitlements&#x60; in the same API call.  The new entitlements can only come from the target source that you want to change to.  Look for the example \&quot;Replace Source\&quot; in the examples dropdown.  Set &#x60;accessRequestConfig.formDefinitionId&#x60; to associate an optional custom form with access profile access requests.  A user with SOURCE_SUBADMIN may only use this API to patch Access Profiles which are associated with Sources they are able to administer. &gt;  The maximum supported length for the description field is 2000 characters. Longer descriptions will be preserved for existing access profiles, however, any new access profiles as well as any updates to existing descriptions will be limited to 2000 characters.  &gt; You can only add or replace **entitlements** that exist on the source that the access profile is attached to. You can use the **list entitlements** endpoint with the **filters** query parameter to get a list of available entitlements on the access profile\&#39;s source.
      * @param requestParameters
@@ -685,6 +1216,79 @@ export class AccessProfilesService extends BaseService {
 
         let localVarPath = `/access-profiles/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         return this.httpClient.request<AccessProfile>('patch', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: jsonPatchOperation,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Patch a specified access profile
+     * This API updates an existing Access Profile.  This version patches the same fields as [Patch a Specified Access Profile V1](https://developer.sailpoint.com/docs/api/patch-access-profile-v-1). It returns the v2 access profile shape, which adds the read-only &#x60;privilegeLevel&#x60; field.  The following fields are patchable:  **name**  **description**  **enabled**  **owner**  **additionalOwners**  **requestable**  **accessRequestConfig**  **revocationRequestConfig**  **segments**  **entitlements**  **provisioningCriteria**  **source** (must be updated with entitlements belonging to new source in the same API call)  If you need to change the &#x60;source&#x60; of the access profile, you can do so only if you update the &#x60;entitlements&#x60; in the same API call.  The new entitlements can only come from the target source that you want to change to.  Look for the example \&quot;Replace Source\&quot; in the examples dropdown.  A user with SOURCE_SUBADMIN may only use this API to patch Access Profiles which are associated with Sources they are able to administer. &gt;  The maximum supported length for the description field is 2000 characters. Longer descriptions will be preserved for existing access profiles, however, any new access profiles as well as any updates to existing descriptions will be limited to 2000 characters.  &gt; You can only add or replace **entitlements** that exist on the source that the access profile is attached to. You can use the **list entitlements** endpoint with the **filters** query parameter to get a list of available entitlements on the access profile\&#39;s source.  &gt;**Note:** &#x60;privilegeLevel&#x60; is read-only and cannot be patched. Changing the access profile\&#39;s entitlements recalculates it asynchronously, so the patch response may still show the previous value.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public patchAccessProfileV2(requestParameters: PatchAccessProfileV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AccessprofileV2>;
+    public patchAccessProfileV2(requestParameters: PatchAccessProfileV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AccessprofileV2>>;
+    public patchAccessProfileV2(requestParameters: PatchAccessProfileV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AccessprofileV2>>;
+    public patchAccessProfileV2(requestParameters: PatchAccessProfileV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling patchAccessProfileV2.');
+        }
+        const jsonPatchOperation = requestParameters?.jsonPatchOperation;
+        if (jsonPatchOperation === null || jsonPatchOperation === undefined) {
+            throw new Error('Required parameter jsonPatchOperation was null or undefined when calling patchAccessProfileV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json-patch+json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<AccessprofileV2>('patch', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: jsonPatchOperation,
@@ -788,6 +1392,102 @@ export class AccessProfilesService extends BaseService {
     }
 
     /**
+     * List access profiles by filter
+     * Get a list of access profiles, supplying the filter criteria and access model metadata key/values in the request body rather than as query parameters.  Use this endpoint when you need to filter by access model metadata, or when your filter expression is too long to pass as a query parameter. Pagination, sorting, subadmin scoping, and segment scoping behave the same as [List Access Profiles V2](https://developer.sailpoint.com/docs/api/list-access-profiles-v-2), including opaque cursor pagination through the &#x60;cursor&#x60; parameter and &#x60;X-Next-Cursor&#x60; response header.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public searchAccessProfilesByFilterV2(requestParameters: SearchAccessProfilesByFilterV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AccessprofileV2>>;
+    public searchAccessProfilesByFilterV2(requestParameters: SearchAccessProfilesByFilterV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AccessprofileV2>>>;
+    public searchAccessProfilesByFilterV2(requestParameters: SearchAccessProfilesByFilterV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<AccessprofileV2>>>;
+    public searchAccessProfilesByFilterV2(requestParameters: SearchAccessProfilesByFilterV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const accessProfileListFilterV2 = requestParameters?.accessProfileListFilterV2;
+        if (accessProfileListFilterV2 === null || accessProfileListFilterV2 === undefined) {
+            throw new Error('Required parameter accessProfileListFilterV2 was null or undefined when calling searchAccessProfilesByFilterV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+        const forSubadmin = requestParameters?.forSubadmin;
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+        const sorters = requestParameters?.sorters;
+        const forSegmentIds = requestParameters?.forSegmentIds;
+        const includeUnsegmented = requestParameters?.includeUnsegmented;
+        const cursor = requestParameters?.cursor;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>forSubadmin, 'for-subadmin');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>forSegmentIds, 'for-segment-ids');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>includeUnsegmented, 'include-unsegmented');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>cursor, 'cursor');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v2/filter`;
+        return this.httpClient.request<Array<AccessprofileV2>>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: accessProfileListFilterV2,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Update access profile(s) requestable field.
      * This API initiates a bulk update of field requestable for one or more Access Profiles.  &gt;  If any of the indicated Access Profiles is exists in Organization,then those Access Profiles will be added in **updated**     list of the response.Requestable field of these Access Profiles marked as **true** or **false**.  &gt;  If any of the indicated Access Profiles is not does not exists in Organization,then those Access Profiles will be added in **notFound** list of the response. Access Profiles marked as **notFound** will not be updated.  A SOURCE_SUBADMIN may only use this API to update Access Profiles which are associated with Sources they are able to administer.
      * @param requestParameters
@@ -838,6 +1538,75 @@ export class AccessProfilesService extends BaseService {
         }
 
         let localVarPath = `/access-profiles/v1/bulk-update-requestable`;
+        return this.httpClient.request<Array<AccessProfileUpdateItem>>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: accessProfileBulkUpdateRequestInner,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Update access profile(s) requestable field.
+     * This API initiates a bulk update of field requestable for one or more Access Profiles.  This version behaves identically to [Update Access Profile(s) Requestable Field V1](https://developer.sailpoint.com/docs/api/update-access-profiles-in-bulk-v-1).  &gt;  If any of the indicated Access Profiles is exists in Organization,then those Access Profiles will be added in **updated**     list of the response.Requestable field of these Access Profiles marked as **true** or **false**.  &gt;  If any of the indicated Access Profiles is not does not exists in Organization,then those Access Profiles will be added in **notFound** list of the response. Access Profiles marked as **notFound** will not be updated.  A SOURCE_SUBADMIN may only use this API to update Access Profiles which are associated with Sources they are able to administer.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public updateAccessProfilesInBulkV2(requestParameters: UpdateAccessProfilesInBulkV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AccessProfileUpdateItem>>;
+    public updateAccessProfilesInBulkV2(requestParameters: UpdateAccessProfilesInBulkV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AccessProfileUpdateItem>>>;
+    public updateAccessProfilesInBulkV2(requestParameters: UpdateAccessProfilesInBulkV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<AccessProfileUpdateItem>>>;
+    public updateAccessProfilesInBulkV2(requestParameters: UpdateAccessProfilesInBulkV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const accessProfileBulkUpdateRequestInner = requestParameters?.accessProfileBulkUpdateRequestInner;
+        if (accessProfileBulkUpdateRequestInner === null || accessProfileBulkUpdateRequestInner === undefined) {
+            throw new Error('Required parameter accessProfileBulkUpdateRequestInner was null or undefined when calling updateAccessProfilesInBulkV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/access-profiles/v2/bulk-update-requestable`;
         return this.httpClient.request<Array<AccessProfileUpdateItem>>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,

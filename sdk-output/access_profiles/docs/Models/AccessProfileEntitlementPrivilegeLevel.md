@@ -1,0 +1,29 @@
+---
+id: access_profiles-model-access-profile-entitlement-privilege-level
+title: AccessProfileEntitlementPrivilegeLevel
+pagination_label: AccessProfileEntitlementPrivilegeLevel
+sidebar_label: AccessProfileEntitlementPrivilegeLevel
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'AccessProfileEntitlementPrivilegeLevel', 'access_profiles']
+slug: /tools/sdk/angular/access_profiles/models/access-profile-entitlement-privilege-level
+tags: ['SDK', 'Software Development Kit', 'AccessProfileEntitlementPrivilegeLevel', 'access_profiles']
+---
+
+# AccessProfileEntitlementPrivilegeLevel
+
+Import this model from the entry point of its package:
+
+```typescript
+import { AccessProfileEntitlementPrivilegeLevel } from '@sailpoint/angular-sdk/access_profiles';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**direct** | **(optional)** `string` | Direct privilege level assigned to the entitlement | [default to undefined]
+**setBy** | **(optional)** `string` | User or process that set the privilege level | [default to undefined]
+**setByType** | **(optional)** `string` | Method by which the privilege level was set | [default to undefined]
+**inherited** | **(optional)** `string` | Inherited privilege level on the entitlement, if any | [default to undefined]
+**effective** | **(optional)** `string` | Effective privilege level assigned to the entitlement | [default to undefined]
+
