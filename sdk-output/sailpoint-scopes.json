@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sdk": "angular",
-  "sdkVersion": "0.0.41",
+  "sdkVersion": "0.0.42",
   "operations": {
     "addAccessRequestRecommendationsIgnoredItemV1": {
       "resource": "iai-access-request-recommendations",
