@@ -9,10 +9,10 @@
  */
 
 
-export interface ListRolesV1401Response { 
+export interface ListRolesV2429Response { 
     /**
      * A message describing the error
      */
-    error?: any | null;
+    message?: any | null;
 }
 

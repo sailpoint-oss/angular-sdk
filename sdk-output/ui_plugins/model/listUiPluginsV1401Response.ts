@@ -1,5 +1,5 @@
 /**
- * SailPoint Identity Security API - Roles
+ * Identity Security Cloud API - UI Plugins
  *
  * 
  *
@@ -9,10 +9,10 @@
  */
 
 
-export interface ListRolesV1429Response { 
+export interface ListUiPluginsV1401Response { 
     /**
      * A message describing the error
      */
-    message?: any | null;
+    error?: any | null;
 }
 

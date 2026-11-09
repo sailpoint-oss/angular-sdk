@@ -148,6 +148,7 @@ import { TenantContextService as _TenantContextService } from "./tenant_context/
 import { TransformsService as _TransformsService } from "./transforms/index";
 import { TriggersService as _TriggersService } from "./triggers/index";
 import { UIMetadataService as _UIMetadataService } from "./ui_metadata/index";
+import { UIPluginsService as _UIPluginsService } from "./ui_plugins/index";
 import { WorkItemsService as _WorkItemsService } from "./work_items/index";
 import { WorkReassignmentService as _WorkReassignmentService } from "./work_reassignment/index";
 import { WorkflowsService as _WorkflowsService } from "./workflows/index";
@@ -273,6 +274,7 @@ export { _TenantContextService as TenantContextService };
 export { _TransformsService as TransformsService };
 export { _TriggersService as TriggersService };
 export { _UIMetadataService as UIMetadataService };
+export { _UIPluginsService as UIPluginsService };
 export { _WorkItemsService as WorkItemsService };
 export { _WorkReassignmentService as WorkReassignmentService };
 export { _WorkflowsService as WorkflowsService };
@@ -400,6 +402,7 @@ export const SailPointAngular = {
   TransformsService: _TransformsService,
   TriggersService: _TriggersService,
   UIMetadataService: _UIMetadataService,
+  UIPluginsService: _UIPluginsService,
   WorkItemsService: _WorkItemsService,
   WorkReassignmentService: _WorkReassignmentService,
   WorkflowsService: _WorkflowsService,

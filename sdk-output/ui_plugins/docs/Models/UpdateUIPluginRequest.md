@@ -1,0 +1,34 @@
+---
+id: ui_plugins-model-update-ui-plugin-request
+title: UpdateUIPluginRequest
+pagination_label: UpdateUIPluginRequest
+sidebar_label: UpdateUIPluginRequest
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'UpdateUIPluginRequest', 'ui_plugins']
+slug: /tools/sdk/angular/ui_plugins/models/update-ui-plugin-request
+tags: ['SDK', 'Software Development Kit', 'UpdateUIPluginRequest', 'ui_plugins']
+---
+
+# UpdateUIPluginRequest
+
+Import this model from the entry point of its package:
+
+```typescript
+import { UpdateUIPluginRequest } from '@sailpoint/angular-sdk/ui_plugins';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**alias** | **(optional)** `string` | Replacement alias, unique per tenant and normalized to lowercase | [default to undefined]
+**name** | **(optional)**  | Localized string keyed by locale code. At least one non-empty locale entry is required on create/update. Conventionally includes `en`. | [default to undefined]
+**description** | **(optional)**  | Localized string keyed by locale code. At least one non-empty locale entry is required on create/update. Conventionally includes `en`. | [default to undefined]
+**apiScopes** | **(optional)** `Array<string>` | Replaces the existing list entirely when provided | [default to undefined]
+**slots** | **(optional)** `Array<PluginSlot>` | Replaces the existing list when provided | [default to undefined]
+**contentSecurityPolicies** | **(optional)**  | Map of directive name to allowlist values. Used for CSP, Permissions-Policy, and iframe-allow on create/update. Only platform allowlisted directives/keywords are accepted (see UMS validators). | [default to undefined]
+**permissionPolicy** | **(optional)**  | Map of directive name to allowlist values. Used for CSP, Permissions-Policy, and iframe-allow on create/update. Only platform allowlisted directives/keywords are accepted (see UMS validators). | [default to undefined]
+**iframeAllow** | **(optional)**  | Map of directive name to allowlist values. Used for CSP, Permissions-Policy, and iframe-allow on create/update. Only platform allowlisted directives/keywords are accepted (see UMS validators). | [default to undefined]
+**iframeSandbox** | **(optional)** `Array<string>` | Opt-in iframe `sandbox` grants. Replaces the existing list entirely when provided; send `[]` to clear all grants. Omit to leave unchanged. | [default to undefined]
+**state** | **(optional)** `PluginInstanceState` |  | [default to undefined]
+

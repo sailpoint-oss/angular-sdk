@@ -8,10 +8,10 @@
  * Do not edit the class manually.
  */
 import { AdditionalOwnerRef } from './additionalOwnerRef';
-import { EntitlementOwner } from './entitlementOwner';
+import { EntitlementV2AccessModelMetadata } from './entitlementV2AccessModelMetadata';
 import { PermissionDTO } from './permissionDTO';
-import { EntitlementAccessModelMetadata } from './entitlementAccessModelMetadata';
 import { EntitlementSource } from './entitlementSource';
+import { EntitlementV2Owner } from './entitlementV2Owner';
 
 
 export interface Entitlement { 
@@ -51,7 +51,7 @@ export interface Entitlement {
      * True if the entitlement is able to be directly requested
      */
     requestable?: boolean;
-    owner?: EntitlementOwner | null;
+    owner?: EntitlementV2Owner | null;
     /**
      * List of additional owner references beyond the primary owner. Each entry may be an identity (IDENTITY) or a governance group (GOVERNANCE_GROUP).
      */
@@ -60,7 +60,7 @@ export interface Entitlement {
      * A map of entitlement fields that have been manually updated. The key is the field name in UPPER_SNAKE_CASE format, and the value is true or false to indicate if the field has been updated.
      */
     manuallyUpdatedFields?: { [key: string]: any; } | null;
-    accessModelMetadata?: EntitlementAccessModelMetadata;
+    accessModelMetadata?: EntitlementV2AccessModelMetadata;
     /**
      * Time when the entitlement was created
      */

@@ -1,0 +1,31 @@
+---
+id: ui_plugins-model-ui-plugin-slot
+title: UIPluginSlot
+pagination_label: UIPluginSlot
+sidebar_label: UIPluginSlot
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'UIPluginSlot', 'ui_plugins']
+slug: /tools/sdk/angular/ui_plugins/models/ui-plugin-slot
+tags: ['SDK', 'Software Development Kit', 'UIPluginSlot', 'ui_plugins']
+---
+
+# UIPluginSlot
+
+Import this model from the entry point of its package:
+
+```typescript
+import { UIPluginSlot } from '@sailpoint/angular-sdk/ui_plugins';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**slotId** | `string` | Identifier of the UI extension point | [default to undefined]
+**name** | `UIPluginSlotName` |  | [default to undefined]
+**description** | `UIPluginSlotDescription` |  | [default to undefined]
+**state** | `SlotState` |  | [default to undefined]
+**inputSchema** |  | JSON Schema for data the App Shell provides to plugins in this slot | [default to undefined]
+**slotType** | `SlotType` |  | [default to undefined]
+**maxPlugins** | `number` | Max concurrent plugins in this slot; `-1` means unlimited | [default to undefined]
+

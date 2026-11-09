@@ -1,20 +1,20 @@
 ---
-id: roles-model-entitlement-owner
-title: EntitlementOwner
-pagination_label: EntitlementOwner
-sidebar_label: EntitlementOwner
+id: roles-model-entitlement-v2-owner
+title: EntitlementV2Owner
+pagination_label: EntitlementV2Owner
+sidebar_label: EntitlementV2Owner
 sidebar_class_name: angularsdk
-keywords: ['angular', 'Angular', 'sdk', 'EntitlementOwner', 'roles']
-slug: /tools/sdk/angular/roles/models/entitlement-owner
-tags: ['SDK', 'Software Development Kit', 'EntitlementOwner', 'roles']
+keywords: ['angular', 'Angular', 'sdk', 'EntitlementV2Owner', 'roles']
+slug: /tools/sdk/angular/roles/models/entitlement-v2-owner
+tags: ['SDK', 'Software Development Kit', 'EntitlementV2Owner', 'roles']
 ---
 
-# EntitlementOwner
+# EntitlementV2Owner
 
 Import this model from the entry point of its package:
 
 ```typescript
-import { EntitlementOwner } from '@sailpoint/angular-sdk/roles';
+import { EntitlementV2Owner } from '@sailpoint/angular-sdk/roles';
 ```
 
 ## Properties

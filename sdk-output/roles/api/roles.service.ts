@@ -19,13 +19,15 @@ import { Observable }                                        from 'rxjs';
 // @ts-ignore
 import { Entitlement } from '../model/entitlement';
 // @ts-ignore
+import { EntitlementV2 } from '../model/entitlementV2';
+// @ts-ignore
 import { ErrorResponseDto } from '../model/errorResponseDto';
 // @ts-ignore
 import { JsonPatchOperation } from '../model/jsonPatchOperation';
 // @ts-ignore
-import { ListRolesV1401Response } from '../model/listRolesV1401Response';
+import { ListRolesV2401Response } from '../model/listRolesV2401Response';
 // @ts-ignore
-import { ListRolesV1429Response } from '../model/listRolesV1429Response';
+import { ListRolesV2429Response } from '../model/listRolesV2429Response';
 // @ts-ignore
 import { Role } from '../model/role';
 // @ts-ignore
@@ -44,6 +46,10 @@ import { RoleMetadataBulkUpdateByFilterRequest } from '../model/roleMetadataBulk
 import { RoleMetadataBulkUpdateByIdRequest } from '../model/roleMetadataBulkUpdateByIdRequest';
 // @ts-ignore
 import { RoleMetadataBulkUpdateByQueryRequest } from '../model/roleMetadataBulkUpdateByQueryRequest';
+// @ts-ignore
+import { RoleV2 } from '../model/roleV2';
+// @ts-ignore
+import { RolelistfilterdtoV2 } from '../model/rolelistfilterdtov2';
 // @ts-ignore
 import { TaskResultDto } from '../model/taskResultDto';
 
@@ -110,9 +116,41 @@ export interface GetRoleEntitlementsV1RequestParams {
     sorters?: string;
 }
 
+export interface GetRoleEntitlementsV2RequestParams {
+    /** Containing role\&#39;s ID. */
+    id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. Must be 0 or omitted when *cursor* is specified. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+    /** Opaque cursor returned in the &#x60;x-next-cursor&#x60; response header of the previous page. Pass it with the same &#x60;sorters&#x60; to get the next page of results. Can\&#39;t be used with an *offset* greater than 0. */
+    cursor?: string;
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in*  **name**: *eq, in, sw, co*  **attribute**: *eq, sw, co*  **value**: *eq, sw, co*  **created**: *gt, lt, ge, le*  **modified**: *gt, lt, ge, le*  **privilegeLevel.effective**: *eq, in* */
+    filters?: string;
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, name, attribute, value, created, modified, privilegeLevel.effective**  The default sort is **created**. **id** is always added as the final sort field so that cursor pagination is stable. */
+    sorters?: string;
+    /** If present and not empty, filters entitlements to those assigned to the segment(s) with the specified IDs. Can\&#39;t be used with *segmented-for-identity*. */
+    forSegmentIds?: string;
+    /** If present, filters entitlements to those in the segments visible to the specified identity. The value must be the calling identity\&#39;s ID or the special value **me**. Can\&#39;t be used with *for-segment-ids*. */
+    segmentedForIdentity?: string;
+    /** Whether the response list should contain unsegmented entitlements. If *for-segment-ids* is absent or empty, specifying *include-unsegmented* as false results in an error. */
+    includeUnsegmented?: boolean;
+}
+
 export interface GetRoleV1RequestParams {
     /** ID of the Role */
     id: string;
+}
+
+export interface GetRoleV2RequestParams {
+    /** ID of the Role */
+    id: string;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface ListRolesV1RequestParams {
@@ -127,6 +165,29 @@ export interface ListRolesV1RequestParams {
     /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in*  **name**: *eq, sw*  **created**: *gt, ge, le*  **modified**: *lt, ge, le*  **owner.id**: *eq, in*  **requestable**: *eq*  **dimensional**: *eq* */
     filters?: string;
     /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **name, created, modified** */
+    sorters?: string;
+    /** If present and not empty, additionally filters Roles to those which are assigned to the Segment(s) with the specified IDs.  If segmentation is currently unavailable, specifying this parameter results in an error. */
+    forSegmentIds?: string;
+    /** Whether or not the response list should contain unsegmented Roles. If *for-segment-ids* is absent or empty, specifying *include-unsegmented* as false results in an error. */
+    includeUnsegmented?: boolean;
+}
+
+export interface ListRolesV2RequestParams {
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+    /** If provided, filters the returned list according to what is visible to the indicated ROLE_SUBADMIN Identity. The value of the parameter is either an Identity ID, or the special value **me**, which is shorthand for the calling Identity\&#39;s ID. A 400 Bad Request error is returned if the **for-subadmin** parameter is specified for an Identity that is not a subadmin. */
+    forSubadmin?: string;
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. Must be 0 or omitted when *cursor* is specified. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+    /** Opaque cursor returned in the &#x60;x-next-cursor&#x60; response header of the previous page. Pass it with the same &#x60;sorters&#x60; to get the next page of results. Can\&#39;t be used with an *offset* greater than 0. */
+    cursor?: string;
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in*  **name**: *eq, in, sw, co*  **created**: *gt, lt, ge, le*  **modified**: *gt, lt, ge, le*  **type**: *eq, in*  **owner.id**: *eq, in*  **additionalOwners.id**: *eq, in*  **requestable**: *eq*  **dimensional**: *eq*  **source.id**: *eq, in*  **entitlement.id**: *eq, in*  **entitlement.name**: *eq, sw, co*  **accessProfile.id**: *eq, in*  **accessProfile.name**: *eq, sw, co*  **privilegeLevel.effective**: *eq, in*  Supported composite operators are *and, or* */
+    filters?: string;
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, name, created, modified, privilegeLevel.effective**  The default sort is **name**. **id** is always added as the final sort field so that cursor pagination is stable. */
     sorters?: string;
     /** If present and not empty, additionally filters Roles to those which are assigned to the Segment(s) with the specified IDs.  If segmentation is currently unavailable, specifying this parameter results in an error. */
     forSegmentIds?: string;
@@ -156,6 +217,28 @@ export interface SearchRolesByFilterV1RequestParams {
     /** Whether or not the response list should contain unsegmented Roles. If *for-segment-ids* is absent or empty, specifying *include-unsegmented* as false results in an error. */
     includeUnsegmented?: boolean;
     roleListFilterDTO?: RoleListFilterDTO;
+}
+
+export interface SearchRolesByFilterV2RequestParams {
+    rolelistfilterdtov2: RolelistfilterdtoV2;
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
+    /** If provided, filters the returned list according to what is visible to the indicated ROLE_SUBADMIN Identity. The value of the parameter is either an Identity ID, or the special value **me**, which is shorthand for the calling Identity\&#39;s ID. A 400 Bad Request error is returned if the **for-subadmin** parameter is specified for an Identity that is not a subadmin. */
+    forSubadmin?: string;
+    /** Max number of results to return See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. Must be 0 or omitted when *cursor* is specified. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+    /** Opaque cursor returned in the &#x60;x-next-cursor&#x60; response header of the previous page. Pass it with the same request body and &#x60;sorters&#x60; to get the next page of results. Can\&#39;t be used with an *offset* greater than 0. */
+    cursor?: string;
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, name, created, modified, privilegeLevel.effective**  The default sort is **name**. **id** is always added as the final sort field so that cursor pagination is stable. */
+    sorters?: string;
+    /** If present and not empty, additionally filters Roles to those which are assigned to the Segment(s) with the specified IDs.  If segmentation is currently unavailable, specifying this parameter results in an error. */
+    forSegmentIds?: string;
+    /** Whether or not the response list should contain unsegmented Roles. If *for-segment-ids* is absent or empty, specifying *include-unsegmented* as false results in an error. */
+    includeUnsegmented?: boolean;
 }
 
 export interface UpdateAttributeKeyAndValueToRoleV1RequestParams {
@@ -688,6 +771,95 @@ export class RolesService extends BaseService {
     }
 
     /**
+     * List role\&#39;s entitlements
+     * Get a list of entitlements assigned directly to a specified Role. Each entitlement includes its privilege level in &#x60;privilegeLevel&#x60;, with the direct, inherited, and effective levels.  Use either offset pagination (&#x60;offset&#x60; and &#x60;limit&#x60;) or cursor pagination (&#x60;cursor&#x60; and &#x60;limit&#x60;). When more results are available, the &#x60;x-next-cursor&#x60; response header contains the cursor for the next page. You can\&#39;t use &#x60;cursor&#x60; together with an &#x60;offset&#x60; greater than 0, and &#x60;offset&#x60; plus &#x60;limit&#x60; can\&#39;t be greater than 10,000.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getRoleEntitlementsV2(requestParameters: GetRoleEntitlementsV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<EntitlementV2>>;
+    public getRoleEntitlementsV2(requestParameters: GetRoleEntitlementsV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<EntitlementV2>>>;
+    public getRoleEntitlementsV2(requestParameters: GetRoleEntitlementsV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<EntitlementV2>>>;
+    public getRoleEntitlementsV2(requestParameters: GetRoleEntitlementsV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling getRoleEntitlementsV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+        const cursor = requestParameters?.cursor;
+        const filters = requestParameters?.filters;
+        const sorters = requestParameters?.sorters;
+        const forSegmentIds = requestParameters?.forSegmentIds;
+        const segmentedForIdentity = requestParameters?.segmentedForIdentity;
+        const includeUnsegmented = requestParameters?.includeUnsegmented;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>cursor, 'cursor');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>filters, 'filters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>forSegmentIds, 'for-segment-ids');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>segmentedForIdentity, 'segmented-for-identity');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>includeUnsegmented, 'include-unsegmented');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/roles/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/entitlements`;
+        return this.httpClient.request<Array<EntitlementV2>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Get a role
      * This API returns a Role by its ID. A token with API, ORG_ADMIN, ROLE_ADMIN, or ROLE_SUBADMIN authority is required to call this API. In addition, a token with ROLE_SUBADMIN authority may only call this API if all Access Profiles included in the Role are associated to Sources with management workgroups of which the ROLE_SUBADMIN is a member.
      * @param requestParameters
@@ -730,6 +902,65 @@ export class RolesService extends BaseService {
 
         let localVarPath = `/roles/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         return this.httpClient.request<Role>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Get a role
+     * This API returns a Role by its ID. The response includes the Role\&#39;s effective privilege level in &#x60;privilegeLevel.effective&#x60;, which is the highest effective privilege level among the entitlements assigned directly to the Role and the entitlements included in the Role\&#39;s access profiles.  A token with API, ORG_ADMIN, ROLE_ADMIN, or ROLE_SUBADMIN authority is required to call this API. In addition, a token with ROLE_SUBADMIN authority may only call this API if all Access Profiles included in the Role are associated to Sources with management workgroups of which the ROLE_SUBADMIN is a member.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getRoleV2(requestParameters: GetRoleV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<RoleV2>;
+    public getRoleV2(requestParameters: GetRoleV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<RoleV2>>;
+    public getRoleV2(requestParameters: GetRoleV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<RoleV2>>;
+    public getRoleV2(requestParameters: GetRoleV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling getRoleV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/roles/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<RoleV2>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -807,6 +1038,91 @@ export class RolesService extends BaseService {
 
         let localVarPath = `/roles/v1`;
         return this.httpClient.request<Array<Role>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * List roles
+     * This API returns a list of Roles. Each Role includes its effective privilege level in &#x60;privilegeLevel.effective&#x60;, which is the highest effective privilege level among the entitlements assigned directly to the Role and the entitlements included in the Role\&#39;s access profiles.  Use either offset pagination (&#x60;offset&#x60; and &#x60;limit&#x60;) or cursor pagination (&#x60;cursor&#x60; and &#x60;limit&#x60;). When more results are available, the &#x60;x-next-cursor&#x60; response header contains the cursor for the next page. Send that value in the &#x60;cursor&#x60; query parameter, with the same &#x60;sorters&#x60;, to get the next page. You can\&#39;t use &#x60;cursor&#x60; together with an &#x60;offset&#x60; greater than 0, and &#x60;offset&#x60; plus &#x60;limit&#x60; can\&#39;t be greater than 10,000. Use cursor pagination to page beyond 10,000 results.  A token with API, ORG_ADMIN, ROLE_ADMIN, or ROLE_SUBADMIN authority is required to call this API.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public listRolesV2(requestParameters?: ListRolesV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<RoleV2>>;
+    public listRolesV2(requestParameters?: ListRolesV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<RoleV2>>>;
+    public listRolesV2(requestParameters?: ListRolesV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<RoleV2>>>;
+    public listRolesV2(requestParameters?: ListRolesV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+        const forSubadmin = requestParameters?.forSubadmin;
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+        const cursor = requestParameters?.cursor;
+        const filters = requestParameters?.filters;
+        const sorters = requestParameters?.sorters;
+        const forSegmentIds = requestParameters?.forSegmentIds;
+        const includeUnsegmented = requestParameters?.includeUnsegmented;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>forSubadmin, 'for-subadmin');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>cursor, 'cursor');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>filters, 'filters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>forSegmentIds, 'for-segment-ids');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>includeUnsegmented, 'include-unsegmented');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/roles/v2`;
+        return this.httpClient.request<Array<RoleV2>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -964,6 +1280,102 @@ export class RolesService extends BaseService {
             {
                 context: localVarHttpContext,
                 body: roleListFilterDTO,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Filter roles by metadata
+     * This API returns a list of Roles filtered by Access Model Metadata and by filter expression. Filtering is supported by filter expression, by metadata attribute key and values, or by both together. Each Role includes its effective privilege level in &#x60;privilegeLevel.effective&#x60;.  The &#x60;filters&#x60; expression in the request body supports the same fields and operators as the &#x60;filters&#x60; query parameter of [List roles](#operation/listRolesV2), including **privilegeLevel.effective**: *eq, in*.  Use either offset pagination (&#x60;offset&#x60; and &#x60;limit&#x60;) or cursor pagination (&#x60;cursor&#x60; and &#x60;limit&#x60;). When more results are available, the &#x60;x-next-cursor&#x60; response header contains the cursor for the next page. Send that value in the &#x60;cursor&#x60; query parameter, with the same request body and &#x60;sorters&#x60;, to get the next page. You can\&#39;t use &#x60;cursor&#x60; together with an &#x60;offset&#x60; greater than 0, and &#x60;offset&#x60; plus &#x60;limit&#x60; can\&#39;t be greater than 10,000.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public searchRolesByFilterV2(requestParameters: SearchRolesByFilterV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<RoleV2>>;
+    public searchRolesByFilterV2(requestParameters: SearchRolesByFilterV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<RoleV2>>>;
+    public searchRolesByFilterV2(requestParameters: SearchRolesByFilterV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<RoleV2>>>;
+    public searchRolesByFilterV2(requestParameters: SearchRolesByFilterV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const rolelistfilterdtov2 = requestParameters?.rolelistfilterdtov2;
+        if (rolelistfilterdtov2 === null || rolelistfilterdtov2 === undefined) {
+            throw new Error('Required parameter rolelistfilterdtov2 was null or undefined when calling searchRolesByFilterV2.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+        const forSubadmin = requestParameters?.forSubadmin;
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+        const cursor = requestParameters?.cursor;
+        const sorters = requestParameters?.sorters;
+        const forSegmentIds = requestParameters?.forSegmentIds;
+        const includeUnsegmented = requestParameters?.includeUnsegmented;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>forSubadmin, 'for-subadmin');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>cursor, 'cursor');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>forSegmentIds, 'for-segment-ids');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>includeUnsegmented, 'include-unsegmented');
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/roles/v2/filter`;
+        return this.httpClient.request<Array<RoleV2>>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: rolelistfilterdtov2,
                 params: localVarQueryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,

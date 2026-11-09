@@ -7,13 +7,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AccessModelMetadata } from './accessModelMetadata';
 
 
-/**
- * Additional data to classify the entitlement
- */
-export interface EntitlementAccessModelMetadata { 
-    attributes?: Array<AccessModelMetadata>;
+export interface ListRolesV2401Response { 
+    /**
+     * A message describing the error
+     */
+    error?: any | null;
 }
 

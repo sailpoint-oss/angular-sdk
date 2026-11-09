@@ -9,26 +9,18 @@
  */
 
 
-/**
- * The identity that owns the entitlement
- */
-export interface EntitlementOwner { 
+export interface EntitlementV2Source { 
     /**
-     * The identity ID
+     * The source ID
      */
     id?: string;
     /**
-     * The type of object
+     * The source type, will always be \"SOURCE\"
      */
-    type?: EntitlementOwnerTypeEnum;
+    type?: string;
     /**
-     * The display name of the identity
+     * The source name
      */
     name?: string;
 }
-export enum EntitlementOwnerTypeEnum {
-    Identity = 'IDENTITY'
-};
-
-
 
