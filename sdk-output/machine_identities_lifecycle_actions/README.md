@@ -1,4 +1,4 @@
-# @sailpoint/angular-sdk@0.0.43
+# @sailpoint/angular-sdk@0.0.44
 
 Use these APIs to submit, list, retrieve, and cancel machine identity lifecycle actions (currently activate and deactivate for Agent machine identities only). We encourage you to join the SailPoint Developer Community forum at https://developer.sailpoint.com/discuss to connect with other developers using our APIs.
 
@@ -24,7 +24,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```console
-npm install @sailpoint/angular-sdk@0.0.43 --save
+npm install @sailpoint/angular-sdk@0.0.44 --save
 ```
 
 _without publishing (not recommended):_
