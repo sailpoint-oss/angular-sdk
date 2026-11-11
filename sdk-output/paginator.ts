@@ -24,7 +24,7 @@ export interface PaginationParams {
 type ListFn<T, P extends PaginationParams> = (params: P) => Observable<T[]>;
 
 /**
- * Angular-native paginator for SailPoint ISC list endpoints.
+ * Angular-native paginator for SailPoint Identity Security list endpoints.
  *
  * All SailPoint list services return `Observable<T[]>`. `Paginator` wraps the
  * repeated paging loop in a single `Observable<T[]>` that emits once with the

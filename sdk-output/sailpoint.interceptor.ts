@@ -22,7 +22,7 @@ import { NERM_URL_PREFIX, SailPointConfigService } from './sailpoint-config.serv
  * For each such request the interceptor:
  *  1. Resolves the current access token via `SailPointConfigService.getToken()`.
  *  2. Prepends the base URL for the target product to produce an absolute URL.
- *     Identity Security Cloud requests use `baseUrl`. NERM requests carry the
+ *     SailPoint Identity Security requests use `baseUrl`. NERM requests carry the
  *     `/nerm` prefix, which is stripped and replaced with `nermBaseUrl`.
  *  3. Attaches `Authorization: Bearer <token>`.
  *  4. On **401**: invalidates the cached token, fetches a fresh one, and retries once.

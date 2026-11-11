@@ -204,7 +204,7 @@ export class IscAccountsNERMService extends BaseService {
 
     /**
      * Update Profile
-     * Updates a profile only through ISC schema-mapped attributes, performs a reverse mapping to match the NERM attributes to update.
+     * Updates a profile only through SailPoint Identity Security schema-mapped attributes, performs a reverse mapping to match the NERM attributes to update.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

@@ -1,5 +1,5 @@
 /**
- * Identity Security Cloud API - UI Plugins
+ * SailPoint Identity Security API - UI Plugins
  *
  * 
  *
@@ -15,7 +15,7 @@ export interface PluginSlot {
      */
     slotId: string;
     /**
-     * ISC capabilities the user must hold (AND logic) to see this plugin in the slot. Empty means unrestricted.
+     * SailPoint Identity Security capabilities the user must hold (AND logic) to see this plugin in the slot. Empty means unrestricted.
      */
     requiredCapabilities?: Array<PluginSlotRequiredCapabilitiesEnum>;
     /**
