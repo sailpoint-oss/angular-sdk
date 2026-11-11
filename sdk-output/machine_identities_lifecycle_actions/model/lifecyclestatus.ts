@@ -10,7 +10,7 @@
 
 
 /**
- * Detailed lifecycle request status stored on the lifecycle action request.
+ * Status of the lifecycle action request.
  */
 export enum Lifecyclestatus {
 

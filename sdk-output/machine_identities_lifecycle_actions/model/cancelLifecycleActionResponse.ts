@@ -16,19 +16,22 @@ export interface CancelLifecycleActionResponse {
      */
     requestId: string;
     /**
-     * Updated lifecycle request status after cancel acceptance.
+     * Status of the request after the cancel is accepted. Always `CANCELING`.
      */
-    status: string;
+    status: CancelLifecycleActionResponseStatusEnum;
     action: Lifecycleaction;
     /**
-     * Internal machine identity UUID for the lifecycle target.
+     * ID of the machine identity the request applies to.
      */
     targetId: string;
     /**
-     * Connector resource id for the lifecycle target, when present.
+     * ID of the machine identity in its source system, when available.
      */
     resourceId?: string;
 }
+export enum CancelLifecycleActionResponseStatusEnum {
+    Canceling = 'CANCELING'
+};
 
 
 

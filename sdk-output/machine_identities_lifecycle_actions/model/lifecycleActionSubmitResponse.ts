@@ -8,6 +8,7 @@
  * Do not edit the class manually.
  */
 import { Lifecycleaction } from './lifecycleaction';
+import { Lifecyclestatus } from './lifecyclestatus';
 
 
 export interface LifecycleActionSubmitResponse { 
@@ -15,17 +16,14 @@ export interface LifecycleActionSubmitResponse {
      * Unique identifier for the created lifecycle request.
      */
     requestId: string;
-    /**
-     * Initial lifecycle request status.
-     */
-    status: string;
+    status: Lifecyclestatus;
     action: Lifecycleaction;
     /**
-     * Internal machine identity UUID for the lifecycle target.
+     * ID of the machine identity the request applies to.
      */
     targetId: string;
     /**
-     * Connector resource id for the lifecycle target, when present.
+     * ID of the machine identity in its source system, when available.
      */
     resourceId?: string;
     /**

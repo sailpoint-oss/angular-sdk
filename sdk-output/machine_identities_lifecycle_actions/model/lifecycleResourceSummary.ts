@@ -10,31 +10,31 @@
 
 
 /**
- * Cached resource context for the lifecycle target.
+ * Details of the machine identity at the time the request was submitted.
  */
 export interface LifecycleResourceSummary { 
     /**
-     * Internal machine identity UUID for the lifecycle target.
+     * ID of the machine identity.
      */
     id?: string;
     /**
-     * Connector resource id for the lifecycle target.
+     * ID of the machine identity in its source system.
      */
     resourceId?: string;
     /**
-     * Display name of the lifecycle target.
+     * Name of the machine identity.
      */
     name?: string;
     /**
-     * Source identifier for the lifecycle target.
+     * ID of the source the machine identity belongs to.
      */
     sourceId?: string;
     /**
-     * Source name for the lifecycle target.
+     * Name of the source the machine identity belongs to.
      */
     sourceName?: string;
     /**
-     * Machine identity subtype for the lifecycle target.
+     * Type of machine identity.
      */
     subtype?: string;
 }

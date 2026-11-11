@@ -120,6 +120,7 @@ import { PrivilegeCriteriaConfigurationService as _PrivilegeCriteriaConfiguratio
 import { PublicIdentitiesService as _PublicIdentitiesService } from "./public_identities/index";
 import { PublicIdentitiesConfigService as _PublicIdentitiesConfigService } from "./public_identities_config/index";
 import { PublicMachineIdentitiesService as _PublicMachineIdentitiesService } from "./public_machine_identities/index";
+import { ReminderEscalationsService as _ReminderEscalationsService } from "./reminder_escalations/index";
 import { ReportsDataExtractionService as _ReportsDataExtractionService } from "./reports_data_extraction/index";
 import { RequestableObjectsService as _RequestableObjectsService } from "./requestable_objects/index";
 import { RoleInsightsService as _RoleInsightsService } from "./role_insights/index";
@@ -246,6 +247,7 @@ export { _PrivilegeCriteriaConfigurationService as PrivilegeCriteriaConfiguratio
 export { _PublicIdentitiesService as PublicIdentitiesService };
 export { _PublicIdentitiesConfigService as PublicIdentitiesConfigService };
 export { _PublicMachineIdentitiesService as PublicMachineIdentitiesService };
+export { _ReminderEscalationsService as ReminderEscalationsService };
 export { _ReportsDataExtractionService as ReportsDataExtractionService };
 export { _RequestableObjectsService as RequestableObjectsService };
 export { _RoleInsightsService as RoleInsightsService };
@@ -374,6 +376,7 @@ export const SailPointAngular = {
   PublicIdentitiesService: _PublicIdentitiesService,
   PublicIdentitiesConfigService: _PublicIdentitiesConfigService,
   PublicMachineIdentitiesService: _PublicMachineIdentitiesService,
+  ReminderEscalationsService: _ReminderEscalationsService,
   ReportsDataExtractionService: _ReportsDataExtractionService,
   RequestableObjectsService: _RequestableObjectsService,
   RoleInsightsService: _RoleInsightsService,

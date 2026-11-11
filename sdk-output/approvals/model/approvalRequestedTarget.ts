@@ -10,36 +10,90 @@
 
 
 /**
- * Represents a requested target in an approval process, including details such as ID, name, reauthentication requirements, and removal date.
+ * Specifies the actual object or target the approval request is for.
  */
 export interface ApprovalRequestedTarget { 
+    /**
+     * Target ID (for example a role ID or access profile ID).
+     */
+    id?: string;
+    /**
+     * Target IDs when the approval request applies to multiple targets.
+     */
+    ids?: Array<string>;
+    /**
+     * Target name (for example a role name or access profile name).
+     */
+    name?: string;
+    /**
+     * Target names when the approval request applies to multiple targets.
+     */
+    names?: Array<string>;
+    /**
+     * Target type (for example Role or Access Profile).
+     */
+    targetType?: string;
+    /**
+     * Target types when the approval request applies to multiple targets.
+     */
+    targetTypes?: Array<string>;
+    /**
+     * Optional description for the requested target.
+     */
+    description?: string;
+    /**
+     * Effective privilege (EP) level at approval creation.
+     */
+    epLevelAtCreation?: ApprovalRequestedTargetEpLevelAtCreationEnum;
+    /**
+     * Current effective privilege (EP) level for the requested target.
+     */
+    currentEPLevel?: ApprovalRequestedTargetCurrentEPLevelEnum;
+    /**
+     * Date and time when the current effective privilege level was last modified.
+     */
+    currentEPModifiedDate?: string;
+    /**
+     * Access request type (for example GRANT_ACCESS or REVOKE_ACCESS).
+     */
+    requestType?: string;
     /**
      * Signature required for forced authentication.
      */
     forcedAuthSignature?: string;
     /**
-     * ID of the requested target.
-     */
-    id?: string;
-    /**
-     * Name of the requested target.
-     */
-    name?: string;
-    /**
-     * Indicates if reauthentication is required.
+     * Indicates whether forced reauthentication is required upon approval.
      */
     reauthRequired?: boolean;
     /**
-     * Date when the target will be removed.
+     * When temporary access will be granted, if applicable.
+     */
+    startDate?: string;
+    /**
+     * When temporary access will be removed, if applicable.
      */
     removalDate?: string;
     /**
-     * Type of the request.
+     * Updated start date when startDate is edited during the approval request.
      */
-    requestType?: string;
+    modifiedStartDate?: string;
     /**
-     * Type of the target.
+     * Updated removal date when removalDate is edited during the approval request.
      */
-    targetType?: string;
+    modifiedRemovalDate?: string;
 }
+export enum ApprovalRequestedTargetEpLevelAtCreationEnum {
+    High = 'HIGH',
+    Medium = 'MEDIUM',
+    Low = 'LOW',
+    None = 'NONE'
+};
+export enum ApprovalRequestedTargetCurrentEPLevelEnum {
+    High = 'HIGH',
+    Medium = 'MEDIUM',
+    Low = 'LOW',
+    None = 'NONE'
+};
+
+
 

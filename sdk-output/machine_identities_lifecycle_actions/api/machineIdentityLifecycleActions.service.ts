@@ -55,7 +55,7 @@ export interface GetMachineIdentityLifecycleActionV1RequestParams {
 }
 
 export interface ListMachineIdentityLifecycleActionsV1RequestParams {
-    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **resourceType**: *eq, in*  **operationType**: *eq, in*  **status**: *eq, in*  **completed**: *eq*  **targetId**: *eq*  **targetName**: *eq, sw*  **sourceId**: *eq*  **created**: *gt, ge, lt, le* */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **resourceType**: *eq, in*  **operationType**: *eq, in*  **status**: *eq, in*  **completed**: *eq*  **targetId**: *eq*  **targetName**: *eq, sw*  **sourceId**: *eq*  **created**: *gt, ge, lt, le*  The &#x60;resourceType&#x60; filter matches the &#x60;targetType&#x60; field in the response. */
     filters?: string;
     /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **created, modified, status**  Default sort is **-created** (newest first). */
     sorters?: string;
@@ -88,8 +88,8 @@ export class MachineIdentityLifecycleActionsService extends BaseService {
     }
 
     /**
-     * Cancel lifecycle action
-     * Attempts to cancel a lifecycle request before provisioning starts.  The path &#x60;requestId&#x60; is authoritative for lookup and authorization. The request body is optional and may carry cancel metadata such as &#x60;comment&#x60;. Any &#x60;requestId&#x60; value in the body is ignored.  Workflow cancel signaling is attempted before the request is persisted as &#x60;CANCELING&#x60;. If signaling fails, the service returns **503** (&#x60;DOWNSTREAM_SERVICE_UNAVAILABLE&#x60;, cause &#x60;workflow-signal-failed&#x60;) and the lifecycle request status is unchanged.  Invalid cancel states are returned as **400** (&#x60;INVALID_REQUEST_IN_CURRENT_STATE&#x60; variants).  Cancel authorization matches https://developer.sailpoint.com/docs/api/get-machine-identity-lifecycle-action-v-1: the original submitter is always allowed; otherwise callers must have the &#x60;idn:machine-identity-lifecycle-action:manage&#x60; scope **and** target role-context access.  **403 Forbidden**  - &#x60;FORBIDDEN.lifecycle-request-access-denied&#x60; - caller is not the submitter and lacks both the   &#x60;idn:machine-identity-lifecycle-action:manage&#x60; scope and target role-context. - &#x60;FORBIDDEN.unsupported-type&#x60; - the persisted lifecycle row is not scoped to &#x60;AI_AGENT&#x60;.  **404 Not Found**  - &#x60;NOT_FOUND.detailed&#x60; - unknown &#x60;requestId&#x60;, or persisted &#x60;targetType&#x60;/target-identity subtype   mismatch. 
+     * Cancel machine identity lifecycle action
+     * Cancels a lifecycle action request that hasn\&#39;t started provisioning yet. When the cancel is accepted, the request moves to &#x60;CANCELING&#x60; status.  A request can\&#39;t be canceled once provisioning has started, after it has finished, or while a cancel is already in progress.  The request body is optional. Use it to add a comment explaining why the request was canceled.  You can always cancel requests that you submitted. To cancel a request that someone else submitted, you need the &#x60;idn:machine-identity:lifecycle-action&#x60; right **and** admin or owner access to the machine identity. Admin or owner access means you\&#39;re an org admin, a source admin, a source sub-admin for the machine identity\&#39;s source, or the machine identity\&#39;s owner.  If the cancel can\&#39;t be completed, the API returns an error and the request stays in &#x60;CANCELING&#x60; status. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -158,8 +158,8 @@ export class MachineIdentityLifecycleActionsService extends BaseService {
     }
 
     /**
-     * Get lifecycle action by requestId
-     * Returns one lifecycle request snapshot by &#x60;requestId&#x60;. Used for request-level inspection, including cancel acceptance and subsequent status changes.  The original requester is always allowed to read their request. Otherwise, callers must have the &#x60;idn:machine-identity-lifecycle-action:manage&#x60; scope **and** role-context access to the target machine identity (organization admin, source admin, scoped source sub-admin, or effective owner).  **403 Forbidden**  - &#x60;FORBIDDEN.lifecycle-request-access-denied&#x60; - caller is not the submitter and lacks both the   &#x60;idn:machine-identity-lifecycle-action:manage&#x60; scope and target role-context (response includes &#x60;requestId&#x60; as a parameter). - &#x60;FORBIDDEN.unsupported-type&#x60; - the persisted lifecycle row is not scoped to &#x60;AI_AGENT&#x60;   (&#x60;targetType&#x60; on read-by-request-id paths).  **404 Not Found**  - &#x60;NOT_FOUND.detailed&#x60; - unknown &#x60;requestId&#x60;, or persisted &#x60;targetType&#x60; does not match the   target machine identity\&#39;s subtype-to-resource-type mapping. 
+     * Get machine identity lifecycle action
+     * Returns a single lifecycle action request, including its current status, approval details, and provisioning progress. Use it to follow a request after you submit or cancel it.  You can always view requests that you submitted. To view a request that someone else submitted, you need the &#x60;idn:machine-identity:lifecycle-action&#x60; right **and** admin or owner access to the machine identity. Admin or owner access means you\&#39;re an org admin, a source admin, a source sub-admin for the machine identity\&#39;s source, or the machine identity\&#39;s owner. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -217,8 +217,8 @@ export class MachineIdentityLifecycleActionsService extends BaseService {
     }
 
     /**
-     * List lifecycle actions
-     * Lists lifecycle requests visible to the requester identity in the current request context.  Results are automatically scoped to the calling identity. If requester identity context is missing, an empty list is returned.  When &#x60;limit&#x60; is omitted, this endpoint applies a default limit of 50. 
+     * List machine identity lifecycle actions
+     * Returns the lifecycle action requests that you submitted. Requests that other users submitted aren\&#39;t included, even if you\&#39;re an admin. If the call isn\&#39;t made on behalf of an identity, the list is empty.  When &#x60;limit&#x60; is omitted, up to 50 results are returned. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -291,7 +291,7 @@ export class MachineIdentityLifecycleActionsService extends BaseService {
 
     /**
      * Submit machine identity lifecycle action
-     * Creates a lifecycle request for the target machine identity and returns the created lifecycle snapshot.  **Note:** Lifecycle actions are currently supported only for machine identities of type **Agent**.  The response includes the generated &#x60;requestId&#x60;, which is used by https://developer.sailpoint.com/docs/api/list-machine-identity-lifecycle-actions-v-1, https://developer.sailpoint.com/docs/api/get-machine-identity-lifecycle-action-v-1, and https://developer.sailpoint.com/docs/api/cancel-machine-identity-lifecycle-action-v-1  Authorization is enforced in the service layer. Callers must have the &#x60;idn:machine-identity-lifecycle-action:manage&#x60; scope or role-context access to the target machine identity (organization admin, source admin, scoped source sub-admin, or effective owner).  Supported actions are &#x60;DEACTIVATE&#x60;, &#x60;ACTIVATE&#x60;. 
+     * Submits a request to activate or deactivate a machine identity. Supported actions are &#x60;ACTIVATE&#x60; and &#x60;DEACTIVATE&#x60;.  **Note:** Lifecycle actions are currently supported only for machine identities of type **Agent**.  The response includes a &#x60;requestId&#x60;. Use it to [get the request](https://developer.sailpoint.com/docs/api/get-machine-identity-lifecycle-action-v-1) or [cancel it](https://developer.sailpoint.com/docs/api/cancel-machine-identity-lifecycle-action-v-1). To see all the requests you\&#39;ve submitted, use [list machine identity lifecycle actions](https://developer.sailpoint.com/docs/api/list-machine-identity-lifecycle-actions-v-1).  Only one lifecycle action can be in progress for a machine identity at a time. If another action is already in progress for the machine identity, the request is rejected.  To submit a lifecycle action, you need the &#x60;idn:machine-identity:lifecycle-action&#x60; right, or admin or owner access to the machine identity. Admin or owner access means you\&#39;re an org admin, a source admin, a source sub-admin for the machine identity\&#39;s source, or the machine identity\&#39;s owner. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

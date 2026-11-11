@@ -10,7 +10,7 @@
 
 
 /**
- * Optional cancel metadata. The path `requestId`.
+ * Optional details for the cancel request. The request to cancel is identified by the `requestId` in the path.
  */
 export interface CancelLifecycleActionRequest { 
     /**

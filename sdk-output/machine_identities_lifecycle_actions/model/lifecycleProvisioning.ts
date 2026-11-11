@@ -11,7 +11,7 @@ import { Lifecycleprovisioningstatus } from './lifecycleprovisioningstatus';
 
 
 /**
- * Provisioning execution window for the lifecycle request.
+ * Provisioning status for the lifecycle request, with when provisioning started and ended.
  */
 export interface LifecycleProvisioning { 
     status?: Lifecycleprovisioningstatus;

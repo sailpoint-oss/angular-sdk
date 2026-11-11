@@ -121,10 +121,7 @@ export interface Approval2 {
      * Date/time that the approval request was last updated
      */
     modifiedDate?: string;
-    /**
-     * RequestedTarget used to specify the actual object or target the approval request is for
-     */
-    requestedTarget?: Array<ApprovalRequestedTarget>;
+    requestedTarget?: ApprovalRequestedTarget;
 }
 export enum Approval2MediumEnum {
     Email = 'EMAIL',

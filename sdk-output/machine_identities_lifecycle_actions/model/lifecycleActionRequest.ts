@@ -21,28 +21,28 @@ export interface LifecycleActionRequest {
      */
     tenantId?: string;
     /**
-     * Generic request status type discriminator.
+     * Type of request. Always `LIFECYCLE_ACTIONS_REQUEST` for lifecycle action requests.
      */
     statusType?: string;
     /**
-     * Identity id of the principal that submitted the request.
+     * ID of the identity that submitted the request.
      */
     requestedBy?: string;
     /**
-     * Resource type targeted by the lifecycle request.
+     * Type of machine identity the request applies to.
      */
     targetType?: LifecycleActionRequestTargetTypeEnum;
     /**
-     * Internal machine identity UUID for the lifecycle target.
+     * ID of the machine identity the request applies to.
      */
     targetId?: string;
     operationType?: Lifecycleaction;
     /**
-     * Temporal workflow identifier for the lifecycle request.
+     * Identifier of the workflow that processes the request.
      */
     workflowId?: string;
     /**
-     * Indicates whether the lifecycle request has reached a terminal state.
+     * Indicates whether the request has finished. A request is finished when its status is `COMPLETED`, `REJECTED`, `FAILED`, or `CANCELED`.
      */
     completed?: boolean;
     details?: LifecycleActionRequestDetails;

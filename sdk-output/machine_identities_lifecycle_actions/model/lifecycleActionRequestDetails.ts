@@ -18,7 +18,7 @@ import { LifecycleResourceSummary } from './lifecycleResourceSummary';
 
 
 /**
- * Nested lifecycle execution context stored on the lifecycle request.
+ * Details of the lifecycle request, including its status, approval, comments, and provisioning.
  */
 export interface LifecycleActionRequestDetails { 
     status?: Lifecyclestatus;
@@ -38,11 +38,11 @@ export interface LifecycleActionRequestDetails {
      */
     cancelComment?: string;
     /**
-     * Append-only comment thread for the lifecycle request.
+     * Comments on the lifecycle request, in the order they were added.
      */
     comments?: Array<LifecycleComment>;
     /**
-     * Workflow phase where the request failed, when applicable.
+     * Stage where the request failed, when applicable.
      */
     failurePhase?: string;
     /**
@@ -51,17 +51,17 @@ export interface LifecycleActionRequestDetails {
     failureReason?: string;
     resource?: LifecycleResourceSummary;
     /**
-     * Cached resource owners for the lifecycle target.
+     * Owners of the machine identity at the time the request was submitted.
      */
     resourceOwners?: Array<LifecycleOwnerReference>;
     sourceOwner?: LifecycleOwnerReference;
     requester?: LifecycleRequesterReference;
     /**
-     * Approvals identifier when the request was submitted.
+     * ID of the approval request created for this lifecycle request.
      */
     approvalRequestId?: string;
     /**
-     * Approval settings identifier used for the request.
+     * ID of the approval settings used for the request.
      */
     approvalSettingsId?: string;
     provisioning?: LifecycleProvisioning;
