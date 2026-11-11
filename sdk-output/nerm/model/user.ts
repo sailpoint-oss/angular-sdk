@@ -63,7 +63,7 @@ export interface UserNERM {
      */
     group_strings?: string;
     /**
-     * The identity ID of the user in ISC
+     * The identity ID of the user in SailPoint Identity Security
      */
     sailpoint_identity_id?: string;
 }

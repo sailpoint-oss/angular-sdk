@@ -33,7 +33,7 @@ import { rememberConfig } from './persist';
                    [(ngModel)]="accessToken"
                    placeholder="eyJhbGciOiJSUzI1NiIsInR5cCI6…" />
             <span class="hint">
-              Identity Security Cloud, under <strong>Preferences &rarr; Personal Access Tokens</strong>.
+              SailPoint Identity Security, under <strong>Preferences &rarr; Personal Access Tokens</strong>.
             </span>
           </div>
 

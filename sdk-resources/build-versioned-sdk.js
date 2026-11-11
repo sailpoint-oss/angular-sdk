@@ -66,8 +66,8 @@ const GENERIC_DIR    = "generic";
 //
 // Every NERM request carries the NERM_URL_PREFIX, which sailpointInterceptor
 // strips before it prepends the NERM base URL. Without the prefix a NERM path
-// such as /ne_attributes is indistinguishable from an ISC path, and the
-// interceptor would send it to the ISC host.
+// such as /ne_attributes is indistinguishable from a SailPoint Identity Security path, and the
+// interceptor would send it to the SailPoint Identity Security host.
 const NERM_URL_PREFIX = "/nerm";
 
 const NERM_VARIANTS = [
@@ -961,7 +961,7 @@ function generateIndexTs() {
   // NERM services are exported by name for the same reason as the generic API:
   // each NERM package carries its own copy of the shared runtime files. The
   // service class names already end in NERMService or NERMV2025Service, so they
-  // never collide with the Identity Security Cloud services.
+  // never collide with the SailPoint Identity Security services.
   const nermBlocks = [];
   for (const variant of NERM_VARIANTS) {
     const dir = path.join(SDK_OUTPUT, variant.packageDir);

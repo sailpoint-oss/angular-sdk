@@ -1,6 +1,6 @@
 # SailPoint Angular SDK sample app
 
-A small Angular app that calls Identity Security Cloud through
+A small Angular app that calls SailPoint Identity Security through
 `@sailpoint/angular-sdk`. It shows how to:
 
 - Configure the SDK.

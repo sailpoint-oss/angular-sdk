@@ -8,6 +8,6 @@ useSingleRequestParameter: true
 stringEnums: true
 enumNameSuffix: Nerm
 # Suffix every generated service class, so the 35 NERM services do not collide
-# with the Identity Security Cloud services. NERM has its own RolesService,
+# with the SailPoint Identity Security services. NERM has its own RolesService,
 # UsersService and WorkflowsService.
 serviceSuffix: NERMService

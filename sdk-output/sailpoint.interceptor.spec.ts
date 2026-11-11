@@ -41,7 +41,7 @@ afterEach(() => {
 });
 
 describe('URL routing', () => {
-  it('sends an Identity Security Cloud path to the ISC base URL', () => {
+  it('sends a SailPoint Identity Security path to the SailPoint Identity Security base URL', () => {
     const { http, backend } = setup({ baseUrl: BASE_URL, accessToken: 'token' });
 
     http.get('/accounts/v1').subscribe();
@@ -80,7 +80,7 @@ describe('URL routing', () => {
     backend.verify();
   });
 
-  it('does not mistake an ISC path that merely starts with the same letters', () => {
+  it('does not mistake a SailPoint Identity Security path that merely starts with the same letters', () => {
     // /non-employee-requests must not be read as a NERM path.
     const { http, backend } = setup({
       baseUrl: BASE_URL,

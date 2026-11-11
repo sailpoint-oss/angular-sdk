@@ -90,7 +90,7 @@ export interface SailPointParams {
  * URL prefix that marks a request as a NERM request.
  *
  * NERM is a separate product on a separate host, and a NERM path such as
- * `/ne_attributes` is indistinguishable from an Identity Security Cloud path. The
+ * `/ne_attributes` is indistinguishable from a SailPoint Identity Security path. The
  * build writes this prefix into the basePath of every generated NERM package, and
  * `sailpointInterceptor` strips it again and prepends `nermBaseUrl`.
  *
