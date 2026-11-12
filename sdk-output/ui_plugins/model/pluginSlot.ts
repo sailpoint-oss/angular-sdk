@@ -15,7 +15,7 @@ export interface PluginSlot {
      */
     slotId: string;
     /**
-     * SailPoint Identity Security capabilities the user must hold (AND logic) to see this plugin in the slot. Empty means unrestricted.
+     * ISC capabilities the user must hold (AND logic) to see this plugin in the slot. Empty means unrestricted.
      */
     requiredCapabilities?: Array<PluginSlotRequiredCapabilitiesEnum>;
     /**
