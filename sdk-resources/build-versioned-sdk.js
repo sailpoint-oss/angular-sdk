@@ -52,7 +52,7 @@ const POSTSCRIPT  = path.join(__dirname, "postscript.js");
 const TEMPLATE_DIR = path.join(__dirname, "resources");
 
 const NPM_NAME    = "@sailpoint/angular-sdk";
-const NPM_VERSION = "0.0.46";
+const NPM_VERSION = "0.0.47";
 const NG_VERSION  = "22";
 
 // The generic API is built from a standalone spec in sdk-resources/, not from a
