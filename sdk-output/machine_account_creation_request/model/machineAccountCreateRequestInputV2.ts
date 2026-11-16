@@ -11,27 +11,27 @@ import { MachineAccountCreateEntitlement } from './machineAccountCreateEntitleme
 
 
 /**
- * Contains the information for processing a user-initiated machine account creation request. Adds a target source and per-entitlement request details to the v1 request.
+ * Machine account create request. `sourceId` is required while tiered subtype configuration is enabled and is ignored when that flag is off. `entitlements` is honored while per-entitlement request details are enabled. `entitlementIds` is honored while that flag is off. A non-empty list of the kind the current flag state does not honor is rejected.
  */
 export interface MachineAccountCreateRequestInputV2 { 
     /**
-     * Subtype ID for which machine account create is enabled and user have the entitlement to create the machine account.
-     */
-    subtypeId: string;
-    /**
-     * ID of the source to create the machine account on. The subtype must be available on this source. Required when subtypes can be configured per source for the tenant; otherwise it is ignored and the subtype\'s own source is used.
+     * Source the machine account is created on. Required while tiered subtype configuration is enabled, so a connector-tier subtype can name its source. Ignored when that flag is off; the source is then the subtype\'s own source.
      */
     sourceId?: string;
     /**
-     * Form ID selected by user for the machine account create request.
+     * Subtype that must be in the source effective set and for which the caller holds the create machine account entitlement.
+     */
+    subtypeId: string;
+    /**
+     * Form selected for the machine account create request.
      */
     formId?: string;
     /**
-     * Owner Identity ID. This identity will be assigned as an owner of the created machine account.
+     * Identity assigned as owner of the created machine account.
      */
     ownerIdentityId: string;
     /**
-     * Machine identity to correlate with the created machine account. If not provided, a new machine identity will be created.
+     * Machine identity to correlate with the created machine account. When omitted, a new machine identity is created.
      */
     machineIdentityId?: string | null;
     /**
@@ -47,11 +47,11 @@ export interface MachineAccountCreateRequestInputV2 {
      */
     userInput?: object;
     /**
-     * Entitlements to request for the created machine account, each with an optional comment, start date, and remove date. Duplicate IDs are ignored and up to 20 unique entitlements are allowed. Use either `entitlements` or `entitlementIds`, depending on which one your tenant supports; sending a non-empty list that your tenant does not support returns `400`.
+     * Entitlements to provision, including an optional comment and access dates. Honored while per-entitlement request details are enabled. De-duplicated by `id` (first occurrence wins), at most 20 unique ids. A non-empty array is rejected when that flag is off. An empty array is accepted.
      */
     entitlements?: Array<MachineAccountCreateEntitlement>;
     /**
-     * List of entitlement IDs to provision for created machine account. Up to 20 unique entitlements are allowed. Use either `entitlements` or `entitlementIds`, depending on which one your tenant supports; sending a non-empty list that your tenant does not support returns `400`.
+     * Entitlement ids to provision. Honored while per-entitlement request details are off. Values are trimmed, blanks are dropped, and ids are de-duplicated (first occurrence wins), at most 20 unique ids. A non-empty array is rejected when per-entitlement request details are enabled. An empty array is accepted.
      */
     entitlementIds?: Array<string>;
 }

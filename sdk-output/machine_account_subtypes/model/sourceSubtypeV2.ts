@@ -7,77 +7,60 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { SourceSubtypeV2Profile } from './sourceSubtypeV2Profile';
-import { SubtypeTarget } from './subtypeTarget';
+import { ConnectorVariantProfile } from './connectorVariantProfile';
+import { SubtypeTargetType } from './subtypeTargetType';
+import { SubtypeClassification } from './subtypeClassification';
 
 
-/**
- * A machine account subtype defined at the source tier or the connector tier.
- */
 export interface SourceSubtypeV2 { 
     /**
-     * Unique identifier for the subtype.
+     * Server-generated subtype identifier. Must not be supplied on create.
      */
-    id?: string;
+    readonly id?: string;
     /**
-     * Technical name of the subtype.
+     * Technical name of the subtype. Unique within the target tier scope.
      */
-    technicalName?: string;
+    technicalName: string;
     /**
      * Display name of the subtype.
      */
-    displayName?: string;
+    displayName: string;
     /**
      * Description of the subtype.
      */
-    description?: string;
+    description: string;
     /**
-     * Entity type of the subtype.
+     * Entity type of the subtype. Defaults to `MACHINE` when omitted.
      */
     type?: string;
+    targetType?: SubtypeTargetType;
     /**
-     * Tier the subtype is defined at. `SOURCE` subtypes apply to one source. `CONNECTOR` subtypes apply to every source of a connector type. `CONNECTOR_VARIANT` is reserved for future use.
+     * Scope key for the subtype. Source id when `targetType` is `SOURCE`. Connector type or connector specification id when `targetType` is `CONNECTOR`.
      */
-    targetType?: SourceSubtypeV2TargetTypeEnum;
+    targetId: string;
     /**
-     * Scope key of the subtype. The source ID for `SOURCE` subtypes, or the connector type for `CONNECTOR` subtypes.
+     * Human-readable target label. May be omitted on create; the service persists a display name.
      */
-    targetId?: string;
+    targetName?: string;
+    classification?: SubtypeClassification;
     /**
-     * Display name of the target source or connector.
+     * Response-only origin badge. Set on effective-set list reads: `CONNECTOR` when a SOURCE winner overrides a CONNECTOR parent of the same technical name. `null` on connector-only and source-only winners, and on plain CRUD list, create, patch, and get-by-id.
      */
-    targetName?: string | null;
+    readonly origin?: SourceSubtypeV2OriginEnum | null;
+    profile?: ConnectorVariantProfile | null;
     /**
-     * Classification of the subtype.
-     */
-    classification?: SourceSubtypeV2ClassificationEnum;
-    /**
-     * Tier of the parent subtype this subtype overrides. Set to `CONNECTOR` when a source subtype replaces a connector subtype with the same technical name in a source\'s effective subtype list. Otherwise `null`.
-     */
-    origin?: SourceSubtypeV2OriginEnum | null;
-    profile?: SourceSubtypeV2Profile | null;
-    /**
-     * Indicates whether the subtype is managed by the system.
+     * Server-set flag indicating the subtype is managed by the system. Incoming values are ignored.
      */
     readonly systemManaged?: boolean;
     /**
      * Creation timestamp.
      */
-    created?: string;
+    readonly created?: string | null;
     /**
      * Last modified timestamp.
      */
-    modified?: string;
-    target?: SubtypeTarget;
+    readonly modified?: string | null;
 }
-export enum SourceSubtypeV2TargetTypeEnum {
-    Source = 'SOURCE',
-    Connector = 'CONNECTOR',
-    ConnectorVariant = 'CONNECTOR_VARIANT'
-};
-export enum SourceSubtypeV2ClassificationEnum {
-    Machine = 'MACHINE'
-};
 export enum SourceSubtypeV2OriginEnum {
     Source = 'SOURCE',
     Connector = 'CONNECTOR',

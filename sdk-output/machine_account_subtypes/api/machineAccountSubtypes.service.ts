@@ -19,8 +19,6 @@ import { Observable }                                        from 'rxjs';
 // @ts-ignore
 import { CreateSourceSubtypeV1Request } from '../model/createSourceSubtypeV1Request';
 // @ts-ignore
-import { CreateSourceSubtypeV2Request } from '../model/createSourceSubtypeV2Request';
-// @ts-ignore
 import { ErrorResponseDto } from '../model/errorResponseDto';
 // @ts-ignore
 import { JsonPatchOperation } from '../model/jsonPatchOperation';
@@ -31,17 +29,21 @@ import { LoadBulkSourceSubtypesV1429Response } from '../model/loadBulkSourceSubt
 // @ts-ignore
 import { MachineAccountSubtypeConfigDto } from '../model/machineAccountSubtypeConfigDto';
 // @ts-ignore
+import { ProvisioningPolicyDto } from '../model/provisioningPolicyDto';
+// @ts-ignore
 import { SourceSubtypeOverrideRequest } from '../model/sourceSubtypeOverrideRequest';
 // @ts-ignore
 import { SourceSubtypeV2 } from '../model/sourceSubtypeV2';
 // @ts-ignore
-import { SourceSubtypeV2WithConfig } from '../model/sourceSubtypeV2WithConfig';
-// @ts-ignore
 import { SourceSubtypeWithSource } from '../model/sourceSubtypeWithSource';
 // @ts-ignore
-import { SubtypeProvisioningPolicy } from '../model/subtypeProvisioningPolicy';
-// @ts-ignore
 import { SubtypeTargetSummary } from '../model/subtypeTargetSummary';
+// @ts-ignore
+import { SubtypeWithTarget } from '../model/subtypeWithTarget';
+// @ts-ignore
+import { SubtypeWithTargetAndConfig } from '../model/subtypeWithTargetAndConfig';
+// @ts-ignore
+import { SubtypeWithTargetProvisioning } from '../model/subtypeWithTargetProvisioning';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -50,7 +52,7 @@ import { BaseService } from '../api.base.service';
 
 
 export interface CreateSourceSubtypeOverrideV2RequestParams {
-    /** The ID of the connector subtype to override. */
+    /** CONNECTOR-tier subtype to snapshot onto the source. */
     id: string;
     sourceSubtypeOverrideRequest: SourceSubtypeOverrideRequest;
     /** Use this header to enable this experimental API. */
@@ -60,8 +62,8 @@ export interface CreateSourceSubtypeOverrideV2RequestParams {
 export interface CreateSourceSubtypeProvisioningPolicyV2RequestParams {
     /** The ID of the subtype. */
     id: string;
-    subtypeProvisioningPolicy: SubtypeProvisioningPolicy;
-    /** When &#x60;true&#x60; and the request body has no &#x60;fields&#x60;, a &#x60;CONNECTOR&#x60; subtype\&#39;s policy is created with the connector\&#39;s default account creation fields. Ignored for &#x60;SOURCE&#x60; subtypes. */
+    provisioningPolicyDto: ProvisioningPolicyDto;
+    /** When &#x60;true&#x60; and the request body has no &#x60;fields&#x60;, a &#x60;CONNECTOR&#x60; subtype\&#39;s policy is created with the connector\&#39;s default account-creation fields. Ignored for &#x60;SOURCE&#x60; subtypes. */
     useDefaultFields?: boolean;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
@@ -74,7 +76,7 @@ export interface CreateSourceSubtypeV1RequestParams {
 }
 
 export interface CreateSourceSubtypeV2RequestParams {
-    createSourceSubtypeV2Request: CreateSourceSubtypeV2Request;
+    sourceSubtypeV2: SourceSubtypeV2;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -131,16 +133,16 @@ export interface GetSourceSubtypeProvisioningPolicyV2RequestParams {
 }
 
 export interface ListSourceSubtypeTargetsV2RequestParams {
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **targetType**: *eq*  **targetName**: *eq, sw*  A &#x60;targetType&#x60; filter with the value &#x60;CONNECTOR&#x60; or &#x60;SOURCE&#x60; is required. */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **targetType**: *eq*  **targetName**: *eq, sw* */
     filters: string;
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **targetType, targetName, subtypeCount, sourceCount**  Default sort is targetName ascending. */
+    sorters?: string;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
     /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
     /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
-    count?: boolean;
-    /** Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **targetType, targetName, subtypeCount, sourceCount**  Results are sorted by **targetName** ascending by default. */
-    sorters?: string;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -161,24 +163,24 @@ export interface ListSourceSubtypesV1RequestParams {
 }
 
 export interface ListSourceSubtypesV2RequestParams {
-    /** ID of a source. When supplied, the API returns subtypes for that source instead of the whole tenant. */
+    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in, sw*  **displayName**: *eq, sw*  **technicalName**: *eq, sw*  **source.id**: *eq, in*  **targetType**: *eq, in*  **targetId**: *eq, in*  **targetName**: *eq, sw*  **classification**: *eq, in*  **type**: *eq, in*  **created**: *gt, ge, lt, le*  **modified**: *gt, ge, lt, le*  Filters cannot be combined with the effective set. That combination returns 400. */
+    filters?: string;
+    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, displayName, technicalName, source.id, targetType, targetId, targetName, classification, type, created, modified**  When omitted, order is unspecified. */
+    sorters?: string;
+    /** Source scope. When supplied, omitted &#x60;effectiveSet&#x60; defaults to &#x60;true&#x60;. Unknown source returns **404**. Empty means the parameter was omitted. */
     sourceId?: string;
-    /** Controls what is returned for &#x60;sourceId&#x60;. When &#x60;true&#x60;, which is the default when &#x60;sourceId&#x60; is supplied, the API returns the source\&#39;s effective subtypes across both tiers. When &#x60;false&#x60;, the API returns only the subtypes defined for the source. Passing &#x60;effectiveSet&#x3D;true&#x60; explicitly without &#x60;sourceId&#x60; returns &#x60;400&#x60;. */
+    /** When &#x60;true&#x60; with &#x60;sourceId&#x60;, return the effective subtype set for that source. When &#x60;false&#x60; with &#x60;sourceId&#x60;, return only that source\&#39;s raw SOURCE-tier rows. &#x60;true&#x60; without &#x60;sourceId&#x60; returns **400**. Combining with &#x60;filters&#x60; returns **400**. */
     effectiveSet?: boolean;
-    /** Returns only effective subtypes of this tier. Requires &#x60;sourceId&#x60;, and cannot be combined with &#x60;effectiveSet&#x3D;false&#x60;; otherwise the API returns &#x60;400&#x60;. */
+    /** Winner-tier cut on the effective set only. &#x60;CONNECTOR&#x60; returns inherited connector winners. &#x60;SOURCE&#x60; returns source-only winners and SOURCE overrides. Omit it to keep the full winner set. Invalid when &#x60;effectiveSet&#x60; is &#x60;false&#x60; or &#x60;sourceId&#x60; is omitted. */
     targetType?: 'SOURCE' | 'CONNECTOR';
-    /** When &#x60;true&#x60;, each item includes a summary of its machine account creation configuration in &#x60;config&#x60;. */
+    /** When &#x60;true&#x60;, each &#x60;MACHINE&#x60; subtype with a stored machine-account-create config includes slim &#x60;config.machineAccountCreate.accountCreateEnabled&#x60;. Default &#x60;false&#x60; omits &#x60;config&#x60;. */
     includeConfigs?: boolean;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
     /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     limit?: number;
     /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
     offset?: number;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
-    count?: boolean;
-    /** Filter results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, ne, in*  **technicalName**: *eq, ne, in, sw, co*  **displayName**: *eq, ne, in, sw, co*  **source.id**: *eq, ne, in, sw, co*  **targetType**: *eq, ne, in, sw, co*  **targetId**: *eq, ne, in, sw, co*  **targetName**: *eq, ne, in, sw, co, isnull*  **classification**: *eq, ne, in, sw, co*  **type**: *eq, ne, in, sw, co*  **created**: *gt, ge, lt, le*  **modified**: *gt, ge, lt, le*  Filters cannot be used with &#x60;sourceId&#x60; unless &#x60;effectiveSet&#x3D;false&#x60;; otherwise the API returns &#x60;400&#x60;. */
-    filters?: string;
-    /** Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, technicalName, displayName, source.id, targetType, targetId, targetName, classification, type, created, modified** */
-    sorters?: string;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -236,15 +238,15 @@ export class MachineAccountSubtypesService extends BaseService {
     }
 
     /**
-     * Override source connector subtype
-     * Create a source subtype that overrides a connector subtype on one source. The new source subtype copies the connector subtype\&#39;s machine account configuration and provisioning policy at the time of the request. Later changes to the connector subtype are not applied to the override.  The subtype identified by &#x60;id&#x60; must be a &#x60;CONNECTOR&#x60; subtype (otherwise &#x60;400&#x60;) that is in the source\&#39;s effective subtypes. An unknown subtype or source returns &#x60;404&#x60;. The request is rejected if the tenant\&#39;s subtype configuration cannot be changed this way.  The caller needs the &#x60;idn:source-subtypes:create&#x60; right, held by org admins, source admins and source sub-admins. A caller without it receives &#x60;404&#x60;, not &#x60;403&#x60;. A malformed ID returns &#x60;400&#x60;.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Create a source-tier override
+     * Creates a SOURCE-tier snapshot of a CONNECTOR-tier subtype for one source. The snapshot copies the parent display data, machine-account config, and authored provisioning policy. It does not add the connector\&#39;s default account-creation fields, and later connector-tier edits do not propagate.  &#x60;subtypeId&#x60; must be a CONNECTOR-tier subtype UUID that is in the source effective set. The created row is an ordinary SOURCE subtype (&#x60;targetType&#x3D;SOURCE&#x60;, new &#x60;id&#x60;, &#x60;origin&#x3D;null&#x60;) and can be patched or deleted with the existing v2 subtype routes.  Requires &#x60;idn:source-subtypes:create&#x60;. A missing right, an unknown parent, or an unknown source returns **404**. A parent that is not CONNECTOR, a blank &#x60;sourceId&#x60;, a parent that is not effective on the source, a name collision, or a subtype cap returns **400**. A malformed &#x60;subtypeId&#x60; returns **400**.  When the experimental header is missing, or when the tiered subtype configuration is not enabled for the tenant, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createSourceSubtypeOverrideV2(requestParameters: CreateSourceSubtypeOverrideV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SourceSubtypeV2>;
-    public createSourceSubtypeOverrideV2(requestParameters: CreateSourceSubtypeOverrideV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SourceSubtypeV2>>;
-    public createSourceSubtypeOverrideV2(requestParameters: CreateSourceSubtypeOverrideV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SourceSubtypeV2>>;
+    public createSourceSubtypeOverrideV2(requestParameters: CreateSourceSubtypeOverrideV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SubtypeWithTarget>;
+    public createSourceSubtypeOverrideV2(requestParameters: CreateSourceSubtypeOverrideV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SubtypeWithTarget>>;
+    public createSourceSubtypeOverrideV2(requestParameters: CreateSourceSubtypeOverrideV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SubtypeWithTarget>>;
     public createSourceSubtypeOverrideV2(requestParameters: CreateSourceSubtypeOverrideV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const id = requestParameters?.id;
         if (id === null || id === undefined) {
@@ -294,7 +296,7 @@ export class MachineAccountSubtypesService extends BaseService {
         }
 
         let localVarPath = `/source-subtypes/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}/overrides`;
-        return this.httpClient.request<SourceSubtypeV2>('post', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<SubtypeWithTarget>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: sourceSubtypeOverrideRequest,
@@ -310,22 +312,22 @@ export class MachineAccountSubtypesService extends BaseService {
 
     /**
      * Create subtype provisioning policy
-     * Create the machine account creation provisioning policy of a subtype of any tier. A subtype has at most one provisioning policy; the request is rejected if one already exists.  &#x60;id&#x60; and &#x60;subtypeId&#x60; must not be supplied (otherwise &#x60;400&#x60;). &#x60;usageType&#x60; must be &#x60;CREATE_MACHINE_ACCOUNT&#x60; or omitted. &#x60;name&#x60; defaults to the subtype\&#39;s display name.  Who can call this API depends on the tier of the subtype:  * &#x60;SOURCE&#x60;: requires the &#x60;idn:source-subtypes:update&#x60; right, held by org admins, source admins and source sub-admins.  * &#x60;CONNECTOR&#x60;: requires the &#x60;idn:connector-subtypes:update&#x60; right, held by org admins.  A caller without the right for the subtype\&#39;s tier receives &#x60;404&#x60;, not &#x60;403&#x60;. A malformed ID returns &#x60;400&#x60;.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Creates the machine account creation provisioning policy for a subtype. A subtype has at most one policy; the request is rejected if one already exists.  When &#x60;useDefaultFields&#x60; is &#x60;true&#x60; and the body has no &#x60;fields&#x60;, a &#x60;CONNECTOR&#x60; subtype\&#39;s policy is created with the connector\&#39;s default account-creation fields. &#x60;SOURCE&#x60; subtypes ignore &#x60;useDefaultFields&#x60;.  SOURCE-tier write requires &#x60;idn:source-subtypes:update&#x60;. CONNECTOR-tier write requires &#x60;idn:connector-subtypes:update&#x60;. A missing subtype or a missing right returns **404**.  When the experimental header is missing, or when the tiered subtype configuration is not enabled for the tenant, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createSourceSubtypeProvisioningPolicyV2(requestParameters: CreateSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SubtypeProvisioningPolicy>;
-    public createSourceSubtypeProvisioningPolicyV2(requestParameters: CreateSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SubtypeProvisioningPolicy>>;
-    public createSourceSubtypeProvisioningPolicyV2(requestParameters: CreateSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SubtypeProvisioningPolicy>>;
+    public createSourceSubtypeProvisioningPolicyV2(requestParameters: CreateSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<ProvisioningPolicyDto>;
+    public createSourceSubtypeProvisioningPolicyV2(requestParameters: CreateSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<ProvisioningPolicyDto>>;
+    public createSourceSubtypeProvisioningPolicyV2(requestParameters: CreateSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<ProvisioningPolicyDto>>;
     public createSourceSubtypeProvisioningPolicyV2(requestParameters: CreateSourceSubtypeProvisioningPolicyV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const id = requestParameters?.id;
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling createSourceSubtypeProvisioningPolicyV2.');
         }
-        const subtypeProvisioningPolicy = requestParameters?.subtypeProvisioningPolicy;
-        if (subtypeProvisioningPolicy === null || subtypeProvisioningPolicy === undefined) {
-            throw new Error('Required parameter subtypeProvisioningPolicy was null or undefined when calling createSourceSubtypeProvisioningPolicyV2.');
+        const provisioningPolicyDto = requestParameters?.provisioningPolicyDto;
+        if (provisioningPolicyDto === null || provisioningPolicyDto === undefined) {
+            throw new Error('Required parameter provisioningPolicyDto was null or undefined when calling createSourceSubtypeProvisioningPolicyV2.');
         }
         const useDefaultFields = requestParameters?.useDefaultFields;
         const xSailPointExperimental = requestParameters?.xSailPointExperimental;
@@ -372,10 +374,10 @@ export class MachineAccountSubtypesService extends BaseService {
         }
 
         let localVarPath = `/source-subtypes/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}/provisioning-policy`;
-        return this.httpClient.request<SubtypeProvisioningPolicy>('post', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<ProvisioningPolicyDto>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                body: subtypeProvisioningPolicy,
+                body: provisioningPolicyDto,
                 params: localVarQueryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
@@ -457,19 +459,19 @@ export class MachineAccountSubtypesService extends BaseService {
     }
 
     /**
-     * Create subtype
-     * Create a machine account subtype at the source tier or the connector tier.  A &#x60;SOURCE&#x60; subtype applies to the one source identified by &#x60;targetId&#x60;. A &#x60;CONNECTOR&#x60; subtype applies to every source of the connector type identified by &#x60;targetId&#x60;, which must be a registered connector type. &#x60;targetType&#x60; defaults to &#x60;SOURCE&#x60;. &#x60;CONNECTOR_VARIANT&#x60; is not supported and returns &#x60;400&#x60;. &#x60;technicalName&#x60;, &#x60;displayName&#x60; and &#x60;description&#x60; are required, and the technical name and display name must be unique within the tier\&#39;s scope.  Who can call this API depends on the requested tier:  * &#x60;SOURCE&#x60; (or omitted): requires the &#x60;idn:source-subtypes:create&#x60; right, held by org admins, source admins and source sub-admins.  * &#x60;CONNECTOR&#x60;: requires the &#x60;idn:connector-subtypes:create&#x60; right, held by org admins.  A caller without the right for the requested tier receives &#x60;404&#x60;, not &#x60;403&#x60;.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Create a tiered subtype
+     * Creates a machine account subtype at the tier declared on the request body.  &#x60;targetId&#x60; is required at every tier. &#x60;targetType&#x60; defaults to &#x60;SOURCE&#x60; when omitted. Do not supply &#x60;id&#x60; or &#x60;profile&#x60;; those fields are response-only. &#x60;systemManaged&#x60;, &#x60;created&#x60;, &#x60;modified&#x60;, and &#x60;origin&#x60; are ignored on input. CONNECTOR &#x60;targetName&#x60; is optional and is filled from the connector\&#39;s display name.  SOURCE-tier create requires &#x60;idn:source-subtypes:create&#x60;. CONNECTOR-tier create requires &#x60;idn:connector-subtypes:create&#x60;. A missing right is returned as **404**, not **403**. &#x60;CONNECTOR_VARIANT&#x60; is not available and returns **400**.  Duplicate technical name or display name in the same tier scope returns **400**. Exceeding the organization subtype limit returns **400**. The create also stores a &#x60;CREATE_MACHINE_ACCOUNT&#x60; provisioning policy from the connector\&#39;s default account-creation fields.  When the experimental header is missing, or when the tiered subtype configuration is not enabled for the tenant, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createSourceSubtypeV2(requestParameters: CreateSourceSubtypeV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SourceSubtypeV2>;
-    public createSourceSubtypeV2(requestParameters: CreateSourceSubtypeV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SourceSubtypeV2>>;
-    public createSourceSubtypeV2(requestParameters: CreateSourceSubtypeV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SourceSubtypeV2>>;
+    public createSourceSubtypeV2(requestParameters: CreateSourceSubtypeV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SubtypeWithTarget>;
+    public createSourceSubtypeV2(requestParameters: CreateSourceSubtypeV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SubtypeWithTarget>>;
+    public createSourceSubtypeV2(requestParameters: CreateSourceSubtypeV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SubtypeWithTarget>>;
     public createSourceSubtypeV2(requestParameters: CreateSourceSubtypeV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const createSourceSubtypeV2Request = requestParameters?.createSourceSubtypeV2Request;
-        if (createSourceSubtypeV2Request === null || createSourceSubtypeV2Request === undefined) {
-            throw new Error('Required parameter createSourceSubtypeV2Request was null or undefined when calling createSourceSubtypeV2.');
+        const sourceSubtypeV2 = requestParameters?.sourceSubtypeV2;
+        if (sourceSubtypeV2 === null || sourceSubtypeV2 === undefined) {
+            throw new Error('Required parameter sourceSubtypeV2 was null or undefined when calling createSourceSubtypeV2.');
         }
         const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
@@ -511,10 +513,10 @@ export class MachineAccountSubtypesService extends BaseService {
         }
 
         let localVarPath = `/source-subtypes/v2`;
-        return this.httpClient.request<SourceSubtypeV2>('post', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<SubtypeWithTarget>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                body: createSourceSubtypeV2Request,
+                body: sourceSubtypeV2,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
@@ -585,8 +587,8 @@ export class MachineAccountSubtypesService extends BaseService {
     }
 
     /**
-     * Delete subtype by ID
-     * Delete a machine account subtype of any tier by subtype ID. System-managed subtypes, and subtypes still assigned to accounts, cannot be deleted and the request is rejected.  Who can call this API depends on the tier of the stored subtype:  * &#x60;SOURCE&#x60;: requires the &#x60;idn:source-subtypes:delete&#x60; right, held by org admins, source admins and source sub-admins.  * &#x60;CONNECTOR&#x60;: requires the &#x60;idn:connector-subtypes:delete&#x60; right, held by org admins.  A caller without the right for the subtype\&#39;s tier receives &#x60;404&#x60;, not &#x60;403&#x60;. A malformed ID returns &#x60;400&#x60;.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Delete tiered subtype by ID
+     * Deletes a tiered subtype by id.  System-managed subtypes return **400**. A subtype that is still assigned to accounts returns **400**. A connector-tier response includes how many accounts and sources still use it.  SOURCE-tier delete requires &#x60;idn:source-subtypes:delete&#x60;. CONNECTOR-tier delete requires &#x60;idn:connector-subtypes:delete&#x60;. Unknown id and a denied tier are both returned as **404**. A malformed UUID returns **400**.  When the experimental header is missing, or when the tiered subtype configuration is not enabled for the tenant, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -645,7 +647,7 @@ export class MachineAccountSubtypesService extends BaseService {
 
     /**
      * Delete subtype provisioning policy
-     * Delete the machine account creation provisioning policy of a subtype of any tier. Returns &#x60;404&#x60; when the subtype has no provisioning policy.  Who can call this API depends on the tier of the subtype:  * &#x60;SOURCE&#x60;: requires the &#x60;idn:source-subtypes:delete&#x60; right, held by org admins, source admins and source sub-admins.  * &#x60;CONNECTOR&#x60;: requires the &#x60;idn:connector-subtypes:delete&#x60; right, held by org admins.  A caller without the right for the subtype\&#39;s tier receives &#x60;404&#x60;, not &#x60;403&#x60;. A malformed ID returns &#x60;400&#x60;.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Deletes the stored &#x60;CREATE_MACHINE_ACCOUNT&#x60; provisioning policy for a subtype.  SOURCE-tier delete requires &#x60;idn:source-subtypes:delete&#x60;. CONNECTOR-tier delete requires &#x60;idn:connector-subtypes:delete&#x60;. Missing subtype and missing right both return **404**.  When the experimental header is missing, or when the tiered subtype configuration is not enabled for the tenant, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -824,15 +826,15 @@ export class MachineAccountSubtypesService extends BaseService {
     }
 
     /**
-     * Get subtype by ID
-     * Get a machine account subtype of any tier by subtype ID. The response may include &#x60;target.supportsProvisioning&#x60;.  The caller needs the &#x60;idn:source-subtypes:read&#x60; right. A malformed ID returns &#x60;400&#x60;.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Get tiered subtype by ID
+     * Returns one machine account subtype by id, including whether its target can provision accounts.  Unknown id returns **404**. A caller without the required right also receives **404**. If provisioning support cannot be determined, the API returns **503**. When the experimental header is missing, or when tiered subtype configuration is not enabled, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getSourceSubtypeByIdV2(requestParameters: GetSourceSubtypeByIdV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SourceSubtypeV2>;
-    public getSourceSubtypeByIdV2(requestParameters: GetSourceSubtypeByIdV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SourceSubtypeV2>>;
-    public getSourceSubtypeByIdV2(requestParameters: GetSourceSubtypeByIdV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SourceSubtypeV2>>;
+    public getSourceSubtypeByIdV2(requestParameters: GetSourceSubtypeByIdV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SubtypeWithTargetProvisioning>;
+    public getSourceSubtypeByIdV2(requestParameters: GetSourceSubtypeByIdV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SubtypeWithTargetProvisioning>>;
+    public getSourceSubtypeByIdV2(requestParameters: GetSourceSubtypeByIdV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SubtypeWithTargetProvisioning>>;
     public getSourceSubtypeByIdV2(requestParameters: GetSourceSubtypeByIdV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const id = requestParameters?.id;
         if (id === null || id === undefined) {
@@ -869,7 +871,7 @@ export class MachineAccountSubtypesService extends BaseService {
         }
 
         let localVarPath = `/source-subtypes/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}`;
-        return this.httpClient.request<SourceSubtypeV2>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<SubtypeWithTargetProvisioning>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -884,14 +886,14 @@ export class MachineAccountSubtypesService extends BaseService {
 
     /**
      * Get subtype provisioning policy
-     * Get the machine account creation provisioning policy of a subtype of any tier. Returns &#x60;404&#x60; when the subtype has no provisioning policy.  The caller needs the &#x60;idn:source-subtypes:read&#x60; right. A malformed ID returns &#x60;400&#x60;.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Returns the machine account creation provisioning policy for a subtype of any tier. Returns **404** when the subtype has no provisioning policy.  For a &#x60;SOURCE&#x60; subtype, pass &#x60;sourceId&#x60; so a policy stored on that source can be found.  The caller needs &#x60;idn:source-subtypes:read&#x60;. A malformed id returns **400**. When the experimental header is missing, or when tiered subtype configuration is not enabled, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getSourceSubtypeProvisioningPolicyV2(requestParameters: GetSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SubtypeProvisioningPolicy>;
-    public getSourceSubtypeProvisioningPolicyV2(requestParameters: GetSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SubtypeProvisioningPolicy>>;
-    public getSourceSubtypeProvisioningPolicyV2(requestParameters: GetSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SubtypeProvisioningPolicy>>;
+    public getSourceSubtypeProvisioningPolicyV2(requestParameters: GetSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<ProvisioningPolicyDto>;
+    public getSourceSubtypeProvisioningPolicyV2(requestParameters: GetSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<ProvisioningPolicyDto>>;
+    public getSourceSubtypeProvisioningPolicyV2(requestParameters: GetSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<ProvisioningPolicyDto>>;
     public getSourceSubtypeProvisioningPolicyV2(requestParameters: GetSourceSubtypeProvisioningPolicyV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const id = requestParameters?.id;
         if (id === null || id === undefined) {
@@ -933,7 +935,7 @@ export class MachineAccountSubtypesService extends BaseService {
         }
 
         let localVarPath = `/source-subtypes/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}/provisioning-policy`;
-        return this.httpClient.request<SubtypeProvisioningPolicy>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<ProvisioningPolicyDto>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -949,7 +951,7 @@ export class MachineAccountSubtypesService extends BaseService {
 
     /**
      * List subtype targets
-     * List the targets that have machine account subtypes, with subtype and source counts for each.  A &#x60;targetType&#x60; filter is required. &#x60;targetType eq \&quot;CONNECTOR\&quot;&#x60; returns one item per connector type. &#x60;targetType eq \&quot;SOURCE\&quot;&#x60; returns one item per source subtype. A missing or unsupported &#x60;targetType&#x60; filter returns &#x60;400&#x60;.  The caller needs the &#x60;idn:source-subtypes:read&#x60; right.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Lists per-target subtype counts. Connector-tier rows are grouped by connector type. Source-tier rows are returned 1:1 with each source-tier subtype.  &#x60;filters&#x60; must include &#x60;targetType eq \&quot;CONNECTOR\&quot;&#x60; or &#x60;targetType eq \&quot;SOURCE\&quot;&#x60;. Missing or blank &#x60;targetType&#x60; returns **400**. &#x60;CONNECTOR_VARIANT&#x60; and unknown values return **400**. Filter and sort fields are independent of the subtype list API. Default sort is &#x60;targetName&#x60; ascending. &#x60;lastModified&#x60; is response-only and is not filterable or sortable.  When the experimental header is missing, or when the tiered subtype configuration is not enabled for the tenant, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -962,23 +964,23 @@ export class MachineAccountSubtypesService extends BaseService {
         if (filters === null || filters === undefined) {
             throw new Error('Required parameter filters was null or undefined when calling listSourceSubtypeTargetsV2.');
         }
+        const sorters = requestParameters?.sorters;
+        const count = requestParameters?.count;
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
-        const count = requestParameters?.count;
-        const sorters = requestParameters?.sorters;
         const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>offset, 'offset');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>count, 'count');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>filters, 'filters');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>sorters, 'sorters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
 
         let localVarHeaders = this.defaultHeaders;
         if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
@@ -1097,28 +1099,32 @@ export class MachineAccountSubtypesService extends BaseService {
     }
 
     /**
-     * List subtypes
-     * List machine account subtypes defined at the source tier and the connector tier.  Without &#x60;sourceId&#x60;, the API lists every subtype in the tenant, and &#x60;filters&#x60; and &#x60;sorters&#x60; apply.  With &#x60;sourceId&#x60;, the API returns the source\&#39;s effective subtypes: the subtypes defined for the source plus the subtypes defined for the source\&#39;s connector type. When a source subtype has the same technical name as a connector subtype, only the source subtype is returned and its &#x60;origin&#x60; is &#x60;CONNECTOR&#x60;. &#x60;filters&#x60; cannot be used in this mode. Use &#x60;targetType&#x60; to return only one tier of the effective set. An unknown &#x60;sourceId&#x60; returns &#x60;404&#x60;.  With &#x60;sourceId&#x60; and &#x60;effectiveSet&#x3D;false&#x60;, the API returns only the subtypes defined for that source, and &#x60;filters&#x60; apply.  The caller needs the &#x60;idn:source-subtypes:read&#x60; right.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Retrieve all tiered subtypes
+     * Lists machine account subtypes across SOURCE and CONNECTOR tiers.  &#x60;targetId&#x60; is the scope key at every tier (source id for &#x60;SOURCE&#x60;, connector type for &#x60;CONNECTOR&#x60;). Responses include a resolved &#x60;target&#x60; reference and do not include &#x60;sourceId&#x60;. List responses do not include &#x60;target.supportsProvisioning&#x60;.  With &#x60;sourceId&#x60;, omitted &#x60;effectiveSet&#x60; defaults to &#x60;true&#x60; and returns the effective set for that source (SOURCE overrides CONNECTOR by technical name). &#x60;effectiveSet&#x3D;false&#x60; returns only that source\&#39;s raw SOURCE-tier rows. &#x60;effectiveSet&#x3D;true&#x60; without &#x60;sourceId&#x60; returns **400**. Combining &#x60;filters&#x60; with effective-set resolution returns **400**. Unknown &#x60;sourceId&#x60; returns **404**. Limit, offset, and &#x60;count&#x60; apply on both paths. There is no default sort.  Optional &#x60;targetType&#x60; applies only on the effective-set path. &#x60;CONNECTOR&#x60; keeps inherited connector winners. &#x60;SOURCE&#x60; keeps source-only winners and SOURCE overrides. Omitting it keeps the full winner set. A blank, unknown, or &#x60;CONNECTOR_VARIANT&#x60; value, or any &#x60;targetType&#x60; when &#x60;effectiveSet&#x60; is &#x60;false&#x60; or &#x60;sourceId&#x60; is omitted, returns **400**.  On the effective set, &#x60;origin&#x60; is &#x60;CONNECTOR&#x60; only when a SOURCE winner overrides a CONNECTOR parent of the same technical name. Connector-only and source-only winners have &#x60;origin&#x3D;null&#x60;.  &#x60;includeConfigs&#x60; defaults to &#x60;false&#x60;. When &#x60;true&#x60;, each &#x60;MACHINE&#x60; subtype that has a stored machine-account-create config includes slim &#x60;config.machineAccountCreate.accountCreateEnabled&#x60;. A &#x60;MACHINE&#x60; row with no create config, and every non-&#x60;MACHINE&#x60; row, omits &#x60;config&#x60;. The list does not return the full machine-config document.  This API requires the Machine Identity Security product. When the experimental header is missing, or when the tiered subtype configuration is not enabled for the tenant, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public listSourceSubtypesV2(requestParameters?: ListSourceSubtypesV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<SourceSubtypeV2WithConfig>>;
-    public listSourceSubtypesV2(requestParameters?: ListSourceSubtypesV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<SourceSubtypeV2WithConfig>>>;
-    public listSourceSubtypesV2(requestParameters?: ListSourceSubtypesV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<SourceSubtypeV2WithConfig>>>;
+    public listSourceSubtypesV2(requestParameters?: ListSourceSubtypesV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<SubtypeWithTargetAndConfig>>;
+    public listSourceSubtypesV2(requestParameters?: ListSourceSubtypesV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<SubtypeWithTargetAndConfig>>>;
+    public listSourceSubtypesV2(requestParameters?: ListSourceSubtypesV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<SubtypeWithTargetAndConfig>>>;
     public listSourceSubtypesV2(requestParameters?: ListSourceSubtypesV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const filters = requestParameters?.filters;
+        const sorters = requestParameters?.sorters;
         const sourceId = requestParameters?.sourceId;
         const effectiveSet = requestParameters?.effectiveSet;
         const targetType = requestParameters?.targetType;
         const includeConfigs = requestParameters?.includeConfigs;
+        const count = requestParameters?.count;
         const limit = requestParameters?.limit;
         const offset = requestParameters?.offset;
-        const count = requestParameters?.count;
-        const filters = requestParameters?.filters;
-        const sorters = requestParameters?.sorters;
         const xSailPointExperimental = requestParameters?.xSailPointExperimental;
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>filters, 'filters');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>sorters, 'sorters');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>sourceId, 'sourceId');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
@@ -1128,15 +1134,11 @@ export class MachineAccountSubtypesService extends BaseService {
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>includeConfigs, 'includeConfigs');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>limit, 'limit');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>offset, 'offset');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>count, 'count');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>filters, 'filters');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>sorters, 'sorters');
 
         let localVarHeaders = this.defaultHeaders;
         if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
@@ -1167,7 +1169,7 @@ export class MachineAccountSubtypesService extends BaseService {
         }
 
         let localVarPath = `/source-subtypes/v2`;
-        return this.httpClient.request<Array<SourceSubtypeV2WithConfig>>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<Array<SubtypeWithTargetAndConfig>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -1327,15 +1329,15 @@ export class MachineAccountSubtypesService extends BaseService {
     }
 
     /**
-     * Patch subtype by ID
-     * Update a machine account subtype of any tier by subtype ID, using the [JSON Patch](https://tools.ietf.org/html/rfc6902) standard.  Only &#x60;displayName&#x60; and &#x60;description&#x60; are patchable, and both must remain present. Changing &#x60;targetType&#x60;, &#x60;targetId&#x60;, &#x60;profile&#x60;, &#x60;classification&#x60;, &#x60;type&#x60; or &#x60;technicalName&#x60; returns &#x60;400&#x60;; to move a subtype to another tier or target, delete it and create a new one.  Who can call this API depends on the tier of the stored subtype:  * &#x60;SOURCE&#x60;: requires the &#x60;idn:source-subtypes:update&#x60; right, held by org admins, source admins and source sub-admins.  * &#x60;CONNECTOR&#x60;: requires the &#x60;idn:connector-subtypes:update&#x60; right, held by org admins.  A caller without the right for the subtype\&#39;s tier receives &#x60;404&#x60;, not &#x60;403&#x60;. A malformed ID returns &#x60;400&#x60;.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Patch tiered subtype by ID
+     * Applies an RFC 6902 JSON Patch to a tiered subtype.  Patchable fields are &#x60;displayName&#x60; and &#x60;description&#x60; only. Tier and identity fields (&#x60;technicalName&#x60;, &#x60;targetType&#x60;, &#x60;targetId&#x60;, &#x60;profile&#x60;, &#x60;classification&#x60;, &#x60;type&#x60;) are immutable; change them by deleting and recreating the subtype.  SOURCE-tier update requires &#x60;idn:source-subtypes:update&#x60;. CONNECTOR-tier update requires &#x60;idn:connector-subtypes:update&#x60;. Unknown id and a denied tier are both returned as **404**. A malformed UUID returns **400**. System-managed rows and a duplicate display name in the same tier scope return **400**.  When the experimental header is missing, or when the tiered subtype configuration is not enabled for the tenant, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public patchMachineAccountSubtypeV2(requestParameters: PatchMachineAccountSubtypeV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SourceSubtypeV2>;
-    public patchMachineAccountSubtypeV2(requestParameters: PatchMachineAccountSubtypeV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SourceSubtypeV2>>;
-    public patchMachineAccountSubtypeV2(requestParameters: PatchMachineAccountSubtypeV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SourceSubtypeV2>>;
+    public patchMachineAccountSubtypeV2(requestParameters: PatchMachineAccountSubtypeV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SubtypeWithTarget>;
+    public patchMachineAccountSubtypeV2(requestParameters: PatchMachineAccountSubtypeV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SubtypeWithTarget>>;
+    public patchMachineAccountSubtypeV2(requestParameters: PatchMachineAccountSubtypeV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SubtypeWithTarget>>;
     public patchMachineAccountSubtypeV2(requestParameters: PatchMachineAccountSubtypeV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const id = requestParameters?.id;
         if (id === null || id === undefined) {
@@ -1385,7 +1387,7 @@ export class MachineAccountSubtypesService extends BaseService {
         }
 
         let localVarPath = `/source-subtypes/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}`;
-        return this.httpClient.request<SourceSubtypeV2>('patch', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<SubtypeWithTarget>('patch', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: jsonPatchOperation,
@@ -1401,14 +1403,14 @@ export class MachineAccountSubtypesService extends BaseService {
 
     /**
      * Patch subtype provisioning policy
-     * Update the machine account creation provisioning policy of a subtype of any tier, using the [JSON Patch](https://tools.ietf.org/html/rfc6902) standard. Only &#x60;name&#x60;, &#x60;description&#x60; and &#x60;fields&#x60; are patchable. Returns &#x60;404&#x60; when the subtype has no provisioning policy.  Who can call this API depends on the tier of the subtype:  * &#x60;SOURCE&#x60;: requires the &#x60;idn:source-subtypes:update&#x60; right, held by org admins, source admins and source sub-admins.  * &#x60;CONNECTOR&#x60;: requires the &#x60;idn:connector-subtypes:update&#x60; right, held by org admins.  A caller without the right for the subtype\&#39;s tier receives &#x60;404&#x60;, not &#x60;403&#x60;. A malformed ID returns &#x60;400&#x60;.  This API returns &#x60;404&#x60; when Machine Identity Security or tiered subtype configuration is not enabled for the tenant.
+     * Patches the stored &#x60;CREATE_MACHINE_ACCOUNT&#x60; provisioning policy for a subtype using RFC 6902 JSON Patch.  SOURCE-tier write requires &#x60;idn:source-subtypes:update&#x60;. CONNECTOR-tier write requires &#x60;idn:connector-subtypes:update&#x60;. Missing subtype, missing policy, and missing right all return **404**.  When the experimental header is missing, or when the tiered subtype configuration is not enabled for the tenant, the endpoint returns **404**. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public patchSourceSubtypeProvisioningPolicyV2(requestParameters: PatchSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SubtypeProvisioningPolicy>;
-    public patchSourceSubtypeProvisioningPolicyV2(requestParameters: PatchSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SubtypeProvisioningPolicy>>;
-    public patchSourceSubtypeProvisioningPolicyV2(requestParameters: PatchSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SubtypeProvisioningPolicy>>;
+    public patchSourceSubtypeProvisioningPolicyV2(requestParameters: PatchSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<ProvisioningPolicyDto>;
+    public patchSourceSubtypeProvisioningPolicyV2(requestParameters: PatchSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<ProvisioningPolicyDto>>;
+    public patchSourceSubtypeProvisioningPolicyV2(requestParameters: PatchSourceSubtypeProvisioningPolicyV2RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<ProvisioningPolicyDto>>;
     public patchSourceSubtypeProvisioningPolicyV2(requestParameters: PatchSourceSubtypeProvisioningPolicyV2RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         const id = requestParameters?.id;
         if (id === null || id === undefined) {
@@ -1458,7 +1460,7 @@ export class MachineAccountSubtypesService extends BaseService {
         }
 
         let localVarPath = `/source-subtypes/v2/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: "uuid"})}/provisioning-policy`;
-        return this.httpClient.request<SubtypeProvisioningPolicy>('patch', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<ProvisioningPolicyDto>('patch', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: jsonPatchOperation,

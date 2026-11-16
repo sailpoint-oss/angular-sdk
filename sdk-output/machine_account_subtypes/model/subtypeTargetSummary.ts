@@ -7,41 +7,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { SubtypeTargetType } from './subtypeTargetType';
 
 
 /**
- * Summary of the subtypes defined for one target. There is one item per connector type for `CONNECTOR` targets, and one item per source subtype for `SOURCE` targets.
+ * One row per connector type (`CONNECTOR`) or per source-tier subtype (`SOURCE`) from `GET /source-subtypes/v2/targets`.
  */
 export interface SubtypeTargetSummary { 
+    targetType?: SubtypeTargetType;
     /**
-     * Tier of the target.
-     */
-    targetType?: SubtypeTargetSummaryTargetTypeEnum;
-    /**
-     * Connector type for a `CONNECTOR` target, or source ID for a `SOURCE` target.
+     * Scope key. Connector type for `CONNECTOR`. Source id for `SOURCE`.
      */
     targetId?: string;
     /**
-     * Display name of the target. Falls back to `targetId` when no name is stored.
+     * Display label. Never null; falls back to `targetId`.
      */
     targetName?: string;
     /**
-     * Number of subtypes defined for the target.
+     * Number of subtypes in this target group.
      */
     subtypeCount?: number;
     /**
-     * Number of sources the target\'s subtypes apply to.
+     * Number of sources of this connector type for a `CONNECTOR` row. `1` on a `SOURCE` row. Sortable. Not filterable.
      */
     sourceCount?: number;
     /**
-     * Most recent modification time across the target\'s subtypes.
+     * Latest `modified` timestamp in the `targetId` group for `CONNECTOR`, or that subtype row\'s `modified` for `SOURCE`. Not filterable or sortable.
      */
-    lastModified?: string | null;
+    readonly lastModified?: string;
 }
-export enum SubtypeTargetSummaryTargetTypeEnum {
-    Source = 'SOURCE',
-    Connector = 'CONNECTOR'
-};
 
 
 

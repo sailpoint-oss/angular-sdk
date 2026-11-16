@@ -21,8 +21,8 @@ import { MachineAccountCreateEntitlement } from '@sailpoint/angular-sdk/machine_
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | `string` | ID of the entitlement to request. | [default to undefined]
-**comment** | **(optional)** `string` | Comment to include with the entitlement request. | [default to undefined]
-**startDate** | **(optional)** `string` | Date and time when access to the entitlement starts. Must be in the future and, when `removeDate` is also set, before `removeDate`. | [default to undefined]
-**removeDate** | **(optional)** `string` | Date and time when access to the entitlement is removed. Must be in the future. | [default to undefined]
+**id** | `string` | Entitlement id to provision. Not required to be a UUID. | [default to undefined]
+**comment** | **(optional)** `string` | Justification stored with the entitlement request. | [default to '']
+**startDate** | **(optional)** `string` | When access starts. Must be in the future and before `removeDate` when both are set. | [default to undefined]
+**removeDate** | **(optional)** `string` | When access ends. Must be in the future and after `startDate` when both are set. | [default to undefined]
 

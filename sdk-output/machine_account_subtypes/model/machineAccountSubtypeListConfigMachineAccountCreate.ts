@@ -10,11 +10,11 @@
 
 
 /**
- * Machine account creation settings.
+ * Stored create flag for this subtype. Omitted when no create config exists.
  */
-export interface SourceSubtypeV2WithConfigAllOfConfigMachineAccountCreate { 
+export interface MachineAccountSubtypeListConfigMachineAccountCreate { 
     /**
-     * Indicates whether machine account creation is enabled for the subtype.
+     * Whether machine account creation is enabled for this subtype.
      */
     accountCreateEnabled?: boolean;
 }

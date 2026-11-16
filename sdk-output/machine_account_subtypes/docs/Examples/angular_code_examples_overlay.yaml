@@ -32,7 +32,7 @@
       source: |
         import { Component, inject } from '@angular/core';
         import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
-        import { SubtypeProvisioningPolicy } from '@sailpoint/angular-sdk/machine_account_subtypes';
+        import { ProvisioningPolicyDto } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
@@ -40,10 +40,10 @@
 
           createSourceSubtypeProvisioningPolicyV2(): void {
             const id: string = '43bdd144-4b17-4fce-a744-17c7fd3e717b'; // string
-            const subtypeProvisioningPolicy: SubtypeProvisioningPolicy = {
-              "name" : "Service Account",
-              "description" : "Fields collected when creating a service account.",
-              "id" : "d7ae9ea3-507f-4d00-9d4f-b4464b344b88",
+            const provisioningPolicyDto: ProvisioningPolicyDto = {
+              "name" : "Create Machine Account",
+              "description" : "Fields used when creating a machine account for this subtype",
+              "id" : "54f626b4-c9d8-4f7e-b768-046c20583abb",
               "subtypeId" : "43bdd144-4b17-4fce-a744-17c7fd3e717b",
               "fields" : [ {
                 "isRequired" : false,
@@ -56,7 +56,7 @@
                 "isMultiValued" : false,
                 "name" : "userName",
                 "attributes" : {
-                  "template" : "{firstname}.{lastname}{uniqueCounter}",
+                  "template" : "firstname.lastname.uniqueCounter",
                   "cloudMaxUniqueChecks" : "50",
                   "cloudMaxSize" : "20",
                   "cloudRequired" : "true"
@@ -73,7 +73,7 @@
                 "isMultiValued" : false,
                 "name" : "userName",
                 "attributes" : {
-                  "template" : "{firstname}.{lastname}{uniqueCounter}",
+                  "template" : "firstname.lastname.uniqueCounter",
                   "cloudMaxUniqueChecks" : "50",
                   "cloudMaxSize" : "20",
                   "cloudRequired" : "true"
@@ -81,10 +81,10 @@
                 "type" : "string"
               } ],
               "usageType" : "CREATE_MACHINE_ACCOUNT"
-            }; // SubtypeProvisioningPolicy
+            }; // ProvisioningPolicyDto
             const useDefaultFields: boolean = true; // boolean
             const xSailPointExperimental: string = 'true'; // string
-            this.api.createSourceSubtypeProvisioningPolicyV2({ id: id, subtypeProvisioningPolicy: subtypeProvisioningPolicy }).subscribe({
+            this.api.createSourceSubtypeProvisioningPolicyV2({ id: id, provisioningPolicyDto: provisioningPolicyDto }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -121,25 +121,35 @@
       source: |
         import { Component, inject } from '@angular/core';
         import { MachineAccountSubtypesService } from '@sailpoint/angular-sdk/machine_account_subtypes';
-        import { CreateSourceSubtypeV2Request } from '@sailpoint/angular-sdk/machine_account_subtypes';
+        import { SourceSubtypeV2 } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
         @Component({ selector: 'app-example', template: '' })
         export class ExampleComponent {
           private readonly api = inject(MachineAccountSubtypesService);
 
           createSourceSubtypeV2(): void {
-            const createSourceSubtypeV2Request: CreateSourceSubtypeV2Request = {
-              "targetName" : "Active Directory",
-              "targetId" : "active-directory",
-              "displayName" : "Service Account",
-              "description" : "Accounts used by automated services.",
+            const sourceSubtypeV2: SourceSubtypeV2 = {
+              "targetName" : "JDBC",
+              "targetId" : "JDBC",
+              "displayName" : "Non Personal",
+              "created" : "2026-08-18T12:00:00Z",
+              "origin" : "CONNECTOR",
+              "profile" : {
+                "connectorType" : "JDBC",
+                "variant" : "MySql",
+                "id" : "65de7634-d315-482c-aad4-7fdbd1e42056"
+              },
+              "systemManaged" : false,
+              "description" : "Machine accounts for JDBC connectors",
               "targetType" : "CONNECTOR",
               "type" : "MACHINE",
               "classification" : "MACHINE",
-              "technicalName" : "service-account"
-            }; // CreateSourceSubtypeV2Request
+              "technicalName" : "nonPersonal",
+              "modified" : "2026-08-18T12:00:00Z",
+              "id" : "43bdd144-4b17-4fce-a744-17c7fd3e717b"
+            }; // SourceSubtypeV2
             const xSailPointExperimental: string = 'true'; // string
-            this.api.createSourceSubtypeV2({ createSourceSubtypeV2Request: createSourceSubtypeV2Request }).subscribe({
+            this.api.createSourceSubtypeV2({ sourceSubtypeV2: sourceSubtypeV2 }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -315,10 +325,10 @@
 
           listSourceSubtypeTargetsV2(): void {
             const filters: string = 'targetType eq "CONNECTOR"'; // string
+            const sorters: string = 'targetName'; // string
+            const count: boolean = true; // boolean
             const limit: number = 250; // number
             const offset: number = 0; // number
-            const count: boolean = true; // boolean
-            const sorters: string = '-subtypeCount'; // string
             const xSailPointExperimental: string = 'true'; // string
             this.api.listSourceSubtypeTargetsV2({ filters: filters }).subscribe({
               next: (result) => console.log(result),
@@ -366,15 +376,15 @@
           private readonly api = inject(MachineAccountSubtypesService);
 
           listSourceSubtypesV2(): void {
-            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
-            const effectiveSet: boolean = true; // boolean
-            const targetType: string = 'CONNECTOR'; // 'SOURCE' | 'CONNECTOR'
-            const includeConfigs: boolean = false; // boolean
-            const limit: number = 250; // number
-            const offset: number = 0; // number
-            const count: boolean = true; // boolean
             const filters: string = 'targetType eq "CONNECTOR"'; // string
             const sorters: string = 'displayName'; // string
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const effectiveSet: boolean = true; // boolean
+            const targetType: string = 'SOURCE'; // 'SOURCE' | 'CONNECTOR'
+            const includeConfigs: boolean = false; // boolean
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
             const xSailPointExperimental: string = 'true'; // string
             this.api.listSourceSubtypesV2({  }).subscribe({
               next: (result) => console.log(result),

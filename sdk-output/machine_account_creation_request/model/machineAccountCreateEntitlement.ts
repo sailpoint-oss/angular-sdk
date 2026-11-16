@@ -10,24 +10,24 @@
 
 
 /**
- * An entitlement to request for the machine account, with optional comment and access dates.
+ * One entitlement to provision on the created machine account. `id` is the entitlement id. Comment and access dates are optional.
  */
 export interface MachineAccountCreateEntitlement { 
     /**
-     * ID of the entitlement to request.
+     * Entitlement id to provision. Not required to be a UUID.
      */
     id: string;
     /**
-     * Comment to include with the entitlement request.
+     * Justification stored with the entitlement request.
      */
     comment?: string;
     /**
-     * Date and time when access to the entitlement starts. Must be in the future and, when `removeDate` is also set, before `removeDate`.
+     * When access starts. Must be in the future and before `removeDate` when both are set.
      */
-    startDate?: string;
+    startDate?: string | null;
     /**
-     * Date and time when access to the entitlement is removed. Must be in the future.
+     * When access ends. Must be in the future and after `startDate` when both are set.
      */
-    removeDate?: string;
+    removeDate?: string | null;
 }
 

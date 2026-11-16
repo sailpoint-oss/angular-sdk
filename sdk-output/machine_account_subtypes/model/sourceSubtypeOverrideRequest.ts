@@ -10,11 +10,11 @@
 
 
 /**
- * Request body for overriding a connector subtype on one source.
+ * Creates a SOURCE-tier snapshot of a CONNECTOR-tier subtype for one source. Later edits to the connector-tier parent are not copied onto the snapshot.
  */
 export interface SourceSubtypeOverrideRequest { 
     /**
-     * ID of the source to create the overriding source subtype on.
+     * Source that receives the override.
      */
     sourceId: string;
 }

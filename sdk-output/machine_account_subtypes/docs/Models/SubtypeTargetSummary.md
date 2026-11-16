@@ -21,10 +21,10 @@ import { SubtypeTargetSummary } from '@sailpoint/angular-sdk/machine_account_sub
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**targetType** | **(optional)** `string` | Tier of the target. | [default to undefined]
-**targetId** | **(optional)** `string` | Connector type for a `CONNECTOR` target, or source ID for a `SOURCE` target. | [default to undefined]
-**targetName** | **(optional)** `string` | Display name of the target. Falls back to `targetId` when no name is stored. | [default to undefined]
-**subtypeCount** | **(optional)** `number` | Number of subtypes defined for the target. | [default to undefined]
-**sourceCount** | **(optional)** `number` | Number of sources the target\'s subtypes apply to. | [default to undefined]
-**lastModified** | **(optional)** `string` | Most recent modification time across the target\'s subtypes. | [default to undefined]
+**targetType** | **(optional)** `SubtypeTargetType` |  | [default to undefined]
+**targetId** | **(optional)** `string` | Scope key. Connector type for `CONNECTOR`. Source id for `SOURCE`. | [default to undefined]
+**targetName** | **(optional)** `string` | Display label. Never null; falls back to `targetId`. | [default to undefined]
+**subtypeCount** | **(optional)** `number` | Number of subtypes in this target group. | [default to undefined]
+**sourceCount** | **(optional)** `number` | Number of sources of this connector type for a `CONNECTOR` row. `1` on a `SOURCE` row. Sortable. Not filterable. | [default to undefined]
+**lastModified** | **(optional)** `string` | Latest `modified` timestamp in the `targetId` group for `CONNECTOR`, or that subtype row\'s `modified` for `SOURCE`. Not filterable or sortable. | [readonly] [default to undefined]
 

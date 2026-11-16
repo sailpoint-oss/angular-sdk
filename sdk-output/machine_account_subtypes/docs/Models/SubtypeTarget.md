@@ -21,8 +21,8 @@ import { SubtypeTarget } from '@sailpoint/angular-sdk/machine_account_subtypes';
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **(optional)** `string` | Type of the target. | [default to undefined]
-**id** | **(optional)** `string` | Source ID for a `SOURCE` target, or connector type for a `CONNECTOR` target. | [default to undefined]
-**name** | **(optional)** `string` | Name of the source or connector. | [default to undefined]
-**supportsProvisioning** | **(optional)** `boolean` | Indicates whether the target supports provisioning. Only returned when you get a single subtype by ID. | [default to false]
+**type** | **(optional)** `string` | DTO type of the target. `SOURCE` for source-tier rows; `CONNECTOR` for connector-tier rows. | [default to undefined]
+**id** | **(optional)** `string` | Target identifier. Source id for `SOURCE`. Connector specification id or connector type for `CONNECTOR`. | [default to undefined]
+**name** | **(optional)** `string` | Human-readable target name. Falls back to `id` when a display name is not available. | [default to undefined]
+**supportsProvisioning** | **(optional)** `boolean` | Whether the target can provision accounts. `false` when the target does not support provisioning. | [default to false]
 

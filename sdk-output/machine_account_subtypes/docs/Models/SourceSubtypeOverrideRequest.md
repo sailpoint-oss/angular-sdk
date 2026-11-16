@@ -21,5 +21,5 @@ import { SourceSubtypeOverrideRequest } from '@sailpoint/angular-sdk/machine_acc
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sourceId** | `string` | ID of the source to create the overriding source subtype on. | [default to undefined]
+**sourceId** | `string` | Source that receives the override. | [default to undefined]
 
