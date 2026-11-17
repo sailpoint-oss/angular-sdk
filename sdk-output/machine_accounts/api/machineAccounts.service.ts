@@ -243,12 +243,6 @@ export interface ReloadMachineAccountsInBulkAsyncV1RequestParams {
     xSailPointExperimental?: string;
 }
 
-export interface ReloadMachineAccountsInBulkV1RequestParams {
-    machineAccountBulkRequest: MachineAccountBulkRequest;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
-}
-
 export interface UnlockMachineAccountV1RequestParams {
     /** Machine Account ID. */
     id: string;
@@ -1611,7 +1605,7 @@ export class MachineAccountsService extends BaseService {
     }
 
     /**
-     * Bulk reload machine accounts asynchronously
+     * Reload machine accounts in bulk
      * Use this API to submit one task that reloads up to 100 machine accounts from their sources, and get the task ID. Machine accounts that can\&#39;t be reloaded are skipped. When none of the machine accounts can be reloaded, the task completes with an error.  The request fails with &#x60;400&#x60; when &#x60;ids&#x60; is empty or has more than 100 entries.  A caller who owns the machine accounts can reload them. Other callers need the **idn:mis-account:reload** right. For a caller without the right, machine accounts they do not own are skipped.  When this capability is not enabled for the tenant, this API returns &#x60;403&#x60;. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -1666,75 +1660,6 @@ export class MachineAccountsService extends BaseService {
 
         let localVarPath = `/machine-accounts/v1/bulk-reload-async`;
         return this.httpClient.request<MachineAccountRequestAsyncResult>('post', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                body: machineAccountBulkRequest,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * Reload machine accounts in bulk
-     * Use this API to reload up to 100 machine accounts from their sources. The response has one result per requested machine account, in no particular order. Each result has its own HTTP-style &#x60;status&#x60;: &#x60;200&#x60; when the reload was queued, or an error status such as &#x60;400&#x60;, &#x60;404&#x60; or &#x60;500&#x60;.  To track the whole reload with a single task instead, use the asynchronous bulk reload API.  The request fails with &#x60;400&#x60; when &#x60;ids&#x60; is empty or has more than 100 entries.  A caller who owns the machine accounts can reload them. Other callers need the **idn:mis-account:reload** right. For a caller without the right, machine accounts they do not own get a result with status &#x60;404&#x60;.  When this capability is not enabled for the tenant, this API returns &#x60;403&#x60;. 
-     * @param requestParameters
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public reloadMachineAccountsInBulkV1(requestParameters: ReloadMachineAccountsInBulkV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<MachineAccountBulkResult>>;
-    public reloadMachineAccountsInBulkV1(requestParameters: ReloadMachineAccountsInBulkV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MachineAccountBulkResult>>>;
-    public reloadMachineAccountsInBulkV1(requestParameters: ReloadMachineAccountsInBulkV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MachineAccountBulkResult>>>;
-    public reloadMachineAccountsInBulkV1(requestParameters: ReloadMachineAccountsInBulkV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const machineAccountBulkRequest = requestParameters?.machineAccountBulkRequest;
-        if (machineAccountBulkRequest === null || machineAccountBulkRequest === undefined) {
-            throw new Error('Required parameter machineAccountBulkRequest was null or undefined when calling reloadMachineAccountsInBulkV1.');
-        }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
-
-        let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/machine-accounts/v1/bulk-reload`;
-        return this.httpClient.request<Array<MachineAccountBulkResult>>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: machineAccountBulkRequest,
@@ -1956,7 +1881,7 @@ export class MachineAccountsService extends BaseService {
 
     /**
      * Update machine accounts in bulk
-     * Use this API to apply the same [JSON Patch](https://tools.ietf.org/html/rfc6902) to up to 100 machine accounts. The response has one result per requested machine account, in no particular order. Each result has its own HTTP-style &#x60;status&#x60;: &#x60;200&#x60; when the update succeeded, or an error status such as &#x60;400&#x60; or &#x60;404&#x60;.  Each patch operation must target one of these top-level fields:   * description   * subtype   * environment   * machineIdentity   * ownerIdentity   * manuallyEdited  The request fails with &#x60;400&#x60; when &#x60;ids&#x60; is empty or has more than 100 entries, when &#x60;jsonPatch&#x60; is missing, or when a patch operation targets any other field. A patch that changes &#x60;subtype&#x60; must only include machine accounts from one source; otherwise every result has status &#x60;400&#x60;.  A caller who owns the machine accounts can update them. Other callers need the **idn:mis-account:update** right. For a caller without the right, machine accounts they do not own get a result with status &#x60;404&#x60;.  When this capability is not enabled for the tenant, this API returns &#x60;403&#x60;. 
+     * Use this API to apply the same [JSON Patch](https://tools.ietf.org/html/rfc6902) to up to 100 machine accounts. The response has one result per requested machine account, in no particular order. Each result has its own HTTP-style &#x60;status&#x60;: &#x60;200&#x60; when the update succeeded, &#x60;404&#x60; when the account was not found or is not accessible to the caller, &#x60;409&#x60; when the same ID appears more than once in the batch, or &#x60;400&#x60; when that row cannot be updated.  Each patch operation must target one of these top-level fields:   * description   * subtype   * environment   * machineIdentity   * ownerIdentity   * owners   * manuallyEdited  &#x60;owners&#x60; is accepted only when expanded machine account ownership is enabled for the tenant. When it is not, a patch that targets &#x60;owners&#x60; fails with &#x60;400&#x60;. &#x60;owners&#x60; may only be replaced at &#x60;/owners&#x60;, &#x60;/owners/primary&#x60;, or &#x60;/owners/secondary&#x60;. A request that patches both &#x60;ownerIdentity&#x60; and &#x60;owners&#x60; fails with &#x60;400&#x60;.  The request fails with &#x60;400&#x60; when &#x60;ids&#x60; is empty or has more than 100 entries, when &#x60;jsonPatch&#x60; is missing, or when a patch operation targets any other field. A patch that changes &#x60;subtype&#x60; must only include machine accounts from one source; otherwise every result has status &#x60;400&#x60;.  A caller who owns the machine accounts can update them. Other callers need the **idn:mis-account:update** right. For a caller without the right, machine accounts they do not own get a result with status &#x60;404&#x60;.  When this capability is not enabled for the tenant, this API returns &#x60;403&#x60;. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

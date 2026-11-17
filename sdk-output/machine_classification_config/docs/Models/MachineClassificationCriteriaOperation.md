@@ -30,8 +30,18 @@ import { MachineClassificationCriteriaOperation } from '@sailpoint/angular-sdk/m
 
 * `Contains` (value: `'CONTAINS'`)
 
+* `NotContains` (value: `'NOT_CONTAINS'`)
+
 * `And` (value: `'AND'`)
 
 * `Or` (value: `'OR'`)
+
+* `Exists` (value: `'EXISTS'`)
+
+* `NotExists` (value: `'NOT_EXISTS'`)
+
+* `Empty` (value: `'EMPTY'`)
+
+* `NotEmpty` (value: `'NOT_EMPTY'`)
 
 

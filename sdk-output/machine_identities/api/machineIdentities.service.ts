@@ -520,7 +520,7 @@ export class MachineIdentitiesService extends BaseService {
 
     /**
      * Bulk delete machine identities
-     * This API deletes up to 100 machine identities and returns a result for each requested ID.  The response is always &#x60;207&#x60; when the request is valid. Check the &#x60;status&#x60; of each result to see whether that machine identity was deleted.  A caller who owns a machine identity can delete it. Other callers need the **idn:mis-identity:delete** right. For callers without that right, IDs of machine identities they do not own return a &#x60;404&#x60; result. 
+     * This API deletes up to 100 machine identities and returns a result for each requested ID.  The response is always &#x60;207&#x60; when the request is valid. Check the &#x60;status&#x60; of each result to see whether that machine identity was deleted. A duplicate ID in the batch returns &#x60;409&#x60; for that row.  A caller who owns a machine identity can delete it. Other callers need the **idn:mis-identity:delete** right. For callers without that right, IDs of machine identities they do not own return a &#x60;404&#x60; result. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -2288,7 +2288,7 @@ export class MachineIdentitiesService extends BaseService {
 
     /**
      * Bulk update machine identities
-     * This API applies the same JSON Patch operations to up to 100 machine identities and returns a result for each requested ID. Only &#x60;/description&#x60;, &#x60;/userEntitlements&#x60;, &#x60;/owners&#x60;, &#x60;/owners/primary&#x60;, and &#x60;/owners/secondary&#x60; can be patched. Patching any other path returns &#x60;400&#x60;. When access requests for non-human identities are not enabled for the tenant, a patch that changes &#x60;/userEntitlements&#x60; returns &#x60;403&#x60;.  The response is always &#x60;207&#x60; when the request is valid. Check the &#x60;status&#x60; of each result to see whether that machine identity was updated.  A caller who owns a machine identity can update it. Other callers need the **idn:mis-identity:update** right. For callers without that right, IDs of machine identities they do not own return a &#x60;404&#x60; result. 
+     * This API applies the same JSON Patch operations to up to 100 machine identities and returns a result for each requested ID. Only &#x60;/description&#x60;, &#x60;/userEntitlements&#x60;, &#x60;/owners&#x60;, &#x60;/owners/primary&#x60;, and &#x60;/owners/secondary&#x60; can be patched. Patching any other path returns &#x60;400&#x60;. When access requests for non-human identities are not enabled for the tenant, a patch that changes &#x60;/userEntitlements&#x60; returns &#x60;403&#x60;.  The response is always &#x60;207&#x60; when the request is valid. Check the &#x60;status&#x60; of each result to see whether that machine identity was updated. A duplicate ID in the batch returns &#x60;409&#x60; for that row.  A caller who owns a machine identity can update it. Other callers need the **idn:mis-identity:update** right. For callers without that right, IDs of machine identities they do not own return a &#x60;404&#x60; result. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
