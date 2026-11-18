@@ -54,6 +54,7 @@ export * from './machineIdentityUserEntitlementResponseEntitlement';
 export * from './machineIdentityUserEntitlementResponseSource';
 export * from './machineIdentityV2Risk';
 export * from './machineIdentityV2Source';
+export * from './machineidentityagentdiscoveredcounts';
 export * from './machineidentitycapability';
 export * from './machineidentityentitlement';
 export * from './machineidentityv2';

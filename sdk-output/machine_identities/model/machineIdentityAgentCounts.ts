@@ -8,8 +8,8 @@
  * Do not edit the class manually.
  */
 import { MachineIdentityRiskSeverityCounts } from './machineIdentityRiskSeverityCounts';
-import { MachineIdentityDiscoveredCounts } from './machineIdentityDiscoveredCounts';
 import { MachineIdentityAgentCountsOwnership } from './machineIdentityAgentCountsOwnership';
+import { Machineidentityagentdiscoveredcounts } from './machineidentityagentdiscoveredcounts';
 
 
 /**
@@ -24,7 +24,7 @@ export interface MachineIdentityAgentCounts {
      * Number of AI agents that are not sanctioned.
      */
     unsanctionedAgentCount?: number;
-    discovered?: MachineIdentityDiscoveredCounts;
+    discovered?: Machineidentityagentdiscoveredcounts;
     riskSeverity?: MachineIdentityRiskSeverityCounts | null;
     ownership?: MachineIdentityAgentCountsOwnership;
 }

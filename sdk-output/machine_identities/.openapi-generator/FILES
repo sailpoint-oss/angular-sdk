@@ -58,6 +58,7 @@ MachineIdentityUserEntitlementResponseEntitlement.md
 MachineIdentityUserEntitlementResponseSource.md
 MachineIdentityV2Risk.md
 MachineIdentityV2Source.md
+Machineidentityagentdiscoveredcounts.md
 Machineidentitycapability.md
 Machineidentityentitlement.md
 Machineidentityv2.md
@@ -139,6 +140,7 @@ model/machineIdentityUserEntitlementResponseEntitlement.ts
 model/machineIdentityUserEntitlementResponseSource.ts
 model/machineIdentityV2Risk.ts
 model/machineIdentityV2Source.ts
+model/machineidentityagentdiscoveredcounts.ts
 model/machineidentitycapability.ts
 model/machineidentityentitlement.ts
 model/machineidentityv2.ts
