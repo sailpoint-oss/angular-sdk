@@ -155,7 +155,7 @@
             });
           }
         }
-- path: /machine-identities/v2/bulk-delete
+- path: /machine-identities/v1/bulk-delete
   method: post
   xCodeSample:
     - lang: Angular
@@ -799,7 +799,7 @@
             });
           }
         }
-- path: /machine-identities/v2/bulk-update
+- path: /machine-identities/v1/bulk-update
   method: post
   xCodeSample:
     - lang: Angular

@@ -3,6 +3,7 @@ export * from './errorMessageDto';
 export * from './errorResponseDto';
 export * from './getOrgConfigV1401Response';
 export * from './getOrgConfigV1429Response';
+export * from './idnSourceToArmSystem';
 export * from './jsonPatchOperation';
 export * from './jsonPatchOperationValue';
 export * from './localeOrigin';

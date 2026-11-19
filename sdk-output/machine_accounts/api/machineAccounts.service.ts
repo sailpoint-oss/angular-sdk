@@ -17,8 +17,6 @@ import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
 // @ts-ignore
-import { CreateMachineAccountSubtypeV1Request } from '../model/createMachineAccountSubtypeV1Request';
-// @ts-ignore
 import { ErrorResponseDto } from '../model/errorResponseDto';
 // @ts-ignore
 import { JsonPatchOperation } from '../model/jsonPatchOperation';
@@ -48,8 +46,6 @@ import { MachineAccountV2 } from '../model/machineAccountV2';
 import { MachineAccountsAsyncResult } from '../model/machineAccountsAsyncResult';
 // @ts-ignore
 import { MachineAccountsSummary } from '../model/machineAccountsSummary';
-// @ts-ignore
-import { SourceSubtype } from '../model/sourceSubtype';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -57,26 +53,9 @@ import { Configuration }                                     from '../configurat
 import { BaseService } from '../api.base.service';
 
 
-export interface CreateMachineAccountSubtypeV1RequestParams {
-    /** The ID of the source. */
-    sourceId: string;
-    createMachineAccountSubtypeV1Request: CreateMachineAccountSubtypeV1Request;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
-}
-
 export interface DeleteMachineAccountAsyncV1RequestParams {
     /** Machine Account ID. */
     id: string;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
-}
-
-export interface DeleteMachineAccountSubtypeByTechnicalNameV1RequestParams {
-    /** The ID of the source. */
-    sourceId: string;
-    /** The technical name of the subtype. */
-    technicalName: string;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -126,22 +105,6 @@ export interface GetMachineAccountEntitlementsV1RequestParams {
     xSailPointExperimental?: string;
 }
 
-export interface GetMachineAccountSubtypeByIdV1RequestParams {
-    /** The ID of the machine account subtype. */
-    subtypeId: string;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
-}
-
-export interface GetMachineAccountSubtypeByTechnicalNameV1RequestParams {
-    /** The ID of the source. */
-    sourceId: string;
-    /** The technical name of the subtype. */
-    technicalName: string;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
-}
-
 export interface GetMachineAccountV1RequestParams {
     /** Machine Account ID. */
     id: string;
@@ -168,23 +131,6 @@ export interface ListMachineAccountMachineIdentitiesV1RequestParams {
     id: string;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
-}
-
-export interface ListMachineAccountSubtypesV1RequestParams {
-    /** The ID of the source. */
-    sourceId: string;
-    /** Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **displayName**: *eq, sw*  **technicalName**: *eq, sw* */
-    filters?: string;
-    /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **displayName, technicalName** */
-    sorters?: string;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
-    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
-    count?: boolean;
-    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
-    limit?: number;
-    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
-    offset?: number;
 }
 
 export interface ListMachineAccountsV1RequestParams {
@@ -215,17 +161,6 @@ export interface ListMachineAccountsV2RequestParams {
     filters?: string;
     /** Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, name, nativeIdentity, uuid, description, machineIdentity.id, machineIdentity.name, subtype.technicalName, subtype.displayName, accessType, environment, ownerIdentity, ownerIdentity.id, ownerIdentity.name, owners.primary.id, owners.primary.name, owners.secondaryIdentity.id, owners.secondaryIdentity.name, owners.governanceGroup.id, owners.governanceGroup.name, manuallyCorrelated, enabled, locked, hasEntitlements, attributes, connectorAttributes, source.id, source.name, datasetId, resource.id, type, created, modified, risk.severity, permissionLevel, lastUsedAt**  The same availability rules as for &#x60;filters&#x60; apply to the &#x60;owners.*&#x60;, &#x60;risk.severity&#x60;, &#x60;permissionLevel&#x60; and &#x60;lastUsedAt&#x60; fields. &#x60;risk.severity&#x60; sorts by rank (UNKNOWN, LOW, MEDIUM, HIGH, CRITICAL), not alphabetically. */
     sorters?: string;
-    /** Use this header to enable this experimental API. */
-    xSailPointExperimental?: string;
-}
-
-export interface PatchMachineAccountSubtypeByTechnicalNameV1RequestParams {
-    /** The ID of the source. */
-    sourceId: string;
-    /** The technical name of the subtype. */
-    technicalName: string;
-    /** A JSON of updated values [JSON Patch](https://tools.ietf.org/html/rfc6902) standard. */
-    requestBody: Array<object>;
     /** Use this header to enable this experimental API. */
     xSailPointExperimental?: string;
 }
@@ -285,80 +220,6 @@ export class MachineAccountsService extends BaseService {
     }
 
     /**
-     * Create subtype
-     * Create a new machine account subtype for a source.
-     * @param requestParameters
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @deprecated
-     */
-    public createMachineAccountSubtypeV1(requestParameters: CreateMachineAccountSubtypeV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SourceSubtype>;
-    public createMachineAccountSubtypeV1(requestParameters: CreateMachineAccountSubtypeV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SourceSubtype>>;
-    public createMachineAccountSubtypeV1(requestParameters: CreateMachineAccountSubtypeV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SourceSubtype>>;
-    public createMachineAccountSubtypeV1(requestParameters: CreateMachineAccountSubtypeV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const sourceId = requestParameters?.sourceId;
-        if (sourceId === null || sourceId === undefined) {
-            throw new Error('Required parameter sourceId was null or undefined when calling createMachineAccountSubtypeV1.');
-        }
-        const createMachineAccountSubtypeV1Request = requestParameters?.createMachineAccountSubtypeV1Request;
-        if (createMachineAccountSubtypeV1Request === null || createMachineAccountSubtypeV1Request === undefined) {
-            throw new Error('Required parameter createMachineAccountSubtypeV1Request was null or undefined when calling createMachineAccountSubtypeV1.');
-        }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
-
-        let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/subtypes`;
-        return this.httpClient.request<SourceSubtype>('post', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                body: createMachineAccountSubtypeV1Request,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
      * Remove machine account
      * Use this API to remove a machine account from SailPoint Identity Security. The source account is left unchanged, and a removed machine account can be re-created during the next aggregation. The response returns the task ID.  This endpoint is intended for:  * Removing machine accounts that no longer exist on the source.  * Removing machine accounts that will not be aggregated after a source configuration change.  * Forcing machine accounts to be re-created on the next aggregation so account processing can run again.  A caller who owns the machine account can remove it. Other callers need the **idn:mis-account:remove** right. 
      * @param requestParameters
@@ -405,70 +266,6 @@ export class MachineAccountsService extends BaseService {
 
         let localVarPath = `/machine-accounts/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/remove`;
         return this.httpClient.request<MachineAccountsAsyncResult>('post', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * Delete subtype
-     * Delete a machine account subtype by source ID and technical name.
-     * @param requestParameters
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @deprecated
-     */
-    public deleteMachineAccountSubtypeByTechnicalNameV1(requestParameters: DeleteMachineAccountSubtypeByTechnicalNameV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
-    public deleteMachineAccountSubtypeByTechnicalNameV1(requestParameters: DeleteMachineAccountSubtypeByTechnicalNameV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
-    public deleteMachineAccountSubtypeByTechnicalNameV1(requestParameters: DeleteMachineAccountSubtypeByTechnicalNameV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
-    public deleteMachineAccountSubtypeByTechnicalNameV1(requestParameters: DeleteMachineAccountSubtypeByTechnicalNameV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const sourceId = requestParameters?.sourceId;
-        if (sourceId === null || sourceId === undefined) {
-            throw new Error('Required parameter sourceId was null or undefined when calling deleteMachineAccountSubtypeByTechnicalNameV1.');
-        }
-        const technicalName = requestParameters?.technicalName;
-        if (technicalName === null || technicalName === undefined) {
-            throw new Error('Required parameter technicalName was null or undefined when calling deleteMachineAccountSubtypeByTechnicalNameV1.');
-        }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
-
-        let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/subtypes/${this.configuration.encodeParam({name: "technicalName", value: technicalName, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
-        return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -879,130 +676,6 @@ export class MachineAccountsService extends BaseService {
     }
 
     /**
-     * Retrieve subtype by subtype id
-     * Get a machine account subtype by its unique ID.
-     * @param requestParameters
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @deprecated
-     */
-    public getMachineAccountSubtypeByIdV1(requestParameters: GetMachineAccountSubtypeByIdV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SourceSubtype>;
-    public getMachineAccountSubtypeByIdV1(requestParameters: GetMachineAccountSubtypeByIdV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SourceSubtype>>;
-    public getMachineAccountSubtypeByIdV1(requestParameters: GetMachineAccountSubtypeByIdV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SourceSubtype>>;
-    public getMachineAccountSubtypeByIdV1(requestParameters: GetMachineAccountSubtypeByIdV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const subtypeId = requestParameters?.subtypeId;
-        if (subtypeId === null || subtypeId === undefined) {
-            throw new Error('Required parameter subtypeId was null or undefined when calling getMachineAccountSubtypeByIdV1.');
-        }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
-
-        let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/sources/v1/subtypes/${this.configuration.encodeParam({name: "subtypeId", value: subtypeId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
-        return this.httpClient.request<SourceSubtype>('get', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * Retrieve subtype by source and technicalName
-     * Get a machine account subtype by source ID and technical name.
-     * @param requestParameters
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @deprecated
-     */
-    public getMachineAccountSubtypeByTechnicalNameV1(requestParameters: GetMachineAccountSubtypeByTechnicalNameV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SourceSubtype>;
-    public getMachineAccountSubtypeByTechnicalNameV1(requestParameters: GetMachineAccountSubtypeByTechnicalNameV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SourceSubtype>>;
-    public getMachineAccountSubtypeByTechnicalNameV1(requestParameters: GetMachineAccountSubtypeByTechnicalNameV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SourceSubtype>>;
-    public getMachineAccountSubtypeByTechnicalNameV1(requestParameters: GetMachineAccountSubtypeByTechnicalNameV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const sourceId = requestParameters?.sourceId;
-        if (sourceId === null || sourceId === undefined) {
-            throw new Error('Required parameter sourceId was null or undefined when calling getMachineAccountSubtypeByTechnicalNameV1.');
-        }
-        const technicalName = requestParameters?.technicalName;
-        if (technicalName === null || technicalName === undefined) {
-            throw new Error('Required parameter technicalName was null or undefined when calling getMachineAccountSubtypeByTechnicalNameV1.');
-        }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
-
-        let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/subtypes/${this.configuration.encodeParam({name: "technicalName", value: technicalName, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
-        return this.httpClient.request<SourceSubtype>('get', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
      * Get machine account details
      * Use this API to return the details for a single machine account by its ID.  
      * @param requestParameters
@@ -1241,84 +914,6 @@ export class MachineAccountsService extends BaseService {
     }
 
     /**
-     * Retrieve all subtypes by source
-     * Get all machine account subtypes for a given source.
-     * @param requestParameters
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @deprecated
-     */
-    public listMachineAccountSubtypesV1(requestParameters: ListMachineAccountSubtypesV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<SourceSubtype>>;
-    public listMachineAccountSubtypesV1(requestParameters: ListMachineAccountSubtypesV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<SourceSubtype>>>;
-    public listMachineAccountSubtypesV1(requestParameters: ListMachineAccountSubtypesV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<SourceSubtype>>>;
-    public listMachineAccountSubtypesV1(requestParameters: ListMachineAccountSubtypesV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const sourceId = requestParameters?.sourceId;
-        if (sourceId === null || sourceId === undefined) {
-            throw new Error('Required parameter sourceId was null or undefined when calling listMachineAccountSubtypesV1.');
-        }
-        const filters = requestParameters?.filters;
-        const sorters = requestParameters?.sorters;
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
-        const count = requestParameters?.count;
-        const limit = requestParameters?.limit;
-        const offset = requestParameters?.offset;
-
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>filters, 'filters');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>sorters, 'sorters');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>count, 'count');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>offset, 'offset');
-
-        let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/subtypes`;
-        return this.httpClient.request<Array<SourceSubtype>>('get', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                params: localVarQueryParameters,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
      * List machine accounts
      * This returns a list of machine accounts.  
      * @param requestParameters
@@ -1457,84 +1052,6 @@ export class MachineAccountsService extends BaseService {
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * Patch subtype
-     * Update fields of a machine account subtype by source ID and technical name. Patchable fields include: &#x60;displayName&#x60;, &#x60;description&#x60;.
-     * @param requestParameters
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @deprecated
-     */
-    public patchMachineAccountSubtypeByTechnicalNameV1(requestParameters: PatchMachineAccountSubtypeByTechnicalNameV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<SourceSubtype>;
-    public patchMachineAccountSubtypeByTechnicalNameV1(requestParameters: PatchMachineAccountSubtypeByTechnicalNameV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<SourceSubtype>>;
-    public patchMachineAccountSubtypeByTechnicalNameV1(requestParameters: PatchMachineAccountSubtypeByTechnicalNameV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<SourceSubtype>>;
-    public patchMachineAccountSubtypeByTechnicalNameV1(requestParameters: PatchMachineAccountSubtypeByTechnicalNameV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        const sourceId = requestParameters?.sourceId;
-        if (sourceId === null || sourceId === undefined) {
-            throw new Error('Required parameter sourceId was null or undefined when calling patchMachineAccountSubtypeByTechnicalNameV1.');
-        }
-        const technicalName = requestParameters?.technicalName;
-        if (technicalName === null || technicalName === undefined) {
-            throw new Error('Required parameter technicalName was null or undefined when calling patchMachineAccountSubtypeByTechnicalNameV1.');
-        }
-        const requestBody = requestParameters?.requestBody;
-        if (requestBody === null || requestBody === undefined) {
-            throw new Error('Required parameter requestBody was null or undefined when calling patchMachineAccountSubtypeByTechnicalNameV1.');
-        }
-        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
-
-        let localVarHeaders = this.defaultHeaders;
-        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
-            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
-        }
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json-patch+json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/sources/v1/${this.configuration.encodeParam({name: "sourceId", value: sourceId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/subtypes/${this.configuration.encodeParam({name: "technicalName", value: technicalName, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
-        return this.httpClient.request<SourceSubtype>('patch', `${this.configuration.basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                body: requestBody,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

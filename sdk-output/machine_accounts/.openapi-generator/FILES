@@ -3,7 +3,6 @@
 ArrayInner.md
 BaseCommonDto.md
 BaseReferenceDto.md
-CreateMachineAccountSubtypeV1Request.md
 DtoType.md
 ErrorMessageDto.md
 ErrorResponseDto.md
@@ -38,7 +37,6 @@ MachineAccountsService.md
 MachineAccountsServicedeveloperSite_code_examples.yaml
 MachineAccountsSummary.md
 README.md
-SourceSubtype.md
 api.base.service.ts
 api.module.ts
 api/api.ts
@@ -52,7 +50,6 @@ index.ts
 model/arrayInner.ts
 model/baseCommonDto.ts
 model/baseReferenceDto.ts
-model/createMachineAccountSubtypeV1Request.ts
 model/dtoType.ts
 model/errorMessageDto.ts
 model/errorResponseDto.ts
@@ -85,7 +82,6 @@ model/machineAccountV2AllOfSubtype.ts
 model/machineAccountsAsyncResult.ts
 model/machineAccountsSummary.ts
 model/models.ts
-model/sourceSubtype.ts
 ng-package.json
 package.json
 param.ts

@@ -572,7 +572,7 @@ export class MachineIdentitiesService extends BaseService {
             }
         }
 
-        let localVarPath = `/machine-identities/v2/bulk-delete`;
+        let localVarPath = `/machine-identities/v1/bulk-delete`;
         return this.httpClient.request<Array<MachineIdentityBulkResult>>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
@@ -2340,7 +2340,7 @@ export class MachineIdentitiesService extends BaseService {
             }
         }
 
-        let localVarPath = `/machine-identities/v2/bulk-update`;
+        let localVarPath = `/machine-identities/v1/bulk-update`;
         return this.httpClient.request<Array<MachineIdentityBulkResult>>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,

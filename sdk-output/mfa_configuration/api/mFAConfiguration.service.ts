@@ -29,6 +29,8 @@ import { KbaAnswerResponseItem } from '../model/kbaAnswerResponseItem';
 // @ts-ignore
 import { KbaQuestion } from '../model/kbaQuestion';
 // @ts-ignore
+import { MfaClear1Config } from '../model/mfaClear1Config';
+// @ts-ignore
 import { MfaConfigTestResponse } from '../model/mfaConfigTestResponse';
 // @ts-ignore
 import { MfaDuoConfig } from '../model/mfaDuoConfig';
@@ -46,6 +48,10 @@ export interface GetMFAKbaConfigV1RequestParams {
     allLanguages?: boolean;
 }
 
+export interface SetMFAClear1ConfigV1RequestParams {
+    mfaClear1Config: MfaClear1Config;
+}
+
 export interface SetMFADuoConfigV1RequestParams {
     mfaDuoConfig: MfaDuoConfig;
 }
@@ -59,8 +65,8 @@ export interface SetMFAOktaConfigV1RequestParams {
 }
 
 export interface TestMFAConfigV1RequestParams {
-    /** The name of the MFA method. The currently supported method names are \&#39;okta-verify\&#39; and \&#39;duo-web\&#39;. */
-    method: 'okta-verify' | 'duo-web';
+    /** The name of the MFA method. The currently supported method names are \&#39;okta-verify\&#39;, \&#39;duo-web\&#39;, and \&#39;clear1\&#39;. */
+    method: 'okta-verify' | 'duo-web' | 'clear1';
 }
 
 
@@ -71,6 +77,56 @@ export class MFAConfigurationService extends BaseService {
 
     constructor(protected httpClient: HttpClient, @Optional() @Inject(BASE_PATH) basePath: string|string[], @Optional() configuration?: Configuration) {
         super(basePath, configuration);
+    }
+
+    /**
+     * Configuration of CLEAR1 mfa method
+     * This API returns the configuration of a CLEAR1 MFA method.
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getMFAClear1ConfigV1(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<MfaClear1Config>;
+    public getMFAClear1ConfigV1(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<MfaClear1Config>>;
+    public getMFAClear1ConfigV1(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<MfaClear1Config>>;
+    public getMFAClear1ConfigV1(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/mfa/v1/clear1/config`;
+        return this.httpClient.request<MfaClear1Config>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
     }
 
     /**
@@ -220,6 +276,71 @@ export class MFAConfigurationService extends BaseService {
         return this.httpClient.request<MfaOktaConfig>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Set CLEAR1 mfa configuration
+     * This API sets the configuration of a CLEAR1 MFA method.
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public setMFAClear1ConfigV1(requestParameters: SetMFAClear1ConfigV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<MfaClear1Config>;
+    public setMFAClear1ConfigV1(requestParameters: SetMFAClear1ConfigV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<MfaClear1Config>>;
+    public setMFAClear1ConfigV1(requestParameters: SetMFAClear1ConfigV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<MfaClear1Config>>;
+    public setMFAClear1ConfigV1(requestParameters: SetMFAClear1ConfigV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const mfaClear1Config = requestParameters?.mfaClear1Config;
+        if (mfaClear1Config === null || mfaClear1Config === undefined) {
+            throw new Error('Required parameter mfaClear1Config was null or undefined when calling setMFAClear1ConfigV1.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/mfa/v1/clear1/config`;
+        return this.httpClient.request<MfaClear1Config>('put', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: mfaClear1Config,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
@@ -466,7 +587,7 @@ export class MFAConfigurationService extends BaseService {
             }
         }
 
-        let localVarPath = `/mfa/v1/${this.configuration.encodeParam({name: "method", value: method, in: "path", style: "simple", explode: false, dataType: "'okta-verify' | 'duo-web'", dataFormat: undefined})}/test`;
+        let localVarPath = `/mfa/v1/${this.configuration.encodeParam({name: "method", value: method, in: "path", style: "simple", explode: false, dataType: "'okta-verify' | 'duo-web' | 'clear1'", dataFormat: undefined})}/test`;
         return this.httpClient.request<MfaConfigTestResponse>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,

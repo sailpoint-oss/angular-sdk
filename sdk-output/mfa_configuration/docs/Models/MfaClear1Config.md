@@ -1,0 +1,29 @@
+---
+id: mfa_configuration-model-mfa-clear1-config
+title: MfaClear1Config
+pagination_label: MfaClear1Config
+sidebar_label: MfaClear1Config
+sidebar_class_name: angularsdk
+keywords: ['angular', 'Angular', 'sdk', 'MfaClear1Config', 'mfa_configuration']
+slug: /tools/sdk/angular/mfa_configuration/models/mfa-clear1-config
+tags: ['SDK', 'Software Development Kit', 'MfaClear1Config', 'mfa_configuration']
+---
+
+# MfaClear1Config
+
+Import this model from the entry point of its package:
+
+```typescript
+import { MfaClear1Config } from '@sailpoint/angular-sdk/mfa_configuration';
+```
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**mfaMethod** | `string` | Mfa method name | [default to undefined]
+**enabled** | **(optional)** `boolean` | If MFA method is enabled. | [default to false]
+**apiKey** | `string` | The API key for authenticating requests to the CLEAR1 provider. This field is always required, regardless of whether the MFA method is enabled. This value is masked in responses. | [default to undefined]
+**knownUserKeyFlowConfig** | **(optional)** `Mfaclear1knownuserkeyflowconfig` |  | [default to undefined]
+**establishedIdentityFlowConfig** | **(optional)** `Mfaclear1establishedidentityflowconfig` |  | [default to undefined]
+

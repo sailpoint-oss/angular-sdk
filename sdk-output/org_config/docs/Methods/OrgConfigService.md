@@ -11,7 +11,7 @@ tags: ['SDK', 'Software Development Kit', 'OrgConfig', 'org_config']
 
 # OrgConfigService
   Use this API to implement organization configuration functionality. 
-Administrators can use this functionality to manage organization settings, such as time zones. 
+Administrators can use this functionality to manage organization settings, such as time zones, provisioning retry and status check settings. 
  
 Every method returns an `Observable`. All request paths are relative to the `baseUrl` you pass to `provideSailPoint()`.
 

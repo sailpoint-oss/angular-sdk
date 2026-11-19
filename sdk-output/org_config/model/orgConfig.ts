@@ -7,11 +7,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { IdnSourceToArmSystem } from './idnSourceToArmSystem';
 import { ReportConfigDTO } from './reportConfigDTO';
 
 
 /**
- * DTO class for OrgConfig data accessible by customer external org admin (\"ORG_ADMIN\") users
+ * OrgConfig settings accessible to external customer org admins (`ORG_ADMIN`).  ### Provisioning setting precedence  1. **Source value:** used first when set. When the request spans more than one source, the largest value among those sources wins. 2. **OrgConfig value:** used when no source value is set. 3. **Default:** used when neither is set.  A value outside the allowed range is ignored, and the next level is used.  ### Defaults  * **Retries:** 3 * **Retry interval:** 60 minutes. The actual wait varies by up to 10 percent above or below the interval, so requests that fail together do not retry at the same time. * **Status check interval:** 240 minutes * **Status check limit:** 180 checks  ### Scope  * **Retry count and retry interval:** account enable, disable, unlock, or delete; lifecycle changes that provision accounts; access requests; and RSA token PIN resets. * **Not affected by these settings:** password changes, which use a fixed retry schedule. * **Status check interval and status check limit:** queued provisioning requests. 
  */
 export interface OrgConfig { 
     /**
@@ -33,7 +34,7 @@ export interface OrgConfig {
     /**
      * A list of IDN::sourceId to ARM::systemId mappings.
      */
-    armSapSystemIdMappings?: string | null;
+    armSapSystemIdMappings?: Array<IdnSourceToArmSystem> | null;
     /**
      * ARM authentication string
      */
@@ -53,7 +54,23 @@ export interface OrgConfig {
     /**
      * Org opt-in flag that enables AI Agent delete-at-source lifecycle requests for the current org.
      */
-    aiAgentDeleteRequestEnabled?: boolean | null;
+    aiAgentDeleteRequestEnabled?: boolean;
+    /**
+     * The number of times a provisioning request is retried.
+     */
+    provisioningMaxRetries?: number | null;
+    /**
+     * The number of minutes between provisioning retries.
+     */
+    provisioningRetryThreshold?: number | null;
+    /**
+     * The number of minutes between status checks of a queued provisioning request.
+     */
+    provisioningStatusCheckInterval?: number | null;
+    /**
+     * The number of status checks that run before a queued provisioning request times out.
+     */
+    provisioningMaxStatusChecks?: number | null;
     sodReportConfigs?: Array<ReportConfigDTO>;
 }
 

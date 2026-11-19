@@ -1,3 +1,23 @@
+- path: /mfa/v1/clear1/config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#get-mfa-clear1-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MFAConfigurationService);
+
+          getMFAClear1ConfigV1(): void {
+            this.api.getMFAClear1ConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /mfa/v1/duo-web/config
   method: get
   xCodeSample:
@@ -54,6 +74,54 @@
 
           getMFAOktaConfigV1(): void {
             this.api.getMFAOktaConfigV1({  }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /mfa/v1/clear1/config
+  method: put
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/mfa_configuration/methods/mfa-configuration#set-mfa-clear1-config-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+        import { MfaClear1Config } from '@sailpoint/angular-sdk/mfa_configuration';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(MFAConfigurationService);
+
+          setMFAClear1ConfigV1(): void {
+            const mfaClear1Config: MfaClear1Config = {
+              "knownUserKeyFlowConfig" : {
+                "projectId" : "projectId",
+                "enabled" : true,
+                "identityAttribute" : "identityAttribute"
+              },
+              "apiKey" : "sk123Y3QlA5UqocYpdU3rEkzrK2D497O",
+              "mfaMethod" : "clear1",
+              "enabled" : true,
+              "establishedIdentityFlowConfig" : {
+                "projectId" : "projectId",
+                "enabled" : true,
+                "userProfileMatchingAttributes" : {
+                  "country" : "country",
+                  "phone" : "phone",
+                  "city" : "city",
+                  "dob" : "dob",
+                  "last_name" : "last_name",
+                  "state" : "state",
+                  "postal_code" : "postal_code",
+                  "first_name" : "first_name",
+                  "line2" : "line2",
+                  "email" : "email",
+                  "line1" : "line1"
+                }
+              }
+            }; // MfaClear1Config
+            this.api.setMFAClear1ConfigV1({ mfaClear1Config: mfaClear1Config }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
@@ -158,7 +226,7 @@
           private readonly api = inject(MFAConfigurationService);
 
           testMFAConfigV1(): void {
-            const method: string = 'okta-verify'; // 'okta-verify' | 'duo-web'
+            const method: string = 'okta-verify'; // 'okta-verify' | 'duo-web' | 'clear1'
             this.api.testMFAConfigV1({ method: method }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),

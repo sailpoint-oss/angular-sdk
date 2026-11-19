@@ -15,14 +15,58 @@ Every method returns an `Observable`. All request paths are relative to the `bas
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get-mfa-clear1-config-v1**](#get-mfa-clear1-config-v1) | **GET** `/mfa/v1/clear1/config` | Configuration of CLEAR1 mfa method
 [**get-mfa-duo-config-v1**](#get-mfa-duo-config-v1) | **GET** `/mfa/v1/duo-web/config` | Configuration of duo mfa method
 [**get-mfa-kba-config-v1**](#get-mfa-kba-config-v1) | **GET** `/mfa/v1/kba/config` | Configuration of kba mfa method
 [**get-mfa-okta-config-v1**](#get-mfa-okta-config-v1) | **GET** `/mfa/v1/okta-verify/config` | Configuration of okta mfa method
+[**set-mfa-clear1-config-v1**](#set-mfa-clear1-config-v1) | **PUT** `/mfa/v1/clear1/config` | Set CLEAR1 mfa configuration
 [**set-mfa-duo-config-v1**](#set-mfa-duo-config-v1) | **PUT** `/mfa/v1/duo-web/config` | Set duo mfa configuration
 [**set-mfakba-config-v1**](#set-mfakba-config-v1) | **POST** `/mfa/v1/kba/config/answers` | Set mfa kba configuration
 [**set-mfa-okta-config-v1**](#set-mfa-okta-config-v1) | **PUT** `/mfa/v1/okta-verify/config` | Set okta mfa configuration
 [**test-mfa-config-v1**](#test-mfa-config-v1) | **GET** `/mfa/v1/{method}/test` | Mfa method\&#39;s test configuration
 
+
+## get-mfa-clear1-config-v1
+Configuration of CLEAR1 mfa method
+This API returns the configuration of a CLEAR1 MFA method.
+
+[API Spec](https://developer.sailpoint.com/docs/api/get-mfa-clear1-config-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `GetMFAClear1ConfigV1RequestParams`.
+
+This endpoint does not need any parameter.
+
+### Return type
+
+`Observable<MfaClear1Config>`
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(MFAConfigurationService);
+
+  getMFAClear1ConfigV1(): void {
+    this.api.getMFAClear1ConfigV1({  }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
 
 ## get-mfa-duo-config-v1
 Configuration of duo mfa method
@@ -145,6 +189,53 @@ export class ExampleComponent {
 
   getMFAOktaConfigV1(): void {
     this.api.getMFAOktaConfigV1({  }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
+
+## set-mfa-clear1-config-v1
+Set CLEAR1 mfa configuration
+This API sets the configuration of a CLEAR1 MFA method.
+
+[API Spec](https://developer.sailpoint.com/docs/api/set-mfa-clear1-config-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `SetMFAClear1ConfigV1RequestParams`.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**mfaClear1Config** | `MfaClear1Config` |  | 
+
+### Return type
+
+`Observable<MfaClear1Config>`
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { MFAConfigurationService } from '@sailpoint/angular-sdk/mfa_configuration';
+import { MfaClear1Config } from '@sailpoint/angular-sdk/mfa_configuration';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(MFAConfigurationService);
+
+  setMFAClear1ConfigV1(): void {
+    const mfaClear1Config: MfaClear1Config = ; // 
+    this.api.setMFAClear1ConfigV1({ mfaClear1Config: mfaClear1Config }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });
@@ -308,7 +399,7 @@ The service takes one object that holds every parameter. Its type is `TestMFACon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**method** | `'okta-verify' | 'duo-web'` | The name of the MFA method. The currently supported method names are \&#39;okta-verify\&#39; and \&#39;duo-web\&#39;. |  [default to undefined]
+**method** | `'okta-verify' | 'duo-web' | 'clear1'` | The name of the MFA method. The currently supported method names are \&#39;okta-verify\&#39;, \&#39;duo-web\&#39;, and \&#39;clear1\&#39;. |  [default to undefined]
 
 ### Return type
 
@@ -330,7 +421,7 @@ export class ExampleComponent {
   private readonly api = inject(MFAConfigurationService);
 
   testMFAConfigV1(): void {
-    const method: string = ; // The name of the MFA method. The currently supported method names are \&#39;okta-verify\&#39; and \&#39;duo-web\&#39;.
+    const method: string = ; // The name of the MFA method. The currently supported method names are \&#39;okta-verify\&#39;, \&#39;duo-web\&#39;, and \&#39;clear1\&#39;.
     this.api.testMFAConfigV1({ method: method }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),

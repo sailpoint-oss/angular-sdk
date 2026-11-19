@@ -10,9 +10,13 @@ KbaQuestion.md
 LocaleOrigin.md
 MFAConfigurationService.md
 MFAConfigurationServicedeveloperSite_code_examples.yaml
+MfaClear1Config.md
 MfaConfigTestResponse.md
 MfaDuoConfig.md
 MfaOktaConfig.md
+Mfaclear1establishedidentityflowconfig.md
+Mfaclear1knownuserkeyflowconfig.md
+Mfaclear1userprofilematchingattributes.md
 README.md
 api.base.service.ts
 api.module.ts
@@ -32,9 +36,13 @@ model/kbaAnswerRequestItem.ts
 model/kbaAnswerResponseItem.ts
 model/kbaQuestion.ts
 model/localeOrigin.ts
+model/mfaClear1Config.ts
 model/mfaConfigTestResponse.ts
 model/mfaDuoConfig.ts
 model/mfaOktaConfig.ts
+model/mfaclear1establishedidentityflowconfig.ts
+model/mfaclear1knownuserkeyflowconfig.ts
+model/mfaclear1userprofilematchingattributes.ts
 model/models.ts
 ng-package.json
 package.json

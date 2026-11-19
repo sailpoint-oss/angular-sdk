@@ -16,25 +16,19 @@ Every method returns an `Observable`. All request paths are relative to the `bas
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create-machine-account-subtype-v1**](#create-machine-account-subtype-v1) | **POST** `/sources/v1/{sourceId}/subtypes` | Create subtype
 [**delete-machine-account-async-v1**](#delete-machine-account-async-v1) | **POST** `/machine-accounts/v1/{id}/remove` | Remove machine account
-[**delete-machine-account-subtype-by-technical-name-v1**](#delete-machine-account-subtype-by-technical-name-v1) | **DELETE** `/sources/v1/{sourceId}/subtypes/{technicalName}` | Delete subtype
 [**delete-machine-account-v1**](#delete-machine-account-v1) | **POST** `/machine-accounts/v1/{id}/delete` | Delete machine account
 [**disable-machine-account-v1**](#disable-machine-account-v1) | **POST** `/machine-accounts/v1/{id}/disable` | Disable machine account
 [**disable-machine-accounts-in-bulk-v1**](#disable-machine-accounts-in-bulk-v1) | **POST** `/machine-accounts/v1/bulk-disable` | Disable machine accounts in bulk
 [**enable-machine-account-v1**](#enable-machine-account-v1) | **POST** `/machine-accounts/v1/{id}/enable` | Enable machine account
 [**enable-machine-accounts-in-bulk-v1**](#enable-machine-accounts-in-bulk-v1) | **POST** `/machine-accounts/v1/bulk-enable` | Enable machine accounts in bulk
 [**get-machine-account-entitlements-v1**](#get-machine-account-entitlements-v1) | **GET** `/machine-accounts/v1/{id}/entitlements` | List machine account entitlements
-[**get-machine-account-subtype-by-id-v1**](#get-machine-account-subtype-by-id-v1) | **GET** `/sources/v1/subtypes/{subtypeId}` | Retrieve subtype by subtype id
-[**get-machine-account-subtype-by-technical-name-v1**](#get-machine-account-subtype-by-technical-name-v1) | **GET** `/sources/v1/{sourceId}/subtypes/{technicalName}` | Retrieve subtype by source and technicalName
 [**get-machine-account-v1**](#get-machine-account-v1) | **GET** `/machine-accounts/v1/{id}` | Get machine account details
 [**get-machine-account-v2**](#get-machine-account-v2) | **GET** `/machine-accounts/v2/{id}` | Get machine account details
 [**get-machine-accounts-summary-v1**](#get-machine-accounts-summary-v1) | **GET** `/machine-accounts/v1/machine-accounts-summary` | Get machine account candidate summary
 [**list-machine-account-machine-identities-v1**](#list-machine-account-machine-identities-v1) | **GET** `/machine-accounts/v1/{id}/machine-identities` | List linked machine identities
-[**list-machine-account-subtypes-v1**](#list-machine-account-subtypes-v1) | **GET** `/sources/v1/{sourceId}/subtypes` | Retrieve all subtypes by source
 [**list-machine-accounts-v1**](#list-machine-accounts-v1) | **GET** `/machine-accounts/v1` | List machine accounts
 [**list-machine-accounts-v2**](#list-machine-accounts-v2) | **GET** `/machine-accounts/v2` | List machine accounts
-[**patch-machine-account-subtype-by-technical-name-v1**](#patch-machine-account-subtype-by-technical-name-v1) | **PATCH** `/sources/v1/{sourceId}/subtypes/{technicalName}` | Patch subtype
 [**reload-machine-account-v1**](#reload-machine-account-v1) | **POST** `/machine-accounts/v1/{id}/reload` | Reload machine account
 [**reload-machine-accounts-in-bulk-async-v1**](#reload-machine-accounts-in-bulk-async-v1) | **POST** `/machine-accounts/v1/bulk-reload-async` | Reload machine accounts in bulk
 [**unlock-machine-account-v1**](#unlock-machine-account-v1) | **POST** `/machine-accounts/v1/{id}/unlock` | Unlock machine account
@@ -42,63 +36,6 @@ Method | HTTP request | Description
 [**update-machine-account-v2**](#update-machine-account-v2) | **PATCH** `/machine-accounts/v2/{id}` | Update machine account details
 [**update-machine-accounts-in-bulk-v1**](#update-machine-accounts-in-bulk-v1) | **POST** `/machine-accounts/v1/bulk-update` | Update machine accounts in bulk
 
-
-## create-machine-account-subtype-v1
-:::caution deprecated
-This endpoint has been deprecated and may be replaced or removed in future versions of the API.
-:::
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
-Create subtype
-Create a new machine account subtype for a source.
-
-[API Spec](https://developer.sailpoint.com/docs/api/create-machine-account-subtype-v-1)
-
-### Parameters
-
-The service takes one object that holds every parameter. Its type is `CreateMachineAccountSubtypeV1RequestParams`.
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**sourceId** | `string` | The ID of the source. |  [default to undefined]
-**createMachineAccountSubtypeV1Request** | `CreateMachineAccountSubtypeV1Request` |  | 
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
-
-### Return type
-
-`Observable<SourceSubtype>`
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### Example
-
-```typescript
-import { Component, inject } from '@angular/core';
-import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
-import { CreateMachineAccountSubtypeV1Request } from '@sailpoint/angular-sdk/machine_accounts';
-
-@Component({ selector: 'app-example', template: '' })
-export class ExampleComponent {
-  private readonly api = inject(MachineAccountsService);
-
-  createMachineAccountSubtypeV1(): void {
-    const sourceId: string = ; // The ID of the source.
-    const createMachineAccountSubtypeV1Request: CreateMachineAccountSubtypeV1Request = ; // 
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
-    this.api.createMachineAccountSubtypeV1({ sourceId: sourceId, createMachineAccountSubtypeV1Request: createMachineAccountSubtypeV1Request }).subscribe({
-      next: (result) => console.log(result),
-      error: (error) => console.error(error),
-    });
-  }
-}
-```
-
-[[Back to top]](#)
 
 ## delete-machine-account-async-v1
 :::warning experimental
@@ -153,62 +90,6 @@ export class ExampleComponent {
     const id: string = ; // Machine Account ID.
     const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.deleteMachineAccountAsyncV1({ id: id }).subscribe({
-      next: (result) => console.log(result),
-      error: (error) => console.error(error),
-    });
-  }
-}
-```
-
-[[Back to top]](#)
-
-## delete-machine-account-subtype-by-technical-name-v1
-:::caution deprecated
-This endpoint has been deprecated and may be replaced or removed in future versions of the API.
-:::
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
-Delete subtype
-Delete a machine account subtype by source ID and technical name.
-
-[API Spec](https://developer.sailpoint.com/docs/api/delete-machine-account-subtype-by-technical-name-v-1)
-
-### Parameters
-
-The service takes one object that holds every parameter. Its type is `DeleteMachineAccountSubtypeByTechnicalNameV1RequestParams`.
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**sourceId** | `string` | The ID of the source. |  [default to undefined]
-**technicalName** | `string` | The technical name of the subtype. |  [default to undefined]
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
-
-### Return type
-
-`Observable<void>` (empty response body)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### Example
-
-```typescript
-import { Component, inject } from '@angular/core';
-import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
-
-@Component({ selector: 'app-example', template: '' })
-export class ExampleComponent {
-  private readonly api = inject(MachineAccountsService);
-
-  deleteMachineAccountSubtypeByTechnicalNameV1(): void {
-    const sourceId: string = ; // The ID of the source.
-    const technicalName: string = ; // The technical name of the subtype.
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
-    this.api.deleteMachineAccountSubtypeByTechnicalNameV1({ sourceId: sourceId, technicalName: technicalName }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });
@@ -563,116 +444,6 @@ export class ExampleComponent {
 
 [[Back to top]](#)
 
-## get-machine-account-subtype-by-id-v1
-:::caution deprecated
-This endpoint has been deprecated and may be replaced or removed in future versions of the API.
-:::
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
-Retrieve subtype by subtype id
-Get a machine account subtype by its unique ID.
-
-[API Spec](https://developer.sailpoint.com/docs/api/get-machine-account-subtype-by-id-v-1)
-
-### Parameters
-
-The service takes one object that holds every parameter. Its type is `GetMachineAccountSubtypeByIdV1RequestParams`.
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**subtypeId** | `string` | The ID of the machine account subtype. |  [default to undefined]
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
-
-### Return type
-
-`Observable<SourceSubtype>`
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### Example
-
-```typescript
-import { Component, inject } from '@angular/core';
-import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
-
-@Component({ selector: 'app-example', template: '' })
-export class ExampleComponent {
-  private readonly api = inject(MachineAccountsService);
-
-  getMachineAccountSubtypeByIdV1(): void {
-    const subtypeId: string = ; // The ID of the machine account subtype.
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
-    this.api.getMachineAccountSubtypeByIdV1({ subtypeId: subtypeId }).subscribe({
-      next: (result) => console.log(result),
-      error: (error) => console.error(error),
-    });
-  }
-}
-```
-
-[[Back to top]](#)
-
-## get-machine-account-subtype-by-technical-name-v1
-:::caution deprecated
-This endpoint has been deprecated and may be replaced or removed in future versions of the API.
-:::
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
-Retrieve subtype by source and technicalName
-Get a machine account subtype by source ID and technical name.
-
-[API Spec](https://developer.sailpoint.com/docs/api/get-machine-account-subtype-by-technical-name-v-1)
-
-### Parameters
-
-The service takes one object that holds every parameter. Its type is `GetMachineAccountSubtypeByTechnicalNameV1RequestParams`.
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**sourceId** | `string` | The ID of the source. |  [default to undefined]
-**technicalName** | `string` | The technical name of the subtype. |  [default to undefined]
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
-
-### Return type
-
-`Observable<SourceSubtype>`
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### Example
-
-```typescript
-import { Component, inject } from '@angular/core';
-import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
-
-@Component({ selector: 'app-example', template: '' })
-export class ExampleComponent {
-  private readonly api = inject(MachineAccountsService);
-
-  getMachineAccountSubtypeByTechnicalNameV1(): void {
-    const sourceId: string = ; // The ID of the source.
-    const technicalName: string = ; // The technical name of the subtype.
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
-    this.api.getMachineAccountSubtypeByTechnicalNameV1({ sourceId: sourceId, technicalName: technicalName }).subscribe({
-      next: (result) => console.log(result),
-      error: (error) => console.error(error),
-    });
-  }
-}
-```
-
-[[Back to top]](#)
-
 ## get-machine-account-v1
 :::warning experimental
 This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
@@ -892,70 +663,6 @@ export class ExampleComponent {
 
 [[Back to top]](#)
 
-## list-machine-account-subtypes-v1
-:::caution deprecated
-This endpoint has been deprecated and may be replaced or removed in future versions of the API.
-:::
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
-Retrieve all subtypes by source
-Get all machine account subtypes for a given source.
-
-[API Spec](https://developer.sailpoint.com/docs/api/list-machine-account-subtypes-v-1)
-
-### Parameters
-
-The service takes one object that holds every parameter. Its type is `ListMachineAccountSubtypesV1RequestParams`.
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**sourceId** | `string` | The ID of the source. |  [default to undefined]
-**filters** | `string` | Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **displayName**: *eq, sw*  **technicalName**: *eq, sw* | [optional] [default to undefined]
-**sorters** | `string` | Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **displayName, technicalName** | [optional] [default to undefined]
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
-**count** | `boolean` | If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to false]
-**limit** | `number` | Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to 250]
-**offset** | `number` | Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. | [optional] [default to 0]
-
-### Return type
-
-`Observable<Array<SourceSubtype>>`
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### Example
-
-```typescript
-import { Component, inject } from '@angular/core';
-import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
-
-@Component({ selector: 'app-example', template: '' })
-export class ExampleComponent {
-  private readonly api = inject(MachineAccountsService);
-
-  listMachineAccountSubtypesV1(): void {
-    const sourceId: string = ; // The ID of the source.
-    const filters: string = ; // Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **displayName**: *eq, sw*  **technicalName**: *eq, sw* (optional)
-    const sorters: string = ; // Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **displayName, technicalName** (optional)
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
-    const count: boolean = ; // If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
-    const limit: number = ; // Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
-    const offset: number = ; // Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. (optional)
-    this.api.listMachineAccountSubtypesV1({ sourceId: sourceId }).subscribe({
-      next: (result) => console.log(result),
-      error: (error) => console.error(error),
-    });
-  }
-}
-```
-
-[[Back to top]](#)
-
 ## list-machine-accounts-v1
 :::warning experimental
 This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
@@ -1074,65 +781,6 @@ export class ExampleComponent {
     const sorters: string = ; // Sort results using the standard syntax described in [V3 API Standard Collection Parameters](https://developer.sailpoint.com/idn/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **id, name, nativeIdentity, uuid, description, machineIdentity.id, machineIdentity.name, subtype.technicalName, subtype.displayName, accessType, environment, ownerIdentity, ownerIdentity.id, ownerIdentity.name, owners.primary.id, owners.primary.name, owners.secondaryIdentity.id, owners.secondaryIdentity.name, owners.governanceGroup.id, owners.governanceGroup.name, manuallyCorrelated, enabled, locked, hasEntitlements, attributes, connectorAttributes, source.id, source.name, datasetId, resource.id, type, created, modified, risk.severity, permissionLevel, lastUsedAt**  The same availability rules as for &#x60;filters&#x60; apply to the &#x60;owners.*&#x60;, &#x60;risk.severity&#x60;, &#x60;permissionLevel&#x60; and &#x60;lastUsedAt&#x60; fields. &#x60;risk.severity&#x60; sorts by rank (UNKNOWN, LOW, MEDIUM, HIGH, CRITICAL), not alphabetically. (optional)
     const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
     this.api.listMachineAccountsV2({  }).subscribe({
-      next: (result) => console.log(result),
-      error: (error) => console.error(error),
-    });
-  }
-}
-```
-
-[[Back to top]](#)
-
-## patch-machine-account-subtype-by-technical-name-v1
-:::caution deprecated
-This endpoint has been deprecated and may be replaced or removed in future versions of the API.
-:::
-:::warning experimental
-This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
-:::
-Patch subtype
-Update fields of a machine account subtype by source ID and technical name.
-Patchable fields include: `displayName`, `description`.
-
-[API Spec](https://developer.sailpoint.com/docs/api/patch-machine-account-subtype-by-technical-name-v-1)
-
-### Parameters
-
-The service takes one object that holds every parameter. Its type is `PatchMachineAccountSubtypeByTechnicalNameV1RequestParams`.
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**sourceId** | `string` | The ID of the source. |  [default to undefined]
-**technicalName** | `string` | The technical name of the subtype. |  [default to undefined]
-**requestBody** | `Array<object>` | A JSON of updated values [JSON Patch](https://tools.ietf.org/html/rfc6902) standard. | 
-**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
-
-### Return type
-
-`Observable<SourceSubtype>`
-
-### HTTP request headers
-
-- **Content-Type**: application/json-patch+json
-- **Accept**: application/json
-
-### Example
-
-```typescript
-import { Component, inject } from '@angular/core';
-import { MachineAccountsService } from '@sailpoint/angular-sdk/machine_accounts';
-
-@Component({ selector: 'app-example', template: '' })
-export class ExampleComponent {
-  private readonly api = inject(MachineAccountsService);
-
-  patchMachineAccountSubtypeByTechnicalNameV1(): void {
-    const sourceId: string = ; // The ID of the source.
-    const technicalName: string = ; // The technical name of the subtype.
-    const requestBody: Array<object> = ; // A JSON of updated values [JSON Patch](https://tools.ietf.org/html/rfc6902) standard.
-    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
-    this.api.patchMachineAccountSubtypeByTechnicalNameV1({ sourceId: sourceId, technicalName: technicalName, requestBody: requestBody }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });
