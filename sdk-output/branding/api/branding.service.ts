@@ -38,16 +38,24 @@ export interface CreateBrandingItemV1RequestParams {
     productName: string | null;
     /** hex value of color for action button */
     actionButtonColor?: string;
+    /** hex value of color for action button in dark mode */
+    darkActionButtonColor?: string;
     /** hex value of color for link */
     activeLinkColor?: string;
+    /** hex value of color for link in dark mode */
+    darkActiveLinkColor?: string;
     /** hex value of color for navigation bar */
     navigationColor?: string;
+    /** hex value of color for navigation bar in dark mode */
+    darkNavigationColor?: string;
     /** email from address */
     emailFromAddress?: string;
     /** login information message */
     loginInformationalMessage?: string;
-    /** png file with logo */
+    /** png file with logo. To remove an existing logo, delete the branding item and create it again. Omitting this field on update keeps the current logo. */
     fileStandard?: Blob;
+    /** png file with dark-mode logo. To remove an existing dark-mode logo, delete the branding item and create it again. Omitting this field on update keeps the current dark-mode logo. */
+    darkFileStandard?: Blob;
 }
 
 export interface DeleteBrandingV1RequestParams {
@@ -69,16 +77,24 @@ export interface SetBrandingItemV1RequestParams {
     productName: string | null;
     /** hex value of color for action button */
     actionButtonColor?: string;
+    /** hex value of color for action button in dark mode */
+    darkActionButtonColor?: string;
     /** hex value of color for link */
     activeLinkColor?: string;
+    /** hex value of color for link in dark mode */
+    darkActiveLinkColor?: string;
     /** hex value of color for navigation bar */
     navigationColor?: string;
+    /** hex value of color for navigation bar in dark mode */
+    darkNavigationColor?: string;
     /** email from address */
     emailFromAddress?: string;
     /** login information message */
     loginInformationalMessage?: string;
-    /** png file with logo */
+    /** png file with logo. To remove an existing logo, delete the branding item and create it again. Omitting this field on update keeps the current logo. */
     fileStandard?: Blob;
+    /** png file with dark-mode logo. To remove an existing dark-mode logo, delete the branding item and create it again. Omitting this field on update keeps the current dark-mode logo. */
+    darkFileStandard?: Blob;
 }
 
 
@@ -111,11 +127,15 @@ export class BrandingService extends BaseService {
             throw new Error('Required parameter productName was null or undefined when calling createBrandingItemV1.');
         }
         const actionButtonColor = requestParameters?.actionButtonColor;
+        const darkActionButtonColor = requestParameters?.darkActionButtonColor;
         const activeLinkColor = requestParameters?.activeLinkColor;
+        const darkActiveLinkColor = requestParameters?.darkActiveLinkColor;
         const navigationColor = requestParameters?.navigationColor;
+        const darkNavigationColor = requestParameters?.darkNavigationColor;
         const emailFromAddress = requestParameters?.emailFromAddress;
         const loginInformationalMessage = requestParameters?.loginInformationalMessage;
         const fileStandard = requestParameters?.fileStandard;
+        const darkFileStandard = requestParameters?.darkFileStandard;
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -143,6 +163,9 @@ export class BrandingService extends BaseService {
         // use FormData to transmit files using content-type "multipart/form-data"
         // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
         localVarUseForm = canConsumeForm;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
         if (localVarUseForm) {
             localVarFormParams = new FormData();
         } else {
@@ -158,11 +181,20 @@ export class BrandingService extends BaseService {
         if (actionButtonColor !== undefined) {
             localVarFormParams = localVarFormParams.append('actionButtonColor', <any>actionButtonColor) as any || localVarFormParams;
         }
+        if (darkActionButtonColor !== undefined) {
+            localVarFormParams = localVarFormParams.append('darkActionButtonColor', <any>darkActionButtonColor) as any || localVarFormParams;
+        }
         if (activeLinkColor !== undefined) {
             localVarFormParams = localVarFormParams.append('activeLinkColor', <any>activeLinkColor) as any || localVarFormParams;
         }
+        if (darkActiveLinkColor !== undefined) {
+            localVarFormParams = localVarFormParams.append('darkActiveLinkColor', <any>darkActiveLinkColor) as any || localVarFormParams;
+        }
         if (navigationColor !== undefined) {
             localVarFormParams = localVarFormParams.append('navigationColor', <any>navigationColor) as any || localVarFormParams;
+        }
+        if (darkNavigationColor !== undefined) {
+            localVarFormParams = localVarFormParams.append('darkNavigationColor', <any>darkNavigationColor) as any || localVarFormParams;
         }
         if (emailFromAddress !== undefined) {
             localVarFormParams = localVarFormParams.append('emailFromAddress', <any>emailFromAddress) as any || localVarFormParams;
@@ -172,6 +204,9 @@ export class BrandingService extends BaseService {
         }
         if (fileStandard !== undefined) {
             localVarFormParams = localVarFormParams.append('fileStandard', <any>fileStandard) as any || localVarFormParams;
+        }
+        if (darkFileStandard !== undefined) {
+            localVarFormParams = localVarFormParams.append('darkFileStandard', <any>darkFileStandard) as any || localVarFormParams;
         }
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';
@@ -242,6 +277,56 @@ export class BrandingService extends BaseService {
         }
 
         let localVarPath = `/brandings/v1/${this.configuration.encodeParam({name: "name", value: name, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
+        return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Clear the default branding item
+     * This API endpoint clears the customizable properties of the default branding item. The default item is kept.
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public deleteDefaultBrandingV1(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any>;
+    public deleteDefaultBrandingV1(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<any>>;
+    public deleteDefaultBrandingV1(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<any>>;
+    public deleteDefaultBrandingV1(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/brandings/v1/default`;
         return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
@@ -384,11 +469,15 @@ export class BrandingService extends BaseService {
             throw new Error('Required parameter productName was null or undefined when calling setBrandingItemV1.');
         }
         const actionButtonColor = requestParameters?.actionButtonColor;
+        const darkActionButtonColor = requestParameters?.darkActionButtonColor;
         const activeLinkColor = requestParameters?.activeLinkColor;
+        const darkActiveLinkColor = requestParameters?.darkActiveLinkColor;
         const navigationColor = requestParameters?.navigationColor;
+        const darkNavigationColor = requestParameters?.darkNavigationColor;
         const emailFromAddress = requestParameters?.emailFromAddress;
         const loginInformationalMessage = requestParameters?.loginInformationalMessage;
         const fileStandard = requestParameters?.fileStandard;
+        const darkFileStandard = requestParameters?.darkFileStandard;
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -416,6 +505,9 @@ export class BrandingService extends BaseService {
         // use FormData to transmit files using content-type "multipart/form-data"
         // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
         localVarUseForm = canConsumeForm;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
         if (localVarUseForm) {
             localVarFormParams = new FormData();
         } else {
@@ -431,11 +523,20 @@ export class BrandingService extends BaseService {
         if (actionButtonColor !== undefined) {
             localVarFormParams = localVarFormParams.append('actionButtonColor', <any>actionButtonColor) as any || localVarFormParams;
         }
+        if (darkActionButtonColor !== undefined) {
+            localVarFormParams = localVarFormParams.append('darkActionButtonColor', <any>darkActionButtonColor) as any || localVarFormParams;
+        }
         if (activeLinkColor !== undefined) {
             localVarFormParams = localVarFormParams.append('activeLinkColor', <any>activeLinkColor) as any || localVarFormParams;
         }
+        if (darkActiveLinkColor !== undefined) {
+            localVarFormParams = localVarFormParams.append('darkActiveLinkColor', <any>darkActiveLinkColor) as any || localVarFormParams;
+        }
         if (navigationColor !== undefined) {
             localVarFormParams = localVarFormParams.append('navigationColor', <any>navigationColor) as any || localVarFormParams;
+        }
+        if (darkNavigationColor !== undefined) {
+            localVarFormParams = localVarFormParams.append('darkNavigationColor', <any>darkNavigationColor) as any || localVarFormParams;
         }
         if (emailFromAddress !== undefined) {
             localVarFormParams = localVarFormParams.append('emailFromAddress', <any>emailFromAddress) as any || localVarFormParams;
@@ -445,6 +546,9 @@ export class BrandingService extends BaseService {
         }
         if (fileStandard !== undefined) {
             localVarFormParams = localVarFormParams.append('fileStandard', <any>fileStandard) as any || localVarFormParams;
+        }
+        if (darkFileStandard !== undefined) {
+            localVarFormParams = localVarFormParams.append('darkFileStandard', <any>darkFileStandard) as any || localVarFormParams;
         }
 
         let responseType_: 'text' | 'json' | 'blob' = 'json';

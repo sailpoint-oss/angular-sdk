@@ -23,13 +23,25 @@ export interface BrandingItemCreate {
      */
     actionButtonColor?: string;
     /**
+     * hex value of color for action button in dark mode
+     */
+    darkActionButtonColor?: string;
+    /**
      * hex value of color for link
      */
     activeLinkColor?: string;
     /**
+     * hex value of color for link in dark mode
+     */
+    darkActiveLinkColor?: string;
+    /**
      * hex value of color for navigation bar
      */
     navigationColor?: string;
+    /**
+     * hex value of color for navigation bar in dark mode
+     */
+    darkNavigationColor?: string;
     /**
      * email from address
      */
@@ -39,8 +51,12 @@ export interface BrandingItemCreate {
      */
     loginInformationalMessage?: string;
     /**
-     * png file with logo
+     * png file with logo. To remove an existing logo, delete the branding item and create it again. Omitting this field on update keeps the current logo.
      */
     fileStandard?: Blob;
+    /**
+     * png file with dark-mode logo. To remove an existing dark-mode logo, delete the branding item and create it again. Omitting this field on update keeps the current dark-mode logo.
+     */
+    darkFileStandard?: Blob;
 }
 

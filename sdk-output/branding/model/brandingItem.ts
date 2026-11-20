@@ -23,13 +23,25 @@ export interface BrandingItem {
      */
     actionButtonColor?: string | null;
     /**
+     * hex value of color for action button in dark mode
+     */
+    darkActionButtonColor?: string | null;
+    /**
      * hex value of color for link
      */
     activeLinkColor?: string | null;
     /**
+     * hex value of color for link in dark mode
+     */
+    darkActiveLinkColor?: string | null;
+    /**
      * hex value of color for navigation bar
      */
     navigationColor?: string | null;
+    /**
+     * hex value of color for navigation bar in dark mode
+     */
+    darkNavigationColor?: string | null;
     /**
      * email from address
      */
@@ -38,6 +50,10 @@ export interface BrandingItem {
      * url to standard logo
      */
     standardLogoURL?: string | null;
+    /**
+     * url to dark-mode logo
+     */
+    darkStandardLogoURL?: string | null;
     /**
      * login information message
      */
