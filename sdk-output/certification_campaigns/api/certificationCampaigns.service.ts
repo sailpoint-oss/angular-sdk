@@ -29,6 +29,8 @@ import { CampaignReference } from '../model/campaignReference';
 // @ts-ignore
 import { CampaignReport } from '../model/campaignReport';
 // @ts-ignore
+import { CampaignReportDownload } from '../model/campaignReportDownload';
+// @ts-ignore
 import { CampaignReportsConfig } from '../model/campaignReportsConfig';
 // @ts-ignore
 import { CampaignTemplate } from '../model/campaignTemplate';
@@ -104,6 +106,17 @@ export interface GetActiveCampaignsV1RequestParams {
     filters?: string;
     /** Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **name, created** */
     sorters?: string;
+}
+
+export interface GetCampaignReportDownloadUrlV1RequestParams {
+    /** ID of the campaign whose report is being downloaded. */
+    id: string;
+    /** ID of the campaign task that generated the report. */
+    taskResultId: string;
+    /** File format of the report to download. */
+    reportFormat: 'PDF' | 'CSV';
+    /** Use this header to enable this experimental API. */
+    xSailPointExperimental?: string;
 }
 
 export interface GetCampaignReportsV1RequestParams {
@@ -639,6 +652,73 @@ export class CertificationCampaignsService extends BaseService {
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Get campaign report download URL
+     * Use this API to get a URL for downloading a certification campaign report. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getCampaignReportDownloadUrlV1(requestParameters: GetCampaignReportDownloadUrlV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<CampaignReportDownload>;
+    public getCampaignReportDownloadUrlV1(requestParameters: GetCampaignReportDownloadUrlV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<CampaignReportDownload>>;
+    public getCampaignReportDownloadUrlV1(requestParameters: GetCampaignReportDownloadUrlV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<CampaignReportDownload>>;
+    public getCampaignReportDownloadUrlV1(requestParameters: GetCampaignReportDownloadUrlV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling getCampaignReportDownloadUrlV1.');
+        }
+        const taskResultId = requestParameters?.taskResultId;
+        if (taskResultId === null || taskResultId === undefined) {
+            throw new Error('Required parameter taskResultId was null or undefined when calling getCampaignReportDownloadUrlV1.');
+        }
+        const reportFormat = requestParameters?.reportFormat;
+        if (reportFormat === null || reportFormat === undefined) {
+            throw new Error('Required parameter reportFormat was null or undefined when calling getCampaignReportDownloadUrlV1.');
+        }
+        const xSailPointExperimental = requestParameters?.xSailPointExperimental;
+
+        let localVarHeaders = this.defaultHeaders;
+        if (xSailPointExperimental !== undefined && xSailPointExperimental !== null) {
+            localVarHeaders = localVarHeaders.set('X-SailPoint-Experimental', String(xSailPointExperimental));
+        }
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/campaigns/v1/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/reports/${this.configuration.encodeParam({name: "taskResultId", value: taskResultId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/download-url/${this.configuration.encodeParam({name: "reportFormat", value: reportFormat, in: "path", style: "simple", explode: false, dataType: "'PDF' | 'CSV'", dataFormat: undefined})}`;
+        return this.httpClient.request<CampaignReportDownload>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

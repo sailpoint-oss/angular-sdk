@@ -17,6 +17,7 @@ export * from './campaignAlert';
 export * from './campaignCompleteOptions';
 export * from './campaignReference';
 export * from './campaignReport';
+export * from './campaignReportDownload';
 export * from './campaignReportsConfig';
 export * from './campaignTemplate';
 export * from './campaignTemplateOwnerRef';

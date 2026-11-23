@@ -87,6 +87,7 @@ Method | HTTP request | Description
 [**delete-campaign-template-v1**](#delete-campaign-template-v1) | **DELETE** `/campaign-templates/v1/{id}` | Delete a campaign template
 [**delete-campaigns-v1**](#delete-campaigns-v1) | **POST** `/campaigns/v1/delete` | Delete campaigns
 [**get-active-campaigns-v1**](#get-active-campaigns-v1) | **GET** `/campaigns/v1` | List campaigns
+[**get-campaign-report-download-url-v1**](#get-campaign-report-download-url-v1) | **GET** `/campaigns/v1/{id}/reports/{taskResultId}/download-url/{reportFormat}` | Get campaign report download URL
 [**get-campaign-reports-config-v1**](#get-campaign-reports-config-v1) | **GET** `/campaigns/v1/reports-configuration` | Get campaign reports configuration
 [**get-campaign-reports-v1**](#get-campaign-reports-v1) | **GET** `/campaigns/v1/{id}/reports` | Get campaign reports
 [**get-campaign-template-schedule-v1**](#get-campaign-template-schedule-v1) | **GET** `/campaign-templates/v1/{id}/schedule` | Get campaign template schedule
@@ -452,6 +453,62 @@ export class ExampleComponent {
     const filters: string = ; // Filter results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#filtering-results)  Filtering is supported for the following fields and operators:  **id**: *eq, in*  **name**: *eq, sw*  **status**: *eq, in* (optional)
     const sorters: string = ; // Sort results using the standard syntax described in [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters#sorting-results)  Sorting is supported for the following fields: **name, created** (optional)
     this.api.getActiveCampaignsV1({  }).subscribe({
+      next: (result) => console.log(result),
+      error: (error) => console.error(error),
+    });
+  }
+}
+```
+
+[[Back to top]](#)
+
+## get-campaign-report-download-url-v1
+:::warning experimental
+This API is currently in an experimental state. The API is subject to change based on feedback and further testing. You must include the X-SailPoint-Experimental header and set it to `true` to use this endpoint.
+:::
+Get campaign report download URL
+Use this API to get a URL for downloading a certification campaign report.
+
+
+[API Spec](https://developer.sailpoint.com/docs/api/get-campaign-report-download-url-v-1)
+
+### Parameters
+
+The service takes one object that holds every parameter. Its type is `GetCampaignReportDownloadUrlV1RequestParams`.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**id** | `string` | ID of the campaign whose report is being downloaded. |  [default to undefined]
+**taskResultId** | `string` | ID of the campaign task that generated the report. |  [default to undefined]
+**reportFormat** | `'PDF' | 'CSV'` | File format of the report to download. |  [default to undefined]
+**xSailPointExperimental** | `string` | Use this header to enable this experimental API. | [optional] [default to &#39;true&#39;]
+
+### Return type
+
+`Observable<CampaignReportDownload>`
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### Example
+
+```typescript
+import { Component, inject } from '@angular/core';
+import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+
+@Component({ selector: 'app-example', template: '' })
+export class ExampleComponent {
+  private readonly api = inject(CertificationCampaignsService);
+
+  getCampaignReportDownloadUrlV1(): void {
+    const id: string = ; // ID of the campaign whose report is being downloaded.
+    const taskResultId: string = ; // ID of the campaign task that generated the report.
+    const reportFormat: string = ; // File format of the report to download.
+    const xSailPointExperimental: string = ; // Use this header to enable this experimental API. (optional)
+    this.api.getCampaignReportDownloadUrlV1({ id: id, taskResultId: taskResultId, reportFormat: reportFormat }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });

@@ -283,6 +283,30 @@
             });
           }
         }
+- path: /campaigns/v1/{id}/reports/{taskResultId}/download-url/{reportFormat}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/certification_campaigns/methods/certification-campaigns#get-campaign-report-download-url-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { CertificationCampaignsService } from '@sailpoint/angular-sdk/certification_campaigns';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(CertificationCampaignsService);
+
+          getCampaignReportDownloadUrlV1(): void {
+            const id: string = '2c91808571bcfcf80171c23e4b4221fc'; // string
+            const taskResultId: string = '2c91808571bcfcf80171c23e4b4221fc'; // string
+            const reportFormat: string = 'PDF'; // 'PDF' | 'CSV'
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getCampaignReportDownloadUrlV1({ id: id, taskResultId: taskResultId, reportFormat: reportFormat }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /campaigns/v1/reports-configuration
   method: get
   xCodeSample:

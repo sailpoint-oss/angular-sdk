@@ -19,6 +19,7 @@ CampaignAlert.md
 CampaignCompleteOptions.md
 CampaignReference.md
 CampaignReport.md
+CampaignReportDownload.md
 CampaignReportsConfig.md
 CampaignTemplate.md
 CampaignTemplateOwnerRef.md
@@ -74,6 +75,7 @@ model/campaignAlert.ts
 model/campaignCompleteOptions.ts
 model/campaignReference.ts
 model/campaignReport.ts
+model/campaignReportDownload.ts
 model/campaignReportsConfig.ts
 model/campaignTemplate.ts
 model/campaignTemplateOwnerRef.ts
