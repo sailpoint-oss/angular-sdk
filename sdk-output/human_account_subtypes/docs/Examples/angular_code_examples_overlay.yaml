@@ -1,0 +1,180 @@
+- path: /accounts/v2/sources/{sourceId}/subtypes
+  method: post
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/human_account_subtypes/methods/human-account-subtypes#create-human-account-subtype-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { HumanAccountSubtypesService } from '@sailpoint/angular-sdk/human_account_subtypes';
+        import { HumanAccountSubtypeCreateRequest } from '@sailpoint/angular-sdk/human_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(HumanAccountSubtypesService);
+
+          createHumanAccountSubtypeV2(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const humanAccountSubtypeCreateRequest: HumanAccountSubtypeCreateRequest = {
+              "default" : false,
+              "displayName" : "Contractor",
+              "description" : "Contractors with a limited account lifecycle",
+              "technicalName" : "contractor"
+            }; // HumanAccountSubtypeCreateRequest
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.createHumanAccountSubtypeV2({ sourceId: sourceId, humanAccountSubtypeCreateRequest: humanAccountSubtypeCreateRequest }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v2/sources/{sourceId}/subtypes/{subtypeId}
+  method: delete
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/human_account_subtypes/methods/human-account-subtypes#delete-human-account-subtype-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { HumanAccountSubtypesService } from '@sailpoint/angular-sdk/human_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(HumanAccountSubtypesService);
+
+          deleteHumanAccountSubtypeV2(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const subtypeId: string = '38453251-6be2-5f8f-df93-5ce19e295838'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.deleteHumanAccountSubtypeV2({ sourceId: sourceId, subtypeId: subtypeId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v2/source-subtypes/{subtypeId}/human-config
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/human_account_subtypes/methods/human-account-subtypes#get-human-account-subtype-config-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { HumanAccountSubtypesService } from '@sailpoint/angular-sdk/human_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(HumanAccountSubtypesService);
+
+          getHumanAccountSubtypeConfigV2(): void {
+            const subtypeId: string = '38453251-6be2-5f8f-df93-5ce19e295838'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getHumanAccountSubtypeConfigV2({ subtypeId: subtypeId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v2/sources/{sourceId}/subtypes/{subtypeId}
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/human_account_subtypes/methods/human-account-subtypes#get-human-account-subtype-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { HumanAccountSubtypesService } from '@sailpoint/angular-sdk/human_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(HumanAccountSubtypesService);
+
+          getHumanAccountSubtypeV2(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const subtypeId: string = '38453251-6be2-5f8f-df93-5ce19e295838'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.getHumanAccountSubtypeV2({ sourceId: sourceId, subtypeId: subtypeId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v2/sources/{sourceId}/subtypes
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/human_account_subtypes/methods/human-account-subtypes#list-human-account-subtypes-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { HumanAccountSubtypesService } from '@sailpoint/angular-sdk/human_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(HumanAccountSubtypesService);
+
+          listHumanAccountSubtypesV2(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const count: boolean = true; // boolean
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const sorters: string = 'sourceId'; // string
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.listHumanAccountSubtypesV2({ sourceId: sourceId }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v2/source-subtypes/{subtypeId}/human-config
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/human_account_subtypes/methods/human-account-subtypes#update-human-account-subtype-config-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { HumanAccountSubtypesService } from '@sailpoint/angular-sdk/human_account_subtypes';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/human_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(HumanAccountSubtypesService);
+
+          updateHumanAccountSubtypeConfigV2(): void {
+            const subtypeId: string = '38453251-6be2-5f8f-df93-5ce19e295838'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateHumanAccountSubtypeConfigV2({ subtypeId: subtypeId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /accounts/v2/sources/{sourceId}/subtypes/{subtypeId}
+  method: patch
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/human_account_subtypes/methods/human-account-subtypes#update-human-account-subtype-v2
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { HumanAccountSubtypesService } from '@sailpoint/angular-sdk/human_account_subtypes';
+        import { JsonPatchOperation } from '@sailpoint/angular-sdk/human_account_subtypes';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(HumanAccountSubtypesService);
+
+          updateHumanAccountSubtypeV2(): void {
+            const sourceId: string = '6d0458373bec4b4b80460992b76016da'; // string
+            const subtypeId: string = '38453251-6be2-5f8f-df93-5ce19e295838'; // string
+            const jsonPatchOperation: Array<JsonPatchOperation> = {
+              "op" : "replace",
+              "path" : "/description",
+              "value" : "New description"
+            }; // Array<JsonPatchOperation>
+            const xSailPointExperimental: string = 'true'; // string
+            this.api.updateHumanAccountSubtypeV2({ sourceId: sourceId, subtypeId: subtypeId, jsonPatchOperation: jsonPatchOperation }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }

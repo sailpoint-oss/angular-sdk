@@ -71,6 +71,7 @@ import { GenericRequestApprovalConfigService as _GenericRequestApprovalConfigSer
 import { GlobalTenantSecuritySettingsService as _GlobalTenantSecuritySettingsService } from "./global_tenant_security_settings/index";
 import { NextGenerationCertificationCampaignsService as _NextGenerationCertificationCampaignsService } from "./gov_certification/index";
 import { GovernanceGroupsService as _GovernanceGroupsService } from "./governance_groups/index";
+import { HumanAccountSubtypesService as _HumanAccountSubtypesService } from "./human_account_subtypes/index";
 import { IAIAccessRequestRecommendationsService as _IAIAccessRequestRecommendationsService } from "./iai_access_request_recommendations/index";
 import { IAICommonAccessService as _IAICommonAccessService } from "./iai_common_access/index";
 import { IAIOutliersService as _IAIOutliersService } from "./iai_outliers/index";
@@ -198,6 +199,7 @@ export { _GenericRequestApprovalConfigService as GenericRequestApprovalConfigSer
 export { _GlobalTenantSecuritySettingsService as GlobalTenantSecuritySettingsService };
 export { _NextGenerationCertificationCampaignsService as NextGenerationCertificationCampaignsService };
 export { _GovernanceGroupsService as GovernanceGroupsService };
+export { _HumanAccountSubtypesService as HumanAccountSubtypesService };
 export { _IAIAccessRequestRecommendationsService as IAIAccessRequestRecommendationsService };
 export { _IAICommonAccessService as IAICommonAccessService };
 export { _IAIOutliersService as IAIOutliersService };
@@ -327,6 +329,7 @@ export const SailPointAngular = {
   GlobalTenantSecuritySettingsService: _GlobalTenantSecuritySettingsService,
   NextGenerationCertificationCampaignsService: _NextGenerationCertificationCampaignsService,
   GovernanceGroupsService: _GovernanceGroupsService,
+  HumanAccountSubtypesService: _HumanAccountSubtypesService,
   IAIAccessRequestRecommendationsService: _IAIAccessRequestRecommendationsService,
   IAICommonAccessService: _IAICommonAccessService,
   IAIOutliersService: _IAIOutliersService,
