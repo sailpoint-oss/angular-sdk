@@ -85,7 +85,7 @@ export class ExampleComponent {
 ## approve-approval-v1
 Post Approvals Approve
 Approves a specified approval request on behalf of the caller. The approval request must be in a state that allows it to be approved. This endpoint does not support access request IDs.
-If called by an admin and the admin is not listed as an approver, the approval request will be reassigned from a random approver to the admin user.
+If called by an admin and the admin is not listed as an approver, the approval request will be reassigned either from overrideApproverID or from a random approver to the admin user.
 
 [API Spec](https://developer.sailpoint.com/docs/api/approve-approval-v-1)
 
@@ -135,8 +135,7 @@ export class ExampleComponent {
 ## cancel-approval-by-id-v1
 Post Approval Cancel
 Cancels a specified approval requests on behalf of the caller. 
-Note: This endpoint does not support access request IDs. To cancel access request approvals, please use the following:
-/access-requests/cancel
+Note: This endpoint does not support cancelling Access Request Approvals or accessRequestIDs. To cancel an Access Request Approval, please use: [Cancel Access Request endpoint](https://developer.sailpoint.com/docs/api/cancel-access-request-v-1).
 
 [API Spec](https://developer.sailpoint.com/docs/api/cancel-approval-by-id-v-1)
 
@@ -148,7 +147,7 @@ The service takes one object that holds every parameter. Its type is `CancelAppr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **id** | `string` | ID of the approval request to cancel. |  [default to undefined]
-**approvalCancelRequest** | `ApprovalCancelRequest` |  | [optional]
+**approvalCancelRequest** | `ApprovalCancelRequest` |  | 
 
 ### Return type
 
@@ -172,8 +171,8 @@ export class ExampleComponent {
 
   cancelApprovalByIdV1(): void {
     const id: string = ; // ID of the approval request to cancel.
-    const approvalCancelRequest: ApprovalCancelRequest = ; //  (optional)
-    this.api.cancelApprovalByIdV1({ id: id }).subscribe({
+    const approvalCancelRequest: ApprovalCancelRequest = ; // 
+    this.api.cancelApprovalByIdV1({ id: id, approvalCancelRequest: approvalCancelRequest }).subscribe({
       next: (result) => console.log(result),
       error: (error) => console.error(error),
     });
@@ -602,7 +601,7 @@ export class ExampleComponent {
 ## reject-approval-v1
 Post Approvals Reject
 Rejects a specified approval request on behalf of the caller. This endpoint does not support access request IDs.
-If called by an admin and the admin is not listed as an approver, the approval request will be reassigned from a random approver to the admin user and approved.
+If called by an admin and the admin is not listed as an approver, the approval request will be reassigned either from overrideApproverID or from a random approver to the admin user and rejected.
 
 [API Spec](https://developer.sailpoint.com/docs/api/reject-approval-v-1)
 

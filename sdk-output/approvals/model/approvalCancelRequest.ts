@@ -14,8 +14,8 @@
  */
 export interface ApprovalCancelRequest { 
     /**
-     * Optional comment associated with the cancel request.
+     * Required comment associated with the cancel request.
      */
-    comment?: string;
+    comment: string;
 }
 

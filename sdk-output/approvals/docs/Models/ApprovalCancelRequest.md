@@ -21,5 +21,5 @@ import { ApprovalCancelRequest } from '@sailpoint/angular-sdk/approvals';
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **(optional)** `string` | Optional comment associated with the cancel request. | [default to undefined]
+**comment** | `string` | Required comment associated with the cancel request. | [default to undefined]
 

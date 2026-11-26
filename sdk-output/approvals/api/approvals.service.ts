@@ -66,7 +66,7 @@ export interface ApproveApprovalV1RequestParams {
 export interface CancelApprovalByIdV1RequestParams {
     /** ID of the approval request to cancel. */
     id: string;
-    approvalCancelRequest?: ApprovalCancelRequest;
+    approvalCancelRequest: ApprovalCancelRequest;
 }
 
 export interface CancelApprovalV1RequestParams {
@@ -236,7 +236,7 @@ export class ApprovalsService extends BaseService {
 
     /**
      * Post Approvals Approve
-     * Approves a specified approval request on behalf of the caller. The approval request must be in a state that allows it to be approved. This endpoint does not support access request IDs. If called by an admin and the admin is not listed as an approver, the approval request will be reassigned from a random approver to the admin user.
+     * Approves a specified approval request on behalf of the caller. The approval request must be in a state that allows it to be approved. This endpoint does not support access request IDs. If called by an admin and the admin is not listed as an approver, the approval request will be reassigned either from overrideApproverID or from a random approver to the admin user.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -302,7 +302,7 @@ export class ApprovalsService extends BaseService {
 
     /**
      * Post Approval Cancel
-     * Cancels a specified approval requests on behalf of the caller.  Note: This endpoint does not support access request IDs. To cancel access request approvals, please use the following: /access-requests/cancel
+     * Cancels a specified approval requests on behalf of the caller.  Note: This endpoint does not support cancelling Access Request Approvals or accessRequestIDs. To cancel an Access Request Approval, please use: [Cancel Access Request endpoint](https://developer.sailpoint.com/docs/api/cancel-access-request-v-1).
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -316,6 +316,9 @@ export class ApprovalsService extends BaseService {
             throw new Error('Required parameter id was null or undefined when calling cancelApprovalByIdV1.');
         }
         const approvalCancelRequest = requestParameters?.approvalCancelRequest;
+        if (approvalCancelRequest === null || approvalCancelRequest === undefined) {
+            throw new Error('Required parameter approvalCancelRequest was null or undefined when calling cancelApprovalByIdV1.');
+        }
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -898,7 +901,7 @@ export class ApprovalsService extends BaseService {
 
     /**
      * Post Approvals Reject
-     * Rejects a specified approval request on behalf of the caller. This endpoint does not support access request IDs. If called by an admin and the admin is not listed as an approver, the approval request will be reassigned from a random approver to the admin user and approved.
+     * Rejects a specified approval request on behalf of the caller. This endpoint does not support access request IDs. If called by an admin and the admin is not listed as an approver, the approval request will be reassigned either from overrideApproverID or from a random approver to the admin user and rejected.
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

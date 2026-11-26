@@ -77,7 +77,7 @@
             const approvalCancelRequest: ApprovalCancelRequest = {
               "comment" : "Cancelled by administrator"
             }; // ApprovalCancelRequest
-            this.api.cancelApprovalByIdV1({ id: id }).subscribe({
+            this.api.cancelApprovalByIdV1({ id: id, approvalCancelRequest: approvalCancelRequest }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });
