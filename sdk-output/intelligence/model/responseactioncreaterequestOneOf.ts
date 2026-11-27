@@ -11,9 +11,13 @@
 
 export interface ResponseactioncreaterequestOneOf { 
     actionType?: ResponseactioncreaterequestOneOfActionTypeEnum;
+    identityType?: ResponseactioncreaterequestOneOfIdentityTypeEnum;
 }
 export enum ResponseactioncreaterequestOneOfActionTypeEnum {
     DisableIdentity = 'DISABLE_IDENTITY'
+};
+export enum ResponseactioncreaterequestOneOfIdentityTypeEnum {
+    Human = 'HUMAN'
 };
 
 

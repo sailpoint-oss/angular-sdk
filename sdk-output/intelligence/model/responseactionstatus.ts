@@ -36,7 +36,8 @@ export interface Responseactionstatus {
 }
 export enum ResponseactionstatusActionTypeEnum {
     DisableIdentity = 'DISABLE_IDENTITY',
-    DisableAccount = 'DISABLE_ACCOUNT'
+    DisableAccount = 'DISABLE_ACCOUNT',
+    DeactivateAgent = 'DEACTIVATE_AGENT'
 };
 export enum ResponseactionstatusStatusEnum {
     Submitted = 'SUBMITTED',

@@ -8,17 +8,20 @@
  * Do not edit the class manually.
  */
 import { Intelmachineidentityowners } from './intelmachineidentityowners';
-import { IntelPrivilegedAccessSlice } from './intelPrivilegedAccessSlice';
-import { Intelidentitymachineaggregate } from './intelidentitymachineaggregate';
 import { Intelmachinederived } from './intelmachinederived';
-import { Intelidentitygraphlink } from './intelidentitygraphlink';
-import { IntelIdentityAggregate } from './intelIdentityAggregate';
+import { Intelnhirisksignals } from './intelnhirisksignals';
 import { IntelAccessHistory } from './intelAccessHistory';
-import { IntelOutliersSlice } from './intelOutliersSlice';
 import { Intelmachineaccountsslice } from './intelmachineaccountsslice';
 import { Intelmachineuserentitlement } from './intelmachineuserentitlement';
-import { Intelnonhumanidentityownership } from './intelnonhumanidentityownership';
 import { Intelmachinesourcewire } from './intelmachinesourcewire';
+import { IntelPrivilegedAccessSlice } from './intelPrivilegedAccessSlice';
+import { Intelidentitymachineaggregate } from './intelidentitymachineaggregate';
+import { Intelidentitygraphlink } from './intelidentitygraphlink';
+import { Intelnhicapabilities } from './intelnhicapabilities';
+import { IntelIdentityAggregate } from './intelIdentityAggregate';
+import { IntelOutliersSlice } from './intelOutliersSlice';
+import { Intelnhirisk } from './intelnhirisk';
+import { Intelnonhumanidentityownership } from './intelnonhumanidentityownership';
 
 
 /**

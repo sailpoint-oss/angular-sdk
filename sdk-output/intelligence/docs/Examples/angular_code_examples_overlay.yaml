@@ -101,6 +101,31 @@
             });
           }
         }
+- path: /intelligence/v1/identities/{id}/capabilities
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-capabilities-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          getIntelIdentityCapabilitiesV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const type: string = 'tool'; // 'mcp' | 'tool' | 'skill'
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getIntelIdentityCapabilitiesV1({ id: id, type: type }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
 - path: /intelligence/v1/identities/{id}/access-history/certifications
   method: get
   xCodeSample:
@@ -170,6 +195,30 @@
             const offset: number = 0; // number
             const count: boolean = true; // boolean
             this.api.getIntelIdentityRareAccessV1({ id: id }).subscribe({
+              next: (result) => console.log(result),
+              error: (error) => console.error(error),
+            });
+          }
+        }
+- path: /intelligence/v1/identities/{id}/risk-signals
+  method: get
+  xCodeSample:
+    - lang: Angular
+      label: SDK_tools/sdk/angular/intelligence/methods/intelligence#get-intel-identity-risk-signals-v1
+      source: |
+        import { Component, inject } from '@angular/core';
+        import { IntelligenceService } from '@sailpoint/angular-sdk/intelligence';
+
+        @Component({ selector: 'app-example', template: '' })
+        export class ExampleComponent {
+          private readonly api = inject(IntelligenceService);
+
+          getIntelIdentityRiskSignalsV1(): void {
+            const id: string = 'ef38f94347e94562b5bb8424a56397d8'; // string
+            const limit: number = 250; // number
+            const offset: number = 0; // number
+            const count: boolean = true; // boolean
+            this.api.getIntelIdentityRiskSignalsV1({ id: id }).subscribe({
               next: (result) => console.log(result),
               error: (error) => console.error(error),
             });

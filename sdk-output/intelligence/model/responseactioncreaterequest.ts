@@ -10,6 +10,7 @@
 import { Responseactioncontext } from './responseactioncontext';
 import { ResponseactioncreaterequestOneOf } from './responseactioncreaterequestOneOf';
 import { ResponseactioncreaterequestOneOf1 } from './responseactioncreaterequestOneOf1';
+import { ResponseactioncreaterequestOneOf2 } from './responseactioncreaterequestOneOf2';
 
 
 /**
@@ -20,5 +21,5 @@ import { ResponseactioncreaterequestOneOf1 } from './responseactioncreaterequest
  * Request body for creating a response action.
  * @export
  */
-export type Responseactioncreaterequest = ResponseactioncreaterequestOneOf | ResponseactioncreaterequestOneOf1;
+export type Responseactioncreaterequest = ResponseactioncreaterequestOneOf | ResponseactioncreaterequestOneOf1 | ResponseactioncreaterequestOneOf2;
 

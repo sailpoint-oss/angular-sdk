@@ -37,6 +37,10 @@ import { Intelidentityambiguousbody } from '../model/intelidentityambiguousbody'
 // @ts-ignore
 import { Intelidentityenvelope } from '../model/intelidentityenvelope';
 // @ts-ignore
+import { Intelnhicapabilitywire } from '../model/intelnhicapabilitywire';
+// @ts-ignore
+import { Intelnhirisksignalwire } from '../model/intelnhirisksignalwire';
+// @ts-ignore
 import { Intelnonhumanidentityownershipitem } from '../model/intelnonhumanidentityownershipitem';
 // @ts-ignore
 import { Responseactionaccepted } from '../model/responseactionaccepted';
@@ -84,6 +88,19 @@ export interface GetIntelIdentityAccountsV1RequestParams {
     isNHI?: boolean;
 }
 
+export interface GetIntelIdentityCapabilitiesV1RequestParams {
+    /** Non-empty identity id path segment for Intelligence sub-resources. */
+    id: string;
+    /** Which kind of linked capability to list. Must be &#x60;mcp&#x60;, &#x60;tool&#x60;, or &#x60;skill&#x60;. */
+    type: 'mcp' | 'tool' | 'skill';
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+}
+
 export interface GetIntelIdentityCertificationHistoryV1RequestParams {
     /** Non-empty identity id path segment for Intelligence sub-resources. */
     id: string;
@@ -121,6 +138,17 @@ export interface GetIntelIdentityRareAccessV1RequestParams {
     count?: boolean;
 }
 
+export interface GetIntelIdentityRiskSignalsV1RequestParams {
+    /** Non-empty identity id path segment for Intelligence sub-resources. */
+    id: string;
+    /** Max number of results to return. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    limit?: number;
+    /** Offset into the full result set. Usually specified with *limit* to paginate through the results. See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    offset?: number;
+    /** If *true* it will populate the *X-Total-Count* response header with the number of results that would be returned if *limit* and *offset* were ignored.  Since requesting a total count can have a performance impact, it is recommended not to send **count&#x3D;true** if that value will not be used.  See [API Standard Collection Parameters](https://developer.sailpoint.com/docs/api/standard-collection-parameters) for more information. */
+    count?: boolean;
+}
+
 export interface GetResponseActionStatusV1RequestParams {
     /** The requestId of the response action to look up. */
     id: string;
@@ -138,7 +166,7 @@ export class IntelligenceService extends BaseService {
 
     /**
      * Create a response action
-     * Requires tenant license idn:response-and-remediation.  Creates a response action: the request is validated, a requestId (the correlation id) is minted, the action is recorded as SUBMITTED, and an event is published that triggers the correlated workflow(s).  Returns HTTP 202 with the requestId, an initial SUBMITTED status, and a statusUrl. Poll GET /intelligence/v1/response-actions/{requestId}/status for progress. 
+     * Creates a response action: the request is validated, a requestId (the correlation id) is minted, the action is recorded as SUBMITTED, and an event is published that starts processing.  Human Actions (&#x60;DISABLE_IDENTITY&#x60;, &#x60;DISABLE_ACCOUNT&#x60; with &#x60;identityType&#x60; HUMAN) require tenant license idn:response-and-remediation.  Deactivating a NHI (&#x60;DEACTIVATE_AGENT&#x60; with &#x60;identityType&#x60; NHI) requires idn:response-and-remediation-saf.  Returns HTTP 202 with the requestId, an initial SUBMITTED status, and a statusUrl. Poll [Get response action status](https://developer.sailpoint.com/docs/api/v1/get-response-action-status-v1) for progress. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -399,6 +427,79 @@ export class IntelligenceService extends BaseService {
     }
 
     /**
+     * List NHI capabilities
+     * Requires tenant license idn:response-and-remediation.  Lists linked capabilities for one non-human identity (NHI). Required query parameter &#x60;type&#x60; selects the kind: &#x60;mcp&#x60;, &#x60;tool&#x60;, or &#x60;skill&#x60;. Do not send &#x60;isNHI&#x60;.  Returns one page of capabilities as a JSON array. Each element includes the capability id, display name, kind (&#x60;MCP&#x60;, &#x60;TOOL&#x60;, or &#x60;SKILL&#x60;), and source name. An empty array is a valid page.  Send &#x60;count&#x3D;true&#x60; to receive the &#x60;x-total-count&#x60; response header (including &#x60;0&#x60; on empty pages).  Returns **404** when the identity is unknown or linked capabilities are not available for this identity. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getIntelIdentityCapabilitiesV1(requestParameters: GetIntelIdentityCapabilitiesV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Intelnhicapabilitywire>>;
+    public getIntelIdentityCapabilitiesV1(requestParameters: GetIntelIdentityCapabilitiesV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Intelnhicapabilitywire>>>;
+    public getIntelIdentityCapabilitiesV1(requestParameters: GetIntelIdentityCapabilitiesV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Intelnhicapabilitywire>>>;
+    public getIntelIdentityCapabilitiesV1(requestParameters: GetIntelIdentityCapabilitiesV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling getIntelIdentityCapabilitiesV1.');
+        }
+        const type = requestParameters?.type;
+        if (type === null || type === undefined) {
+            throw new Error('Required parameter type was null or undefined when calling getIntelIdentityCapabilitiesV1.');
+        }
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>type, 'type');
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/intelligence/v1/identities/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/capabilities`;
+        return this.httpClient.request<Array<Intelnhicapabilitywire>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * List identity certification history
      * Continuation endpoint for the parent response\&#39;s &#x60;accessHistory.certifications.next&#x60; link. Returns one page of certification history events for the supplied limit and offset values. Pass &#x60;count&#x3D;true&#x60; to receive &#x60;X-Total-Count&#x60; (including &#x60;0&#x60; on empty pages). Per-record decode failures are dropped server-side. Requires tenant license idn:response-and-remediation.  Not applicable to non-human identities. 
      * @param requestParameters
@@ -607,8 +708,75 @@ export class IntelligenceService extends BaseService {
     }
 
     /**
+     * List non-human identity risk factors
+     * Requires tenant license idn:response-and-remediation.  Lists risk factors for one non-human identity (NHI). Do not send &#x60;isNHI&#x60;.  Returns one page of risk factors as a JSON array, ordered strongest factor first. Each element describes a factor (id, name, description, severity, status, and when it was last observed) that contributes to the identity risk posture. An empty array is a valid page.  Send &#x60;count&#x3D;true&#x60; to receive the &#x60;x-total-count&#x60; response header (including &#x60;0&#x60; on empty pages).  Returns **404** when the identity is unknown or risk information is not available for this identity. 
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getIntelIdentityRiskSignalsV1(requestParameters: GetIntelIdentityRiskSignalsV1RequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Intelnhirisksignalwire>>;
+    public getIntelIdentityRiskSignalsV1(requestParameters: GetIntelIdentityRiskSignalsV1RequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Intelnhirisksignalwire>>>;
+    public getIntelIdentityRiskSignalsV1(requestParameters: GetIntelIdentityRiskSignalsV1RequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Intelnhirisksignalwire>>>;
+    public getIntelIdentityRiskSignalsV1(requestParameters: GetIntelIdentityRiskSignalsV1RequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        const id = requestParameters?.id;
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling getIntelIdentityRiskSignalsV1.');
+        }
+        const limit = requestParameters?.limit;
+        const offset = requestParameters?.offset;
+        const count = requestParameters?.count;
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>limit, 'limit');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>offset, 'offset');
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+          <any>count, 'count');
+
+        let localVarHeaders = this.defaultHeaders;
+
+        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
+
+        const localVarTransferCache: boolean = options?.transferCache ?? true;
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/intelligence/v1/identities/${this.configuration.encodeParam({name: "id", value: id, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/risk-signals`;
+        return this.httpClient.request<Array<Intelnhirisksignalwire>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                transferCache: localVarTransferCache,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
      * Get response action status
-     * Requires tenant license idn:response-and-remediation.  Returns the current aggregate status of a previously submitted response action, identified by the requestId returned from POST /intelligence/v1/response-actions.  Supported actionType values: DISABLE_IDENTITY, DISABLE_ACCOUNT. 
+     * Returns the current aggregate status of a previously submitted response action, identified by the requestId returned from [Create a response action](https://developer.sailpoint.com/docs/api/v1/create-response-action-v1).  Supported actionType values: DISABLE_IDENTITY, DISABLE_ACCOUNT, DEACTIVATE_AGENT. License requirements match the action submitted on create. 
      * @param requestParameters
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

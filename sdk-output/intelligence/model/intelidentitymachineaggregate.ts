@@ -10,8 +10,11 @@
 import { Intelmachineidentityowners } from './intelmachineidentityowners';
 import { Intelmachinederived } from './intelmachinederived';
 import { Intelidentitygraphlink } from './intelidentitygraphlink';
+import { Intelnhicapabilities } from './intelnhicapabilities';
+import { Intelnhirisksignals } from './intelnhirisksignals';
 import { Intelmachineaccountsslice } from './intelmachineaccountsslice';
 import { Intelmachineuserentitlement } from './intelmachineuserentitlement';
+import { Intelnhirisk } from './intelnhirisk';
 import { Intelmachinesourcewire } from './intelmachinesourcewire';
 
 
@@ -56,6 +59,9 @@ export interface Intelidentitymachineaggregate {
      */
     identityGraph?: Intelidentitygraphlink;
     accounts: Intelmachineaccountsslice;
+    capabilities: Intelnhicapabilities;
+    risk?: Intelnhirisk | null;
+    riskSignals: Intelnhirisksignals;
     /**
      * Native identifier on the source system.
      */

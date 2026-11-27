@@ -22,6 +22,7 @@ IntelPrivilegedAccessItemWireSource.md
 IntelPrivilegedAccessSlice.md
 IntelRareAccessSlice.md
 Intelblastradiussummary.md
+Intelenrichmentfailurereason.md
 Intelidentityambiguousbody.md
 Intelidentityambiguouscandidate.md
 Intelidentityenvelope.md
@@ -36,6 +37,12 @@ Intelmachineentityref.md
 Intelmachineidentityowners.md
 Intelmachinesourcewire.md
 Intelmachineuserentitlement.md
+Intelnhicapabilities.md
+Intelnhicapabilitybucket.md
+Intelnhicapabilitywire.md
+Intelnhirisk.md
+Intelnhirisksignals.md
+Intelnhirisksignalwire.md
 Intelnonhumanidentityownedslice.md
 Intelnonhumanidentityownership.md
 Intelnonhumanidentityownershipcategory.md
@@ -48,6 +55,7 @@ Responseactioncontext.md
 Responseactioncreaterequest.md
 ResponseactioncreaterequestOneOf.md
 ResponseactioncreaterequestOneOf1.md
+ResponseactioncreaterequestOneOf2.md
 Responseactionstatus.md
 api.base.service.ts
 api.module.ts
@@ -81,6 +89,7 @@ model/intelPrivilegedAccessItemWireSource.ts
 model/intelPrivilegedAccessSlice.ts
 model/intelRareAccessSlice.ts
 model/intelblastradiussummary.ts
+model/intelenrichmentfailurereason.ts
 model/intelidentityambiguousbody.ts
 model/intelidentityambiguouscandidate.ts
 model/intelidentityenvelope.ts
@@ -93,6 +102,12 @@ model/intelmachineentityref.ts
 model/intelmachineidentityowners.ts
 model/intelmachinesourcewire.ts
 model/intelmachineuserentitlement.ts
+model/intelnhicapabilities.ts
+model/intelnhicapabilitybucket.ts
+model/intelnhicapabilitywire.ts
+model/intelnhirisk.ts
+model/intelnhirisksignals.ts
+model/intelnhirisksignalwire.ts
 model/intelnonhumanidentityownedslice.ts
 model/intelnonhumanidentityownership.ts
 model/intelnonhumanidentityownershipcategory.ts
@@ -105,6 +120,7 @@ model/responseactioncontext.ts
 model/responseactioncreaterequest.ts
 model/responseactioncreaterequestOneOf.ts
 model/responseactioncreaterequestOneOf1.ts
+model/responseactioncreaterequestOneOf2.ts
 model/responseactionstatus.ts
 ng-package.json
 package.json

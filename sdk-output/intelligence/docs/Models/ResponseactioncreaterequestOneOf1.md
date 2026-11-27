@@ -22,4 +22,5 @@ import { ResponseactioncreaterequestOneOf1 } from '@sailpoint/angular-sdk/intell
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actionType** | **(optional)** `string` |  | [default to undefined]
+**identityType** | **(optional)** `string` |  | [default to undefined]
 
